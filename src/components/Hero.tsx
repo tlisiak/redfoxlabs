@@ -1,13 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+      <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{
+      backgroundImage: `url(${heroImage})`
+    }} />
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <div className="mb-6">
           <h1 className="text-6xl md:text-7xl font-bold mb-4">
@@ -27,9 +24,7 @@ const Hero = () => {
           <Button variant="hero" size="lg" className="min-w-48">
             Start Your Project
           </Button>
-          <Button variant="outline" size="lg" className="min-w-48">
-            Learn More
-          </Button>
+          
         </div>
       </div>
       
@@ -37,8 +32,6 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse opacity-60"></div>
       <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-red-fox rounded-full animate-pulse opacity-40 delay-1000"></div>
       <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-primary rounded-full animate-pulse opacity-80 delay-500"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
