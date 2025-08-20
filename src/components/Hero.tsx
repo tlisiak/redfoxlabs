@@ -21,8 +21,15 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="hero" size="lg" className="min-w-48">
-            Start Your Project
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="min-w-48"
+            asChild
+          >
+            <a href="mailto:hello@tommylisiak.com">
+              Contact Us
+            </a>
           </Button>
           
         </div>
