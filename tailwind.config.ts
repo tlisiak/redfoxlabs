@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'syne': ['Syne', 'sans-serif'],
+				'syne': ['Space Grotesk', 'sans-serif'],
 				'work-sans': ['Work Sans', 'sans-serif'],
 			},
 			colors: {
