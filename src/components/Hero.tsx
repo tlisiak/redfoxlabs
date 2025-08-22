@@ -6,7 +6,14 @@ const Hero = () => {
       backgroundImage: `url(${heroImage})`
     }} />
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="mb-6">
+        <div className="mb-8">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/dc9972f7-dca5-4483-92b1-faeecbc9a92c.png" 
+              alt="Red Fox Labs Logo" 
+              className="w-24 h-24 md:w-32 md:h-32"
+            />
+          </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-4">
             <span className="text-red-fox">Red Fox</span>{" "}
             <span className="text-primary">Labs</span>
