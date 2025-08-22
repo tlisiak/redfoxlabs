@@ -35,7 +35,7 @@ const About = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl p-8 border border-primary/20">
+            <div className="bg-gradient-card rounded-2xl p-8 border border-red-fox/20 shadow-card backdrop-blur-sm">
               <h3 className="text-xl font-semibold text-foreground mb-4">
                 Why Choose Red Fox Labs?
               </h3>
