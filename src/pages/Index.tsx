@@ -1,17 +1,11 @@
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import MainContent from "@/components/MainContent";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="h-screen flex flex-col">
       <Hero />
-      <Services />
-      <About />
-      <Contact />
-      <Footer />
+      <MainContent />
     </div>
   );
 };
