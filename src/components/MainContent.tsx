@@ -1,8 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 const MainContent = () => {
-  return (
-    <main className="flex-1 container mx-auto px-6 py-8">
+  return <main className="flex-1 container mx-auto px-6 py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         
         {/* What I Do */}
@@ -45,9 +43,7 @@ const MainContent = () => {
             <div className="space-y-3">
               <div>
                 <h4 className="font-semibold text-foreground mb-2">💼 Enterprise Experience</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Built products for The Washington Post and fast-growing startups.
-                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">Built products for startups turned Unicorn (Arcadia), successful exits (Inspire Clean Energy), and The Washington Post.</p>
               </div>
               
               <div>
@@ -98,8 +94,6 @@ const MainContent = () => {
           </CardContent>
         </Card>
       </div>
-    </main>
-  );
+    </main>;
 };
-
 export default MainContent;
