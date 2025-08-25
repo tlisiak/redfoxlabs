@@ -1,39 +1,53 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
+
 const Hero = () => {
   return (
-    <section className="relative h-[40vh] flex items-center justify-center bg-gradient-hero overflow-hidden">
+    <section className="relative h-[55vh] md:h-[60vh] flex items-center justify-center bg-gradient-hero overflow-hidden">
       <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{
         backgroundImage: `url(${heroImage})`
       }} />
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="flex justify-center mb-6">
+      
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-12">
+        <div className="flex justify-center mb-8">
           <img 
             src="/lovable-uploads/dc9972f7-dca5-4483-92b1-faeecbc9a92c.png" 
-            alt="Red Fox Labs Logo" 
-            className="w-20 h-20 md:w-24 md:h-24 animate-fade-in"
+            alt="Red Fox Labs - Your friendly neighborhood web developer" 
+            className="w-20 h-20 md:w-28 md:h-28 animate-fade-in drop-shadow-glow"
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+        <h1 className="text-4xl md:text-7xl font-bold mb-6 animate-fade-in">
           <span className="text-red-fox">Red Fox</span>{" "}
           <span className="text-primary">Labs</span>
         </h1>
         
-        <div className="w-16 h-1 bg-gradient-accent mx-auto mb-6 animate-scale-in"></div>
+        <div className="w-20 h-1 bg-gradient-accent mx-auto mb-8 animate-scale-in rounded-full"></div>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-6 animate-fade-in">
-          Empowering Bay Area Small Businesses with Modern Web Solutions
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in font-light leading-relaxed">
+          Your friendly neighborhood web developer.<br />
+          <span className="text-lg md:text-xl">Building digital solutions that Bay Area small businesses can actually own and manage.</span>
         </p>
         
-        <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground animate-fade-in">
+        <Button 
+          variant="red-fox" 
+          size="lg" 
+          className="mb-8 px-8 py-4 text-lg font-semibold animate-fade-in shadow-glow"
+          asChild
+        >
+          <a href="mailto:hello@tommylisiak.com">
+            Let's Chat About Your Project
+          </a>
+        </Button>
+        
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground animate-fade-in">
           <a 
             href="mailto:hello@tommylisiak.com"
             className="hover:text-primary transition-colors story-link"
           >
             hello@tommylisiak.com
           </a>
-          <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+          <span className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full"></span>
           <a 
             href="https://tommylisiak.com" 
             target="_blank" 
@@ -42,7 +56,7 @@ const Hero = () => {
           >
             tommylisiak.com
           </a>
-          <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+          <span className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full"></span>
           <span>Bay Area, CA</span>
         </div>
       </div>
