@@ -25,8 +25,7 @@ const Hero = () => {
         <div className="w-20 h-1 bg-gradient-accent mx-auto mb-8 animate-scale-in rounded-full"></div>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in font-light leading-relaxed">
-          Your friendly neighborhood web developer.<br />
-          <span className="text-lg md:text-xl">Building digital solutions that Bay Area small businesses can actually own and manage.</span>
+          Building digital solutions that Bay Area small businesses can actually own and manage.
         </p>
         
         <Button 
