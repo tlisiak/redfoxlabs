@@ -34,17 +34,17 @@ const Hero = () => {
           className="mb-8 px-8 py-4 text-lg font-semibold animate-fade-in shadow-glow"
           asChild
         >
-          <a href="mailto:hello@tommylisiak.com">
+          <a href="mailto:tommylisiak@gmail.com">
             Let's Chat About Your Project
           </a>
         </Button>
         
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground animate-fade-in">
           <a 
-            href="mailto:hello@tommylisiak.com"
+            href="mailto:tommylisiak@gmail.com"
             className="hover:text-primary transition-colors story-link"
           >
-            hello@tommylisiak.com
+            tommylisiak@gmail.com
           </a>
           <span className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full"></span>
           <a 

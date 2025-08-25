@@ -43,7 +43,7 @@ All colors MUST be HSL.
     --red-fox-foreground: 0 0% 100%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(15 35% 12%), hsl(15 30% 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(15 30% 18%), hsl(15 25% 25%));
     --gradient-card: linear-gradient(135deg, hsl(15 30% 15%), hsl(15 25% 20%));
     --gradient-accent: linear-gradient(135deg, hsl(190 95% 65%), hsl(185 85% 60%));
 
