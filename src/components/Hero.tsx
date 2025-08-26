@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative h-[55vh] md:h-[60vh] flex items-center justify-center bg-gradient-hero overflow-hidden">
+    <section className="relative min-h-screen md:h-[80vh] flex items-center justify-center bg-gradient-hero overflow-hidden py-8">
       <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{
         backgroundImage: `url(${heroImage})`
       }} />
