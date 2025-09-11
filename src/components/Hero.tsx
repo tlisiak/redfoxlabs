@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-
 type Section = 'main' | 'whatido' | 'background' | 'whychoose';
-
 const Hero = () => {
   const [activeSection, setActiveSection] = useState<Section>('main');
-
   const cardStyle = {
     backdropFilter: 'blur(10px)',
     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08))',
     boxShadow: '0 8px 32px 0 rgba(51, 38, 24, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)'
   };
-
-  const renderMainView = () => (
-    <>
+  const renderMainView = () => <>
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-foreground">
           <span className="text-red-fox drop-shadow-sm">Red Fox</span>{" "}
@@ -47,35 +42,23 @@ const Hero = () => {
       </div>
 
       <div className="border-t border-white/20 pt-8">
-        <h2 className="text-xl font-bold mb-6 text-center text-primary">Learn More About My Services</h2>
+        
         <div className="grid gap-4 max-w-md mx-auto">
-          <Button
-            variant="outline"
-            onClick={() => setActiveSection('whatido')}
-            className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300"
-          >
+          <Button variant="outline" onClick={() => setActiveSection('whatido')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
             <div className="flex flex-col items-start">
               <span className="font-semibold text-red-fox">🌐 What I Do</span>
               <span className="text-sm text-foreground/70">Modern websites and smart analytics</span>
             </div>
           </Button>
           
-          <Button
-            variant="outline"
-            onClick={() => setActiveSection('background')}
-            className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300"
-          >
+          <Button variant="outline" onClick={() => setActiveSection('background')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
             <div className="flex flex-col items-start">
               <span className="font-semibold text-primary">💼 My Background</span>
               <span className="text-sm text-foreground/70">Enterprise experience with local roots</span>
             </div>
           </Button>
           
-          <Button
-            variant="outline"
-            onClick={() => setActiveSection('whychoose')}
-            className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300"
-          >
+          <Button variant="outline" onClick={() => setActiveSection('whychoose')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
             <div className="flex flex-col items-start">
               <span className="font-semibold text-accent">🤝 Why Choose Me</span>
               <span className="text-sm text-foreground/70">Fair pricing and genuine care</span>
@@ -83,18 +66,10 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </>
-  );
-
-  const renderWhatIDo = () => (
-    <>
+    </>;
+  const renderWhatIDo = () => <>
       <div className="flex items-center gap-3 mb-6">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setActiveSection('main')}
-          className="hover:bg-white/10"
-        >
+        <Button variant="ghost" size="icon" onClick={() => setActiveSection('main')} className="hover:bg-white/10">
           <ArrowLeft className="h-4 w-4" />
         </Button>
         <h2 className="text-red-fox text-2xl font-bold drop-shadow-sm">What I Do</h2>
@@ -114,31 +89,20 @@ const Hero = () => {
           </p>
         </div>
         
-        <div 
-          className="rounded-xl p-4 border"
-          style={{
-            background: 'linear-gradient(135deg, rgba(213, 77, 39, 0.15), rgba(213, 77, 39, 0.08))',
-            borderColor: 'rgba(213, 77, 39, 0.3)'
-          }}
-        >
+        <div className="rounded-xl p-4 border" style={{
+        background: 'linear-gradient(135deg, rgba(213, 77, 39, 0.15), rgba(213, 77, 39, 0.08))',
+        borderColor: 'rgba(213, 77, 39, 0.3)'
+      }}>
           <h4 className="font-semibold text-red-fox mb-2 drop-shadow-sm">🎯 "Teaching You to Fish"</h4>
           <p className="text-sm text-foreground/80 leading-relaxed">
             When we're done, <strong>you don't need me anymore</strong>. You'll have the tools and knowledge to succeed independently.
           </p>
         </div>
       </div>
-    </>
-  );
-
-  const renderBackground = () => (
-    <>
+    </>;
+  const renderBackground = () => <>
       <div className="flex items-center gap-3 mb-6">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setActiveSection('main')}
-          className="hover:bg-white/10"
-        >
+        <Button variant="ghost" size="icon" onClick={() => setActiveSection('main')} className="hover:bg-white/10">
           <ArrowLeft className="h-4 w-4" />
         </Button>
         <h2 className="text-primary text-2xl font-bold drop-shadow-sm">My Background</h2>
@@ -156,31 +120,20 @@ const Hero = () => {
           </p>
         </div>
         
-        <div 
-          className="rounded-xl p-4 border"
-          style={{
-            background: 'linear-gradient(135deg, rgba(191, 109, 56, 0.15), rgba(191, 109, 56, 0.08))',
-            borderColor: 'rgba(191, 109, 56, 0.3)'
-          }}
-        >
+        <div className="rounded-xl p-4 border" style={{
+        background: 'linear-gradient(135deg, rgba(191, 109, 56, 0.15), rgba(191, 109, 56, 0.08))',
+        borderColor: 'rgba(191, 109, 56, 0.3)'
+      }}>
           <h4 className="font-semibold text-primary mb-2 drop-shadow-sm">🎨 Modern Tech, Human Touch</h4>
           <p className="text-sm text-foreground/80 leading-relaxed">
             Enterprise-level expertise with a <strong>personal, caring approach</strong>.
           </p>
         </div>
       </div>
-    </>
-  );
-
-  const renderWhyChooseMe = () => (
-    <>
+    </>;
+  const renderWhyChooseMe = () => <>
       <div className="flex items-center gap-3 mb-6">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setActiveSection('main')}
-          className="hover:bg-white/10"
-        >
+        <Button variant="ghost" size="icon" onClick={() => setActiveSection('main')} className="hover:bg-white/10">
           <ArrowLeft className="h-4 w-4" />
         </Button>
         <h2 className="text-accent text-2xl font-bold drop-shadow-sm">Why Choose Me</h2>
@@ -200,22 +153,17 @@ const Hero = () => {
           </p>
         </div>
         
-        <div 
-          className="rounded-xl p-4 border"
-          style={{
-            background: 'linear-gradient(135deg, rgba(237, 176, 89, 0.15), rgba(237, 176, 89, 0.08))',
-            borderColor: 'rgba(237, 176, 89, 0.3)'
-          }}
-        >
+        <div className="rounded-xl p-4 border" style={{
+        background: 'linear-gradient(135deg, rgba(237, 176, 89, 0.15), rgba(237, 176, 89, 0.08))',
+        borderColor: 'rgba(237, 176, 89, 0.3)'
+      }}>
           <h4 className="font-semibold text-accent mb-2 drop-shadow-sm">🤝 Community First</h4>
           <p className="text-sm text-foreground/80 leading-relaxed">
             Supporting local small businesses means <strong>strengthening our community</strong> together.
           </p>
         </div>
       </div>
-    </>
-  );
-
+    </>;
   const renderContent = () => {
     switch (activeSection) {
       case 'whatido':
@@ -228,16 +176,12 @@ const Hero = () => {
         return renderMainView();
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-12">
         <div className="backdrop-blur-md rounded-2xl p-8 md:p-12 border border-glass shadow-glass min-h-[600px] flex flex-col justify-center" style={cardStyle}>
           {renderContent()}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
