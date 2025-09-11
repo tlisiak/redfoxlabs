@@ -110,8 +110,8 @@ All colors MUST be HSL.
     width: 100vw;
   }
 
-  /* Mobile background override */
-  @media (max-width: 768px) {
+  /* Mobile background override - only for phones */
+  @media (max-width: 640px) {
     body {
       background-image: url('/lovable-uploads/74986684-b768-41b1-808e-bd7a8c5a2f97.png');
       background-size: cover;
