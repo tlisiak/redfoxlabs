@@ -11,16 +11,15 @@ const Hero = () => {
   };
   const renderMainView = () => <>
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-foreground">
-          <span className="text-red-fox drop-shadow-sm">Red Fox</span>{" "}
-          <span className="text-primary drop-shadow-sm">Labs</span>
-        </h1>
+        
         
         <div className="w-20 h-1 bg-primary mx-auto mb-6 animate-scale-in rounded-full shadow-sm"></div>
         
         <p className="text-lg md:text-xl text-foreground/80 mb-8 animate-fade-in font-light leading-relaxed drop-shadow-sm">
           Building digital solutions that Bay Area small businesses can actually own and manage.
         </p>
+        
+        
         
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-foreground/70 animate-fade-in mb-12">
           <a href="mailto:tommylisiak@gmail.com" className="hover:text-primary transition-colors story-link font-medium">
@@ -35,24 +34,28 @@ const Hero = () => {
         </div>
       </div>
 
-      <div>
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          <Button variant="red-fox" size="lg" className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300" asChild>
-            <a href="mailto:tommylisiak@gmail.com">
-              Let's Chat
-            </a>
+      <div className="border-t border-white/20 pt-8">
+        
+        <div className="grid gap-4 max-w-md mx-auto">
+          <Button variant="outline" onClick={() => setActiveSection('whatido')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
+            <div className="flex flex-col items-start">
+              <span className="font-semibold text-red-fox">🌐 What I Do</span>
+              <span className="text-sm text-foreground/70">Modern websites and smart analytics</span>
+            </div>
           </Button>
           
-          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('whatido')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
-            🌐 What I Do
+          <Button variant="outline" onClick={() => setActiveSection('background')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
+            <div className="flex flex-col items-start">
+              <span className="font-semibold text-primary">💼 My Background</span>
+              <span className="text-sm text-foreground/70">Enterprise experience with local roots</span>
+            </div>
           </Button>
           
-          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('background')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
-            💼 My Background
-          </Button>
-          
-          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('whychoose')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
-            🤝 Why Choose Me
+          <Button variant="outline" onClick={() => setActiveSection('whychoose')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
+            <div className="flex flex-col items-start">
+              <span className="font-semibold text-accent">🤝 Why Choose Me</span>
+              <span className="text-sm text-foreground/70">Fair pricing and genuine care</span>
+            </div>
           </Button>
         </div>
       </div>
@@ -168,7 +171,7 @@ const Hero = () => {
   };
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-12">
-        <div className="backdrop-blur-md rounded-2xl p-6 md:p-8 border border-glass shadow-glass flex flex-col justify-center" style={cardStyle}>
+        <div className="backdrop-blur-md rounded-2xl p-8 md:p-12 border border-glass shadow-glass min-h-[600px] flex flex-col justify-center" style={cardStyle}>
           {renderContent()}
         </div>
       </div>
