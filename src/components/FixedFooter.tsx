@@ -1,19 +1,42 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
+  DialogPortal,
+  DialogClose,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const FixedFooter = () => {
   const modalStyle = {
     backdropFilter: 'blur(10px)',
-    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08))',
-    boxShadow: '0 8px 32px 0 rgba(51, 38, 24, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)'
+    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6))',
+    boxShadow: '0 8px 32px 0 rgba(51, 38, 24, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2)'
   };
+
+  // Custom DialogContent without overlay
+  const CustomDialogContent = ({ className, children, ...props }: any) => (
+    <DialogPortal>
+      <DialogPrimitive.Content
+        className={cn(
+          "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg backdrop-blur-md border border-glass shadow-glass",
+          className
+        )}
+        style={modalStyle}
+        {...props}
+      >
+        {children}
+        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none text-white hover:text-white/80">
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </DialogPortal>
+  );
 
   const WhatIDoContent = () => (
     <div className="space-y-4 text-left">
@@ -112,12 +135,12 @@ const FixedFooter = () => {
               🌐 What I Do
             </Button>
           </DialogTrigger>
-          <DialogContent className="backdrop-blur-md border border-glass shadow-glass" style={modalStyle}>
+          <CustomDialogContent>
             <DialogHeader>
               <DialogTitle className="text-red-fox text-2xl font-bold drop-shadow-sm">What I Do</DialogTitle>
             </DialogHeader>
             <WhatIDoContent />
-          </DialogContent>
+          </CustomDialogContent>
         </Dialog>
 
         <Dialog>
@@ -126,12 +149,12 @@ const FixedFooter = () => {
               💼 My Background
             </Button>
           </DialogTrigger>
-          <DialogContent className="backdrop-blur-md border border-glass shadow-glass" style={modalStyle}>
+          <CustomDialogContent>
             <DialogHeader>
               <DialogTitle className="text-primary text-2xl font-bold drop-shadow-sm">My Background</DialogTitle>
             </DialogHeader>
             <BackgroundContent />
-          </DialogContent>
+          </CustomDialogContent>
         </Dialog>
 
         <Dialog>
@@ -140,12 +163,12 @@ const FixedFooter = () => {
               🤝 Why Choose Me
             </Button>
           </DialogTrigger>
-          <DialogContent className="backdrop-blur-md border border-glass shadow-glass" style={modalStyle}>
+          <CustomDialogContent>
             <DialogHeader>
               <DialogTitle className="text-accent text-2xl font-bold drop-shadow-sm">Why Choose Me</DialogTitle>
             </DialogHeader>
             <WhyChooseMeContent />
-          </DialogContent>
+          </CustomDialogContent>
         </Dialog>
       </div>
     </footer>
