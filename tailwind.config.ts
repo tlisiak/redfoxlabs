@@ -19,8 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'syne': ['Space Grotesk', 'sans-serif'],
-				'work-sans': ['Work Sans', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
