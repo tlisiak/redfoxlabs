@@ -22,12 +22,6 @@ const Hero = () => {
           Building digital solutions that Bay Area small businesses can actually own and manage.
         </p>
         
-        <Button variant="red-fox" size="lg" className="mb-8 px-8 py-4 text-lg font-semibold animate-fade-in shadow-glow hover:shadow-xl transition-all duration-300" asChild>
-          <a href="mailto:tommylisiak@gmail.com">
-            Let's Chat About Your Project
-          </a>
-        </Button>
-        
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-foreground/70 animate-fade-in mb-12">
           <a href="mailto:tommylisiak@gmail.com" className="hover:text-primary transition-colors story-link font-medium">
             tommylisiak@gmail.com
@@ -42,27 +36,23 @@ const Hero = () => {
       </div>
 
       <div className="border-t border-white/20 pt-8">
-        
-        <div className="grid gap-4 max-w-md mx-auto">
-          <Button variant="outline" onClick={() => setActiveSection('whatido')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
-            <div className="flex flex-col items-start">
-              <span className="font-semibold text-red-fox">🌐 What I Do</span>
-              <span className="text-sm text-foreground/70">Modern websites and smart analytics</span>
-            </div>
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          <Button variant="red-fox" size="lg" className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300" asChild>
+            <a href="mailto:tommylisiak@gmail.com">
+              Let's Chat About Your Project
+            </a>
           </Button>
           
-          <Button variant="outline" onClick={() => setActiveSection('background')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
-            <div className="flex flex-col items-start">
-              <span className="font-semibold text-primary">💼 My Background</span>
-              <span className="text-sm text-foreground/70">Enterprise experience with local roots</span>
-            </div>
+          <Button variant="default" size="lg" onClick={() => setActiveSection('whatido')} className="px-6 py-3 font-semibold transition-all duration-300">
+            🌐 What I Do
           </Button>
           
-          <Button variant="outline" onClick={() => setActiveSection('whychoose')} className="h-16 justify-start text-left bg-white/5 border-white/20 hover:bg-white/10 transition-all duration-300">
-            <div className="flex flex-col items-start">
-              <span className="font-semibold text-accent">🤝 Why Choose Me</span>
-              <span className="text-sm text-foreground/70">Fair pricing and genuine care</span>
-            </div>
+          <Button variant="secondary" size="lg" onClick={() => setActiveSection('background')} className="px-6 py-3 font-semibold transition-all duration-300">
+            💼 My Background
+          </Button>
+          
+          <Button variant="hero" size="lg" onClick={() => setActiveSection('whychoose')} className="px-6 py-3 font-semibold transition-all duration-300">
+            🤝 Why Choose Me
           </Button>
         </div>
       </div>
