@@ -43,15 +43,15 @@ const Hero = () => {
             </a>
           </Button>
           
-          <Button variant="default" size="lg" onClick={() => setActiveSection('whatido')} className="px-6 py-3 font-semibold transition-all duration-300">
+          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('whatido')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
             🌐 What I Do
           </Button>
           
-          <Button variant="secondary" size="lg" onClick={() => setActiveSection('background')} className="px-6 py-3 font-semibold transition-all duration-300">
+          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('background')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
             💼 My Background
           </Button>
           
-          <Button variant="hero" size="lg" onClick={() => setActiveSection('whychoose')} className="px-6 py-3 font-semibold transition-all duration-300">
+          <Button variant="red-fox" size="lg" onClick={() => setActiveSection('whychoose')} className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300">
             🤝 Why Choose Me
           </Button>
         </div>
@@ -168,7 +168,7 @@ const Hero = () => {
   };
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-12">
-        <div className="backdrop-blur-md rounded-2xl p-8 md:p-12 border border-glass shadow-glass min-h-[600px] flex flex-col justify-center" style={cardStyle}>
+        <div className="backdrop-blur-md rounded-2xl p-6 md:p-8 border border-glass shadow-glass flex flex-col justify-center" style={cardStyle}>
           {renderContent()}
         </div>
       </div>
