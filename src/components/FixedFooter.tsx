@@ -113,7 +113,7 @@ const FixedFooter = () => {
   const buttonClasses = "px-4 py-2 font-semibold shadow-glow hover:shadow-xl transition-all duration-300";
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 z-50 p-4">
+    <footer className="fixed top-0 sm:bottom-0 sm:top-auto left-0 right-0 z-50 p-4">
       <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
         <Button variant="red-fox" size="lg" className={buttonClasses} asChild>
           <a href="mailto:tommylisiak@gmail.com">
