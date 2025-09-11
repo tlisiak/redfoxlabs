@@ -1,38 +1,11 @@
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogPortal,
-  DialogClose,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-interface ModalContentProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-const CustomDialogContent = ({ className, children, ...props }: ModalContentProps & any) => (
-  <DialogPortal>
-    <DialogPrimitive.Content
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg modal-container",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none text-white hover:text-white/80">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </DialogPortal>
-);
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const WhatIDoContent = () => (
   <div className="space-y-4 text-left">
@@ -121,47 +94,53 @@ const FixedFooter = () => {
           </a>
         </Button>
         
-        <Dialog>
-          <DialogTrigger asChild>
+        <Sheet>
+          <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
               🌐 What I Do
             </Button>
-          </DialogTrigger>
-          <CustomDialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-red-fox text-2xl font-bold drop-shadow-sm">What I Do</DialogTitle>
-            </DialogHeader>
-            <WhatIDoContent />
-          </CustomDialogContent>
-        </Dialog>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+            <SheetHeader>
+              <SheetTitle className="text-red-fox text-2xl font-bold drop-shadow-sm">What I Do</SheetTitle>
+            </SheetHeader>
+            <div className="mt-6">
+              <WhatIDoContent />
+            </div>
+          </SheetContent>
+        </Sheet>
 
-        <Dialog>
-          <DialogTrigger asChild>
+        <Sheet>
+          <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
               💼 My Background
             </Button>
-          </DialogTrigger>
-          <CustomDialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-primary text-2xl font-bold drop-shadow-sm">My Background</DialogTitle>
-            </DialogHeader>
-            <BackgroundContent />
-          </CustomDialogContent>
-        </Dialog>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+            <SheetHeader>
+              <SheetTitle className="text-primary text-2xl font-bold drop-shadow-sm">My Background</SheetTitle>
+            </SheetHeader>
+            <div className="mt-6">
+              <BackgroundContent />
+            </div>
+          </SheetContent>
+        </Sheet>
 
-        <Dialog>
-          <DialogTrigger asChild>
+        <Sheet>
+          <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
               🤝 Why Choose Me
             </Button>
-          </DialogTrigger>
-          <CustomDialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-accent text-2xl font-bold drop-shadow-sm">Why Choose Me</DialogTitle>
-            </DialogHeader>
-            <WhyChooseMeContent />
-          </CustomDialogContent>
-        </Dialog>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+            <SheetHeader>
+              <SheetTitle className="text-accent text-2xl font-bold drop-shadow-sm">Why Choose Me</SheetTitle>
+            </SheetHeader>
+            <div className="mt-6">
+              <WhyChooseMeContent />
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </footer>
   );
