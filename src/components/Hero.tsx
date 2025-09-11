@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="border-t border-white/20 pt-8">
+      <div>
         <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           <Button variant="red-fox" size="lg" className="px-6 py-3 font-semibold shadow-glow hover:shadow-xl transition-all duration-300" asChild>
             <a href="mailto:tommylisiak@gmail.com">
