@@ -2,15 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section 
-      className="relative py-20"
-      style={{
-        backgroundImage: `url(/lovable-uploads/01d6f49c-1f11-4eb2-8c13-d9e6b5c66542.png)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <section className="relative py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div 

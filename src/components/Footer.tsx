@@ -2,15 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer 
-      className="relative py-12"
-      style={{
-        backgroundImage: `url(/lovable-uploads/01d6f49c-1f11-4eb2-8c13-d9e6b5c66542.png)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <footer className="relative py-12">
       <div className="container mx-auto px-6">
         <div className="text-center">
           <div 

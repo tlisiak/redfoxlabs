@@ -2,15 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const MainContent = () => {
   return (
-    <main 
-      className="relative flex-1 py-8"
-      style={{
-        backgroundImage: `url(/lovable-uploads/01d6f49c-1f11-4eb2-8c13-d9e6b5c66542.png)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <main className="relative flex-1 py-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           

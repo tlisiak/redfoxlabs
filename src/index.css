@@ -69,6 +69,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-work-sans;
+    background-image: url('/lovable-uploads/01d6f49c-1f11-4eb2-8c13-d9e6b5c66542.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   h1, h2, h3, h4, h5, h6 {

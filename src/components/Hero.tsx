@@ -3,13 +3,6 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Full screen fox lab background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `url(/lovable-uploads/01d6f49c-1f11-4eb2-8c13-d9e6b5c66542.png)`
-        }} 
-      />
       
       {/* Glass morphism container for content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-12">
