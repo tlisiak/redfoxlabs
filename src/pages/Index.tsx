@@ -1,11 +1,9 @@
 import Hero from "@/components/Hero";
-import MainContent from "@/components/MainContent";
 
 const Index = () => {
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen">
       <Hero />
-      <MainContent />
     </div>
   );
 };
