@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-gradient-accent text-primary-foreground hover:shadow-glow transition-smooth font-semibold",
-        "red-fox": "bg-red-fox text-red-fox-foreground hover:bg-red-fox/90 transition-smooth font-semibold",
+        "red-fox": "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover transition-smooth font-semibold shadow-glow hover:shadow-xl",
       },
       size: {
         default: "h-10 px-4 py-2",

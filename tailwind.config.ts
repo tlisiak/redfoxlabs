@@ -57,7 +57,9 @@ export default {
 				},
 				'red-fox': {
 					DEFAULT: 'hsl(var(--red-fox))',
-					foreground: 'hsl(var(--red-fox-foreground))'
+					foreground: 'hsl(var(--red-fox-foreground))',
+					hover: 'hsl(var(--red-fox-hover))',
+					dark: 'hsl(var(--red-fox-dark))'
 				}
 			},
 			backgroundImage: {
