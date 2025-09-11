@@ -100,11 +100,11 @@ const FixedFooter = () => {
               🌐 What I Do
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-red-fox text-2xl font-bold drop-shadow-sm">What I Do</SheetTitle>
+              <SheetTitle className="text-red-fox text-2xl font-bold">What I Do</SheetTitle>
             </SheetHeader>
-            <div className="mt-6">
+            <div className="mt-6 px-2 sm:px-0">
               <WhatIDoContent />
             </div>
           </SheetContent>
@@ -116,11 +116,11 @@ const FixedFooter = () => {
               💼 My Background
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-primary text-2xl font-bold drop-shadow-sm">My Background</SheetTitle>
+              <SheetTitle className="text-primary text-2xl font-bold">My Background</SheetTitle>
             </SheetHeader>
-            <div className="mt-6">
+            <div className="mt-6 px-2 sm:px-0">
               <BackgroundContent />
             </div>
           </SheetContent>
@@ -132,11 +132,11 @@ const FixedFooter = () => {
               🤝 Why Choose Me
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-accent text-2xl font-bold drop-shadow-sm">Why Choose Me</SheetTitle>
+              <SheetTitle className="text-accent text-2xl font-bold">Why Choose Me</SheetTitle>
             </SheetHeader>
-            <div className="mt-6">
+            <div className="mt-6 px-2 sm:px-0">
               <WhyChooseMeContent />
             </div>
           </SheetContent>
