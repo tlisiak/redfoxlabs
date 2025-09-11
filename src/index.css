@@ -179,10 +179,10 @@ All colors MUST be HSL.
   }
 
   .sheet-enhanced {
-    background: linear-gradient(135deg, hsl(0 0% 10% / 0.95), hsl(0 0% 5% / 0.98)) !important;
+    background: linear-gradient(135deg, hsl(9 25% 8% / 0.95), hsl(9 35% 4% / 0.98)) !important;
     backdrop-filter: blur(16px) !important;
-    border-left: 1px solid hsl(0 0% 100% / 0.2) !important;
-    box-shadow: -8px 0 32px 0 hsl(20 25% 5% / 0.4) !important;
+    border-left: 1px solid hsl(9 30% 60% / 0.2) !important;
+    box-shadow: -8px 0 32px 0 hsl(9 40% 5% / 0.4) !important;
   }
 
   .sheet-enhanced [data-radix-scroll-area-viewport] {
@@ -191,10 +191,10 @@ All colors MUST be HSL.
 
   @media (max-width: 640px) {
     .sheet-enhanced {
-      background: linear-gradient(180deg, hsl(0 0% 10% / 0.95), hsl(0 0% 5% / 0.98)) !important;
+      background: linear-gradient(180deg, hsl(9 25% 8% / 0.95), hsl(9 35% 4% / 0.98)) !important;
       border-left: none !important;
-      border-top: 1px solid hsl(0 0% 100% / 0.2) !important;
-      box-shadow: 0 -8px 32px 0 hsl(20 25% 5% / 0.4) !important;
+      border-top: 1px solid hsl(9 30% 60% / 0.2) !important;
+      box-shadow: 0 -8px 32px 0 hsl(9 40% 5% / 0.4) !important;
     }
     
     .sheet-enhanced [data-radix-scroll-area-viewport] {
