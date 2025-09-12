@@ -32,7 +32,8 @@ const WhatIDoContent = () => (
   </div>
 );
 
-const BackgroundContent = () => (
+
+const WhyChooseMeContent = () => (
   <div className="space-y-4 text-left">
     <div>
       <h4 className="font-semibold text-red-fox mb-2">Enterprise Experience</h4>
@@ -54,11 +55,7 @@ const BackgroundContent = () => (
         Enterprise-level expertise with a <strong>personal, caring approach</strong>.
       </p>
     </div>
-  </div>
-);
 
-const WhyChooseMeContent = () => (
-  <div className="space-y-4 text-left">
     <div>
       <h4 className="font-semibold text-red-fox mb-2">Fair & Transparent</h4>
       <p className="text-sm text-red-fox/80 leading-relaxed">
@@ -110,21 +107,6 @@ const FixedFooter = () => {
           </SheetContent>
         </Sheet>
 
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="red-fox" size="lg" className={buttonClasses}>
-              Background
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
-            <SheetHeader>
-              <SheetTitle className="text-primary text-2xl font-bold">Background</SheetTitle>
-            </SheetHeader>
-            <div className="mt-6 px-2 sm:px-0">
-              <BackgroundContent />
-            </div>
-          </SheetContent>
-        </Sheet>
 
         <Sheet>
           <SheetTrigger asChild>
