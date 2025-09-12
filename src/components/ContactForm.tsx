@@ -45,6 +45,21 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
         throw error;
       }
 
+      // Send email notification to you
+      try {
+        await supabase.functions.invoke('send-contact-notification', {
+          body: {
+            name: data.name,
+            email: data.email,
+            project: data.project,
+          }
+        });
+        console.log("Email notification sent successfully");
+      } catch (emailError) {
+        console.error("Error sending email notification:", emailError);
+        // Don't fail the whole form if email fails
+      }
+
       // Show success message
       toast({
         title: "Message sent successfully!",
@@ -57,7 +72,7 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
       console.error("Error saving contact form:", error);
       toast({
         title: "Error sending message",
-        description: "Please try again or email me directly at tommylisiak@gmail.com",
+        description: "Please try again or email me directly at hello@tommylisiak.com",
         variant: "destructive",
       });
     }
