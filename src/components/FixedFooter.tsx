@@ -34,6 +34,14 @@ const WhatIDoContent = () => (
 
 const BackgroundContent = () => (
   <div className="space-y-4 text-left">
+    <div className="text-center">
+      <p className="text-red-fox/80">Content moved to Why Us? panel</p>
+    </div>
+  </div>
+);
+
+const WhyChooseMeContent = () => (
+  <div className="space-y-4 text-left">
     <div>
       <h4 className="font-semibold text-red-fox mb-2">Enterprise Experience</h4>
       <p className="text-sm text-red-fox/80 leading-relaxed">
@@ -54,11 +62,7 @@ const BackgroundContent = () => (
         Enterprise-level expertise with a <strong>personal, caring approach</strong>.
       </p>
     </div>
-  </div>
-);
-
-const WhyChooseMeContent = () => (
-  <div className="space-y-4 text-left">
+    
     <div>
       <h4 className="font-semibold text-red-fox mb-2">Fair & Transparent</h4>
       <p className="text-sm text-red-fox/80 leading-relaxed">
