@@ -1,5 +1,3 @@
-# Why Us?
-
 ## Enterprise Experience
 Built products for startups turned Unicorn (Arcadia), successful exits (Inspire Clean Energy), and The Washington Post.
 
