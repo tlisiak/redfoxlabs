@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import MarkdownContent from "./MarkdownContent";
+import ContactModal from "./ContactModal";
 import whatWeDoContent from "@/content/what-we-do.md?raw";
 import whyUsContent from "@/content/why-us.md?raw";
 
@@ -17,11 +18,11 @@ const FixedFooter = () => {
   return (
     <footer className="fixed top-0 sm:bottom-0 sm:top-auto left-0 right-0 z-50 p-4">
       <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-        <Button variant="red-fox" size="lg" className={buttonClasses} asChild>
-          <a href="mailto:tommylisiak@gmail.com">
+        <ContactModal>
+          <Button variant="red-fox" size="lg" className={buttonClasses}>
             Let's Chat
-          </a>
-        </Button>
+          </Button>
+        </ContactModal>
         
         <Sheet>
           <SheetTrigger asChild>

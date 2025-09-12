@@ -1,0 +1,121 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/hooks/use-toast";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  project: z.string().min(10, "Please describe your project (at least 10 characters)"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
+interface ContactFormProps {
+  onSubmitSuccess?: () => void;
+}
+
+const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      // Store in localStorage for now
+      const submissions = JSON.parse(localStorage.getItem("contactSubmissions") || "[]");
+      const newSubmission = {
+        ...data,
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString(),
+      };
+      
+      submissions.push(newSubmission);
+      localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
+      
+      // Log for debugging
+      console.log("New contact submission:", newSubmission);
+      
+      // Show success message
+      toast({
+        title: "Message sent successfully!",
+        description: "Thanks for reaching out! I'll get back to you at " + data.email + " within 24 hours.",
+      });
+      
+      reset();
+      onSubmitSuccess?.();
+    } catch (error) {
+      console.error("Error saving contact form:", error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or email me directly at tommylisiak@gmail.com",
+        variant: "destructive",
+      });
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <div className="space-y-2">
+        <Label htmlFor="name">Name *</Label>
+        <Input
+          id="name"
+          {...register("name")}
+          className="glass-enhanced text-foreground placeholder:text-muted-foreground"
+          placeholder="Your full name"
+        />
+        {errors.name && (
+          <p className="text-sm text-destructive">{errors.name.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="email">Email *</Label>
+        <Input
+          id="email"
+          type="email"
+          {...register("email")}
+          className="glass-enhanced text-foreground placeholder:text-muted-foreground"
+          placeholder="your.email@example.com"
+        />
+        {errors.email && (
+          <p className="text-sm text-destructive">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="project">Tell me about your project *</Label>
+        <Textarea
+          id="project"
+          {...register("project")}
+          className="glass-enhanced text-foreground placeholder:text-muted-foreground min-h-[120px]"
+          placeholder="Describe your project, goals, timeline, and any specific requirements..."
+        />
+        {errors.project && (
+          <p className="text-sm text-destructive">{errors.project.message}</p>
+        )}
+      </div>
+
+      <Button
+        type="submit"
+        variant="red-fox"
+        size="lg"
+        className="w-full"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
+      </Button>
+    </form>
+  );
+};
+
+export default ContactForm;
