@@ -28,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to you
     const emailResponse = await resend.emails.send({
-      from: "Red Fox Labs <noreply@tommylisiak.com>",
+      from: "Red Fox Labs <noreply@redfoxlabs.co>",
       to: ["hello@tommylisiak.com"],
       subject: `New Contact Submission from ${name}`,
       html: `
