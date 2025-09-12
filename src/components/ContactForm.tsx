@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -31,26 +32,25 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Store in localStorage for now
-      const submissions = JSON.parse(localStorage.getItem("contactSubmissions") || "[]");
-      const newSubmission = {
-        ...data,
-        timestamp: new Date().toISOString(),
-        id: Date.now().toString(),
-      };
-      
-      submissions.push(newSubmission);
-      localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
-      
-      // Log for debugging
-      console.log("New contact submission:", newSubmission);
-      
+      // Save to Supabase database
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: data.name,
+          email: data.email,
+          project: data.project,
+        });
+
+      if (error) {
+        throw error;
+      }
+
       // Show success message
       toast({
         title: "Message sent successfully!",
         description: "Thanks for reaching out! I'll get back to you at " + data.email + " within 24 hours.",
       });
-      
+
       reset();
       onSubmitSuccess?.();
     } catch (error) {
