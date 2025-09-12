@@ -97,12 +97,12 @@ const FixedFooter = () => {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
-              🌐 What I Do
+              What We Do
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-red-fox text-2xl font-bold">What I Do</SheetTitle>
+              <SheetTitle className="text-red-fox text-2xl font-bold">What We Do</SheetTitle>
             </SheetHeader>
             <div className="mt-6 px-2 sm:px-0">
               <WhatIDoContent />
@@ -113,12 +113,12 @@ const FixedFooter = () => {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
-              💼 My Background
+              Background
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-primary text-2xl font-bold">My Background</SheetTitle>
+              <SheetTitle className="text-primary text-2xl font-bold">Background</SheetTitle>
             </SheetHeader>
             <div className="mt-6 px-2 sm:px-0">
               <BackgroundContent />
@@ -129,12 +129,12 @@ const FixedFooter = () => {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="red-fox" size="lg" className={buttonClasses}>
-              🤝 Why Choose Me
+              Why Us?
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
-              <SheetTitle className="text-accent text-2xl font-bold">Why Choose Me</SheetTitle>
+              <SheetTitle className="text-accent text-2xl font-bold">Why Us?</SheetTitle>
             </SheetHeader>
             <div className="mt-6 px-2 sm:px-0">
               <WhyChooseMeContent />
