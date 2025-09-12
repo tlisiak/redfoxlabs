@@ -1,5 +1,3 @@
-# What We Do
-
 ## Modern Websites
 Custom sites that you can understand, update, and truly own. No tech jargon.
 
