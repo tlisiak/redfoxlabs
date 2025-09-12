@@ -83,7 +83,7 @@ const WhyChooseMeContent = () => (
 );
 
 const FixedFooter = () => {
-  const buttonClasses = "px-4 py-2 font-semibold shadow-glow hover:shadow-xl transition-all duration-300";
+  const buttonClasses = "px-4 py-2 font-semibold transition-all duration-300";
 
   return (
     <footer className="fixed top-0 sm:bottom-0 sm:top-auto left-0 right-0 z-50 p-4">
