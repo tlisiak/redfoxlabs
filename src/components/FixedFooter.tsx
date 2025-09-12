@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -31,6 +32,9 @@ const FixedFooter = () => {
           <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
               <SheetTitle className="text-red-fox text-2xl font-bold">What We Do</SheetTitle>
+              <SheetDescription className="text-red-fox/80">
+                Learn about our services and approach
+              </SheetDescription>
             </SheetHeader>
             <div className="mt-6 px-2 sm:px-0">
               <MarkdownContent content={whatWeDoContent} />
@@ -47,6 +51,9 @@ const FixedFooter = () => {
           <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
             <SheetHeader>
               <SheetTitle className="text-accent text-2xl font-bold">Why Us?</SheetTitle>
+              <SheetDescription className="text-red-fox/80">
+                Discover what makes us different
+              </SheetDescription>
             </SheetHeader>
             <div className="mt-6 px-2 sm:px-0">
               <MarkdownContent content={whyUsContent} />
