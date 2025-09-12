@@ -7,38 +7,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import MarkdownContent from "./MarkdownContent";
-
-// Import content as strings (in a real app, you'd fetch these)
-const whatWeDoContent = `# What We Do
-
-## Modern Websites
-Custom sites that you can understand, update, and truly own. No tech jargon.
-
-## Smart Analytics  
-Know your customers better with simple, actionable insights.
-
-## "Teaching You to Fish"
-When we're done, **you don't need me anymore**. You'll have the tools and knowledge to succeed independently.`;
-
-const whyUsContent = `# Why Us?
-
-## Enterprise Experience
-Built products for startups turned Unicorn (Arcadia), successful exits (Inspire Clean Energy), and The Washington Post.
-
-## Bay Area Local
-Deep roots in our community, from San Francisco to San Jose.
-
-## Modern Tech, Human Touch
-Enterprise-level expertise with a **personal, caring approach**.
-
-## Fair & Transparent
-No hidden fees, no ongoing subscriptions. You pay once, you own it.
-
-## Genuinely Care
-Your success is my success. I'm invested in your growth.
-
-## Community First
-Supporting local small businesses means **strengthening our community** together.`;
+import whatWeDoContent from "@/content/what-we-do.md?raw";
+import whyUsContent from "@/content/why-us.md?raw";
 
 const FixedFooter = () => {
   const buttonClasses = "px-4 py-2 font-semibold transition-all duration-300";
