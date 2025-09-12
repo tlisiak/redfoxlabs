@@ -25,7 +25,7 @@ const ContactModal = ({ children }: ContactModalProps) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-md mx-auto">
+      <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-md mx-auto [&>button]:text-red-fox [&>button]:hover:text-red-fox-hover">
         <DialogHeader>
           <DialogTitle className="text-red-fox text-2xl font-bold text-center">
             Let's Chat About Your Project
