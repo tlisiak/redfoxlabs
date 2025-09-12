@@ -66,11 +66,11 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="name">Name *</Label>
+        <Label htmlFor="name" className="text-red-fox font-medium">Name *</Label>
         <Input
           id="name"
           {...register("name")}
-          className="glass-enhanced text-foreground placeholder:text-muted-foreground"
+          className="glass-enhanced text-red-fox placeholder:text-red-fox/60 border-red-fox/30"
           placeholder="Your full name"
         />
         {errors.name && (
@@ -79,12 +79,12 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email" className="text-red-fox font-medium">Email *</Label>
         <Input
           id="email"
           type="email"
           {...register("email")}
-          className="glass-enhanced text-foreground placeholder:text-muted-foreground"
+          className="glass-enhanced text-red-fox placeholder:text-red-fox/60 border-red-fox/30"
           placeholder="your.email@example.com"
         />
         {errors.email && (
@@ -93,11 +93,11 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="project">Tell me about your project *</Label>
+        <Label htmlFor="project" className="text-red-fox font-medium">Tell me about your project *</Label>
         <Textarea
           id="project"
           {...register("project")}
-          className="glass-enhanced text-foreground placeholder:text-muted-foreground min-h-[120px]"
+          className="glass-enhanced text-red-fox placeholder:text-red-fox/60 border-red-fox/30 min-h-[120px]"
           placeholder="Describe your project, goals, timeline, and any specific requirements..."
         />
         {errors.project && (

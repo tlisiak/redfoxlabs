@@ -30,7 +30,7 @@ const ContactModal = ({ children }: ContactModalProps) => {
           <DialogTitle className="text-red-fox text-2xl font-bold text-center">
             Let's Chat About Your Project
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground text-center">
+          <DialogDescription className="text-red-fox/80 text-center">
             Tell me about your project and I'll get back to you within 24 hours
           </DialogDescription>
         </DialogHeader>
