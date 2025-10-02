@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import MarkdownContent from "./MarkdownContent";
 import ContactModal from "./ContactModal";
 import whatWeDoContent from "@/content/what-we-do.md?raw";
@@ -22,43 +22,43 @@ const FixedFooter = () => {
           </Button>
         </ContactModal>
         
-        <Sheet>
-          <SheetTrigger asChild>
+        <Dialog>
+          <DialogTrigger asChild>
             <Button variant="red-fox" size="lg">
               What We Do
             </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
-            <SheetHeader>
-              <SheetTitle className="text-red-fox text-2xl font-bold">What We Do</SheetTitle>
-              <SheetDescription className="text-red-fox/80">
+          </DialogTrigger>
+          <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-2xl max-h-[80vh] overflow-y-auto [&>button]:text-red-fox [&>button]:hover:text-red-fox-hover">
+            <DialogHeader>
+              <DialogTitle className="text-red-fox text-2xl font-bold">What We Do</DialogTitle>
+              <DialogDescription className="text-red-fox/80">
                 Learn about our services and approach
-              </SheetDescription>
-            </SheetHeader>
-            <div className="mt-6 px-2 sm:px-0">
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-6">
               <MarkdownContent content={whatWeDoContent} />
             </div>
-          </SheetContent>
-        </Sheet>
+          </DialogContent>
+        </Dialog>
 
-        <Sheet>
-          <SheetTrigger asChild>
+        <Dialog>
+          <DialogTrigger asChild>
             <Button variant="red-fox" size="lg">
               Why Us?
             </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px] sheet-enhanced">
-            <SheetHeader>
-              <SheetTitle className="text-accent text-2xl font-bold">Why Us?</SheetTitle>
-              <SheetDescription className="text-red-fox/80">
+          </DialogTrigger>
+          <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-2xl max-h-[80vh] overflow-y-auto [&>button]:text-red-fox [&>button]:hover:text-red-fox-hover">
+            <DialogHeader>
+              <DialogTitle className="text-red-fox text-2xl font-bold">Why Us?</DialogTitle>
+              <DialogDescription className="text-red-fox/80">
                 Discover what makes us different
-              </SheetDescription>
-            </SheetHeader>
-            <div className="mt-6 px-2 sm:px-0">
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-6">
               <MarkdownContent content={whyUsContent} />
             </div>
-          </SheetContent>
-        </Sheet>
+          </DialogContent>
+        </Dialog>
       </div>
     </footer>
   );
