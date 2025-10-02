@@ -13,20 +13,18 @@ import whatWeDoContent from "@/content/what-we-do.md?raw";
 import whyUsContent from "@/content/why-us.md?raw";
 
 const FixedFooter = () => {
-  const buttonClasses = "px-4 py-2 font-semibold transition-all duration-300";
-
   return (
     <footer className="fixed top-0 sm:bottom-0 sm:top-auto left-0 right-0 z-50 p-4">
       <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
         <ContactModal>
-          <Button variant="red-fox" size="lg" className={buttonClasses}>
+          <Button variant="red-fox" size="lg">
             Let's Chat
           </Button>
         </ContactModal>
         
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="red-fox" size="lg" className={buttonClasses}>
+            <Button variant="red-fox" size="lg">
               What We Do
             </Button>
           </SheetTrigger>
@@ -45,7 +43,7 @@ const FixedFooter = () => {
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="red-fox" size="lg" className={buttonClasses}>
+            <Button variant="red-fox" size="lg">
               Why Us?
             </Button>
           </SheetTrigger>

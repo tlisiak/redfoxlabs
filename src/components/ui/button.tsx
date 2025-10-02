@@ -5,11 +5,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 transition-all duration-400",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow transition-smooth",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -18,8 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-accent text-primary-foreground hover:shadow-glow transition-smooth font-semibold",
-        "red-fox": "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover transition-smooth font-semibold shadow-glow hover:shadow-xl",
+        "red-fox": "relative backdrop-blur-xl bg-red-fox/90 text-red-fox-foreground border border-white/20 hover:bg-red-fox hover:border-white/30 hover:scale-[1.02] active:scale-[0.98] font-semibold shadow-[0_8px_32px_-8px_hsl(var(--red-fox-glow))] hover:shadow-[0_12px_40px_-8px_hsl(var(--red-fox-glow))]",
       },
       size: {
         default: "h-10 px-4 py-2",
