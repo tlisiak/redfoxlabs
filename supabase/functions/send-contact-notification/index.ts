@@ -15,6 +15,16 @@ interface ContactNotificationRequest {
   project: string;
 }
 
+// HTML escaping function to prevent XSS in emails
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 // Simple rate limiting store (resets when function restarts)
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 
@@ -70,13 +80,13 @@ const handler = async (req: Request): Promise<Response> => {
           <h2 style="color: #C73525; margin-bottom: 20px;">New Contact Form Submission</h2>
           
           <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           </div>
           
           <div style="background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
             <h3 style="margin-top: 0; color: #333;">Project Description:</h3>
-            <p style="line-height: 1.6; color: #555;">${project}</p>
+            <p style="line-height: 1.6; color: #555;">${escapeHtml(project)}</p>
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 14px; color: #666;">
