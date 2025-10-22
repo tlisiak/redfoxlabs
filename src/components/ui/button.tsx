@@ -9,16 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow",
+        default: "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover shadow-md",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border-2 border-red-fox bg-transparent text-red-fox hover:bg-red-fox/10",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-cream text-foreground hover:bg-warm-beige border border-brown-outline/20",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        "red-fox": "relative backdrop-blur-xl bg-red-fox/90 text-red-fox-foreground border border-white/20 hover:bg-red-fox hover:border-white/30 hover:scale-[1.02] active:scale-[0.98] font-semibold shadow-[0_8px_32px_-8px_hsl(var(--red-fox-glow))] hover:shadow-[0_12px_40px_-8px_hsl(var(--red-fox-glow))]",
+        "red-fox": "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover shadow-md hover:shadow-glow transition-all",
       },
       size: {
         default: "h-10 px-4 py-2",

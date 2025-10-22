@@ -36,48 +36,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Clean professional design system */
-    --background: 0 0% 100%; /* Pure white */
-    --foreground: 0 0% 9%; /* Near black text */
+    /* Red Fox Labs Brand Colors - All HSL */
+    --background: 32 42% 95%; /* #F8F3E8 - Cream */
+    --foreground: 23 36% 10%; /* #1C120C - Deep brown text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 32 42% 95%; /* Cream */
+    --card-foreground: 23 36% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 32 42% 95%;
+    --popover-foreground: 23 36% 10%;
 
-    --primary: 9 69% 46%; /* #C73525 - Brand red */
+    --primary: 11 76% 49%; /* #D44A1C - Primary Red-Orange */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 20% 97%; /* Light cream */
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 32 42% 95%; /* Cream */
+    --secondary-foreground: 23 36% 10%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 35 38% 90%; /* #E2B87F - Warm Beige */
+    --muted-foreground: 23 36% 40%;
 
-    --accent: 9 76% 55%; /* Lighter red */
+    --accent: 16 80% 55%; /* #E96E2C - Soft Orange Accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 9 69% 46%;
+    --border: 23 36% 25%; /* #3B2A1A - Deep Brown */
+    --input: 23 36% 25%;
+    --ring: 11 76% 49%;
 
     --radius: 0.75rem;
 
     /* Red Fox brand colors */
-    --red-fox: 9 69% 46%; /* #C73525 */
+    --red-fox: 11 76% 49%; /* #D44A1C */
     --red-fox-foreground: 0 0% 100%;
-    --red-fox-hover: 9 76% 55%;
-    --red-fox-dark: 9 61% 37%;
+    --red-fox-hover: 16 80% 55%; /* #E96E2C */
+    --red-fox-dark: 11 70% 40%;
+    
+    /* Additional brand colors */
+    --cream: 32 42% 95%; /* #F8F3E8 */
+    --brown-outline: 23 36% 25%; /* #3B2A1A */
+    --warm-beige: 35 38% 90%; /* #E2B87F */
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 20px hsl(9 69% 46% / 0.3);
+    --shadow-sm: 0 1px 2px 0 hsl(23 36% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(23 36% 10% / 0.1), 0 2px 4px -2px hsl(23 36% 10% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(23 36% 10% / 0.1), 0 4px 6px -4px hsl(23 36% 10% / 0.1);
+    --shadow-glow: 0 0 20px hsl(11 76% 49% / 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,5 +113,10 @@ All colors MUST be HSL.
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+  }
+
+  .paper-texture {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   }
 }

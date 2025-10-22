@@ -10,18 +10,18 @@ const CTASection = () => {
           {/* Text Content */}
           <div className="text-center md:text-left text-white">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Ready to Grow Your Business?
+              Ready to run your next experiment?
             </h2>
             <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Let's chat about your project. No pressure, no sales pitch—just a genuine conversation about how we can help.
+              Let's test what works for your business. No pressure, no sales pitch—just a genuine conversation about growth.
             </p>
             <ContactModal>
               <Button 
                 size="lg" 
-                variant="secondary"
-                className="text-lg px-8 py-6 hover:scale-105 transition-transform"
+                variant="outline"
+                className="text-lg px-8 py-6 hover:scale-105 transition-transform border-white text-white hover:bg-white/10"
               >
-                Let's Chat
+                Let's chat
               </Button>
             </ContactModal>
           </div>

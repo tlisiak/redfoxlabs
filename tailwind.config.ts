@@ -60,7 +60,10 @@ export default {
 					foreground: 'hsl(var(--red-fox-foreground))',
 					hover: 'hsl(var(--red-fox-hover))',
 					dark: 'hsl(var(--red-fox-dark))'
-				}
+				},
+				'cream': 'hsl(var(--cream))',
+				'brown-outline': 'hsl(var(--brown-outline))',
+				'warm-beige': 'hsl(var(--warm-beige))'
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
