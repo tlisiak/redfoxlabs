@@ -11,6 +11,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import ContactModal from "./ContactModal";
 import { Link, useLocation } from "react-router-dom";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import foxIcon from "@/assets/redfox-mascot.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +57,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-brown-outline/20">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="font-bold text-xl sm:text-2xl text-red-fox hover:opacity-90 transition-opacity">
+        <Link to="/" className="flex items-center gap-2 font-bold text-xl sm:text-2xl text-red-fox hover:opacity-90 transition-opacity">
+          <img src={foxIcon} alt="Red Fox Labs" className="h-8 w-8 sm:h-10 sm:w-10" />
           Red Fox Labs
         </Link>
 
