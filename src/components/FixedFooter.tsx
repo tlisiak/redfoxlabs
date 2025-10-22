@@ -1,16 +1,6 @@
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import MarkdownContent from "./MarkdownContent";
 import ContactModal from "./ContactModal";
-import whatWeDoContent from "@/content/what-we-do.md?raw";
-import whyUsContent from "@/content/why-us.md?raw";
+import ContentSectionModal from "./ContentSectionModal";
 
 const FixedFooter = () => {
   return (
@@ -22,43 +12,25 @@ const FixedFooter = () => {
           </Button>
         </ContactModal>
         
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="red-fox" size="lg">
-              What We Do
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-2xl max-h-[80vh] overflow-y-auto [&>button]:text-red-fox [&>button]:hover:text-red-fox-hover">
-            <DialogHeader>
-              <DialogTitle className="text-red-fox text-2xl font-bold">What We Do</DialogTitle>
-              <DialogDescription className="text-red-fox/80">
-                Learn about our services and approach
-              </DialogDescription>
-            </DialogHeader>
-            <div className="mt-6">
-              <MarkdownContent content={whatWeDoContent} />
-            </div>
-          </DialogContent>
-        </Dialog>
+        <ContentSectionModal
+          sectionKey="what_we_do"
+          title="What We Do"
+          description="Learn about our services and approach"
+        >
+          <Button variant="red-fox" size="lg">
+            What We Do
+          </Button>
+        </ContentSectionModal>
 
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="red-fox" size="lg">
-              Why Us?
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="bg-background/95 backdrop-blur-sm border-border/50 max-w-2xl max-h-[80vh] overflow-y-auto [&>button]:text-red-fox [&>button]:hover:text-red-fox-hover">
-            <DialogHeader>
-              <DialogTitle className="text-red-fox text-2xl font-bold">Why Us?</DialogTitle>
-              <DialogDescription className="text-red-fox/80">
-                Discover what makes us different
-              </DialogDescription>
-            </DialogHeader>
-            <div className="mt-6">
-              <MarkdownContent content={whyUsContent} />
-            </div>
-          </DialogContent>
-        </Dialog>
+        <ContentSectionModal
+          sectionKey="why_us"
+          title="Why Us?"
+          description="Discover what makes us different"
+        >
+          <Button variant="red-fox" size="lg">
+            Why Us?
+          </Button>
+        </ContentSectionModal>
       </div>
     </footer>
   );
