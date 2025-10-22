@@ -15,7 +15,7 @@ const Hero = () => {
         {/* Main Hero Content */}
         <div className="space-y-8 text-center max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-            Bay Area small-business websites that help you get customers.
+            Helping small-business in the Bay upgrade their websites to help them grow.
           </h1>
           
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
