@@ -1,5 +1,3 @@
-import logoHorizontal from "@/assets/logo-horizontal.png";
-import foxAnalytics from "@/assets/fox-analytics.png";
 import { Button } from "@/components/ui/button";
 import ContactModal from "./ContactModal";
 

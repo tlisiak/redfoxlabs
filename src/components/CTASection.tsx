@@ -18,8 +18,8 @@ const CTASection = () => {
             <ContactModal>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-6 hover:scale-105 transition-transform border-white text-white hover:bg-white/10"
+                variant="outline-light"
+                className="text-lg px-8 py-6 hover:scale-105 transition-transform"
               >
                 Let's chat
               </Button>

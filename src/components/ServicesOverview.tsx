@@ -1,5 +1,4 @@
 import { Sparkles, Target, GraduationCap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import ContentSectionModal from "./ContentSectionModal";
 import ContactModal from "./ContactModal";
 import foxLogo from "@/assets/redfox-mascot.png";
