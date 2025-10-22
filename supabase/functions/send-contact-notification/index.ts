@@ -15,6 +15,26 @@ interface ContactNotificationRequest {
   project: string;
 }
 
+// Simple rate limiting store (resets when function restarts)
+const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const limit = rateLimitStore.get(ip);
+  
+  if (!limit || now > limit.resetAt) {
+    rateLimitStore.set(ip, { count: 1, resetAt: now + 60000 }); // 1 minute window
+    return true;
+  }
+  
+  if (limit.count >= 3) { // 3 requests per minute
+    return false;
+  }
+  
+  limit.count++;
+  return true;
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -22,9 +42,23 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Rate limiting check
+    const clientIp = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+    
+    if (!checkRateLimit(clientIp)) {
+      console.log("Rate limit exceeded for IP:", clientIp);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
     const { name, email, project }: ContactNotificationRequest = await req.json();
 
-    console.log("Sending contact notification for:", { name, email });
+    console.log("Processing contact form submission");
 
     // Send notification email to you
     const emailResponse = await resend.emails.send({
