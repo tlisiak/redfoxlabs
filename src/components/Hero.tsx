@@ -15,18 +15,18 @@ const Hero = () => {
         </div>
 
         {/* Main Hero Content */}
-        <div className="space-y-8 text-center lg:text-left max-w-4xl mx-auto">
+        <div className="space-y-8 text-center max-w-4xl mx-auto">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Enterprise Expertise<br />
             <span className="text-red-fox">Small Business Prices</span>
           </h2>
           
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Small businesses with professional websites generate 50% more leads and grow 3x faster than competitors. Let's make that happen for you.
           </p>
 
           {/* Value Props */}
-          <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto lg:mx-0">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
             <div className="bg-warm-beige rounded-lg p-6 border border-brown-outline/20">
               <p className="text-sm text-muted-foreground mb-2">One-time investment</p>
               <p className="text-lg font-semibold text-foreground">No subscriptions</p>
@@ -38,7 +38,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center">
             <ContactModal>
               <Button 
                 size="lg" 
