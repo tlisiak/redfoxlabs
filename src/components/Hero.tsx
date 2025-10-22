@@ -9,21 +9,19 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-12 animate-fade-in">
-          <img 
-            src={logoHorizontal} 
-            alt="Red Fox Labs" 
-            className="w-64 sm:w-80 md:w-96 h-auto"
-          />
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-red-fox">
+            Red Fox Labs
+          </h1>
         </div>
 
         {/* Main Hero Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Enterprise Expertise<br />
               <span className="text-red-fox">Small Business Prices</span>
-            </h1>
+            </h2>
             
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Small businesses with professional websites generate 50% more leads and grow 3x faster than competitors. Let's make that happen for you.
