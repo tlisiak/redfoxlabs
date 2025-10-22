@@ -1,11 +1,15 @@
 import Hero from "@/components/Hero";
-import FixedFooter from "@/components/FixedFooter";
+import ServicesOverview from "@/components/ServicesOverview";
+import TrustSection from "@/components/TrustSection";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
-      <FixedFooter />
+      <ServicesOverview />
+      <TrustSection />
+      <CTASection />
     </div>
   );
 };
