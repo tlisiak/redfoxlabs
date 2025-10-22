@@ -2,9 +2,21 @@ import { MapPin, Newspaper, TrendingUp, Zap } from "lucide-react";
 
 const TrustSection = () => {
   const companies = [
-    { name: "The Washington Post", icon: Newspaper },
-    { name: "Arcadia", subtitle: "Unicorn Startup", icon: TrendingUp },
-    { name: "Inspire Clean Energy", subtitle: "Successful Exit", icon: Zap }
+    { 
+      name: "The Washington Post", 
+      subtitle: "Launched 3 new revenue producing products building Washington Post's advertising tech",
+      icon: Newspaper 
+    },
+    { 
+      name: "Arcadia", 
+      subtitle: "Worked on data acquisition tools to help Arcadia jump from funded startup to $500M unicorn",
+      icon: TrendingUp 
+    },
+    { 
+      name: "Inspire Clean Energy", 
+      subtitle: "Supported Inspire's entire marketing and web presence from website to landing pages and user experience. Led Inspire through multiple sales and managed teams of 10+",
+      icon: Zap 
+    }
   ];
 
   return (
