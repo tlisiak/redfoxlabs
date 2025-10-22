@@ -4,10 +4,10 @@ import ContentSectionModal from "./ContentSectionModal";
 
 const FixedFooter = () => {
   return (
-    <footer className="fixed top-0 sm:bottom-0 sm:top-auto left-0 right-0 z-50 p-4">
-      <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+    <footer className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 bg-gradient-to-t from-background via-background/95 to-background/0 backdrop-blur-sm">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
         <ContactModal>
-          <Button variant="red-fox" size="lg">
+          <Button variant="red-fox" size="lg" className="text-sm sm:text-base px-4 sm:px-6">
             Let's Chat
           </Button>
         </ContactModal>
@@ -17,7 +17,7 @@ const FixedFooter = () => {
           title="What We Do"
           description="Learn about our services and approach"
         >
-          <Button variant="red-fox" size="lg">
+          <Button variant="red-fox" size="lg" className="text-sm sm:text-base px-4 sm:px-6">
             What We Do
           </Button>
         </ContentSectionModal>
@@ -27,7 +27,7 @@ const FixedFooter = () => {
           title="Why Us?"
           description="Discover what makes us different"
         >
-          <Button variant="red-fox" size="lg">
+          <Button variant="red-fox" size="lg" className="text-sm sm:text-base px-4 sm:px-6">
             Why Us?
           </Button>
         </ContentSectionModal>
