@@ -35,9 +35,9 @@ const TrustSection = () => {
 
         {/* Trusted By */}
         <div className="text-center">
-          <p className="text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
+          <h2 className="text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
             Trusted by companies including
-          </p>
+          </h2>
           
           <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {companies.map((company, index) => {

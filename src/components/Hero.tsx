@@ -7,20 +7,19 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-12 animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-red-fox">
+          <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-fox">
             Red Fox Labs
-          </h1>
+          </p>
         </div>
 
         {/* Main Hero Content */}
         <div className="space-y-8 text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-            Enterprise Expertise<br />
-            <span className="text-red-fox">Small Business Prices</span>
-          </h2>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            Bay Area small-business websites that help you get customers.
+          </h1>
           
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Small businesses with professional websites generate 50% more leads and grow 3x faster than competitors. Let's make that happen for you.
+            Fast, fair-priced site builds, SEO, and analytics—done with you so you learn as we go.
           </p>
 
           {/* Value Props */}
@@ -35,6 +34,17 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Trust Bullets */}
+          <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
+            <span className="font-medium">Fast setup</span>
+            <span className="text-muted-foreground/50">•</span>
+            <span className="font-medium">Transparent pricing</span>
+            <span className="text-muted-foreground/50">•</span>
+            <span className="font-medium">SEO that brings calls</span>
+            <span className="text-muted-foreground/50">•</span>
+            <span className="font-medium">You own your site</span>
+          </div>
+
           {/* CTA Button */}
           <div className="flex justify-center">
             <ContactModal>
@@ -43,7 +53,7 @@ const Hero = () => {
                 variant="red-fox"
                 className="text-lg px-8 py-6 hover:scale-105 transition-transform"
               >
-                Let's chat
+                Book a free 15-min audit
               </Button>
             </ContactModal>
           </div>
