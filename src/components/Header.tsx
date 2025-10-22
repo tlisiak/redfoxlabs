@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, ChevronDown } from "lucide-react";
 import ContactModal from "./ContactModal";
 import { Link, useLocation } from "react-router-dom";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +23,15 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
     { label: "Why Us", href: "/#why-us" },
+  ];
+
+  const serviceLinks = [
+    { label: "All Services", href: "/services" },
+    { label: "Web Design", href: "/web-design" },
+    { label: "Local SEO", href: "/local-seo" },
+    { label: "Site Care", href: "/site-care" },
+    { label: "Analytics", href: "/analytics" },
   ];
 
   const NavLink = ({ href, label, mobile = false }: { href: string; label: string; mobile?: boolean }) => {
@@ -52,6 +66,25 @@ const Header = () => {
             <NavLink key={link.href} {...link} />
           ))}
           
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-red-fox transition-colors focus:outline-none">
+              Services
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-background border-brown-outline/20 z-50">
+              {serviceLinks.map((service) => (
+                <DropdownMenuItem key={service.href} asChild>
+                  <Link 
+                    to={service.href}
+                    className="cursor-pointer hover:text-red-fox"
+                  >
+                    {service.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <ContactModal>
             <button className="text-foreground hover:text-red-fox transition-colors">
               Contact
@@ -78,6 +111,25 @@ const Header = () => {
               {navLinks.map((link) => (
                 <NavLink key={link.href} {...link} mobile />
               ))}
+              
+              <Collapsible>
+                <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg text-left hover:text-red-fox transition-colors">
+                  Services
+                  <ChevronDown className="h-4 w-4" />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pl-4 mt-2 flex flex-col gap-2">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      to={service.href}
+                      className="block py-2 text-base hover:text-red-fox transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </CollapsibleContent>
+              </Collapsible>
               
               <ContactModal>
                 <button 
