@@ -20,13 +20,13 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="bg-background py-16 sm:py-20 px-4">
+    <section className="bg-background paper-texture py-16 sm:py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Bay Area Local */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-red-fox/10 text-red-fox px-4 py-2 rounded-full mb-4">
             <MapPin className="w-4 h-4" />
-            <span className="text-sm font-medium">Bay Area Local</span>
+            <span className="text-sm font-medium">Bay Area local</span>
           </div>
           <p className="text-lg text-muted-foreground">
             Deep roots in our community, from San Francisco to San Jose
@@ -36,7 +36,7 @@ const TrustSection = () => {
         {/* Trusted By */}
         <div className="text-center">
           <p className="text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
-            Trusted By Companies Including
+            Trusted by companies including
           </p>
           
           <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -45,7 +45,7 @@ const TrustSection = () => {
               return (
                 <div 
                   key={index}
-                  className="bg-secondary rounded-lg p-6 border border-border"
+                  className="bg-cream rounded-lg p-6 border border-brown-outline/20"
                 >
                   <Icon className="w-8 h-8 text-red-fox mx-auto mb-3" />
                   <p className="font-semibold text-foreground text-lg">

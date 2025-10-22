@@ -2,6 +2,7 @@ import { Sparkles, Target, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContentSectionModal from "./ContentSectionModal";
 import ContactModal from "./ContactModal";
+import foxLogo from "@/assets/redfox-mascot.png";
 
 const ServicesOverview = () => {
   const services = [
@@ -32,11 +33,18 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="bg-secondary py-16 sm:py-20 px-4">
+    <section className="bg-warm-beige paper-texture py-16 sm:py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <img 
+              src={foxLogo} 
+              alt="Red Fox Labs mascot" 
+              className="w-24 h-24 animate-float"
+            />
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            How We Can Help
+            How we can help
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Enterprise-level solutions designed for small businesses
@@ -49,7 +57,7 @@ const ServicesOverview = () => {
             const card = (
               <div 
                 key={index}
-                className="bg-card rounded-xl p-8 border border-border hover-lift cursor-pointer transition-all"
+                className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all"
               >
                 <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-red-fox" />
