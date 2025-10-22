@@ -3,7 +3,7 @@ import ContactModal from "./ContactModal";
 
 const Hero = () => {
   return (
-    <section className="bg-background paper-texture py-12 sm:py-16 px-4">
+    <section className="bg-background paper-texture py-12 sm:py-16 px-4" id="hero">
       <div className="max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex justify-center mb-12 animate-fade-in">

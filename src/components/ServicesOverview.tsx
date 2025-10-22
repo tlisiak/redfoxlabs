@@ -1,5 +1,5 @@
 import { Sparkles, Target, GraduationCap } from "lucide-react";
-import ContentSectionModal from "./ContentSectionModal";
+import { Link } from "react-router-dom";
 import ContactModal from "./ContactModal";
 import foxLogo from "@/assets/redfox-mascot.png";
 
@@ -7,27 +7,21 @@ const ServicesOverview = () => {
   const services = [
     {
       icon: Sparkles,
-      title: "What We Do",
-      description: "Modern websites, smart analytics, and teaching you to succeed independently",
-      sectionKey: "what_we_do",
-      modalTitle: "What We Do",
-      modalDescription: "Learn about our services and approach"
+      title: "Our Services",
+      description: "Web design, local SEO, analytics, and site care for Bay Area small businesses",
+      link: "/services",
     },
     {
       icon: Target,
-      title: "Why Us?",
-      description: "Enterprise experience with a personal touch, fair pricing, and genuine care",
-      sectionKey: "why_us",
-      modalTitle: "Why Us?",
-      modalDescription: "Discover what makes us different"
+      title: "Why Choose Us?",
+      description: "Enterprise experience with a personal touch, fair pricing, and genuine care for your success",
+      link: null, // Scroll to why-us section
     },
     {
       icon: GraduationCap,
       title: "Ready to Start?",
       description: "Let's chat about your project and how we can help your business grow",
-      sectionKey: null,
-      modalTitle: null,
-      modalDescription: null
+      link: null, // Opens contact modal
     }
   ];
 
@@ -38,7 +32,10 @@ const ServicesOverview = () => {
           <div className="flex justify-center mb-6">
             <img 
               src={foxLogo} 
-              alt="Red Fox Labs mascot" 
+              alt="Red Fox Labs mascot"
+              width="96"
+              height="96"
+              loading="lazy"
               className="w-24 h-24 animate-float"
             />
           </div>
@@ -53,42 +50,60 @@ const ServicesOverview = () => {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const card = (
-              <div 
-                key={index}
-                className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all"
-              >
-                <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-red-fox" />
-                </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            );
-
-            // Last card is contact CTA
-            if (index === 2) {
+            
+            // Card for "Our Services" - links to services page
+            if (index === 0 && service.link) {
               return (
-                <ContactModal key={index}>
-                  {card}
-                </ContactModal>
+                <Link key={index} to={service.link} className="block">
+                  <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
+                    <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
+                      <Icon className="w-7 h-7 text-red-fox" />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
               );
             }
-
-            // Other cards open content modals
+            
+            // Card for "Why Choose Us" - scrolls to section
+            if (index === 1) {
+              return (
+                <a key={index} href="#why-us" className="block">
+                  <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
+                    <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
+                      <Icon className="w-7 h-7 text-red-fox" />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </a>
+              );
+            }
+            
+            // Card for "Ready to Start" - opens contact modal
             return (
-              <ContentSectionModal
-                key={index}
-                sectionKey={service.sectionKey!}
-                title={service.modalTitle!}
-                description={service.modalDescription!}
-              >
-                {card}
-              </ContentSectionModal>
+              <ContactModal key={index}>
+                <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
+                  <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-red-fox" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-foreground mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </ContactModal>
             );
           })}
         </div>

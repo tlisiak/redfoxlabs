@@ -31,6 +31,9 @@ const CTASection = () => {
             <img 
               src={foxMascot} 
               alt="Red Fox Labs mascot" 
+              width="256"
+              height="256"
+              loading="lazy"
               className="w-48 sm:w-64 h-auto"
             />
           </div>
