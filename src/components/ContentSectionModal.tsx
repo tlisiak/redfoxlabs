@@ -8,7 +8,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useContentSection } from "@/hooks/useContentSection";
-import { Loader2 } from "lucide-react";
 
 interface ContentSectionModalProps {
   children: ReactNode;
@@ -23,7 +22,7 @@ const ContentSectionModal = ({
   title,
   description,
 }: ContentSectionModalProps) => {
-  const { data, isLoading, error } = useContentSection(sectionKey);
+  const { data, error } = useContentSection(sectionKey);
 
   return (
     <Dialog>
@@ -37,12 +36,6 @@ const ContentSectionModal = ({
             {description}
           </DialogDescription>
         </DialogHeader>
-
-        {isLoading && (
-          <div className="flex items-center justify-center py-12">
-            <Loader2 className="h-8 w-8 animate-spin text-red-fox" />
-          </div>
-        )}
 
         {error && (
           <div className="text-red-fox/60 py-8 text-center">
