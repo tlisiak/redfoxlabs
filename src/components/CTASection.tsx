@@ -21,7 +21,7 @@ const CTASection = () => {
                 variant="outline-light"
                 className="text-lg px-8 py-6 hover:scale-105 transition-transform"
               >
-                Let's chat
+                Book a free 15-min audit
               </Button>
             </ContactModal>
           </div>

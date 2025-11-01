@@ -8,7 +8,7 @@ const ServicesOverview = () => {
     {
       icon: Sparkles,
       title: "Our Services",
-      description: "Web design, local SEO, analytics, and site care for Bay Area small businesses",
+      description: "Web design, local SEO, analytics, and site care for North Bay small businesses",
       link: "/services",
     },
     {

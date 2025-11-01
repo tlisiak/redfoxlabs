@@ -72,7 +72,7 @@ const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
       console.error("Error saving contact form:", error);
       toast({
         title: "Error sending message",
-        description: "Please try again or email me directly at hello@tommylisiak.com",
+        description: "Please try again or email us directly at hello@redfoxlabs.com",
         variant: "destructive",
       });
     }

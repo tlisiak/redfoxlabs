@@ -72,7 +72,7 @@ const Footer = () => {
                 size="sm" 
                 className="border-cream text-cream hover:bg-cream hover:text-brown-outline transition-colors"
               >
-                Book your free audit →
+                Book a free 15-min audit
               </Button>
             </ContactModal>
           </div>
