@@ -1,7 +1,7 @@
 import { Sparkles, Target, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactModal from "./ContactModal";
-import foxLogo from "@/assets/redfox-mascot.webp";
+import foxLogo from "@/assets/redfox-mascot.png";
 
 const ServicesOverview = () => {
   const services = [
