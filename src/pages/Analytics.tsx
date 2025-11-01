@@ -138,7 +138,7 @@ const Analytics = () => {
             <div className="bg-warm-beige rounded-lg p-6 border border-brown-outline/20">
               <p className="text-foreground leading-relaxed">
                 <strong className="text-red-fox">Example:</strong> "Most of your traffic comes from 
-                'San Francisco plumber' searches. Let's create more content targeting that keyword to 
+                'San Rafael plumber' searches. Let's create more content targeting that keyword to 
                 bring in even more relevant visitors."
               </p>
             </div>

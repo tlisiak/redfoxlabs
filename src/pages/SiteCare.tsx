@@ -40,7 +40,7 @@ const SiteCare = () => {
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
             Focus on running your business while we handle backups, updates, monitoring, 
-            and technical support. Affordable, straightforward site maintenance for Bay Area small businesses.
+            and technical support. Affordable, straightforward site maintenance for North Bay small businesses.
           </p>
           <ContactModal>
             <Button variant="red-fox" size="lg" className="text-lg px-8 py-6">

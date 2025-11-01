@@ -26,10 +26,10 @@ const TrustSection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-red-fox/10 text-red-fox px-4 py-2 rounded-full mb-4">
             <MapPin className="w-4 h-4" />
-            <span className="text-sm font-medium">Bay Area local</span>
+            <span className="text-sm font-medium">North Bay local</span>
           </div>
           <p className="text-lg text-muted-foreground">
-            Deep roots in our community, from San Francisco to San Jose
+            Deep roots in our community, from Marin to Sonoma
           </p>
         </div>
 

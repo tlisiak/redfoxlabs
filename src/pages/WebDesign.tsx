@@ -36,7 +36,7 @@ const WebDesign = () => {
       <section className="bg-warm-beige paper-texture py-16 sm:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Bay Area Web Design That Converts Visitors Into Customers
+            North Bay Web Design That Converts Visitors Into Customers
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
             Custom websites built for small businesses. Fast, mobile-friendly, and designed 

@@ -1,8 +1,8 @@
 ## Enterprise Experience
 Built products for startups turned Unicorn (Arcadia), successful exits (Inspire Clean Energy), and The Washington Post.
 
-## Bay Area Local
-Deep roots in our community, from San Francisco to San Jose.
+## North Bay Local
+Deep roots in our community, from Marin to Sonoma.
 
 ## Modern Tech, Human Touch
 Enterprise-level expertise with a **personal, caring approach**.

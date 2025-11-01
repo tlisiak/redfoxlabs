@@ -17,7 +17,7 @@ const Services = () => {
     },
     {
       title: "Local SEO",
-      description: "Rank higher on Google in the Bay Area. Google Business Profile optimization, review management, and local citations.",
+      description: "Rank higher on Google in the North Bay. Google Business Profile optimization, review management, and local citations.",
       icon: MapPin,
       link: "/local-seo",
       features: ["Google Business Profile", "Local rankings", "Review strategy", "Citation building"],
@@ -46,7 +46,7 @@ const Services = () => {
       <section className="bg-background paper-texture py-16 sm:py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Web Services for Bay Area Small Businesses
+            Web Services for North Bay Small Businesses
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
             Everything you need to build your online presence and attract more customers. 
@@ -117,7 +117,7 @@ const Services = () => {
               <p className="text-sm text-muted-foreground">One-time investment, you own it</p>
             </div>
             <div className="bg-warm-beige rounded-lg p-6 border border-brown-outline/20">
-              <p className="font-semibold text-foreground mb-2">Bay Area Local</p>
+              <p className="font-semibold text-foreground mb-2">North Bay Local</p>
               <p className="text-sm text-muted-foreground">Personal service, quick response</p>
             </div>
             <div className="bg-warm-beige rounded-lg p-6 border border-brown-outline/20">

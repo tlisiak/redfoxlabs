@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Column 1: Branding + NAP */}
           <div>
             <h3 className="font-bold text-xl mb-4 text-cream">Red Fox Labs</h3>
-            <p className="text-sm text-cream/90 mb-3">Bay Area Web Design & SEO</p>
+            <p className="text-sm text-cream/90 mb-3">North Bay Web Design & SEO</p>
             <div className="space-y-2 text-sm text-cream/80">
               <p className="flex items-start gap-2">
                 <span className="shrink-0">📍</span>
-                <span>Serving the San Francisco Bay Area</span>
+                <span>Serving Marin & Sonoma Counties</span>
               </p>
               <p className="flex items-start gap-2">
                 <span className="shrink-0">📧</span>
@@ -56,7 +56,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-cream">Service Area</h4>
             <p className="text-sm text-cream/80 leading-relaxed">
-              Proudly serving small businesses across the San Francisco Bay Area, from San Francisco to San Jose and everywhere in between.
+              Proudly serving small businesses across Marin and Sonoma Counties—from San Rafael to Santa Rosa and everywhere in between.
             </p>
           </div>
 

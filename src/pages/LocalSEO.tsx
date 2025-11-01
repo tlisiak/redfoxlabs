@@ -36,11 +36,11 @@ const LocalSEO = () => {
       <section className="bg-warm-beige paper-texture py-16 sm:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Get Found by Bay Area Customers Searching for Your Services
+            Get Found by North Bay Customers Searching for Your Services
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
             Local SEO helps you show up when people search for businesses like yours 
-            in San Francisco, San Jose, and across the Bay Area. More visibility = more customers.
+            in Marin County, Sonoma County, and across the North Bay. More visibility = more customers.
           </p>
           <ContactModal>
             <Button variant="red-fox" size="lg" className="text-lg px-8 py-6">
@@ -57,7 +57,7 @@ const LocalSEO = () => {
             What's Included
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Everything you need to dominate local search in the Bay Area
+            Everything you need to dominate local search in the North Bay
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
