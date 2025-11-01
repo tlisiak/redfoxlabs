@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ContactModal from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { createServiceSchema, createBreadcrumbSchema, createFAQSchema } from "@/utils/structuredData";
 import {
   Accordion,
   AccordionContent,
@@ -22,6 +24,33 @@ const LocalSEO = () => {
     { icon: Target, title: "On-Page SEO", description: "Optimize your website content for local searches" },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: "Local SEO",
+    description: "Google Business Profile optimization and local search engine optimization for North Bay small businesses in Marin and Sonoma Counties.",
+    url: "https://redfoxlabs.com/local-seo"
+  });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://redfoxlabs.com/" },
+    { name: "Services", url: "https://redfoxlabs.com/services" },
+    { name: "Local SEO", url: "https://redfoxlabs.com/local-seo" }
+  ]);
+
+  const faqSchema = createFAQSchema([
+    {
+      question: "How long until I see results?",
+      answer: "Google Business Profile improvements can show results in 2-4 weeks. Overall ranking improvements typically take 2-3 months. SEO is a marathon, not a sprint, but the results are worth it and compound over time."
+    },
+    {
+      question: "Do I need ongoing SEO services?",
+      answer: "I set everything up and teach you how to maintain it yourself. Some businesses prefer ongoing help, but it's not required. I design my SEO work to be sustainable without constant paid support."
+    },
+    {
+      question: "What if I don't have a website yet?",
+      answer: "That's fine! I can start with your Google Business Profile and local citations, then build you a website later. Or we can do both together. Having a website definitely helps, but it's not required to get started with local SEO."
+    }
+  ]);
+
   const relatedServices = [
     { title: "Web Design", description: "Build a website that ranks well", link: "/web-design" },
     { title: "Analytics", description: "Track your local search performance", link: "/analytics" },
@@ -30,6 +59,15 @@ const LocalSEO = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="North Bay Local SEO Services | Marin & Sonoma County | Red Fox Labs"
+        description="Rank higher on Google in Marin and Sonoma Counties. Google Business Profile optimization, review management, and local SEO for North Bay small businesses."
+        canonicalUrl="https://redfoxlabs.com/local-seo"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema, faqSchema]
+        }}
+      />
       <Header />
 
       {/* Hero */}

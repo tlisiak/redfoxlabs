@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ContactModal from "./ContactModal";
-import foxMascot from "@/assets/redfox-mascot.png";
+import foxMascot from "@/assets/redfox-mascot.webp";
 
 const CTASection = () => {
   return (

@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ContactModal from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { createServiceSchema, createBreadcrumbSchema, createFAQSchema } from "@/utils/structuredData";
 import {
   Accordion,
   AccordionContent,
@@ -22,6 +24,33 @@ const SiteCare = () => {
     { icon: Zap, title: "Performance Checks", description: "Regular speed and performance optimization" },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: "Website Maintenance & Site Care",
+    description: "Affordable website maintenance for North Bay small businesses. Uptime monitoring, backups, security updates, and technical support.",
+    url: "https://redfoxlabs.com/site-care"
+  });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://redfoxlabs.com/" },
+    { name: "Services", url: "https://redfoxlabs.com/services" },
+    { name: "Site Care", url: "https://redfoxlabs.com/site-care" }
+  ]);
+
+  const faqSchema = createFAQSchema([
+    {
+      question: "Do I need site care if my site is new?",
+      answer: "Even new sites need backups and monitoring. Technology changes fast, and security vulnerabilities can happen anytime. It's much better to prevent problems than fix them after they happen."
+    },
+    {
+      question: "What happens if my site goes down?",
+      answer: "I get an immediate alert and start investigating. Most issues can be fixed quickly. If it's a hosting problem, I contact your host. If it's a code issue, I fix it. You'll be updated throughout the process."
+    },
+    {
+      question: "How much does site care cost?",
+      answer: "Plans typically start around $100-200/month depending on your site's complexity and what you need. No long-term contracts—cancel anytime if you're not happy."
+    }
+  ]);
+
   const relatedServices = [
     { title: "Web Design", description: "Build a site that's easy to maintain", link: "/web-design" },
     { title: "Analytics", description: "Monitor your site's performance", link: "/analytics" },
@@ -30,6 +59,15 @@ const SiteCare = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Website Maintenance & Site Care | North Bay | Red Fox Labs"
+        description="Affordable website maintenance for North Bay small businesses. Backups, security, monitoring, and support. Keep your site running smoothly without the stress."
+        canonicalUrl="https://redfoxlabs.com/site-care"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema, faqSchema]
+        }}
+      />
       <Header />
 
       {/* Hero */}

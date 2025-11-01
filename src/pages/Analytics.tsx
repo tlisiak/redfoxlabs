@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ContactModal from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { createServiceSchema, createBreadcrumbSchema, createFAQSchema } from "@/utils/structuredData";
 import {
   Accordion,
   AccordionContent,
@@ -22,6 +24,33 @@ const Analytics = () => {
     { icon: BarChart3, title: "Simple Reports", description: "Easy-to-understand dashboards, no data science degree needed" },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: "Website Analytics Setup & Training",
+    description: "Simple, actionable website analytics for North Bay small businesses. Understand your customers, track conversions, and make data-driven decisions.",
+    url: "https://redfoxlabs.com/analytics"
+  });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://redfoxlabs.com/" },
+    { name: "Services", url: "https://redfoxlabs.com/services" },
+    { name: "Analytics", url: "https://redfoxlabs.com/analytics" }
+  ]);
+
+  const faqSchema = createFAQSchema([
+    {
+      question: "Is Google Analytics free?",
+      answer: "Yes! Google Analytics is free for small businesses. You only pay me to set it up correctly and teach you how to use it. There are also privacy-focused alternatives we can use if you prefer."
+    },
+    {
+      question: "How often should I check my analytics?",
+      answer: "Once a month is plenty for most small businesses. I'll give you a simple checklist of what to look at each month. If you run ads or have seasonal business, you might want to check weekly."
+    },
+    {
+      question: "Can you track phone calls?",
+      answer: "Yes! We can set up call tracking so you know which marketing efforts are generating phone calls. This is especially useful for service businesses where most customers prefer to call rather than fill out a form."
+    }
+  ]);
+
   const relatedServices = [
     { title: "Web Design", description: "Build a site that's easy to track", link: "/web-design" },
     { title: "Local SEO", description: "Monitor your search rankings", link: "/local-seo" },
@@ -30,6 +59,15 @@ const Analytics = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Website Analytics Setup & Training | North Bay | Red Fox Labs"
+        description="Simple, actionable website analytics for North Bay small businesses. Track visitors, conversions, and ROI. Learn to make data-driven decisions in plain English."
+        canonicalUrl="https://redfoxlabs.com/analytics"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema, faqSchema]
+        }}
+      />
       <Header />
 
       {/* Hero */}

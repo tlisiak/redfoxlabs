@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import ContactModal from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { createServiceSchema, createBreadcrumbSchema, createFAQSchema } from "@/utils/structuredData";
 import {
   Accordion,
   AccordionContent,
@@ -22,6 +24,37 @@ const WebDesign = () => {
     { icon: Clock, title: "Quick Turnaround", description: "Typically 2-3 weeks from start to launch" },
   ];
 
+  const serviceSchema = createServiceSchema({
+    name: "Web Design",
+    description: "Custom small business websites built for North Bay businesses. Fast, mobile-friendly, and designed to convert visitors into customers.",
+    url: "https://redfoxlabs.com/web-design"
+  });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://redfoxlabs.com/" },
+    { name: "Services", url: "https://redfoxlabs.com/services" },
+    { name: "Web Design", url: "https://redfoxlabs.com/web-design" }
+  ]);
+
+  const faqSchema = createFAQSchema([
+    {
+      question: "How long does it take to build a website?",
+      answer: "Typically 2-3 weeks from our first conversation to launch. This includes time for feedback, revisions, and testing. Rush projects are available if you have an urgent deadline."
+    },
+    {
+      question: "How much does a website cost?",
+      answer: "Projects typically start around $2,500-$5,000 depending on complexity and features. No hidden fees, no subscriptions. You pay once, you own it."
+    },
+    {
+      question: "Can I update the website myself?",
+      answer: "Absolutely! Part of my process is teaching you how to manage your own site. I build sites to be easy to update, and I provide training and documentation so you're never dependent on me for simple changes."
+    },
+    {
+      question: "Do you provide hosting?",
+      answer: "I recommend reliable hosting providers and can help you set it up, but you'll own the hosting account directly. This means you're never locked in with me and have full control over your site."
+    }
+  ]);
+
   const relatedServices = [
     { title: "Local SEO", description: "Get found by customers in your area", link: "/local-seo" },
     { title: "Analytics", description: "Understand your website visitors", link: "/analytics" },
@@ -30,6 +63,15 @@ const WebDesign = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="North Bay Web Design for Small Businesses | Red Fox Labs"
+        description="Custom, mobile-responsive websites for Marin & Sonoma County small businesses. Fast loading, SEO optimized, and built to convert. Book a free audit today."
+        canonicalUrl="https://redfoxlabs.com/web-design"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, breadcrumbSchema, faqSchema]
+        }}
+      />
       <Header />
 
       {/* Hero */}
