@@ -20,7 +20,7 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="bg-background paper-texture py-16 sm:py-20 px-4">
+    <section id="why-us" className="bg-background paper-texture py-16 sm:py-20 px-4 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         {/* Bay Area Local */}
         <div className="text-center mb-12">
