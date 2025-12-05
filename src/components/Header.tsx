@@ -13,13 +13,15 @@ import { Link, useLocation } from "react-router-dom";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import foxIcon from "@/assets/redfox-mascot.png";
 
+const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   
   const isActive = (path: string) => {
     if (path === "/") return location.pathname === "/";
-    return location.pathname.startsWith(path);
+    return location.hash === path || location.pathname + location.hash === path;
   };
 
   const navLinks = [
@@ -28,11 +30,10 @@ const Header = () => {
   ];
 
   const serviceLinks = [
-    { label: "All Services", href: "/services" },
-    { label: "Web Design", href: "/web-design" },
-    { label: "Local SEO", href: "/local-seo" },
-    { label: "Site Care", href: "/site-care" },
-    { label: "Analytics", href: "/analytics" },
+    { label: "Web Design", href: "/#web-design" },
+    { label: "Local SEO", href: "/#local-seo" },
+    { label: "Site Care", href: "/#site-care" },
+    { label: "Analytics", href: "/#analytics" },
   ];
 
   const NavLink = ({ href, label, mobile = false }: { href: string; label: string; mobile?: boolean }) => {
@@ -76,12 +77,12 @@ const Header = () => {
             <DropdownMenuContent className="bg-background border-brown-outline/20 z-50">
               {serviceLinks.map((service) => (
                 <DropdownMenuItem key={service.href} asChild>
-                  <Link 
-                    to={service.href}
+                  <a 
+                    href={service.href}
                     className="cursor-pointer hover:text-red-fox"
                   >
                     {service.label}
-                  </Link>
+                  </a>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -93,11 +94,11 @@ const Header = () => {
             </button>
           </ContactModal>
 
-          <ContactModal>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="red-fox" size="sm">
               Book a free audit
             </Button>
-          </ContactModal>
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -121,14 +122,14 @@ const Header = () => {
                 </CollapsibleTrigger>
                 <CollapsibleContent className="pl-4 mt-2 flex flex-col gap-2">
                   {serviceLinks.map((service) => (
-                    <Link
+                    <a
                       key={service.href}
-                      to={service.href}
+                      href={service.href}
                       className="block py-2 text-base hover:text-red-fox transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {service.label}
-                    </Link>
+                    </a>
                   ))}
                 </CollapsibleContent>
               </Collapsible>
@@ -142,7 +143,7 @@ const Header = () => {
                 </button>
               </ContactModal>
 
-              <ContactModal>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Button 
                   variant="red-fox" 
                   className="w-full"
@@ -150,7 +151,7 @@ const Header = () => {
                 >
                   Book a free audit
                 </Button>
-              </ContactModal>
+              </a>
             </div>
           </SheetContent>
         </Sheet>

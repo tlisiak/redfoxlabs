@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import ContactModal from "./ContactModal";
+
+const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const Hero = () => {
   return (
@@ -47,7 +48,7 @@ const Hero = () => {
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <ContactModal>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 variant="red-fox"
@@ -55,7 +56,7 @@ const Hero = () => {
               >
                 Book a free 15-min audit
               </Button>
-            </ContactModal>
+            </a>
           </div>
         </div>
       </div>
@@ -64,4 +65,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

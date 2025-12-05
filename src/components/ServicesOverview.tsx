@@ -1,7 +1,7 @@
 import { Sparkles, Target, GraduationCap } from "lucide-react";
-import { Link } from "react-router-dom";
-import ContactModal from "./ContactModal";
 import foxLogo from "@/assets/redfox-mascot.png";
+
+const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const ServicesOverview = () => {
   const services = [
@@ -9,19 +9,20 @@ const ServicesOverview = () => {
       icon: Sparkles,
       title: "Our Services",
       description: "Web design, local SEO, analytics, and site care for North Bay small businesses",
-      link: "/services",
+      href: "#web-design",
     },
     {
       icon: Target,
       title: "Why Choose Us?",
       description: "Enterprise experience with a personal touch, fair pricing, and genuine care for your success",
-      link: null, // Scroll to why-us section
+      href: "#why-us",
     },
     {
       icon: GraduationCap,
       title: "Ready to Start?",
       description: "Let's chat about your project and how we can help your business grow",
-      link: null, // Opens contact modal
+      href: BOOKING_URL,
+      external: true,
     }
   ];
 
@@ -51,48 +52,15 @@ const ServicesOverview = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             
-            // Card for "Our Services" - links to services page
-            if (index === 0 && service.link) {
-              return (
-                <Link key={index} to={service.link} className="block">
-                  <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
-                    <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-red-fox" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            }
-            
-            // Card for "Why Choose Us" - scrolls to section
-            if (index === 1) {
-              return (
-                <a key={index} href="#why-us" className="block">
-                  <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
-                    <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-red-fox" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </a>
-              );
-            }
-            
-            // Card for "Ready to Start" - opens contact modal
             return (
-              <ContactModal key={index}>
-                <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40">
+              <a 
+                key={index} 
+                href={service.href}
+                target={service.external ? "_blank" : undefined}
+                rel={service.external ? "noopener noreferrer" : undefined}
+                className="block"
+              >
+                <div className="bg-card rounded-xl p-8 border border-brown-outline/20 hover-lift cursor-pointer transition-all hover:border-red-fox/40 h-full">
                   <div className="w-14 h-14 bg-red-fox/10 rounded-lg flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-red-fox" />
                   </div>
@@ -103,7 +71,7 @@ const ServicesOverview = () => {
                     {service.description}
                   </p>
                 </div>
-              </ContactModal>
+              </a>
             );
           })}
         </div>

@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import ContactModal from "./ContactModal";
 
+const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
+
 const Footer = () => {
   return (
     <footer className="bg-brown-outline text-cream py-12 px-4">
@@ -66,7 +68,7 @@ const Footer = () => {
             <p className="text-sm text-cream/80 mb-4">
               Ready to grow your business online?
             </p>
-            <ContactModal>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <Button 
                 variant="outline" 
                 size="sm" 
@@ -74,7 +76,7 @@ const Footer = () => {
               >
                 Book a free 15-min audit
               </Button>
-            </ContactModal>
+            </a>
           </div>
         </div>
 
