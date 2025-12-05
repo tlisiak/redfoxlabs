@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import ContactModal from "./ContactModal";
 import foxMascot from "@/assets/redfox-mascot.png";
+
+const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const CTASection = () => {
   return (
@@ -15,7 +16,7 @@ const CTASection = () => {
             <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
               Let's test what works for your business. No pressure, no sales pitch—just a genuine conversation about growth.
             </p>
-            <ContactModal>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
                 variant="outline-light"
@@ -23,7 +24,7 @@ const CTASection = () => {
               >
                 Book a free 15-min audit
               </Button>
-            </ContactModal>
+            </a>
           </div>
 
           {/* Fox Mascot */}
