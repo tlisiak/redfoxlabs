@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Smartphone, Zap, Search, Edit3, CheckCircle, Clock, MapPin, Star, FileText, TrendingUp, Target, Shield, Database, Lock, RefreshCw, HeadphonesIcon, BarChart3, Users, Eye, MousePointer } from "lucide-react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -10,6 +11,18 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Handle initial page load with hash fragment
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, []);
   // Web Design content
   const webDesignDeliverables = [
     { icon: Smartphone, title: "Mobile-First Design", description: "Looks perfect on phones, tablets, and desktops" },

@@ -11,6 +11,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import ContactModal from "./ContactModal";
 import { Link, useLocation } from "react-router-dom";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import foxIcon from "@/assets/redfox-mascot.png";
 
 const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
@@ -18,36 +19,57 @@ const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { handleAnchorClick } = useSmoothScroll();
   
-  const isActive = (path: string) => {
-    if (path === "/") return location.pathname === "/";
-    return location.hash === path || location.pathname + location.hash === path;
+  const isActive = (hash: string) => {
+    if (hash === "/") return location.pathname === "/" && !location.hash;
+    return location.hash === hash;
   };
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Why Us", href: "/#why-us" },
+    { label: "Home", href: "/", isRoute: true },
+    { label: "Why Us", href: "#why-us", isRoute: false },
   ];
 
   const serviceLinks = [
-    { label: "Web Design", href: "/#web-design" },
-    { label: "Local SEO", href: "/#local-seo" },
-    { label: "Site Care", href: "/#site-care" },
-    { label: "Analytics", href: "/#analytics" },
+    { label: "Web Design", href: "#web-design" },
+    { label: "Local SEO", href: "#local-seo" },
+    { label: "Site Care", href: "#site-care" },
+    { label: "Analytics", href: "#analytics" },
   ];
 
-  const NavLink = ({ href, label, mobile = false }: { href: string; label: string; mobile?: boolean }) => {
+  const NavLink = ({ href, label, mobile = false, isRoute = false }: { href: string; label: string; mobile?: boolean; isRoute?: boolean }) => {
     const active = isActive(href);
     const baseClasses = mobile 
       ? "block py-2 text-lg" 
       : "text-foreground hover:text-red-fox transition-colors";
     const activeClasses = active ? "text-red-fox font-semibold" : "";
     
+    if (isRoute) {
+      return (
+        <Link 
+          to={href}
+          className={`${baseClasses} ${activeClasses}`}
+          onClick={() => {
+            if (mobile) setIsOpen(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          {label}
+        </Link>
+      );
+    }
+    
+    const sectionId = href.replace('#', '');
+    
     return (
       <a 
         href={href}
         className={`${baseClasses} ${activeClasses}`}
-        onClick={() => mobile && setIsOpen(false)}
+        onClick={(e) => {
+          handleAnchorClick(e, sectionId);
+          if (mobile) setIsOpen(false);
+        }}
       >
         {label}
       </a>
@@ -58,7 +80,11 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-brown-outline/20">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 font-bold text-xl sm:text-2xl text-red-fox hover:opacity-90 transition-opacity">
+        <Link 
+          to="/" 
+          className="flex items-center gap-2 font-bold text-xl sm:text-2xl text-red-fox hover:opacity-90 transition-opacity"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <img src={foxIcon} alt="Red Fox Labs" className="h-8 w-8 sm:h-10 sm:w-10" />
           Red Fox Labs
         </Link>
@@ -75,16 +101,20 @@ const Header = () => {
               <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-background border-brown-outline/20 z-50">
-              {serviceLinks.map((service) => (
-                <DropdownMenuItem key={service.href} asChild>
-                  <a 
-                    href={service.href}
-                    className="cursor-pointer hover:text-red-fox"
-                  >
-                    {service.label}
-                  </a>
-                </DropdownMenuItem>
-              ))}
+              {serviceLinks.map((service) => {
+                const sectionId = service.href.replace('#', '');
+                return (
+                  <DropdownMenuItem key={service.href} asChild>
+                    <a 
+                      href={service.href}
+                      className="cursor-pointer hover:text-red-fox"
+                      onClick={(e) => handleAnchorClick(e, sectionId)}
+                    >
+                      {service.label}
+                    </a>
+                  </DropdownMenuItem>
+                );
+              })}
             </DropdownMenuContent>
           </DropdownMenu>
           
@@ -121,16 +151,22 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="pl-4 mt-2 flex flex-col gap-2">
-                  {serviceLinks.map((service) => (
-                    <a
-                      key={service.href}
-                      href={service.href}
-                      className="block py-2 text-base hover:text-red-fox transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {service.label}
-                    </a>
-                  ))}
+                  {serviceLinks.map((service) => {
+                    const sectionId = service.href.replace('#', '');
+                    return (
+                      <a
+                        key={service.href}
+                        href={service.href}
+                        className="block py-2 text-base hover:text-red-fox transition-colors"
+                        onClick={(e) => {
+                          handleAnchorClick(e, sectionId);
+                          setIsOpen(false);
+                        }}
+                      >
+                        {service.label}
+                      </a>
+                    );
+                  })}
                 </CollapsibleContent>
               </Collapsible>
               
