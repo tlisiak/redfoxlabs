@@ -16,7 +16,7 @@ const MethodologySection = () => {
     {
       icon: MessageSquare,
       title: "Plain English",
-      description: "No fancy jargon, no confusion. Just clear education tailored to you."
+      description: "No fancy jargon, no confusion. Just clear education tailored for you."
     },
     {
       icon: RefreshCw,
