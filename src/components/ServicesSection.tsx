@@ -1,4 +1,5 @@
 import { Palette, Search, GraduationCap } from "lucide-react";
+import { WaveDivider } from "@/components/ui/WaveDivider";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ServicesSection = () => {
@@ -62,6 +63,8 @@ const ServicesSection = () => {
         </div>
       </div>
       
+      {/* Wave divider - matches next section (Mission: background/cream) */}
+      <WaveDivider color="hsl(32 42% 95%)" className="mt-8" opacity={0.6} />
     </section>
   );
 };

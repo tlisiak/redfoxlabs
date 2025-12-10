@@ -1,5 +1,6 @@
 import { GraduationCap, Key, MessageSquare, RefreshCw, CheckCircle, DollarSign } from "lucide-react";
 import foxMascot from "@/assets/redfox-mascot.png";
+import { WaveDivider } from "@/components/ui/WaveDivider";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const WhyUsSection = () => {
@@ -111,6 +112,8 @@ const WhyUsSection = () => {
         </div>
       </div>
       
+      {/* Wave divider - matches next section (FAQ: background/cream) */}
+      <WaveDivider color="hsl(32 42% 95%)" className="mt-6" opacity={0.6} />
     </section>
   );
 };
