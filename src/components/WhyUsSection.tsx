@@ -97,14 +97,6 @@ const WhyUsSection = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-center">
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="red-fox" size="lg">
-              Get a free quote
-            </Button>
-          </a>
-        </div>
       </div>
     </section>
   );
