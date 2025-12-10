@@ -3,7 +3,7 @@ import foxIcon from "@/assets/redfox-mascot.png";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-brown-outline/20">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-center">
         <Link 
           to="/" 
