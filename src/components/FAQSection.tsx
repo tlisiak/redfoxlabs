@@ -30,15 +30,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative bg-background scroll-mt-20">
+    <section id="faq" className="relative bg-background scroll-mt-20 overflow-visible">
       {/* Wave divider at top: WhyUs (warm-beige) → FAQ (cream) */}
       <WaveDivider colorVar="background" />
       
       {/* Single ambient blob */}
       <div className="absolute top-24 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
-      {/* Content wrapper with padding to account for wave height */}
-      <div className="relative pt-[80px] sm:pt-[96px] pb-0 px-4">
+      {/* Content wrapper */}
+      <div className="relative pt-16 sm:pt-20 pb-0 px-4">
         <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
           <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>

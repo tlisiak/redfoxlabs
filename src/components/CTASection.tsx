@@ -8,15 +8,15 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section className="relative bg-red-fox overflow-hidden">
+    <section className="relative bg-red-fox overflow-visible">
       {/* Wave divider at top: FAQ (cream) → CTA (red-fox) */}
       <WaveDivider colorVar="red-fox" />
       
       {/* Single ambient blob */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blob animate-blob opacity-20" />
       
-      {/* Content wrapper with padding to account for wave height */}
-      <div className="relative pt-[80px] sm:pt-[96px] pb-14 sm:pb-20 px-4">
+      {/* Content wrapper */}
+      <div className="relative pt-16 sm:pt-20 pb-14 sm:pb-20 px-4">
         <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Text Content */}

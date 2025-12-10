@@ -36,15 +36,15 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="why-us" className="relative bg-warm-beige">
+    <section id="why-us" className="relative bg-warm-beige overflow-visible">
       {/* Wave divider at top: Mission (cream) → WhyUs (warm-beige) */}
       <WaveDivider colorVar="warm-beige" />
       
       {/* Single ambient blob */}
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />
       
-      {/* Content wrapper with padding to account for wave height */}
-      <div className="relative pt-[80px] sm:pt-[96px] pb-0 px-4">
+      {/* Content wrapper */}
+      <div className="relative pt-16 sm:pt-20 pb-0 px-4">
         <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
           <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <img 
