@@ -6,7 +6,7 @@ const MethodologySection = () => {
     {
       icon: GraduationCap,
       title: "We teach you",
-      description: "You'll understand your own tech—no black boxes or mystery fees."
+      description: "You'll understand your own website — no black boxes or reliance on us."
     },
     {
       icon: Key,
