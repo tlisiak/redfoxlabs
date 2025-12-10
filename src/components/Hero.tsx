@@ -49,8 +49,11 @@ const Hero = () => {
         </p>
       </div>
       
-      {/* Wave divider - matches next section (Services: warm-beige) */}
-      <WaveDivider color="hsl(35 38% 90%)" opacity={0.6} />
+      {/* Wave divider: Hero (cream) → Services (warm-beige) - DOWN */}
+      <WaveDivider 
+        fromColor="hsl(32 42% 95%)" 
+        toColor="hsl(35 38% 90%)" 
+      />
     </section>
   );
 };

@@ -112,8 +112,12 @@ const WhyUsSection = () => {
         </div>
       </div>
       
-      {/* Wave divider - matches next section (FAQ: background/cream) */}
-      <WaveDivider color="hsl(32 42% 95%)" className="mt-6" opacity={0.6} />
+      {/* Wave divider: WhyUs (warm-beige) → FAQ (cream) - DOWN */}
+      <WaveDivider 
+        fromColor="hsl(35 38% 90%)" 
+        toColor="hsl(32 42% 95%)" 
+        className="mt-6"
+      />
     </section>
   );
 };
