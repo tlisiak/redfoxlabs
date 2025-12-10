@@ -1,16 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import ContactModal from "./ContactModal";
-import { Link, useLocation } from "react-router-dom";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Link } from "react-router-dom";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import foxIcon from "@/assets/redfox-mascot.png";
 
@@ -18,63 +11,14 @@ const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
   const { handleAnchorClick } = useSmoothScroll();
-  
-  const isActive = (hash: string) => {
-    if (hash === "/") return location.pathname === "/" && !location.hash;
-    return location.hash === hash;
-  };
 
   const navLinks = [
-    { label: "Home", href: "/", isRoute: true },
-    { label: "Why Us", href: "#why-us", isRoute: false },
+    { label: "Services", href: "#services" },
+    { label: "Approach", href: "#approach" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "FAQ", href: "#faq" },
   ];
-
-  const serviceLinks = [
-    { label: "Web Design", href: "#web-design" },
-    { label: "Local SEO", href: "#local-seo" },
-    { label: "Site Care", href: "#site-care" },
-    { label: "Analytics", href: "#analytics" },
-  ];
-
-  const NavLink = ({ href, label, mobile = false, isRoute = false }: { href: string; label: string; mobile?: boolean; isRoute?: boolean }) => {
-    const active = isActive(href);
-    const baseClasses = mobile 
-      ? "block py-2 text-lg" 
-      : "text-foreground hover:text-red-fox transition-colors";
-    const activeClasses = active ? "text-red-fox font-semibold" : "";
-    
-    if (isRoute) {
-      return (
-        <Link 
-          to={href}
-          className={`${baseClasses} ${activeClasses}`}
-          onClick={() => {
-            if (mobile) setIsOpen(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-        >
-          {label}
-        </Link>
-      );
-    }
-    
-    const sectionId = href.replace('#', '');
-    
-    return (
-      <a 
-        href={href}
-        className={`${baseClasses} ${activeClasses}`}
-        onClick={(e) => {
-          handleAnchorClick(e, sectionId);
-          if (mobile) setIsOpen(false);
-        }}
-      >
-        {label}
-      </a>
-    );
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-brown-outline/20">
@@ -92,31 +36,15 @@ const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-foreground hover:text-red-fox transition-colors"
+              onClick={(e) => handleAnchorClick(e, link.href.replace('#', ''))}
+            >
+              {link.label}
+            </a>
           ))}
-          
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-red-fox transition-colors focus:outline-none">
-              Services
-              <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border-brown-outline/20 z-50">
-              {serviceLinks.map((service) => {
-                const sectionId = service.href.replace('#', '');
-                return (
-                  <DropdownMenuItem key={service.href} asChild>
-                    <a 
-                      href={service.href}
-                      className="cursor-pointer hover:text-red-fox"
-                      onClick={(e) => handleAnchorClick(e, sectionId)}
-                    >
-                      {service.label}
-                    </a>
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
           
           <ContactModal>
             <button className="text-foreground hover:text-red-fox transition-colors">
@@ -126,7 +54,7 @@ const Header = () => {
 
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="red-fox" size="sm">
-              Book a free audit
+              Book a call
             </Button>
           </a>
         </div>
@@ -139,36 +67,21 @@ const Header = () => {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] bg-background">
-            <div className="flex flex-col gap-6 mt-8">
+          <SheetContent side="right" className="w-[280px] bg-background">
+            <div className="flex flex-col gap-4 mt-8">
               {navLinks.map((link) => (
-                <NavLink key={link.href} {...link} mobile />
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block py-2 text-lg hover:text-red-fox transition-colors"
+                  onClick={(e) => {
+                    handleAnchorClick(e, link.href.replace('#', ''));
+                    setIsOpen(false);
+                  }}
+                >
+                  {link.label}
+                </a>
               ))}
-              
-              <Collapsible>
-                <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-lg text-left hover:text-red-fox transition-colors">
-                  Services
-                  <ChevronDown className="h-4 w-4" />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="pl-4 mt-2 flex flex-col gap-2">
-                  {serviceLinks.map((service) => {
-                    const sectionId = service.href.replace('#', '');
-                    return (
-                      <a
-                        key={service.href}
-                        href={service.href}
-                        className="block py-2 text-base hover:text-red-fox transition-colors"
-                        onClick={(e) => {
-                          handleAnchorClick(e, sectionId);
-                          setIsOpen(false);
-                        }}
-                      >
-                        {service.label}
-                      </a>
-                    );
-                  })}
-                </CollapsibleContent>
-              </Collapsible>
               
               <ContactModal>
                 <button 
@@ -182,10 +95,10 @@ const Header = () => {
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <Button 
                   variant="red-fox" 
-                  className="w-full"
+                  className="w-full mt-4"
                   onClick={() => setIsOpen(false)}
                 >
-                  Book a free audit
+                  Book a call
                 </Button>
               </a>
             </div>
