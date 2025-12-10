@@ -8,7 +8,6 @@ import SocialProofSection from "@/components/SocialProofSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-
 const Index = () => {
   useEffect(() => {
     if (window.location.hash) {
@@ -16,25 +15,24 @@ const Index = () => {
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }, 100);
       }
     }
   }, []);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <Hero />
       <ServicesSection />
       <MethodologySection />
       <PricingSection />
-      <SocialProofSection />
+      
       <FAQSection />
       <CTASection />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
