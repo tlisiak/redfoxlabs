@@ -113,7 +113,7 @@ const MissionSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(35 38% 90%)" className="mt-10" opacity={0.7} />
+      <WaveDivider color="hsl(35 38% 90%)" className="mt-8" opacity={0.4} />
     </section>
   );
 };

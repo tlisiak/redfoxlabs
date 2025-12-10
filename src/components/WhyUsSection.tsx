@@ -1,6 +1,5 @@
 import { GraduationCap, Key, MessageSquare, RefreshCw, CheckCircle, DollarSign } from "lucide-react";
 import foxMascot from "@/assets/redfox-mascot.png";
-import { WaveDivider } from "@/components/ui/WaveDivider";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const WhyUsSection = () => {
@@ -112,8 +111,6 @@ const WhyUsSection = () => {
         </div>
       </div>
       
-      {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-6" opacity={0.7} />
     </section>
   );
 };
