@@ -50,7 +50,7 @@ const Hero = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(35 38% 90%)" opacity={0.8} />
+      <WaveDivider color="hsl(35 38% 90%)" opacity={0.5} />
     </section>
   );
 };

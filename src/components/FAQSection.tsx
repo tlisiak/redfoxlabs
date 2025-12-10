@@ -62,7 +62,7 @@ const FAQSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--red-fox))" className="mt-10" opacity={0.9} />
+      <WaveDivider color="hsl(var(--red-fox))" className="mt-8" opacity={0.6} />
     </section>
   );
 };
