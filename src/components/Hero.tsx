@@ -49,8 +49,8 @@ const Hero = () => {
         </p>
       </div>
       
-      {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(35 38% 90%)" opacity={0.5} />
+      {/* Wave divider - matches next section (Services: warm-beige) */}
+      <WaveDivider color="hsl(35 38% 90%)" opacity={0.6} />
     </section>
   );
 };
