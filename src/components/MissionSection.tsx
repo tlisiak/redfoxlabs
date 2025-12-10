@@ -112,10 +112,10 @@ const MissionSection = () => {
         </p>
       </div>
       
-      {/* Wave divider: Mission (cream) → WhyUs (warm-beige) - UP (flipped) */}
+      {/* Wave divider: Mission (cream) → WhyUs (cream) - subtle transition */}
       <WaveDivider 
         fromColor="hsl(32 42% 95%)" 
-        toColor="hsl(35 38% 90%)" 
+        toColor="hsl(32 42% 95%)" 
         flip
         className="mt-8"
       />
