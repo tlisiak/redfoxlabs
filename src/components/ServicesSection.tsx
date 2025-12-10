@@ -63,11 +63,10 @@ const ServicesSection = () => {
         </div>
       </div>
       
-      {/* Flat transition: Services (warm-beige) → Mission (cream) - RESET */}
+      {/* Wave divider: Services (warm-beige) → Mission (cream) */}
       <WaveDivider 
         fromColor="hsl(35 38% 90%)" 
         toColor="hsl(32 42% 95%)" 
-        variant="flat"
         className="mt-8"
       />
     </section>
