@@ -13,15 +13,15 @@ const MissionSection = () => {
   ];
 
   return (
-    <section id="mission" className="relative bg-background">
+    <section id="mission" className="relative bg-background overflow-visible">
       {/* Wave divider at top: Services (warm-beige) → Mission (cream) */}
       <WaveDivider colorVar="background" />
       
       {/* Single ambient blob */}
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-warm-beige/40 blob animate-blob opacity-25" />
       
-      {/* Content wrapper with padding to account for wave height */}
-      <div className="relative pt-[80px] sm:pt-[96px] pb-0 px-4">
+      {/* Content wrapper */}
+      <div className="relative pt-16 sm:pt-20 pb-0 px-4">
         <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
           {/* Header */}
           <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

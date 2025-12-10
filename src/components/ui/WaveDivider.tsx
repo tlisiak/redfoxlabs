@@ -11,7 +11,7 @@ export const WaveDivider = ({ colorVar, className }: WaveDividerProps) => {
   return (
     <div 
       className={cn(
-        "absolute top-0 left-1/2 -ml-[50vw] w-screen h-[64px] sm:h-[80px] z-10",
+        "absolute -top-[64px] sm:-top-[80px] left-1/2 -ml-[50vw] w-screen h-[64px] sm:h-[80px] z-10",
         className
       )}
     >
