@@ -63,12 +63,8 @@ const ServicesSection = () => {
         </div>
       </div>
       
-      {/* Wave divider: Services (warm-beige) → Mission (cream) - overlaps bottom */}
-      <WaveDivider 
-        fromColor="hsl(35 38% 90%)" 
-        toColor="hsl(32 42% 95%)" 
-        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
-      />
+      {/* Wave divider: Services (warm-beige) → Mission (cream) */}
+      <WaveDivider toColor="hsl(32 42% 95%)" />
     </section>
   );
 };

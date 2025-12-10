@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 interface WaveDividerProps {
   className?: string;
   flip?: boolean;
-  fromColor: string;
   toColor: string;
   variant?: 'wave' | 'flat';
   withShadow?: boolean;
@@ -13,21 +12,17 @@ interface WaveDividerProps {
 export const WaveDivider = ({ 
   className, 
   flip = false, 
-  fromColor,
   toColor,
   variant = 'wave',
-  withShadow = true,
+  withShadow = false,
   withNoise = true
 }: WaveDividerProps) => {
-  const shadowId = `wave-shadow-${Math.random().toString(36).substr(2, 9)}`;
   
   if (variant === 'flat') {
     return (
       <div 
         className={cn("w-full h-[60px] md:h-[80px] relative", className)}
-        style={{
-          background: `linear-gradient(to bottom, ${fromColor}, ${toColor})`
-        }}
+        style={{ background: toColor }}
       >
         {withNoise && (
           <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIvPjwvc3ZnPg==')]" />
@@ -36,13 +31,14 @@ export const WaveDivider = ({
     );
   }
 
-  // Elegant smooth sine wave path - full width coverage
-  const wavePath = "M0,64 C120,100 240,20 360,64 C480,108 600,20 720,64 C840,108 960,20 1080,64 C1200,108 1320,20 1440,64 L1440,128 L0,128 Z";
+  // Wave path that fills from wavy top edge down to bottom
+  // The wave curves between y=20 and y=60, then fills solid to y=128
+  const wavePath = "M0,40 C120,70 240,10 360,40 C480,70 600,10 720,40 C840,70 960,10 1080,40 C1200,70 1320,10 1440,40 L1440,128 L0,128 Z";
 
   return (
     <div 
       className={cn(
-        "w-screen relative left-1/2 right-1/2 -mx-[50vw] overflow-hidden leading-none h-[100px] md:h-[120px] lg:h-[140px]", 
+        "w-screen relative left-1/2 -ml-[50vw] overflow-hidden leading-none h-[80px] md:h-[100px] lg:h-[120px]", 
         flip && "rotate-180", 
         className
       )}
@@ -51,18 +47,7 @@ export const WaveDivider = ({
         viewBox="0 0 1440 128"
         preserveAspectRatio="none"
         className="w-full h-full block"
-        style={{ filter: withShadow ? `url(#${shadowId})` : undefined }}
       >
-        <defs>
-          {/* Subtle drop shadow filter */}
-          {withShadow && (
-            <filter id={shadowId} x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor={toColor} floodOpacity="0.12" />
-            </filter>
-          )}
-        </defs>
-        
-        {/* Solid color wave - no gradient */}
         <path 
           d={wavePath} 
           fill={toColor}

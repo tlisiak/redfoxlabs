@@ -45,7 +45,7 @@ const Hero = () => {
       </div>
       
       {/* Wave divider: Hero (cream) → Services (warm-beige) */}
-      <WaveDivider fromColor="hsl(32 42% 95%)" toColor="hsl(35 38% 90%)" className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]" />
+      <WaveDivider toColor="hsl(35 38% 90%)" />
     </section>;
 };
 export default Hero;
