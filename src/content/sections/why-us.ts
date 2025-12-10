@@ -1,7 +1,7 @@
 import { ContentSection } from "@/types/content";
 
 export const whyUsContent: ContentSection = {
-  opening_hook: "After building products for millions of users at places like The Washington Post and Arcadia, I realized the same principles that make enterprise software successful can transform small businesses—if you remove the complexity and cost.",
+  opening_hook: "After building products for millions of users—100k+ at Arcadia, 600+ publishers at Washington Post, and $10M+ in funding secured at Scout—I realized the same principles that make enterprise software successful can transform small businesses. Now I bring that expertise to North Bay small businesses.",
   items: [
     {
       id: "1",
