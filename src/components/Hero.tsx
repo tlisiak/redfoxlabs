@@ -1,20 +1,11 @@
 import { Button } from "@/components/ui/button";
-import foxMascot from "@/assets/redfox-mascot.png";
 
 const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const Hero = () => {
   return (
-    <section className="bg-background paper-texture py-20 sm:py-28 px-4" id="hero">
+    <section className="bg-background paper-texture py-24 sm:py-32 px-4" id="hero">
       <div className="max-w-5xl mx-auto text-center">
-        {/* Logo */}
-        <div className="flex justify-center mb-8 animate-fade-in">
-          <img 
-            src={foxMascot} 
-            alt="Red Fox Labs mascot" 
-            className="w-20 h-20 sm:w-24 sm:h-24"
-          />
-        </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
