@@ -24,7 +24,7 @@ const ServicesSection = () => {
   ];
   
   return (
-    <section id="services" className="relative pt-16 sm:pt-20 pb-10 sm:pb-12 px-4 bg-warm-beige overflow-hidden">
+    <section id="services" className="relative pt-16 sm:pt-20 pb-0 px-4 bg-warm-beige overflow-visible">
       {/* Single ambient blob */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
       
@@ -63,11 +63,11 @@ const ServicesSection = () => {
         </div>
       </div>
       
-      {/* Wave divider: Services (warm-beige) → Mission (cream) */}
+      {/* Wave divider: Services (warm-beige) → Mission (cream) - overlaps bottom */}
       <WaveDivider 
         fromColor="hsl(35 38% 90%)" 
         toColor="hsl(32 42% 95%)" 
-        className="mt-8"
+        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
       />
     </section>
   );

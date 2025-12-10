@@ -6,7 +6,7 @@ const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const Hero = () => {
   return (
-    <section className="relative bg-background pt-24 sm:pt-32 pb-0 px-4 overflow-hidden" id="hero">
+    <section className="relative bg-background pt-24 sm:pt-32 pb-0 px-4 overflow-visible" id="hero">
       {/* Single ambient blob */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-red-fox/5 blob animate-blob opacity-30" />
       
@@ -49,10 +49,11 @@ const Hero = () => {
         </p>
       </div>
       
-      {/* Wave divider: Hero (cream) → Services (warm-beige) - DOWN */}
+      {/* Wave divider: Hero (cream) → Services (warm-beige) */}
       <WaveDivider 
         fromColor="hsl(32 42% 95%)" 
         toColor="hsl(35 38% 90%)" 
+        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
       />
     </section>
   );

@@ -13,7 +13,7 @@ const MissionSection = () => {
   ];
 
   return (
-    <section id="mission" className="relative pt-14 sm:pt-20 pb-10 sm:pb-14 px-4 bg-background overflow-hidden">
+    <section id="mission" className="relative pt-14 sm:pt-20 pb-0 px-4 bg-background overflow-visible">
       {/* Single ambient blob */}
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-warm-beige/40 blob animate-blob opacity-25" />
       
@@ -112,12 +112,12 @@ const MissionSection = () => {
         </p>
       </div>
       
-      {/* Wave divider: Mission (cream) → WhyUs (cream) - subtle transition */}
+      {/* Wave divider: Mission (cream) → WhyUs (cream) */}
       <WaveDivider 
         fromColor="hsl(32 42% 95%)" 
         toColor="hsl(32 42% 95%)" 
         flip
-        className="mt-8"
+        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
       />
     </section>
   );
