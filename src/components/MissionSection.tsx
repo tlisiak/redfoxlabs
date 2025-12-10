@@ -1,4 +1,5 @@
 import { Heart, Building2, GraduationCap, TrendingUp } from "lucide-react";
+import { WaveDivider } from "@/components/ui/WaveDivider";
 
 const MissionSection = () => {
   const stats = [
@@ -8,13 +9,15 @@ const MissionSection = () => {
   ];
 
   return (
-    <section id="mission" className="py-20 sm:py-28 px-4 bg-background paper-texture">
-      <div className="max-w-5xl mx-auto">
+    <section id="mission" className="relative py-20 sm:py-28 px-4 bg-background paper-texture overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-20 left-10 w-48 h-48 bg-red-fox/5 blob animate-blob opacity-60" />
+      <div className="absolute bottom-40 right-10 w-64 h-64 bg-warm-beige/60 blob animate-blob opacity-50" style={{ animationDelay: '2s' }} />
+      
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-red-fox uppercase tracking-wide mb-3">
-            The Mission
-          </p>
+          <p className="font-handwritten text-2xl text-red-fox mb-2">The Mission</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Why I Do This
           </h2>
@@ -26,10 +29,10 @@ const MissionSection = () => {
         {/* Two Column Layout */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-16">
           {/* Left: Experience */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-foreground flex items-center gap-3">
-              <div className="w-10 h-10 bg-red-fox/10 rounded-full flex items-center justify-center">
-                <Building2 className="w-5 h-5 text-red-fox" />
+          <div className="card-organic bg-background p-8">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-red-fox" />
               </div>
               Where I Come From
             </h3>
@@ -44,10 +47,10 @@ const MissionSection = () => {
           </div>
 
           {/* Right: Mission */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-foreground flex items-center gap-3">
-              <div className="w-10 h-10 bg-red-fox/10 rounded-full flex items-center justify-center">
-                <Heart className="w-5 h-5 text-red-fox" />
+          <div className="card-organic bg-background p-8">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
+                <Heart className="w-6 h-6 text-red-fox" />
               </div>
               Why Small Business
             </h3>
@@ -63,14 +66,14 @@ const MissionSection = () => {
         </div>
 
         {/* Community Callout */}
-        <div className="bg-warm-beige rounded-2xl p-6 sm:p-8 mb-14 border border-brown-outline/10">
+        <div className="card-organic bg-warm-beige p-6 sm:p-8 mb-14">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-red-fox/10 rounded-full flex items-center justify-center flex-shrink-0">
-              <GraduationCap className="w-6 h-6 text-red-fox" />
+            <div className="w-14 h-14 bg-red-fox/10 blob-sm flex items-center justify-center flex-shrink-0">
+              <GraduationCap className="w-7 h-7 text-red-fox" />
             </div>
             <div>
-              <h4 className="font-bold text-foreground mb-2">Small businesses are vital to local communities</h4>
-              <p className="text-muted-foreground">
+              <h4 className="font-bold text-foreground mb-2 text-lg">Small businesses are vital to local communities</h4>
+              <p className="text-muted-foreground leading-relaxed">
                 They need to compete with large companies who have limitless funding and dedicated tech teams. Even small changes—a faster website, better SEO, clearer messaging—can make a world of difference. That's where I come in.
               </p>
             </div>
@@ -79,14 +82,14 @@ const MissionSection = () => {
 
         {/* Stats */}
         <div className="text-center mb-8">
-          <p className="text-sm font-semibold text-red-fox uppercase tracking-wide mb-6 flex items-center justify-center gap-2">
-            <TrendingUp className="w-4 h-4" />
+          <p className="font-handwritten text-xl text-red-fox mb-6 flex items-center justify-center gap-2">
+            <TrendingUp className="w-5 h-5" />
             Why Web Presence Matters
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-cream rounded-xl p-5 border border-brown-outline/10">
-                <p className="text-3xl sm:text-4xl font-bold text-red-fox mb-2">
+              <div key={index} className="card-organic bg-cream p-6">
+                <p className="text-3xl sm:text-4xl font-bold text-red-fox mb-2 font-handwritten">
                   {stat.value}
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -97,10 +100,13 @@ const MissionSection = () => {
           </div>
         </div>
 
-        <p className="text-center text-foreground font-medium">
+        <p className="text-center text-foreground font-medium text-lg">
           Small businesses deserve enterprise-level tools at fair prices.
         </p>
       </div>
+      
+      {/* Wavy divider */}
+      <WaveDivider color="hsl(35 38% 90%)" className="mt-16" />
     </section>
   );
 };
