@@ -36,7 +36,7 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="why-us" className="relative pt-10 sm:pt-14 pb-0 px-4 bg-background overflow-visible">
+    <section id="why-us" className="relative pt-10 sm:pt-14 pb-16 px-4 bg-warm-beige overflow-visible">
       {/* Single ambient blob */}
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />
       
@@ -112,12 +112,8 @@ const WhyUsSection = () => {
         </div>
       </div>
       
-      {/* Wave divider: WhyUs (cream) → FAQ (warm-beige) */}
-      <WaveDivider 
-        fromColor="hsl(32 42% 95%)" 
-        toColor="hsl(35 38% 90%)" 
-        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
-      />
+      {/* Wave divider: WhyUs (warm-beige) → FAQ (cream) */}
+      <WaveDivider toColor="hsl(32 42% 95%)" />
     </section>
   );
 };
