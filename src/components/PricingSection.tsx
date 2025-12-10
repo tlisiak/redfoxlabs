@@ -27,16 +27,16 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="bg-background rounded-2xl p-8 sm:p-10 border border-brown-outline/20 mb-8">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="bg-background rounded-2xl p-8 sm:p-10 border border-brown-outline/20 mb-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <DollarSign className="w-8 h-8 text-red-fox" />
             <div>
-              <p className="text-2xl font-bold text-foreground">Projects from $2,500</p>
+              <p className="text-2xl font-bold text-foreground">Projects starting at $999</p>
               <p className="text-muted-foreground">Transparent, flat-fee pricing</p>
             </div>
           </div>
           
-          <div className="space-y-3 mb-8">
+          <div className="space-y-3 mb-8 inline-block text-left">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-red-fox flex-shrink-0" />
@@ -45,11 +45,13 @@ const PricingSection = () => {
             ))}
           </div>
 
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="red-fox" size="lg" className="w-full sm:w-auto">
-              Get a free quote
-            </Button>
-          </a>
+          <div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="red-fox" size="lg">
+                Get a free quote
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>
