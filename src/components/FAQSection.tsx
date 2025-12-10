@@ -30,7 +30,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 bg-warm-beige scroll-mt-20 overflow-hidden">
+    <section id="faq" className="relative pt-10 sm:pt-14 pb-0 px-4 bg-warm-beige scroll-mt-20 overflow-visible">
       {/* Single ambient blob */}
       <div className="absolute top-10 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
@@ -66,7 +66,7 @@ const FAQSection = () => {
         fromColor="hsl(35 38% 90%)" 
         toColor="hsl(11 76% 49%)" 
         flip
-        className="mt-8"
+        className="-mb-[100px] md:-mb-[120px] lg:-mb-[140px]"
       />
     </section>
   );
