@@ -22,7 +22,7 @@ const CTASection = () => {
                 variant="outline-light"
                 className="text-lg px-8 py-6 hover:scale-105 transition-transform"
               >
-                Book a free 15-min audit
+                Book a free audit
               </Button>
             </a>
           </div>

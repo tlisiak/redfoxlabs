@@ -25,7 +25,7 @@ const Hero = () => {
               variant="red-fox"
               className="text-lg px-10 py-6 hover:scale-105 transition-transform"
             >
-              Book a free 15-min call
+              Book a free call
             </Button>
           </a>
         </div>
