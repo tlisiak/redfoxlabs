@@ -13,6 +13,8 @@ const Header = () => {
           <img 
             src={foxIcon} 
             alt="Red Fox Labs" 
+            width={48}
+            height={48}
             className="h-10 w-10 sm:h-12 sm:w-12 hover:animate-wiggle"
           />
           <span className="font-handwritten text-2xl sm:text-3xl">Red Fox Labs</span>

@@ -51,18 +51,7 @@
   }
 }
 
-@keyframes scroll-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Unified animation timing - all use ease-in-out for cohesive flow */
+/* Animation classes */
 .animate-float {
   animation: float 10s ease-in-out infinite;
 }
@@ -83,27 +72,8 @@
   animation: blob-morph 20s ease-in-out infinite;
 }
 
-.animate-scroll-in {
-  animation: scroll-fade-in 0.6s ease-in-out forwards;
-}
-
-.animate-scroll-in-delay-1 {
-  animation: scroll-fade-in 0.6s ease-out 0.1s forwards;
-  opacity: 0;
-}
-
-.animate-scroll-in-delay-2 {
-  animation: scroll-fade-in 0.6s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.animate-scroll-in-delay-3 {
-  animation: scroll-fade-in 0.6s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
 /* Soft Organic design system with warm fox lab aesthetic.
-All colors MUST be HSL.
+   All colors MUST be HSL.
 */
 
 @layer base {
@@ -124,7 +94,7 @@ All colors MUST be HSL.
     --secondary: 32 42% 95%; /* Cream */
     --secondary-foreground: 23 36% 10%;
 
-    --muted: 35 38% 90%; /* #E2B87F - Warm Beige */
+    --muted: 35 38% 90%; /* Warm Beige */
     --muted-foreground: 23 36% 40%;
 
     --accent: 16 80% 55%; /* #E96E2C - Soft Orange Accent */
@@ -148,7 +118,7 @@ All colors MUST be HSL.
     /* Additional brand colors */
     --cream: 32 42% 95%; /* #F8F3E8 */
     --brown-outline: 23 36% 25%; /* #3B2A1A */
-    --warm-beige: 35 38% 90%; /* #E2B87F */
+    --warm-beige: 35 38% 90%;
     
     /* Soft Organic Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(23 36% 10% / 0.08);
@@ -162,7 +132,6 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
 }
 
 @layer base {
@@ -172,7 +141,7 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; /* Account for sticky header */
+    scroll-padding-top: 5rem;
   }
 
   body {

@@ -93,7 +93,7 @@ const MissionSection = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`card-organic bg-cream p-6 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`card-organic bg-background p-6 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${index * 100 + 100}ms` }}
               >
                 <p className="text-3xl sm:text-4xl font-bold text-red-fox mb-2 font-handwritten">

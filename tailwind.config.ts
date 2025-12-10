@@ -66,11 +66,6 @@ export default {
 				'brown-outline': 'hsl(var(--brown-outline))',
 				'warm-beige': 'hsl(var(--warm-beige))'
 			},
-			backgroundImage: {
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)',
-				'gradient-accent': 'var(--gradient-accent)'
-			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',

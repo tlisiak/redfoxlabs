@@ -10,17 +10,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover shadow-soft transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
-        outline:
-          "border-2 border-red-fox bg-transparent text-red-fox hover:bg-red-fox/10 transition-all duration-300 hover:-translate-y-0.5",
-        "outline-light":
-          "border-2 border-white bg-transparent text-white hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5",
-        secondary:
-          "bg-cream text-foreground hover:bg-warm-beige border border-brown-outline/20 transition-all duration-300 hover:-translate-y-0.5",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
+        outline: "border-2 border-red-fox bg-transparent text-red-fox hover:bg-red-fox/10 transition-all duration-300 hover:-translate-y-0.5",
+        "outline-light": "border-2 border-white bg-transparent text-white hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5",
+        secondary: "bg-cream text-foreground hover:bg-warm-beige border border-brown-outline/20 transition-all duration-300 hover:-translate-y-0.5",
         ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline transition-all duration-300",
-        "red-fox": "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover shadow-soft hover:shadow-glow transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]",
         organic: "bg-red-fox text-red-fox-foreground hover:bg-red-fox-hover shadow-soft hover:shadow-glow transition-[transform,box-shadow] duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1.5 hover:scale-[1.03]",
       },
       size: {
