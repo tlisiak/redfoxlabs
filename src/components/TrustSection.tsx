@@ -1,22 +1,34 @@
-import { MapPin, Newspaper, TrendingUp, Zap } from "lucide-react";
+import { Award, MapPin, Newspaper, Rocket, TrendingUp, Zap } from "lucide-react";
 
 const TrustSection = () => {
   const companies = [
     { 
       name: "The Washington Post", 
-      subtitle: "Launched 3 new revenue producing products building Washington Post's advertising tech",
+      subtitle: "Built ad-tech platform for 600+ publishers. Won 2021 Engineering Innovation Award for web performance.",
       icon: Newspaper 
     },
     { 
       name: "Arcadia", 
-      subtitle: "Worked on data acquisition tools to help Arcadia jump from funded startup to $500M unicorn",
+      subtitle: "Reduced user verification from 9 days to 1 day. Built tools powering 100k+ users of clean energy programs.",
       icon: TrendingUp 
     },
     { 
-      name: "Inspire Clean Energy", 
-      subtitle: "Supported Inspire's entire marketing and web presence from website to landing pages and user experience. Led Inspire through multiple sales and managed teams of 10+",
+      name: "Inspire (acquired by Shell)", 
+      subtitle: "3x conversion improvement (5% → 15%). Cut site load time from 5s to 1.9s. Doubled user retention.",
       icon: Zap 
+    },
+    { 
+      name: "Scout", 
+      subtitle: "AI platform helping founders secure $10M+ in funding. 20x reduction in grant-prep time for 1k+ users.",
+      icon: Rocket 
     }
+  ];
+
+  const stats = [
+    { value: "600+", label: "Publishers Served" },
+    { value: "100k+", label: "Users Powered" },
+    { value: "3x", label: "Conversion Gains" },
+    { value: "$10M+", label: "Funding Secured" },
   ];
 
   return (
@@ -33,13 +45,35 @@ const TrustSection = () => {
           </p>
         </div>
 
+        {/* By the Numbers */}
+        <div className="mb-16">
+          <h2 className="text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider text-center">
+            By the Numbers
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            {stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="text-center p-4"
+              >
+                <p className="text-3xl sm:text-4xl font-bold text-red-fox mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Trusted By */}
         <div className="text-center">
           <h2 className="text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
             Trusted by companies including
           </h2>
           
-          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {companies.map((company, index) => {
               const Icon = company.icon;
               return (
@@ -59,6 +93,12 @@ const TrustSection = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Award Badge */}
+          <div className="mt-8 inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full">
+            <Award className="w-4 h-4" />
+            <span className="text-sm font-medium">2021 Engineering Innovation Award – Washington Post</span>
           </div>
         </div>
       </div>
