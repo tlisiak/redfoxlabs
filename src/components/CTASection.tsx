@@ -10,7 +10,7 @@ const CTASection = () => {
   return (
     <section className="relative bg-red-fox overflow-hidden">
       {/* Wave divider at top: FAQ (cream) → CTA (red-fox) */}
-      <WaveDivider fillClass="fill-red-fox" />
+      <WaveDivider colorVar="red-fox" />
       
       {/* Single ambient blob */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blob animate-blob opacity-20" />

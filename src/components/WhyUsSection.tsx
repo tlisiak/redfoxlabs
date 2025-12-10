@@ -38,7 +38,7 @@ const WhyUsSection = () => {
   return (
     <section id="why-us" className="relative bg-warm-beige">
       {/* Wave divider at top: Mission (cream) → WhyUs (warm-beige) */}
-      <WaveDivider fillClass="fill-warm-beige" />
+      <WaveDivider colorVar="warm-beige" />
       
       {/* Single ambient blob */}
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />

@@ -15,7 +15,7 @@ const MissionSection = () => {
   return (
     <section id="mission" className="relative bg-background">
       {/* Wave divider at top: Services (warm-beige) → Mission (cream) */}
-      <WaveDivider fillClass="fill-background" />
+      <WaveDivider colorVar="background" />
       
       {/* Single ambient blob */}
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-warm-beige/40 blob animate-blob opacity-25" />

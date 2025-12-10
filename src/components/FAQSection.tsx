@@ -32,7 +32,7 @@ const FAQSection = () => {
   return (
     <section id="faq" className="relative bg-background scroll-mt-20">
       {/* Wave divider at top: WhyUs (warm-beige) → FAQ (cream) */}
-      <WaveDivider fillClass="fill-background" />
+      <WaveDivider colorVar="background" />
       
       {/* Single ambient blob */}
       <div className="absolute top-24 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
