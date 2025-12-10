@@ -1,19 +1,21 @@
 import { Button } from "@/components/ui/button";
 import foxMascot from "@/assets/redfox-mascot.png";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
 
 const CTASection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section className="relative bg-red-fox py-16 sm:py-24 px-4 overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-10 left-10 w-40 h-40 bg-white/5 blob animate-blob opacity-60" />
-      <div className="absolute bottom-10 right-20 w-56 h-56 bg-white/5 blob animate-blob opacity-40" style={{ animationDelay: '2s' }} />
+      {/* Single ambient blob */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blob animate-blob opacity-20" />
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
-          <div className="text-center md:text-left text-white">
+          <div className={`text-center md:text-left text-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="font-handwritten text-2xl text-white/90 mb-3">Let's talk</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               Ready to transform your website?
@@ -33,7 +35,7 @@ const CTASection = () => {
           </div>
 
           {/* Fox Mascot */}
-          <div className="flex justify-center md:justify-end">
+          <div className={`flex justify-center md:justify-end transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <img 
               src={foxMascot} 
               alt="Red Fox Labs mascot" 
