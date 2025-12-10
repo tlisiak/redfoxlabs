@@ -13,7 +13,7 @@ const FAQSection = () => {
     },
     {
       question: "How much does a website cost?",
-      answer: "Projects typically start around $2,500-$5,000 depending on complexity. No hidden fees, no subscriptions—you pay once, you own it."
+      answer: "Projects start at $999 depending on complexity. No hidden fees, no subscriptions—you pay once, you own it."
     },
     {
       question: "Can I update the website myself?",
