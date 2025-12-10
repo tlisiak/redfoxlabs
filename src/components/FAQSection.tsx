@@ -30,7 +30,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative py-16 sm:py-20 px-4 bg-background scroll-mt-20 overflow-hidden">
+    <section id="faq" className="relative pt-12 sm:pt-16 pb-16 sm:pb-20 px-4 bg-background scroll-mt-20 overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute top-10 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       

@@ -36,7 +36,7 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="why-us" className="relative py-20 sm:py-28 px-4 bg-warm-beige overflow-hidden">
+    <section id="why-us" className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 bg-warm-beige overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />
       
