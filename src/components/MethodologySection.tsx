@@ -11,7 +11,7 @@ const MethodologySection = () => {
     {
       icon: Key,
       title: "No lock-in",
-      description: "You own everything. No monthly traps or forced dependencies."
+      description: "You own everything."
     },
     {
       icon: MessageSquare,
