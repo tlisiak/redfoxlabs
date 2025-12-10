@@ -66,6 +66,11 @@ export default {
 				'brown-outline': 'hsl(var(--brown-outline))',
 				'warm-beige': 'hsl(var(--warm-beige))'
 			},
+			fill: {
+				'background': 'hsl(var(--background))',
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'red-fox': 'hsl(var(--red-fox))',
+			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',

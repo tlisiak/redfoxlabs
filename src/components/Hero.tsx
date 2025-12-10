@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { WaveDivider } from "@/components/ui/WaveDivider";
 import { BOOKING_URL } from "@/constants";
 
 const Hero = () => {
   return (
-    <section className="relative bg-background pt-24 sm:pt-32 pb-0 px-4 overflow-visible" id="hero">
+    <section className="relative bg-background pt-24 sm:pt-32 pb-0 px-4" id="hero">
       {/* Single ambient blob */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-red-fox/5 blob animate-blob opacity-30" />
       
@@ -36,15 +35,12 @@ const Hero = () => {
 
         {/* Trust line */}
         <p 
-          className="text-sm text-muted-foreground mb-12 animate-fade-in"
+          className="text-sm text-muted-foreground mb-16 animate-fade-in"
           style={{ animationDelay: '0.3s' }}
         >
           One-time investment · No subscriptions · You own everything
         </p>
       </div>
-      
-      {/* Wave divider: Hero (cream) → Services (warm-beige) */}
-      <WaveDivider toColor="hsl(35 38% 90%)" />
     </section>
   );
 };

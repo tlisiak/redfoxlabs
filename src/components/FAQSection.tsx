@@ -30,39 +30,42 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative pt-10 sm:pt-14 pb-16 px-4 bg-background scroll-mt-20 overflow-visible">
+    <section id="faq" className="relative bg-background scroll-mt-20">
+      {/* Wave divider at top: WhyUs (warm-beige) → FAQ (cream) */}
+      <WaveDivider fillClass="fill-background" />
+      
       {/* Single ambient blob */}
-      <div className="absolute top-10 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
+      <div className="absolute top-24 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
-      <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
-        <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Common questions
-          </h2>
+      {/* Content wrapper with padding to account for wave height */}
+      <div className="relative pt-[80px] sm:pt-[96px] pb-0 px-4">
+        <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
+          <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+              Common questions
+            </h2>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-3 pb-16">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={String(index + 1)} 
+                className={`card-organic bg-background px-6 border-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 80 + 100}ms` }}
+              >
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-red-fox transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-        
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={String(index + 1)} 
-              className={`card-organic bg-background px-6 border-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${index * 80 + 100}ms` }}
-            >
-              <AccordionTrigger className="text-left font-semibold text-foreground hover:text-red-fox transition-colors">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
       </div>
-      
-      {/* Wave divider: FAQ (cream) → CTA (red-fox) */}
-      <WaveDivider toColor="hsl(11 76% 49%)" />
     </section>
   );
 };
