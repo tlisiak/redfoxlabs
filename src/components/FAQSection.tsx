@@ -5,8 +5,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WaveDivider } from "@/components/ui/WaveDivider";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const FAQSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const faqs = [
     {
       question: "How long does it take to build a website?",
@@ -27,23 +30,25 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative py-16 sm:py-20 px-4 bg-background paper-texture scroll-mt-20 overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-0 w-32 h-32 bg-warm-beige/50 blob animate-blob opacity-50" />
-      <div className="absolute bottom-10 right-10 w-40 h-40 bg-red-fox/5 blob animate-blob opacity-40" style={{ animationDelay: '3s' }} />
+    <section id="faq" className="relative py-16 sm:py-20 px-4 bg-background scroll-mt-20 overflow-hidden">
+      {/* Single ambient blob */}
+      <div className="absolute top-10 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
-      <div className="max-w-2xl mx-auto relative z-10">
-        <p className="font-handwritten text-2xl text-red-fox text-center mb-2">Got questions?</p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
-          Common questions
-        </h2>
+      <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Common questions
+          </h2>
+        </div>
         
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={String(index + 1)} 
-              className="card-organic bg-background px-6 border-0"
+              className={`card-organic bg-background px-6 border-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 80 + 100}ms` }}
             >
               <AccordionTrigger className="text-left font-semibold text-foreground hover:text-red-fox transition-colors">
                 {faq.question}
@@ -56,8 +61,8 @@ const FAQSection = () => {
         </Accordion>
       </div>
       
-      {/* Wavy divider */}
-      <WaveDivider color="hsl(var(--red-fox))" className="mt-16" />
+      {/* Subtle wavy divider */}
+      <WaveDivider color="hsl(var(--red-fox))" className="mt-16" opacity={0.9} />
     </section>
   );
 };

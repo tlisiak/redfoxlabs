@@ -1,7 +1,11 @@
 import { Heart, Building2, GraduationCap, TrendingUp } from "lucide-react";
 import { WaveDivider } from "@/components/ui/WaveDivider";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const MissionSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
+  
   const stats = [
     { value: "81%", label: "of consumers research online before buying" },
     { value: "88%", label: "of local searchers visit or call within 24 hours" },
@@ -9,14 +13,13 @@ const MissionSection = () => {
   ];
 
   return (
-    <section id="mission" className="relative py-20 sm:py-28 px-4 bg-background paper-texture overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-48 h-48 bg-red-fox/5 blob animate-blob opacity-60" />
-      <div className="absolute bottom-40 right-10 w-64 h-64 bg-warm-beige/60 blob animate-blob opacity-50" style={{ animationDelay: '2s' }} />
+    <section id="mission" className="relative py-20 sm:py-28 px-4 bg-background overflow-hidden">
+      {/* Single ambient blob */}
+      <div className="absolute bottom-20 right-0 w-80 h-80 bg-warm-beige/40 blob animate-blob opacity-25" />
       
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-handwritten text-2xl text-red-fox mb-2">The Mission</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Why I Do This
@@ -29,7 +32,7 @@ const MissionSection = () => {
         {/* Two Column Layout */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-16">
           {/* Left: Experience */}
-          <div className="card-organic bg-background p-8">
+          <div className={`card-organic bg-background p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
                 <Building2 className="w-6 h-6 text-red-fox" />
@@ -47,7 +50,7 @@ const MissionSection = () => {
           </div>
 
           {/* Right: Mission */}
-          <div className="card-organic bg-background p-8">
+          <div className={`card-organic bg-background p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
             <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
                 <Heart className="w-6 h-6 text-red-fox" />
@@ -66,7 +69,7 @@ const MissionSection = () => {
         </div>
 
         {/* Community Callout */}
-        <div className="card-organic bg-warm-beige p-6 sm:p-8 mb-14">
+        <div className={`card-organic bg-warm-beige p-6 sm:p-8 mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 bg-red-fox/10 blob-sm flex items-center justify-center flex-shrink-0">
               <GraduationCap className="w-7 h-7 text-red-fox" />
@@ -81,14 +84,18 @@ const MissionSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="text-center mb-8">
-          <p className="font-handwritten text-xl text-red-fox mb-6 flex items-center justify-center gap-2">
+        <div className="text-center mb-8" ref={statsRef}>
+          <p className={`font-handwritten text-xl text-red-fox mb-6 flex items-center justify-center gap-2 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <TrendingUp className="w-5 h-5" />
             Why Web Presence Matters
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="card-organic bg-cream p-6">
+              <div 
+                key={index} 
+                className={`card-organic bg-cream p-6 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100 + 100}ms` }}
+              >
                 <p className="text-3xl sm:text-4xl font-bold text-red-fox mb-2 font-handwritten">
                   {stat.value}
                 </p>
@@ -100,13 +107,13 @@ const MissionSection = () => {
           </div>
         </div>
 
-        <p className="text-center text-foreground font-medium text-lg">
+        <p className={`text-center text-foreground font-medium text-lg transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
           Small businesses deserve enterprise-level tools at fair prices.
         </p>
       </div>
       
-      {/* Wavy divider */}
-      <WaveDivider color="hsl(35 38% 90%)" className="mt-16" />
+      {/* Subtle wavy divider */}
+      <WaveDivider color="hsl(35 38% 90%)" className="mt-16" opacity={0.8} />
     </section>
   );
 };

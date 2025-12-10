@@ -1,7 +1,10 @@
 import { Palette, Search, GraduationCap } from "lucide-react";
 import { WaveDivider } from "@/components/ui/WaveDivider";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ServicesSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const services = [
     {
       icon: Palette,
@@ -22,12 +25,11 @@ const ServicesSection = () => {
   
   return (
     <section id="services" className="relative py-20 sm:py-28 px-4 bg-warm-beige overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-10 right-0 w-40 h-40 bg-red-fox/5 blob animate-blob opacity-50" />
-      <div className="absolute bottom-20 left-0 w-56 h-56 bg-accent/5 blob animate-blob opacity-40" style={{ animationDelay: '3s' }} />
+      {/* Single ambient blob */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
       
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-handwritten text-2xl text-red-fox mb-2">What we offer</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             How we can help
@@ -43,7 +45,8 @@ const ServicesSection = () => {
             return (
               <div 
                 key={index} 
-                className="card-organic bg-background p-8"
+                className={`card-organic bg-background p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100 + 200}ms` }}
               >
                 <div className="w-14 h-14 bg-red-fox/10 blob-sm flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-red-fox" />
@@ -60,8 +63,8 @@ const ServicesSection = () => {
         </div>
       </div>
       
-      {/* Wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-16" />
+      {/* Subtle wavy divider */}
+      <WaveDivider color="hsl(var(--background))" className="mt-16" opacity={0.8} />
     </section>
   );
 };

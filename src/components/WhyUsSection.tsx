@@ -1,8 +1,11 @@
 import { GraduationCap, Key, MessageSquare, RefreshCw, CheckCircle, DollarSign } from "lucide-react";
 import foxMascot from "@/assets/redfox-mascot.png";
 import { WaveDivider } from "@/components/ui/WaveDivider";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const WhyUsSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   const principles = [
     {
       icon: GraduationCap,
@@ -34,16 +37,15 @@ const WhyUsSection = () => {
 
   return (
     <section id="why-us" className="relative py-20 sm:py-28 px-4 bg-warm-beige overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute top-10 right-10 w-40 h-40 bg-red-fox/5 blob animate-blob opacity-50" />
-      <div className="absolute bottom-20 left-20 w-48 h-48 bg-accent/5 blob animate-blob opacity-40" style={{ animationDelay: '4s' }} />
+      {/* Single ambient blob */}
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />
       
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-14">
+      <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
+        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <img 
             src={foxMascot} 
             alt="Red Fox Labs mascot" 
-            className="w-20 h-20 mx-auto mb-5 animate-wiggle"
+            className="w-20 h-20 mx-auto mb-5 animate-float"
           />
           <p className="font-handwritten text-2xl text-red-fox mb-2">Our Philosophy</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
@@ -57,11 +59,15 @@ const WhyUsSection = () => {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-12">
           {/* Left: Approach */}
           <div className="space-y-6">
-            <p className="font-handwritten text-xl text-red-fox mb-4">Our Approach</p>
+            <p className={`font-handwritten text-xl text-red-fox mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '100ms' }}>Our Approach</p>
             {principles.map((principle, index) => {
               const Icon = principle.icon;
               return (
-                <div key={index} className="flex gap-4 hover-bounce">
+                <div 
+                  key={index} 
+                  className={`flex gap-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${index * 80 + 150}ms` }}
+                >
                   <div className="flex-shrink-0 w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
                     <Icon className="w-6 h-6 text-red-fox" />
                   </div>
@@ -79,7 +85,7 @@ const WhyUsSection = () => {
           </div>
 
           {/* Right: Pricing */}
-          <div className="card-organic bg-background p-6 sm:p-8">
+          <div className={`card-organic bg-background p-6 sm:p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
             <p className="font-handwritten text-xl text-red-fox mb-4">Fair Pricing</p>
             
             <div className="flex items-center gap-4 mb-6">
@@ -106,8 +112,8 @@ const WhyUsSection = () => {
         </div>
       </div>
       
-      {/* Wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-8" />
+      {/* Subtle wavy divider */}
+      <WaveDivider color="hsl(var(--background))" className="mt-8" opacity={0.8} />
     </section>
   );
 };
