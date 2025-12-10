@@ -13,13 +13,13 @@ const MissionSection = () => {
   ];
 
   return (
-    <section id="mission" className="relative py-20 sm:py-28 px-4 bg-background overflow-hidden">
+    <section id="mission" className="relative pt-14 sm:pt-20 pb-10 sm:pb-14 px-4 bg-background overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute bottom-20 right-0 w-80 h-80 bg-warm-beige/40 blob animate-blob opacity-25" />
       
       <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
         {/* Header */}
-        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-handwritten text-2xl text-red-fox mb-2">The Mission</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Why I Do This
@@ -30,9 +30,9 @@ const MissionSection = () => {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-10">
           {/* Left: Experience */}
-          <div className={`card-organic bg-background p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
+          <div className={`card-organic bg-background p-6 sm:p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
                 <Building2 className="w-6 h-6 text-red-fox" />
@@ -50,7 +50,7 @@ const MissionSection = () => {
           </div>
 
           {/* Right: Mission */}
-          <div className={`card-organic bg-background p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
+          <div className={`card-organic bg-background p-6 sm:p-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
             <h3 className="text-xl font-bold text-foreground flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-red-fox/10 blob-sm flex items-center justify-center">
                 <Heart className="w-6 h-6 text-red-fox" />
@@ -69,7 +69,7 @@ const MissionSection = () => {
         </div>
 
         {/* Community Callout */}
-        <div className={`card-organic bg-warm-beige p-6 sm:p-8 mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
+        <div className={`card-organic bg-warm-beige p-5 sm:p-6 mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 bg-red-fox/10 blob-sm flex items-center justify-center flex-shrink-0">
               <GraduationCap className="w-7 h-7 text-red-fox" />
@@ -84,7 +84,7 @@ const MissionSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="text-center mb-8" ref={statsRef}>
+        <div className="text-center mb-6" ref={statsRef}>
           <p className={`font-handwritten text-xl text-red-fox mb-6 flex items-center justify-center gap-2 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <TrendingUp className="w-5 h-5" />
             Why Web Presence Matters
@@ -113,7 +113,7 @@ const MissionSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(35 38% 90%)" className="mt-16" opacity={0.8} />
+      <WaveDivider color="hsl(35 38% 90%)" className="mt-10" opacity={0.7} />
     </section>
   );
 };

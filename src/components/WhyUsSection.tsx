@@ -36,16 +36,16 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section id="why-us" className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 bg-warm-beige overflow-hidden">
+    <section id="why-us" className="relative pt-10 sm:pt-14 pb-10 sm:pb-12 px-4 bg-warm-beige overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 blob animate-blob opacity-20" />
       
       <div className="max-w-5xl mx-auto relative z-10" ref={ref}>
-        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <img 
             src={foxMascot} 
             alt="Red Fox Labs mascot" 
-            className="w-20 h-20 mx-auto mb-5 animate-float"
+            className="w-16 h-16 mx-auto mb-4 animate-float"
           />
           <p className="font-handwritten text-2xl text-red-fox mb-2">Our Philosophy</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
@@ -56,9 +56,9 @@ const WhyUsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-14 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-8">
           {/* Left: Approach */}
-          <div className="space-y-6">
+          <div className="space-y-5">
             <p className={`font-handwritten text-xl text-red-fox mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '100ms' }}>Our Approach</p>
             {principles.map((principle, index) => {
               const Icon = principle.icon;
@@ -113,7 +113,7 @@ const WhyUsSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-8" opacity={0.8} />
+      <WaveDivider color="hsl(var(--background))" className="mt-6" opacity={0.7} />
     </section>
   );
 };

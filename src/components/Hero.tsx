@@ -44,7 +44,7 @@ const Hero = () => {
         </div>
 
         {/* Trust line */}
-        <p className="text-sm text-muted-foreground mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="text-sm text-muted-foreground mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           One-time investment · No subscriptions · You own everything
         </p>
       </div>

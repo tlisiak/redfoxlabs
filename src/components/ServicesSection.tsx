@@ -24,12 +24,12 @@ const ServicesSection = () => {
   ];
   
   return (
-    <section id="services" className="relative pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 bg-warm-beige overflow-hidden">
+    <section id="services" className="relative pt-16 sm:pt-20 pb-10 sm:pb-12 px-4 bg-warm-beige overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
       
       <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-handwritten text-2xl text-red-fox mb-2">What we offer</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             How we can help
@@ -39,7 +39,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-8" opacity={0.8} />
+      <WaveDivider color="hsl(var(--background))" className="mt-6" opacity={0.7} />
     </section>
   );
 };
