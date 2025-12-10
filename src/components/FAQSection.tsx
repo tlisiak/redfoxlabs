@@ -61,8 +61,13 @@ const FAQSection = () => {
         </Accordion>
       </div>
       
-      {/* Wave divider - matches next section (CTA: red-fox) */}
-      <WaveDivider color="hsl(11 76% 49%)" className="mt-8" opacity={0.8} />
+      {/* Wave divider: FAQ (cream) → CTA (red-fox) - UP (flipped) - dramatic entrance */}
+      <WaveDivider 
+        fromColor="hsl(32 42% 95%)" 
+        toColor="hsl(11 76% 49%)" 
+        flip
+        className="mt-8"
+      />
     </section>
   );
 };
