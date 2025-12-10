@@ -24,7 +24,7 @@ const ServicesSection = () => {
   ];
   
   return (
-    <section id="services" className="relative py-20 sm:py-28 px-4 bg-warm-beige overflow-hidden">
+    <section id="services" className="relative pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 bg-warm-beige overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
       
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--background))" className="mt-16" opacity={0.8} />
+      <WaveDivider color="hsl(var(--background))" className="mt-8" opacity={0.8} />
     </section>
   );
 };
