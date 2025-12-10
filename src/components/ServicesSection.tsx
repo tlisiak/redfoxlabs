@@ -26,7 +26,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="relative bg-warm-beige">
       {/* Wave divider at top: Hero (cream) → Services (warm-beige) */}
-      <WaveDivider fillClass="fill-warm-beige" />
+      <WaveDivider colorVar="warm-beige" />
       
       {/* Single ambient blob */}
       <div className="absolute top-20 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
