@@ -1,26 +1,23 @@
-import { Palette, Globe, Search, BarChart3, Wrench } from "lucide-react";
+import { Palette, Search, GraduationCap } from "lucide-react";
+
 const ServicesSection = () => {
-  const services = [{
-    icon: Palette,
-    title: "Brand Strategy",
-    description: "Define your visual identity and message that resonates with customers."
-  }, {
-    icon: Globe,
-    title: "Website Design",
-    description: "Fast, mobile-first sites built to convert visitors into customers."
-  }, {
-    icon: Search,
-    title: "SEO & Marketing",
-    description: "Get found by the right people searching for what you offer."
-  }, {
-    icon: BarChart3,
-    title: "Analytics",
-    description: "Understand what's working with clear, actionable insights."
-  }, {
-    icon: Wrench,
-    title: "Ongoing Support",
-    description: "Site care, updates, and help when you need it."
-  }];
+  const services = [
+    {
+      icon: Palette,
+      title: "Strategy & Design",
+      description: "Brand identity, website design, and visual systems that convert visitors into customers."
+    },
+    {
+      icon: Search,
+      title: "SEO & Marketing",
+      description: "Get found by the right people with search optimization and targeted marketing."
+    },
+    {
+      icon: GraduationCap,
+      title: "Analytics & Education",
+      description: "Understand what's working and learn to manage your own digital presence."
+    }
+  ];
   return <section id="services" className="py-20 sm:py-28 px-4 bg-warm-beige">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
