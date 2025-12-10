@@ -1,4 +1,5 @@
 import { GraduationCap, Key, MessageSquare, RefreshCw } from "lucide-react";
+import foxMascot from "@/assets/redfox-mascot.png";
 
 const MethodologySection = () => {
   const principles = [
@@ -28,6 +29,11 @@ const MethodologySection = () => {
     <section id="approach" className="py-20 sm:py-28 px-4 bg-background paper-texture">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
+          <img 
+            src={foxMascot} 
+            alt="Red Fox Labs mascot" 
+            className="w-20 h-20 mx-auto mb-6"
+          />
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Our approach
           </h2>
