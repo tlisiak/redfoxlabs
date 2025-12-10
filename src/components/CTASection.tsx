@@ -11,7 +11,7 @@ const CTASection = () => {
           {/* Text Content */}
           <div className="text-center md:text-left text-white">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Ready to run your next experiment?
+              Ready to transform your website?
             </h2>
             <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
               Let's test what works for your business. No pressure, no sales pitch—just a genuine conversation about growth.
