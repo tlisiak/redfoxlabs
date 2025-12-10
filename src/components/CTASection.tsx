@@ -8,7 +8,7 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section className="relative bg-red-fox py-16 sm:py-24 px-4 overflow-hidden">
+    <section className="relative bg-red-fox py-14 sm:py-20 px-4 overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blob animate-blob opacity-20" />
       

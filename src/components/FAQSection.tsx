@@ -30,19 +30,19 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="relative pt-12 sm:pt-16 pb-16 sm:pb-20 px-4 bg-background scroll-mt-20 overflow-hidden">
+    <section id="faq" className="relative pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 bg-background scroll-mt-20 overflow-hidden">
       {/* Single ambient blob */}
       <div className="absolute top-10 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
       <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             Common questions
           </h2>
         </div>
         
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
@@ -62,7 +62,7 @@ const FAQSection = () => {
       </div>
       
       {/* Subtle wavy divider */}
-      <WaveDivider color="hsl(var(--red-fox))" className="mt-16" opacity={0.9} />
+      <WaveDivider color="hsl(var(--red-fox))" className="mt-10" opacity={0.9} />
     </section>
   );
 };
