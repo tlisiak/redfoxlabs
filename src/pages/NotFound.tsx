@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import ContactModal from "@/components/ContactModal";
+import { BOOKING_URL } from "@/constants";
 
 const NotFound = () => {
   const location = useLocation();
@@ -29,14 +29,14 @@ const NotFound = () => {
 
         {/* Navigation buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button variant="red-fox" size="lg" asChild>
+          <Button variant="organic" size="lg" asChild>
             <a href="/">Go Home</a>
           </Button>
-          <ContactModal>
-            <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" asChild>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               Contact Us
-            </Button>
-          </ContactModal>
+            </a>
+          </Button>
         </div>
 
         {/* Popular links */}
@@ -51,11 +51,9 @@ const NotFound = () => {
               Why Us
             </a>
             <span className="text-muted-foreground/50">•</span>
-            <ContactModal>
-              <button className="hover:text-red-fox transition-colors">
-                Contact
-              </button>
-            </ContactModal>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-red-fox transition-colors">
+              Contact
+            </a>
           </div>
         </div>
       </div>

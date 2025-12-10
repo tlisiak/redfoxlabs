@@ -1,5 +1,3 @@
-import { WaveDivider } from "@/components/ui/WaveDivider";
-
 const Footer = () => {
   return (
     <footer className="relative bg-foreground">

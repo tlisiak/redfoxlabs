@@ -38,7 +38,7 @@ class ErrorBoundary extends Component<Props, State> {
             <p className="text-lg text-muted-foreground mb-6">
               Something went wrong. Don't worry, we're on it.
             </p>
-            <Button variant="red-fox" size="lg" onClick={this.handleReset}>
+            <Button variant="organic" size="lg" onClick={this.handleReset}>
               Go back home
             </Button>
           </div>

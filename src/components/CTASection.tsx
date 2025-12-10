@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import foxMascot from "@/assets/redfox-mascot.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
-const BOOKING_URL = "https://calendar.app.google/EbmpDAPos3eygmpr9";
+import { BOOKING_URL } from "@/constants";
 
 const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -35,12 +34,15 @@ const CTASection = () => {
           </div>
 
           {/* Fox Mascot */}
-          <div className={`flex justify-center md:justify-end transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
+          <div 
+            className={`flex justify-center md:justify-end transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: '200ms' }}
+          >
             <img 
               src={foxMascot} 
               alt="Red Fox Labs mascot" 
-              width="256"
-              height="256"
+              width={256}
+              height={256}
               loading="lazy"
               className="w-52 sm:w-72 h-auto animate-float drop-shadow-2xl"
             />
