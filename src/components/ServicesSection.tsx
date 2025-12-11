@@ -32,7 +32,7 @@ const ServicesSection = () => {
       <div className="absolute top-20 left-0 w-72 h-72 bg-red-fox/5 blob animate-blob opacity-25" />
       
       {/* Content wrapper */}
-      <div className="relative pt-16 sm:pt-20 pb-0 px-4">
+      <div className="relative pt-16 sm:pt-20 pb-20 sm:pb-24 px-4">
         <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
           <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="font-handwritten text-2xl text-red-fox mb-2">What we offer</p>
@@ -44,7 +44,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (

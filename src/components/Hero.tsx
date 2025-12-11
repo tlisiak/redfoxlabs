@@ -3,7 +3,7 @@ import { BOOKING_URL } from "@/constants";
 
 const Hero = () => {
   return (
-    <section className="relative bg-background pt-24 sm:pt-32 pb-0 px-4" id="hero">
+    <section className="relative bg-background pt-24 sm:pt-32 pb-20 sm:pb-24 px-4" id="hero">
       {/* Single ambient blob */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-red-fox/5 blob animate-blob opacity-30" />
       
