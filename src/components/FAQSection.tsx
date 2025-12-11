@@ -38,7 +38,7 @@ const FAQSection = () => {
       <div className="absolute top-24 right-0 w-48 h-48 bg-warm-beige/30 blob animate-blob opacity-20" />
       
       {/* Content wrapper */}
-      <div className="relative pt-16 sm:pt-20 pb-0 px-4">
+      <div className="relative pt-16 sm:pt-20 pb-20 sm:pb-24 px-4">
         <div className="max-w-2xl mx-auto relative z-10" ref={ref}>
           <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="font-handwritten text-2xl text-red-fox mb-2">Got questions?</p>
@@ -47,7 +47,7 @@ const FAQSection = () => {
             </h2>
           </div>
           
-          <Accordion type="single" collapsible className="space-y-3 pb-16">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
