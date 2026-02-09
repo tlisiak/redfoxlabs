@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import foxMascot from "@/assets/redfox-mascot.png";
+
 import { BOOKING_URL } from "@/constants";
 
 const Hero = () => {
@@ -35,18 +35,6 @@ const Hero = () => {
           </a>
         </div>
 
-        <div
-          className="animate-fade-in"
-          style={{ animationDelay: '0.3s' }}
-        >
-          <img
-            src={foxMascot}
-            alt="Red Fox Labs mascot"
-            width={192}
-            height={192}
-            className="w-40 sm:w-48 h-auto mx-auto animate-float drop-shadow-2xl"
-          />
-        </div>
       </div>
     </section>
   );
