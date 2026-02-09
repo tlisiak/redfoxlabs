@@ -1,29 +1,31 @@
 import { Button } from "@/components/ui/button";
+import foxMascot from "@/assets/redfox-mascot.png";
 import { BOOKING_URL } from "@/constants";
 
 const Hero = () => {
   return (
-    <section className="relative bg-background pt-24 sm:pt-32 pb-20 sm:pb-24 px-4" id="hero">
-      {/* Single ambient blob */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-red-fox/5 blob animate-blob opacity-30" />
-      
-      <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
-          Websites that <span className="font-handwritten text-red-fox text-5xl sm:text-6xl lg:text-7xl">actually</span> work.
+    <section className="flex-1 flex items-center justify-center bg-background px-4 py-16">
+      <div className="max-w-3xl mx-auto text-center">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 animate-fade-in">
+          Product. Strategy. <span className="font-handwritten text-red-fox">Design.</span>
         </h1>
-        
-        {/* Subhead */}
-        <p 
-          className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in"
+
+        <p
+          className="text-xl sm:text-2xl text-muted-foreground mb-4 max-w-xl mx-auto animate-fade-in"
           style={{ animationDelay: '0.1s' }}
         >
-          Strategy, design, and tech for Bay Area small businesses.
+          We build efficient digital products that just work. No fluff, no subscriptions.
         </p>
 
-        {/* CTA Button */}
-        <div 
-          className="flex justify-center mb-12 animate-fade-in"
+        <p
+          className="text-sm text-muted-foreground mb-10 animate-fade-in"
+          style={{ animationDelay: '0.15s' }}
+        >
+          One-time investment · You own everything
+        </p>
+
+        <div
+          className="mb-12 animate-fade-in"
           style={{ animationDelay: '0.2s' }}
         >
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
@@ -33,13 +35,18 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Trust line */}
-        <p 
-          className="text-sm text-muted-foreground mb-16 animate-fade-in"
+        <div
+          className="animate-fade-in"
           style={{ animationDelay: '0.3s' }}
         >
-          One-time investment · No subscriptions · You own everything
-        </p>
+          <img
+            src={foxMascot}
+            alt="Red Fox Labs mascot"
+            width={192}
+            height={192}
+            className="w-40 sm:w-48 h-auto mx-auto animate-float drop-shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
