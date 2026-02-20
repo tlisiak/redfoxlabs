@@ -8,7 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap">
-    
+
+    <!-- GitHub Pages SPA redirect handler -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var decoded = l.search.slice(1).split('&').reduce(function(q, range) {
+            var parts = range.split('=');
+            q[parts[0]] = parts.slice(1).join('=').replace(/~and~/g, '&');
+            return q;
+          }, {});
+          if (decoded.p !== undefined) {
+            window.history.replaceState(
+              null, null,
+              l.pathname.slice(0, -1) + decoded.p +
+              (decoded.q ? '?' + decoded.q : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location));
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>Product, Strategy & Design | Red Fox Labs</title>
     <meta name="title" content="Product, Strategy & Design | Red Fox Labs" />
@@ -16,22 +37,22 @@
     <meta name="keywords" content="product design, digital strategy, web design, product development, efficient websites" />
     <meta name="author" content="Red Fox Labs LLC" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://redfoxlabs.lovable.app" />
+    <link rel="canonical" href="https://redfoxlabs.co" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://redfoxlabs.lovable.app" />
+    <meta property="og:url" content="https://redfoxlabs.co" />
     <meta property="og:title" content="Product, Strategy & Design | Red Fox Labs" />
     <meta property="og:description" content="We build efficient digital products that just work. No fluff, no subscriptions. You own everything." />
-    <meta property="og:image" content="https://redfoxlabs.lovable.app/og-image.jpg" />
+    <meta property="og:image" content="https://redfoxlabs.co/og-image.jpg" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://redfoxlabs.lovable.app" />
+    <meta name="twitter:url" content="https://redfoxlabs.co" />
     <meta name="twitter:title" content="Product, Strategy & Design | Red Fox Labs" />
     <meta name="twitter:description" content="We build efficient digital products that just work. No fluff, no subscriptions." />
-    <meta name="twitter:image" content="https://redfoxlabs.lovable.app/og-image.jpg" />
+    <meta name="twitter:image" content="https://redfoxlabs.co/og-image.jpg" />
 
     <!-- Mobile Optimization -->
     <meta name="theme-color" content="#C73525" />
@@ -46,7 +67,7 @@
       "@type": "Organization",
       "name": "Red Fox Labs LLC",
       "description": "Product strategy, design, and efficient digital solutions",
-      "url": "https://redfoxlabs.lovable.app"
+      "url": "https://redfoxlabs.co"
     }
     </script>
   </head>
