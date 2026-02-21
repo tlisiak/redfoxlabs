@@ -16,11 +16,11 @@ const Hero = () => {
           className="w-36 h-36 sm:w-44 sm:h-44 drop-shadow-lg hover:animate-wiggle"
         />
 
-        <span className="font-handwritten text-red-fox text-6xl sm:text-7xl lg:text-8xl leading-none">
+        <span className="font-handwritten font-bold text-red-fox text-6xl sm:text-7xl lg:text-8xl leading-none">
           Red Fox Labs
         </span>
 
-        <p className="text-xl sm:text-2xl text-muted-foreground max-w-xl font-bold">
+        <p className="text-xl sm:text-2xl text-muted-foreground max-w-xl">
           The details most studios skip are the ones we obsess over.
         </p>
 
