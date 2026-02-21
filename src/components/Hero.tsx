@@ -16,14 +16,14 @@ const Hero = () => {
           className="text-xl sm:text-2xl text-muted-foreground mb-4 max-w-xl mx-auto animate-fade-in"
           style={{ animationDelay: '0.1s' }}
         >
-          We build efficient digital products that just work. No fluff, no subscriptions.
+          The details most studios skip are the ones we obsess over.
         </p>
 
         <p
           className="text-sm text-muted-foreground mb-10 animate-fade-in"
           style={{ animationDelay: '0.15s' }}
         >
-          One-time investment · You own everything
+          Fast to ship. Built to last.
         </p>
 
         <div
