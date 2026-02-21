@@ -135,17 +135,17 @@
        3. Fiber     — long horizontal paper-grain streaks, now visible
        4. Grain     — fine isotropic parchment noise */
     background-image:
-      /* 1. Vignette */
-      radial-gradient(ellipse 130% 100% at 50% 50%, transparent 35%, hsl(23 36% 12% / 0.20) 100%),
-      /* 2. Foxing spots — clustered at edges/corners where old paper oxidises first */
-      radial-gradient(ellipse 90px  65px at  8%  12%, hsl(28 50% 35% / 0.10) 0%, transparent 70%),
-      radial-gradient(ellipse 55px  80px at 84%   9%, hsl(22 44% 28% / 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 100px 60px at 93%  38%, hsl(32 55% 38% / 0.09) 0%, transparent 70%),
-      radial-gradient(ellipse 65px  85px at  3%  58%, hsl(20 40% 25% / 0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 80px  55px at 72%  91%, hsl(29 48% 33% / 0.09) 0%, transparent 70%),
-      radial-gradient(ellipse 50px  70px at 38%  96%, hsl(34 52% 40% / 0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 45px  60px at 94%  82%, hsl(24 42% 30% / 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 70px  45px at 18%  88%, hsl(27 46% 32% / 0.07) 0%, transparent 70%),
+      /* 1. Vignette — farthest-corner ellipse so darkening actually reaches the edges */
+      radial-gradient(ellipse at 50% 50%, transparent 45%, hsl(23 36% 10% / 0.42) 100%),
+      /* 2. Foxing spots — larger + more opaque so they're actually visible 🦊 */
+      radial-gradient(ellipse 220px 160px at  8%  14%, hsl(28 55% 32% / 0.22) 0%, transparent 70%),
+      radial-gradient(ellipse 140px 190px at 85%   8%, hsl(22 48% 26% / 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 240px 140px at 95%  40%, hsl(32 58% 36% / 0.20) 0%, transparent 70%),
+      radial-gradient(ellipse 160px 200px at  2%  60%, hsl(20 44% 24% / 0.17) 0%, transparent 70%),
+      radial-gradient(ellipse 200px 130px at 74%  93%, hsl(29 52% 30% / 0.21) 0%, transparent 70%),
+      radial-gradient(ellipse 130px 170px at 38%  97%, hsl(34 56% 38% / 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 110px 150px at 96%  84%, hsl(24 46% 28% / 0.19) 0%, transparent 70%),
+      radial-gradient(ellipse 180px 110px at 16%  90%, hsl(27 50% 30% / 0.17) 0%, transparent 70%),
       /* 3. Fiber — longer wavelength anisotropic streaks */
       url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='fiber'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.30 0.03' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fiber)' opacity='0.08'/%3E%3C/svg%3E"),
       /* 4. Grain — fine parchment noise */
