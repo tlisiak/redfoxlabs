@@ -20,6 +20,10 @@ const Hero = () => {
           Red Fox Labs
         </span>
 
+        <p className="text-xl sm:text-2xl text-muted-foreground max-w-xl">
+          The details most studios skip are the ones we obsess over.
+        </p>
+
         <Button
           size="lg"
           variant="organic"
