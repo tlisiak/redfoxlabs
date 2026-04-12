@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import ContactModal from "@/components/ContactModal";
 import foxIcon from "@/assets/redfox-mascot.png";
 
-const Hero = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+interface HeroProps {
+  onOpenModal: () => void;
+}
 
+const Hero = ({ onOpenModal }: HeroProps) => {
   return (
     <section className="flex-1 flex items-center justify-center bg-background px-4 py-16">
       {/* Logo lockup — fox mascot + wordmark + CTA as one contained unit */}
@@ -28,13 +28,11 @@ const Hero = () => {
           size="lg"
           variant="organic"
           className="text-lg px-10 py-6 mt-2"
-          onClick={() => setModalOpen(true)}
+          onClick={onOpenModal}
         >
           Let's build →
         </Button>
       </div>
-
-      <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
