@@ -7,9 +7,14 @@ interface HeroProps {
 
 const Hero = ({ onOpenModal }: HeroProps) => {
   return (
-    <section className="flex-1 flex items-center justify-center bg-background px-4 py-16">
-      <div className="flex flex-col items-center text-center gap-6 animate-fade-in">
-        <DodgingFox onCatch={onOpenModal} />
+    <section className="flex-1 flex items-center justify-center bg-background px-4 py-16 lg:pt-48">
+      <div className="relative flex flex-col items-center text-center gap-6 animate-fade-in">
+        {/* On laptops the fox floats above the wordmark instead of taking up
+            space, and the section's extra top padding offsets the footer, so
+            the wordmark + CTA sit dead center on screen */}
+        <div className="lg:absolute lg:bottom-full lg:mb-6">
+          <DodgingFox onCatch={onOpenModal} />
+        </div>
 
         <h1 className="font-handwritten font-bold text-red-fox text-6xl sm:text-7xl lg:text-8xl leading-none">
           Red Fox Labs
