@@ -13,6 +13,8 @@ const JUMP = 220;
 const EDGE = 16;
 // Taps it'll dodge on a touchscreen before it gets tired and lets you catch it
 const TOUCH_DODGES = 3;
+// How long the "caught" bubble shows before the contact modal opens
+const CAUGHT_MS = 1100;
 
 /**
  * Fox mascot that sits still on load, then scampers away from the cursor
@@ -31,6 +33,22 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
   const offset = useRef({ x: 0, y: 0 });
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [dodges, setDodges] = useState(0);
+  const [caught, setCaught] = useState(false);
+  const caughtRef = useRef(false);
+  const caughtTimer = useRef<number>();
+
+  useEffect(() => () => window.clearTimeout(caughtTimer.current), []);
+
+  const handleCatch = () => {
+    if (caughtRef.current) return;
+    caughtRef.current = true;
+    setCaught(true);
+    caughtTimer.current = window.setTimeout(() => {
+      caughtRef.current = false;
+      setCaught(false);
+      onCatch();
+    }, CAUGHT_MS);
+  };
 
   const move = useCallback((x: number, y: number) => {
     offset.current = { x, y };
@@ -44,7 +62,8 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
     // Jump away from (px, py) if it's within range. Returns whether it fled.
     const flee = (px: number, py: number) => {
       const el = homeRef.current;
-      if (!el) return false;
+      // Caught foxes stay caught
+      if (!el || caughtRef.current) return false;
 
       const rect = el.getBoundingClientRect();
       const cx = rect.left + rect.width / 2 + offset.current.x;
@@ -132,7 +151,7 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
         onClick={() => {
           // A tap that just made it dodge shouldn't also count as a catch
           if (Date.now() - lastTouchDodge.current < 500) return;
-          onCatch();
+          handleCatch();
         }}
         aria-label="Red Fox Labs — get in touch"
         className="relative z-10 rounded-full focus:outline-none focus-visible:ring-4 focus-visible:ring-ring/40"
@@ -141,6 +160,15 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
           transition: "transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)",
         }}
       >
+        {caught && (
+          <span
+            role="status"
+            // Same width as the fox, so it can never poke off-screen
+            className="absolute bottom-full inset-x-0 mb-1 rounded-2xl bg-card px-3 py-2 text-center font-handwritten text-xl sm:text-2xl leading-tight text-foreground shadow-card animate-fade-in"
+          >
+            ok ok, you out-foxed me!
+          </span>
+        )}
         <img
           // Re-keying replays the wiggle on every dodge
           key={dodges}
