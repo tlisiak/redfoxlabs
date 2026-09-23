@@ -15,6 +15,13 @@ const EDGE = 16;
 const TOUCH_DODGES = 3;
 // How long the "caught" bubble shows before the contact modal opens
 const CAUGHT_MS = 1100;
+// What the fox says when caught; picks a different one each time
+const PUNS = [
+  "ok ok, you out-foxed me!",
+  "you're one sly fox",
+  "fox sake, fine!",
+  "I've been out-foxed",
+];
 
 /**
  * Fox mascot that sits still on load, then scampers away from the cursor
@@ -34,6 +41,8 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [dodges, setDodges] = useState(0);
   const [caught, setCaught] = useState(false);
+  // Random start so it isn't always the same line first
+  const [pun, setPun] = useState(() => Math.floor(Math.random() * PUNS.length));
   const caughtRef = useRef(false);
   const caughtTimer = useRef<number>();
 
@@ -42,6 +51,7 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
   const handleCatch = () => {
     if (caughtRef.current) return;
     caughtRef.current = true;
+    setPun((p) => (p + 1 + Math.floor(Math.random() * (PUNS.length - 1))) % PUNS.length);
     setCaught(true);
     caughtTimer.current = window.setTimeout(() => {
       caughtRef.current = false;
@@ -166,7 +176,7 @@ const DodgingFox = ({ onCatch }: DodgingFoxProps) => {
             // Same width as the fox, so it can never poke off-screen
             className="absolute bottom-full inset-x-0 mb-1 rounded-2xl bg-card px-3 py-2 text-center font-handwritten text-xl sm:text-2xl leading-tight text-foreground shadow-card animate-fade-in"
           >
-            ok ok, you out-foxed me!
+            {PUNS[pun]}
           </span>
         )}
         <img
