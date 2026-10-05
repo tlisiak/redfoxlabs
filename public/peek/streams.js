@@ -79,7 +79,9 @@ window.PEEK_STREAMS = [
     lat: 45.4379,
     lng: 12.3359,
     tz: "Europe/Rome",
-    source: { videoIds: ["Kmf_wiTFuXY", "K_Vg94nBiaY"], channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
+    // Both Rialto video IDs we had (Kmf_wiTFuXY, K_Vg94nBiaY) were removed by Oct 2026; until the
+    // stream check finds the current one, play whatever this channel is broadcasting.
+    source: { channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
     credit: { name: "I Love You Venice", url: "https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw" },
     headline: "Venice's main street, where the traffic is all boats.",
     looking:
@@ -108,7 +110,7 @@ window.PEEK_STREAMS = [
     lat: 64.0484,
     lng: -16.1795,
     tz: "Atlantic/Reykjavik",
-    source: { videoIds: ["WDHSEuMUb3w", "Flb8X7QQQKI"] },
+    source: { videoIds: ["WDHSEuMUb3w"] },
     credit: { name: "Live from Iceland", url: "https://www.youtube.com/watch?v=WDHSEuMUb3w" },
     headline: "Icebergs drifting from a glacier to the sea.",
     looking:

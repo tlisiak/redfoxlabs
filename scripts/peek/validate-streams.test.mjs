@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -48,4 +48,15 @@ test("finds only the live videos on a channel's streams tab", () => {
   ] };
   assert.deepEqual(findLiveVideos(data).map((v) => v.videoId), ["LIVEaaaaaaa", "LIVEccccccc"]);
   assert.equal(findLiveVideos(data)[0].title, "Rialto 4K live");
+});
+
+test("classifies Data API items", () => {
+  const item = (liveBroadcastContent, extra = {}) => ({ snippet: { title: "t", channelTitle: "c", liveBroadcastContent }, status: { privacyStatus: "public", embeddable: true }, ...extra });
+  assert.equal(classifyApiItem(undefined).status, "removed");
+  assert.equal(classifyApiItem(item("live", { liveStreamingDetails: { concurrentViewers: "41" } })).status, "live");
+  assert.equal(classifyApiItem(item("upcoming", { liveStreamingDetails: {} })).status, "offline");
+  assert.equal(classifyApiItem(item("none", { liveStreamingDetails: { actualEndTime: "2026-10-01T00:00:00Z" } })).status, "offline");
+  assert.equal(classifyApiItem(item("none")).status, "recording");
+  assert.equal(classifyApiItem({ ...item("live"), status: { privacyStatus: "public", embeddable: false } }).status, "no-embed");
+  assert.equal(classifyApiItem({ ...item("none"), status: { privacyStatus: "private" } }).status, "removed");
 });

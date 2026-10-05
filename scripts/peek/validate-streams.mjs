@@ -122,6 +122,7 @@ export function findLiveVideos(data) {
 }
 
 async function liveOnChannel(channelId) {
+  if (API_KEY) { try { return await apiLiveOnChannel(channelId); } catch { return null; } }
   try {
     const page = await fetchText(`https://www.youtube.com/channel/${channelId}/streams?hl=en`);
     const data = page.status === 200 ? extractJson(page.text, /ytInitialData\s*=\s*\{/) : null;
@@ -129,7 +130,56 @@ async function liveOnChannel(channelId) {
   } catch { return null; }
 }
 
+// ---- YouTube Data API v3 (used when YOUTUBE_API_KEY is set; YouTube shows datacenter
+// IPs a bot check, so this is the only reliable way to read live status from CI).
+const API_KEY = process.env.YOUTUBE_API_KEY;
+
+async function api(endpoint, params) {
+  const qs = new URLSearchParams({ ...params, key: API_KEY });
+  const res = await fetch(`https://www.googleapis.com/youtube/v3/${endpoint}?${qs}`);
+  if (!res.ok) throw new Error(`Data API ${endpoint} answered ${res.status}`);
+  return res.json();
+}
+
+// Maps a videos.list item (or its absence) to the same statuses as classify().
+export function classifyApiItem(item) {
+  if (!item) return { status: "removed", detail: "video removed, private or bad ID" };
+  const base = { title: item.snippet?.title, author: item.snippet?.channelTitle };
+  if (item.status?.privacyStatus === "private") return { ...base, status: "removed", detail: "private video" };
+  if (item.status?.embeddable === false) return { ...base, status: "no-embed", detail: "owner disabled embedding" };
+  const live = item.liveStreamingDetails;
+  switch (item.snippet?.liveBroadcastContent) {
+    case "live": return { ...base, status: "live", detail: live?.concurrentViewers ? `live now, ${live.concurrentViewers} watching` : "live now" };
+    case "upcoming": return { ...base, status: "offline", detail: "scheduled, not started" };
+  }
+  if (live?.actualEndTime) return { ...base, status: "offline", detail: `ended ${live.actualEndTime}` };
+  if (!live) return { ...base, status: "recording", detail: "a regular video, not a livestream" };
+  return { ...base, status: "unverified", detail: "live status unclear" };
+}
+
+async function apiVideo(videoId) {
+  const j = await api("videos", { part: "snippet,status,liveStreamingDetails", id: videoId });
+  return classifyApiItem(j.items?.[0]);
+}
+
+async function apiLiveOnChannel(channelId) {
+  const j = await api("search", { part: "snippet", channelId, eventType: "live", type: "video", maxResults: 10 });
+  return (j.items || []).map((i) => ({ videoId: i.id.videoId, title: i.snippet.title }));
+}
+
 async function checkCandidate(cand) {
+  if (API_KEY) {
+    try {
+      if (cand.channelId) {
+        const live = await apiLiveOnChannel(cand.channelId);
+        if (!live.length) return { status: "offline", detail: "channel isn't broadcasting" };
+        return { ...(await apiVideo(live[0].videoId)), resolvedVideoId: live[0].videoId };
+      }
+      return await apiVideo(cand.videoId);
+    } catch (err) {
+      return { status: "unverified", detail: err.message };
+    }
+  }
   try {
     if (cand.channelId) {
       // /channel/ID/live resolves to the watch page of whatever the channel is streaming.
@@ -168,7 +218,8 @@ async function main() {
     const sources = [];
     for (const cand of candidates(s)) {
       const r = await checkCandidate(cand);
-      sources.push({ ...cand, ...r });
+      // r.videoId is whatever YouTube reported (often nothing); the catalog's own IDs win.
+      sources.push({ ...r, ...cand });
       await new Promise((ok) => setTimeout(ok, 400)); // be polite
     }
     const live = sources.filter((x) => x.status === "live");
@@ -207,6 +258,9 @@ async function main() {
   const okCount = Object.values(status.streams).filter((x) => x.ok).length;
   lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable source.**`, "");
   if (broken.length) lines.push(`Needs a replacement source: ${broken.join(", ")}`);
+  if (!API_KEY && Object.values(status.streams).some((x) => x.sources.some((y) => /bot check/.test(y.detail || "")))) {
+    lines.push("", "> YouTube answered with a bot check, so live status couldn't be confirmed. Add a YouTube Data API key as the `YOUTUBE_API_KEY` repo secret to fix this.");
+  }
 
   await writeFile(OUT, JSON.stringify(status, null, 2) + "\n");
   if (REPORT) await writeFile(REPORT, lines.join("\n") + "\n", { flag: "a" });

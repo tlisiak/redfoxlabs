@@ -10,7 +10,7 @@ The full "info list" for each one (what you're looking at, watch for, story, fac
 |---|------|-------|--------|-------|-------|
 | 1 | Namib Desert Waterhole | Gondwana Namib Park, Namibia | [NamibiaCam](https://www.youtube.com/watch?v=ydYDqZQpim8) | 24/7 (infrared at night) | Solar powered, run by a lodge group. Ideal partner profile. |
 | 2 | Mount Fuji over Lake Kawaguchiko | Fujikawaguchiko, Japan | [Panoramic Ropeway 4K](https://www.youtube.com/watch?v=Sv9hcJ3k5h4) | Daylight | 36 other Fuji streams indexed at [isfujivisible.com](https://isfujivisible.com/mt-fuji-live-cams) if this one drops. |
-| 3 | Rialto Bridge, Grand Canal | Venice, Italy | [I Love You Venice 4K](https://www.youtube.com/watch?v=Kmf_wiTFuXY) | Daylight | Independent operator with several Venice cams. |
+| 3 | Rialto Bridge, Grand Canal | Venice, Italy | [I Love You Venice](https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw) (channel embed) | Daylight | Both Rialto video IDs found in research were already removed. The channel runs several Venice cams, so it may show a different one until we pin the current Rialto ID. |
 | 4 | Jökulsárlón Glacier Lagoon | Iceland | [Live from Iceland](https://www.youtube.com/watch?v=WDHSEuMUb3w) | Daylight | Days get short fast in winter (~4–5h in December). |
 | 5 | Kāʻanapali Beach & Black Rock | Maui, Hawaiʻi | [Maui Live Cam](https://www.youtube.com/channel/UCIQVWkOilfxoQSFcban_d-A) (channel embed) | Daylight | Whale season Nov–Apr. Uses channel embed, so it survives stream restarts. |
 | 6 | Kelp Forest | Monterey Bay Aquarium | [MBA Kelp Cam](https://www.youtube.com/watch?v=w3LjpFhySTg) | 7am–7pm PT (assumed) | Hours not confirmed. Aquarium is a nonprofit with a big cam program. |
@@ -74,5 +74,7 @@ Things to check for any domain: (1) availability and renewal price (.live and .e
 - **Reliability:** each view lists backup video IDs and/or a channel embed. If a source errors, won't start within 7s, or turns out to be a recording instead of live, it falls through to the next, then to another view.
 - **Stream checker:** `public/peek/check.html` loads every source side by side, says which work and why the others don't (removed, embedding disabled, recording), and has a "Copy report" button.
 - **Keys:** Space = peek again, Esc = home.
+
+**Automated validation** (`.github/workflows/peek-streams.yml` + `scripts/peek/validate-streams.mjs`): runs on every PR touching Peek and every 6 hours on main. It checks each source's live status and embeddability, lists what scout channels are streaming now, writes `public/peek/status.json` (which the page uses to try live sources first and skip dead ones), and fails only when a view has no source left that isn't confirmed dead. **YouTube serves GitHub's servers a bot check, so live status needs a free YouTube Data API key in the `YOUTUBE_API_KEY` repo secret.** Without it, the check can still catch removed, private and embedding-disabled videos, but everything else reads "unverified." Quota use is about 2,500 of the free 10,000 units a day (channel searches are the expensive part, at 100 units each).
 
 Not built yet: accounts, game, passport, ambient mode, analytics, a stream health checker.
