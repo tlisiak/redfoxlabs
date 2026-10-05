@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Peek stream check</title>
 <style>
   :root { --bg: #0b0c10; --card: #15171d; --line: #262a33; --ink: #f1efe9; --dim: #9aa0aa; --ok: #3ecf8e; --bad: #ff5d5d; --warn: #f2b84b; }
@@ -34,7 +35,7 @@
 <body>
 <main>
   <h1>Stream check</h1>
-  <p class="sub">Loads every source in <code>streams.js</code> and reports which ones are actually playing live. Needs to be opened over http(s), not as a local file.</p>
+  <p class="sub">Plays every source in <code>streams.js</code> one at a time (YouTube allows one autoplaying player per page) and reports whether it's live, HD and showing the right place. Needs to be opened over http(s), not as a local file.</p>
   <div class="bar">
     <button id="copy">Copy report</button>
     <button id="rerun">Run again</button>
@@ -70,7 +71,11 @@
           const status = card.querySelector(".status");
           status.textContent = "Loading…";
           try {
-            const { data, quality } = await PeekPlayer.mount(card.querySelector(".screen"), cand, { timeout: 15000, expect: s.expect });
+            const screen = card.querySelector(".screen");
+            const { data, quality, player } = await PeekPlayer.mount(screen, cand, { timeout: 15000, expect: s.expect });
+            // verdict in: free the slot for the next player, keep a still of what we saw
+            try { player.destroy(); } catch {}
+            screen.innerHTML = data.video_id ? `<img alt="" src="https://i.ytimg.com/vi/${data.video_id}/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover">` : "";
             r.ok = true; r.title = data.title || "";
             const best = quality.find((q) => /hd2160|hd1440|hd1080|hd720|highres/.test(q));
             r.note = `${data.isLive === true ? "live" : "playing (live status unknown)"}${best ? `, ${best}` : ""}, matches "${(s.expect?.title || []).join(" / ")}"`;
@@ -84,9 +89,9 @@
         });
       }
     }
-    // a few at a time, so the browser isn't spinning up 20 players at once
+    // strictly one at a time
     const queue = [...jobs];
-    await Promise.all(Array.from({ length: 4 }, async () => { while (queue.length) await queue.shift()(); }));
+    while (queue.length) await queue.shift()();
     const okStreams = new Set(results.filter((r) => r.ok).map((r) => r.stream.id)).size;
     const active = window.PEEK_STREAMS.filter((s) => !s.paused).length;
     $("summary").textContent = `${okStreams} of ${active} active views have a working source${active < window.PEEK_STREAMS.length ? ` (${window.PEEK_STREAMS.length - active} paused)` : ""}.`;

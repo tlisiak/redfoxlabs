@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Peek</title>
 <meta name="description" content="Live windows on the world, wherever the sun is shining right now.">
+<!-- YouTube embeds fail with Error 153 without a referrer -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Josefin+Sans:wght@500;600;700&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   /* Vintage travel poster: flat printing inks on poster stock, condensed deco capitals,
-     ticket stubs and postmarks. The landing is a poster whose illustration is the live view;
-     on peek, the frame opens to full bleed and the video is shown untouched. */
+     ticket stubs and postmarks. The live view is always a clean 16:9 window in a poster frame.
+     YouTube's embed rules: nothing may sit in front of the player, crop it, filter it or block
+     its links, and only one player may autoplay, only once it's visible. So every control and
+     the info card live around the frame, never on it. */
   :root {
     --cream: #f1e4c6;      /* poster stock */
     --cream-2: #e7d5ae;    /* aged stock, tickets */
@@ -39,43 +43,32 @@
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
   :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   /* paper grain over everything printed */
-  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 6; opacity: .28; mix-blend-mode: multiply;
+  /* paper grain sits under the frame (z 0), never over the video */
+  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .28; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .12 0 0 0 0 .1 0 0 0 0 .08 0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    transition: opacity .8s; }
-  body:not(.on-landing) .grain { opacity: 0; }
+  }
 
-  /* ---------- video stage ---------- */
+  /* ---------- the frame ---------- */
+  /* Positioned by layout() as an exact 16:9 box; it glides between the poster and viewing spots. */
   .stage {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; background: var(--sky);
-    transition: top .9s cubic-bezier(.6,0,.2,1), left .9s cubic-bezier(.6,0,.2,1), right .9s cubic-bezier(.6,0,.2,1), bottom .9s cubic-bezier(.6,0,.2,1), border-width .9s, border-radius .9s;
-    border: 0 solid var(--navy);
+    position: fixed; z-index: 1; overflow: hidden; background: var(--sky);
+    border: 3px solid var(--navy); border-radius: 4px; box-sizing: content-box;
+    box-shadow: 0 0 0 7px var(--cream), 0 0 0 10px var(--navy);
+    transition: left .9s cubic-bezier(.6,0,.2,1), top .9s cubic-bezier(.6,0,.2,1), width .9s cubic-bezier(.6,0,.2,1), height .9s cubic-bezier(.6,0,.2,1);
   }
-  body.on-landing .stage { top: var(--ft); left: var(--fx); right: var(--fx); bottom: var(--fb); border-width: 3px; border-radius: 4px; box-shadow: 0 0 0 7px var(--cream), 0 0 0 10px var(--navy); }
-  /* painted fallback scene: what the frame shows before (or without) a live view */
+  /* painted scene behind the player: what the frame shows while tuning in, or without a stream */
   .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .layer { position: absolute; inset: 0; overflow: hidden; container-type: size; }
-  /* cover the box with a 16:9 frame, cropping whichever edge overflows */
-  .layer iframe, .layer .yt-slot {
-    position: absolute; top: 50%; left: 50%; border: 0;
-    width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw);
-    transform: translate(-50%, -50%); transition: filter 1s;
+  .tuning {
+    position: absolute; left: 50%; top: 18%; transform: translateX(-50%); white-space: nowrap;
+    padding: 7px 12px 6px; background: var(--navy); color: var(--cream);
+    font: 700 11px/1 var(--label); letter-spacing: .24em; text-transform: uppercase;
   }
-  /* old print: warmer, punchier inks while it's a poster; untouched once you're there */
-  body.on-landing .layer iframe { filter: sepia(.32) saturate(1.35) contrast(1.08) hue-rotate(-6deg); }
-  .layer::after { content: ""; position: absolute; inset: 0; }   /* shield: look, don't touch */
-  body.on-landing .stage::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; opacity: .22; mix-blend-mode: multiply;
-    background: radial-gradient(circle at 1px 1px, var(--navy) .7px, transparent 1.2px) 0 0 / 4px 4px;
-  }
-  .layer.incoming { visibility: hidden; }
-  .layer.revealing { visibility: visible; animation: reveal 1100ms cubic-bezier(.2,.7,.1,1) forwards; }
-  @keyframes reveal {
-    from { clip-path: circle(0% at 50% 50%); filter: brightness(1.8) sepia(.6); }
-    to   { clip-path: circle(75% at 50% 50%); filter: none; }
-  }
+  .tuning:empty { display: none; }
+  .layer { position: absolute; inset: 0; }
+  .layer iframe, .layer .yt-slot { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   /* ---------- landing poster ---------- */
-  .landing { position: fixed; inset: 0; z-index: 1; pointer-events: none; transition: opacity .5s ease; }
+  .landing { position: fixed; inset: 0; z-index: 2; pointer-events: none; transition: opacity .5s ease; }
   .landing > * { pointer-events: auto; }
   .landing.gone { opacity: 0; }
   .landing.gone > * { pointer-events: none; }
@@ -113,14 +106,7 @@
   .cta .stub { padding: 10px 18px 8px 16px; display: grid; place-items: center; border-left: 2px dashed rgba(241,228,198,.7);
     font: 700 10px/1.25 var(--label); letter-spacing: .22em; text-transform: uppercase; text-align: center; }
   .fine { font: 600 11px/1.4 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
-  .bg-caption {
-    position: fixed; z-index: 3; left: calc(var(--fx) + 16px); bottom: calc(var(--fb) + 16px);
-    display: inline-flex; align-items: center; gap: 10px; padding: 7px 12px 6px; background: var(--navy); color: var(--cream);
-    font: 700 11px/1 var(--label); letter-spacing: .2em; text-transform: uppercase; transition: opacity .5s;
-  }
-  .bg-caption:empty { display: none; }
-  .bg-caption b { color: var(--gold); font-weight: 700; }
-  body:not(.on-landing) .bg-caption { opacity: 0; pointer-events: none; }
+  .fine b { color: var(--sun); font-weight: 700; }
 
   /* ---------- wormhole ---------- */
   #wormhole { position: fixed; inset: 0; z-index: 5; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .45s ease; }
@@ -130,12 +116,14 @@
   .chrome { position: fixed; inset: 0; z-index: 4; pointer-events: none; opacity: 0; transition: opacity .6s ease .2s; }
   .chrome.on { opacity: 1; }
   .chrome.on > * { pointer-events: auto; }
-  .mini-mark { position: absolute; top: 16px; left: 22px; font: 900 40px/1 var(--display); letter-spacing: .02em; color: var(--cream); text-shadow: 3px 3px 0 var(--sun), 0 2px 18px rgba(20,29,49,.45); }
-  .again { position: absolute; left: 22px; bottom: 22px; }
+  .mini-mark { position: absolute; top: 14px; left: 24px; font: 900 44px/1 var(--display); letter-spacing: .02em; color: var(--navy); text-shadow: 3px 3px 0 var(--sun); }
+  /* controls dock just below the frame */
+  .dock { position: absolute; left: var(--stage-left, 24px); top: calc(var(--stage-bottom, 70vh) + 24px); display: flex; align-items: center; gap: 18px; }
+  .again { position: relative; }
   .again .main { font-size: 22px; padding: 12px 20px 10px 22px; }
   .again .stub { font-size: 9px; padding: 8px 14px 6px 12px; }
   .sound {
-    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); width: 46px; height: 46px; border-radius: 50%;
+    width: 46px; height: 46px; border-radius: 50%; flex: none;
     display: grid; place-items: center; background: var(--cream); color: var(--navy); border: 2px solid var(--navy); box-shadow: 3px 3px 0 var(--navy);
   }
 
@@ -144,18 +132,14 @@
     background: var(--cream); color: var(--navy); border: 3px solid var(--navy); border-radius: 6px;
     box-shadow: 6px 6px 0 rgba(20,29,49,.55);
     display: flex; flex-direction: column; overflow: hidden;
-    transition: transform .5s cubic-bezier(.2,.7,.1,1), opacity .4s;
   }
-  .panel.tucked { transform: translateX(calc(100% + 30px)); opacity: 0; }
   .panel-head { position: relative; padding: 18px 20px 16px; background: var(--navy); color: var(--cream); }
   .eyebrow { display: flex; align-items: center; gap: 10px; font: 700 11px/1 var(--label); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
   .live { display: inline-flex; align-items: center; gap: 6px; padding: 4px 7px 3px; background: var(--sun); color: var(--cream); letter-spacing: .18em; }
   .live i { width: 6px; height: 6px; border-radius: 50%; background: var(--cream); animation: blink 1.6s steps(2) infinite; }
   @keyframes blink { 50% { opacity: .25; } }
-  .p-name { font: 900 40px/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 12px 0 8px; text-wrap: balance; padding-right: 28px; }
+  .p-name { font: 900 40px/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 12px 0 8px; text-wrap: balance; }
   .p-place { font: 600 12px/1.4 var(--label); letter-spacing: .18em; text-transform: uppercase; color: rgba(241,228,198,.8); }
-  .tuck { position: absolute; top: 12px; right: 12px; width: 30px; height: 30px; display: grid; place-items: center; color: var(--cream); border-radius: 50%; }
-  .tuck:hover { background: rgba(241,228,198,.12); }
   .ticket-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 2px dashed var(--navy); }
   .postmark {
     width: 92px; height: 92px; border-radius: 50%; border: 3px double var(--sun); color: var(--sun);
@@ -179,12 +163,6 @@
   .sec li::before { content: "✦"; position: absolute; left: 0; top: 0; font-size: 11px; color: var(--teal); }
   .credit { margin-top: 22px; padding-top: 12px; border-top: 2px dashed var(--navy); font-size: 12px; color: var(--ink-soft); display: grid; gap: 6px; }
   .credit a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--sun); }
-  .untuck {
-    position: absolute; top: 18px; right: 18px; padding: 10px 16px 8px; display: none;
-    background: var(--cream); color: var(--navy); border: 2px solid var(--navy); box-shadow: 3px 3px 0 var(--navy);
-    font: 700 11px/1 var(--label); letter-spacing: .2em; text-transform: uppercase;
-  }
-  .panel.tucked ~ .untuck { display: inline-flex; }
 
   .toast {
     position: fixed; z-index: 7; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-2deg); max-width: min(420px, calc(100vw - 32px));
@@ -193,45 +171,37 @@
   }
   .toast.on { display: block; }
 
-  /* ---------- phones: stacked poster, bottom-sheet panel ---------- */
+  /* ---------- phones: frame on top, poster type / info card below it ---------- */
   @media (max-width: 760px) {
     :root { --fx: 16px; --ft: 54px; --fb: 290px; }
     .topline .side { display: none; }
     .topline { justify-content: center; font-size: 11px; letter-spacing: .26em; }
-    .poster-foot { grid-template-columns: 1fr; align-content: center; gap: 12px; }
+    .poster-foot { top: calc(var(--stage-bottom, 300px) + 30px); bottom: auto; height: auto; grid-template-columns: 1fr; gap: 12px; }
     .wordmark { font-size: 96px; text-shadow: 4px 4px 0 var(--sun); }
     .tagline { font-size: 16px; }
     .cta .main { font-size: 26px; }
-    .bg-caption { left: calc(var(--fx) + 10px); right: calc(var(--fx) + 10px); bottom: calc(var(--fb) + 10px); font-size: 9px; line-height: 1.4; flex-wrap: wrap; gap: 2px 8px; width: fit-content; max-width: calc(100vw - 2 * var(--fx) - 20px); }
-    .panel { top: auto; left: 10px; right: 10px; bottom: 10px; width: auto; max-height: 36vh; transition: max-height .45s cubic-bezier(.2,.7,.1,1), transform .5s, opacity .4s; }
-    .panel.open { max-height: 80vh; }
-    .panel.tucked { transform: translateY(calc(100% + 20px)); }
-    .panel-head { padding: 14px 16px 12px; cursor: pointer; }
-    .panel-head::before { content: ""; display: block; width: 36px; height: 4px; border-radius: 2px; background: rgba(241,228,198,.4); margin: -4px auto 10px; }
+    .panel { top: calc(var(--stage-bottom, 300px) + 22px); left: 12px; right: 12px; bottom: 12px; width: auto; }
+    .panel-head { padding: 14px 16px 12px; }
     .p-name { font-size: 30px; margin-top: 8px; }
     .ticket-row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 16px; }
     .postmark { width: 76px; height: 76px; }
     .postmark strong { font-size: 20px; }
     .panel-body { padding: 4px 16px 16px; }
-    .again { left: 50%; transform: translateX(-50%); top: 14px; bottom: auto; }
-    .again:hover { transform: translateX(-50%) translate(-1px, -1px); }
+    .dock { left: auto; right: 12px; top: 10px; gap: 10px; }
     .again .stub, .again .lg { display: none; }
     .again .sm { display: inline; }
     .again .main { -webkit-mask: none; mask: none; font-size: 18px; padding: 10px 14px 8px; }
-    .mini-mark { top: 14px; left: 14px; font-size: 30px; }
-    .sound { left: auto; right: 14px; top: 14px; bottom: auto; transform: none; width: 40px; height: 40px; }
-    .untuck { top: auto; bottom: 16px; right: 50%; transform: translateX(50%); }
-    .tuck { display: none; }
+    .mini-mark { top: 12px; left: 14px; font-size: 32px; }
+    .sound { width: 40px; height: 40px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .stage { transition: none; }
-    .layer.revealing { animation: fade 600ms ease forwards; }
-    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
     .live i { animation: none; }
   }
 </style>
 </head>
 <body class="on-landing">
+<div class="grain" aria-hidden="true"></div>
 
 <div class="stage" id="stage">
   <svg class="scene" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -245,6 +215,7 @@
     <path d="M0 360 L170 220 L300 320 L470 170 L640 330 L790 230 L950 330 L1080 250 L1200 300 L1200 600 L0 600 Z" fill="var(--teal)"/>
     <path d="M0 470 C200 420 330 500 520 455 C720 410 860 490 1040 450 C1110 435 1170 440 1200 442 L1200 600 L0 600 Z" fill="var(--navy)"/>
   </svg>
+  <div class="tuning" id="tuning"></div>
 </div>
 
 <section class="landing" id="landing">
@@ -262,22 +233,20 @@
     </div>
   </div>
 </section>
-<div class="bg-caption" id="bgCaption"></div>
 
 <canvas id="wormhole"></canvas>
 
 <div class="chrome" id="chrome">
   <button class="mini-mark" id="home" aria-label="Back to start">PEEK</button>
-  <button class="cta again" id="againBtn"><span class="main"><span class="lg">Peek somewhere else</span><span class="sm">Peek again</span></span><span class="stub">Space</span></button>
-  <button class="sound" id="soundBtn" aria-label="Toggle sound" title="Sound"></button>
+  <div class="dock">
+    <button class="cta again" id="againBtn"><span class="main"><span class="lg">Peek somewhere else</span><span class="sm">Peek again</span></span><span class="stub">Space</span></button>
+    <button class="sound" id="soundBtn" aria-label="Toggle sound" title="Sound"></button>
+  </div>
   <aside class="panel" id="panel" aria-live="polite">
     <header class="panel-head" id="panelHead">
       <div class="eyebrow"><span class="live"><i></i>Live</span>Now arriving</div>
       <h2 class="p-name" id="pName"></h2>
       <div class="p-place" id="pPlace"></div>
-      <button class="tuck" id="tuckBtn" aria-label="Hide info">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
     </header>
     <div class="ticket-row">
       <div class="postmark" aria-label="Local time"><small id="pmPlace"></small><strong id="sTime">–</strong><small id="pmDate"></small></div>
@@ -289,11 +258,9 @@
     </div>
     <div class="panel-body" id="panelBody"></div>
   </aside>
-  <button class="untuck" id="untuckBtn">About this view</button>
 </div>
 
 <div class="toast" id="toast"></div>
-<div class="grain" aria-hidden="true"></div>
 
 <script src="streams.js"></script>
 <script src="player.js"></script>
@@ -362,12 +329,13 @@
   function remember(id) { recent.push(id); while (recent.length > Math.min(4, STREAMS.length - 1)) recent.shift(); }
 
   // ---------------------------------------------------------------- YouTube players
-  // Builds a hidden layer and resolves with { layer, player } once one of the stream's
-  // sources is actually playing live. Falls through backup IDs and the channel embed.
-  async function loadStream(stream, { incoming = true } = {}) {
+  // Mounts the stream into the (visible) frame and resolves with { layer, player } once one of
+  // its sources is actually playing live and on target. Falls through backup IDs and the channel
+  // embed. The player is only ever created where it can be seen, as YouTube's autoplay rules require.
+  async function loadStream(stream) {
     for (const cand of PeekPlayer.candidates(stream)) {
       const layer = document.createElement("div");
-      layer.className = "layer" + (incoming ? " incoming" : "");
+      layer.className = "layer";
       $("stage").appendChild(layer);
       try {
         const { player } = await PeekPlayer.mount(layer, cand, { timeout: LOAD_TIMEOUT_MS, expect: stream.expect });
@@ -379,6 +347,38 @@
     }
     throw new Error("no working source");
   }
+  function retire(view) {
+    if (!view) return;
+    try { view.player.destroy(); } catch {}
+    view.layer.remove();
+  }
+
+  // ---------------------------------------------------------------- the frame
+  // The frame is always an exact 16:9 box (so the player is never cropped), placed in the
+  // poster on the landing page, or beside the info card while viewing.
+  let mode = "landing";
+  function frameBox() {
+    const W = innerWidth, H = innerHeight, phone = W <= 760;
+    let b;
+    if (mode === "landing") {
+      const fx = phone ? 24 : Math.max(28, (W - 1180) / 2), ft = phone ? 58 : 74;
+      const fb = phone ? Math.max(300, H * 0.42) : Math.min(250, Math.max(190, H * 0.27));
+      b = { x: fx, y: ft, w: W - 2 * fx, h: H - ft - fb, top: phone };
+    } else if (phone) {
+      b = { x: 22, y: 72, w: W - 44, h: (W - 44) * 9 / 16, top: true };
+    } else {
+      b = { x: 34, y: 86, w: W - 390 - 16 - 34 - 44, h: H - 86 - 110, top: false };
+    }
+    const w = Math.max(200, Math.min(b.w, b.h * 16 / 9)), h = w * 9 / 16;
+    return { x: b.x + (b.w - w) / 2, y: b.top ? b.y : b.y + Math.max(0, (b.h - h) / 2), w, h };
+  }
+  function layout() {
+    const r = frameBox(), st = $("stage").style, root = document.documentElement.style;
+    st.left = r.x + "px"; st.top = r.y + "px"; st.width = r.w + "px"; st.height = r.h + "px";
+    root.setProperty("--stage-left", r.x - 3 + "px");
+    root.setProperty("--stage-bottom", r.y + r.h + 13 + "px");   // past the border and double rule
+  }
+  addEventListener("resize", layout);
 
   // ---------------------------------------------------------------- wormhole
   // A minimal tunnel: particles stream toward the viewer from a vanishing point,
@@ -510,54 +510,57 @@
   $("soundBtn").onclick = () => { wantSound = !wantSound; applySound(); };
 
   // ---------------------------------------------------------------- the trip
-  let active = null, busy = false, onLanding = true;
+  // One player at a time: the current view is retired before the wormhole, the frame moves
+  // while the wormhole covers the page, and the next stream mounts only once the frame is
+  // visible again (over the painted "tuning in" scene).
+  let active = null, bg = null, busy = false, onLanding = true;
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  function clearPanel() {
+    current = null;
+    $("pName").textContent = "Finding a window…";
+    ["pPlace", "pmPlace", "pmDate", "panelBody"].forEach((id) => ($(id).textContent = ""));
+    ["sTime", "sWeather", "sSun", "sCoords"].forEach((id) => ($(id).textContent = "–"));
+  }
   async function peek() {
     if (busy) return;
     busy = true;
-    const started = performance.now();
+    const tried = [active?.stream.id, bg?.stream.id].filter(Boolean);
+    retire(active); retire(bg); active = bg = null;
     wormholeIn();
     $("landing").classList.add("gone");
     document.body.classList.remove("on-landing");
     $("chrome").classList.remove("on");
     $("toast").classList.remove("on");
+    $("tuning").textContent = "";
+    mode = "view"; layout(); clearPanel();
+    await sleep(MIN_WORMHOLE_MS);
+    wormholeOut();
+    $("chrome").classList.add("on");
+    onLanding = false;
 
-    const tried = active ? [active.stream.id] : [];
-    if (bg) tried.push(bg.stream.id);
     let next = null, loaded = null;
     for (let attempt = 0; attempt < 4 && !loaded; attempt++) {
       next = pick(tried);
       if (!next) break;
       tried.push(next.id);
+      $("tuning").textContent = `Tuning in · ${next.country}`;
       try { loaded = await loadStream(next); }
       catch (err) { console.warn(`[peek] skipping ${next.id}:`, err.message); }
     }
-    const wait = MIN_WORMHOLE_MS - (performance.now() - started);
-    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
-
+    $("tuning").textContent = "";
     if (!loaded) {
-      wormholeOut();
       $("toast").textContent = "Every window we tried was fogged over. Try again in a moment.";
       $("toast").classList.add("on");
+      busy = false;
       setTimeout(goHome, 3500);
-      busy = false; return;
+      return;
     }
-
-    // swap: iris the new view open, retire whatever was showing before
-    const old = active, oldBg = bg;
     active = { stream: next, ...loaded };
     current = next;
     remember(next.id);
     renderPanel(next);
-    loaded.layer.classList.remove("incoming");
-    loaded.layer.classList.add("revealing");
-    wormholeOut();
-    setTimeout(() => {
-      [old, oldBg].forEach((o) => { if (o) { try { o.player.destroy(); } catch {} o.layer.remove(); } });
-      bg = null;
-    }, 1200);
-    $("chrome").classList.add("on");
     applySound();
-    onLanding = false; busy = false;
+    busy = false;
   }
 
   function goHome() {
@@ -566,45 +569,45 @@
     $("chrome").classList.remove("on");
     $("landing").classList.remove("gone");
     document.body.classList.add("on-landing");
-    if (active) {
+    mode = "landing"; layout();
+    onLanding = true;
+    if (active) {   // the same player keeps playing, now as the poster's illustration
       active.player.mute(); bg = active; active = null; current = null;
-      $("bgCaption").innerHTML = `<b>Now showing</b> ${esc(bg.stream.name)}, ${esc(bg.stream.country)}`;
-    }
-    onLanding = true; busy = false;
-    if (!bg) startBackground();
+      showCaption(bg.stream);
+    } else startBackground();
   }
 
   // ---------------------------------------------------------------- landing background
-  // The landing page itself is a live view: a muted, daylight stream behind the hero.
-  let bg = null;
+  // The poster's illustration is a live view: one muted, daylight stream in the frame.
+  function showCaption(s) {
+    $("countLine").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)} · ${countText}`;
+  }
   async function startBackground() {
     await PeekPlayer.statusReady;
     const s = pick();
-    if (!s) return;
+    if (!s || !onLanding) return;
     try {
-      const loaded = await loadStream(s, { incoming: false });
-      loaded.layer.style.opacity = 0; loaded.layer.style.transition = "opacity 1.6s ease";
-      requestAnimationFrame(() => (loaded.layer.style.opacity = 1));
+      const loaded = await loadStream(s);
+      if (!onLanding || bg || active) { retire(loaded); return; }   // the visitor already left
       bg = { stream: s, ...loaded };
-      $("bgCaption").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)}`;
+      showCaption(s);
     } catch { /* the painted scene stays in the frame */ }
   }
 
   // ---------------------------------------------------------------- wiring
   const showing = STREAMS.filter((s) => !s.paused);
-  $("countLine").textContent = `${showing.length} live views · ${new Set(showing.map((s) => s.country)).size} countries`;
+  const countText = `${showing.length} live views · ${new Set(showing.map((s) => s.country)).size} countries`;
+  $("countLine").textContent = countText;
   $("peekBtn").onclick = peek;
   $("againBtn").onclick = peek;
   $("home").onclick = goHome;
-  $("tuckBtn").onclick = () => $("panel").classList.add("tucked");
-  $("untuckBtn").onclick = () => $("panel").classList.remove("tucked");
-  $("panelHead").onclick = (e) => { if (innerWidth <= 760 && !e.target.closest("a,button")) $("panel").classList.toggle("open"); };
   addEventListener("keydown", (e) => {
     if (e.target.closest("input,textarea")) return;
     if (e.code === "Space" || (onLanding && e.code === "Enter")) { e.preventDefault(); peek(); }
     if (e.code === "Escape" && !onLanding) goHome();
   });
   resize();
+  layout();
   startBackground();
 })();
 </script>
