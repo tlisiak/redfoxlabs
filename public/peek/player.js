@@ -20,13 +20,34 @@
     153: "missing referrer (open over http, not file://)",
   };
 
-  // Every source worth trying for a stream, in order: specific videos first, then the
-  // channel's current broadcast, which survives the stream being restarted under a new ID.
-  function candidates(stream) {
+  // status.json is written every few hours by the stream-check GitHub Action.
+  // Older than 36h, it's ignored and every source is tried in catalog order.
+  let status = null;
+  const statusReady = fetch("status.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j) => { if (j && Date.now() - Date.parse(j.checkedAt) < 36 * 3600e3) status = j; })
+    .catch(() => {});
+  const statusFor = (stream) => status?.streams?.[stream.id] || null;
+
+  // Every source worth trying for a stream, in order. With fresh status: sources the
+  // checker saw live go first (channel embeds as the video they're broadcasting), and
+  // ones it saw dead are dropped. Then the catalog's videos, then the channel's current
+  // broadcast, which survives the stream being restarted under a new ID.
+  function candidates(stream, { raw = false } = {}) {
     const src = stream.source;
     const ids = src.videoIds || (src.videoId ? [src.videoId] : []);
-    return [...ids.map((videoId) => ({ videoId })), ...(src.channelId ? [{ channelId: src.channelId }] : [])];
+    const all = [...ids.map((videoId) => ({ videoId })), ...(src.channelId ? [{ channelId: src.channelId }] : [])];
+    const st = statusFor(stream);
+    if (!st || raw) return all;
+    const dead = new Set(st.dead || []);
+    const known = (st.playable || []).map((videoId) => ({ videoId }));
+    const rest = all.filter((c) => !(c.videoId && (dead.has(c.videoId) || st.playable?.includes(c.videoId))));
+    const list = [...known, ...rest];
+    return list.length ? list : all;
   }
+
+  // False only when a fresh check found nothing playable at all for this view.
+  const looksAlive = (stream) => { const st = statusFor(stream); return !st || st.ok || (st.playable || []).length > 0 || !(st.dead || []).length; };
 
   const label = (c) => (c.videoId ? `video ${c.videoId}` : `channel ${c.channelId}`);
   const watchUrl = (c) => (c.videoId ? `https://www.youtube.com/watch?v=${c.videoId}` : `https://www.youtube.com/channel/${c.channelId}/live`);
@@ -71,5 +92,5 @@
     });
   }
 
-  window.PeekPlayer = { ready, candidates, mount, label, watchUrl };
+  window.PeekPlayer = { ready, statusReady, candidates, looksAlive, mount, label, watchUrl, get status() { return status; } };
 })();

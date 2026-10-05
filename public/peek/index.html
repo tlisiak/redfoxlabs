@@ -259,6 +259,8 @@
   }
   function pick(exclude = []) {
     let pool = STREAMS.filter((s) => eligible(s) && !exclude.includes(s.id));
+    const alive = pool.filter(PeekPlayer.looksAlive);
+    if (alive.length) pool = alive;
     const fresh = pool.filter((s) => !recent.includes(s.id));
     if (fresh.length) pool = fresh;
     if (!pool.length) pool = STREAMS.filter((s) => !exclude.includes(s.id));
@@ -482,6 +484,7 @@
   // The landing page itself is a live view: a muted, daylight stream behind the hero.
   let bg = null;
   async function startBackground() {
+    await PeekPlayer.statusReady;
     const s = pick();
     if (!s) return;
     try {

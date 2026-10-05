@@ -59,7 +59,7 @@
       sec.className = "stream";
       sec.innerHTML = `<h2>${esc(s.name)} <span class="verdict">checking</span></h2><div class="grid"></div>`;
       $("list").appendChild(sec);
-      for (const cand of PeekPlayer.candidates(s)) {
+      for (const cand of PeekPlayer.candidates(s, { raw: true })) {
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `<div class="screen"></div><div class="meta"><span class="status wait">Waiting…</span><small class="title"></small><small><a href="${PeekPlayer.watchUrl(cand)}" target="_blank" rel="noopener">${esc(PeekPlayer.label(cand))}</a></small></div>`;

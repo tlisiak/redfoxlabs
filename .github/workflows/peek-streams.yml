@@ -1,0 +1,66 @@
+name: Peek stream check
+
+# Checks every Peek livestream source against YouTube and records which are live.
+# On main, a changed status.json is committed and the site redeployed, so the page
+# skips dead sources and follows channel embeds to their current broadcast.
+
+on:
+  pull_request:
+    paths:
+      - "public/peek/**"
+      - "scripts/peek/**"
+      - ".github/workflows/peek-streams.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: peek-streams-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Unit tests
+        run: node --test scripts/peek/validate-streams.test.mjs
+
+      - name: Check streams
+        id: check
+        run: node scripts/peek/validate-streams.mjs
+
+      - name: Upload status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peek-status
+          path: public/peek/status.json
+
+      - name: Commit status and redeploy
+        if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add public/peek/status.json
+          # checkedAt always changes; only commit when a source's result did.
+          if git diff --cached -U0 | grep -E '^[+-] ' | grep -vq '"checkedAt"'; then
+            git commit -m "Update Peek stream status"
+            git push
+            gh workflow run deploy.yml --ref main
+          else
+            echo "No source changed status."
+          fi
