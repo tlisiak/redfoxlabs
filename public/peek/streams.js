@@ -3,6 +3,8 @@
 // source: { videoIds: [...] } YouTube live videos to try in order, and/or { channelId } to
 //         embed whatever that channel is currently broadcasting (survives stream restarts).
 //         Open check.html to see which sources are working right now.
+// scout:  optional channel IDs the stream check lists live videos for, so a dead source
+//         can be swapped for the channel's current stream. Never played directly.
 // hours:  optional local-time window [start, end) when the camera is worth showing.
 //         Without it, a view is eligible while the sun is up (or always, if night: true).
 // verify: true marks streams whose live status couldn't be confirmed during research.
@@ -16,6 +18,7 @@ window.PEEK_STREAMS = [
     lng: 15.93,
     tz: "Africa/Windhoek",
     source: { videoIds: ["ydYDqZQpim8", "iQOHVoyun2k"] },
+    scout: ["UC9X6gGKDv2yhMoofoeS7-Gg"],
     night: true,
     credit: { name: "NamibiaCam · Gondwana Collection", url: "https://gondwana-collection.com/namib-desert-live-stream" },
     headline: "A solar-powered waterhole on the edge of the oldest desert on Earth.",
@@ -76,7 +79,7 @@ window.PEEK_STREAMS = [
     lat: 45.4379,
     lng: 12.3359,
     tz: "Europe/Rome",
-    source: { videoIds: ["Kmf_wiTFuXY", "K_Vg94nBiaY"] },
+    source: { videoIds: ["Kmf_wiTFuXY", "K_Vg94nBiaY"], channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
     credit: { name: "I Love You Venice", url: "https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw" },
     headline: "Venice's main street, where the traffic is all boats.",
     looking:
@@ -163,6 +166,7 @@ window.PEEK_STREAMS = [
     lng: -121.9018,
     tz: "America/Los_Angeles",
     source: { videoId: "w3LjpFhySTg" },
+    scout: ["UCnM5iMGiKsZg-iOlIO2ZkdQ"],
     hours: [7, 19],
     credit: { name: "Monterey Bay Aquarium", url: "https://www.montereybayaquarium.org/animals/live-cams" },
     headline: "A diver's-eye view of a swaying underwater forest.",

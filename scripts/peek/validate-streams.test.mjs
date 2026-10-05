@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -38,4 +38,14 @@ test("catalog loads and every view has at least one source", async () => {
   const streams = await loadStreams();
   assert.ok(streams.length >= 10);
   for (const s of streams) assert.ok(candidates(s).length > 0, `${s.id} has no sources`);
+});
+
+test("finds only the live videos on a channel's streams tab", () => {
+  const data = { contents: [
+    { videoRenderer: { videoId: "LIVEaaaaaaa", title: { runs: [{ text: "Rialto 4K live" }] }, badges: [{ metadataBadgeRenderer: { style: "BADGE_STYLE_TYPE_LIVE_NOW" } }] } },
+    { videoRenderer: { videoId: "PASTbbbbbbb", title: { simpleText: "Yesterday's stream" }, publishedTimeText: { simpleText: "Streamed 1 day ago" } } },
+    { gridVideoRenderer: { videoId: "LIVEccccccc", title: { simpleText: "Grand Canal" }, viewCountText: { runs: [{ text: "312" }, { text: " watching" }] } } },
+  ] };
+  assert.deepEqual(findLiveVideos(data).map((v) => v.videoId), ["LIVEaaaaaaa", "LIVEccccccc"]);
+  assert.equal(findLiveVideos(data)[0].title, "Rialto 4K live");
 });

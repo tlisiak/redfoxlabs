@@ -43,8 +43,11 @@ export function candidates(stream) {
 }
 
 // Pulls the JSON object assigned to `ytInitialPlayerResponse` out of a watch page.
-export function extractPlayerResponse(html) {
-  const marker = html.search(/ytInitialPlayerResponse\s*=\s*\{/);
+export const extractPlayerResponse = (html) => extractJson(html, /ytInitialPlayerResponse\s*=\s*\{/);
+
+// Pulls the first JSON object assigned to a page variable matching `pattern`.
+export function extractJson(html, pattern) {
+  const marker = html.search(pattern);
   if (marker < 0) return null;
   const start = html.indexOf("{", marker);
   let depth = 0, inStr = false, esc = false;
@@ -100,16 +103,49 @@ async function oembed(videoId) {
   try { return (await fetch(url, { headers: HEADERS })).status; } catch { return 0; }
 }
 
+// Every video a channel lists as live right now, from its /streams tab. Null if unreadable.
+export function findLiveVideos(data) {
+  const found = new Map();
+  const walk = (node) => {
+    if (!node || typeof node !== "object") return;
+    if (typeof node.videoId === "string" && node.title && !found.has(node.videoId)) {
+      const blob = JSON.stringify(node);
+      if (/BADGE_STYLE_TYPE_LIVE_NOW|"style":"LIVE"|watching/.test(blob)) {
+        const title = node.title.simpleText || node.title.runs?.map((r) => r.text).join("") || "";
+        found.set(node.videoId, { videoId: node.videoId, title });
+      }
+    }
+    for (const v of Object.values(node)) walk(v);
+  };
+  walk(data);
+  return [...found.values()];
+}
+
+async function liveOnChannel(channelId) {
+  try {
+    const page = await fetchText(`https://www.youtube.com/channel/${channelId}/streams?hl=en`);
+    const data = page.status === 200 ? extractJson(page.text, /ytInitialData\s*=\s*\{/) : null;
+    return data ? findLiveVideos(data) : null;
+  } catch { return null; }
+}
+
 async function checkCandidate(cand) {
   try {
     if (cand.channelId) {
       // /channel/ID/live resolves to the watch page of whatever the channel is streaming.
       const page = await fetchText(`https://www.youtube.com/channel/${cand.channelId}/live?hl=en`);
       if (page.status !== 200) return { status: "unverified", detail: `YouTube answered ${page.status}` };
+      // When the channel is live, /live is that video's watch page and its canonical link says so.
+      const canonical = page.text.match(/<link rel="canonical" href="([^"]+)"/)?.[1] || "";
       const pr = extractPlayerResponse(page.text);
-      if (!pr?.videoDetails?.videoId) return { status: "offline", detail: "channel isn't broadcasting" };
-      const result = classify(pr, await oembed(pr.videoDetails.videoId));
-      return { ...result, resolvedVideoId: pr.videoDetails.videoId };
+      const videoId = pr?.videoDetails?.videoId || canonical.match(/[?&]v=([\w-]{11})/)?.[1];
+      if (!videoId) {
+        return canonical.includes("/channel/") || canonical.includes("/@")
+          ? { status: "offline", detail: "channel isn't broadcasting" }
+          : { status: "unverified", detail: "couldn't read the channel's live page" };
+      }
+      const result = classify(pr, await oembed(videoId));
+      return { ...result, resolvedVideoId: videoId };
     }
     const [page, oe] = await Promise.all([fetchText(`https://www.youtube.com/watch?v=${cand.videoId}&hl=en`), oembed(cand.videoId)]);
     if (page.status !== 200 && oe !== 401 && oe !== 404 && oe !== 400) return { status: "unverified", detail: `YouTube answered ${page.status}` };
@@ -136,7 +172,8 @@ async function main() {
       await new Promise((ok) => setTimeout(ok, 400)); // be polite
     }
     const live = sources.filter((x) => x.status === "live");
-    const allUnverified = sources.every((x) => x.status === "unverified");
+    // Broken only when every source is confirmed dead; one unverified source is benefit of the doubt.
+    const confirmedDead = sources.every((x) => ["removed", "no-embed", "recording", "offline"].includes(x.status));
     // Order the page should try: live first (channel embeds as their resolved video), then unverified.
     const playable = [
       ...live.map((x) => x.resolvedVideoId || x.videoId),
@@ -148,16 +185,23 @@ async function main() {
       dead: sources.filter((x) => ["removed", "no-embed", "recording", "offline"].includes(x.status) && x.videoId).map((x) => x.videoId),
       sources,
     };
-    if (!live.length && !allUnverified) broken.push(s.name);
+    if (confirmedDead) broken.push(s.name);
 
-    lines.push(`**${live.length ? "✅" : allUnverified ? "❔" : "❌"} ${s.name}**`);
+    lines.push(`**${live.length ? "✅" : confirmedDead ? "❌" : "❔"} ${s.name}**`);
     for (const x of sources) {
       const title = x.title ? ` · ${x.title.replace(/\|/g, "/")}${x.author ? ` (${x.author})` : ""}` : "";
       const resolved = x.resolvedVideoId ? ` → \`${x.resolvedVideoId}\`` : "";
       lines.push(`- ${ICON[x.status]} ${label(x)}${resolved}: ${x.status}, ${x.detail}${title}`);
     }
+    // Scout channels: list everything they're streaming right now, to make swapping in a replacement easy.
+    for (const channelId of [...new Set([...(s.scout || []), ...(s.source.channelId ? [s.source.channelId] : [])])]) {
+      const found = await liveOnChannel(channelId);
+      status.streams[s.id].scouted = { ...(status.streams[s.id].scouted || {}), [channelId]: found };
+      lines.push(found === null ? `- 🔭 channel \`${channelId}\`: couldn't list streams`
+        : `- 🔭 live on channel \`${channelId}\` now: ${found.length ? found.map((v) => `\`${v.videoId}\` ${v.title.replace(/\|/g, "/")}`).join("; ") : "nothing"}`);
+    }
     lines.push("");
-    console.log(`${live.length ? "OK " : allUnverified ? "?? " : "BAD"} ${s.id}: ${sources.map((x) => x.status).join(", ")}`);
+    console.log(`${live.length ? "OK " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}`);
   }
 
   const okCount = Object.values(status.streams).filter((x) => x.ok).length;
@@ -166,7 +210,7 @@ async function main() {
 
   await writeFile(OUT, JSON.stringify(status, null, 2) + "\n");
   if (REPORT) await writeFile(REPORT, lines.join("\n") + "\n", { flag: "a" });
-  else console.log("\n" + lines.join("\n"));
+  console.log("\n" + lines.join("\n"));
   if (broken.length) process.exitCode = 1;
 }
 
