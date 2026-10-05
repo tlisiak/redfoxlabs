@@ -208,11 +208,12 @@
 <div class="toast" id="toast"></div>
 
 <script src="streams.js"></script>
+<script src="player.js"></script>
 <script>
 (() => {
   const STREAMS = window.PEEK_STREAMS;
   const MIN_WORMHOLE_MS = 1900;   // the trip should feel like a trip, even on fast loads
-  const LOAD_TIMEOUT_MS = 9000;   // give up on a stream that won't start and try another
+  const LOAD_TIMEOUT_MS = 7000;   // per source; give up on one that won't start and try the next
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (id) => document.getElementById(id);
 
@@ -270,49 +271,22 @@
   function remember(id) { recent.push(id); while (recent.length > Math.min(4, STREAMS.length - 1)) recent.shift(); }
 
   // ---------------------------------------------------------------- YouTube players
-  const ytReady = new Promise((resolve) => {
-    window.onYouTubeIframeAPIReady = () => resolve(true);
-    const tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    tag.onerror = () => resolve(null);
-    document.head.appendChild(tag);
-  });
-  const PLAYER_VARS = { autoplay: 1, mute: 1, controls: 0, disablekb: 1, fs: 0, iv_load_policy: 3, modestbranding: 1, playsinline: 1, rel: 0, cc_load_policy: 0 };
-  if (location.protocol.startsWith("http")) PLAYER_VARS.origin = location.origin;
-
-  // Builds a hidden layer and resolves with { layer, player } once video is actually playing.
-  function loadStream(stream, { incoming = true } = {}) {
-    return new Promise(async (resolve, reject) => {
-      const api = await ytReady;
-      if (!api) return reject(new Error("YouTube unavailable"));
+  // Builds a hidden layer and resolves with { layer, player } once one of the stream's
+  // sources is actually playing live. Falls through backup IDs and the channel embed.
+  async function loadStream(stream, { incoming = true } = {}) {
+    for (const cand of PeekPlayer.candidates(stream)) {
       const layer = document.createElement("div");
       layer.className = "layer" + (incoming ? " incoming" : "");
       $("stage").appendChild(layer);
-      let settled = false;
-      const done = (fn, v) => { if (!settled) { settled = true; clearTimeout(timer); fn(v); } };
-      const timer = setTimeout(() => { cleanup(); done(reject, new Error("timeout")); }, LOAD_TIMEOUT_MS);
-      const cleanup = () => { try { player.destroy(); } catch {} layer.remove(); };
-      const events = {
-        onReady: (e) => { e.target.mute(); e.target.playVideo(); },
-        onStateChange: (e) => { if (e.data === YT.PlayerState.PLAYING) done(resolve, { layer, player }); },
-        onError: () => { cleanup(); done(reject, new Error("player error")); },
-      };
-      let player;
-      if (stream.source.channelId) {
-        // Channel embeds follow whatever the channel is broadcasting, so they survive restarts.
-        const iframe = document.createElement("iframe");
-        const qs = new URLSearchParams({ ...PLAYER_VARS, channel: stream.source.channelId, enablejsapi: 1 });
-        iframe.src = `https://www.youtube.com/embed/live_stream?${qs}`;
-        iframe.allow = "autoplay; encrypted-media";
-        layer.appendChild(iframe);
-        player = new YT.Player(iframe, { events });
-      } else {
-        const slot = document.createElement("div");
-        slot.className = "yt-slot";
-        layer.appendChild(slot);
-        player = new YT.Player(slot, { videoId: stream.source.videoId, playerVars: PLAYER_VARS, events });
+      try {
+        const { player } = await PeekPlayer.mount(layer, cand, { timeout: LOAD_TIMEOUT_MS });
+        return { layer, player };
+      } catch (err) {
+        layer.remove();
+        console.warn(`[peek] ${stream.id}: ${PeekPlayer.label(cand)} failed (${err.message})`);
       }
-    });
+    }
+    throw new Error("no working source");
   }
 
   // ---------------------------------------------------------------- wormhole

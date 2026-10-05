@@ -71,7 +71,8 @@ Things to check for any domain: (1) availability and renewal price (.live and .e
 - **Wormhole:** a minimal canvas particle tunnel (≥1.9s). The next stream loads hidden underneath it. When the stream is actually playing, the destination irises open from the center.
 - **No video control:** controls are off, keyboard is off, and a transparent shield sits over the player. The only control is a small sound toggle (flagged below).
 - **Info panel:** a glass panel on the right on desktop, a bottom sheet on mobile. It shows live local time, live weather (Open-Meteo, free, no key), a sunset/sunrise countdown, coordinates, what you're looking at, what to watch for, the story, facts, and a stream credit with sources.
-- **Reliability:** if a stream errors or doesn't start within 9s, it silently tries another, up to 4 times.
+- **Reliability:** each view lists backup video IDs and/or a channel embed. If a source errors, won't start within 7s, or turns out to be a recording instead of live, it falls through to the next, then to another view.
+- **Stream checker:** `public/peek/check.html` loads every source side by side, says which work and why the others don't (removed, embedding disabled, recording), and has a "Copy report" button.
 - **Keys:** Space = peek again, Esc = home.
 
 Not built yet: accounts, game, passport, ambient mode, analytics, a stream health checker.

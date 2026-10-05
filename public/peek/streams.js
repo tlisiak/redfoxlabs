@@ -1,7 +1,8 @@
 // Peek prototype catalog. One entry per vetted live view.
 //
-// source: { videoId } for a single YouTube live video, or { channelId } to embed
-//         whatever that channel is currently broadcasting (survives stream restarts).
+// source: { videoIds: [...] } YouTube live videos to try in order, and/or { channelId } to
+//         embed whatever that channel is currently broadcasting (survives stream restarts).
+//         Open check.html to see which sources are working right now.
 // hours:  optional local-time window [start, end) when the camera is worth showing.
 //         Without it, a view is eligible while the sun is up (or always, if night: true).
 // verify: true marks streams whose live status couldn't be confirmed during research.
@@ -14,7 +15,7 @@ window.PEEK_STREAMS = [
     lat: -24.07,
     lng: 15.93,
     tz: "Africa/Windhoek",
-    source: { videoId: "ydYDqZQpim8" },
+    source: { videoIds: ["ydYDqZQpim8", "iQOHVoyun2k"] },
     night: true,
     credit: { name: "NamibiaCam · Gondwana Collection", url: "https://gondwana-collection.com/namib-desert-live-stream" },
     headline: "A solar-powered waterhole on the edge of the oldest desert on Earth.",
@@ -45,7 +46,7 @@ window.PEEK_STREAMS = [
     lat: 35.5003,
     lng: 138.7686,
     tz: "Asia/Tokyo",
-    source: { videoId: "Sv9hcJ3k5h4" },
+    source: { videoIds: ["Sv9hcJ3k5h4", "bdUbACCWmoY", "vhaZLwUwP9w", "mbeid4wxX5s"] },
     credit: { name: "Mt. Fuji Panoramic Ropeway", url: "https://www.youtube.com/watch?v=Sv9hcJ3k5h4" },
     headline: "Japan's sacred volcano, seen from a mountaintop above the Fuji Five Lakes.",
     looking:
@@ -75,7 +76,7 @@ window.PEEK_STREAMS = [
     lat: 45.4379,
     lng: 12.3359,
     tz: "Europe/Rome",
-    source: { videoId: "Kmf_wiTFuXY" },
+    source: { videoIds: ["Kmf_wiTFuXY", "K_Vg94nBiaY"] },
     credit: { name: "I Love You Venice", url: "https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw" },
     headline: "Venice's main street, where the traffic is all boats.",
     looking:
@@ -104,7 +105,7 @@ window.PEEK_STREAMS = [
     lat: 64.0484,
     lng: -16.1795,
     tz: "Atlantic/Reykjavik",
-    source: { videoId: "WDHSEuMUb3w" },
+    source: { videoIds: ["WDHSEuMUb3w", "Flb8X7QQQKI"] },
     credit: { name: "Live from Iceland", url: "https://www.youtube.com/watch?v=WDHSEuMUb3w" },
     headline: "Icebergs drifting from a glacier to the sea.",
     looking:
