@@ -86,9 +86,10 @@ window.PEEK_STREAMS = [
     lat: 45.4379,
     lng: 12.3359,
     tz: "Europe/Rome",
-    // Both Rialto video IDs we had (Kmf_wiTFuXY, K_Vg94nBiaY) were removed by Oct 2026; until the
-    // stream check finds the current one, play whatever this channel is broadcasting.
-    source: { channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
+    // nviU2HYj-Jc: listed live on the channel by the stream check, Oct 5 2026 (the IDs from
+    // research, Kmf_wiTFuXY and K_Vg94nBiaY, had been removed). The channel embed is a last resort;
+    // expect.title stops it from showing one of the channel's other Venice cams.
+    source: { videoIds: ["nviU2HYj-Jc"], channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
     expect: { title: ["Rialto"] },
     credit: { name: "I Love You Venice", url: "https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw" },
     headline: "Venice's main street, where the traffic is all boats.",
@@ -148,7 +149,8 @@ window.PEEK_STREAMS = [
     lat: 20.9262,
     lng: -156.6955,
     tz: "Pacific/Honolulu",
-    source: { channelId: "UCIQVWkOilfxoQSFcban_d-A" },
+    // RLv4FlYmrM4: the channel's current 4K stream, found live by the stream check Oct 5 2026.
+    source: { videoIds: ["RLv4FlYmrM4"], channelId: "UCIQVWkOilfxoQSFcban_d-A" },
     expect: { title: ["Kaanapali", "Black Rock", "Maui"] },
     credit: { name: "Maui Live Cam", url: "https://www.youtube.com/channel/UCIQVWkOilfxoQSFcban_d-A" },
     headline: "A sacred lava point on one of the best beaches in America.",
@@ -542,7 +544,7 @@ window.PEEK_STREAMS = [
     lat: 19.405,
     lng: -155.281,
     tz: "Pacific/Honolulu",
-    source: { videoIds: ["HggWKlZv9yk", "gXKuUyKt8mc"] },
+    source: { videoIds: ["HggWKlZv9yk", "f9-oSpYpubg", "gXKuUyKt8mc"] },
     scout: ["@usgs"],
     expect: { title: ["Kilauea", "Halemaumau"] },
     night: true,
@@ -569,20 +571,20 @@ window.PEEK_STREAMS = [
   {
     id: "tetons",
     name: "The Grand Tetons",
-    place: "From Teton Valley, Idaho",
+    place: "Jackson Hole, Wyoming",
     country: "United States",
-    lat: 43.72,
-    lng: -111.11,
-    tz: "America/Boise",
-    // 8DdnDOGWAOQ ended Aug 2025.
-    source: {},
-    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
+    lat: 43.49,
+    lng: -110.76,
+    tz: "America/Denver",
+    // Found live on SeeJH by the stream check, Oct 5 2026 (the Teton Valley ID from research ended
+    // Aug 2025): East Gros Ventre Butte PTZ, Buffalo Valley, Dornan's.
+    source: { videoIds: ["j-0fhrHzEiM", "Jqo7Z9QiOEQ", "o4fKtgPVpoU"] },
     scout: ["@Seejh"],
     expect: { title: ["Teton"] },
     credit: { name: "SeeJH", url: "https://www.youtube.com/@Seejh" },
-    headline: "The youngest mountains in the Rockies, from the quiet side.",
+    headline: "The youngest mountains in the Rockies, rising straight out of the valley.",
     looking:
-      "The Teton Range from the Idaho side, the view that gave the mountains their name. The tallest peak, the Grand Teton, is 13,775 feet.",
+      "The Teton Range from the valley of Jackson Hole, where the mountains jump almost 7,000 feet above the valley floor with no foothills in between. The tallest peak, the Grand Teton, is 13,775 feet. Some of these cameras pan across the range.",
     watchFor: [
       "Alpenglow on the peaks at sunrise and sunset",
       "Storms building over the range on summer afternoons",

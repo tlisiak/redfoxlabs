@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, DEAD } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -112,4 +112,15 @@ test("reads live videos from YouTube's newer lockup layout too", () => {
   const found = findLiveVideos(data);
   assert.deepEqual(found.map((v) => [v.videoId, v.title]), [["LOCKliveaaa", "Sydney Harbour 24/7 live"]]);
   assert.equal(found.seen, 2);
+});
+
+test("a bot-checked source its channel lists as live counts as live", () => {
+  const s = { expect: { title: ["Tembe"] } };
+  const sources = [
+    { videoId: "0P_LBKqVbfs", status: "unverified", detail: "YouTube bot check" },
+    { videoId: "notlisted00", status: "unverified", detail: "YouTube bot check" },
+    { videoId: "deadvideo00", status: "offline", detail: "ended" },
+  ];
+  confirmFromScouts(s, { UCx: [{ videoId: "0P_LBKqVbfs", title: "LIVE Elephant Cam: Tembe Elephant Park" }, { videoId: "deadvideo00", title: "Tembe" }] }, sources);
+  assert.deepEqual(sources.map((x) => x.status), ["live", "unverified", "offline"]);
 });

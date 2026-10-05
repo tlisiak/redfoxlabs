@@ -271,6 +271,16 @@ export function autoFind(stream, scouted, sources) {
   return found;
 }
 
+export function confirmFromScouts(stream, scouted, sources) {
+  const listed = new Map(Object.values(scouted).flatMap((l) => (l || []).map((v) => [v.videoId, v.title])));
+  for (const x of sources) {
+    const id = x.videoId || x.resolvedVideoId;
+    if (x.status === "unverified" && listed.has(id) && matchesExpect(stream.expect, listed.get(id))) {
+      Object.assign(x, { status: "live", detail: "listed live on its channel", title: x.title || listed.get(id) });
+    }
+  }
+}
+
 async function main() {
   const streams = await loadStreams();
   const status = { checkedAt: new Date().toISOString(), mode: API_KEY ? "api" : "scrape", streams: {} };
@@ -292,6 +302,9 @@ async function main() {
       scouted[scout] = await liveOnChannel(scout);
     }
     const found = autoFind(s, scouted, sources);
+    // A source its own channel lists as live (and on-target) is confirmed, even when the
+    // watch page itself was hidden behind a bot check.
+    confirmFromScouts(s, scouted, sources);
 
     const live = sources.filter((x) => x.status === "live");
     // Order the page should try: confirmed live, then auto-found replacements, then unverified.

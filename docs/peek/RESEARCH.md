@@ -33,7 +33,7 @@ The first stream check (no API key yet) found 4 of these 10 had links that ended
 | 16 | Tropical Reef | Long Beach, CA | [Aquarium of the Pacific](https://www.aquariumofpacific.org/exhibits/tropical_pacific_gallery/webcam_tropical_reef) | 8am–8pm PT (assumed) | Backup for when Cayman is down. |
 | 17 | Victoria Harbour | Hong Kong | [Peak webcam](https://www.youtube.com/watch?v=bNOWG3jcOlQ) | 24h (night is the point) | No scout channel yet. |
 | 18 | Kīlauea Summit | Hawaiʻi | [USGS HVO](https://www.usgs.gov/volcanoes/kilauea/summit-webcams) | 24h | Episodic: fountains only during episodes, steam otherwise. Card says so. |
-| 19 | The Grand Tetons | Teton Valley, Idaho | [SeeJH](https://www.youtube.com/@Seejh) | Daylight | ⏸ Paused: ID ended Aug 2025. |
+| 19 | The Grand Tetons | Jackson Hole, Wyoming | [SeeJH](https://www.youtube.com/@Seejh) | Daylight | Research ID had ended; the check auto-found 3 live Wyoming-side cams, now in the catalog. |
 | 20 | Horseshoe Falls | Niagara, Canada | [EarthCam](https://www.earthcam.com/canada/niagarafalls/thefalls/) | 24h | ⏸ Paused: one ID blocks embedding, the other ended Feb 2026. |
 
 **Looked at and passed on:** Perito Moreno / Patagonia and Queenstown (no reliable YouTube live stream, mostly still-image cams), Geirangerfjord and Positano (live, but on CamStreamer/SkylineWebcams rather than YouTube; both are good licensing-partner prospects later).
