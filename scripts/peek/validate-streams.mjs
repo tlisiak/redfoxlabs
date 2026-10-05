@@ -341,18 +341,26 @@ async function main() {
       scouted[scout] = await liveOnChannel(scout);
     }
     Object.assign(allScouted, scouted);
-    const found = autoFind(s, scouted, sources);
+    // Auto-found candidates get the same check as catalog sources (live, embeddable, on target)
+    // before they can stand in for anything.
+    const found = [];
+    for (const v of autoFind(s, scouted, sources)) {
+      const r = judge(s, await checkCandidate({ videoId: v.videoId }));
+      if (!DEAD.includes(r.status)) found.push({ ...v, status: r.status });
+      else thisRun[v.videoId] = r.status;
+    }
     // A source its own channel lists as live (and on-target) is confirmed, even when the
     // watch page itself was hidden behind a bot check.
     confirmFromScouts(s, scouted, sources);
 
     for (const x of sources) { const id = x.resolvedVideoId || x.videoId; if (id) thisRun[id] = x.status; }
-    for (const v of found) thisRun[v.videoId] = "live";
+    for (const v of found) if (v.status === "live") thisRun[v.videoId] = "live";
     const live = sources.filter((x) => x.status === "live");
-    // Order the page should try: confirmed live, then auto-found replacements, then unverified.
+    // Order the page should try: confirmed live, then (only when none of the view's own sources
+    // is live) auto-found replacements, then unverified. Auto-finds are a recovery path, not extras.
     const playable = [
       ...live.map((x) => x.resolvedVideoId || x.videoId),
-      ...found.map((v) => v.videoId),
+      ...(live.length ? [] : found.map((v) => v.videoId)),
       ...sources.filter((x) => x.status === "unverified").map((x) => x.videoId || x.resolvedVideoId).filter(Boolean),
     ];
     // Broken only when every source is confirmed dead and nothing replaced them.
