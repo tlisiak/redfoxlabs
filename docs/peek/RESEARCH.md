@@ -21,20 +21,20 @@ The full "info list" for each one (what you're looking at, watch for, story, fac
 
 ### Batch 2 (added 2026-10-05)
 
-Chosen for **who runs them** as much as the view: institutional and network operators (explore.org, USGS, EarthCam, aquariums) keep 24/7 streams up for years and embed them on their own sites, which shows embedding is allowed.
+The first stream check (no API key yet) found 4 of these 10 had links that ended long ago; search engines were still indexing them. Those 4 are paused, not deleted. Chosen for **who runs them** as much as the view: institutional and network operators (explore.org, USGS, EarthCam, aquariums) keep 24/7 streams up for years and embed them on their own sites, which shows embedding is allowed.
 
 | # | View | Where | Operator | Hours | Notes |
 |---|------|-------|----------|-------|-------|
-| 11 | Tembe Elephant Park | South Africa | [Africam · explore.org](https://explore.org/livecams/africam/tembe-elephant-park) | Daylight | Two IDs + explore.org scout. |
+| 11 | Tembe Elephant Park | South Africa | [Africam · explore.org](https://explore.org/livecams/africam/tembe-elephant-park) | Daylight | Main ID ended Apr 2026; backup + explore.org scout remain. |
 | 12 | Table Mountain | Cape Town, South Africa | [Table Mountain Live Stream](https://www.youtube.com/@TableMountainLiveStream) | Daylight | Classic view across Table Bay from Bloubergstrand. |
-| 13 | Sydney Harbour | Australia | [Sydney Live Camera](https://www.youtube.com/@sydneylivecamera) | Daylight | One static cam, one PTZ (moves). |
-| 14 | Copacabana Beach | Rio, Brazil | [EarthCam](https://www.youtube.com/watch?v=2PJfQY9LUoU) | Daylight | First South America view. |
+| 13 | Sydney Harbour | Australia | [Sydney Live Camera](https://www.youtube.com/@sydneylivecamera) | Daylight | ⏸ Paused: both IDs ended Nov 2024. Returns when the check finds a current one. |
+| 14 | Copacabana Beach | Rio, Brazil | [EarthCam](https://www.youtube.com/watch?v=2PJfQY9LUoU) | Daylight | ⏸ Paused: ID ended Jan 2024. |
 | 15 | Cayman Reef | Grand Cayman | [explore.org · Teens4Oceans](https://explore.org/livecams/oceans/cayman-reef-cam) | Daylight | Real reef, solar powered: expect weather outages. |
 | 16 | Tropical Reef | Long Beach, CA | [Aquarium of the Pacific](https://www.aquariumofpacific.org/exhibits/tropical_pacific_gallery/webcam_tropical_reef) | 8am–8pm PT (assumed) | Backup for when Cayman is down. |
 | 17 | Victoria Harbour | Hong Kong | [Peak webcam](https://www.youtube.com/watch?v=bNOWG3jcOlQ) | 24h (night is the point) | No scout channel yet. |
 | 18 | Kīlauea Summit | Hawaiʻi | [USGS HVO](https://www.usgs.gov/volcanoes/kilauea/summit-webcams) | 24h | Episodic: fountains only during episodes, steam otherwise. Card says so. |
-| 19 | The Grand Tetons | Teton Valley, Idaho | [SeeJH](https://www.youtube.com/@Seejh) | Daylight | |
-| 20 | Horseshoe Falls | Niagara, Canada | [EarthCam](https://www.earthcam.com/canada/niagarafalls/thefalls/) | 24h | Lit at night. |
+| 19 | The Grand Tetons | Teton Valley, Idaho | [SeeJH](https://www.youtube.com/@Seejh) | Daylight | ⏸ Paused: ID ended Aug 2025. |
+| 20 | Horseshoe Falls | Niagara, Canada | [EarthCam](https://www.earthcam.com/canada/niagarafalls/thefalls/) | 24h | ⏸ Paused: one ID blocks embedding, the other ended Feb 2026. |
 
 **Looked at and passed on:** Perito Moreno / Patagonia and Queenstown (no reliable YouTube live stream, mostly still-image cams), Geirangerfjord and Positano (live, but on CamStreamer/SkylineWebcams rather than YouTube; both are good licensing-partner prospects later).
 

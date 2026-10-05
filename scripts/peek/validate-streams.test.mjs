@@ -37,7 +37,10 @@ test("classifies each outcome", () => {
 test("catalog loads and every view has at least one source", async () => {
   const streams = await loadStreams();
   assert.ok(streams.length >= 10);
-  for (const s of streams) assert.ok(candidates(s).length > 0, `${s.id} has no sources`);
+  for (const s of streams) {
+    if (s.paused) assert.ok(s.scout?.length, `paused ${s.id} needs a scout channel to come back from`);
+    else assert.ok(candidates(s).length > 0, `${s.id} has no sources`);
+  }
 });
 
 test("finds only the live videos on a channel's streams tab", () => {
@@ -96,4 +99,17 @@ test("standard-definition streams fail the quality bar", () => {
 test("every view declares what it should show", async () => {
   const streams = await loadStreams();
   for (const s of streams) assert.ok(s.expect?.title?.length, `${s.id} has no expect.title`);
+});
+
+test("reads live videos from YouTube's newer lockup layout too", () => {
+  const data = { items: [
+    { lockupViewModel: { contentId: "LOCKliveaaa", contentType: "LOCKUP_CONTENT_TYPE_VIDEO",
+      metadata: { lockupMetadataViewModel: { title: { content: "Sydney Harbour 24/7 live" } } },
+      contentImage: { thumbnailViewModel: { overlays: [{ thumbnailBadgeViewModel: { text: "LIVE", badgeStyle: "THUMBNAIL_OVERLAY_BADGE_STYLE_LIVE" } }] } } } },
+    { lockupViewModel: { contentId: "LOCKoldbbbb", contentType: "LOCKUP_CONTENT_TYPE_VIDEO",
+      metadata: { lockupMetadataViewModel: { title: { content: "Yesterday" } } } } },
+  ] };
+  const found = findLiveVideos(data);
+  assert.deepEqual(found.map((v) => [v.videoId, v.title]), [["LOCKliveaaa", "Sydney Harbour 24/7 live"]]);
+  assert.equal(found.seen, 2);
 });

@@ -46,8 +46,13 @@
     return list.length ? list : all;
   }
 
-  // False only when a fresh check found nothing playable at all for this view.
-  const looksAlive = (stream) => { const st = statusFor(stream); return !st || st.ok || (st.playable || []).length > 0 || !(st.dead || []).length; };
+  // False when a fresh check found nothing playable for this view, or the view is paused
+  // and the check hasn't auto-found a replacement for it.
+  const looksAlive = (stream) => {
+    const st = statusFor(stream);
+    if (stream.paused) return (st?.playable || []).length > 0;
+    return !st || st.ok || (st.playable || []).length > 0 || !(st.dead || []).length;
+  };
 
   // Accuracy: does what's playing match what the view promises? Titles vary in accents,
   // ʻokina and case ("Kīlauea", "Halemaʻumaʻu"), so compare folded text. No title, no verdict.

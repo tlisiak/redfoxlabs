@@ -8,6 +8,8 @@
 // expect: { title: [...] } words the live video's title must contain (any one, accents and
 //         case ignored). The page refuses a source that plays something else, and the stream
 //         check flags it, so a channel switching cams can't put the wrong place on screen.
+// paused: why a view is out of rotation (e.g. every known ID died). It returns on its own once
+//         the stream check auto-finds an on-target live video on one of its scout channels.
 // hours:  optional local-time window [start, end) when the camera is worth showing.
 //         Without it, a view is eligible while the sun is up (or always, if night: true).
 // verify: true marks streams whose live status couldn't be confirmed during research.
@@ -324,7 +326,8 @@ window.PEEK_STREAMS = [
     lat: -26.95,
     lng: 32.42,
     tz: "Africa/Johannesburg",
-    source: { videoIds: ["VUJbDTIYlM4", "0P_LBKqVbfs"] },
+    // VUJbDTIYlM4 ended 2026-04-08 (stream check, Oct 5).
+    source: { videoIds: ["0P_LBKqVbfs"] },
     scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
     expect: { title: ["Tembe"] },
     credit: { name: "Africam · explore.org", url: "https://explore.org/livecams/africam/tembe-elephant-park" },
@@ -386,7 +389,9 @@ window.PEEK_STREAMS = [
     lat: -33.852,
     lng: 151.211,
     tz: "Australia/Sydney",
-    source: { videoIds: ["fwhOL-pDaG8", "hhdI4mN6ueM"] },
+    // Both IDs found in research (fwhOL-pDaG8, hhdI4mN6ueM) ended in Nov 2024.
+    source: {},
+    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
     scout: ["@sydneylivecamera"],
     expect: { title: ["Sydney"] },
     credit: { name: "Sydney Live Camera", url: "https://www.youtube.com/@sydneylivecamera" },
@@ -416,7 +421,9 @@ window.PEEK_STREAMS = [
     lat: -22.971,
     lng: -43.182,
     tz: "America/Sao_Paulo",
-    source: { videoIds: ["2PJfQY9LUoU"] },
+    // 2PJfQY9LUoU ended Jan 2024.
+    source: {},
+    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
     scout: ["UC6qrG3W8SMK0jior2olka3g"],
     expect: { title: ["Copacabana"] },
     credit: { name: "EarthCam", url: "https://www.earthcam.com" },
@@ -567,7 +574,9 @@ window.PEEK_STREAMS = [
     lat: 43.72,
     lng: -111.11,
     tz: "America/Boise",
-    source: { videoIds: ["8DdnDOGWAOQ"] },
+    // 8DdnDOGWAOQ ended Aug 2025.
+    source: {},
+    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
     scout: ["@Seejh"],
     expect: { title: ["Teton"] },
     credit: { name: "SeeJH", url: "https://www.youtube.com/@Seejh" },
@@ -597,7 +606,9 @@ window.PEEK_STREAMS = [
     lat: 43.078,
     lng: -79.075,
     tz: "America/Toronto",
-    source: { videoIds: ["UAB9wLwku3g", "gIv9J38Dax8"] },
+    // UAB9wLwku3g blocks embedding; gIv9J38Dax8 ended Feb 2026.
+    source: {},
+    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
     scout: ["UC6qrG3W8SMK0jior2olka3g"],
     expect: { title: ["Niagara"] },
     night: true,

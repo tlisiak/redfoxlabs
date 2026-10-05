@@ -117,22 +117,31 @@ async function oembed(videoId) {
   try { return (await fetch(url, { headers: HEADERS })).status; } catch { return 0; }
 }
 
-// Every video a channel lists as live right now, from its /streams tab. Null if unreadable.
+// Every video a channel lists as live right now, from its /streams tab. Handles both the
+// older videoRenderer layout and the newer lockupViewModel one (contentId + metadata title).
+const LIVE_MARK = /BADGE_STYLE_TYPE_LIVE_NOW|THUMBNAIL_OVERLAY_BADGE_STYLE_LIVE|"style":"LIVE"|"text":"LIVE"|watching"/;
 export function findLiveVideos(data) {
   const found = new Map();
+  let seen = 0;
   const walk = (node) => {
     if (!node || typeof node !== "object") return;
-    if (typeof node.videoId === "string" && node.title && !found.has(node.videoId)) {
-      const blob = JSON.stringify(node);
-      if (/BADGE_STYLE_TYPE_LIVE_NOW|"style":"LIVE"|watching/.test(blob)) {
-        const title = node.title.simpleText || node.title.runs?.map((r) => r.text).join("") || "";
-        found.set(node.videoId, { videoId: node.videoId, title });
+    const id = typeof node.videoId === "string" && node.title ? node.videoId
+      : node.contentType === "LOCKUP_CONTENT_TYPE_VIDEO" && typeof node.contentId === "string" ? node.contentId : null;
+    if (id && !found.has(id)) {
+      seen++;
+      if (LIVE_MARK.test(JSON.stringify(node))) {
+        const t = node.title || node.metadata?.lockupMetadataViewModel?.title;
+        const title = t?.simpleText || t?.content || t?.runs?.map((r) => r.text).join("") || "";
+        found.set(id, { videoId: id, title });
       }
+      return; // don't double-count nested renderers of the same video
     }
     for (const v of Object.values(node)) walk(v);
   };
   walk(data);
-  return [...found.values()];
+  const list = [...found.values()];
+  list.seen = seen;
+  return list;
 }
 
 async function liveOnChannel(scout) {
@@ -140,7 +149,10 @@ async function liveOnChannel(scout) {
   try {
     const page = await fetchText(`https://www.youtube.com${channelPath(scout)}/streams?hl=en`);
     const data = page.status === 200 ? extractJson(page.text, /ytInitialData\s*=\s*\{/) : null;
-    return data ? findLiveVideos(data) : null;
+    if (!data) return null;
+    const list = findLiveVideos(data);
+    // A tab that lists no videos at all is a page we couldn't read, not an idle channel.
+    return list.seen ? list : null;
   } catch { return null; }
 }
 
@@ -265,6 +277,7 @@ async function main() {
   const lines = ["## Peek stream check", "", `Checked ${status.checkedAt} (${API_KEY ? "YouTube Data API" : "page scraping, no API key"})`, ""];
   const broken = [];
 
+  const paused = [];
   for (const s of streams) {
     const sources = [];
     for (const cand of candidates(s)) {
@@ -288,7 +301,8 @@ async function main() {
       ...sources.filter((x) => x.status === "unverified").map((x) => x.videoId || x.resolvedVideoId).filter(Boolean),
     ];
     // Broken only when every source is confirmed dead and nothing replaced them.
-    const confirmedDead = !found.length && sources.every((x) => DEAD.includes(x.status));
+    const confirmedDead = !s.paused && !found.length && sources.every((x) => DEAD.includes(x.status));
+    if (s.paused) paused.push(found.length ? `${s.name} (auto-found a replacement, now back in rotation)` : s.name);
     status.streams[s.id] = {
       ok: live.length > 0 || found.length > 0,
       playable: [...new Set(playable)],
@@ -299,7 +313,7 @@ async function main() {
     };
     if (confirmedDead) broken.push(s.name);
 
-    lines.push(`**${live.length || found.length ? "✅" : confirmedDead ? "❌" : "❔"} ${s.name}**`);
+    lines.push(`**${live.length || found.length ? "✅" : s.paused ? "⏸" : confirmedDead ? "❌" : "❔"} ${s.name}**${s.paused ? ` (paused: ${md(s.paused)})` : ""}`);
     for (const x of sources) {
       const title = x.title && x.status !== "mismatch" ? ` · ${md(x.title)}${x.author ? ` (${md(x.author)})` : ""}` : "";
       const resolved = x.resolvedVideoId ? ` → \`${x.resolvedVideoId}\`` : "";
@@ -311,12 +325,13 @@ async function main() {
         : `- 🔭 live on \`${scout}\` now: ${list.length ? list.map((v) => `\`${v.videoId}\` ${md(v.title)}`).join("; ") : "nothing"}`);
     }
     lines.push("");
-    console.log(`${live.length || found.length ? "OK " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}${found.length ? ` + ${found.length} auto-found` : ""}`);
+    console.log(`${live.length || found.length ? "OK " : s.paused ? "|| " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}${found.length ? ` + ${found.length} auto-found` : ""}`);
   }
 
   const okCount = Object.values(status.streams).filter((x) => x.ok).length;
   lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable, on-target source.**`, "");
   if (broken.length) lines.push(`Needs a replacement source: ${broken.join(", ")}`);
+  if (paused.length) lines.push(`Paused: ${paused.join(", ")}`);
   if (!API_KEY && Object.values(status.streams).some((x) => x.sources.some((y) => /bot check/.test(y.detail || "")))) {
     lines.push("", "> YouTube answered with a bot check, so live status couldn't be confirmed. Add a YouTube Data API key as the `YOUTUBE_API_KEY` repo secret to fix this.");
   }

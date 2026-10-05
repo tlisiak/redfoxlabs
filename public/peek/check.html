@@ -57,7 +57,7 @@
     for (const s of window.PEEK_STREAMS) {
       const sec = document.createElement("section");
       sec.className = "stream";
-      sec.innerHTML = `<h2>${esc(s.name)} <span class="verdict">checking</span></h2><div class="grid"></div>`;
+      sec.innerHTML = `<h2>${esc(s.name)} <span class="verdict">${s.paused ? "paused" : "checking"}</span></h2>${s.paused ? `<p class="sub">${esc(s.paused)}</p>` : ""}<div class="grid"></div>`;
       $("list").appendChild(sec);
       for (const cand of PeekPlayer.candidates(s, { raw: true })) {
         const card = document.createElement("div");
@@ -88,7 +88,8 @@
     const queue = [...jobs];
     await Promise.all(Array.from({ length: 4 }, async () => { while (queue.length) await queue.shift()(); }));
     const okStreams = new Set(results.filter((r) => r.ok).map((r) => r.stream.id)).size;
-    $("summary").textContent = `${okStreams} of ${window.PEEK_STREAMS.length} views have a working source.`;
+    const active = window.PEEK_STREAMS.filter((s) => !s.paused).length;
+    $("summary").textContent = `${okStreams} of ${active} active views have a working source${active < window.PEEK_STREAMS.length ? ` (${window.PEEK_STREAMS.length - active} paused)` : ""}.`;
   }
 
   function refresh(sec, s) {

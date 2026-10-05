@@ -347,11 +347,12 @@
   }
   function pick(exclude = []) {
     let pool = STREAMS.filter((s) => eligible(s) && !exclude.includes(s.id));
+    pool = pool.filter((s) => !s.paused || PeekPlayer.looksAlive(s));
     const alive = pool.filter(PeekPlayer.looksAlive);
     if (alive.length) pool = alive;
     const fresh = pool.filter((s) => !recent.includes(s.id));
     if (fresh.length) pool = fresh;
-    if (!pool.length) pool = STREAMS.filter((s) => !exclude.includes(s.id));
+    if (!pool.length) pool = STREAMS.filter((s) => !s.paused && !exclude.includes(s.id));
     if (!pool.length) return null;
     const total = pool.reduce((t, s) => t + weight(s), 0);
     let r = Math.random() * total;
@@ -590,7 +591,8 @@
   }
 
   // ---------------------------------------------------------------- wiring
-  $("countLine").textContent = `${STREAMS.length} live views · ${new Set(STREAMS.map((s) => s.country)).size} countries`;
+  const showing = STREAMS.filter((s) => !s.paused);
+  $("countLine").textContent = `${showing.length} live views · ${new Set(showing.map((s) => s.country)).size} countries`;
   $("peekBtn").onclick = peek;
   $("againBtn").onclick = peek;
   $("home").onclick = goHome;
