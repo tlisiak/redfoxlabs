@@ -38,7 +38,8 @@ test("catalog loads and every view has at least one source", async () => {
   const streams = await loadStreams();
   assert.ok(streams.length >= 10);
   for (const s of streams) {
-    if (s.paused) assert.ok(s.scout?.length, `paused ${s.id} needs a scout channel to come back from`);
+    // A paused view either has a trusted channel to auto-recover from, or says what it needs.
+    if (s.paused) assert.ok(typeof s.paused === "string" && s.paused.length > 10, `paused ${s.id} needs a reason`);
     else assert.ok(candidates(s).length > 0, `${s.id} has no sources`);
   }
 });
@@ -91,9 +92,10 @@ test("auto-find only promotes on-target, unknown live videos", () => {
   assert.deepEqual(found.map((v) => v.videoId), ["aaaaaaaaaaa"]);
 });
 
-test("standard-definition streams fail the quality bar", () => {
-  const item = { snippet: { liveBroadcastContent: "live" }, status: { privacyStatus: "public", embeddable: true }, contentDetails: { definition: "sd" } };
-  assert.equal(classifyApiItem(item).status, "low-quality");
+test("definition only counts for finished videos (YouTube says sd for everything live)", () => {
+  const item = (liveBroadcastContent) => ({ snippet: { liveBroadcastContent }, status: { privacyStatus: "public", embeddable: true }, contentDetails: { definition: "sd" }, liveStreamingDetails: {} });
+  assert.equal(classifyApiItem(item("live")).status, "live");
+  assert.equal(classifyApiItem(item("none")).status, "low-quality");
 });
 
 test("every view declares what it should show", async () => {

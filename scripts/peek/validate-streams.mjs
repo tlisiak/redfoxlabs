@@ -175,7 +175,11 @@ export function classifyApiItem(item) {
   const base = { title: item.snippet?.title, author: item.snippet?.channelTitle };
   if (item.status?.privacyStatus === "private") return { ...base, status: "removed", detail: "private video" };
   if (item.status?.embeddable === false) return { ...base, status: "no-embed", detail: "owner disabled embedding" };
-  if (item.contentDetails?.definition === "sd") return { ...base, status: "low-quality", detail: "standard definition only" };
+  // YouTube reports "sd" for every broadcast while it's live, so definition only means something
+  // for finished videos. Live resolution is checked in the browser at play time instead.
+  if (item.contentDetails?.definition === "sd" && item.snippet?.liveBroadcastContent !== "live") {
+    return { ...base, status: "low-quality", detail: "standard definition only" };
+  }
   const live = item.liveStreamingDetails;
   switch (item.snippet?.liveBroadcastContent) {
     case "live": return { ...base, status: "live", detail: live?.concurrentViewers ? `live now, ${live.concurrentViewers} watching` : "live now" };

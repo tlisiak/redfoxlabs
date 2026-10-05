@@ -19,6 +19,14 @@ The full "info list" for each one (what you're looking at, watch for, story, fac
 | 9 | San Francisco Bay | Treasure Island, SF | [Mersea Restaurant](https://www.youtube.com/watch?v=BSWhGNXxT9A) | Daylight | Restaurant cam. Easy, local first partner conversation. |
 | 10 | The Matterhorn | Zermatt, Switzerland | [Glacier Paradise](https://www.youtube.com/watch?v=o9puACFGW0o) | Daylight | ⚠️ May be a recorded video, not a live stream. Verify. Swap for a Zermatt Bergbahnen live cam if so. |
 
+### First full API check (2026-10-05, evening)
+
+With the YouTube Data API key in, the check could finally read everything. Results:
+- **Live and embeddable (12):** Namib, Fuji (2 cams), Rialto, Kelp Forest, Tahoe, SF Bay, Tembe, Table Mountain (2), Tropical Reef, Kīlauea (3), Tetons (3), and Niagara (auto-found on EarthCam). Plus **Brooks Falls** (explore.org), added as a seasonal view.
+- **Paused (8):** Jökulsárlón (ended 2020), Kāʻanapali (owner blocks embedding), Old Faithful (unofficial re-stream, ended Mar 2026), Matterhorn and Cayman Reef (recordings, not live), Hong Kong (ended May 2025), plus Sydney and Copacabana (nothing live on their channels).
+- **Lesson:** the original research found stream links through search, and more than half had died or were never what they claimed. Everything new now comes from trusted channels' live listings.
+- **Fixed false alarm:** the API reports every live broadcast as "sd", so the check no longer uses that field for live streams. Resolution is checked in the browser at play time.
+
 ### Batch 2 (added 2026-10-05)
 
 The first stream check (no API key yet) found 4 of these 10 had links that ended long ago; search engines were still indexing them. Those 4 are paused, not deleted. Chosen for **who runs them** as much as the view: institutional and network operators (explore.org, USGS, EarthCam, aquariums) keep 24/7 streams up for years and embed them on their own sites, which shows embedding is allowed.

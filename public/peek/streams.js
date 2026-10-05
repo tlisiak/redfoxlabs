@@ -22,7 +22,8 @@ window.PEEK_STREAMS = [
     lat: -24.07,
     lng: 15.93,
     tz: "Africa/Windhoek",
-    source: { videoIds: ["ydYDqZQpim8", "iQOHVoyun2k"] },
+    // iQOHVoyun2k (a third-party re-stream) ended Dec 2025 (API check, Oct 5 2026).
+    source: { videoIds: ["ydYDqZQpim8"] },
     scout: ["UC9X6gGKDv2yhMoofoeS7-Gg"],
     night: true,
     expect: { title: ["Namib Desert"] },
@@ -55,7 +56,8 @@ window.PEEK_STREAMS = [
     lat: 35.5003,
     lng: 138.7686,
     tz: "Asia/Tokyo",
-    source: { videoIds: ["Sv9hcJ3k5h4", "bdUbACCWmoY", "vhaZLwUwP9w", "mbeid4wxX5s"] },
+    // vhaZLwUwP9w and mbeid4wxX5s ended (Nov 2025, Oct 1 2026).
+    source: { videoIds: ["Sv9hcJ3k5h4", "bdUbACCWmoY"] },
     expect: { title: ["Fuji", "富士"] },
     credit: { name: "Mt. Fuji Panoramic Ropeway", url: "https://www.youtube.com/watch?v=Sv9hcJ3k5h4" },
     headline: "Japan's sacred volcano, seen from a mountaintop above the Fuji Five Lakes.",
@@ -119,7 +121,9 @@ window.PEEK_STREAMS = [
     lat: 64.0484,
     lng: -16.1795,
     tz: "Atlantic/Reykjavik",
-    source: { videoIds: ["WDHSEuMUb3w"] },
+    // WDHSEuMUb3w ended in 2020 (API check, Oct 5 2026). Needs a new source and a scout channel.
+    source: {},
+    paused: "The only stream we had ended in 2020. Needs a new source.",
     expect: { title: ["Jokulsarlon", "Glacier Lagoon"] },
     credit: { name: "Live from Iceland", url: "https://www.youtube.com/watch?v=WDHSEuMUb3w" },
     headline: "Icebergs drifting from a glacier to the sea.",
@@ -149,8 +153,10 @@ window.PEEK_STREAMS = [
     lat: 20.9262,
     lng: -156.6955,
     tz: "Pacific/Honolulu",
-    // RLv4FlYmrM4: the channel's current 4K stream, found live by the stream check Oct 5 2026.
-    source: { videoIds: ["RLv4FlYmrM4"], channelId: "UCIQVWkOilfxoQSFcban_d-A" },
+    // The channel's only live stream (RLv4FlYmrM4) blocks embedding (API check, Oct 5 2026).
+    source: {},
+    scout: ["UCIQVWkOilfxoQSFcban_d-A"],
+    paused: "The owner blocks embedding on this channel's stream. Needs another Kāʻanapali source.",
     expect: { title: ["Kaanapali", "Black Rock", "Maui"] },
     credit: { name: "Maui Live Cam", url: "https://www.youtube.com/channel/UCIQVWkOilfxoQSFcban_d-A" },
     headline: "A sacred lava point on one of the best beaches in America.",
@@ -210,7 +216,9 @@ window.PEEK_STREAMS = [
     lat: 44.4605,
     lng: -110.8281,
     tz: "America/Denver",
-    source: { videoId: "VJSMy-H_GKE" },
+    // VJSMy-H_GKE was an unofficial re-stream and ended Mar 2026. Needs the official NPS feed.
+    source: {},
+    paused: "The stream we had was an unofficial re-stream and has ended. Needs the official NPS feed.",
     expect: { title: ["Old Faithful", "Upper Geyser"] },
     scout: ["@usgs"],
     credit: { name: "National Park Service", url: "https://www.nps.gov/yell/learn/photosmultimedia/webcams.htm" },
@@ -299,8 +307,9 @@ window.PEEK_STREAMS = [
     lat: 45.9387,
     lng: 7.7296,
     tz: "Europe/Zurich",
-    source: { videoId: "o9puACFGW0o" },
-    verify: true,
+    // o9puACFGW0o is a recording, not a livestream (API check, Oct 5 2026).
+    source: {},
+    paused: "The video we had is a recording, not a live stream. Needs a live Zermatt source.",
     expect: { title: ["Matterhorn", "Zermatt"] },
     credit: { name: "Zermatt Bergbahnen", url: "https://www.youtube.com/watch?v=o9puACFGW0o" },
     headline: "The most recognizable mountain on Earth, from 3,883 m up.",
@@ -455,7 +464,9 @@ window.PEEK_STREAMS = [
     lat: 19.3,
     lng: -81.1,
     tz: "America/Cayman",
-    source: { videoIds: ["ZpnyPXloF2U"] },
+    // ZpnyPXloF2U is a recording, not a livestream (API check, Oct 5 2026). Watching explore.org for the live cam.
+    source: {},
+    paused: "The video we had is a recording. Comes back if explore.org puts the live reef cam back up.",
     scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
     expect: { title: ["Cayman"] },
     credit: { name: "explore.org · Teens4Oceans", url: "https://explore.org/livecams/oceans/cayman-reef-cam" },
@@ -514,7 +525,9 @@ window.PEEK_STREAMS = [
     lat: 22.271,
     lng: 114.15,
     tz: "Asia/Hong_Kong",
-    source: { videoIds: ["bNOWG3jcOlQ"] },
+    // bNOWG3jcOlQ ended May 2025 (API check, Oct 5 2026).
+    source: {},
+    paused: "The stream we had ended in May 2025. Needs a new source.",
     expect: { title: ["Hong Kong", "Peak"] },
     night: true,
     credit: { name: "Hong Kong Peak Webcam", url: "https://www.youtube.com/watch?v=bNOWG3jcOlQ" },
@@ -608,9 +621,9 @@ window.PEEK_STREAMS = [
     lat: 43.078,
     lng: -79.075,
     tz: "America/Toronto",
-    // UAB9wLwku3g blocks embedding; gIv9J38Dax8 ended Feb 2026.
-    source: {},
-    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
+    // qx7gry390YA: EarthCam's current Niagara stream, auto-found by the API check Oct 5 2026
+    // (UAB9wLwku3g blocks embedding; gIv9J38Dax8 ended Feb 2026).
+    source: { videoIds: ["qx7gry390YA"] },
     scout: ["UC6qrG3W8SMK0jior2olka3g"],
     expect: { title: ["Niagara"] },
     night: true,
@@ -631,6 +644,38 @@ window.PEEK_STREAMS = [
     sources: [
       { label: "Wikipedia: Horseshoe Falls", url: "https://en.wikipedia.org/wiki/Horseshoe_Falls" },
       { label: "Wikipedia: Annie Edson Taylor", url: "https://en.wikipedia.org/wiki/Annie_Edson_Taylor" },
+    ],
+  },
+  {
+    id: "brooksfalls",
+    name: "Brooks Falls",
+    place: "Katmai National Park, Alaska",
+    country: "United States",
+    lat: 58.555,
+    lng: -155.778,
+    tz: "America/Anchorage",
+    // Found live on explore.org by the API check, Oct 5 2026. Seasonal: the bears (and usually
+    // the cams) leave in the fall, and the check will flag it when the stream ends.
+    source: { videoIds: ["J7ZrIDvqlic"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Brooks Falls"] },
+    credit: { name: "explore.org", url: "https://explore.org/livecams/brown-bears/brown-bear-salmon-cam-brooks-falls" },
+    headline: "Brown bears fishing for salmon at the most famous little waterfall in Alaska.",
+    looking:
+      "Brooks Falls in Katmai National Park, where brown bears line up at a short waterfall on the Brooks River and wait for sockeye salmon to jump.",
+    watchFor: [
+      "Bears standing at the lip of the falls, catching salmon mid-jump",
+      "Mothers with cubs keeping their distance from the big males",
+      "In the fall, bears at their heaviest before hibernation",
+    ],
+    history:
+      "explore.org set up the Katmai bear cams in 2012. Every fall, viewers vote in Fat Bear Week for the bear that put on the most weight before winter. In 2026, more than 2.5 million votes were cast.",
+    facts: [
+      "Between June 22 and August 4, 2026, this cam drew 7.3 million views, up 70% from the same stretch in 2025.",
+    ],
+    sources: [
+      { label: "explore.org: Fat Bear Week 2026", url: "https://www.morningstar.com/news/pr-newswire/20260922la53605/fat-bear-week-2026-brings-the-world-together-to-celebrate-wildlife-and-conservation" },
+      { label: "NPS: Brooks Falls Bearcam", url: "https://www.nps.gov/katm/learn/photosmultimedia/brown-bear-salmon-cam-brooks-falls.htm" },
     ],
   },
 ];
