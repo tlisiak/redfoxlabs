@@ -9,7 +9,7 @@
 // Usage: node scripts/peek/validate-streams.mjs [--out path] [--report path]
 // Exit code 1 when any view has no live, embeddable source.
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -20,6 +20,8 @@ const arg = (name, fallback) => {
   return i > -1 ? process.argv[i + 1] : fallback;
 };
 const OUT = arg("--out", path.join(root, "public/peek/status.json"));
+// Rolling 30-day record of what each source looked like on every run (not deployed).
+const HISTORY = arg("--history", path.join(root, "data/peek/history.json"));
 const REPORT = arg("--report", process.env.GITHUB_STEP_SUMMARY);
 
 const HEADERS = {
@@ -281,9 +283,42 @@ export function confirmFromScouts(stream, scouted, sources) {
   }
 }
 
+// ---- uptime history
+const HISTORY_DAYS = 30;
+export const PROMOTE = { minDays: 14, minUptime: 0.95 };   // bar for a source to join rotation
+export const FLAKY = { minSamples: 20, maxUptime: 0.8 };   // bar for flagging a catalog source
+
+// Records this run (live vs dead; unverified says nothing) and drops samples past the window.
+export function recordRun(history, at, results) {
+  const cutoff = Date.parse(at) - HISTORY_DAYS * 86400e3;
+  const out = { sources: {} };
+  for (const [id, samples] of Object.entries(history?.sources || {})) {
+    const kept = samples.filter(([t]) => Date.parse(t) >= cutoff);
+    if (kept.length) out.sources[id] = kept;
+  }
+  for (const [id, state] of Object.entries(results)) {
+    if (state === "live" || DEAD.includes(state)) (out.sources[id] ||= []).push([at, state === "live" ? 1 : 0]);
+  }
+  return out;
+}
+export function uptime(history, id) {
+  const samples = history?.sources?.[id] || [];
+  if (!samples.length) return { samples: 0, days: 0, uptime: null };
+  const up = samples.filter(([, v]) => v).length;
+  const days = (Date.parse(samples.at(-1)[0]) - Date.parse(samples[0][0])) / 86400e3;
+  return { samples: samples.length, days: Math.round(days * 10) / 10, uptime: up / samples.length };
+}
+const pct = (u) => (u.uptime == null ? "no history" : `${Math.round(u.uptime * 100)}% up over ${u.days}d (${u.samples} checks)`);
+export const readyToPromote = (u) => u.uptime != null && u.days >= PROMOTE.minDays && u.uptime >= PROMOTE.minUptime;
+export const isFlaky = (u) => u.samples >= FLAKY.minSamples && u.uptime < FLAKY.maxUptime;
+
 async function main() {
   const streams = await loadStreams();
   const status = { checkedAt: new Date().toISOString(), mode: API_KEY ? "api" : "scrape", streams: {} };
+  let history = null;
+  try { history = JSON.parse(await readFile(HISTORY, "utf8")); } catch { /* first run */ }
+  const thisRun = {};      // source id -> status, for the history
+  const allScouted = {};   // channel -> live list, for discovery
   const lines = ["## Peek stream check", "", `Checked ${status.checkedAt} (${API_KEY ? "YouTube Data API" : "page scraping, no API key"})`, ""];
   const broken = [];
 
@@ -301,11 +336,14 @@ async function main() {
     for (const scout of [...new Set([...(s.scout || []), ...(s.source.channelId ? [s.source.channelId] : [])])]) {
       scouted[scout] = await liveOnChannel(scout);
     }
+    Object.assign(allScouted, scouted);
     const found = autoFind(s, scouted, sources);
     // A source its own channel lists as live (and on-target) is confirmed, even when the
     // watch page itself was hidden behind a bot check.
     confirmFromScouts(s, scouted, sources);
 
+    for (const x of sources) { const id = x.resolvedVideoId || x.videoId; if (id) thisRun[id] = x.status; }
+    for (const v of found) thisRun[v.videoId] = "live";
     const live = sources.filter((x) => x.status === "live");
     // Order the page should try: confirmed live, then auto-found replacements, then unverified.
     const playable = [
@@ -330,15 +368,35 @@ async function main() {
     for (const x of sources) {
       const title = x.title && x.status !== "mismatch" ? ` · ${md(x.title)}${x.author ? ` (${md(x.author)})` : ""}` : "";
       const resolved = x.resolvedVideoId ? ` → \`${x.resolvedVideoId}\`` : "";
-      lines.push(`- ${ICON[x.status]} ${label(x)}${resolved}: ${x.status}, ${md(x.detail)}${title}`);
+      const u = uptime(history, x.resolvedVideoId || x.videoId);
+      lines.push(`- ${ICON[x.status]} ${label(x)}${resolved}: ${x.status}, ${md(x.detail)}${title} · ${isFlaky(u) ? "⚠️ flaky, " : ""}${pct(u)}`);
     }
-    for (const v of found) lines.push(`- 🩹 auto-found \`${v.videoId}\` ${md(v.title)} (add it to streams.js to keep it)`);
+    for (const v of found) {
+      const u = uptime(history, v.videoId);
+      lines.push(`- 🩹 auto-found \`${v.videoId}\` ${md(v.title)} · ${pct(u)}${readyToPromote(u) ? " · ⭐ ready to add to streams.js" : ""}`);
+    }
     for (const [scout, list] of Object.entries(scouted)) {
       lines.push(list === null ? `- 🔭 \`${scout}\`: couldn't list streams`
         : `- 🔭 live on \`${scout}\` now: ${list.length ? list.map((v) => `\`${v.videoId}\` ${md(v.title)}`).join("; ") : "nothing"}`);
     }
     lines.push("");
     console.log(`${live.length || found.length ? "OK " : s.paused ? "|| " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}${found.length ? ` + ${found.length} auto-found` : ""}`);
+  }
+
+  // Discovery: live videos on trusted channels that no view uses yet, for curation.
+  const used = new Set(Object.values(status.streams).flatMap((x) => [...x.sources.flatMap((y) => [y.videoId, y.resolvedVideoId]), ...x.autoFound.map((v) => v.videoId)]).filter(Boolean));
+  const discovered = [];
+  for (const [scout, list] of Object.entries(allScouted)) for (const v of list || []) if (!used.has(v.videoId)) { used.add(v.videoId); discovered.push({ ...v, channel: scout }); }
+  status.discovered = discovered;
+  if (discovered.length) {
+    lines.push("### Live on trusted channels, not in Peek yet", "");
+    for (const v of discovered) lines.push(`- \`${v.videoId}\` ${md(v.title)} (${v.channel})`);
+    lines.push("");
+  }
+
+  history = recordRun(history, status.checkedAt, thisRun);
+  for (const [id, x] of Object.entries(status.streams)) {
+    x.uptime = Object.fromEntries(x.sources.map((y) => y.resolvedVideoId || y.videoId).filter(Boolean).map((vid) => [vid, uptime(history, vid)]));
   }
 
   const okCount = Object.values(status.streams).filter((x) => x.ok).length;
@@ -350,6 +408,8 @@ async function main() {
   }
 
   await writeFile(OUT, JSON.stringify(status, null, 2) + "\n");
+  await mkdir(path.dirname(HISTORY), { recursive: true });
+  await writeFile(HISTORY, JSON.stringify(history) + "\n");
   if (REPORT) await writeFile(REPORT, lines.join("\n") + "\n", { flag: "a" });
   console.log("\n" + lines.join("\n"));
   if (broken.length) process.exitCode = 1;

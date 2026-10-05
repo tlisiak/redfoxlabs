@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD, recordRun, uptime, readyToPromote, isFlaky } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -123,4 +123,23 @@ test("a bot-checked source its channel lists as live counts as live", () => {
   ];
   confirmFromScouts(s, { UCx: [{ videoId: "0P_LBKqVbfs", title: "LIVE Elephant Cam: Tembe Elephant Park" }, { videoId: "deadvideo00", title: "Tembe" }] }, sources);
   assert.deepEqual(sources.map((x) => x.status), ["live", "unverified", "offline"]);
+});
+
+test("history keeps 30 days, ignores unverified, and scores uptime", () => {
+  let h = null;
+  const day = (n) => new Date(Date.UTC(2026, 9, 1) + n * 86400e3).toISOString();
+  for (let d = 0; d < 40; d++) h = recordRun(h, day(d), { aaaaaaaaaaa: d % 10 === 0 ? "offline" : "live", bbbbbbbbbbb: "unverified" });
+  const u = uptime(h, "aaaaaaaaaaa");
+  assert.equal(u.samples, 31, "only the last 30 days are kept");
+  assert.ok(u.uptime > 0.85 && u.uptime < 0.95);
+  assert.equal(uptime(h, "bbbbbbbbbbb").samples, 0, "unverified isn't evidence either way");
+  assert.ok(!readyToPromote(u), "under 95% doesn't make the cut");
+});
+
+test("promotion needs two weeks above 95%; flaky needs evidence", () => {
+  let h = null;
+  for (let i = 0; i < 60; i++) h = recordRun(h, new Date(Date.UTC(2026, 9, 1) + i * 6 * 3600e3).toISOString(), { goodgoodgoo: "live", flakyflaky0: i % 3 ? "live" : "offline" });
+  assert.ok(readyToPromote(uptime(h, "goodgoodgoo")));
+  assert.ok(isFlaky(uptime(h, "flakyflaky0")));
+  assert.ok(!isFlaky(uptime(recordRun(null, "2026-10-01T00:00:00Z", { x: "offline" }), "x")), "one bad check isn't flaky");
 });

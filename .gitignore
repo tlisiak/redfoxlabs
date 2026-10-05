@@ -27,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Peek stream-check history (kept in the Actions cache)
+data/peek/

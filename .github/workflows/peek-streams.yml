@@ -34,6 +34,15 @@ jobs:
         with:
           node-version: 20
 
+      # Rolling uptime history lives in the Actions cache, not in git: each run restores the
+      # newest copy and saves a new one. PR runs can read main's history.
+      - name: Restore uptime history
+        uses: actions/cache/restore@v4
+        with:
+          path: data/peek/history.json
+          key: peek-history-${{ github.run_id }}
+          restore-keys: peek-history-
+
       - name: Unit tests
         run: node --test scripts/peek/validate-streams.test.mjs
 
@@ -43,12 +52,21 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: node scripts/peek/validate-streams.mjs
 
+      - name: Save uptime history
+        if: always() && github.ref == 'refs/heads/main'
+        uses: actions/cache/save@v4
+        with:
+          path: data/peek/history.json
+          key: peek-history-${{ github.run_id }}
+
       - name: Upload status
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: peek-status
-          path: public/peek/status.json
+          path: |
+            public/peek/status.json
+            data/peek/history.json
 
       - name: Commit status and redeploy
         if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -58,8 +76,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
           git add public/peek/status.json
-          # checkedAt always changes; only commit when a source's result did.
-          if git diff --cached -U0 | grep -E '^[+-] ' | grep -vq '"checkedAt"'; then
+          # checkedAt and the uptime numbers change every run; commit and redeploy only when
+          # something that changes what the page plays did.
+          if git diff --cached -U0 | grep -E '^[+-] ' | grep -v '"checkedAt"' | grep -vq '"samples"\|"days"\|"uptime"'; then
             git commit -m "Update Peek stream status"
             git push
             gh workflow run deploy.yml --ref main
