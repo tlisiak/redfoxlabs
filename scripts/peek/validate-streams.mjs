@@ -93,6 +93,20 @@ export function classify(pr, oembedStatus) {
   return { ...base, status: "unverified", detail: "playable, live status unclear" };
 }
 
+// Statuses that mean "don't play this source".
+export const DEAD = ["removed", "no-embed", "recording", "offline", "mismatch", "low-quality"];
+
+// Same folding as the page's player.js: accents, ʻokina and case don't matter.
+const fold = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[ʻʼ'’`]/g, "").toLowerCase();
+export function matchesExpect(expect, title) {
+  if (!expect?.title?.length || !title) return true;
+  const t = fold(title);
+  return expect.title.some((w) => t.includes(fold(w)));
+}
+
+// A scout is a channel ID (UC…) or an @handle; both have a /streams tab.
+const channelPath = (scout) => (scout.startsWith("@") ? `/${scout}` : `/channel/${scout}`);
+
 async function fetchText(url) {
   const res = await fetch(url, { headers: HEADERS, redirect: "follow" });
   return { status: res.status, text: await res.text(), url: res.url };
@@ -121,10 +135,10 @@ export function findLiveVideos(data) {
   return [...found.values()];
 }
 
-async function liveOnChannel(channelId) {
-  if (API_KEY) { try { return await apiLiveOnChannel(channelId); } catch { return null; } }
+async function liveOnChannel(scout) {
+  if (API_KEY) { try { return await apiLiveOnChannel(scout); } catch { return null; } }
   try {
-    const page = await fetchText(`https://www.youtube.com/channel/${channelId}/streams?hl=en`);
+    const page = await fetchText(`https://www.youtube.com${channelPath(scout)}/streams?hl=en`);
     const data = page.status === 200 ? extractJson(page.text, /ytInitialData\s*=\s*\{/) : null;
     return data ? findLiveVideos(data) : null;
   } catch { return null; }
@@ -147,6 +161,7 @@ export function classifyApiItem(item) {
   const base = { title: item.snippet?.title, author: item.snippet?.channelTitle };
   if (item.status?.privacyStatus === "private") return { ...base, status: "removed", detail: "private video" };
   if (item.status?.embeddable === false) return { ...base, status: "no-embed", detail: "owner disabled embedding" };
+  if (item.contentDetails?.definition === "sd") return { ...base, status: "low-quality", detail: "standard definition only" };
   const live = item.liveStreamingDetails;
   switch (item.snippet?.liveBroadcastContent) {
     case "live": return { ...base, status: "live", detail: live?.concurrentViewers ? `live now, ${live.concurrentViewers} watching` : "live now" };
@@ -158,12 +173,25 @@ export function classifyApiItem(item) {
 }
 
 async function apiVideo(videoId) {
-  const j = await api("videos", { part: "snippet,status,liveStreamingDetails", id: videoId });
+  const j = await api("videos", { part: "snippet,status,liveStreamingDetails,contentDetails", id: videoId });
   return classifyApiItem(j.items?.[0]);
 }
 
-async function apiLiveOnChannel(channelId) {
-  const j = await api("search", { part: "snippet", channelId, eventType: "live", type: "video", maxResults: 10 });
+const handleIds = new Map();
+async function apiChannelId(scout) {
+  if (!scout.startsWith("@")) return scout;
+  if (!handleIds.has(scout)) {
+    const j = await api("channels", { part: "id", forHandle: scout });
+    handleIds.set(scout, j.items?.[0]?.id || null);
+  }
+  const id = handleIds.get(scout);
+  if (!id) throw new Error(`no channel for ${scout}`);
+  return id;
+}
+
+async function apiLiveOnChannel(scout) {
+  const channelId = await apiChannelId(scout);
+  const j = await api("search", { part: "snippet", channelId, eventType: "live", type: "video", maxResults: 25 });
   return (j.items || []).map((i) => ({ videoId: i.id.videoId, title: i.snippet.title }));
 }
 
@@ -205,58 +233,89 @@ async function checkCandidate(cand) {
   }
 }
 
-const ICON = { live: "🟢", offline: "🟠", recording: "🟠", "no-embed": "🔴", removed: "🔴", unverified: "⚪️" };
+const ICON = { live: "🟢", offline: "🟠", recording: "🟠", "no-embed": "🔴", removed: "🔴", mismatch: "🔴", "low-quality": "🔴", unverified: "⚪️" };
 const label = (c) => (c.videoId ? `video \`${c.videoId}\`` : `channel \`${c.channelId}\``);
+const md = (t) => String(t).replace(/\|/g, "/");
+
+// Applies the view's expectations to one checked source: a stream that plays the wrong
+// place is as bad as a dead one.
+export function judge(stream, result) {
+  if (["live", "unverified"].includes(result.status) && result.title && !matchesExpect(stream.expect, result.title)) {
+    return { ...result, status: "mismatch", detail: `shows "${result.title}", expected ${stream.expect.title.join(" / ")}` };
+  }
+  return result;
+}
+
+// Self-healing: live videos on the view's trusted channels whose titles match its expectations,
+// minus anything already known. These become playable even if every catalog source died.
+export function autoFind(stream, scouted, sources) {
+  const known = new Set(sources.flatMap((x) => [x.videoId, x.resolvedVideoId]).filter(Boolean));
+  const found = [];
+  for (const list of Object.values(scouted)) {
+    for (const v of list || []) {
+      if (!known.has(v.videoId) && matchesExpect(stream.expect, v.title)) { known.add(v.videoId); found.push(v); }
+    }
+  }
+  return found;
+}
 
 async function main() {
   const streams = await loadStreams();
-  const status = { checkedAt: new Date().toISOString(), streams: {} };
-  const lines = ["## Peek stream check", "", `Checked ${status.checkedAt}`, ""];
+  const status = { checkedAt: new Date().toISOString(), mode: API_KEY ? "api" : "scrape", streams: {} };
+  const lines = ["## Peek stream check", "", `Checked ${status.checkedAt} (${API_KEY ? "YouTube Data API" : "page scraping, no API key"})`, ""];
   const broken = [];
 
   for (const s of streams) {
     const sources = [];
     for (const cand of candidates(s)) {
-      const r = await checkCandidate(cand);
+      const r = judge(s, await checkCandidate(cand));
       // r.videoId is whatever YouTube reported (often nothing); the catalog's own IDs win.
       sources.push({ ...r, ...cand });
       await new Promise((ok) => setTimeout(ok, 400)); // be polite
     }
+
+    const scouted = {};
+    for (const scout of [...new Set([...(s.scout || []), ...(s.source.channelId ? [s.source.channelId] : [])])]) {
+      scouted[scout] = await liveOnChannel(scout);
+    }
+    const found = autoFind(s, scouted, sources);
+
     const live = sources.filter((x) => x.status === "live");
-    // Broken only when every source is confirmed dead; one unverified source is benefit of the doubt.
-    const confirmedDead = sources.every((x) => ["removed", "no-embed", "recording", "offline"].includes(x.status));
-    // Order the page should try: live first (channel embeds as their resolved video), then unverified.
+    // Order the page should try: confirmed live, then auto-found replacements, then unverified.
     const playable = [
       ...live.map((x) => x.resolvedVideoId || x.videoId),
+      ...found.map((v) => v.videoId),
       ...sources.filter((x) => x.status === "unverified").map((x) => x.videoId || x.resolvedVideoId).filter(Boolean),
     ];
+    // Broken only when every source is confirmed dead and nothing replaced them.
+    const confirmedDead = !found.length && sources.every((x) => DEAD.includes(x.status));
     status.streams[s.id] = {
-      ok: live.length > 0,
+      ok: live.length > 0 || found.length > 0,
       playable: [...new Set(playable)],
-      dead: sources.filter((x) => ["removed", "no-embed", "recording", "offline"].includes(x.status) && x.videoId).map((x) => x.videoId),
+      dead: sources.filter((x) => DEAD.includes(x.status) && x.videoId).map((x) => x.videoId),
+      autoFound: found,
       sources,
+      scouted,
     };
     if (confirmedDead) broken.push(s.name);
 
-    lines.push(`**${live.length ? "✅" : confirmedDead ? "❌" : "❔"} ${s.name}**`);
+    lines.push(`**${live.length || found.length ? "✅" : confirmedDead ? "❌" : "❔"} ${s.name}**`);
     for (const x of sources) {
-      const title = x.title ? ` · ${x.title.replace(/\|/g, "/")}${x.author ? ` (${x.author})` : ""}` : "";
+      const title = x.title && x.status !== "mismatch" ? ` · ${md(x.title)}${x.author ? ` (${md(x.author)})` : ""}` : "";
       const resolved = x.resolvedVideoId ? ` → \`${x.resolvedVideoId}\`` : "";
-      lines.push(`- ${ICON[x.status]} ${label(x)}${resolved}: ${x.status}, ${x.detail}${title}`);
+      lines.push(`- ${ICON[x.status]} ${label(x)}${resolved}: ${x.status}, ${md(x.detail)}${title}`);
     }
-    // Scout channels: list everything they're streaming right now, to make swapping in a replacement easy.
-    for (const channelId of [...new Set([...(s.scout || []), ...(s.source.channelId ? [s.source.channelId] : [])])]) {
-      const found = await liveOnChannel(channelId);
-      status.streams[s.id].scouted = { ...(status.streams[s.id].scouted || {}), [channelId]: found };
-      lines.push(found === null ? `- 🔭 channel \`${channelId}\`: couldn't list streams`
-        : `- 🔭 live on channel \`${channelId}\` now: ${found.length ? found.map((v) => `\`${v.videoId}\` ${v.title.replace(/\|/g, "/")}`).join("; ") : "nothing"}`);
+    for (const v of found) lines.push(`- 🩹 auto-found \`${v.videoId}\` ${md(v.title)} (add it to streams.js to keep it)`);
+    for (const [scout, list] of Object.entries(scouted)) {
+      lines.push(list === null ? `- 🔭 \`${scout}\`: couldn't list streams`
+        : `- 🔭 live on \`${scout}\` now: ${list.length ? list.map((v) => `\`${v.videoId}\` ${md(v.title)}`).join("; ") : "nothing"}`);
     }
     lines.push("");
-    console.log(`${live.length ? "OK " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}`);
+    console.log(`${live.length || found.length ? "OK " : confirmedDead ? "BAD" : "?? "} ${s.id}: ${sources.map((x) => x.status).join(", ")}${found.length ? ` + ${found.length} auto-found` : ""}`);
   }
 
   const okCount = Object.values(status.streams).filter((x) => x.ok).length;
-  lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable source.**`, "");
+  lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable, on-target source.**`, "");
   if (broken.length) lines.push(`Needs a replacement source: ${broken.join(", ")}`);
   if (!API_KEY && Object.values(status.streams).some((x) => x.sources.some((y) => /bot check/.test(y.detail || "")))) {
     lines.push("", "> YouTube answered with a bot check, so live status couldn't be confirmed. Add a YouTube Data API key as the `YOUTUBE_API_KEY` repo secret to fix this.");

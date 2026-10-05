@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, DEAD } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -59,4 +59,41 @@ test("classifies Data API items", () => {
   assert.equal(classifyApiItem(item("none")).status, "recording");
   assert.equal(classifyApiItem({ ...item("live"), status: { privacyStatus: "public", embeddable: false } }).status, "no-embed");
   assert.equal(classifyApiItem({ ...item("none"), status: { privacyStatus: "private" } }).status, "removed");
+});
+
+test("expectations ignore accents, okina and case", () => {
+  assert.ok(matchesExpect({ title: ["Kilauea", "Halemaumau"] }, "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)"));
+  assert.ok(matchesExpect({ title: ["Jokulsarlon"] }, "🔴 Live Webcam from Jökulsárlón Lagoon"));
+  assert.ok(!matchesExpect({ title: ["Rialto"] }, "Venice live: St Mark's Square"));
+  assert.ok(matchesExpect({ title: ["Rialto"] }, undefined), "no title means no verdict");
+});
+
+test("a live source showing the wrong place is a mismatch, and dead", () => {
+  const s = { expect: { title: ["Namib Desert"] } };
+  const r = judge(s, { status: "live", title: "Namibia: Live stream in the Kalahari" });
+  assert.equal(r.status, "mismatch");
+  assert.ok(DEAD.includes(r.status));
+  assert.equal(judge(s, { status: "live", title: "Namibia: Live stream in the Namib Desert" }).status, "live");
+  assert.equal(judge(s, { status: "removed", title: "anything" }).status, "removed");
+});
+
+test("auto-find only promotes on-target, unknown live videos", () => {
+  const s = { expect: { title: ["Rialto"] } };
+  const scouted = { UCx: [
+    { videoId: "aaaaaaaaaaa", title: "Rialto Bridge 4K live" },
+    { videoId: "bbbbbbbbbbb", title: "St Mark's Square live" },
+    { videoId: "ccccccccccc", title: "Rialto again" },
+  ], "@other": null };
+  const found = autoFind(s, scouted, [{ videoId: "ccccccccccc", status: "live" }]);
+  assert.deepEqual(found.map((v) => v.videoId), ["aaaaaaaaaaa"]);
+});
+
+test("standard-definition streams fail the quality bar", () => {
+  const item = { snippet: { liveBroadcastContent: "live" }, status: { privacyStatus: "public", embeddable: true }, contentDetails: { definition: "sd" } };
+  assert.equal(classifyApiItem(item).status, "low-quality");
+});
+
+test("every view declares what it should show", async () => {
+  const streams = await loadStreams();
+  for (const s of streams) assert.ok(s.expect?.title?.length, `${s.id} has no expect.title`);
 });

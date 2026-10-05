@@ -3,8 +3,11 @@
 // source: { videoIds: [...] } YouTube live videos to try in order, and/or { channelId } to
 //         embed whatever that channel is currently broadcasting (survives stream restarts).
 //         Open check.html to see which sources are working right now.
-// scout:  optional channel IDs the stream check lists live videos for, so a dead source
-//         can be swapped for the channel's current stream. Never played directly.
+// scout:  optional channel IDs (UC…) or @handles the stream check searches for live videos,
+//         so a dead source can be replaced by the channel's current stream. Never played directly.
+// expect: { title: [...] } words the live video's title must contain (any one, accents and
+//         case ignored). The page refuses a source that plays something else, and the stream
+//         check flags it, so a channel switching cams can't put the wrong place on screen.
 // hours:  optional local-time window [start, end) when the camera is worth showing.
 //         Without it, a view is eligible while the sun is up (or always, if night: true).
 // verify: true marks streams whose live status couldn't be confirmed during research.
@@ -20,6 +23,7 @@ window.PEEK_STREAMS = [
     source: { videoIds: ["ydYDqZQpim8", "iQOHVoyun2k"] },
     scout: ["UC9X6gGKDv2yhMoofoeS7-Gg"],
     night: true,
+    expect: { title: ["Namib Desert"] },
     credit: { name: "NamibiaCam · Gondwana Collection", url: "https://gondwana-collection.com/namib-desert-live-stream" },
     headline: "A solar-powered waterhole on the edge of the oldest desert on Earth.",
     looking:
@@ -50,6 +54,7 @@ window.PEEK_STREAMS = [
     lng: 138.7686,
     tz: "Asia/Tokyo",
     source: { videoIds: ["Sv9hcJ3k5h4", "bdUbACCWmoY", "vhaZLwUwP9w", "mbeid4wxX5s"] },
+    expect: { title: ["Fuji", "富士"] },
     credit: { name: "Mt. Fuji Panoramic Ropeway", url: "https://www.youtube.com/watch?v=Sv9hcJ3k5h4" },
     headline: "Japan's sacred volcano, seen from a mountaintop above the Fuji Five Lakes.",
     looking:
@@ -82,6 +87,7 @@ window.PEEK_STREAMS = [
     // Both Rialto video IDs we had (Kmf_wiTFuXY, K_Vg94nBiaY) were removed by Oct 2026; until the
     // stream check finds the current one, play whatever this channel is broadcasting.
     source: { channelId: "UCMpn1qLudF-zb4M4bqxLIbw" },
+    expect: { title: ["Rialto"] },
     credit: { name: "I Love You Venice", url: "https://www.youtube.com/channel/UCMpn1qLudF-zb4M4bqxLIbw" },
     headline: "Venice's main street, where the traffic is all boats.",
     looking:
@@ -111,6 +117,7 @@ window.PEEK_STREAMS = [
     lng: -16.1795,
     tz: "Atlantic/Reykjavik",
     source: { videoIds: ["WDHSEuMUb3w"] },
+    expect: { title: ["Jokulsarlon", "Glacier Lagoon"] },
     credit: { name: "Live from Iceland", url: "https://www.youtube.com/watch?v=WDHSEuMUb3w" },
     headline: "Icebergs drifting from a glacier to the sea.",
     looking:
@@ -140,6 +147,7 @@ window.PEEK_STREAMS = [
     lng: -156.6955,
     tz: "Pacific/Honolulu",
     source: { channelId: "UCIQVWkOilfxoQSFcban_d-A" },
+    expect: { title: ["Kaanapali", "Black Rock", "Maui"] },
     credit: { name: "Maui Live Cam", url: "https://www.youtube.com/channel/UCIQVWkOilfxoQSFcban_d-A" },
     headline: "A sacred lava point on one of the best beaches in America.",
     looking:
@@ -170,6 +178,7 @@ window.PEEK_STREAMS = [
     source: { videoId: "w3LjpFhySTg" },
     scout: ["UCnM5iMGiKsZg-iOlIO2ZkdQ"],
     hours: [7, 19],
+    expect: { title: ["Kelp"] },
     credit: { name: "Monterey Bay Aquarium", url: "https://www.montereybayaquarium.org/animals/live-cams" },
     headline: "A diver's-eye view of a swaying underwater forest.",
     looking:
@@ -198,6 +207,8 @@ window.PEEK_STREAMS = [
     lng: -110.8281,
     tz: "America/Denver",
     source: { videoId: "VJSMy-H_GKE" },
+    expect: { title: ["Old Faithful", "Upper Geyser"] },
+    scout: ["@usgs"],
     credit: { name: "National Park Service", url: "https://www.nps.gov/yell/learn/photosmultimedia/webcams.htm" },
     headline: "The world's most famous geyser, in the world's first national park.",
     looking:
@@ -227,6 +238,7 @@ window.PEEK_STREAMS = [
     lng: -119.949,
     tz: "America/Los_Angeles",
     source: { videoId: "Lk0Z5ExUWL0" },
+    expect: { title: ["Tahoe"] },
     credit: { name: "ABC7 News Bay Area", url: "https://abc7news.com" },
     headline: "The largest alpine lake in North America, and one of the clearest.",
     looking:
@@ -255,6 +267,7 @@ window.PEEK_STREAMS = [
     lng: -122.3707,
     tz: "America/Los_Angeles",
     source: { videoId: "BSWhGNXxT9A" },
+    expect: { title: ["San Francisco", "Golden Gate", "Bay"] },
     credit: { name: "Mersea Restaurant", url: "https://www.youtube.com/watch?v=BSWhGNXxT9A" },
     headline: "The city, the bridge and the fog, from an island built for a world's fair.",
     looking:
@@ -284,6 +297,7 @@ window.PEEK_STREAMS = [
     tz: "Europe/Zurich",
     source: { videoId: "o9puACFGW0o" },
     verify: true,
+    expect: { title: ["Matterhorn", "Zermatt"] },
     credit: { name: "Zermatt Bergbahnen", url: "https://www.youtube.com/watch?v=o9puACFGW0o" },
     headline: "The most recognizable mountain on Earth, from 3,883 m up.",
     looking:
@@ -300,6 +314,310 @@ window.PEEK_STREAMS = [
     sources: [
       { label: "Wikipedia: Matterhorn", url: "https://en.wikipedia.org/wiki/Matterhorn" },
       { label: "Wikipedia: First ascent of the Matterhorn", url: "https://en.wikipedia.org/wiki/First_ascent_of_the_Matterhorn" },
+    ],
+  },
+  {
+    id: "tembe",
+    name: "Tembe Elephant Park",
+    place: "Tau Waterhole, Maputaland",
+    country: "South Africa",
+    lat: -26.95,
+    lng: 32.42,
+    tz: "Africa/Johannesburg",
+    source: { videoIds: ["VUJbDTIYlM4", "0P_LBKqVbfs"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Tembe"] },
+    credit: { name: "Africam · explore.org", url: "https://explore.org/livecams/africam/tembe-elephant-park" },
+    headline: "A waterhole where some of Africa's biggest elephants come to drink.",
+    looking:
+      "Tau Waterhole, seen from the hide in Tembe Elephant Park, a 300 km² reserve on South Africa's border with Mozambique. The dense sand forest around it hides everything until it walks into the open.",
+    watchFor: [
+      "Elephant herds, and the park's famously large-tusked bulls",
+      "Giraffe, zebra and nyala coming in to drink",
+      "Lions or a cheetah, if you're lucky",
+    ],
+    history:
+      "Tembe was proclaimed in 1983 as a partnership between KwaZulu-Natal's conservation authority and the Tembe Tribal Authority, one of South Africa's earliest community-run reserves. Its elephants once roamed freely into Mozambique. During the Mozambican Civil War, the ones that escaped poaching found refuge here and stayed.",
+    facts: [
+      "It protects the last free-ranging elephants of KwaZulu-Natal.",
+      "The park holds the Big Five and more than 340 bird species.",
+    ],
+    sources: [
+      { label: "Wikipedia: Tembe Elephant Park", url: "https://en.wikipedia.org/wiki/Tembe_Elephant_Park" },
+      { label: "explore.org: Tembe cam", url: "https://explore.org/livecams/africam/tembe-elephant-park" },
+    ],
+  },
+  {
+    id: "tablemountain",
+    name: "Table Mountain",
+    place: "Seen across Table Bay from Bloubergstrand",
+    country: "South Africa",
+    lat: -33.8,
+    lng: 18.46,
+    tz: "Africa/Johannesburg",
+    source: { videoIds: ["vOLCjL4kv-w", "jOqASqt3vVI"] },
+    scout: ["@TableMountainLiveStream"],
+    expect: { title: ["Table Mountain"] },
+    credit: { name: "Table Mountain Live Stream", url: "https://www.youtube.com/@TableMountainLiveStream" },
+    headline: "Cape Town's flat-topped mountain, across the water.",
+    looking:
+      "The classic postcard view: Table Mountain rising behind Cape Town, seen across Table Bay from the beach at Bloubergstrand. Its highest point, Maclear's Beacon, is 1,086 m.",
+    watchFor: [
+      "The 'tablecloth', a sheet of cloud that pours over the top when the south-easter blows",
+      "Kitesurfers on the bay on windy afternoons",
+      "Ships heading in and out of Cape Town harbour",
+    ],
+    history:
+      "In the 1750s, the French astronomer Nicolas-Louis de Lacaille mapped the southern sky from an observatory below this mountain. He named a constellation after it, Mensa (originally Mons Mensae, 'Table Mountain'), the only constellation named after a feature on Earth.",
+    facts: [
+      "Table Mountain was named one of the New7Wonders of Nature in 2011.",
+      "Sailors read the tablecloth cloud as a weather sign.",
+    ],
+    sources: [
+      { label: "Wikipedia: Mensa (constellation)", url: "https://en.wikipedia.org/wiki/Mensa_(constellation)" },
+      { label: "Brand South Africa: New7Wonders", url: "https://brandsouthafrica.com/105040/travel/table-mountain-one-of-the-new-seven-wonders/" },
+    ],
+  },
+  {
+    id: "sydney",
+    name: "Sydney Harbour",
+    place: "Harbour Bridge & Opera House",
+    country: "Australia",
+    lat: -33.852,
+    lng: 151.211,
+    tz: "Australia/Sydney",
+    source: { videoIds: ["fwhOL-pDaG8", "hhdI4mN6ueM"] },
+    scout: ["@sydneylivecamera"],
+    expect: { title: ["Sydney"] },
+    credit: { name: "Sydney Live Camera", url: "https://www.youtube.com/@sydneylivecamera" },
+    headline: "The bridge, the sails and the busiest harbour in the South Pacific.",
+    looking:
+      "Sydney Harbour with the Harbour Bridge and the Opera House. One of the two cameras is a moving PTZ cam, so the view may pan across the city skyline.",
+    watchFor: [
+      "Ferries crossing to Manly and Circular Quay",
+      "Climbers walking the arch of the bridge",
+      "Cruise ships docking at the Overseas Passenger Terminal",
+    ],
+    history:
+      "The Harbour Bridge opened in 1932. The Opera House, designed by the Danish architect Jørn Utzon, opened in 1973 after years of delays and cost overruns. In 2007 UNESCO listed it as a World Heritage Site, one of the youngest buildings ever added.",
+    facts: [
+      "The Opera House's roof is a series of sail-shaped shells, one of the most photographed rooflines in the world.",
+    ],
+    sources: [
+      { label: "UNESCO: Sydney Opera House", url: "https://whc.unesco.org/en/list/166/" },
+      { label: "Wikipedia: Sydney Opera House", url: "https://en.wikipedia.org/wiki/Sydney_Opera_House" },
+    ],
+  },
+  {
+    id: "copacabana",
+    name: "Copacabana Beach",
+    place: "Rio de Janeiro",
+    country: "Brazil",
+    lat: -22.971,
+    lng: -43.182,
+    tz: "America/Sao_Paulo",
+    source: { videoIds: ["2PJfQY9LUoU"] },
+    scout: ["UC6qrG3W8SMK0jior2olka3g"],
+    expect: { title: ["Copacabana"] },
+    credit: { name: "EarthCam", url: "https://www.earthcam.com" },
+    headline: "Four kilometres of the most famous beach in the world.",
+    looking:
+      "Copacabana Beach in Rio de Janeiro: a 4 km curve of sand, the Atlantic, and the black-and-white promenade along Avenida Atlântica.",
+    watchFor: [
+      "Beach football and footvolley games",
+      "Surfers when the swell comes in",
+      "The wave pattern in the promenade's stone mosaic",
+    ],
+    history:
+      "The promenade has used a black-and-white Portuguese stone pavement since the 1930s. In 1970 the landscape architect Roberto Burle Marx redesigned it, giving it the giant geometric wave that echoes the ocean beside it. Every New Year's Eve, millions of people fill the beach.",
+    facts: [
+      "The mosaic alternates black basalt and white limestone, laid by hand.",
+    ],
+    sources: [
+      { label: "Wikipedia: Copacabana", url: "https://en.wikipedia.org/wiki/Copacabana,_Rio_de_Janeiro" },
+      { label: "NEH: Making the promenade modern", url: "https://www.neh.gov/article/making-promenade-modern-0" },
+    ],
+  },
+  {
+    id: "caymanreef",
+    name: "Cayman Reef",
+    place: "East End, Grand Cayman",
+    country: "Cayman Islands",
+    lat: 19.3,
+    lng: -81.1,
+    tz: "America/Cayman",
+    source: { videoIds: ["ZpnyPXloF2U"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Cayman"] },
+    credit: { name: "explore.org · Teens4Oceans", url: "https://explore.org/livecams/oceans/cayman-reef-cam" },
+    headline: "A live seat at a fish 'car wash' on a Caribbean reef.",
+    looking:
+      "A solar-powered camera on a lagoon reef off Grand Cayman's East End, pointed at a boulder star coral. It's a cleaning station: bigger fish line up here so cleaner wrasse and shrimp can pick parasites off them.",
+    watchFor: [
+      "Blue tangs and porcupinefish waiting their turn",
+      "Spotted eagle rays and southern stingrays gliding past",
+      "The occasional nurse shark or Caribbean reef shark",
+    ],
+    history:
+      "The camera is a partnership between explore.org and Teens4Oceans, a student ocean-science program. Because it runs on solar power out on the reef, it can drop out in long stretches of bad weather.",
+    facts: [
+      "Cleaning stations are a truce zone: predators hold still and let small cleaners swim right into their mouths.",
+    ],
+    sources: [
+      { label: "explore.org: Cayman Reef Cam", url: "https://explore.org/livecams/oceans/cayman-reef-cam" },
+    ],
+  },
+  {
+    id: "pacificreef",
+    name: "Tropical Reef",
+    place: "Aquarium of the Pacific, Long Beach",
+    country: "United States",
+    lat: 33.762,
+    lng: -118.197,
+    tz: "America/Los_Angeles",
+    source: { videoIds: ["DHUnz4dyb54"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Tropical Reef"] },
+    hours: [8, 20],
+    credit: { name: "Aquarium of the Pacific · explore.org", url: "https://www.aquariumofpacific.org/exhibits/tropical_pacific_gallery/webcam_tropical_reef" },
+    headline: "Palau's Blue Corner, rebuilt in Long Beach.",
+    looking:
+      "The Tropical Reef Habitat, the Aquarium of the Pacific's largest exhibit: 350,000 gallons and more than 1,000 animals, modeled on the Blue Corner off Palau.",
+    watchFor: [
+      "The zebra shark resting on the sand",
+      "Cleaner wrasse working on much bigger fish",
+      "Divers during feeding presentations",
+    ],
+    history:
+      "The real Blue Corner is a reef wall in Palau, in the western Pacific, where strong currents bring in huge schools of fish and sharks. Divers rank it among the best dive sites in the world.",
+    facts: [
+      "The animals range from tiny cleaner wrasse to the zebra shark.",
+    ],
+    sources: [
+      { label: "Aquarium of the Pacific: Tropical Reef cam", url: "https://www.aquariumofpacific.org/exhibits/tropical_pacific_gallery/webcam_tropical_reef" },
+    ],
+  },
+  {
+    id: "hongkong",
+    name: "Victoria Harbour from The Peak",
+    place: "Victoria Peak, Hong Kong Island",
+    country: "Hong Kong",
+    lat: 22.271,
+    lng: 114.15,
+    tz: "Asia/Hong_Kong",
+    source: { videoIds: ["bNOWG3jcOlQ"] },
+    expect: { title: ["Hong Kong", "Peak"] },
+    night: true,
+    credit: { name: "Hong Kong Peak Webcam", url: "https://www.youtube.com/watch?v=bNOWG3jcOlQ" },
+    headline: "One of the densest skylines on Earth, from the top.",
+    looking:
+      "Looking down from Victoria Peak (552 m) over the towers of Central and Wan Chai, across Victoria Harbour to the Kowloon peninsula.",
+    watchFor: [
+      "Star Ferries and container ships crossing the harbour",
+      "The Symphony of Lights at 8pm local time, when the towers light up together",
+      "Fog swallowing the skyline from the top down",
+    ],
+    history:
+      "The Peak Tram has been hauling people up here since 1888, the first funicular railway in Asia. The Peak was once a cool retreat for the colony's wealthy, and you needed permission to live up here.",
+    facts: [
+      "This is one of the few views on Peek that's just as good at night, so it stays in rotation after dark.",
+    ],
+    sources: [
+      { label: "Wikipedia: Peak Tram", url: "https://en.wikipedia.org/wiki/Peak_Tram" },
+      { label: "Lonely Planet: Victoria Peak", url: "https://www.lonelyplanet.com/points-of-interest/victoria-peak/1245445" },
+    ],
+  },
+  {
+    id: "kilauea",
+    name: "Kīlauea Summit",
+    place: "Halemaʻumaʻu Crater, Hawaiʻi Volcanoes National Park",
+    country: "United States",
+    lat: 19.405,
+    lng: -155.281,
+    tz: "Pacific/Honolulu",
+    source: { videoIds: ["HggWKlZv9yk", "gXKuUyKt8mc"] },
+    scout: ["@usgs"],
+    expect: { title: ["Kilauea", "Halemaumau"] },
+    night: true,
+    credit: { name: "USGS Hawaiian Volcano Observatory", url: "https://www.usgs.gov/volcanoes/kilauea/summit-webcams" },
+    headline: "An active volcano, live from the rim.",
+    looking:
+      "USGS monitoring cameras on Halemaʻumaʻu, the summit crater of Kīlauea, one of the most active volcanoes on Earth. The current eruption began on December 23, 2024 and comes in episodes.",
+    watchFor: [
+      "During an episode, lava fountains hundreds of feet high, glowing brightest at night",
+      "Between episodes, a steaming crater floor and the occasional overflow",
+      "Rain and cloud rolling over the rim and hiding everything",
+    ],
+    history:
+      "Since December 2024 the summit has erupted in short episodes of lava fountaining, more than 50 so far. During episode 54 on August 25, 2026, the north vent fountain reached about 500 feet. In Hawaiian tradition, Halemaʻumaʻu is the home of Pele, goddess of volcanoes.",
+    facts: [
+      "Fountains in some episodes have topped 1,500 feet, with plumes above 20,000 feet.",
+      "These are scientific cameras, so expect clouds, rain and the odd outage.",
+    ],
+    sources: [
+      { label: "USGS: Kīlauea summit webcams", url: "https://www.usgs.gov/volcanoes/kilauea/summit-webcams" },
+      { label: "USGS: Episode 54, Aug 25 2026", url: "https://www.usgs.gov/media/images/august-25-2026-episode-54-lava-fountain-and-plume-summit-kilauea" },
+    ],
+  },
+  {
+    id: "tetons",
+    name: "The Grand Tetons",
+    place: "From Teton Valley, Idaho",
+    country: "United States",
+    lat: 43.72,
+    lng: -111.11,
+    tz: "America/Boise",
+    source: { videoIds: ["8DdnDOGWAOQ"] },
+    scout: ["@Seejh"],
+    expect: { title: ["Teton"] },
+    credit: { name: "SeeJH", url: "https://www.youtube.com/@Seejh" },
+    headline: "The youngest mountains in the Rockies, from the quiet side.",
+    looking:
+      "The Teton Range from the Idaho side, the view that gave the mountains their name. The tallest peak, the Grand Teton, is 13,775 feet.",
+    watchFor: [
+      "Alpenglow on the peaks at sunrise and sunset",
+      "Storms building over the range on summer afternoons",
+      "Snow line creeping down the slopes in autumn",
+    ],
+    history:
+      "French-Canadian fur trappers, working this west side as early as 1819, named the three peaks 'Les Trois Tétons'. The range is young: movement on the Teton fault began lifting it less than 9 million years ago, and the fault is still active.",
+    facts: [
+      "The USGS calls the Tetons the youngest range in the Rockies.",
+    ],
+    sources: [
+      { label: "Wikipedia: Teton Range", url: "https://en.wikipedia.org/wiki/Teton_Range" },
+      { label: "Visit Jackson Hole: mountain names", url: "https://visitjacksonhole.com/where-did-the-mountains-around-jackson-hole-get-their-names" },
+    ],
+  },
+  {
+    id: "niagara",
+    name: "Horseshoe Falls",
+    place: "Niagara Falls, Ontario",
+    country: "Canada",
+    lat: 43.078,
+    lng: -79.075,
+    tz: "America/Toronto",
+    source: { videoIds: ["UAB9wLwku3g", "gIv9J38Dax8"] },
+    scout: ["UC6qrG3W8SMK0jior2olka3g"],
+    expect: { title: ["Niagara"] },
+    night: true,
+    credit: { name: "EarthCam", url: "https://www.earthcam.com/canada/niagarafalls/thefalls/" },
+    headline: "About 2,400 cubic metres of water a second, falling 51 metres.",
+    looking:
+      "Horseshoe Falls, the largest of Niagara's three falls, seen from above on the Canadian side. It's 51 m high and 820 m wide.",
+    watchFor: [
+      "Tour boats pushing into the mist at the base",
+      "Rainbows in the spray on sunny afternoons",
+      "The nightly illumination, which turns the falls different colors",
+    ],
+    history:
+      "On her 63rd birthday, October 24, 1901, the schoolteacher Annie Edson Taylor became the first person to survive going over the falls, in an oak-and-iron barrel padded with a mattress. The falls have been lit at night since 1860.",
+    facts: [
+      "At night and in winter, half the water is diverted to hydroelectric plants, so the falls you see after dark are literally thinner.",
+    ],
+    sources: [
+      { label: "Wikipedia: Horseshoe Falls", url: "https://en.wikipedia.org/wiki/Horseshoe_Falls" },
+      { label: "Wikipedia: Annie Edson Taylor", url: "https://en.wikipedia.org/wiki/Annie_Edson_Taylor" },
     ],
   },
 ];

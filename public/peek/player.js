@@ -49,12 +49,28 @@
   // False only when a fresh check found nothing playable at all for this view.
   const looksAlive = (stream) => { const st = statusFor(stream); return !st || st.ok || (st.playable || []).length > 0 || !(st.dead || []).length; };
 
+  // Accuracy: does what's playing match what the view promises? Titles vary in accents,
+  // ʻokina and case ("Kīlauea", "Halemaʻumaʻu"), so compare folded text. No title, no verdict.
+  const fold = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[ʻʼ'’`]/g, "").toLowerCase();
+  function matchesExpect(expect, title) {
+    if (!expect?.title?.length || !title) return true;
+    const t = fold(title);
+    return expect.title.some((w) => t.includes(fold(w)));
+  }
+  // Quality: YouTube still reports the renditions a stream offers. Only reject when it
+  // reports some and none is HD; an empty list (common for live) says nothing.
+  const HD = ["hd720", "hd1080", "hd1440", "hd2160", "highres"];
+  function lowResolution(player) {
+    try { const q = player.getAvailableQualityLevels?.() || []; return q.length > 0 && !q.some((l) => HD.includes(l)); }
+    catch { return false; }
+  }
+
   const label = (c) => (c.videoId ? `video ${c.videoId}` : `channel ${c.channelId}`);
   const watchUrl = (c) => (c.videoId ? `https://www.youtube.com/watch?v=${c.videoId}` : `https://www.youtube.com/channel/${c.channelId}/live`);
 
   // Mounts one source into `host` and resolves once video is actually playing.
   // Rejects with a readable reason on player errors, timeouts, or a non-live recording.
-  function mount(host, cand, { timeout = 9000, requireLive = true } = {}) {
+  function mount(host, cand, { timeout = 9000, requireLive = true, expect = null, requireHD = true } = {}) {
     return new Promise(async (resolve, reject) => {
       if (!(await ready)) return reject(new Error("YouTube didn't load"));
       let player, settled = false;
@@ -72,7 +88,9 @@
           const data = player.getVideoData?.() || {};
           // isLive isn't formally documented, so only reject when it's explicitly false.
           if (requireLive && data.isLive === false) return finish(false, Object.assign(new Error("plays, but it's a recording, not live"), { data }));
-          finish(true, { player, data });
+          if (!matchesExpect(expect, data.title)) return finish(false, Object.assign(new Error(`shows something else: "${data.title}"`), { data }));
+          if (requireHD && lowResolution(player)) return finish(false, Object.assign(new Error("below HD resolution"), { data }));
+          finish(true, { player, data, quality: player.getAvailableQualityLevels?.() || [] });
         },
         onError: (e) => finish(false, new Error(ERRORS[e.data] || `player error ${e.data}`)),
       };
@@ -92,5 +110,5 @@
     });
   }
 
-  window.PeekPlayer = { ready, statusReady, candidates, looksAlive, mount, label, watchUrl, get status() { return status; } };
+  window.PeekPlayer = { ready, statusReady, candidates, looksAlive, mount, matchesExpect, label, watchUrl, get status() { return status; } };
 })();

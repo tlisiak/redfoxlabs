@@ -369,7 +369,7 @@
       layer.className = "layer" + (incoming ? " incoming" : "");
       $("stage").appendChild(layer);
       try {
-        const { player } = await PeekPlayer.mount(layer, cand, { timeout: LOAD_TIMEOUT_MS });
+        const { player } = await PeekPlayer.mount(layer, cand, { timeout: LOAD_TIMEOUT_MS, expect: stream.expect });
         return { layer, player };
       } catch (err) {
         layer.remove();

@@ -70,9 +70,10 @@
           const status = card.querySelector(".status");
           status.textContent = "Loading…";
           try {
-            const { data } = await PeekPlayer.mount(card.querySelector(".screen"), cand, { timeout: 15000 });
+            const { data, quality } = await PeekPlayer.mount(card.querySelector(".screen"), cand, { timeout: 15000, expect: s.expect });
             r.ok = true; r.title = data.title || "";
-            r.note = data.isLive === true ? "live" : "playing (live status unknown)";
+            const best = quality.find((q) => /hd2160|hd1440|hd1080|hd720|highres/.test(q));
+            r.note = `${data.isLive === true ? "live" : "playing (live status unknown)"}${best ? `, ${best}` : ""}, matches "${(s.expect?.title || []).join(" / ")}"`;
             status.className = "status ok"; status.textContent = `✓ ${r.note}`;
           } catch (err) {
             r.note = err.message; r.title = err.data?.title || "";

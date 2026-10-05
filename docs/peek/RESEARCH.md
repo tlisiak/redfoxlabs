@@ -19,6 +19,25 @@ The full "info list" for each one (what you're looking at, watch for, story, fac
 | 9 | San Francisco Bay | Treasure Island, SF | [Mersea Restaurant](https://www.youtube.com/watch?v=BSWhGNXxT9A) | Daylight | Restaurant cam. Easy, local first partner conversation. |
 | 10 | The Matterhorn | Zermatt, Switzerland | [Glacier Paradise](https://www.youtube.com/watch?v=o9puACFGW0o) | Daylight | ⚠️ May be a recorded video, not a live stream. Verify. Swap for a Zermatt Bergbahnen live cam if so. |
 
+### Batch 2 (added 2026-10-05)
+
+Chosen for **who runs them** as much as the view: institutional and network operators (explore.org, USGS, EarthCam, aquariums) keep 24/7 streams up for years and embed them on their own sites, which shows embedding is allowed.
+
+| # | View | Where | Operator | Hours | Notes |
+|---|------|-------|----------|-------|-------|
+| 11 | Tembe Elephant Park | South Africa | [Africam · explore.org](https://explore.org/livecams/africam/tembe-elephant-park) | Daylight | Two IDs + explore.org scout. |
+| 12 | Table Mountain | Cape Town, South Africa | [Table Mountain Live Stream](https://www.youtube.com/@TableMountainLiveStream) | Daylight | Classic view across Table Bay from Bloubergstrand. |
+| 13 | Sydney Harbour | Australia | [Sydney Live Camera](https://www.youtube.com/@sydneylivecamera) | Daylight | One static cam, one PTZ (moves). |
+| 14 | Copacabana Beach | Rio, Brazil | [EarthCam](https://www.youtube.com/watch?v=2PJfQY9LUoU) | Daylight | First South America view. |
+| 15 | Cayman Reef | Grand Cayman | [explore.org · Teens4Oceans](https://explore.org/livecams/oceans/cayman-reef-cam) | Daylight | Real reef, solar powered: expect weather outages. |
+| 16 | Tropical Reef | Long Beach, CA | [Aquarium of the Pacific](https://www.aquariumofpacific.org/exhibits/tropical_pacific_gallery/webcam_tropical_reef) | 8am–8pm PT (assumed) | Backup for when Cayman is down. |
+| 17 | Victoria Harbour | Hong Kong | [Peak webcam](https://www.youtube.com/watch?v=bNOWG3jcOlQ) | 24h (night is the point) | No scout channel yet. |
+| 18 | Kīlauea Summit | Hawaiʻi | [USGS HVO](https://www.usgs.gov/volcanoes/kilauea/summit-webcams) | 24h | Episodic: fountains only during episodes, steam otherwise. Card says so. |
+| 19 | The Grand Tetons | Teton Valley, Idaho | [SeeJH](https://www.youtube.com/@Seejh) | Daylight | |
+| 20 | Horseshoe Falls | Niagara, Canada | [EarthCam](https://www.earthcam.com/canada/niagarafalls/thefalls/) | 24h | Lit at night. |
+
+**Looked at and passed on:** Perito Moreno / Patagonia and Queenstown (no reliable YouTube live stream, mostly still-image cams), Geirangerfjord and Positano (live, but on CamStreamer/SkylineWebcams rather than YouTube; both are good licensing-partner prospects later).
+
 **Gaps:** nothing yet from South America, Australia/NZ or Southeast Asia. That matters for the daylight model: from about 03:00 to 06:00 UTC (8–11pm in California), only 3 of the 10 are eligible, and one of those is the Namib cam in night mode. Next additions should be Patagonia (Torres del Paine), Sydney Harbour or the Great Barrier Reef, and Bali or Ha Long Bay.
 
 **Seasonal ones to add later:** Brooks Falls bear cam, Katmai (explore.org; [season ran from June 23, 2026](https://earthsky.org/earth/katmai-brown-bear-cam-season-livestream-here/)), and a Lofoten or Abisko aurora cam for winter nights (the one case where night is worth showing).
@@ -74,6 +93,14 @@ Things to check for any domain: (1) availability and renewal price (.live and .e
 - **Reliability:** each view lists backup video IDs and/or a channel embed. If a source errors, won't start within 7s, or turns out to be a recording instead of live, it falls through to the next, then to another view.
 - **Stream checker:** `public/peek/check.html` loads every source side by side, says which work and why the others don't (removed, embedding disabled, recording), and has a "Copy report" button.
 - **Keys:** Space = peek again, Esc = home.
+
+**Quality bar every view must clear** (all 20, enforced in code, not by hand):
+- **On target:** each view lists words its live title must contain (`expect`). The page refuses a source that plays something else, and the check flags it as `mismatch`. This stops a channel switching cams from putting the wrong place on screen.
+- **HD or better:** the page refuses a source whose renditions top out below 720p; with the API key the check also flags standard-definition streams as `low-quality`.
+- **Actually live:** recordings and ended streams are refused.
+- **Embeddable:** owner-blocked embeds are flagged and skipped.
+- **Backed up:** every view has a backup ID and/or a trusted channel (`scout`). With the API key the check finds on-target live videos on those channels and promotes them automatically when the catalog's IDs die.
+- **Human-vetted:** none of the above can judge beauty. That's the "Vet the views" task, and it's still open.
 
 **Automated validation** (`.github/workflows/peek-streams.yml` + `scripts/peek/validate-streams.mjs`): runs on every PR touching Peek and every 6 hours on main. It checks each source's live status and embeddability, lists what scout channels are streaming now, writes `public/peek/status.json` (which the page uses to try live sources first and skip dead ones), and fails only when a view has no source left that isn't confirmed dead. **YouTube serves GitHub's servers a bot check, so live status needs a free YouTube Data API key in the `YOUTUBE_API_KEY` repo secret.** Without it, the check can still catch removed, private and embedding-disabled videos, but everything else reads "unverified." Quota use is about 2,500 of the free 10,000 units a day (channel searches are the expensive part, at 100 units each).
 
