@@ -176,10 +176,21 @@ async function listLive(scout) {
 // IPs a bot check, so this is the only reliable way to read live status from CI).
 const API_KEY = process.env.YOUTUBE_API_KEY;
 
+// Channel searches cost 100 of the 10,000 daily quota units (a video lookup costs 1), so PR
+// runs, which never publish anything, skip them and keep the quota for the scheduled checks.
+const SEARCHES = process.env.GITHUB_EVENT_NAME !== "pull_request";
+let quotaOut = false;
+
 async function api(endpoint, params) {
+  if (quotaOut) throw new Error("Data API daily quota used up");
   const qs = new URLSearchParams({ ...params, key: API_KEY });
   const res = await fetch(`https://www.googleapis.com/youtube/v3/${endpoint}?${qs}`);
-  if (!res.ok) throw new Error(`Data API ${endpoint} answered ${res.status}`);
+  if (!res.ok) {
+    const reason = await res.json().then((j) => j.error?.errors?.[0]?.reason || j.error?.status, () => null);
+    // Once the quota is gone every call fails the same way; stop asking until it resets.
+    if (/quotaExceeded|dailyLimitExceeded|rateLimitExceeded/.test(reason || "")) quotaOut = true;
+    throw new Error(`Data API ${endpoint} answered ${res.status}${reason ? ` (${reason})` : ""}`);
+  }
   return res.json();
 }
 
@@ -222,6 +233,7 @@ async function apiChannelId(scout) {
 }
 
 async function apiLiveOnChannel(scout) {
+  if (!SEARCHES) throw new Error("channel search skipped on PR runs (saves API quota)");
   const channelId = await apiChannelId(scout);
   const j = await api("search", { part: "snippet", channelId, eventType: "live", type: "video", maxResults: 25 });
   return (j.items || []).map((i) => ({ videoId: i.id.videoId, title: i.snippet.title }));
@@ -435,7 +447,7 @@ async function main() {
   const queue = await loadQueue();
   const queueResults = {};
   if (queue.length) {
-    const scoutQueue = process.env.GITHUB_EVENT_NAME !== "schedule" || new Date().getUTCHours() < 6;
+    const scoutQueue = API_KEY ? SEARCHES && (process.env.GITHUB_EVENT_NAME !== "schedule" || new Date().getUTCHours() < 6) : true;
     for (const c of queue) {
       const results = [];
       for (const videoId of c.videoIds || []) {
@@ -485,6 +497,8 @@ async function main() {
   lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable, on-target source.**`, "");
   if (broken.length) lines.push(`Needs a replacement source: ${broken.join(", ")}`);
   if (paused.length) lines.push(`Paused: ${paused.join(", ")}`);
+  if (quotaOut) lines.push("", "> The YouTube Data API's daily quota ran out during this run, so later sources read as unverified (they still play). It resets at midnight Pacific.");
+  if (API_KEY && !SEARCHES) lines.push("", "> PR run: channel searches are skipped to save API quota, so channel-only sources and auto-find read as unverified here.");
   if (!API_KEY && Object.values(status.streams).some((x) => x.sources.some((y) => /bot check/.test(y.detail || "")))) {
     lines.push("", "> YouTube answered with a bot check, so live status couldn't be confirmed. Add a YouTube Data API key as the `YOUTUBE_API_KEY` repo secret to fix this.");
   }
