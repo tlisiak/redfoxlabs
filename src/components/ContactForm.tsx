@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/constants";
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID;
 
@@ -18,6 +19,14 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Without a form ID (e.g. a build that missed the env var) the POST can only
+    // fail, so send people somewhere that works instead of a dead end.
+    if (!FORMSPREE_ID) {
+      toast.error("Our contact form is down. Book a time with us instead.", {
+        action: { label: "Book a time", onClick: () => window.open(BOOKING_URL, "_blank", "noopener") },
+      });
+      return;
+    }
     setState("loading");
 
     try {
@@ -36,7 +45,9 @@ const ContactForm = ({ onSuccess }: ContactFormProps) => {
       }
     } catch {
       setState("idle");
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again, or book a time with us.", {
+        action: { label: "Book a time", onClick: () => window.open(BOOKING_URL, "_blank", "noopener") },
+      });
     }
   };
 

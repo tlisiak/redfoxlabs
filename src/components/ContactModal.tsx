@@ -42,7 +42,12 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
       <div className="absolute inset-0 bg-foreground/60 backdrop-blur-sm" aria-hidden="true" />
 
       {/* Card */}
-      <div className="relative w-full max-w-lg bg-background rounded-3xl shadow-card p-6 sm:p-8 animate-fade-in">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Contact Red Fox Labs"
+        className="relative w-full max-w-lg max-h-full overflow-y-auto bg-background rounded-3xl shadow-card p-6 sm:p-8 animate-fade-in"
+      >
         {/* Close button */}
         <button
           onClick={onClose}

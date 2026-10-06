@@ -32,6 +32,10 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          # Formspree form ID for the contact form. It ships in the client bundle, so a
+          # repository variable is fine; a secret works too.
+          VITE_FORMSPREE_FORM_ID: ${{ vars.VITE_FORMSPREE_FORM_ID || secrets.VITE_FORMSPREE_FORM_ID }}
         run: npm run build
 
       - name: Setup Pages
