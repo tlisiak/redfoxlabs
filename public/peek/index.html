@@ -169,6 +169,7 @@
   .live i { width: 6px; height: 6px; border-radius: 50%; background: var(--cream); animation: blink 1.6s steps(2) infinite; }
   @keyframes blink { 50% { opacity: .25; } }
   .p-name { font: 900 40px/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 12px 0 8px; text-wrap: balance; }
+  .mini-title { display: none; }
   .p-place { font: 600 12px/1.4 var(--label); letter-spacing: .18em; text-transform: uppercase; color: rgba(241,228,198,.8); }
   .ticket-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 2px dashed var(--navy); }
   .postmark {
@@ -216,8 +217,19 @@
     .ticket-row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 16px; }
     .postmark { width: 76px; height: 76px; }
     .postmark strong { font-size: 20px; }
-    /* one scroll for the whole card: the title and weather/sun/bearing roll away as you read */
+    /* one scroll for the whole card: the title and weather/sun/bearing roll away as you read,
+       and a slim bar keeps the place name pinned once the big title is gone */
     .panel { display: block; overflow-y: auto; overscroll-behavior: contain; }
+    .mini-title {
+      display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 2;
+      height: 44px; margin-bottom: -44px; padding: 0 16px; background: var(--navy); color: var(--cream);
+      font: 900 20px/1 var(--display); letter-spacing: .03em; text-transform: uppercase;
+      border-bottom: 2px dashed rgba(241,228,198,.25);
+      transform: translateY(-100%); transition: transform .25s ease;
+    }
+    .mini-title .live { font: 700 9px/1 var(--label); letter-spacing: .18em; flex: none; }
+    .mini-title #miniName { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .mini-title.show { transform: none; }
     .panel-body { overflow: visible; padding: 4px 16px 16px; }
     .dock { left: auto; right: 12px; top: 10px; gap: 10px; }
     .again .stub, .again .lg { display: none; }
@@ -281,6 +293,7 @@
     <button class="sound" id="soundBtn" aria-label="Toggle sound" title="Sound"></button>
   </div>
   <aside class="panel" id="panel" aria-live="polite">
+    <div class="mini-title" id="miniTitle" aria-hidden="true"><span class="live"><i></i>Live</span><span id="miniName"></span></div>
     <header class="panel-head" id="panelHead">
       <div class="eyebrow"><span class="live"><i></i>Live</span></div>
       <h2 class="p-name" id="pName"></h2>
@@ -503,8 +516,9 @@
   })();
   // Board rows: the place name in its short form ("Mount Fuji over Lake Kawaguchiko" → "MOUNT FUJI"),
   // and the sunset countdown only when it fits beside the local time.
+  const shortName = (s) => s.name.split(/,| over | from | & /)[0].replace(/^The /, "");
   function boardLines(s, cols) {
-    const name = s.name.split(/,| over | from | & /)[0].replace(/^The /, "");
+    const name = shortName(s);
     const time = `LOCAL ${localTime(s.tz)}`;
     const ev = nextSunEvent(s.lat, s.lng);
     const sun = ev.minutes == null ? "" : ` · SUN${ev.up ? "SET" : "RISE"} ${fmtDur(ev.minutes).replace(/ /g, "")}`;
@@ -516,6 +530,7 @@
   const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   function renderPanel(s) {
     $("pName").textContent = s.name;
+    $("miniName").textContent = shortName(s);
     $("pPlace").textContent = `${s.place} · ${s.country}`;
     $("pmPlace").textContent = s.country;
     const ns = s.lat >= 0 ? "N" : "S", ew = s.lng >= 0 ? "E" : "W";
@@ -580,6 +595,10 @@
   }
   $("soundBtn").onclick = () => { wantSound = !wantSound; applySound(); $("soundBtn").innerHTML = wantSound ? ICON_ON : ICON_OFF; };
   $("soundBtn").innerHTML = ICON_OFF;
+  // phones: show the pinned place name once the card's big title has scrolled away
+  $("panel").addEventListener("scroll", () => {
+    $("miniTitle").classList.toggle("show", $("panel").scrollTop > $("panelHead").offsetHeight - 8);
+  }, { passive: true });
 
   // ---------------------------------------------------------------- the trip
   // One player at a time: the current view is retired, the frame moves into place with the
@@ -592,6 +611,7 @@
   function clearPanel() {
     current = null;
     $("pName").textContent = "Finding a window…";
+    $("miniName").textContent = ""; $("miniTitle").classList.remove("show"); $("panel").scrollTop = 0;
     ["pPlace", "pmPlace", "pmDate", "panelBody"].forEach((id) => ($(id).textContent = ""));
     ["sTime", "sWeather", "sSun", "sCoords"].forEach((id) => ($(id).textContent = "–"));
   }
