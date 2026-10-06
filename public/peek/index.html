@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Peek</title>
-<meta name="description" content="Live windows on the world, wherever the sun is shining right now.">
+<meta name="description" content="Live windows to the world. A live window somewhere beautiful on Earth.">
 <!-- YouTube embeds fail with Error 153 without a referrer -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,10 +107,40 @@
     font: 700 10px/1.25 var(--label); letter-spacing: .22em; text-transform: uppercase; text-align: center; }
   .fine { font: 600 11px/1.4 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
   .fine b { color: var(--sun); font-weight: 700; }
+  .fine:empty { display: none; }
+  .maker { font: 700 11px/1.4 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--sun); padding-bottom: 1px; }
+  .maker:hover { color: var(--sun); }
 
-  /* ---------- wormhole ---------- */
-  #wormhole { position: fixed; inset: 0; z-index: 5; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .45s ease; }
-  #wormhole.on { opacity: 1; }
+  /* ---------- departures board ---------- */
+  /* A split-flap board that fills the frame between views. It only ever covers the painted scene
+     and a hidden, paused player: it slides away before anything plays. */
+  .board {
+    position: absolute; inset: 0; z-index: 3; display: none; flex-direction: column; justify-content: center;
+    gap: 4cqh; padding: 5cqh 4cqw; background: var(--navy-deep); container-type: size;
+    transition: transform .5s cubic-bezier(.7,0,.3,1);
+  }
+  .board.on { display: flex; }
+  .board.away { transform: translateY(102%); }
+  .board-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 2cqw;
+    font: 700 clamp(8px, 2.1cqw, 14px)/1 var(--label); letter-spacing: .3em; text-transform: uppercase; color: var(--gold);
+  }
+  .board-head .star { color: var(--sun); letter-spacing: 0; }
+  .rows { display: grid; gap: 2.2cqh; }
+  .row { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); gap: .45cqw; }
+  .cell {
+    position: relative; aspect-ratio: 5 / 7; border-radius: 2px; overflow: hidden;
+    display: grid; place-items: center; color: var(--cream); background: #0b1120;
+    font: 800 calc(100cqw / var(--cols) * .9)/1 var(--display); text-transform: uppercase;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 1px 0 rgba(0,0,0,.4);
+  }
+  .cell::before { content: ""; position: absolute; inset: 0 0 50% 0; background: rgba(255,255,255,.04); }   /* upper flap */
+  .cell::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,.75); }  /* hinge */
+  .cell.flip { animation: flap 80ms ease-out; }
+  @keyframes flap { from { transform: scaleY(.2); filter: brightness(1.6); } to { transform: none; } }
+  .row.country .cell { color: var(--gold); }
+  .row.meta .cell { color: rgba(241,228,198,.72); }
+  .layer.staged { visibility: hidden; }
 
   /* ---------- viewing chrome ---------- */
   .chrome { position: fixed; inset: 0; z-index: 4; pointer-events: none; opacity: 0; transition: opacity .6s ease .2s; }
@@ -139,6 +169,7 @@
   .live i { width: 6px; height: 6px; border-radius: 50%; background: var(--cream); animation: blink 1.6s steps(2) infinite; }
   @keyframes blink { 50% { opacity: .25; } }
   .p-name { font: 900 40px/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 12px 0 8px; text-wrap: balance; }
+  .mini-title { display: none; }
   .p-place { font: 600 12px/1.4 var(--label); letter-spacing: .18em; text-transform: uppercase; color: rgba(241,228,198,.8); }
   .ticket-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 2px dashed var(--navy); }
   .postmark {
@@ -186,7 +217,20 @@
     .ticket-row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 16px; }
     .postmark { width: 76px; height: 76px; }
     .postmark strong { font-size: 20px; }
-    .panel-body { padding: 4px 16px 16px; }
+    /* one scroll for the whole card: the title and weather/sun/bearing roll away as you read,
+       and a slim bar keeps the place name pinned once the big title is gone */
+    .panel { display: block; overflow-y: auto; overscroll-behavior: contain; }
+    .mini-title {
+      display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 2;
+      height: 44px; margin-bottom: -44px; padding: 0 16px; background: var(--navy); color: var(--cream);
+      font: 900 20px/1 var(--display); letter-spacing: .03em; text-transform: uppercase;
+      border-bottom: 2px dashed rgba(241,228,198,.25);
+      transform: translateY(-100%); transition: transform .25s ease;
+    }
+    .mini-title .live { font: 700 9px/1 var(--label); letter-spacing: .18em; flex: none; }
+    .mini-title #miniName { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .mini-title.show { transform: none; }
+    .panel-body { overflow: visible; padding: 4px 16px 16px; }
     .dock { left: auto; right: 12px; top: 10px; gap: 10px; }
     .again .stub, .again .lg { display: none; }
     .again .sm { display: inline; }
@@ -196,6 +240,8 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .stage { transition: none; }
+    .board { transition: none; }
+    .cell.flip { animation: none; }
     .live i { animation: none; }
   }
 </style>
@@ -216,25 +262,29 @@
     <path d="M0 470 C200 420 330 500 520 455 C720 410 860 490 1040 450 C1110 435 1170 440 1200 442 L1200 600 L0 600 Z" fill="var(--navy)"/>
   </svg>
   <div class="tuning" id="tuning"></div>
+  <div class="board" id="board" aria-live="polite">
+    <div class="board-head"><span><span class="star">★</span> Departures</span><span id="boardNote">Now boarding</span></div>
+    <div class="rows" id="boardRows"></div>
+  </div>
 </div>
 
 <section class="landing" id="landing">
   <div class="topline">
     <span class="side">Live views</span>
-    <span class="mid"><span class="star">★</span>Windows on the world<span class="star">★</span></span>
+    <span class="mid"><span class="star">★</span>Windows to the world<span class="star">★</span></span>
     <span class="side">Daylight only</span>
   </div>
   <div class="poster-foot">
     <h1 class="wordmark">PEEK</h1>
     <div class="pitch">
-      <p class="tagline">A live window somewhere beautiful on Earth, wherever the sun is shining right now.</p>
+      <p class="tagline">A live window somewhere beautiful on Earth.</p>
       <button class="cta" id="peekBtn"><span class="main">Take a peek</span><span class="stub">Admit<br>one</span></button>
       <p class="fine" id="countLine"></p>
+      <a class="maker" href="/">A Red Fox Labs project</a>
     </div>
   </div>
 </section>
 
-<canvas id="wormhole"></canvas>
 
 <div class="chrome" id="chrome">
   <button class="mini-mark" id="home" aria-label="Back to start">PEEK</button>
@@ -243,8 +293,9 @@
     <button class="sound" id="soundBtn" aria-label="Toggle sound" title="Sound"></button>
   </div>
   <aside class="panel" id="panel" aria-live="polite">
+    <div class="mini-title" id="miniTitle" aria-hidden="true"><span class="live"><i></i>Live</span><span id="miniName"></span></div>
     <header class="panel-head" id="panelHead">
-      <div class="eyebrow"><span class="live"><i></i>Live</span>Now arriving</div>
+      <div class="eyebrow"><span class="live"><i></i>Live</span></div>
       <h2 class="p-name" id="pName"></h2>
       <div class="p-place" id="pPlace"></div>
     </header>
@@ -267,7 +318,8 @@
 <script>
 (() => {
   const STREAMS = window.PEEK_STREAMS;
-  const MIN_WORMHOLE_MS = 1900;   // the trip should feel like a trip, even on fast loads
+  const MIN_SPIN_MS = 1300;   // flaps spin at least this long, so even a fast load feels like a departure
+  const HOLD_MS = 900;        // how long the destination stays up before the board drops away
   const LOAD_TIMEOUT_MS = 7000;   // per source; give up on one that won't start and try the next
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (id) => document.getElementById(id);
@@ -380,73 +432,105 @@
   }
   addEventListener("resize", layout);
 
-  // ---------------------------------------------------------------- wormhole
-  // A minimal tunnel: particles stream toward the viewer from a vanishing point,
-  // drawn as streaks whose length grows with speed. Speed eases up, then the
-  // tunnel collapses into a flash while the destination irises open.
-  const canvas = $("wormhole"), ctx = canvas.getContext("2d");
-  let W, H, DPR, stars = [], warp = { running: false, speed: 0, target: 0, raf: 0 };
-  function resize() {
-    DPR = Math.min(devicePixelRatio || 1, 2);
-    W = canvas.width = innerWidth * DPR; H = canvas.height = innerHeight * DPR;
+  // ---------------------------------------------------------------- departures board
+  // Split-flap rows that spin while the next stream warms up, then settle left to right onto
+  // the destination. Text is folded to the board's character set (no accents, no ʻokina).
+  const FLAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.·-' ";
+  const toBoard = (t) => String(t).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[ʻʼ’`]/g, "'")
+    .replace(/&/g, "AND").toUpperCase().replace(/[^A-Z0-9:.·\-' ]/g, " ").replace(/\s+/g, " ").trim();
+  function fit(text, cols) {   // trim at a word boundary when it can
+    if (text.length <= cols) return text;
+    const cut = text.slice(0, cols + 1).lastIndexOf(" ");
+    return text.slice(0, cut > cols * 0.5 ? cut : cols);
   }
-  function seed() {
-    stars = Array.from({ length: 520 }, () => ({ a: Math.random() * Math.PI * 2, r: 0.15 + Math.random() * 0.85, z: Math.random(), pz: 0 }));
-  }
-  function frame() {
-    warp.speed += (warp.target - warp.speed) * 0.045;
-    ctx.fillStyle = `rgba(20,29,49,${0.32 - Math.min(warp.speed, 0.05) * 2})`;
-    ctx.fillRect(0, 0, W, H);
-    const cx = W / 2, cy = H / 2, R = Math.max(W, H) * 0.62, t = performance.now() / 1000;
-    // faint rings receding into the throat
-    ctx.lineWidth = 1 * DPR;
-    for (let i = 0; i < 7; i++) {
-      const z = ((i / 7 + t * warp.speed * 1.4) % 1);
-      const rr = (R * 0.08) / Math.max(1 - z, 0.03);
-      ctx.strokeStyle = `rgba(225,85,44,${0.14 * z})`;
-      ctx.beginPath(); ctx.arc(cx, cy, rr, 0, Math.PI * 2); ctx.stroke();
+  const board = (() => {
+    const el = $("board"), rowsEl = $("boardRows");
+    let cells = [], cols = 0, spinTimer = 0, settledAt = [], audio = null, lastClack = 0;
+    function build() {
+      cols = frameBox().w < 520 ? 16 : 20;   // size for where the frame is going, not mid-glide
+      el.style.setProperty("--cols", cols);
+      rowsEl.innerHTML = "";
+      cells = ["country", "name", "meta"].map((kind) => {
+        const row = document.createElement("div");
+        row.className = "row " + kind;
+        rowsEl.appendChild(row);
+        return Array.from({ length: cols }, () => { const c = document.createElement("span"); c.className = "cell"; row.appendChild(c); return c; });
+      });
     }
-    for (const s of stars) {
-      s.pz = s.z;
-      s.z += warp.speed * (0.6 + s.r * 0.4);
-      if (s.z >= 1) { s.z = s.pz = Math.random() * 0.2; s.a = Math.random() * Math.PI * 2; }
-      const swirl = t * 0.25;
-      const p = (z) => (R * 0.06 * s.r) / Math.max(1 - z, 0.02);
-      const r0 = p(s.pz), r1 = p(s.z);
-      const ang = s.a + swirl;
-      const x0 = cx + Math.cos(ang) * r0, y0 = cy + Math.sin(ang) * r0;
-      const x1 = cx + Math.cos(ang) * r1, y1 = cy + Math.sin(ang) * r1;
-      ctx.strokeStyle = s.r > 0.86 ? `rgba(240,168,48,${Math.min(1, s.z * 1.3)})` : `rgba(241,228,198,${Math.min(1, s.z * 1.3)})`;
-      ctx.lineWidth = (0.6 + s.z * 1.8) * DPR;
-      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    function clack() {   // a soft synthesized flap, only when sound is on and after a click
+      if (!wantSound || !audio) return;
+      const now = audio.currentTime;
+      if (now - lastClack < 0.028) return;
+      lastClack = now;
+      const len = Math.floor(audio.sampleRate * 0.018), buf = audio.createBuffer(1, len, audio.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 5);
+      const src = audio.createBufferSource(), bp = audio.createBiquadFilter(), g = audio.createGain();
+      src.buffer = buf; bp.type = "bandpass"; bp.frequency.value = 1800 + Math.random() * 900; bp.Q.value = 1.4; g.gain.value = 0.07;
+      src.connect(bp).connect(g).connect(audio.destination); src.start();
     }
-    // soft glow in the throat
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.25);
-    g.addColorStop(0, `rgba(240,168,48,${0.1 + warp.speed * 1.4})`);
-    g.addColorStop(1, "rgba(240,168,48,0)");
-    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    if (warp.running) warp.raf = requestAnimationFrame(frame);
+    function setCell(c, ch, flip) {
+      if (c.textContent === ch) return;
+      c.textContent = ch;
+      if (flip) { c.classList.remove("flip"); void c.offsetWidth; c.classList.add("flip"); }
+    }
+    return {
+      unlockAudio() {
+        try { audio ||= new (window.AudioContext || window.webkitAudioContext)(); audio.resume(); } catch { audio = null; }
+      },
+      show(note = "Now boarding") {
+        build();
+        $("boardNote").textContent = note;
+        settledAt = [];
+        el.classList.remove("away");
+        el.classList.add("on");
+        if (reducedMotion) return;
+        clearInterval(spinTimer);
+        spinTimer = setInterval(() => {
+          cells.forEach((row) => row.forEach((c) => { if (!c.dataset.done && Math.random() < 0.6) setCell(c, FLAPS[(Math.random() * (FLAPS.length - 1)) | 0], false); }));
+          clack();
+        }, 90);
+      },
+      // Resolves once every cell has landed. Cells settle in a cascade: left to right, row by row.
+      get cols() { return cols; },
+      settle(lines) {
+        const text = lines.map((l) => fit(toBoard(l), cols).padEnd(cols, " "));
+        return new Promise((resolve) => {
+          let last = 0;
+          cells.forEach((row, r) => row.forEach((c, i) => {
+            const at = reducedMotion ? 0 : r * 160 + i * 38 + Math.random() * 60;
+            last = Math.max(last, at);
+            setTimeout(() => { c.dataset.done = "1"; setCell(c, text[r][i], true); clack(); }, at);
+          }));
+          setTimeout(() => { clearInterval(spinTimer); resolve(); }, last + 120);
+        });
+      },
+      hide() {
+        clearInterval(spinTimer);
+        return new Promise((resolve) => {
+          if (!el.classList.contains("on")) return resolve();
+          el.classList.add("away");
+          setTimeout(() => { el.classList.remove("on", "away"); cells.flat().forEach((c) => delete c.dataset.done); resolve(); }, reducedMotion ? 0 : 520);
+        });
+      },
+    };
+  })();
+  // Board rows: the place name in its short form ("Mount Fuji over Lake Kawaguchiko" → "MOUNT FUJI"),
+  // and the sunset countdown only when it fits beside the local time.
+  const shortName = (s) => s.name.split(/,| over | from | & /)[0].replace(/^The /, "");
+  function boardLines(s, cols) {
+    const name = shortName(s);
+    const time = `LOCAL ${localTime(s.tz)}`;
+    const ev = nextSunEvent(s.lat, s.lng);
+    const sun = ev.minutes == null ? "" : ` · SUN${ev.up ? "SET" : "RISE"} ${fmtDur(ev.minutes).replace(/ /g, "")}`;
+    return [s.country, name, toBoard(time + sun).length <= cols ? time + sun : time];
   }
-  function wormholeIn() {
-    if (reducedMotion) { canvas.classList.add("on"); ctx.fillStyle = "#141d31"; ctx.fillRect(0, 0, W, H); return; }
-    resize(); seed();
-    ctx.fillStyle = "#141d31"; ctx.fillRect(0, 0, W, H);
-    warp.running = true; warp.speed = 0.002; warp.target = 0.018;
-    cancelAnimationFrame(warp.raf); frame();
-    canvas.classList.add("on");
-  }
-  function wormholeOut() {
-    warp.target = 0.06;                                         // final lunge
-    setTimeout(() => canvas.classList.remove("on"), 260);
-    setTimeout(() => { warp.running = false; cancelAnimationFrame(warp.raf); }, 800);
-  }
-  addEventListener("resize", () => { if (warp.running) resize(); });
 
   // ---------------------------------------------------------------- info panel
   let current = null, clockTimer = 0;
   const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   function renderPanel(s) {
     $("pName").textContent = s.name;
+    $("miniName").textContent = shortName(s);
     $("pPlace").textContent = `${s.place} · ${s.country}`;
     $("pmPlace").textContent = s.country;
     const ns = s.lat >= 0 ? "N" : "S", ew = s.lng >= 0 ? "E" : "W";
@@ -462,8 +546,10 @@
       <div class="credit">
         <div>Live stream by <a href="${s.credit.url}" target="_blank" rel="noopener">${esc(s.credit.name)}</a></div>
         <div>Sources: ${s.sources.map((x) => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
+        <div>Peek is a <a href="/">Red Fox Labs</a> project</div>
       </div>`;
     $("panelBody").scrollTop = 0;
+    $("panel").scrollTop = 0;
     tick();
     clearInterval(clockTimer); clockTimer = setInterval(tick, 20000);
     loadWeather(s);
@@ -492,9 +578,9 @@
   }
 
   // ---------------------------------------------------------------- sound
-  // Browsers only allow audible autoplay after a gesture. The "Take a peek" click counts,
-  // so we try to unmute; if the browser pushes back, we stay muted and the toggle shows it.
-  let wantSound = true;
+  // Views start muted; the sound button turns sound on (and the flap clack with it).
+  // If the browser refuses audible playback, we go back to muted and the toggle shows it.
+  let wantSound = false;
   const ICON_ON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13"/></svg>';
   const ICON_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>';
   function applySound() {
@@ -507,59 +593,110 @@
     }, 700);
     $("soundBtn").innerHTML = wantSound ? ICON_ON : ICON_OFF;
   }
-  $("soundBtn").onclick = () => { wantSound = !wantSound; applySound(); };
+  $("soundBtn").onclick = () => { wantSound = !wantSound; applySound(); $("soundBtn").innerHTML = wantSound ? ICON_ON : ICON_OFF; };
+  $("soundBtn").innerHTML = ICON_OFF;
+  // phones: show the pinned place name once the card's big title has scrolled away
+  $("panel").addEventListener("scroll", () => {
+    $("miniTitle").classList.toggle("show", $("panel").scrollTop > $("panelHead").offsetHeight - 8);
+  }, { passive: true });
 
   // ---------------------------------------------------------------- the trip
-  // One player at a time: the current view is retired before the wormhole, the frame moves
-  // while the wormhole covers the page, and the next stream mounts only once the frame is
-  // visible again (over the painted "tuning in" scene).
+  // One player at a time: the current view is retired, the frame moves into place with the
+  // departures board spinning in it, and the next stream is cued (not playing) in a hidden layer.
+  // When it's ready the board settles on the destination and drops away, and only then does the
+  // now-visible player start. A cued stream that won't actually play falls back to loading the
+  // next one directly, over the painted "tuning in" scene.
   let active = null, bg = null, busy = false, onLanding = true;
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   function clearPanel() {
     current = null;
     $("pName").textContent = "Finding a window…";
+    $("miniName").textContent = ""; $("miniTitle").classList.remove("show"); $("panel").scrollTop = 0;
     ["pPlace", "pmPlace", "pmDate", "panelBody"].forEach((id) => ($(id).textContent = ""));
     ["sTime", "sWeather", "sSun", "sCoords"].forEach((id) => ($(id).textContent = "–"));
+  }
+  // Cues the first of the stream's sources that YouTube will serve, in a hidden layer.
+  async function stage(stream) {
+    for (const cand of PeekPlayer.candidates(stream)) {
+      const layer = document.createElement("div");
+      layer.className = "layer staged";
+      $("stage").appendChild(layer);
+      try { return { layer, prepared: await PeekPlayer.prepare(layer, cand, { timeout: LOAD_TIMEOUT_MS, expect: stream.expect }) }; }
+      catch (err) { layer.remove(); console.warn(`[peek] ${stream.id}: ${PeekPlayer.label(cand)} failed (${err.message})`); }
+    }
+    throw new Error("no source would cue");
+  }
+  function arrive(stream, loaded) {
+    active = { stream, ...loaded };
+    current = stream;
+    remember(stream.id);
+    renderPanel(stream);
+    applySound();
   }
   async function peek() {
     if (busy) return;
     busy = true;
+    board.unlockAudio();   // the click is our one chance to allow sound
     const tried = [active?.stream.id, bg?.stream.id].filter(Boolean);
     retire(active); retire(bg); active = bg = null;
-    wormholeIn();
     $("landing").classList.add("gone");
     document.body.classList.remove("on-landing");
-    $("chrome").classList.remove("on");
     $("toast").classList.remove("on");
     $("tuning").textContent = "";
     mode = "view"; layout(); clearPanel();
-    await sleep(MIN_WORMHOLE_MS);
-    wormholeOut();
     $("chrome").classList.add("on");
     onLanding = false;
+    const t0 = performance.now();
+    await sleep(reducedMotion ? 0 : 450);   // let the frame start moving before the board fills it
+    board.show();
 
-    let next = null, loaded = null;
-    for (let attempt = 0; attempt < 4 && !loaded; attempt++) {
+    let next = null, staged = null;
+    for (let attempt = 0; attempt < 4 && !staged; attempt++) {
       next = pick(tried);
       if (!next) break;
       tried.push(next.id);
-      $("tuning").textContent = `Tuning in · ${next.country}`;
-      try { loaded = await loadStream(next); }
+      try { staged = await stage(next); }
       catch (err) { console.warn(`[peek] skipping ${next.id}:`, err.message); }
     }
-    $("tuning").textContent = "";
-    if (!loaded) {
-      $("toast").textContent = "Every window we tried was fogged over. Try again in a moment.";
-      $("toast").classList.add("on");
+    if (!staged) {
+      await board.settle(["No departures", "Every window is fogged", "Try again shortly"]);
+      await sleep(1800);
+      await board.hide();
       busy = false;
-      setTimeout(goHome, 3500);
+      goHome();
       return;
     }
-    active = { stream: next, ...loaded };
-    current = next;
-    remember(next.id);
-    renderPanel(next);
-    applySound();
+    const spun = performance.now() - t0;
+    if (spun < MIN_SPIN_MS) await sleep(MIN_SPIN_MS - spun);
+    current = next; renderPanel(next);   // the card fills in as the board lands
+    await board.settle(boardLines(next, board.cols));
+    await sleep(HOLD_MS);
+    await board.hide();
+    staged.layer.classList.remove("staged");
+
+    try {
+      const { player } = await PeekPlayer.start(staged.prepared, { timeout: LOAD_TIMEOUT_MS, expect: next.expect });
+      arrive(next, { layer: staged.layer, player });
+    } catch (err) {
+      // It cued but won't play as promised (ended, not live, not HD). Recover without the board.
+      console.warn(`[peek] ${next.id} wouldn't start (${err.message})`);
+      staged.layer.remove();
+      let loaded = null, stream = next;
+      for (let attempt = 0; attempt < 3 && !loaded; attempt++) {
+        if (attempt) { stream = pick(tried); if (!stream) break; tried.push(stream.id); }
+        $("tuning").textContent = `Tuning in · ${stream.country}`;
+        try { loaded = await loadStream(stream); } catch { /* try another */ }
+      }
+      $("tuning").textContent = "";
+      if (loaded) arrive(stream, loaded);
+      else {
+        $("toast").textContent = "Every window we tried was fogged over. Try again in a moment.";
+        $("toast").classList.add("on");
+        busy = false;
+        setTimeout(goHome, 3500);
+        return;
+      }
+    }
     busy = false;
   }
 
@@ -580,7 +717,7 @@
   // ---------------------------------------------------------------- landing background
   // The poster's illustration is a live view: one muted, daylight stream in the frame.
   function showCaption(s) {
-    $("countLine").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)} · ${countText}`;
+    $("countLine").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)}`;
   }
   async function startBackground() {
     await PeekPlayer.statusReady;
@@ -595,9 +732,6 @@
   }
 
   // ---------------------------------------------------------------- wiring
-  const showing = STREAMS.filter((s) => !s.paused);
-  const countText = `${showing.length} live views · ${new Set(showing.map((s) => s.country)).size} countries`;
-  $("countLine").textContent = countText;
   $("peekBtn").onclick = peek;
   $("againBtn").onclick = peek;
   $("home").onclick = goHome;
@@ -606,7 +740,6 @@
     if (e.code === "Space" || (onLanding && e.code === "Enter")) { e.preventDefault(); peek(); }
     if (e.code === "Escape" && !onLanding) goHome();
   });
-  resize();
   layout();
   startBackground();
 })();
