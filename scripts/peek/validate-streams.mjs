@@ -38,6 +38,12 @@ export async function loadStreams() {
   return sandbox.window.PEEK_STREAMS;
 }
 
+// Vetting queue: places that might become views. Checked every run, never played.
+export async function loadQueue() {
+  try { return JSON.parse(await readFile(path.join(root, "scripts/peek/candidates.json"), "utf8")).candidates || []; }
+  catch { return []; }
+}
+
 export function candidates(stream) {
   const src = stream.source;
   const ids = src.videoIds || (src.videoId ? [src.videoId] : []);
@@ -146,7 +152,15 @@ export function findLiveVideos(data) {
   return list;
 }
 
-async function liveOnChannel(scout) {
+// Several views share a channel; list each one once per run (a Data API search costs 100 of
+// the 10,000 daily quota units).
+const scoutCache = new Map();
+function liveOnChannel(scout) {
+  if (!scoutCache.has(scout)) scoutCache.set(scout, listLive(scout));
+  return scoutCache.get(scout);
+}
+
+async function listLive(scout) {
   if (API_KEY) { try { return await apiLiveOnChannel(scout); } catch { return null; } }
   try {
     const page = await fetchText(`https://www.youtube.com${channelPath(scout)}/streams?hl=en`);
@@ -162,10 +176,24 @@ async function liveOnChannel(scout) {
 // IPs a bot check, so this is the only reliable way to read live status from CI).
 const API_KEY = process.env.YOUTUBE_API_KEY;
 
+// Channel searches cost 100 of the 10,000 daily quota units (a video lookup costs 1), so PR
+// runs, which never publish anything, skip them and keep the quota for the scheduled checks.
+const SEARCHES = process.env.GITHUB_EVENT_NAME !== "pull_request";
+let quotaOut = false;
+
 async function api(endpoint, params) {
+  if (quotaOut) throw new Error("Data API daily quota used up");
   const qs = new URLSearchParams({ ...params, key: API_KEY });
   const res = await fetch(`https://www.googleapis.com/youtube/v3/${endpoint}?${qs}`);
-  if (!res.ok) throw new Error(`Data API ${endpoint} answered ${res.status}`);
+  if (!res.ok) {
+    const err = await res.json().then((j) => j.error || {}, () => ({}));
+    const reason = err.errors?.[0]?.reason || err.status || "";
+    // Once the quota is gone every call fails the same way; stop asking until it resets.
+    if (/quotaExceeded|dailyLimitExceeded|rateLimitExceeded/.test(reason)) quotaOut = true;
+    // YouTube's message says why (key restrictions, API not enabled, ...); keep it short and key-free.
+    const why = String(err.message || "").replace(/key=[\w-]+/g, "key=…").slice(0, 160);
+    throw new Error(`Data API ${endpoint} answered ${res.status}${reason ? ` (${reason})` : ""}${why ? `: ${why}` : ""}`);
+  }
   return res.json();
 }
 
@@ -208,6 +236,7 @@ async function apiChannelId(scout) {
 }
 
 async function apiLiveOnChannel(scout) {
+  if (!SEARCHES) throw new Error("channel search skipped on PR runs (saves API quota)");
   const channelId = await apiChannelId(scout);
   const j = await api("search", { part: "snippet", channelId, eventType: "live", type: "video", maxResults: 25 });
   return (j.items || []).map((i) => ({ videoId: i.id.videoId, title: i.snippet.title }));
@@ -285,6 +314,16 @@ export function confirmFromScouts(stream, scouted, sources) {
       Object.assign(x, { status: "live", detail: "listed live on its channel", title: x.title || listed.get(id) });
     }
   }
+}
+
+// Where a queued place stands: "ready" once one of its streams clears the promotion bar,
+// "live" when something on target is up right now, otherwise "down".
+export function queueVerdict(results, history) {
+  const scored = results.map((r) => ({ ...r, uptime: uptime(history, r.videoId) }));
+  const ready = scored.find((r) => readyToPromote(r.uptime));
+  if (ready) return { state: "ready", best: ready, scored };
+  const live = scored.find((r) => r.status === "live");
+  return { state: live ? "live" : "down", best: live || null, scored };
 }
 
 // ---- uptime history
@@ -406,7 +445,53 @@ async function main() {
     lines.push("");
   }
 
+  // Vetting queue. Video IDs are cheap to check every run; channel searches for queued places
+  // run once a day on the schedule (always on manual and PR runs) to stay inside the API quota.
+  const queue = await loadQueue();
+  const queueResults = {};
+  if (queue.length) {
+    const scoutQueue = API_KEY ? SEARCHES && (process.env.GITHUB_EVENT_NAME !== "schedule" || new Date().getUTCHours() < 6) : true;
+    for (const c of queue) {
+      const results = [];
+      for (const videoId of c.videoIds || []) {
+        const r = judge(c, await checkCandidate({ videoId }));
+        results.push({ videoId, status: r.status, title: r.title || "", detail: r.detail || "" });
+        await new Promise((ok) => setTimeout(ok, 200));
+      }
+      if (scoutQueue) {
+        const scouted = {};
+        for (const scout of c.scout || []) scouted[scout] = await liveOnChannel(scout);
+        for (const v of autoFind(c, scouted, results)) {
+          const r = judge(c, await checkCandidate({ videoId: v.videoId }));
+          results.push({ videoId: v.videoId, status: r.status, title: r.title || v.title, detail: "found live on its channel", found: true });
+        }
+        for (const [scout, list] of Object.entries(scouted)) if (list === null) results.push({ channel: scout, status: "unverified", detail: "couldn't list the channel" });
+      }
+      for (const r of results) if (r.videoId) thisRun[r.videoId] = r.status;
+      queueResults[c.id] = results;
+    }
+  }
+
   history = recordRun(history, status.checkedAt, thisRun);
+
+  if (queue.length) {
+    lines.push("### Vetting queue (not on the site)", "", `A place is ready when one stream has been up ${PROMOTE.minUptime * 100}%+ for ${PROMOTE.minDays}+ days and shows the right place.`, "");
+    const summary = {};
+    for (const c of queue) {
+      const v = queueVerdict(queueResults[c.id].filter((r) => r.videoId), history);
+      summary[c.id] = { state: v.state, sources: v.scored.map((r) => ({ videoId: r.videoId, status: r.status, title: r.title, uptime: r.uptime })) };
+      lines.push(`**${{ ready: "⭐", live: "🟢", down: "⚪️" }[v.state]} ${md(c.place)}** (${md(c.operator)})${c.note ? `, ${md(c.note)}` : ""}`);
+      for (const r of queueResults[c.id]) {
+        if (!r.videoId) { lines.push(`- 🔭 \`${r.channel}\`: ${r.detail}`); continue; }
+        const title = r.title && r.status !== "mismatch" ? ` · ${md(r.title)}` : "";
+        lines.push(`- ${ICON[r.status]} \`${r.videoId}\`${r.found ? " (found on channel)" : ""}: ${r.status}, ${md(r.detail)}${title} · ${pct(uptime(history, r.videoId))}`);
+      }
+      lines.push("");
+      console.log(`Q   ${c.id}: ${v.state} (${queueResults[c.id].map((r) => `${r.videoId || r.channel}=${r.status}`).join(", ")})`);
+    }
+    await mkdir(path.dirname(HISTORY), { recursive: true });
+    await writeFile(path.join(path.dirname(HISTORY), "queue.json"), JSON.stringify({ checkedAt: status.checkedAt, queue: summary }, null, 2) + "\n");
+  }
   for (const [id, x] of Object.entries(status.streams)) {
     x.uptime = Object.fromEntries(x.sources.map((y) => y.resolvedVideoId || y.videoId).filter(Boolean).map((vid) => [vid, uptime(history, vid)]));
   }
@@ -415,6 +500,8 @@ async function main() {
   lines.splice(3, 0, `**${okCount} of ${streams.length} views have a live, embeddable, on-target source.**`, "");
   if (broken.length) lines.push(`Needs a replacement source: ${broken.join(", ")}`);
   if (paused.length) lines.push(`Paused: ${paused.join(", ")}`);
+  if (quotaOut) lines.push("", "> The YouTube Data API's daily quota ran out during this run, so later sources read as unverified (they still play). It resets at midnight Pacific.");
+  if (API_KEY && !SEARCHES) lines.push("", "> PR run: channel searches are skipped to save API quota, so channel-only sources and auto-find read as unverified here.");
   if (!API_KEY && Object.values(status.streams).some((x) => x.sources.some((y) => /bot check/.test(y.detail || "")))) {
     lines.push("", "> YouTube answered with a bot check, so live status couldn't be confirmed. Add a YouTube Data API key as the `YOUTUBE_API_KEY` repo secret to fix this.");
   }

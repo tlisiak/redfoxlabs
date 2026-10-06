@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD, recordRun, uptime, readyToPromote, isFlaky } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD, recordRun, uptime, readyToPromote, isFlaky, loadQueue, queueVerdict } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -144,4 +144,28 @@ test("promotion needs two weeks above 95%; flaky needs evidence", () => {
   assert.ok(readyToPromote(uptime(h, "goodgoodgoo")));
   assert.ok(isFlaky(uptime(h, "flakyflaky0")));
   assert.ok(!isFlaky(uptime(recordRun(null, "2026-10-01T00:00:00Z", { x: "offline" }), "x")), "one bad check isn't flaky");
+});
+
+test("vetting queue entries are well-formed and don't duplicate a live view", async () => {
+  const queue = await loadQueue();
+  const views = new Map((await loadStreams()).map((s) => [s.id, s]));
+  const ids = new Set();
+  for (const c of queue) {
+    assert.ok(!ids.has(c.id), `${c.id} is queued twice`); ids.add(c.id);
+    assert.ok(c.place && c.operator, `${c.id} needs a place and operator`);
+    assert.ok(c.expect?.title?.length, `${c.id} needs expect.title`);
+    assert.ok((c.videoIds || []).length || (c.scout || []).length, `${c.id} has nothing to check`);
+    for (const v of c.videoIds || []) assert.match(v, /^[\w-]{11}$/, `${c.id}: bad video id ${v}`);
+    // Queued places either are new or are paused views waiting on a working stream.
+    if (views.has(c.id)) assert.ok(views.get(c.id).paused, `${c.id} is already an active view`);
+  }
+});
+
+test("queue verdict: ready needs the promotion bar, live needs something up now", () => {
+  let h = null;
+  for (let i = 0; i < 60; i++) h = recordRun(h, new Date(Date.UTC(2026, 9, 1) + i * 6 * 3600e3).toISOString(), { steadyaaaaa: "live", newbbbbbbbb: i === 59 ? "live" : "offline" });
+  assert.equal(queueVerdict([{ videoId: "steadyaaaaa", status: "live" }], h).state, "ready");
+  assert.equal(queueVerdict([{ videoId: "newbbbbbbbb", status: "live" }], h).state, "live");
+  assert.equal(queueVerdict([{ videoId: "newbbbbbbbb", status: "offline" }], h).state, "down");
+  assert.equal(queueVerdict([], h).state, "down");
 });
