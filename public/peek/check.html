@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Peek stream check</title>
+<style>
+  :root { --bg: #0b0c10; --card: #15171d; --line: #262a33; --ink: #f1efe9; --dim: #9aa0aa; --ok: #3ecf8e; --bad: #ff5d5d; --warn: #f2b84b; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 14px/1.5 Inter, system-ui, sans-serif; padding: 28px 16px 60px; }
+  main { max-width: 1180px; margin: 0 auto; }
+  h1 { font: 500 26px Georgia, serif; }
+  .sub { color: var(--dim); margin: 4px 0 18px; }
+  .bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
+  button { font: inherit; color: var(--ink); background: #232733; border: 1px solid var(--line); padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #2c3140; }
+  #summary { color: var(--dim); }
+  .stream { margin-bottom: 26px; }
+  .stream h2 { font-size: 15px; font-weight: 600; display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+  .verdict { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; background: #2a2e38; color: var(--dim); }
+  .verdict.ok { background: rgba(62,207,142,.15); color: var(--ok); }
+  .verdict.bad { background: rgba(255,93,93,.15); color: var(--bad); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .screen { position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; }
+  .screen iframe, .screen .yt-slot { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .meta { padding: 10px 12px; display: grid; gap: 3px; }
+  .status { font-weight: 600; }
+  .status.ok { color: var(--ok); } .status.bad { color: var(--bad); } .status.wait { color: var(--warn); }
+  .meta small { color: var(--dim); word-break: break-word; }
+  .meta a { color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stream check</h1>
+  <p class="sub">Plays every source in <code>streams.js</code> one at a time (YouTube allows one autoplaying player per page) and reports whether it's live, HD and showing the right place. Needs to be opened over http(s), not as a local file.</p>
+  <div class="bar">
+    <button id="copy">Copy report</button>
+    <button id="rerun">Run again</button>
+    <span id="summary">Checking…</span>
+  </div>
+  <div id="list"></div>
+</main>
+<script src="streams.js"></script>
+<script src="player.js"></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let results = [];
+
+  async function run() {
+    $("list").innerHTML = "";
+    results = [];
+    const jobs = [];
+    for (const s of window.PEEK_STREAMS) {
+      const sec = document.createElement("section");
+      sec.className = "stream";
+      sec.innerHTML = `<h2>${esc(s.name)} <span class="verdict">${s.paused ? "paused" : "checking"}</span></h2>${s.paused ? `<p class="sub">${esc(s.paused)}</p>` : ""}<div class="grid"></div>`;
+      $("list").appendChild(sec);
+      for (const cand of PeekPlayer.candidates(s, { raw: true })) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<div class="screen"></div><div class="meta"><span class="status wait">Waiting…</span><small class="title"></small><small><a href="${PeekPlayer.watchUrl(cand)}" target="_blank" rel="noopener">${esc(PeekPlayer.label(cand))}</a></small></div>`;
+        sec.querySelector(".grid").appendChild(card);
+        const r = { stream: s, cand, ok: false, note: "", title: "" };
+        results.push(r);
+        jobs.push(async () => {
+          const status = card.querySelector(".status");
+          status.textContent = "Loading…";
+          try {
+            const screen = card.querySelector(".screen");
+            const { data, quality, player } = await PeekPlayer.mount(screen, cand, { timeout: 15000, expect: s.expect });
+            // verdict in: free the slot for the next player, keep a still of what we saw
+            try { player.destroy(); } catch {}
+            screen.innerHTML = data.video_id ? `<img alt="" src="https://i.ytimg.com/vi/${data.video_id}/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover">` : "";
+            r.ok = true; r.title = data.title || "";
+            const best = quality.find((q) => /hd2160|hd1440|hd1080|hd720|highres/.test(q));
+            r.note = `${data.isLive === true ? "live" : "playing (live status unknown)"}${best ? `, ${best}` : ""}, matches "${(s.expect?.title || []).join(" / ")}"`;
+            status.className = "status ok"; status.textContent = `✓ ${r.note}`;
+          } catch (err) {
+            r.note = err.message; r.title = err.data?.title || "";
+            status.className = "status bad"; status.textContent = `✗ ${err.message}`;
+          }
+          card.querySelector(".title").textContent = r.title;
+          refresh(sec, s);
+        });
+      }
+    }
+    // strictly one at a time
+    const queue = [...jobs];
+    while (queue.length) await queue.shift()();
+    const okStreams = new Set(results.filter((r) => r.ok).map((r) => r.stream.id)).size;
+    const active = window.PEEK_STREAMS.filter((s) => !s.paused).length;
+    $("summary").textContent = `${okStreams} of ${active} active views have a working source${active < window.PEEK_STREAMS.length ? ` (${window.PEEK_STREAMS.length - active} paused)` : ""}.`;
+  }
+
+  function refresh(sec, s) {
+    const mine = results.filter((r) => r.stream === s);
+    const v = sec.querySelector(".verdict");
+    if (mine.some((r) => r.ok)) { v.className = "verdict ok"; v.textContent = "working"; }
+    else if (mine.every((r) => r.note)) { v.className = "verdict bad"; v.textContent = "broken"; }
+  }
+
+  $("copy").onclick = async () => {
+    const lines = [`Peek stream check, ${new Date().toISOString()}`];
+    for (const s of window.PEEK_STREAMS) {
+      const mine = results.filter((r) => r.stream === s);
+      lines.push(`${mine.some((r) => r.ok) ? "OK " : "BAD"} ${s.id}`);
+      mine.forEach((r) => lines.push(`    ${r.ok ? "✓" : "✗"} ${PeekPlayer.label(r.cand)}: ${r.note || "pending"}${r.title ? ` | ${r.title}` : ""}`));
+    }
+    try { await navigator.clipboard.writeText(lines.join("\n")); $("copy").textContent = "Copied ✓"; }
+    catch { prompt("Copy this:", lines.join("\n")); }
+    setTimeout(() => ($("copy").textContent = "Copy report"), 2000);
+  };
+  $("rerun").onclick = run;
+  run();
+})();
+</script>
+</body>
+</html>

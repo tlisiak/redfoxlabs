@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peek</title>
+<meta name="description" content="Live windows on the world, wherever the sun is shining right now.">
+<!-- YouTube embeds fail with Error 153 without a referrer -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Josefin+Sans:wght@500;600;700&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Vintage travel poster: flat printing inks on poster stock, condensed deco capitals,
+     ticket stubs and postmarks. The live view is always a clean 16:9 window in a poster frame.
+     YouTube's embed rules: nothing may sit in front of the player, crop it, filter it or block
+     its links, and only one player may autoplay, only once it's visible. So every control and
+     the info card live around the frame, never on it. */
+  :root {
+    --cream: #f1e4c6;      /* poster stock */
+    --cream-2: #e7d5ae;    /* aged stock, tickets */
+    --navy: #1e2b45;       /* key-line ink */
+    --navy-deep: #141d31;
+    --sun: #e1552c;        /* vermilion */
+    --gold: #f0a830;       /* marigold */
+    --teal: #2b7a74;
+    --sky: #9fcad3;
+    --ink-soft: #55607a;
+    --display: "Big Shoulders Display", "Oswald", "Arial Narrow", Impact, sans-serif;
+    --label: "Josefin Sans", "Futura", "Century Gothic", "Avenir", sans-serif;
+    --body: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
+    --panel-w: 390px;
+    /* poster frame around the live view on the landing page */
+    --fx: max(28px, calc((100vw - 1180px) / 2));
+    --ft: 74px;
+    --fb: clamp(190px, 27vh, 250px);
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body { background: var(--cream); color: var(--navy); font: 15px/1.55 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  /* paper grain over everything printed */
+  /* paper grain sits under the frame (z 0), never over the video */
+  .grain { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .28; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .12 0 0 0 0 .1 0 0 0 0 .08 0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* ---------- the frame ---------- */
+  /* Positioned by layout() as an exact 16:9 box; it glides between the poster and viewing spots. */
+  .stage {
+    position: fixed; z-index: 1; overflow: hidden; background: var(--sky);
+    border: 3px solid var(--navy); border-radius: 4px; box-sizing: content-box;
+    box-shadow: 0 0 0 7px var(--cream), 0 0 0 10px var(--navy);
+    transition: left .9s cubic-bezier(.6,0,.2,1), top .9s cubic-bezier(.6,0,.2,1), width .9s cubic-bezier(.6,0,.2,1), height .9s cubic-bezier(.6,0,.2,1);
+  }
+  /* painted scene behind the player: what the frame shows while tuning in, or without a stream */
+  .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .tuning {
+    position: absolute; left: 50%; top: 18%; transform: translateX(-50%); white-space: nowrap;
+    padding: 7px 12px 6px; background: var(--navy); color: var(--cream);
+    font: 700 11px/1 var(--label); letter-spacing: .24em; text-transform: uppercase;
+  }
+  .tuning:empty { display: none; }
+  .layer { position: absolute; inset: 0; }
+  .layer iframe, .layer .yt-slot { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- landing poster ---------- */
+  .landing { position: fixed; inset: 0; z-index: 2; pointer-events: none; transition: opacity .5s ease; }
+  .landing > * { pointer-events: auto; }
+  .landing.gone { opacity: 0; }
+  .landing.gone > * { pointer-events: none; }
+  .topline {
+    position: absolute; top: 0; left: var(--fx); right: var(--fx); height: var(--ft);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    font: 700 13px/1 var(--label); letter-spacing: .32em; text-transform: uppercase; padding-top: 4px;
+  }
+  .topline .mid { display: flex; align-items: center; gap: 14px; }
+  .topline .star { color: var(--sun); letter-spacing: 0; font-size: 15px; }
+  .topline .side { color: var(--ink-soft); letter-spacing: .24em; font-size: 11px; }
+  .poster-foot {
+    position: absolute; left: var(--fx); right: var(--fx); bottom: 0; height: var(--fb);
+    display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px 40px; padding-top: 6px;
+  }
+  .wordmark {
+    font: 900 clamp(110px, 16vw, 200px)/.8 var(--display); letter-spacing: .01em; color: var(--navy);
+    text-shadow: 6px 6px 0 var(--sun); margin-top: -.08em;
+  }
+  .pitch { display: grid; gap: 14px; justify-items: start; max-width: 460px; }
+  .tagline { font: 600 clamp(17px, 1.7vw, 20px)/1.35 var(--body); text-wrap: balance; }
+  .cta {
+    display: inline-flex; align-items: stretch; color: var(--cream); filter: drop-shadow(4px 4px 0 var(--navy));
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .cta:hover { transform: translate(-1px, -1px); filter: drop-shadow(6px 6px 0 var(--navy)); }
+  .cta:active { transform: translate(2px, 2px); filter: drop-shadow(1px 1px 0 var(--navy)); }
+  .cta .main, .cta .stub {
+    background: var(--sun);
+    -webkit-mask: radial-gradient(circle 7px at 0 50%, transparent 6.5px, #000 7px) left / 51% 100% no-repeat, radial-gradient(circle 7px at 100% 50%, transparent 6.5px, #000 7px) right / 51% 100% no-repeat;
+            mask: radial-gradient(circle 7px at 0 50%, transparent 6.5px, #000 7px) left / 51% 100% no-repeat, radial-gradient(circle 7px at 100% 50%, transparent 6.5px, #000 7px) right / 51% 100% no-repeat;
+  }
+  .cta .sm { display: none; }
+  .cta .main { white-space: nowrap; padding: 14px 26px 12px 30px; font: 900 30px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; }
+  .cta .stub { padding: 10px 18px 8px 16px; display: grid; place-items: center; border-left: 2px dashed rgba(241,228,198,.7);
+    font: 700 10px/1.25 var(--label); letter-spacing: .22em; text-transform: uppercase; text-align: center; }
+  .fine { font: 600 11px/1.4 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+  .fine b { color: var(--sun); font-weight: 700; }
+
+  /* ---------- wormhole ---------- */
+  #wormhole { position: fixed; inset: 0; z-index: 5; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity .45s ease; }
+  #wormhole.on { opacity: 1; }
+
+  /* ---------- viewing chrome ---------- */
+  .chrome { position: fixed; inset: 0; z-index: 4; pointer-events: none; opacity: 0; transition: opacity .6s ease .2s; }
+  .chrome.on { opacity: 1; }
+  .chrome.on > * { pointer-events: auto; }
+  .mini-mark { position: absolute; top: 14px; left: 24px; font: 900 44px/1 var(--display); letter-spacing: .02em; color: var(--navy); text-shadow: 3px 3px 0 var(--sun); }
+  /* controls dock just below the frame */
+  .dock { position: absolute; left: var(--stage-left, 24px); top: calc(var(--stage-bottom, 70vh) + 24px); display: flex; align-items: center; gap: 18px; }
+  .again { position: relative; }
+  .again .main { font-size: 22px; padding: 12px 20px 10px 22px; }
+  .again .stub { font-size: 9px; padding: 8px 14px 6px 12px; }
+  .sound {
+    width: 46px; height: 46px; border-radius: 50%; flex: none;
+    display: grid; place-items: center; background: var(--cream); color: var(--navy); border: 2px solid var(--navy); box-shadow: 3px 3px 0 var(--navy);
+  }
+
+  .panel {
+    position: absolute; top: 16px; right: 16px; bottom: 16px; width: var(--panel-w);
+    background: var(--cream); color: var(--navy); border: 3px solid var(--navy); border-radius: 6px;
+    box-shadow: 6px 6px 0 rgba(20,29,49,.55);
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .panel-head { position: relative; padding: 18px 20px 16px; background: var(--navy); color: var(--cream); }
+  .eyebrow { display: flex; align-items: center; gap: 10px; font: 700 11px/1 var(--label); letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+  .live { display: inline-flex; align-items: center; gap: 6px; padding: 4px 7px 3px; background: var(--sun); color: var(--cream); letter-spacing: .18em; }
+  .live i { width: 6px; height: 6px; border-radius: 50%; background: var(--cream); animation: blink 1.6s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .p-name { font: 900 40px/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 12px 0 8px; text-wrap: balance; }
+  .p-place { font: 600 12px/1.4 var(--label); letter-spacing: .18em; text-transform: uppercase; color: rgba(241,228,198,.8); }
+  .ticket-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 2px dashed var(--navy); }
+  .postmark {
+    width: 92px; height: 92px; border-radius: 50%; border: 3px double var(--sun); color: var(--sun);
+    display: grid; place-items: center; align-content: center; gap: 2px; text-align: center; transform: rotate(-8deg);
+  }
+  .postmark small { font: 700 8.5px/1.1 var(--label); letter-spacing: .14em; text-transform: uppercase; max-width: 70px; overflow-wrap: anywhere; }
+  .postmark strong { font: 900 25px/1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+  .stats { display: grid; gap: 8px; min-width: 0; }
+  .stat { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; align-items: baseline; }
+  .stat small { font: 700 10px/1.2 var(--label); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }
+  .stat span { font: 600 14px/1.3 var(--body); font-variant-numeric: tabular-nums; min-width: 0; }
+  .stat a { text-decoration: none; border-bottom: 1px solid var(--sun); }
+  .panel-body { overflow-y: auto; padding: 4px 20px 20px; scrollbar-width: thin; scrollbar-color: var(--navy) transparent; }
+  .headline { font: italic 400 17px/1.45 var(--body); margin: 16px 0 2px; }
+  .sec { margin-top: 18px; }
+  .sec h3 { display: flex; align-items: center; gap: 10px; font: 700 11px/1 var(--label); letter-spacing: .24em; text-transform: uppercase; color: var(--sun); margin-bottom: 8px; }
+  .sec h3::after { content: ""; flex: 1; height: 2px; background: var(--sun); opacity: .35; }
+  .sec p { color: var(--navy); }
+  .sec ul { list-style: none; display: grid; gap: 6px; }
+  .sec li { padding-left: 18px; position: relative; }
+  .sec li::before { content: "✦"; position: absolute; left: 0; top: 0; font-size: 11px; color: var(--teal); }
+  .credit { margin-top: 22px; padding-top: 12px; border-top: 2px dashed var(--navy); font-size: 12px; color: var(--ink-soft); display: grid; gap: 6px; }
+  .credit a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--sun); }
+
+  .toast {
+    position: fixed; z-index: 7; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-2deg); max-width: min(420px, calc(100vw - 32px));
+    padding: 18px 22px; background: var(--cream); color: var(--navy); border: 3px solid var(--navy); box-shadow: 6px 6px 0 var(--sun);
+    font: 600 16px/1.4 var(--body); text-align: center; display: none;
+  }
+  .toast.on { display: block; }
+
+  /* ---------- phones: frame on top, poster type / info card below it ---------- */
+  @media (max-width: 760px) {
+    :root { --fx: 16px; --ft: 54px; --fb: 290px; }
+    .topline .side { display: none; }
+    .topline { justify-content: center; font-size: 11px; letter-spacing: .26em; }
+    .poster-foot { top: calc(var(--stage-bottom, 300px) + 30px); bottom: auto; height: auto; grid-template-columns: 1fr; gap: 12px; }
+    .wordmark { font-size: 96px; text-shadow: 4px 4px 0 var(--sun); }
+    .tagline { font-size: 16px; }
+    .cta .main { font-size: 26px; }
+    .panel { top: calc(var(--stage-bottom, 300px) + 22px); left: 12px; right: 12px; bottom: 12px; width: auto; }
+    .panel-head { padding: 14px 16px 12px; }
+    .p-name { font-size: 30px; margin-top: 8px; }
+    .ticket-row { grid-template-columns: 76px minmax(0, 1fr); padding: 12px 16px; }
+    .postmark { width: 76px; height: 76px; }
+    .postmark strong { font-size: 20px; }
+    .panel-body { padding: 4px 16px 16px; }
+    .dock { left: auto; right: 12px; top: 10px; gap: 10px; }
+    .again .stub, .again .lg { display: none; }
+    .again .sm { display: inline; }
+    .again .main { -webkit-mask: none; mask: none; font-size: 18px; padding: 10px 14px 8px; }
+    .mini-mark { top: 12px; left: 14px; font-size: 32px; }
+    .sound { width: 40px; height: 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stage { transition: none; }
+    .live i { animation: none; }
+  }
+</style>
+</head>
+<body class="on-landing">
+<div class="grain" aria-hidden="true"></div>
+
+<div class="stage" id="stage">
+  <svg class="scene" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="1200" height="600" fill="var(--sky)"/>
+    <g transform="translate(600 420)" fill="var(--gold)" opacity=".5">
+      <path id="ray" d="M0 0 L-28 -900 L28 -900 Z"/>
+      <use href="#ray" transform="rotate(15)"/><use href="#ray" transform="rotate(30)"/><use href="#ray" transform="rotate(45)"/><use href="#ray" transform="rotate(60)"/><use href="#ray" transform="rotate(75)"/><use href="#ray" transform="rotate(90)"/>
+      <use href="#ray" transform="rotate(-15)"/><use href="#ray" transform="rotate(-30)"/><use href="#ray" transform="rotate(-45)"/><use href="#ray" transform="rotate(-60)"/><use href="#ray" transform="rotate(-75)"/><use href="#ray" transform="rotate(-90)"/>
+    </g>
+    <circle cx="600" cy="420" r="120" fill="var(--sun)"/>
+    <path d="M0 360 L170 220 L300 320 L470 170 L640 330 L790 230 L950 330 L1080 250 L1200 300 L1200 600 L0 600 Z" fill="var(--teal)"/>
+    <path d="M0 470 C200 420 330 500 520 455 C720 410 860 490 1040 450 C1110 435 1170 440 1200 442 L1200 600 L0 600 Z" fill="var(--navy)"/>
+  </svg>
+  <div class="tuning" id="tuning"></div>
+</div>
+
+<section class="landing" id="landing">
+  <div class="topline">
+    <span class="side">Live views</span>
+    <span class="mid"><span class="star">★</span>Windows on the world<span class="star">★</span></span>
+    <span class="side">Daylight only</span>
+  </div>
+  <div class="poster-foot">
+    <h1 class="wordmark">PEEK</h1>
+    <div class="pitch">
+      <p class="tagline">A live window somewhere beautiful on Earth, wherever the sun is shining right now.</p>
+      <button class="cta" id="peekBtn"><span class="main">Take a peek</span><span class="stub">Admit<br>one</span></button>
+      <p class="fine" id="countLine"></p>
+    </div>
+  </div>
+</section>
+
+<canvas id="wormhole"></canvas>
+
+<div class="chrome" id="chrome">
+  <button class="mini-mark" id="home" aria-label="Back to start">PEEK</button>
+  <div class="dock">
+    <button class="cta again" id="againBtn"><span class="main"><span class="lg">Peek somewhere else</span><span class="sm">Peek again</span></span><span class="stub">Space</span></button>
+    <button class="sound" id="soundBtn" aria-label="Toggle sound" title="Sound"></button>
+  </div>
+  <aside class="panel" id="panel" aria-live="polite">
+    <header class="panel-head" id="panelHead">
+      <div class="eyebrow"><span class="live"><i></i>Live</span>Now arriving</div>
+      <h2 class="p-name" id="pName"></h2>
+      <div class="p-place" id="pPlace"></div>
+    </header>
+    <div class="ticket-row">
+      <div class="postmark" aria-label="Local time"><small id="pmPlace"></small><strong id="sTime">–</strong><small id="pmDate"></small></div>
+      <div class="stats">
+        <div class="stat"><small>Weather</small><span id="sWeather">–</span></div>
+        <div class="stat"><small>Sun</small><span id="sSun">–</span></div>
+        <div class="stat"><small>Bearing</small><span id="sCoords">–</span></div>
+      </div>
+    </div>
+    <div class="panel-body" id="panelBody"></div>
+  </aside>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="streams.js"></script>
+<script src="player.js"></script>
+<script>
+(() => {
+  const STREAMS = window.PEEK_STREAMS;
+  const MIN_WORMHOLE_MS = 1900;   // the trip should feel like a trip, even on fast loads
+  const LOAD_TIMEOUT_MS = 7000;   // per source; give up on one that won't start and try the next
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (id) => document.getElementById(id);
+
+  // ---------------------------------------------------------------- sun math
+  // Solar altitude in degrees for a given instant and place (low-precision almanac, ±0.5°).
+  function sunAltitude(date, lat, lng) {
+    const rad = Math.PI / 180;
+    const d = date.getTime() / 86400000 - 10957.5;            // days since J2000.0
+    const g = (357.529 + 0.98560028 * d) * rad;                // mean anomaly
+    const q = 280.459 + 0.98564736 * d;                        // mean longitude
+    const L = (q + 1.915 * Math.sin(g) + 0.02 * Math.sin(2 * g)) * rad;
+    const e = (23.439 - 0.00000036 * d) * rad;                 // obliquity
+    const ra = Math.atan2(Math.cos(e) * Math.sin(L), Math.cos(L));
+    const dec = Math.asin(Math.sin(e) * Math.sin(L));
+    const gmst = (18.697374558 + 24.06570982441908 * d) % 24;
+    const ha = (gmst * 15 + lng) * rad - ra;                   // local hour angle
+    return Math.asin(Math.sin(lat * rad) * Math.sin(dec) + Math.cos(lat * rad) * Math.cos(dec) * Math.cos(ha)) / rad;
+  }
+  // Minutes until the sun next crosses the horizon, scanning ahead in 2-minute steps.
+  function nextSunEvent(lat, lng) {
+    const now = Date.now(), up = sunAltitude(new Date(now), lat, lng) > -0.833;
+    for (let m = 2; m <= 36 * 60; m += 2) {
+      if ((sunAltitude(new Date(now + m * 60000), lat, lng) > -0.833) !== up) return { up, minutes: m };
+    }
+    return { up, minutes: null };                              // polar day or night
+  }
+  const fmtDur = (m) => (m >= 60 ? `${Math.floor(m / 60)}h ${m % 60}m` : `${m}m`);
+  const localHour = (tz) => Number(new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(new Date()));
+  const localTime = (tz) => new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit" }).format(new Date());
+
+  // ---------------------------------------------------------------- picking a view
+  // A view is eligible when it's worth looking at right now: inside its camera hours,
+  // or with the sun no more than 6° below the horizon (civil twilight counts, it's gorgeous).
+  // Golden hour gets triple weight.
+  const recent = [];
+  function eligible(s) {
+    if (s.hours) { const h = localHour(s.tz); return h >= s.hours[0] && h < s.hours[1]; }
+    return s.night || sunAltitude(new Date(), s.lat, s.lng) > -6;
+  }
+  function weight(s) {
+    const alt = sunAltitude(new Date(), s.lat, s.lng);
+    return alt > -6 && alt < 10 ? 3 : 1;
+  }
+  function pick(exclude = []) {
+    let pool = STREAMS.filter((s) => eligible(s) && !exclude.includes(s.id));
+    pool = pool.filter((s) => !s.paused || PeekPlayer.looksAlive(s));
+    const alive = pool.filter(PeekPlayer.looksAlive);
+    if (alive.length) pool = alive;
+    const fresh = pool.filter((s) => !recent.includes(s.id));
+    if (fresh.length) pool = fresh;
+    if (!pool.length) pool = STREAMS.filter((s) => !s.paused && !exclude.includes(s.id));
+    if (!pool.length) return null;
+    const total = pool.reduce((t, s) => t + weight(s), 0);
+    let r = Math.random() * total;
+    for (const s of pool) { r -= weight(s); if (r <= 0) return s; }
+    return pool[pool.length - 1];
+  }
+  function remember(id) { recent.push(id); while (recent.length > Math.min(4, STREAMS.length - 1)) recent.shift(); }
+
+  // ---------------------------------------------------------------- YouTube players
+  // Mounts the stream into the (visible) frame and resolves with { layer, player } once one of
+  // its sources is actually playing live and on target. Falls through backup IDs and the channel
+  // embed. The player is only ever created where it can be seen, as YouTube's autoplay rules require.
+  async function loadStream(stream) {
+    for (const cand of PeekPlayer.candidates(stream)) {
+      const layer = document.createElement("div");
+      layer.className = "layer";
+      $("stage").appendChild(layer);
+      try {
+        const { player } = await PeekPlayer.mount(layer, cand, { timeout: LOAD_TIMEOUT_MS, expect: stream.expect });
+        return { layer, player };
+      } catch (err) {
+        layer.remove();
+        console.warn(`[peek] ${stream.id}: ${PeekPlayer.label(cand)} failed (${err.message})`);
+      }
+    }
+    throw new Error("no working source");
+  }
+  function retire(view) {
+    if (!view) return;
+    try { view.player.destroy(); } catch {}
+    view.layer.remove();
+  }
+
+  // ---------------------------------------------------------------- the frame
+  // The frame is always an exact 16:9 box (so the player is never cropped), placed in the
+  // poster on the landing page, or beside the info card while viewing.
+  let mode = "landing";
+  function frameBox() {
+    const W = innerWidth, H = innerHeight, phone = W <= 760;
+    let b;
+    if (mode === "landing") {
+      const fx = phone ? 24 : Math.max(28, (W - 1180) / 2), ft = phone ? 58 : 74;
+      const fb = phone ? Math.max(300, H * 0.42) : Math.min(250, Math.max(190, H * 0.27));
+      b = { x: fx, y: ft, w: W - 2 * fx, h: H - ft - fb, top: phone };
+    } else if (phone) {
+      b = { x: 22, y: 72, w: W - 44, h: (W - 44) * 9 / 16, top: true };
+    } else {
+      b = { x: 34, y: 86, w: W - 390 - 16 - 34 - 44, h: H - 86 - 110, top: false };
+    }
+    const w = Math.max(200, Math.min(b.w, b.h * 16 / 9)), h = w * 9 / 16;
+    return { x: b.x + (b.w - w) / 2, y: b.top ? b.y : b.y + Math.max(0, (b.h - h) / 2), w, h };
+  }
+  function layout() {
+    const r = frameBox(), st = $("stage").style, root = document.documentElement.style;
+    st.left = r.x + "px"; st.top = r.y + "px"; st.width = r.w + "px"; st.height = r.h + "px";
+    root.setProperty("--stage-left", r.x - 3 + "px");
+    root.setProperty("--stage-bottom", r.y + r.h + 13 + "px");   // past the border and double rule
+  }
+  addEventListener("resize", layout);
+
+  // ---------------------------------------------------------------- wormhole
+  // A minimal tunnel: particles stream toward the viewer from a vanishing point,
+  // drawn as streaks whose length grows with speed. Speed eases up, then the
+  // tunnel collapses into a flash while the destination irises open.
+  const canvas = $("wormhole"), ctx = canvas.getContext("2d");
+  let W, H, DPR, stars = [], warp = { running: false, speed: 0, target: 0, raf: 0 };
+  function resize() {
+    DPR = Math.min(devicePixelRatio || 1, 2);
+    W = canvas.width = innerWidth * DPR; H = canvas.height = innerHeight * DPR;
+  }
+  function seed() {
+    stars = Array.from({ length: 520 }, () => ({ a: Math.random() * Math.PI * 2, r: 0.15 + Math.random() * 0.85, z: Math.random(), pz: 0 }));
+  }
+  function frame() {
+    warp.speed += (warp.target - warp.speed) * 0.045;
+    ctx.fillStyle = `rgba(20,29,49,${0.32 - Math.min(warp.speed, 0.05) * 2})`;
+    ctx.fillRect(0, 0, W, H);
+    const cx = W / 2, cy = H / 2, R = Math.max(W, H) * 0.62, t = performance.now() / 1000;
+    // faint rings receding into the throat
+    ctx.lineWidth = 1 * DPR;
+    for (let i = 0; i < 7; i++) {
+      const z = ((i / 7 + t * warp.speed * 1.4) % 1);
+      const rr = (R * 0.08) / Math.max(1 - z, 0.03);
+      ctx.strokeStyle = `rgba(225,85,44,${0.14 * z})`;
+      ctx.beginPath(); ctx.arc(cx, cy, rr, 0, Math.PI * 2); ctx.stroke();
+    }
+    for (const s of stars) {
+      s.pz = s.z;
+      s.z += warp.speed * (0.6 + s.r * 0.4);
+      if (s.z >= 1) { s.z = s.pz = Math.random() * 0.2; s.a = Math.random() * Math.PI * 2; }
+      const swirl = t * 0.25;
+      const p = (z) => (R * 0.06 * s.r) / Math.max(1 - z, 0.02);
+      const r0 = p(s.pz), r1 = p(s.z);
+      const ang = s.a + swirl;
+      const x0 = cx + Math.cos(ang) * r0, y0 = cy + Math.sin(ang) * r0;
+      const x1 = cx + Math.cos(ang) * r1, y1 = cy + Math.sin(ang) * r1;
+      ctx.strokeStyle = s.r > 0.86 ? `rgba(240,168,48,${Math.min(1, s.z * 1.3)})` : `rgba(241,228,198,${Math.min(1, s.z * 1.3)})`;
+      ctx.lineWidth = (0.6 + s.z * 1.8) * DPR;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    }
+    // soft glow in the throat
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.25);
+    g.addColorStop(0, `rgba(240,168,48,${0.1 + warp.speed * 1.4})`);
+    g.addColorStop(1, "rgba(240,168,48,0)");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    if (warp.running) warp.raf = requestAnimationFrame(frame);
+  }
+  function wormholeIn() {
+    if (reducedMotion) { canvas.classList.add("on"); ctx.fillStyle = "#141d31"; ctx.fillRect(0, 0, W, H); return; }
+    resize(); seed();
+    ctx.fillStyle = "#141d31"; ctx.fillRect(0, 0, W, H);
+    warp.running = true; warp.speed = 0.002; warp.target = 0.018;
+    cancelAnimationFrame(warp.raf); frame();
+    canvas.classList.add("on");
+  }
+  function wormholeOut() {
+    warp.target = 0.06;                                         // final lunge
+    setTimeout(() => canvas.classList.remove("on"), 260);
+    setTimeout(() => { warp.running = false; cancelAnimationFrame(warp.raf); }, 800);
+  }
+  addEventListener("resize", () => { if (warp.running) resize(); });
+
+  // ---------------------------------------------------------------- info panel
+  let current = null, clockTimer = 0;
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function renderPanel(s) {
+    $("pName").textContent = s.name;
+    $("pPlace").textContent = `${s.place} · ${s.country}`;
+    $("pmPlace").textContent = s.country;
+    const ns = s.lat >= 0 ? "N" : "S", ew = s.lng >= 0 ? "E" : "W";
+    $("sCoords").innerHTML = `<a href="https://www.google.com/maps/@${s.lat},${s.lng},12z" target="_blank" rel="noopener" style="text-decoration:none">${Math.abs(s.lat).toFixed(2)}°${ns}, ${Math.abs(s.lng).toFixed(2)}°${ew}</a>`;
+    $("sWeather").textContent = "–";
+    const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
+    $("panelBody").innerHTML = `
+      <p class="headline">${esc(s.headline)}</p>
+      <div class="sec"><h3>What you're looking at</h3><p>${esc(s.looking)}</p></div>
+      <div class="sec"><h3>Watch for</h3>${list(s.watchFor)}</div>
+      <div class="sec"><h3>The story</h3><p>${esc(s.history)}</p></div>
+      ${s.facts?.length ? `<div class="sec"><h3>Worth knowing</h3>${list(s.facts)}</div>` : ""}
+      <div class="credit">
+        <div>Live stream by <a href="${s.credit.url}" target="_blank" rel="noopener">${esc(s.credit.name)}</a></div>
+        <div>Sources: ${s.sources.map((x) => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
+      </div>`;
+    $("panelBody").scrollTop = 0;
+    tick();
+    clearInterval(clockTimer); clockTimer = setInterval(tick, 20000);
+    loadWeather(s);
+  }
+  function tick() {
+    if (!current) return;
+    const s = current;
+    $("sTime").textContent = localTime(s.tz).replace(/\s?[AP]M$/, "");
+    $("pmDate").textContent = new Intl.DateTimeFormat("en-GB", { timeZone: s.tz, day: "numeric", month: "short", hour: "numeric", hourCycle: "h12" }).formatToParts(new Date())
+      .filter((p) => ["day", "month", "dayPeriod"].includes(p.type)).map((p) => p.value.toUpperCase()).join(" ");
+    const ev = nextSunEvent(s.lat, s.lng);
+    $("sSun").textContent = ev.minutes == null ? (ev.up ? "Up all day" : "Down all day") : `${ev.up ? "Sets" : "Rises"} in ${fmtDur(ev.minutes)}`;
+  }
+  // WMO weather codes → words (Open-Meteo uses them)
+  const WMO = { 0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast", 45: "Fog", 48: "Fog", 51: "Drizzle", 53: "Drizzle", 55: "Drizzle", 61: "Light rain", 63: "Rain", 65: "Heavy rain", 71: "Light snow", 73: "Snow", 75: "Heavy snow", 77: "Snow", 80: "Showers", 81: "Showers", 82: "Downpour", 85: "Snow showers", 86: "Snow showers", 95: "Thunderstorm", 96: "Thunderstorm", 99: "Thunderstorm" };
+  async function loadWeather(s) {
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${s.lat}&longitude=${s.lng}&current=temperature_2m,weather_code&temperature_unit=fahrenheit`;
+      const res = await fetch(url);
+      const j = await res.json();
+      if (current !== s) return;
+      const f = Math.round(j.current.temperature_2m), c = Math.round((f - 32) * 5 / 9);
+      $("sWeather").textContent = `${f}°F · ${WMO[j.current.weather_code] ?? ""}`.replace(/ · $/, "");
+      $("sWeather").title = `${c}°C`;
+    } catch { /* weather is a nice-to-have */ }
+  }
+
+  // ---------------------------------------------------------------- sound
+  // Browsers only allow audible autoplay after a gesture. The "Take a peek" click counts,
+  // so we try to unmute; if the browser pushes back, we stay muted and the toggle shows it.
+  let wantSound = true;
+  const ICON_ON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13"/></svg>';
+  const ICON_OFF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>';
+  function applySound() {
+    const p = active?.player;
+    if (!p?.isMuted) return;
+    if (wantSound) { p.unMute(); p.setVolume(70); } else p.mute();
+    setTimeout(() => {
+      if (wantSound && p.getPlayerState?.() !== YT.PlayerState.PLAYING) { p.mute(); p.playVideo(); wantSound = false; }
+      $("soundBtn").innerHTML = wantSound ? ICON_ON : ICON_OFF;
+    }, 700);
+    $("soundBtn").innerHTML = wantSound ? ICON_ON : ICON_OFF;
+  }
+  $("soundBtn").onclick = () => { wantSound = !wantSound; applySound(); };
+
+  // ---------------------------------------------------------------- the trip
+  // One player at a time: the current view is retired before the wormhole, the frame moves
+  // while the wormhole covers the page, and the next stream mounts only once the frame is
+  // visible again (over the painted "tuning in" scene).
+  let active = null, bg = null, busy = false, onLanding = true;
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  function clearPanel() {
+    current = null;
+    $("pName").textContent = "Finding a window…";
+    ["pPlace", "pmPlace", "pmDate", "panelBody"].forEach((id) => ($(id).textContent = ""));
+    ["sTime", "sWeather", "sSun", "sCoords"].forEach((id) => ($(id).textContent = "–"));
+  }
+  async function peek() {
+    if (busy) return;
+    busy = true;
+    const tried = [active?.stream.id, bg?.stream.id].filter(Boolean);
+    retire(active); retire(bg); active = bg = null;
+    wormholeIn();
+    $("landing").classList.add("gone");
+    document.body.classList.remove("on-landing");
+    $("chrome").classList.remove("on");
+    $("toast").classList.remove("on");
+    $("tuning").textContent = "";
+    mode = "view"; layout(); clearPanel();
+    await sleep(MIN_WORMHOLE_MS);
+    wormholeOut();
+    $("chrome").classList.add("on");
+    onLanding = false;
+
+    let next = null, loaded = null;
+    for (let attempt = 0; attempt < 4 && !loaded; attempt++) {
+      next = pick(tried);
+      if (!next) break;
+      tried.push(next.id);
+      $("tuning").textContent = `Tuning in · ${next.country}`;
+      try { loaded = await loadStream(next); }
+      catch (err) { console.warn(`[peek] skipping ${next.id}:`, err.message); }
+    }
+    $("tuning").textContent = "";
+    if (!loaded) {
+      $("toast").textContent = "Every window we tried was fogged over. Try again in a moment.";
+      $("toast").classList.add("on");
+      busy = false;
+      setTimeout(goHome, 3500);
+      return;
+    }
+    active = { stream: next, ...loaded };
+    current = next;
+    remember(next.id);
+    renderPanel(next);
+    applySound();
+    busy = false;
+  }
+
+  function goHome() {
+    if (busy) return;
+    $("toast").classList.remove("on");
+    $("chrome").classList.remove("on");
+    $("landing").classList.remove("gone");
+    document.body.classList.add("on-landing");
+    mode = "landing"; layout();
+    onLanding = true;
+    if (active) {   // the same player keeps playing, now as the poster's illustration
+      active.player.mute(); bg = active; active = null; current = null;
+      showCaption(bg.stream);
+    } else startBackground();
+  }
+
+  // ---------------------------------------------------------------- landing background
+  // The poster's illustration is a live view: one muted, daylight stream in the frame.
+  function showCaption(s) {
+    $("countLine").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)} · ${countText}`;
+  }
+  async function startBackground() {
+    await PeekPlayer.statusReady;
+    const s = pick();
+    if (!s || !onLanding) return;
+    try {
+      const loaded = await loadStream(s);
+      if (!onLanding || bg || active) { retire(loaded); return; }   // the visitor already left
+      bg = { stream: s, ...loaded };
+      showCaption(s);
+    } catch { /* the painted scene stays in the frame */ }
+  }
+
+  // ---------------------------------------------------------------- wiring
+  const showing = STREAMS.filter((s) => !s.paused);
+  const countText = `${showing.length} live views · ${new Set(showing.map((s) => s.country)).size} countries`;
+  $("countLine").textContent = countText;
+  $("peekBtn").onclick = peek;
+  $("againBtn").onclick = peek;
+  $("home").onclick = goHome;
+  addEventListener("keydown", (e) => {
+    if (e.target.closest("input,textarea")) return;
+    if (e.code === "Space" || (onLanding && e.code === "Enter")) { e.preventDefault(); peek(); }
+    if (e.code === "Escape" && !onLanding) goHome();
+  });
+  resize();
+  layout();
+  startBackground();
+})();
+</script>
+</body>
+</html>
