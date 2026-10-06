@@ -400,15 +400,15 @@ window.PEEK_STREAMS = [
     lat: -33.852,
     lng: 151.211,
     tz: "Australia/Sydney",
-    // Both IDs found in research (fwhOL-pDaG8, hhdI4mN6ueM) ended in Nov 2024.
-    source: {},
-    paused: "No current stream ID yet. Comes back when the stream check finds one on the channel.",
-    scout: ["@sydneylivecamera"],
+    // Old IDs fwhOL-pDaG8 and hhdI4mN6ueM ended Nov 2024. 5uZa3-RMFos is WebcamSydney 1, a fixed
+    // cam (WebcamSydney 2 pans), confirmed live and HD by the Data API on Oct 6 2026.
+    source: { videoIds: ["5uZa3-RMFos"] },
+    scout: ["@webcamsydney", "@sydneylivecamera"],
     expect: { title: ["Sydney"] },
-    credit: { name: "Sydney Live Camera", url: "https://www.youtube.com/@sydneylivecamera" },
+    credit: { name: "WebcamSydney", url: "https://webcamsydney.com/" },
     headline: "The bridge, the sails and the busiest harbour in the South Pacific.",
     looking:
-      "Sydney Harbour with the Harbour Bridge and the Opera House. One of the two cameras is a moving PTZ cam, so the view may pan across the city skyline.",
+      "A fixed camera looking across Sydney Harbour at the Opera House, Circular Quay, The Rocks and the Harbour Bridge. It has been streaming the harbour around the clock since 2015.",
     watchFor: [
       "Ferries crossing to Manly and Circular Quay",
       "Climbers walking the arch of the bridge",
@@ -676,6 +676,277 @@ window.PEEK_STREAMS = [
     sources: [
       { label: "explore.org: Fat Bear Week 2026", url: "https://www.morningstar.com/news/pr-newswire/20260922la53605/fat-bear-week-2026-brings-the-world-together-to-celebrate-wildlife-and-conservation" },
       { label: "NPS: Brooks Falls Bearcam", url: "https://www.nps.gov/katm/learn/photosmultimedia/brown-bear-salmon-cam-brooks-falls.htm" },
+    ],
+  },
+  {
+    id: "etosha",
+    name: "Okaukuejo Waterhole",
+    place: "Okaukuejo, Etosha National Park",
+    country: "Namibia",
+    lat: -19.18,
+    lng: 15.93,
+    tz: "Africa/Windhoek",
+    // Added Oct 6 2026; both confirmed live and HD by the Data API that day.
+    source: { videoIds: ["AeMUdOPFcXI", "JMMoRwYo5kE"] },
+    scout: ["UC9X6gGKDv2yhMoofoeS7-Gg", "UCfn4vrrgKXCCg3rxxLRGOvg"],
+    night: true,
+    expect: { title: ["Okaukuejo"] },
+    credit: { name: "NamibiaCam · Gondwana Collection, and Namibia Wildlife Resorts", url: "https://gondwana-collection.com/okaukuejo-live-stream" },
+    headline: "A floodlit waterhole where black rhino come to drink after dark.",
+    looking:
+      "The permanent waterhole at Okaukuejo, the first rest camp in Etosha and the park's administrative hub, 17 km from the southern gate. It's lit by floodlights at night, so the show carries on after sunset.",
+    watchFor: [
+      "Black rhino, which show up here remarkably often, mostly after dark",
+      "Family groups of elephant, plus giraffe, zebra and springbok",
+      "Lions coming in to drink alongside everything else",
+    ],
+    history:
+      "Okaukuejo started as a German military post in 1897, set up to help stop the rinderpest cattle plague. A fort followed in 1901, and the round tower in camp recalls it, though the current tower dates from 1963. In 1907 the governor of German South West Africa proclaimed the game reserve that became Etosha National Park.",
+    facts: [
+      "Etosha covers 22,270 km². The salt pan at its heart is about 120 km long and covers almost a quarter of the park.",
+      "'Etosha' means 'Great White Place' in Oshindonga, after the pan.",
+      "The Etosha Ecological Institute, the park's research centre, was founded at Okaukuejo in 1974.",
+    ],
+    sources: [
+      { label: "Wikipedia: Etosha National Park", url: "https://en.wikipedia.org/wiki/Etosha_National_Park" },
+      { label: "Wikipedia: Okaukuejo", url: "https://en.wikipedia.org/wiki/Okaukuejo" },
+      { label: "NWR: Okaukuejo waterhole live stream", url: "https://www.nwr.com.na/okaukuejo-waterhole-live-streaming-now-available-on-dstv/" },
+    ],
+  },
+  {
+    id: "maramara",
+    name: "Mara River Crossings",
+    place: "Mara Triangle, Maasai Mara",
+    country: "Kenya",
+    lat: -1.43,
+    lng: 35.04,
+    tz: "Africa/Nairobi",
+    // Added Oct 6 2026; all three confirmed live and HD by the Data API that day.
+    source: { videoIds: ["-7GOA9KIWcs", "BaEFc79IMCA", "Io1Kle7QR-E"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Mara"] },
+    credit: { name: "Africam · explore.org · Mara Conservancy", url: "https://explore.org/livecams/africam/mara-main-crossing" },
+    headline: "The river the Great Migration has to get across.",
+    looking:
+      "The Mara River in the Mara Triangle, the western part of the Maasai Mara. The cameras watch two well-known crossing points, Main Crossing and Fig Tree Crossing. Most of the year it's a quiet river full of crocodiles. From roughly July to October, the wildebeest arrive.",
+    watchFor: [
+      "Herds bunching up on the bank, sometimes for hours, before the first animal jumps",
+      "Nile crocodiles patrolling the water or lying still along the banks",
+      "Zebra crossing with the wildebeest, and hippos that were here all along",
+    ],
+    history:
+      "By the late 1990s the Mara Triangle was in bad shape, with broken roads, missing gate revenue and widespread poaching. In 2001 a not-for-profit, the Mara Conservancy, took over running it in partnership with the local council. These cameras went up in May 2026, a joint project of the Conservancy and explore.org.",
+    facts: [
+      "The Mara River rises on the Mau Escarpment and flows about 395 km to Lake Victoria, crossing from Kenya into Tanzania.",
+      "Over 1.2 million wildebeest move between the Serengeti and the Mara each year, along with hundreds of thousands of zebra.",
+      "The Mara Triangle covers about 510 km².",
+    ],
+    sources: [
+      { label: "explore.org: Mara Main Crossing cam", url: "https://explore.org/livecams/africam/mara-main-crossing" },
+      { label: "Mara Triangle: Our history", url: "https://www.maratriangle.org/history" },
+      { label: "Wikipedia: Mara River", url: "https://en.wikipedia.org/wiki/Mara_River" },
+    ],
+  },
+  {
+    id: "mpala",
+    name: "Mpala Waterhole & Hippo River",
+    place: "Mpala Research Centre, Laikipia",
+    country: "Kenya",
+    lat: 0.29,
+    lng: 36.9,
+    tz: "Africa/Nairobi",
+    // Added Oct 6 2026; both confirmed live by the Data API that day.
+    source: { videoIds: ["oORXfTviuCs", "7x5kRo1B84Y"] },
+    scout: ["UC-2KSeUU5SMCX6XLRD-AEvw"],
+    expect: { title: ["Mpala"] },
+    credit: { name: "Mpala Live! · explore.org", url: "https://explore.org/livecams/mpala" },
+    headline: "A research station's backyard, where hippos grunt and elephants come to drink.",
+    looking:
+      "One of two views at Mpala, about 50 km north of the Equator on the Laikipia Plateau, northwest of Mount Kenya. One camera watches a watering hole. The other pans across the hippo pools on the Ewaso Ng'iro River, from the fever trees up to a sandbank nicknamed 'Basking Beach'.",
+    watchFor: [
+      "Hippos in the pool. Their grunting is the soundtrack here",
+      "Reticulated giraffe and the rare Grevy's zebra, both specialties of this region",
+      "Elephants, baboons and vervet monkeys coming down to the water",
+    ],
+    history:
+      "Mpala is a working cattle ranch and a wildlife research centre on the same land. The research centre opened in 1994 as a Kenyan-US partnership between the Kenya Wildlife Service, the National Museums of Kenya, the Smithsonian and Princeton. Scientists come here to study how people, livestock and wildlife share the same ground.",
+    facts: [
+      "The property covers about 48,000 acres.",
+      "Hippos make a red-brown skin secretion, sometimes called 'blood sweat', that works as sunscreen and fights infection.",
+    ],
+    sources: [
+      { label: "Princeton: Mpala history and governance", url: "https://international.princeton.edu/mpala-research-centre/about-mpala/mpala-history-governance" },
+      { label: "explore.org: Mpala cams", url: "https://explore.org/livecams/mpala" },
+      { label: "Nature: Hippo sweat", url: "https://www.nature.com/news/2004/040524/full/news040524-7.html" },
+    ],
+  },
+  {
+    id: "djuma",
+    name: "Djuma Waterhole",
+    place: "Gowrie Dam, Djuma Game Reserve, Sabi Sand",
+    country: "South Africa",
+    lat: -24.73,
+    lng: 31.55,
+    tz: "Africa/Johannesburg",
+    // Added Oct 6 2026; confirmed live and HD by the Data API that day.
+    source: { videoIds: ["iUdDKf9aDUU"] },
+    scout: ["@djumacam"],
+    night: true,
+    expect: { title: ["Djuma"] },
+    credit: { name: "Djuma Cam", url: "https://www.djuma.com/djumacam" },
+    headline: "The waterhole where live wildlife cams began.",
+    looking:
+      "Gowrie Dam, a waterhole in Djuma Game Reserve, in the Sabi Sand next to Kruger National Park. The camera runs around the clock and switches to infrared after dark.",
+    watchFor: [
+      "Leopards, which the Sabi Sand is famous for",
+      "Elephant, buffalo and hippo at the water's edge",
+      "Hyenas and other night visitors on the infrared picture",
+    ],
+    history:
+      "On 17 August 1998, a small startup called Africam put the first live wildlife webcam on the internet here, with Djuma's owners, Jurie and Pippa Moolman. At first it posted a still JPEG that refreshed every 30 seconds. Within a few months the camera moved to overlook Gowrie Dam, and it has watched the same water ever since.",
+    facts: [
+      "Djuma is named after the roar of a lion.",
+      "The Sabi Sand was formed by its landowners in 1948 and shares an unfenced border with Kruger. The fences between them came down in 1993.",
+    ],
+    sources: [
+      { label: "Djuma: The Djuma Cam story", url: "https://www.djuma.com/about" },
+      { label: "Wikipedia: Djuma Game Reserve", url: "https://en.wikipedia.org/wiki/Djuma_Game_Reserve" },
+      { label: "Wikipedia: Sabi Sand Game Reserve", url: "https://en.wikipedia.org/wiki/Sabi_Sand_Game_Reserve" },
+    ],
+  },
+  {
+    id: "langebaan",
+    name: "Langebaan Lagoon",
+    place: "Pearly's, Langebaan, West Coast",
+    country: "South Africa",
+    lat: -33.09,
+    lng: 18.03,
+    tz: "Africa/Johannesburg",
+    // Added Oct 6 2026; confirmed live and HD by the Data API that day.
+    source: { videoIds: ["mxEholKv57A"] },
+    scout: ["@TableMountainLiveStream"],
+    expect: { title: ["Langebaan"] },
+    credit: { name: "Table Mountain Live Stream", url: "https://www.youtube.com/@TableMountainLiveStream" },
+    headline: "A salt-water lagoon where Arctic shorebirds spend the southern summer.",
+    looking:
+      "Langebaan Lagoon from the main beach in Langebaan, in front of Pearly's restaurant. The lagoon is about 16 km long and opens into Saldanha Bay to the north. No river flows into it. It's all sea water, and it's protected by West Coast National Park.",
+    watchFor: [
+      "Kitesurfers on the flat water on windy afternoons",
+      "Shorebirds feeding on the sand flats at low tide, mostly in the southern summer",
+      "Sunset over the lagoon. Pearly's beach is known for it",
+    ],
+    history:
+      "West Coast National Park was proclaimed in 1985 around the lagoon. In 1995, a set of fossil footprints turned up in the rock at Kraalbaai, across the water. Known as Eve's footprints, they are about 117,000 years old and are among the oldest known tracks of an anatomically modern human. The originals are now in a museum in Cape Town.",
+    facts: [
+      "The lagoon has been a Ramsar wetland of international importance since 1988.",
+      "Its tidal flats can hold up to 55,000 water birds in summer, many of them waders that breed in the Arctic, such as curlew sandpipers and knots.",
+    ],
+    sources: [
+      { label: "Wikipedia: West Coast National Park", url: "https://en.wikipedia.org/wiki/West_Coast_National_Park" },
+      { label: "SANParks: West Coast birds", url: "https://www.sanparks.org/parks/west-coast/explore/fauna-flora/birds" },
+      { label: "Wikipedia: Langebaan", url: "https://en.wikipedia.org/wiki/Langebaan" },
+    ],
+  },
+  {
+    id: "royalcam",
+    name: "Royal Albatross Nest",
+    place: "Pukekura / Taiaroa Head, Otago Peninsula",
+    country: "New Zealand",
+    lat: -45.774,
+    lng: 170.728,
+    tz: "Pacific/Auckland",
+    // Added Oct 6 2026; confirmed live and HD by the Data API that day. Older season IDs
+    // (LZ5Ja2mHgoA, fDhIv9iBzWk) have ended.
+    source: { videoIds: ["Mm_zVDDUeNA"] },
+    expect: { title: ["Albatross", "RoyalCam"] },
+    credit: { name: "NZ Department of Conservation · Cornell Lab", url: "https://www.allaboutbirds.org/cams/royal-albatross/" },
+    headline: "One albatross nest, on the only mainland colony of great albatrosses.",
+    looking:
+      "A northern royal albatross nest at the tip of the Otago Peninsula, near Dunedin. The cam follows one nest each season, with a new pair every year. Chicks fly in September, and the next egg comes around November, so between seasons you may see an empty nest and no bird at all.",
+    watchFor: [
+      "A parent landing after days at sea. With 3-metre wings, landings are not always graceful",
+      "The adults swapping turns on the egg, or flying in to feed the chick",
+      "The chick in its fluffy white down, sitting out the wind and rain alone",
+    ],
+    history:
+      "The first albatross egg here was found in 1919. Chicks kept dying until 1938, when the ornithologist Lance Richdale camped beside one nest to protect it. On 22 September 1938 he watched that chick fly, the first known to leave the headland. The Department of Conservation set up the cam in 2016, and the Cornell Lab of Ornithology joined in 2019.",
+    facts: [
+      "Northern royal albatrosses breed only in New Zealand and are listed as Endangered.",
+      "A pair raises one chick every two years. After a chick leaves, the parents spend a year at sea.",
+      "The colony had raised 500 chicks by 2007.",
+    ],
+    sources: [
+      { label: "Cornell Lab: Royal Albatross Cam", url: "https://www.allaboutbirds.org/cams/royal-albatross/" },
+      { label: "DOC: Royal albatross/toroa", url: "https://www.doc.govt.nz/nature/native-animals/birds/birds-a-z/albatrosses/royal-albatross-toroa/" },
+      { label: "Wikipedia: Taiaroa Head", url: "https://en.wikipedia.org/wiki/Taiaroa_Head" },
+    ],
+  },
+  {
+    id: "elkrefuge",
+    name: "National Elk Refuge",
+    place: "Jackson, Wyoming",
+    country: "United States",
+    lat: 43.51,
+    lng: -110.75,
+    tz: "America/Denver",
+    // Added Oct 6 2026; both confirmed live and HD by the Data API that day. Two SeeJH cams:
+    // National Museum of Wildlife Art, and Flat Creek Inn.
+    source: { videoIds: ["_2rvoH5oDcg", "kIZp6fUSpS0"] },
+    scout: ["@Seejh"],
+    expect: { title: ["Elk Refuge"] },
+    credit: { name: "SeeJH", url: "https://www.youtube.com/@Seejh" },
+    headline: "Where thousands of elk come down from the mountains to spend the winter.",
+    looking:
+      "The grasslands and marshes of the National Elk Refuge, just north of the town of Jackson. One camera is at the National Museum of Wildlife Art, on a butte above the refuge. The other is at the Flat Creek Inn. Elk come down after the first big snows and are easiest to see from mid-December to early April. In summer and fall the meadows can look empty.",
+    watchFor: [
+      "Elk herds spread across the snow in winter",
+      "Horse-drawn sleighs taking visitors out among the elk, mid-December to early April",
+      "Bison, and trumpeter swans on Flat Creek",
+    ],
+    history:
+      "Ranches and fences had cut the elk off from their old winter range. In the hard winters of 1909 to 1911, thousands starved. Locals raised money for hay, and the photographer Stephen Leek sent his pictures of dead and starving elk to newspapers and magazines. In 1912, Congress set aside $45,000 and created the refuge.",
+    facts: [
+      "The refuge covers about 24,700 acres and holds around 7,500 elk in an average winter.",
+      "Male elk shed their antlers here every spring. Since 1967, Boy Scouts have collected them for an auction in Jackson, and most of the money goes back to the refuge.",
+    ],
+    sources: [
+      { label: "USFWS: National Elk Refuge", url: "https://www.fws.gov/refuge/national-elk/about-us" },
+      { label: "Wikipedia: National Elk Refuge", url: "https://en.wikipedia.org/wiki/National_Elk_Refuge" },
+      { label: "Jackson Hole History: Elk Refuge 1912-2012", url: "https://jacksonholehistory.org/national-elk-refuge-1912-2012/" },
+    ],
+  },
+  {
+    id: "montereybay",
+    name: "Monterey Bay",
+    place: "Monterey Bay Aquarium decks, Cannery Row",
+    country: "United States",
+    lat: 36.6183,
+    lng: -121.9018,
+    tz: "America/Los_Angeles",
+    // Added Oct 6 2026; confirmed live and HD by the Data API that day.
+    source: { videoIds: ["fVa6-zCBR7A"] },
+    scout: ["UCnM5iMGiKsZg-iOlIO2ZkdQ"],
+    expect: { title: ["Monterey Bay Cam"] },
+    credit: { name: "Monterey Bay Aquarium", url: "https://www.montereybayaquarium.org/cams-videos/live-cams/monterey-bay-cam" },
+    headline: "The open water outside the aquarium, with whoever happens to swim by.",
+    looking:
+      "Monterey Bay from the aquarium's ocean-view decks on Cannery Row. This is the real bay, not a tank. Sea otters and harbor seals live here all year, and the water belongs to a national marine sanctuary.",
+    watchFor: [
+      "Sea otters floating on their backs, often wrapped in kelp",
+      "A harbor seal's head popping up out of the water",
+      "Humpback whales, sometimes, from late April to early December",
+    ],
+    history:
+      "In the early 1940s, more than 30 canneries and reduction plants lined this street. Then the sardines crashed, and the canneries shut one by one. The last one closed in 1973. In 1958, Ocean View Avenue was officially renamed Cannery Row, after John Steinbeck's 1945 novel. The bay became a national marine sanctuary on September 18, 1992.",
+    facts: [
+      "Out in the bay, Monterey Canyon cuts down as deep as the Grand Canyon. It's the largest submarine canyon on the West Coast of North America.",
+      "Sea otters were thought to be gone from California until 1938, when about 50 turned up off Big Sur. Every southern sea otter alive today descends from that group.",
+    ],
+    sources: [
+      { label: "Wikipedia: Cannery Row", url: "https://en.wikipedia.org/wiki/Cannery_Row" },
+      { label: "Wikipedia: Monterey Bay National Marine Sanctuary", url: "https://en.wikipedia.org/wiki/Monterey_Bay_National_Marine_Sanctuary" },
+      { label: "Wikipedia: Monterey Canyon", url: "https://en.wikipedia.org/wiki/Monterey_Canyon" },
+      { label: "USFWS: The southern sea otter's return", url: "https://www.fws.gov/story/2022-07/second-chances-southern-sea-otters-return-ecological-relevance" },
     ],
   },
 ];

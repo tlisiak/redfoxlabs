@@ -1,21 +1,130 @@
 {
   "_about": "Vetting queue for new Peek views. The stream check tests every source here on each run and logs it in the uptime history, but nothing here plays on the site. A source marked 'ready' (14+ days, 95%+ up, on target) can graduate into public/peek/streams.js with a researched info card. IDs came from search results on 2026-10-06 and are unconfirmed until the check says so.",
   "candidates": [
-    { "id": "etosha", "place": "Okaukuejo waterhole, Etosha National Park, Namibia", "operator": "Namibia Wildlife Resorts / Gondwana", "expect": { "title": ["Okaukuejo", "Etosha"] }, "videoIds": ["AeMUdOPFcXI", "DAmFZj1y_a0", "JMMoRwYo5kE"], "scout": ["UCfn4vrrgKXCCg3rxxLRGOvg", "UC9X6gGKDv2yhMoofoeS7-Gg"] },
-    { "id": "maramara", "place": "Mara River crossing, Mara Triangle, Kenya", "operator": "Africam / explore.org / Mara Conservancy", "expect": { "title": ["Mara"] }, "videoIds": ["-7GOA9KIWcs", "Io1Kle7QR-E", "BaEFc79IMCA"], "scout": ["@Africamvideos", "UC-2KSeUU5SMCX6XLRD-AEvw"] },
-    { "id": "mpala", "place": "Mpala Research Centre, Laikipia, Kenya", "operator": "explore.org / Mpala", "expect": { "title": ["Mpala"] }, "videoIds": ["oORXfTviuCs", "7x5kRo1B84Y"], "scout": ["UC-2KSeUU5SMCX6XLRD-AEvw"] },
-    { "id": "djuma", "place": "Gowrie dam, Djuma, Sabi Sand, South Africa", "operator": "Djuma / Africam", "expect": { "title": ["Djuma"] }, "videoIds": ["YgpTgISZYRc", "iUdDKf9aDUU"], "scout": ["@djumacam"] },
-    { "id": "langebaan", "place": "Langebaan Lagoon, West Coast, South Africa", "operator": "unconfirmed (likely the Table Mountain Live Stream operator)", "expect": { "title": ["Langebaan"] }, "videoIds": ["mxEholKv57A"], "scout": ["@TableMountainLiveStream"] },
-    { "id": "corcovado", "place": "Christ the Redeemer from Paineiras, Rio de Janeiro, Brazil", "operator": "Paineiras Corcovado (visitor-centre concessionaire)", "expect": { "title": ["Cristo", "Corcovado", "Redeemer"] }, "videoIds": ["yHFI8rgDBJo"], "scout": ["UCAThQaz8B3AWOQwA8j-Arnw"] },
-    { "id": "rio", "place": "Rio de Janeiro, Brazil", "operator": "EarthCam", "expect": { "title": ["Rio de Janeiro", "Copacabana"] }, "videoIds": ["6QoLEltTzIM"], "scout": ["UC6qrG3W8SMK0jior2olka3g"] },
-    { "id": "amazon", "place": "Madre de Dios rainforest, Peru", "operator": "EarthCam / Junglekeepers", "expect": { "title": ["Amazon", "Junglekeepers", "Madre de Dios", "Rainforest"] }, "videoIds": ["i_AtSTYe5wo"], "scout": ["UC6qrG3W8SMK0jior2olka3g"] },
-    { "id": "sydney", "place": "Sydney Harbour, Australia (to un-pause the existing view)", "operator": "WebcamSydney / Sydney Live Camera", "expect": { "title": ["Sydney"] }, "videoIds": ["5uZa3-RMFos", "Fy8_xLMkAXc"], "scout": ["@webcamsydney", "@sydneylivecamera"] },
-    { "id": "royalcam", "place": "Royal albatross colony, Taiaroa Head, Otago, New Zealand", "operator": "NZ Department of Conservation / Cornell Lab", "expect": { "title": ["Albatross", "RoyalCam"] }, "videoIds": ["LZ5Ja2mHgoA", "fDhIv9iBzWk", "Mm_zVDDUeNA"], "scout": ["@CornellLabBirdCams"], "note": "seasonal, new season usually from November" },
-    { "id": "polarbears", "place": "Cape Churchill, Wapusk National Park, Manitoba, Canada", "operator": "explore.org / Polar Bears International", "expect": { "title": ["Polar Bear", "Churchill", "Tundra Buggy"] }, "videoIds": ["gdCQkNqYIVc", "JwgMYoHvDoo"], "scout": ["UC-2KSeUU5SMCX6XLRD-AEvw"], "note": "seasonal, mid-October to late November" },
-    { "id": "kickinghorse", "place": "Terminator Peak, Kicking Horse, Golden BC, Canada", "operator": "Resorts of the Canadian Rockies", "expect": { "title": ["Kicking Horse", "Terminator"] }, "videoIds": ["JuNWqBYNtlc"], "scout": ["@ResortsOfTheCanadianRockies"] },
-    { "id": "elkrefuge", "place": "National Elk Refuge, Jackson, Wyoming", "operator": "SeeJH", "expect": { "title": ["Elk Refuge"] }, "videoIds": ["vfPdD0qVqfE", "_2rvoH5oDcg", "HTcJ5pBTAUY", "kIZp6fUSpS0"], "scout": ["@Seejh"], "note": "best November to April" },
-    { "id": "montereybay", "place": "Monterey Bay from the aquarium, California", "operator": "Monterey Bay Aquarium", "expect": { "title": ["Monterey Bay"] }, "videoIds": ["fVa6-zCBR7A", "we3tKZxUIDw"], "scout": ["UCnM5iMGiKsZg-iOlIO2ZkdQ"] },
-    { "id": "jokulsarlon", "place": "Jokulsarlon glacier lagoon, Iceland (to un-pause the existing view)", "operator": "Live from Iceland (Mila)", "expect": { "title": ["Jokulsarlon"] }, "videoIds": [], "scout": ["@liveiceland"] },
-    { "id": "lofoten", "place": "Reine and Hamnoy, Lofoten, Norway", "operator": "SkylineWebcams", "expect": { "title": ["Reine", "Hamnoy", "Lofoten"] }, "videoIds": ["UBZfqKCV9J8", "oNfYcmH-Qjk", "Abg3SdYDaQk"], "scout": ["@SkylineWebcams"] }
+    {
+      "id": "corcovado",
+      "place": "Christ the Redeemer from Paineiras, Rio de Janeiro, Brazil",
+      "operator": "Paineiras Corcovado (visitor-centre concessionaire)",
+      "expect": {
+        "title": [
+          "Cristo",
+          "Corcovado",
+          "Redeemer"
+        ]
+      },
+      "videoIds": [
+        "yHFI8rgDBJo"
+      ],
+      "scout": [
+        "UCAThQaz8B3AWOQwA8j-Arnw"
+      ]
+    },
+    {
+      "id": "rio",
+      "place": "Rio de Janeiro, Brazil",
+      "operator": "EarthCam",
+      "expect": {
+        "title": [
+          "Rio de Janeiro",
+          "Copacabana"
+        ]
+      },
+      "videoIds": [
+        "6QoLEltTzIM"
+      ],
+      "scout": [
+        "UC6qrG3W8SMK0jior2olka3g"
+      ]
+    },
+    {
+      "id": "amazon",
+      "place": "Madre de Dios rainforest, Peru",
+      "operator": "EarthCam / Junglekeepers",
+      "expect": {
+        "title": [
+          "Amazon",
+          "Junglekeepers",
+          "Madre de Dios",
+          "Rainforest"
+        ]
+      },
+      "videoIds": [
+        "i_AtSTYe5wo"
+      ],
+      "scout": [
+        "UC6qrG3W8SMK0jior2olka3g"
+      ]
+    },
+    {
+      "id": "polarbears",
+      "place": "Cape Churchill, Wapusk National Park, Manitoba, Canada",
+      "operator": "explore.org / Polar Bears International",
+      "expect": {
+        "title": [
+          "Polar Bear",
+          "Churchill",
+          "Tundra Buggy"
+        ]
+      },
+      "videoIds": [
+        "gdCQkNqYIVc",
+        "JwgMYoHvDoo"
+      ],
+      "scout": [
+        "UC-2KSeUU5SMCX6XLRD-AEvw"
+      ],
+      "note": "seasonal, mid-October to late November"
+    },
+    {
+      "id": "kickinghorse",
+      "place": "Terminator Peak, Kicking Horse, Golden BC, Canada",
+      "operator": "Resorts of the Canadian Rockies",
+      "expect": {
+        "title": [
+          "Kicking Horse",
+          "Terminator"
+        ]
+      },
+      "videoIds": [
+        "JuNWqBYNtlc"
+      ],
+      "scout": [
+        "@ResortsOfTheCanadianRockies"
+      ]
+    },
+    {
+      "id": "jokulsarlon",
+      "place": "Jokulsarlon glacier lagoon, Iceland (to un-pause the existing view)",
+      "operator": "Live from Iceland (Mila)",
+      "expect": {
+        "title": [
+          "Jokulsarlon"
+        ]
+      },
+      "videoIds": [],
+      "scout": [
+        "@liveiceland"
+      ]
+    },
+    {
+      "id": "lofoten",
+      "place": "Reine and Hamnoy, Lofoten, Norway",
+      "operator": "SkylineWebcams",
+      "expect": {
+        "title": [
+          "Reine",
+          "Hamnoy",
+          "Lofoten"
+        ]
+      },
+      "videoIds": [
+        "UBZfqKCV9J8",
+        "oNfYcmH-Qjk",
+        "Abg3SdYDaQk"
+      ],
+      "scout": [
+        "@SkylineWebcams"
+      ]
+    }
   ]
 }
