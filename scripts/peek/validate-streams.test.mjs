@@ -169,3 +169,9 @@ test("queue verdict: ready needs the promotion bar, live needs something up now"
   assert.equal(queueVerdict([{ videoId: "newbbbbbbbb", status: "offline" }], h).state, "down");
   assert.equal(queueVerdict([], h).state, "down");
 });
+
+test("the Tetons view won't auto-find SeeJH's other Teton-named cams", async () => {
+  const tetons = (await loadStreams()).find((s) => s.id === "tetons");
+  for (const t of ["EGVB - Grand Teton Webcam", "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com", "Dornan's in Grand Teton National Park - SeeJH.com"]) assert.ok(matchesExpect(tetons.expect, t), t);
+  assert.ok(!matchesExpect(tetons.expect, "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"));
+});

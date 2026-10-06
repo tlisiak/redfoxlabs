@@ -593,7 +593,8 @@ window.PEEK_STREAMS = [
     // Aug 2025): East Gros Ventre Butte PTZ, Buffalo Valley, Dornan's.
     source: { videoIds: ["j-0fhrHzEiM", "Jqo7Z9QiOEQ", "o4fKtgPVpoU"] },
     scout: ["@Seejh"],
-    expect: { title: ["Teton"] },
+    // Not bare "Teton": SeeJH also streams cabins and RV parks in "Teton Valley", Idaho.
+    expect: { title: ["Grand Teton", "Teton View"] },
     credit: { name: "SeeJH", url: "https://www.youtube.com/@Seejh" },
     headline: "The youngest mountains in the Rockies, rising straight out of the valley.",
     looking:
