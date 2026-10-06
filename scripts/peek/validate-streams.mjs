@@ -38,6 +38,12 @@ export async function loadStreams() {
   return sandbox.window.PEEK_STREAMS;
 }
 
+// Vetting queue: places that might become views. Checked every run, never played.
+export async function loadQueue() {
+  try { return JSON.parse(await readFile(path.join(root, "scripts/peek/candidates.json"), "utf8")).candidates || []; }
+  catch { return []; }
+}
+
 export function candidates(stream) {
   const src = stream.source;
   const ids = src.videoIds || (src.videoId ? [src.videoId] : []);
@@ -146,7 +152,15 @@ export function findLiveVideos(data) {
   return list;
 }
 
-async function liveOnChannel(scout) {
+// Several views share a channel; list each one once per run (a Data API search costs 100 of
+// the 10,000 daily quota units).
+const scoutCache = new Map();
+function liveOnChannel(scout) {
+  if (!scoutCache.has(scout)) scoutCache.set(scout, listLive(scout));
+  return scoutCache.get(scout);
+}
+
+async function listLive(scout) {
   if (API_KEY) { try { return await apiLiveOnChannel(scout); } catch { return null; } }
   try {
     const page = await fetchText(`https://www.youtube.com${channelPath(scout)}/streams?hl=en`);
@@ -287,6 +301,16 @@ export function confirmFromScouts(stream, scouted, sources) {
   }
 }
 
+// Where a queued place stands: "ready" once one of its streams clears the promotion bar,
+// "live" when something on target is up right now, otherwise "down".
+export function queueVerdict(results, history) {
+  const scored = results.map((r) => ({ ...r, uptime: uptime(history, r.videoId) }));
+  const ready = scored.find((r) => readyToPromote(r.uptime));
+  if (ready) return { state: "ready", best: ready, scored };
+  const live = scored.find((r) => r.status === "live");
+  return { state: live ? "live" : "down", best: live || null, scored };
+}
+
 // ---- uptime history
 const HISTORY_DAYS = 30;
 export const PROMOTE = { minDays: 14, minUptime: 0.95 };   // bar for a source to join rotation
@@ -406,7 +430,53 @@ async function main() {
     lines.push("");
   }
 
+  // Vetting queue. Video IDs are cheap to check every run; channel searches for queued places
+  // run once a day on the schedule (always on manual and PR runs) to stay inside the API quota.
+  const queue = await loadQueue();
+  const queueResults = {};
+  if (queue.length) {
+    const scoutQueue = process.env.GITHUB_EVENT_NAME !== "schedule" || new Date().getUTCHours() < 6;
+    for (const c of queue) {
+      const results = [];
+      for (const videoId of c.videoIds || []) {
+        const r = judge(c, await checkCandidate({ videoId }));
+        results.push({ videoId, status: r.status, title: r.title || "", detail: r.detail || "" });
+        await new Promise((ok) => setTimeout(ok, 200));
+      }
+      if (scoutQueue) {
+        const scouted = {};
+        for (const scout of c.scout || []) scouted[scout] = await liveOnChannel(scout);
+        for (const v of autoFind(c, scouted, results)) {
+          const r = judge(c, await checkCandidate({ videoId: v.videoId }));
+          results.push({ videoId: v.videoId, status: r.status, title: r.title || v.title, detail: "found live on its channel", found: true });
+        }
+        for (const [scout, list] of Object.entries(scouted)) if (list === null) results.push({ channel: scout, status: "unverified", detail: "couldn't list the channel" });
+      }
+      for (const r of results) if (r.videoId) thisRun[r.videoId] = r.status;
+      queueResults[c.id] = results;
+    }
+  }
+
   history = recordRun(history, status.checkedAt, thisRun);
+
+  if (queue.length) {
+    lines.push("### Vetting queue (not on the site)", "", `A place is ready when one stream has been up ${PROMOTE.minUptime * 100}%+ for ${PROMOTE.minDays}+ days and shows the right place.`, "");
+    const summary = {};
+    for (const c of queue) {
+      const v = queueVerdict(queueResults[c.id].filter((r) => r.videoId), history);
+      summary[c.id] = { state: v.state, sources: v.scored.map((r) => ({ videoId: r.videoId, status: r.status, title: r.title, uptime: r.uptime })) };
+      lines.push(`**${{ ready: "⭐", live: "🟢", down: "⚪️" }[v.state]} ${md(c.place)}** (${md(c.operator)})${c.note ? `, ${md(c.note)}` : ""}`);
+      for (const r of queueResults[c.id]) {
+        if (!r.videoId) { lines.push(`- 🔭 \`${r.channel}\`: ${r.detail}`); continue; }
+        const title = r.title && r.status !== "mismatch" ? ` · ${md(r.title)}` : "";
+        lines.push(`- ${ICON[r.status]} \`${r.videoId}\`${r.found ? " (found on channel)" : ""}: ${r.status}, ${md(r.detail)}${title} · ${pct(uptime(history, r.videoId))}`);
+      }
+      lines.push("");
+      console.log(`Q   ${c.id}: ${v.state} (${queueResults[c.id].map((r) => `${r.videoId || r.channel}=${r.status}`).join(", ")})`);
+    }
+    await mkdir(path.dirname(HISTORY), { recursive: true });
+    await writeFile(path.join(path.dirname(HISTORY), "queue.json"), JSON.stringify({ checkedAt: status.checkedAt, queue: summary }, null, 2) + "\n");
+  }
   for (const [id, x] of Object.entries(status.streams)) {
     x.uptime = Object.fromEntries(x.sources.map((y) => y.resolvedVideoId || y.videoId).filter(Boolean).map((vid) => [vid, uptime(history, vid)]));
   }

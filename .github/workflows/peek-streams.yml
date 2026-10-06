@@ -67,6 +67,7 @@ jobs:
           path: |
             public/peek/status.json
             data/peek/history.json
+            data/peek/queue.json
 
       - name: Commit status and redeploy
         if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
