@@ -186,10 +186,13 @@ async function api(endpoint, params) {
   const qs = new URLSearchParams({ ...params, key: API_KEY });
   const res = await fetch(`https://www.googleapis.com/youtube/v3/${endpoint}?${qs}`);
   if (!res.ok) {
-    const reason = await res.json().then((j) => j.error?.errors?.[0]?.reason || j.error?.status, () => null);
+    const err = await res.json().then((j) => j.error || {}, () => ({}));
+    const reason = err.errors?.[0]?.reason || err.status || "";
     // Once the quota is gone every call fails the same way; stop asking until it resets.
-    if (/quotaExceeded|dailyLimitExceeded|rateLimitExceeded/.test(reason || "")) quotaOut = true;
-    throw new Error(`Data API ${endpoint} answered ${res.status}${reason ? ` (${reason})` : ""}`);
+    if (/quotaExceeded|dailyLimitExceeded|rateLimitExceeded/.test(reason)) quotaOut = true;
+    // YouTube's message says why (key restrictions, API not enabled, ...); keep it short and key-free.
+    const why = String(err.message || "").replace(/key=[\w-]+/g, "key=…").slice(0, 160);
+    throw new Error(`Data API ${endpoint} answered ${res.status}${reason ? ` (${reason})` : ""}${why ? `: ${why}` : ""}`);
   }
   return res.json();
 }
