@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-07T06:02:01.907Z",
+  "checkedAt": "2026-10-07T13:25:55.565Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,7 +14,7 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 104 watching",
+          "detail": "live now, 395 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
@@ -28,8 +28,8 @@
       },
       "uptime": {
         "ydYDqZQpim8": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -54,20 +54,20 @@
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 48 watching",
+          "detail": "live now, 13 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
       "scouted": {},
       "uptime": {
         "Sv9hcJ3k5h4": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "bdUbACCWmoY": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -84,7 +84,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 12 watching",
+          "detail": "live now, 29 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -146,13 +146,13 @@
       },
       "uptime": {
         "nviU2HYj-Jc": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "3LGl860wEaY": {
-          "samples": 2,
-          "days": 0.5,
+          "samples": 3,
+          "days": 0.8,
           "uptime": 0
         }
       }
@@ -194,7 +194,7 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 77 watching",
+          "detail": "live now, 103 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
@@ -224,8 +224,8 @@
       },
       "uptime": {
         "w3LjpFhySTg": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -269,8 +269,8 @@
       "scouted": {},
       "uptime": {
         "Lk0Z5ExUWL0": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -287,15 +287,15 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 44 watching",
+          "detail": "live now, 56 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
       "scouted": {},
       "uptime": {
         "BSWhGNXxT9A": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -321,34 +321,34 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 29 watching",
+          "detail": "live now, 54 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
       "uptime": {
         "0P_LBKqVbfs": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -373,7 +373,7 @@
           "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 3 watching",
           "videoId": "jOqASqt3vVI"
         }
       ],
@@ -391,13 +391,13 @@
       },
       "uptime": {
         "vOLCjL4kv-w": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "jOqASqt3vVI": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -414,7 +414,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 241 watching",
+          "detail": "live now, 171 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -424,8 +424,8 @@
       },
       "uptime": {
         "5uZa3-RMFos": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -523,20 +523,20 @@
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
@@ -554,34 +554,34 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 97 watching",
+          "detail": "live now, 121 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
       "uptime": {
         "DHUnz4dyb54": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -609,21 +609,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 866 watching",
+          "detail": "live now, 1011 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 53 watching",
+          "detail": "live now, 55 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 265 watching",
+          "detail": "live now, 355 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -641,18 +641,18 @@
       },
       "uptime": {
         "HggWKlZv9yk": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "f9-oSpYpubg": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -685,12 +685,16 @@
           "title": "Dornan's in Grand Teton National Park - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 9 watching",
+          "detail": "live now, 16 watching",
           "videoId": "o4fKtgPVpoU"
         }
       ],
       "scouted": {
         "@Seejh": [
+          {
+            "videoId": "DyvzXyJ_fVg",
+            "title": "Togwotee Mountain Lodge - SeeJH.com"
+          },
           {
             "videoId": "_2rvoH5oDcg",
             "title": "National Museum of Wildlife Art - Live Elk Refuge"
@@ -698,10 +702,6 @@
           {
             "videoId": "B_waF26In9o",
             "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
-          },
-          {
-            "videoId": "9ID7fhbc_s0",
-            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "QDyspy8DUpU",
@@ -712,8 +712,16 @@
             "title": "Grand Targhee Resort Stick of Truth"
           },
           {
-            "videoId": "aAXhT5FOoWk",
-            "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ"
+            "videoId": "L6vwrxDc3TA",
+            "title": "Rustic Inn @ Jackson Hole"
+          },
+          {
+            "videoId": "pUQf75fPvzE",
+            "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com"
+          },
+          {
+            "videoId": "9ID7fhbc_s0",
+            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "U2Zgr0nJxxg",
@@ -724,28 +732,40 @@
             "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com"
           },
           {
-            "videoId": "r-7zA9fAg1c",
-            "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
-          },
-          {
             "videoId": "a5jEZeNTAsE",
             "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
-            "videoId": "IvZ22jZgvOI",
-            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+            "videoId": "aAXhT5FOoWk",
+            "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ"
+          },
+          {
+            "videoId": "AaTf07Lvz1A",
+            "title": "Snow King Mountain Cowboy Coaster &amp; Alpine Slide Live Cam - SeeJH.ai"
+          },
+          {
+            "videoId": "p2JxnMjLe78",
+            "title": "Snake River Brewing - SeeJH.ai"
+          },
+          {
+            "videoId": "r-7zA9fAg1c",
+            "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
           },
           {
             "videoId": "3UzgSRYzDEQ",
             "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com"
           },
           {
-            "videoId": "3mE_mpsx_nU",
-            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
+            "videoId": "IvZ22jZgvOI",
+            "title": "Montana Whitewater - Yellowstone River in Gardiner"
           },
           {
             "videoId": "Ob642-kNnQU",
             "title": "Hoback River Jackson Hole Wyoming - SeeJH.com"
+          },
+          {
+            "videoId": "3mE_mpsx_nU",
+            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
           },
           {
             "videoId": "o4fKtgPVpoU",
@@ -756,45 +776,25 @@
             "title": "Swan Valley Idaho @ River Retreat Lodge - SeeJH.ai"
           },
           {
-            "videoId": "DyvzXyJ_fVg",
-            "title": "Togwotee Mountain Lodge - SeeJH.com"
-          },
-          {
             "videoId": "IfENy4khApE",
             "title": "Jackson Hole Rodeo - SeeJH.ai"
-          },
-          {
-            "videoId": "L6vwrxDc3TA",
-            "title": "Rustic Inn @ Jackson Hole"
-          },
-          {
-            "videoId": "pUQf75fPvzE",
-            "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com"
-          },
-          {
-            "videoId": "AaTf07Lvz1A",
-            "title": "Snow King Mountain Cowboy Coaster &amp; Alpine Slide Live Cam - SeeJH.ai"
-          },
-          {
-            "videoId": "p2JxnMjLe78",
-            "title": "Snake River Brewing - SeeJH.ai"
           }
         ]
       },
       "uptime": {
         "j-0fhrHzEiM": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "Jqo7Z9QiOEQ": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         },
         "o4fKtgPVpoU": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -811,7 +811,7 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 15 watching",
           "videoId": "qx7gry390YA"
         }
       ],
@@ -893,8 +893,8 @@
       },
       "uptime": {
         "qx7gry390YA": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -911,34 +911,34 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 764 watching",
+          "detail": "live now, 992 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
       "uptime": {
         "J7ZrIDvqlic": {
-          "samples": 4,
-          "days": 1.2,
+          "samples": 5,
+          "days": 1.5,
           "uptime": 1
         }
       }
@@ -956,14 +956,14 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 152 watching",
+          "detail": "live now, 215 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 77 watching",
+          "detail": "live now, 152 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
@@ -983,13 +983,13 @@
       },
       "uptime": {
         "AeMUdOPFcXI": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1008,58 +1008,58 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 6 watching",
+          "detail": "live now, 20 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
           "title": "LIVE: Mara River Main Crossing | Masai Mara Wildlife Cam 24/7",
           "author": "Africam",
           "status": "live",
-          "detail": "live now, 14 watching",
+          "detail": "live now, 25 watching",
           "videoId": "BaEFc79IMCA"
         },
         {
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 10 watching",
+          "detail": "live now, 15 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
       "uptime": {
         "-7GOA9KIWcs": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         },
         "BaEFc79IMCA": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1077,46 +1077,46 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 6 watching",
+          "detail": "live now, 8 watching",
           "videoId": "oORXfTviuCs"
         },
         {
           "title": "LIVE African River Wildlife - Kenya Hippo & Crocodile Cam - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now, 4 watching",
           "videoId": "7x5kRo1B84Y"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+            "videoId": "J7ZrIDvqlic",
+            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
             "videoId": "-m_nQT62B4Y",
             "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "J7ZrIDvqlic",
-            "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
           }
         ]
       },
       "uptime": {
         "oORXfTviuCs": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1133,7 +1133,7 @@
           "title": "Djuma Cam Live Stream",
           "author": "Djuma Cam",
           "status": "live",
-          "detail": "live now, 71 watching",
+          "detail": "live now, 102 watching",
           "videoId": "iUdDKf9aDUU"
         }
       ],
@@ -1142,8 +1142,8 @@
       },
       "uptime": {
         "iUdDKf9aDUU": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1160,7 +1160,7 @@
           "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 1 watching",
           "videoId": "mxEholKv57A"
         }
       ],
@@ -1178,8 +1178,8 @@
       },
       "uptime": {
         "mxEholKv57A": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1196,15 +1196,15 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 40 watching",
+          "detail": "live now, 18 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
       "scouted": {},
       "uptime": {
         "Mm_zVDDUeNA": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1222,7 +1222,7 @@
           "title": "National Museum of Wildlife Art - Live Elk Refuge",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 2 watching",
           "videoId": "_2rvoH5oDcg"
         },
         {
@@ -1236,16 +1236,16 @@
       "scouted": {
         "@Seejh": [
           {
+            "videoId": "DyvzXyJ_fVg",
+            "title": "Togwotee Mountain Lodge - SeeJH.com"
+          },
+          {
             "videoId": "_2rvoH5oDcg",
             "title": "National Museum of Wildlife Art - Live Elk Refuge"
           },
           {
             "videoId": "B_waF26In9o",
             "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
-          },
-          {
-            "videoId": "9ID7fhbc_s0",
-            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "QDyspy8DUpU",
@@ -1256,8 +1256,16 @@
             "title": "Grand Targhee Resort Stick of Truth"
           },
           {
-            "videoId": "aAXhT5FOoWk",
-            "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ"
+            "videoId": "L6vwrxDc3TA",
+            "title": "Rustic Inn @ Jackson Hole"
+          },
+          {
+            "videoId": "pUQf75fPvzE",
+            "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com"
+          },
+          {
+            "videoId": "9ID7fhbc_s0",
+            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "U2Zgr0nJxxg",
@@ -1268,28 +1276,40 @@
             "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com"
           },
           {
-            "videoId": "r-7zA9fAg1c",
-            "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
-          },
-          {
             "videoId": "a5jEZeNTAsE",
             "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
-            "videoId": "IvZ22jZgvOI",
-            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+            "videoId": "aAXhT5FOoWk",
+            "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ"
+          },
+          {
+            "videoId": "AaTf07Lvz1A",
+            "title": "Snow King Mountain Cowboy Coaster &amp; Alpine Slide Live Cam - SeeJH.ai"
+          },
+          {
+            "videoId": "p2JxnMjLe78",
+            "title": "Snake River Brewing - SeeJH.ai"
+          },
+          {
+            "videoId": "r-7zA9fAg1c",
+            "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
           },
           {
             "videoId": "3UzgSRYzDEQ",
             "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com"
           },
           {
-            "videoId": "3mE_mpsx_nU",
-            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
+            "videoId": "IvZ22jZgvOI",
+            "title": "Montana Whitewater - Yellowstone River in Gardiner"
           },
           {
             "videoId": "Ob642-kNnQU",
             "title": "Hoback River Jackson Hole Wyoming - SeeJH.com"
+          },
+          {
+            "videoId": "3mE_mpsx_nU",
+            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
           },
           {
             "videoId": "o4fKtgPVpoU",
@@ -1300,40 +1320,20 @@
             "title": "Swan Valley Idaho @ River Retreat Lodge - SeeJH.ai"
           },
           {
-            "videoId": "DyvzXyJ_fVg",
-            "title": "Togwotee Mountain Lodge - SeeJH.com"
-          },
-          {
             "videoId": "IfENy4khApE",
             "title": "Jackson Hole Rodeo - SeeJH.ai"
-          },
-          {
-            "videoId": "L6vwrxDc3TA",
-            "title": "Rustic Inn @ Jackson Hole"
-          },
-          {
-            "videoId": "pUQf75fPvzE",
-            "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com"
-          },
-          {
-            "videoId": "AaTf07Lvz1A",
-            "title": "Snow King Mountain Cowboy Coaster &amp; Alpine Slide Live Cam - SeeJH.ai"
-          },
-          {
-            "videoId": "p2JxnMjLe78",
-            "title": "Snake River Brewing - SeeJH.ai"
           }
         ]
       },
       "uptime": {
         "_2rvoH5oDcg": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         },
         "kIZp6fUSpS0": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1350,7 +1350,7 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 45 watching",
+          "detail": "live now, 58 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
@@ -1380,8 +1380,8 @@
       },
       "uptime": {
         "fVa6-zCBR7A": {
-          "samples": 3,
-          "days": 1,
+          "samples": 4,
+          "days": 1.3,
           "uptime": 1
         }
       }
@@ -1459,11 +1459,6 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "GGIE1E-kaMQ",
-      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
-      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
-    },
-    {
       "videoId": "-m_nQT62B4Y",
       "title": "Kitten Rescue Cat Cam powered by EXPLORE.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
@@ -1471,6 +1466,11 @@
     {
       "videoId": "Fz6sl9YJZE0",
       "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org",
+      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
+    },
+    {
+      "videoId": "GGIE1E-kaMQ",
+      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
@@ -1559,13 +1559,13 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "B_waF26In9o",
-      "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai",
+      "videoId": "DyvzXyJ_fVg",
+      "title": "Togwotee Mountain Lodge - SeeJH.com",
       "channel": "@Seejh"
     },
     {
-      "videoId": "9ID7fhbc_s0",
-      "title": "Snow King Mountain - Summit Gondola - SeeJH.com",
+      "videoId": "B_waF26In9o",
+      "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
@@ -1579,8 +1579,18 @@
       "channel": "@Seejh"
     },
     {
-      "videoId": "aAXhT5FOoWk",
-      "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ",
+      "videoId": "L6vwrxDc3TA",
+      "title": "Rustic Inn @ Jackson Hole",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "pUQf75fPvzE",
+      "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "9ID7fhbc_s0",
+      "title": "Snow King Mountain - Summit Gondola - SeeJH.com",
       "channel": "@Seejh"
     },
     {
@@ -1594,58 +1604,13 @@
       "channel": "@Seejh"
     },
     {
-      "videoId": "r-7zA9fAg1c",
-      "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
       "videoId": "a5jEZeNTAsE",
       "title": "Grand Targhee Resort Summit - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
-      "videoId": "IvZ22jZgvOI",
-      "title": "Montana Whitewater - Yellowstone River in Gardiner",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "3UzgSRYzDEQ",
-      "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "3mE_mpsx_nU",
-      "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "Ob642-kNnQU",
-      "title": "Hoback River Jackson Hole Wyoming - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "W0cQdnoFR3A",
-      "title": "Swan Valley Idaho @ River Retreat Lodge - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "DyvzXyJ_fVg",
-      "title": "Togwotee Mountain Lodge - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "IfENy4khApE",
-      "title": "Jackson Hole Rodeo - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "L6vwrxDc3TA",
-      "title": "Rustic Inn @ Jackson Hole",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "pUQf75fPvzE",
-      "title": "Hatchet Resort in Moran, WY near GTNP - SeeJH.com",
+      "videoId": "aAXhT5FOoWk",
+      "title": "SeeJH.com &amp; Jackson Hole Computer Clinic HQ",
       "channel": "@Seejh"
     },
     {
@@ -1656,6 +1621,41 @@
     {
       "videoId": "p2JxnMjLe78",
       "title": "Snake River Brewing - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "r-7zA9fAg1c",
+      "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "3UzgSRYzDEQ",
+      "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "IvZ22jZgvOI",
+      "title": "Montana Whitewater - Yellowstone River in Gardiner",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "Ob642-kNnQU",
+      "title": "Hoback River Jackson Hole Wyoming - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "3mE_mpsx_nU",
+      "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "W0cQdnoFR3A",
+      "title": "Swan Valley Idaho @ River Retreat Lodge - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "IfENy4khApE",
+      "title": "Jackson Hole Rodeo - SeeJH.ai",
       "channel": "@Seejh"
     }
   ]
