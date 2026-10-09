@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-08T23:21:55.257Z",
+  "checkedAt": "2026-10-09T06:10:20.605Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,7 +14,7 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 293 watching",
+          "detail": "live now, 413 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
@@ -28,8 +28,8 @@
       },
       "uptime": {
         "ydYDqZQpim8": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -47,27 +47,27 @@
           "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
           "author": "フジヤマNAVI",
           "status": "live",
-          "detail": "live now, 12 watching",
+          "detail": "live now, 11 watching",
           "videoId": "Sv9hcJ3k5h4"
         },
         {
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 47 watching",
+          "detail": "live now, 74 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
       "scouted": {},
       "uptime": {
         "Sv9hcJ3k5h4": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "bdUbACCWmoY": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -84,7 +84,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 12 watching",
+          "detail": "live now, 13 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -146,13 +146,13 @@
       },
       "uptime": {
         "nviU2HYj-Jc": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "3LGl860wEaY": {
-          "samples": 7,
-          "days": 2.2,
+          "samples": 8,
+          "days": 2.5,
           "uptime": 0
         }
       }
@@ -194,7 +194,7 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 248 watching",
+          "detail": "live now, 76 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
@@ -224,8 +224,8 @@
       },
       "uptime": {
         "w3LjpFhySTg": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -269,8 +269,8 @@
       "scouted": {},
       "uptime": {
         "Lk0Z5ExUWL0": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -287,15 +287,15 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 109 watching",
+          "detail": "live now, 37 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
       "scouted": {},
       "uptime": {
         "BSWhGNXxT9A": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -321,7 +321,7 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 19 watching",
+          "detail": "live now, 33 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
@@ -347,8 +347,8 @@
       },
       "uptime": {
         "0P_LBKqVbfs": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -366,14 +366,14 @@
           "title": "LIVE Table Mountain & Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 3 watching",
           "videoId": "vOLCjL4kv-w"
         },
         {
           "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now, 5 watching",
           "videoId": "jOqASqt3vVI"
         }
       ],
@@ -391,13 +391,13 @@
       },
       "uptime": {
         "vOLCjL4kv-w": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "jOqASqt3vVI": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -414,7 +414,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 207 watching",
+          "detail": "live now, 208 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -424,8 +424,8 @@
       },
       "uptime": {
         "5uZa3-RMFos": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -439,44 +439,64 @@
       "scouted": {
         "UC6qrG3W8SMK0jior2olka3g": [
           {
-            "videoId": "T0SI9iz9yzE",
-            "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
-          },
-          {
-            "videoId": "qsrevo5Vdkw",
-            "title": "EarthCam Live:  Council Bluffs, Iowa"
-          },
-          {
-            "videoId": "wiVzU1mcCTA",
-            "title": "EarthCam Live:  Tamariu, Spain"
-          },
-          {
-            "videoId": "77akujLn4k8",
-            "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
-          },
-          {
             "videoId": "b3ZZcHqcZ64",
             "title": "EarthCam Live:  Hurricane Isaias Storm Watch"
           },
           {
-            "videoId": "EiUyBIcG4fQ",
-            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
-          },
-          {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
+            "videoId": "3nzuUOreQqI",
+            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           },
           {
             "videoId": "kLoFxVhRWtQ",
             "title": "EarthCam Live:  Roswell, New Mexico"
           },
           {
+            "videoId": "OBgCrw-IyhE",
+            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
+          },
+          {
             "videoId": "Xw8CoRwNfXs",
             "title": "EarthCam Live:  Cayman Islands"
           },
           {
+            "videoId": "EiUyBIcG4fQ",
+            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
+          },
+          {
+            "videoId": "qsrevo5Vdkw",
+            "title": "EarthCam Live:  Council Bluffs, Iowa"
+          },
+          {
+            "videoId": "77akujLn4k8",
+            "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
+          },
+          {
+            "videoId": "9mMnqO1UuIU",
+            "title": "EarthCam Live: Philadelphia, PA"
+          },
+          {
+            "videoId": "wiVzU1mcCTA",
+            "title": "EarthCam Live:  Tamariu, Spain"
+          },
+          {
+            "videoId": "ZYQlLQHz2Mg",
+            "title": "9/11 Memorial &amp; Museum"
+          },
+          {
+            "videoId": "T0SI9iz9yzE",
+            "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
+          },
+          {
+            "videoId": "qx7gry390YA",
+            "title": "EarthCam Live:  Niagara Falls"
+          },
+          {
             "videoId": "t55kv94nEzc",
             "title": "EarthCam Live:  Scrub Island (British Virgin Islands)"
+          },
+          {
+            "videoId": "Ez6xC43MMTQ",
+            "title": "EarthCam Live:  Madison, Indiana"
           },
           {
             "videoId": "zv67_HAFTOA",
@@ -485,26 +505,6 @@
           {
             "videoId": "xqdukYhcGEU",
             "title": "EarthCam Live: New Orleans Street View"
-          },
-          {
-            "videoId": "Ez6xC43MMTQ",
-            "title": "EarthCam Live:  Madison, Indiana"
-          },
-          {
-            "videoId": "9mMnqO1UuIU",
-            "title": "EarthCam Live: Philadelphia, PA"
-          },
-          {
-            "videoId": "OBgCrw-IyhE",
-            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
-            "videoId": "qx7gry390YA",
-            "title": "EarthCam Live:  Niagara Falls"
-          },
-          {
-            "videoId": "3nzuUOreQqI",
-            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           }
         ]
       },
@@ -550,7 +550,7 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 139 watching",
+          "detail": "live now, 93 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
@@ -576,8 +576,8 @@
       },
       "uptime": {
         "DHUnz4dyb54": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -605,21 +605,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 530 watching",
+          "detail": "live now, 387 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 84 watching",
+          "detail": "live now, 52 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 477 watching",
+          "detail": "live now, 469 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -637,18 +637,18 @@
       },
       "uptime": {
         "HggWKlZv9yk": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "f9-oSpYpubg": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -667,21 +667,21 @@
           "title": "EGVB - Grand Teton Webcam",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 1 watching",
           "videoId": "j-0fhrHzEiM"
         },
         {
           "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 1 watching",
           "videoId": "Jqo7Z9QiOEQ"
         },
         {
           "title": "Dornan's in Grand Teton National Park - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 18 watching",
+          "detail": "live now, 7 watching",
           "videoId": "o4fKtgPVpoU"
         }
       ],
@@ -779,18 +779,18 @@
       },
       "uptime": {
         "j-0fhrHzEiM": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "Jqo7Z9QiOEQ": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         },
         "o4fKtgPVpoU": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -807,51 +807,71 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 14 watching",
+          "detail": "live now, 12 watching",
           "videoId": "qx7gry390YA"
         }
       ],
       "scouted": {
         "UC6qrG3W8SMK0jior2olka3g": [
           {
-            "videoId": "T0SI9iz9yzE",
-            "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
-          },
-          {
-            "videoId": "qsrevo5Vdkw",
-            "title": "EarthCam Live:  Council Bluffs, Iowa"
-          },
-          {
-            "videoId": "wiVzU1mcCTA",
-            "title": "EarthCam Live:  Tamariu, Spain"
-          },
-          {
-            "videoId": "77akujLn4k8",
-            "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
-          },
-          {
             "videoId": "b3ZZcHqcZ64",
             "title": "EarthCam Live:  Hurricane Isaias Storm Watch"
           },
           {
-            "videoId": "EiUyBIcG4fQ",
-            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
-          },
-          {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
+            "videoId": "3nzuUOreQqI",
+            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           },
           {
             "videoId": "kLoFxVhRWtQ",
             "title": "EarthCam Live:  Roswell, New Mexico"
           },
           {
+            "videoId": "OBgCrw-IyhE",
+            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
+          },
+          {
             "videoId": "Xw8CoRwNfXs",
             "title": "EarthCam Live:  Cayman Islands"
           },
           {
+            "videoId": "EiUyBIcG4fQ",
+            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
+          },
+          {
+            "videoId": "qsrevo5Vdkw",
+            "title": "EarthCam Live:  Council Bluffs, Iowa"
+          },
+          {
+            "videoId": "77akujLn4k8",
+            "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
+          },
+          {
+            "videoId": "9mMnqO1UuIU",
+            "title": "EarthCam Live: Philadelphia, PA"
+          },
+          {
+            "videoId": "wiVzU1mcCTA",
+            "title": "EarthCam Live:  Tamariu, Spain"
+          },
+          {
+            "videoId": "ZYQlLQHz2Mg",
+            "title": "9/11 Memorial &amp; Museum"
+          },
+          {
+            "videoId": "T0SI9iz9yzE",
+            "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
+          },
+          {
+            "videoId": "qx7gry390YA",
+            "title": "EarthCam Live:  Niagara Falls"
+          },
+          {
             "videoId": "t55kv94nEzc",
             "title": "EarthCam Live:  Scrub Island (British Virgin Islands)"
+          },
+          {
+            "videoId": "Ez6xC43MMTQ",
+            "title": "EarthCam Live:  Madison, Indiana"
           },
           {
             "videoId": "zv67_HAFTOA",
@@ -860,33 +880,13 @@
           {
             "videoId": "xqdukYhcGEU",
             "title": "EarthCam Live: New Orleans Street View"
-          },
-          {
-            "videoId": "Ez6xC43MMTQ",
-            "title": "EarthCam Live:  Madison, Indiana"
-          },
-          {
-            "videoId": "9mMnqO1UuIU",
-            "title": "EarthCam Live: Philadelphia, PA"
-          },
-          {
-            "videoId": "OBgCrw-IyhE",
-            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
-            "videoId": "qx7gry390YA",
-            "title": "EarthCam Live:  Niagara Falls"
-          },
-          {
-            "videoId": "3nzuUOreQqI",
-            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           }
         ]
       },
       "uptime": {
         "qx7gry390YA": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -903,7 +903,7 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 1482 watching",
+          "detail": "live now, 622 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
@@ -929,8 +929,8 @@
       },
       "uptime": {
         "J7ZrIDvqlic": {
-          "samples": 9,
-          "days": 2.9,
+          "samples": 10,
+          "days": 3.2,
           "uptime": 1
         }
       }
@@ -948,14 +948,14 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 127 watching",
+          "detail": "live now, 131 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 104 watching",
+          "detail": "live now, 121 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
@@ -975,13 +975,13 @@
       },
       "uptime": {
         "AeMUdOPFcXI": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1000,21 +1000,21 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 10 watching",
+          "detail": "live now, 11 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
           "title": "LIVE: Mara River Main Crossing | Masai Mara Wildlife Cam 24/7",
           "author": "Africam",
           "status": "live",
-          "detail": "live now, 13 watching",
+          "detail": "live now, 20 watching",
           "videoId": "BaEFc79IMCA"
         },
         {
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 8 watching",
+          "detail": "live now, 10 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
@@ -1040,18 +1040,18 @@
       },
       "uptime": {
         "-7GOA9KIWcs": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         },
         "BaEFc79IMCA": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1069,7 +1069,7 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 3 watching",
           "videoId": "oORXfTviuCs"
         },
         {
@@ -1102,13 +1102,13 @@
       },
       "uptime": {
         "oORXfTviuCs": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1125,7 +1125,7 @@
           "title": "Djuma Cam Live Stream",
           "author": "Djuma Cam",
           "status": "live",
-          "detail": "live now, 79 watching",
+          "detail": "live now, 59 watching",
           "videoId": "iUdDKf9aDUU"
         }
       ],
@@ -1134,8 +1134,8 @@
       },
       "uptime": {
         "iUdDKf9aDUU": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1170,8 +1170,8 @@
       },
       "uptime": {
         "mxEholKv57A": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1188,15 +1188,15 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 40 watching",
+          "detail": "live now, 39 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
       "scouted": {},
       "uptime": {
         "Mm_zVDDUeNA": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1214,7 +1214,7 @@
           "title": "National Museum of Wildlife Art - Live Elk Refuge",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now",
           "videoId": "_2rvoH5oDcg"
         },
         {
@@ -1319,13 +1319,13 @@
       },
       "uptime": {
         "_2rvoH5oDcg": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         },
         "kIZp6fUSpS0": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1342,7 +1342,7 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 111 watching",
+          "detail": "live now, 44 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
@@ -1372,8 +1372,8 @@
       },
       "uptime": {
         "fVa6-zCBR7A": {
-          "samples": 8,
-          "days": 2.7,
+          "samples": 9,
+          "days": 3,
           "uptime": 1
         }
       }
@@ -1466,38 +1466,13 @@
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
-      "videoId": "T0SI9iz9yzE",
-      "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "qsrevo5Vdkw",
-      "title": "EarthCam Live:  Council Bluffs, Iowa",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "wiVzU1mcCTA",
-      "title": "EarthCam Live:  Tamariu, Spain",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "77akujLn4k8",
-      "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
       "videoId": "b3ZZcHqcZ64",
       "title": "EarthCam Live:  Hurricane Isaias Storm Watch",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "EiUyBIcG4fQ",
-      "title": "EarthCam Live:  Midway Airport (Chicago, IL)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "ZYQlLQHz2Mg",
-      "title": "9/11 Memorial &amp; Museum",
+      "videoId": "3nzuUOreQqI",
+      "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -1506,13 +1481,58 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
+      "videoId": "OBgCrw-IyhE",
+      "title": "EarthCam Live:  Seaside Heights, NJ - North View",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
       "videoId": "Xw8CoRwNfXs",
       "title": "EarthCam Live:  Cayman Islands",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
+      "videoId": "EiUyBIcG4fQ",
+      "title": "EarthCam Live:  Midway Airport (Chicago, IL)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "qsrevo5Vdkw",
+      "title": "EarthCam Live:  Council Bluffs, Iowa",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "77akujLn4k8",
+      "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "9mMnqO1UuIU",
+      "title": "EarthCam Live: Philadelphia, PA",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "wiVzU1mcCTA",
+      "title": "EarthCam Live:  Tamariu, Spain",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "ZYQlLQHz2Mg",
+      "title": "9/11 Memorial &amp; Museum",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "T0SI9iz9yzE",
+      "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
       "videoId": "t55kv94nEzc",
       "title": "EarthCam Live:  Scrub Island (British Virgin Islands)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "Ez6xC43MMTQ",
+      "title": "EarthCam Live:  Madison, Indiana",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -1523,26 +1543,6 @@
     {
       "videoId": "xqdukYhcGEU",
       "title": "EarthCam Live: New Orleans Street View",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "Ez6xC43MMTQ",
-      "title": "EarthCam Live:  Madison, Indiana",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "9mMnqO1UuIU",
-      "title": "EarthCam Live: Philadelphia, PA",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "OBgCrw-IyhE",
-      "title": "EarthCam Live:  Seaside Heights, NJ - North View",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "3nzuUOreQqI",
-      "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
