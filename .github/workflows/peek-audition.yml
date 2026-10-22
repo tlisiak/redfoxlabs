@@ -1,8 +1,9 @@
 name: Peek audition
 
-# Opens each stream in scripts/peek/audition-list.json in real Chrome, lets it play, screenshots it,
-# and publishes the screenshots plus results.json to the `peek-auditions` branch so a person can
-# judge whether each one is beautiful and actually working.
+# Checks each stream in scripts/peek/audition-list.json (live and embeddable per the Data API),
+# saves a live frame of it (YouTube's live thumbnail; GitHub's runners can't play YouTube, which
+# shows them a bot check) and tiles the frames into contact sheets. Publishes it all to the
+# `peek-auditions` branch so a person can judge whether each stream is beautiful and working.
 # Runs on a push to any `audition/**` branch, or by hand.
 
 on:
@@ -28,18 +29,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install browser driver
-        run: npm i --no-save --no-audit --no-fund playwright-core jpeg-js
+      - name: Install image decoder
+        run: npm i --no-save --no-audit --no-fund jpeg-js
 
       - name: Audition streams
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: |
-          sudo apt-get install -y xvfb >/dev/null 2>&1 || true
-          # Probe: which way of opening the player does YouTube accept from this runner?
-          node scripts/peek/audition.mjs --out audition-out/headless 2>&1 | tee -a audition.log
-          xvfb-run -a node scripts/peek/audition.mjs --headed --out audition-out/headed 2>&1 | tee -a audition.log
-          xvfb-run -a node scripts/peek/audition.mjs --headed --nocookie --out audition-out/headed-nocookie 2>&1 | tee -a audition.log
+        run: node scripts/peek/audition.mjs 2>&1 | tee audition.log
 
       - name: Publish screenshots
         if: always()

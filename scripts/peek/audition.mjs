@@ -1,14 +1,18 @@
 #!/usr/bin/env node
-// Auditions live streams in a real browser: loads each one in the YouTube player the way Peek
-// does, waits for it to play (and for any pre-roll ad to finish), screenshots it, and records
-// what the player reports (title, live, quality levels) plus simple picture stats, so a person
-// can judge "is this beautiful and actually working" from a screenshot.
+// Auditions live streams so a person can judge "is this beautiful and actually working".
 //
-// Runs in CI (needs Google Chrome and open internet): the sandbox can't reach googlevideo.com.
+// Default mode (CI): for each stream, asks the Data API whether it is live and embeddable, then
+// saves YouTube's live thumbnail (maxresdefault_live.jpg, a frame of the stream refreshed every
+// few minutes; it only exists when the source is 720p or better, so it doubles as an HD check),
+// and tiles them into 9-up contact sheets for fast triage. GitHub's runners can't PLAY YouTube
+// (it shows "Sign in to confirm you're not a bot" to datacenter IPs), but thumbnails aren't gated.
 //
-// Usage: node scripts/peek/audition.mjs [--list file.json] [--out dir] [--concurrency 3] [--settle 14]
+// --play mode: loads each stream in real Chrome through the IFrame API, waits out pre-roll ads
+// and screenshots the playing video. Only works from a normal home or office connection.
+//
+// Usage: node scripts/peek/audition.mjs [--list file.json] [--out dir] [--concurrency 8] [--play]
 // List format: { "items": [ { "videoId": "...", "note": "..." } ] } (bare ID strings also work).
-// Needs: npm i --no-save playwright-core jpeg-js
+// Needs: npm i --no-save jpeg-js   (plus playwright-core for --play)
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import http from "node:http";
@@ -19,7 +23,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const arg = (name, fallback) => { const i = process.argv.indexOf(name); return i > -1 ? process.argv[i + 1] : fallback; };
 const LIST = arg("--list", path.join(root, "scripts/peek/audition-list.json"));
 const OUT = arg("--out", path.join(root, "audition-out"));
-const CONCURRENCY = Number(arg("--concurrency", 3));
+const PLAY = process.argv.includes("--play");
+const CONCURRENCY = Number(arg("--concurrency", PLAY ? 3 : 8));
 const SETTLE_MS = Number(arg("--settle", 14)) * 1000;   // time after PLAYING before the screenshot
 const AD_WAIT_MS = 45000;                                 // longest we'll wait out a pre-roll ad
 const HEADED = process.argv.includes("--headed");           // real window (run under xvfb-run); looks less like automation
@@ -130,12 +135,100 @@ async function audition(browser, jpeg, base, item, api) {
   return r;
 }
 
+
+// ---- default mode: live thumbnails -----------------------------------------------------------
+const THUMBS = ["maxresdefault_live.jpg", "hq720_live.jpg", "sddefault_live.jpg", "hqdefault_live.jpg"];
+const TILE_W = 426, TILE_H = 240, COLS = 3, ROWS = 3;
+
+// Mean brightness and contrast of a decoded image (sampled grid).
+function stats(img) {
+  let sum = 0, sq = 0, n = 0;
+  for (let y = 0; y < img.height; y += 6) for (let x = 0; x < img.width; x += 6) {
+    const i = (y * img.width + x) * 4;
+    const l = 0.2126 * img.data[i] + 0.7152 * img.data[i + 1] + 0.0722 * img.data[i + 2];
+    sum += l; sq += l * l; n++;
+  }
+  const mean = sum / n;
+  return { brightness: Math.round(mean), contrast: Math.round(Math.sqrt(Math.max(0, sq / n - mean * mean))) };
+}
+
+async function thumbAudition(jpeg, item, api) {
+  const id = item.videoId;
+  const r = { videoId: id, note: item.note || "", channel: item.channel || "", title: api?.snippet?.title || item.title || "", channelTitle: api?.snippet?.channelTitle || "",
+    channelId: api?.snippet?.channelId || "", watching: api?.liveStreamingDetails?.concurrentViewers ? Number(api.liveStreamingDetails.concurrentViewers) : null, verdict: "", shot: "" };
+  if (API_KEY) {
+    if (!api) return { ...r, verdict: "gone" };
+    if (api.snippet.liveBroadcastContent !== "live") return { ...r, verdict: "not-live", detail: api.snippet.liveBroadcastContent };
+    if (api.status?.embeddable === false) return { ...r, verdict: "no-embed" };
+  }
+  for (const name of THUMBS) {
+    let res;
+    try { res = await fetch(`https://i.ytimg.com/vi/${id}/${name}`); } catch { continue; }
+    if (res.status !== 200) continue;
+    const buf = Buffer.from(await res.arrayBuffer());
+    let img;
+    try { img = jpeg.decode(buf, { useTArray: true, maxMemoryUsageInMB: 512 }); } catch { continue; }
+    if (img.width < 320) continue;
+    const age = res.headers.get("last-modified") ? Math.round((Date.now() - new Date(res.headers.get("last-modified"))) / 60000) : null;
+    await writeFile(path.join(OUT, `${id}.jpg`), buf);
+    return { ...r, shot: `${id}.jpg`, thumb: name.replace("_live.jpg", ""), width: img.width, height: img.height, hd: name === "maxresdefault_live.jpg" || name === "hq720_live.jpg", ageMinutes: age, ...stats(img), verdict: "frame", _img: img };
+  }
+  return { ...r, verdict: "no-thumb" };
+}
+
+// Box-average resize of a decoded image into a TILE_W x TILE_H cover crop, pasted into the sheet.
+function paste(sheet, sw, img, col, row) {
+  const scale = Math.max(TILE_W / img.width, TILE_H / img.height);
+  const cw = TILE_W / scale, ch = TILE_H / scale, x0 = (img.width - cw) / 2, y0 = (img.height - ch) / 2;
+  for (let y = 0; y < TILE_H; y++) for (let x = 0; x < TILE_W; x++) {
+    const sx = Math.min(img.width - 1, Math.floor(x0 + (x + 0.5) / scale)), sy = Math.min(img.height - 1, Math.floor(y0 + (y + 0.5) / scale));
+    const si = (sy * img.width + sx) * 4, di = ((row * TILE_H + y) * sw + col * TILE_W + x) * 4;
+    sheet[di] = img.data[si]; sheet[di + 1] = img.data[si + 1]; sheet[di + 2] = img.data[si + 2]; sheet[di + 3] = 255;
+  }
+}
+
+async function thumbMain() {
+  const jpeg = (await import("jpeg-js")).default;
+  const items = loadItems(await readFile(LIST, "utf8"));
+  await mkdir(OUT, { recursive: true });
+  const details = await apiDetails(items.map((x) => x.videoId));
+  const results = new Array(items.length);
+  let next = 0, done = 0;
+  await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await thumbAudition(jpeg, items[i], details.get(items[i].videoId));
+      if (++done % 25 === 0) console.log(`${done}/${items.length}`);
+    }
+  }));
+  // contact sheets: nine frames each, in list order, row by row. sheets.json says which ID is which tile.
+  const framed = results.filter((r) => r.verdict === "frame");
+  const sheets = [];
+  for (let s = 0; s * COLS * ROWS < framed.length; s++) {
+    const chunk = framed.slice(s * COLS * ROWS, (s + 1) * COLS * ROWS);
+    const sw = TILE_W * COLS, sh = TILE_H * ROWS, data = Buffer.alloc(sw * sh * 4, 20);
+    chunk.forEach((r, k) => paste(data, sw, r._img, k % COLS, Math.floor(k / COLS)));
+    const file = `sheet-${String(s + 1).padStart(2, "0")}.jpg`;
+    await writeFile(path.join(OUT, file), jpeg.encode({ data, width: sw, height: sh }, 82).data);
+    sheets.push({ file, tiles: chunk.map((r) => r.videoId) });
+  }
+  for (const r of results) delete r._img;
+  await writeFile(path.join(OUT, "results.json"), JSON.stringify({ at: new Date().toISOString(), mode: "thumbs", sheets, results }, null, 2) + "\n");
+  const by = {};
+  for (const r of results) by[r.verdict] = (by[r.verdict] || 0) + 1;
+  console.log(`\n${framed.length} frames of ${results.length} candidates`, JSON.stringify(by), `${framed.filter((r) => r.hd).length} HD`);
+}
+
+function loadItems(text) {
+  const raw = JSON.parse(text);
+  const seen = new Set();
+  return (raw.items || raw).map((x) => (typeof x === "string" ? { videoId: x } : x)).filter((x) => x.videoId && !seen.has(x.videoId) && seen.add(x.videoId));
+}
+
 async function main() {
   const { chromium } = await import("playwright-core");
   const jpeg = (await import("jpeg-js")).default;
-  const raw = JSON.parse(await readFile(LIST, "utf8"));
-  const seen = new Set();
-  const items = (raw.items || raw).map((x) => (typeof x === "string" ? { videoId: x } : x)).filter((x) => x.videoId && !seen.has(x.videoId) && seen.add(x.videoId));
+  const items = loadItems(await readFile(LIST, "utf8"));
   await mkdir(OUT, { recursive: true });
   const details = await apiDetails(items.map((x) => x.videoId));
   const server = http.createServer((req, res) => { res.setHeader("content-type", "text/html"); res.end(PLAYER_PAGE); }).listen(0);
@@ -158,4 +251,4 @@ async function main() {
   console.log(`\n${played} of ${results.length} played.`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+(PLAY ? main() : thumbMain()).catch((e) => { console.error(e); process.exit(1); });
