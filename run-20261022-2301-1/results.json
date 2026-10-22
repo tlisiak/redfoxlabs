@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-22T23:01:59.004Z",
+  "results": [
+    {
+      "videoId": "J7ZrIDvqlic",
+      "note": "Brooks Falls",
+      "channel": "",
+      "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
+      "channelTitle": "Explore Live Nature Cams",
+      "watching": 1080,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "Lk0Z5ExUWL0",
+      "note": "Tahoe",
+      "channel": "",
+      "title": "Lake Tahoe, Nevada Live Cam | 24/7 Stream",
+      "channelTitle": "ABC7 News Bay Area",
+      "watching": null,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "w3LjpFhySTg",
+      "note": "Kelp",
+      "channel": "",
+      "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
+      "channelTitle": "Monterey Bay Aquarium",
+      "watching": 240,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "ydYDqZQpim8",
+      "note": "Namib",
+      "channel": "",
+      "title": "Namibia: Live stream in the Namib Desert",
+      "channelTitle": "NamibiaCam",
+      "watching": 401,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "5uZa3-RMFos",
+      "note": "Sydney",
+      "channel": "",
+      "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
+      "channelTitle": "WebcamSydney",
+      "watching": 184,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "HggWKlZv9yk",
+      "note": "Kilauea",
+      "channel": "",
+      "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
+      "channelTitle": "USGS",
+      "watching": 435,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "qx7gry390YA",
+      "note": "Niagara",
+      "channel": "",
+      "title": "EarthCam Live:  Niagara Falls",
+      "channelTitle": "EarthCam",
+      "watching": 9,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "0P_LBKqVbfs",
+      "note": "Tembe",
+      "channel": "",
+      "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
+      "channelTitle": "Explore Live Nature Cams",
+      "watching": 29,
+      "verdict": "player-error",
+      "shot": "",
+      "detail": "error 150"
+    },
+    {
+      "videoId": "AAAAAAAAAAA",
+      "note": "bogus",
+      "channel": "",
+      "title": "",
+      "channelTitle": "",
+      "watching": null,
+      "verdict": "gone",
+      "shot": ""
+    }
+  ]
+}
