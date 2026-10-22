@@ -4,14 +4,13 @@ name: Peek audition
 # saves a live frame of it (YouTube's live thumbnail; GitHub's runners can't play YouTube, which
 # shows them a bot check) and tiles the frames into contact sheets. Publishes it all to the
 # `peek-auditions` branch so a person can judge whether each stream is beautiful and working.
-# Run it by hand; `list` picks the JSON file of streams to check.
+# Runs when a push to an `audition/**` branch changes scripts/peek/audition-next.txt, which names
+# the JSON list of streams to check (GitHub won't let this session dispatch it by hand).
 
 on:
-  workflow_dispatch:
-    inputs:
-      list:
-        description: Stream list to audition
-        default: scripts/peek/audition-list.json
+  push:
+    branches: ["audition/**"]
+    paths: ["scripts/peek/audition-next.txt"]
 
 permissions:
   contents: write
@@ -37,7 +36,7 @@ jobs:
       - name: Audition streams
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node scripts/peek/audition.mjs --small --list "${{ inputs.list }}" 2>&1 | tee audition.log
+        run: node scripts/peek/audition.mjs --small --list "$(head -n1 scripts/peek/audition-next.txt)" 2>&1 | tee audition.log
 
       - name: Publish screenshots
         if: always()
