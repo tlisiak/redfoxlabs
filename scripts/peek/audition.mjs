@@ -24,6 +24,7 @@ const arg = (name, fallback) => { const i = process.argv.indexOf(name); return i
 const LIST = arg("--list", path.join(root, "scripts/peek/audition-list.json"));
 const OUT = arg("--out", path.join(root, "audition-out"));
 const PLAY = process.argv.includes("--play");
+const SMALL = process.argv.includes("--small");   // save 640x360 frames (for big lists); default keeps YouTube's original
 const CONCURRENCY = Number(arg("--concurrency", PLAY ? 3 : 8));
 const SETTLE_MS = Number(arg("--settle", 14)) * 1000;   // time after PLAYING before the screenshot
 const AD_WAIT_MS = 45000;                                 // longest we'll wait out a pre-roll ad
@@ -169,20 +170,34 @@ async function thumbAudition(jpeg, item, api) {
     let img;
     try { img = jpeg.decode(buf, { useTArray: true, maxMemoryUsageInMB: 512 }); } catch { continue; }
     if (img.width < 320) continue;
-    const age = res.headers.get("last-modified") ? Math.round((Date.now() - new Date(res.headers.get("last-modified"))) / 60000) : null;
-    await writeFile(path.join(OUT, `${id}.jpg`), buf);
-    return { ...r, shot: `${id}.jpg`, thumb: name.replace("_live.jpg", ""), width: img.width, height: img.height, hd: name === "maxresdefault_live.jpg" || name === "hq720_live.jpg", ageMinutes: age, ...stats(img), verdict: "frame", _img: img };
+    const hd = name === "maxresdefault_live.jpg" || name === "hq720_live.jpg";
+    const st = stats(img);
+    // "dark" is not a verdict on the stream: it may just be night there. Retry it in daylight.
+    const verdict = !hd ? "sd" : st.contrast < 15 ? "flat" : st.brightness < 35 ? "dark" : "frame";
+    const base = { ...r, thumb: name.replace("_live.jpg", ""), width: img.width, height: img.height, hd, ...st, verdict };
+    if (verdict !== "frame") return base;
+    const file = `${id}.jpg`;
+    if (SMALL) await writeFile(path.join(OUT, file), jpeg.encode(resize(img, 640, 360), 72).data);
+    else await writeFile(path.join(OUT, file), buf);
+    return { ...base, shot: file, _img: img };
   }
   return { ...r, verdict: "no-thumb" };
 }
 
+// Nearest-neighbour cover-crop resize to w x h, as a jpeg-js raw image.
+function resize(img, w, h) {
+  const data = Buffer.alloc(w * h * 4);
+  paste(data, w, img, 0, 0, w, h);
+  return { data, width: w, height: h };
+}
+
 // Box-average resize of a decoded image into a TILE_W x TILE_H cover crop, pasted into the sheet.
-function paste(sheet, sw, img, col, row) {
-  const scale = Math.max(TILE_W / img.width, TILE_H / img.height);
-  const cw = TILE_W / scale, ch = TILE_H / scale, x0 = (img.width - cw) / 2, y0 = (img.height - ch) / 2;
-  for (let y = 0; y < TILE_H; y++) for (let x = 0; x < TILE_W; x++) {
+function paste(sheet, sw, img, col, row, tw = TILE_W, th = TILE_H) {
+  const scale = Math.max(tw / img.width, th / img.height);
+  const cw = tw / scale, ch = th / scale, x0 = (img.width - cw) / 2, y0 = (img.height - ch) / 2;
+  for (let y = 0; y < th; y++) for (let x = 0; x < tw; x++) {
     const sx = Math.min(img.width - 1, Math.floor(x0 + (x + 0.5) / scale)), sy = Math.min(img.height - 1, Math.floor(y0 + (y + 0.5) / scale));
-    const si = (sy * img.width + sx) * 4, di = ((row * TILE_H + y) * sw + col * TILE_W + x) * 4;
+    const si = (sy * img.width + sx) * 4, di = ((row * th + y) * sw + col * tw + x) * 4;
     sheet[di] = img.data[si]; sheet[di + 1] = img.data[si + 1]; sheet[di + 2] = img.data[si + 2]; sheet[di + 3] = 255;
   }
 }

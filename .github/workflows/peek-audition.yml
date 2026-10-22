@@ -35,7 +35,7 @@ jobs:
       - name: Audition streams
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node scripts/peek/audition.mjs 2>&1 | tee audition.log
+        run: node scripts/peek/audition.mjs --small 2>&1 | tee audition.log
 
       - name: Publish screenshots
         if: always()
