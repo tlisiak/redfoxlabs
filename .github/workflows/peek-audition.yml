@@ -1,0 +1,57 @@
+name: Peek audition
+
+# Opens each stream in scripts/peek/audition-list.json in real Chrome, lets it play, screenshots it,
+# and publishes the screenshots plus results.json to the `peek-auditions` branch so a person can
+# judge whether each one is beautiful and actually working.
+# Runs on a push to any `audition/**` branch, or by hand.
+
+on:
+  push:
+    branches: ["audition/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: peek-audition-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install browser driver
+        run: npm i --no-save --no-audit --no-fund playwright-core jpeg-js
+
+      - name: Audition streams
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/peek/audition.mjs --concurrency 3 | tee audition.log
+
+      - name: Publish screenshots
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -d audition-out || exit 0
+          RUN="run-$(date -u +%Y%m%d-%H%M)-${{ github.run_number }}"
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          if git ls-remote --exit-code --heads "$URL" peek-auditions >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --branch peek-auditions "$URL" /tmp/aud
+          else
+            mkdir /tmp/aud && git -C /tmp/aud init -q -b peek-auditions && git -C /tmp/aud remote add origin "$URL"
+          fi
+          mkdir -p "/tmp/aud/$RUN" && cp -r audition-out/. "/tmp/aud/$RUN/" && cp audition.log "/tmp/aud/$RUN/" 2>/dev/null || true
+          cd /tmp/aud
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Audition $RUN" && git push -q origin peek-auditions
+          echo "Published to peek-auditions/$RUN" >> "$GITHUB_STEP_SUMMARY"
