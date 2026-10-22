@@ -38,6 +38,23 @@ export async function loadStreams() {
   return sandbox.window.PEEK_STREAMS;
 }
 
+// Views people submitted and an admin approved (see supabase/migrations/*peek_community_views*).
+// They're read through the same community.js the page uses, so a row that isn't complete and safe
+// is dropped here too. Never throws: if the database is unreachable the check still covers the
+// built-in views.
+export async function loadCommunity({ fetchImpl = globalThis.fetch } = {}) {
+  try {
+    const sandbox = { window: {}, URL, Intl, fetch: fetchImpl };
+    vm.runInNewContext(await readFile(path.join(root, "public/peek/config.js"), "utf8"), sandbox);
+    if (!sandbox.window.PEEK_CONFIG?.supabaseUrl) return [];
+    vm.runInNewContext(await readFile(path.join(root, "public/peek/community.js"), "utf8"), sandbox);
+    return await sandbox.window.PeekCommunity.loadApproved();
+  } catch (err) {
+    console.error(`community views unavailable: ${err.message}`);
+    return [];
+  }
+}
+
 // Vetting queue: places that might become views. Checked every run, never played.
 export async function loadQueue() {
   try { return JSON.parse(await readFile(path.join(root, "scripts/peek/candidates.json"), "utf8")).candidates || []; }
@@ -356,7 +373,8 @@ export const readyToPromote = (u) => u.uptime != null && u.days >= PROMOTE.minDa
 export const isFlaky = (u) => u.samples >= FLAKY.minSamples && u.uptime < FLAKY.maxUptime;
 
 async function main() {
-  const streams = await loadStreams();
+  const community = await loadCommunity();
+  const streams = [...(await loadStreams()), ...community];
   const status = { checkedAt: new Date().toISOString(), mode: API_KEY ? "api" : "scrape", streams: {} };
   let history = null;
   try { history = JSON.parse(await readFile(HISTORY, "utf8")); } catch { /* first run */ }

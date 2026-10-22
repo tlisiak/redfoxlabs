@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Submit a view | Peek</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Know a beautiful live camera? Submit it to Peek.">
+<!-- YouTube embeds fail with Error 153 without a referrer -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Josefin+Sans:wght@500;600;700&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f1e4c6; --cream-2: #e7d5ae; --paper: #f7edd5; --navy: #1e2b45; --navy-deep: #141d31; --sun: #e1552c; --gold: #f0a830;
+    --teal: #2b7a74; --sky: #9fcad3; --ink-soft: #55607a; --bad: #b3261e; --good: #1f7a4d;
+    --display: "Big Shoulders Display", "Oswald", "Arial Narrow", Impact, sans-serif;
+    --label: "Josefin Sans", "Futura", "Century Gothic", "Avenir", sans-serif;
+    --body: "Libre Franklin", "Franklin Gothic Book", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--cream); color: var(--navy); font: 16px/1.55 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; max-width: 1120px; margin: 0 auto; padding: 18px 20px 0; font: 700 12px/1 var(--label); letter-spacing: .22em; text-transform: uppercase; }
+  .top a { text-decoration: none; border-bottom: 2px solid var(--sun); padding-bottom: 2px; }
+  main { max-width: 1120px; margin: 0 auto; padding: 10px 20px 80px; }
+  h1 { font: 900 clamp(52px, 9vw, 96px)/.9 var(--display); letter-spacing: .01em; text-shadow: 4px 4px 0 var(--sun); margin: 22px 0 18px; }
+  .lede { max-width: 640px; font-size: 18px; }
+  .rules { margin: 20px 0 34px; max-width: 760px; border: 2px solid var(--navy); background: var(--paper); box-shadow: 5px 5px 0 var(--navy); }
+  .rules summary { cursor: pointer; padding: 12px 16px; font: 700 13px/1.3 var(--label); letter-spacing: .18em; text-transform: uppercase; list-style: none; }
+  .rules summary::-webkit-details-marker { display: none; }
+  .rules summary::after { content: "+"; float: right; font-size: 18px; line-height: 1; }
+  .rules[open] summary::after { content: "–"; }
+  .rules ul { padding: 4px 18px 16px 36px; display: grid; gap: 6px; font-size: 15px; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 34px; align-items: start; }
+  form { display: grid; gap: 28px; }
+  fieldset { border: 2px solid var(--navy); background: var(--paper); box-shadow: 6px 6px 0 var(--navy); padding: 22px 22px 24px; display: grid; gap: 18px; min-width: 0; }
+  legend { float: left; width: 100%; padding: 0; margin-bottom: 2px; font: 900 30px/1 var(--display); letter-spacing: .04em; text-transform: uppercase; }
+  legend + * { clear: both; }
+  legend .n { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 10px; border-radius: 50%; background: var(--sun); color: var(--cream); font-size: 22px; vertical-align: 2px; }
+  .field { display: grid; gap: 6px; min-width: 0; }
+  label, .lab { font: 700 12px/1.3 var(--label); letter-spacing: .16em; text-transform: uppercase; }
+  .req { color: var(--sun); }
+  .hint { font-size: 13.5px; color: var(--ink-soft); }
+  input, textarea, select { width: 100%; font: 16px/1.4 var(--body); color: var(--navy); background: var(--cream); border: 2px solid var(--navy); border-radius: 3px; padding: 10px 12px; }
+  textarea { min-height: 104px; resize: vertical; }
+  input::placeholder, textarea::placeholder { color: #8a8f9c; }
+  input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--bad); background: #fbe9e4; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; }
+  .count { justify-self: end; font: 600 12px/1 var(--label); letter-spacing: .08em; color: var(--ink-soft); }
+  .count.over { color: var(--bad); }
+  .err { color: var(--bad); font-size: 14px; font-weight: 600; min-height: 0; }
+  .err:empty { display: none; }
+  .check { display: flex; gap: 10px; align-items: flex-start; }
+  .check input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--sun); }
+  .check label { font: 400 15px/1.45 var(--body); letter-spacing: 0; text-transform: none; }
+  .list { display: grid; gap: 10px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  /* stream preview */
+  .pv { position: relative; aspect-ratio: 16 / 9; background: var(--navy-deep); border: 3px solid var(--navy); display: grid; place-items: center; overflow: hidden; }
+  .pv .ph { color: var(--cream); font: 700 12px/1.4 var(--label); letter-spacing: .2em; text-transform: uppercase; text-align: center; padding: 20px; opacity: .8; }
+  .pv iframe, .pv > div { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .chip { justify-self: start; font: 700 12px/1.3 var(--label); letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; border: 2px solid var(--navy); background: var(--cream); }
+  .chip.good { border-color: var(--good); color: var(--good); }
+  .chip.warn { border-color: #9a6b00; color: #7a5300; background: #fbf0cf; }
+  .chip.bad { border-color: var(--bad); color: var(--bad); background: #fbe9e4; }
+  /* card preview */
+  aside { position: sticky; top: 14px; display: grid; gap: 10px; }
+  aside .lab { color: var(--ink-soft); }
+  .card { background: var(--navy); color: var(--cream); border: 3px solid var(--navy-deep); box-shadow: 6px 6px 0 var(--sun); padding: 20px 20px 22px; display: grid; gap: 14px; max-height: 78vh; overflow: auto; }
+  .card .live { justify-self: start; font: 700 11px/1 var(--label); letter-spacing: .2em; text-transform: uppercase; background: var(--sun); padding: 5px 9px 4px; }
+  .card h2 { font: 900 38px/.95 var(--display); letter-spacing: .02em; text-transform: uppercase; }
+  .card .where { font: 600 12px/1.4 var(--label); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+  .card .headline { font: italic 400 17px/1.4 var(--body); }
+  .card h3 { font: 700 11px/1 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .card p, .card li { font-size: 14px; line-height: 1.55; }
+  .card ul { padding-left: 18px; display: grid; gap: 3px; }
+  .card .credit { font-size: 12.5px; opacity: .85; border-top: 1px solid rgba(241,228,198,.25); padding-top: 10px; display: grid; gap: 4px; }
+  .card .empty { opacity: .45; font-style: italic; }
+  .actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .go { font: 900 28px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--cream); background: var(--sun); border: 0; padding: 14px 30px 12px; cursor: pointer; filter: drop-shadow(4px 4px 0 var(--navy)); }
+  .go:hover { transform: translate(-1px, -1px); filter: drop-shadow(6px 6px 0 var(--navy)); }
+  .go:disabled { background: #b9a98a; cursor: not-allowed; filter: none; transform: none; }
+  .banner { border: 2px solid var(--bad); background: #fbe9e4; color: var(--bad); padding: 12px 14px; font-weight: 600; }
+  .banner:empty { display: none; }
+  .done { max-width: 640px; border: 3px solid var(--navy); background: var(--paper); box-shadow: 8px 8px 0 var(--sun); padding: 30px; display: grid; gap: 14px; }
+  .done h2 { font: 900 56px/.95 var(--display); text-transform: uppercase; }
+  .closed { max-width: 640px; border: 2px dashed var(--navy); padding: 26px; font-size: 18px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 920px) { .layout { grid-template-columns: 1fr; } aside { position: static; order: 2; } .card { max-height: none; } }
+  @media (max-width: 560px) { .row, .row3 { grid-template-columns: 1fr; } fieldset { padding: 18px 16px 20px; box-shadow: 4px 4px 0 var(--navy); } main { padding-bottom: 50px; } }
+</style>
+</head>
+<body>
+<div class="top"><a href="./">← Back to Peek</a><span>A Red Fox Labs project</span></div>
+<main>
+  <h1>Submit a view</h1>
+  <div id="closed" class="closed" hidden>Submissions open soon. In the meantime, <a href="./">take a peek</a> at what's already here.</div>
+
+  <div id="open" hidden>
+    <p class="lede">Know a live camera that deserves a spot on Peek? Tell us about the place and we'll review it. Approved views appear exactly like the rest, with the same info card.</p>
+    <details class="rules">
+      <summary>What we're looking for</summary>
+      <ul>
+        <li>A <b>24/7 live YouTube stream</b> that allows embedding (a recording, loop or replay won't work).</li>
+        <li>A <b>fixed or slowly panning view</b> of somewhere beautiful, in <b>HD</b>, run by you, your venue, a park, a town, a tourism board or another trusted operator.</li>
+        <li>Not music-over-scenery loops, multi-camera rotations, news, indoor or street-corner cams.</li>
+        <li>You'll write the info card (what you're looking at, what to watch for, the story, sources). Plain and accurate beats flowery, and we edit for typos before publishing.</li>
+        <li>You must run the stream or have the operator's blessing to share it.</li>
+      </ul>
+    </details>
+
+    <div class="layout">
+      <form id="f" novalidate autocomplete="off">
+        <div id="banner" class="banner" role="alert"></div>
+
+        <fieldset>
+          <legend><span class="n">1</span>The stream</legend>
+          <div class="field">
+            <label for="url">YouTube link <span class="req">*</span></label>
+            <input id="url" name="url" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=…" required>
+            <div class="hint">The link to the live stream's watch page. We'll load it below to make sure it plays and can be embedded.</div>
+            <div class="err" id="e-url"></div>
+          </div>
+          <div class="pv" id="pv"><div class="ph" id="pvph">Paste a link to preview it</div></div>
+          <div class="chip" id="chip" hidden></div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="n">2</span>The place</legend>
+          <div class="field">
+            <label for="name">Name <span class="req">*</span></label>
+            <input id="name" name="name" maxlength="80" placeholder="Hvar Harbour" required>
+            <div class="hint">Short and recognizable: the place people would search for.</div>
+            <div class="err" id="e-name"></div>
+          </div>
+          <div class="field">
+            <label for="place">Where exactly <span class="req">*</span></label>
+            <input id="place" name="place" maxlength="120" placeholder="From the lighthouse over the old port" required>
+            <div class="err" id="e-place"></div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="country">Country <span class="req">*</span></label>
+              <input id="country" name="country" maxlength="60" placeholder="Croatia" required>
+              <div class="err" id="e-country"></div>
+            </div>
+            <div class="field">
+              <label for="coords">Coordinates <span class="req">*</span></label>
+              <input id="coords" name="coords" placeholder="43.1729, 16.4412" required>
+              <div class="hint">Paste from Google Maps (right-click the spot, click the numbers) or paste a Google Maps link. <a id="mapLink" href="#" target="_blank" rel="noopener" hidden>Check it on the map</a></div>
+              <div class="err" id="e-coords"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="tz">Time zone <span class="req">*</span></label>
+            <select id="tz" name="tz" required></select>
+            <div class="hint" id="tzHint">Peek only shows a view while it's daylight there, so this matters. Once you enter coordinates we'll suggest the right one.</div>
+            <div class="err" id="e-tz"></div>
+          </div>
+          <div class="check"><input id="night" type="checkbox"><label for="night">Worth watching after dark too (floodlit, infrared, city lights, aurora). Otherwise Peek only shows it in daylight.</label></div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="n">3</span>The info card</legend>
+          <div class="field">
+            <label for="headline">Headline <span class="req">*</span></label>
+            <input id="headline" name="headline" maxlength="160" placeholder="A fishing port where the ferries still keep time by the bell." required>
+            <div class="hint">One sentence that makes someone want to keep watching.</div>
+            <span class="count" data-for="headline" data-max="160"></span><div class="err" id="e-headline"></div>
+          </div>
+          <div class="field">
+            <label for="looking">What you're looking at <span class="req">*</span></label>
+            <textarea id="looking" name="looking" maxlength="600" placeholder="The camera sits on the harbour wall and looks across the bay toward…" required></textarea>
+            <div class="hint">Where the camera is, what's in frame, how it moves. 40 to 600 characters.</div>
+            <span class="count" data-for="looking" data-max="600"></span><div class="err" id="e-looking"></div>
+          </div>
+          <div class="field">
+            <span class="lab">Watch for <span class="req">*</span></span>
+            <div class="list" id="watchList"></div>
+            <div class="hint">Up to three things worth waiting for. At least one.</div>
+            <div class="err" id="e-watch"></div>
+          </div>
+          <div class="field">
+            <label for="history">The story <span class="req">*</span></label>
+            <textarea id="history" name="history" maxlength="1200" placeholder="The harbour was dug in 1822 after the old one silted up…" required></textarea>
+            <div class="hint">History, geology, wildlife: the interesting part. 40 to 1,200 characters. Only what you can back up with a source below.</div>
+            <span class="count" data-for="history" data-max="1200"></span><div class="err" id="e-history"></div>
+          </div>
+          <div class="field">
+            <span class="lab">Worth knowing <span class="hint" style="text-transform:none;letter-spacing:0">(optional)</span></span>
+            <div class="list" id="factList"></div>
+          </div>
+          <div class="field">
+            <span class="lab">Sources <span class="req">*</span></span>
+            <div class="list" id="srcList"></div>
+            <div class="hint">Where the facts come from (Wikipedia, the park or town's site). At least one, up to three.</div>
+            <div class="err" id="e-src"></div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="creditName">Who runs the stream <span class="req">*</span></label>
+              <input id="creditName" name="creditName" maxlength="120" placeholder="Hvar Tourist Board" required>
+              <div class="err" id="e-creditName"></div>
+            </div>
+            <div class="field">
+              <label for="creditUrl">Their web page <span class="req">*</span></label>
+              <input id="creditUrl" name="creditUrl" type="url" inputmode="url" placeholder="https://…" required>
+              <div class="err" id="e-creditUrl"></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="n">4</span>About you</legend>
+          <div class="row">
+            <div class="field">
+              <label for="sName">Your name</label>
+              <input id="sName" name="sName" maxlength="100" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="sEmail">Email <span class="req">*</span></label>
+              <input id="sEmail" name="sEmail" type="email" maxlength="200" placeholder="you@example.com" required>
+              <div class="hint">Private. Only used if we have a question.</div>
+              <div class="err" id="e-sEmail"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="rel">Your connection to this stream <span class="req">*</span></label>
+            <select id="rel" name="rel" required>
+              <option value="">Choose one</option>
+              <option value="owner">I run this stream</option>
+              <option value="authorized">I have the operator's permission to share it</option>
+              <option value="found">I found it and think it's wonderful</option>
+            </select>
+            <div class="err" id="e-rel"></div>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave this empty <input id="website" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="check"><input id="consent" type="checkbox"><label for="consent">I confirm that what I've written is accurate to the best of my knowledge, and that Peek may display this stream and card on its site. <span class="req">*</span></label></div>
+          <div class="err" id="e-consent"></div>
+        </fieldset>
+
+        <div class="actions">
+          <button class="go" id="send" type="submit">Send for review</button>
+          <span class="hint" id="sendNote">We read every submission. Most get an answer within a week.</span>
+        </div>
+      </form>
+
+      <aside>
+        <div class="lab">How it will look</div>
+        <div class="card" id="card"></div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="done" id="done" hidden>
+    <h2>Thank you</h2>
+    <p>Your view is in the queue. We check that the stream loads, plays in HD and shows what you say it does, then edit the card for typos and publish. If we have a question, we'll write to the email you gave.</p>
+    <p><a href="./">Back to Peek</a> · <a href="submit.html">Submit another</a></p>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="community.js"></script>
+<script src="https://www.youtube.com/iframe_api" async></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const PC = window.PeekCommunity;
+  if (!PC.enabled()) { $("closed").hidden = false; return; }
+  $("open").hidden = false;
+
+  // ---------------------------------------------------------------- lists of inputs
+  const mk = (tag, attrs = {}) => Object.assign(document.createElement(tag), attrs);
+  const watchEls = [], factEls = [], srcEls = [];
+  for (let i = 0; i < 3; i++) {
+    const w = mk("input", { maxLength: 160, placeholder: ["Fishing boats leaving at dawn", "Ferries crossing to the islands", "Storms rolling in from the west"][i], ariaLabel: `Watch for ${i + 1}` });
+    watchEls.push(w); $("watchList").append(w);
+  }
+  for (let i = 0; i < 3; i++) {
+    const f = mk("input", { maxLength: 240, placeholder: ["The lighthouse is 31 m tall.", "", ""][i], ariaLabel: `Fact ${i + 1}` });
+    factEls.push(f); $("factList").append(f);
+  }
+  for (let i = 0; i < 3; i++) {
+    const row = mk("div", { className: "row3" });
+    const l = mk("input", { maxLength: 100, placeholder: i === 0 ? "Wikipedia: Hvar" : "Label", ariaLabel: `Source ${i + 1} label` });
+    const u = mk("input", { type: "url", inputMode: "url", maxLength: 300, placeholder: "https://…", ariaLabel: `Source ${i + 1} link` });
+    row.append(l, u); srcEls.push([l, u]); $("srcList").append(row);
+  }
+
+  // ---------------------------------------------------------------- coordinates and time zones
+  function parseCoords(text) {
+    const t = String(text || "").trim();
+    const at = t.match(/@(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/);
+    if (at) return { lat: +at[1], lng: +at[2] };
+    const nums = t.match(/-?\d+(?:\.\d+)?/g);
+    if (!nums || nums.length < 2) return null;
+    let lat = +nums[0], lng = +nums[1];
+    if (/[sS]\b/.test(t.split(/[,\s]+(?=-?\d)/)[0] || "") || /\d\s*°?\s*S\b/i.test(t.slice(0, t.indexOf(nums[1])))) lat = -Math.abs(lat);
+    if (/\d\s*°?\s*W\b/i.test(t)) lng = -Math.abs(lng);
+    return Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180 ? { lat, lng } : null;
+  }
+  const zones = (() => { try { return Intl.supportedValuesOf("timeZone"); } catch { return ["UTC"]; } })();
+  const offsetHours = (z) => {
+    try {
+      const p = new Intl.DateTimeFormat("en", { timeZone: z, timeZoneName: "longOffset" }).formatToParts(new Date()).find((x) => x.type === "timeZoneName").value;
+      const m = p.match(/GMT([+-])(\d\d):?(\d\d)?/);
+      return m ? (m[1] === "-" ? -1 : 1) * (+m[2] + (+m[3] || 0) / 60) : 0;
+    } catch { return 0; }
+  };
+  const zoneOffsets = new Map(zones.map((z) => [z, offsetHours(z)]));
+  function fillZones() {
+    const keep = $("tz").value;
+    const c = parseCoords($("coords").value);
+    $("tz").replaceChildren(mk("option", { value: "", textContent: "Choose a time zone" }));
+    let rest = zones;
+    if (c) {
+      const est = c.lng / 15;
+      const near = zones.filter((z) => Math.abs(zoneOffsets.get(z) - est) <= 1.25).sort((a, b) => Math.abs(zoneOffsets.get(a) - est) - Math.abs(zoneOffsets.get(b) - est) || a.localeCompare(b));
+      const g = mk("optgroup", { label: "Closest to your coordinates" });
+      for (const z of near) g.append(mk("option", { value: z, textContent: z.replace(/_/g, " ") }));
+      $("tz").append(g);
+      rest = zones.filter((z) => !near.includes(z));
+    }
+    const g2 = mk("optgroup", { label: c ? "All other time zones" : "All time zones" });
+    for (const z of rest) g2.append(mk("option", { value: z, textContent: z.replace(/_/g, " ") }));
+    $("tz").append(g2);
+    if (keep) $("tz").value = keep;
+  }
+  fillZones();
+  // Open-Meteo (which Peek already uses for weather) knows the real zone for any coordinates.
+  // Used as a suggestion that fills the box unless the person has picked a zone themselves.
+  let tzTimer = 0, tzPicked = false, suggested = "";
+  async function suggestZone() {
+    const c = parseCoords($("coords").value);
+    if (!c) return;
+    try {
+      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lng}&current=temperature_2m&timezone=auto`);
+      const z = (await r.json()).timezone;
+      if (!z || !/^[A-Za-z]+(\/[A-Za-z0-9_+-]+){0,2}$/.test(z)) return;
+      new Intl.DateTimeFormat("en", { timeZone: z });   // throws if the browser doesn't know it
+      suggested = z;
+      if (![...$("tz").options].some((o) => o.value === z)) $("tz").insertBefore(mk("option", { value: z, textContent: z.replace(/_/g, " ") }), $("tz").options[1]);
+      if (!tzPicked) { $("tz").value = z; renderCard(); }
+      $("tzHint").textContent = `Suggested from your coordinates: ${z.replace(/_/g, " ")}. Change it if that's not right.`;
+    } catch { /* offline or blocked: the list below is still ordered by longitude */ }
+  }
+  $("tz").addEventListener("change", () => { tzPicked = $("tz").value !== suggested; });
+  $("coords").addEventListener("input", () => {
+    const c = parseCoords($("coords").value);
+    $("mapLink").hidden = !c;
+    if (c) $("mapLink").href = `https://www.google.com/maps/@${c.lat},${c.lng},13z`;
+    fillZones(); renderCard();
+    clearTimeout(tzTimer); tzTimer = setTimeout(suggestZone, 600);
+  });
+
+  // ---------------------------------------------------------------- stream preview
+  let player = null, ytReady = false, streamState = { ok: false, level: "", msg: "" }, loadedId = "";
+  window.onYouTubeIframeAPIReady = () => { ytReady = true; checkStream(); };
+  const chip = (level, msg) => { streamState = { ok: level !== "bad" && level !== "", level, msg }; const c = $("chip"); c.hidden = !msg; c.className = `chip ${level}`; c.textContent = msg; };
+  function checkStream() {
+    const { videoId } = PC.parseYouTube($("url").value);
+    $("e-url").textContent = "";
+    if (!videoId) {
+      streamState = { ok: false, level: "", msg: "" }; chip("", ""); loadedId = "";
+      if (player) { try { player.destroy(); } catch {} player = null; }
+      $("pv").replaceChildren(mk("div", { className: "ph", id: "pvph", textContent: $("url").value.trim() ? "That doesn't look like a YouTube video link" : "Paste a link to preview it" }));
+      return;
+    }
+    if (videoId === loadedId || !ytReady) return;
+    loadedId = videoId;
+    chip("warn", "Loading the stream…");
+    if (player) { try { player.destroy(); } catch {} player = null; }
+    $("pv").replaceChildren(mk("div", { id: "pvmount" }));
+    player = new YT.Player("pvmount", {
+      videoId, playerVars: { autoplay: 1, mute: 1, controls: 0, playsinline: 1, rel: 0 },
+      events: {
+        onReady: (e) => { e.target.mute(); e.target.playVideo(); },
+        onStateChange: (e) => {
+          if (e.data !== 1) return;
+          let live;
+          try { live = e.target.getVideoData().isLive; } catch {}
+          chip(live === false ? "warn" : "good", live === false ? "Plays, but doesn't look like a live stream. Peek only shows 24/7 live cams." : "Plays and can be embedded ✓");
+        },
+        onError: (e) => {
+          const code = e.data;
+          if (code === 2) chip("bad", "That doesn't look like a valid video.");
+          else if (code === 100) chip("bad", "That video is unavailable (removed or private).");
+          else if (code === 101 || code === 150) chip("bad", "The owner has switched off embedding, so Peek can't show this. If it's yours, turn on \"Allow embedding\" in YouTube Studio.");
+          else chip("warn", "Couldn't confirm it plays in this browser. You can still submit it and we'll check it ourselves.");
+        },
+      },
+    });
+  }
+  $("url").addEventListener("input", () => { checkStream(); });
+  $("url").addEventListener("change", checkStream);
+
+  // ---------------------------------------------------------------- live card preview
+  const val = (id) => $(id).value.trim();
+  const filled = (els) => els.map((e) => e.value.trim()).filter(Boolean);
+  function renderCard() {
+    const c = parseCoords($("coords").value);
+    const sec = (title, node) => { const d = mk("div"); d.append(mk("h3", { textContent: title }), node); return d; };
+    const para = (t, empty) => mk("p", t ? { textContent: t } : { className: "empty", textContent: empty });
+    const ul = (items, empty) => { if (!items.length) return para("", empty); const u = mk("ul"); for (const i of items) u.append(mk("li", { textContent: i })); return u; };
+    const root = $("card");
+    const srcs = srcEls.map(([l, u]) => [l.value.trim(), u.value.trim()]).filter(([l, u]) => l && u);
+    const credit = mk("div", { className: "credit" });
+    credit.append(mk("div", { textContent: `Live stream by ${val("creditName") || "…"}` }));
+    credit.append(mk("div", { textContent: `Sources: ${srcs.map(([l]) => l).join(" · ") || "…"}` }));
+    root.replaceChildren(
+      mk("div", { className: "live", textContent: "● Live" }),
+      mk("h2", { textContent: val("name") || "Your place" }),
+      mk("div", { className: "where", textContent: `${val("place") || "Where exactly"} · ${val("country") || "Country"}${c ? ` · ${Math.abs(c.lat).toFixed(2)}°${c.lat >= 0 ? "N" : "S"}, ${Math.abs(c.lng).toFixed(2)}°${c.lng >= 0 ? "E" : "W"}` : ""}` }),
+      mk("div", { className: val("headline") ? "headline" : "headline empty", textContent: val("headline") || "Your headline appears here." }),
+      sec("What you're looking at", para(val("looking"), "Describe the view.")),
+      sec("Watch for", ul(filled(watchEls), "Things worth waiting for.")),
+      sec("The story", para(val("history"), "The history behind the place.")),
+      ...(filled(factEls).length ? [sec("Worth knowing", ul(filled(factEls)))] : []),
+      credit,
+    );
+    for (const span of document.querySelectorAll(".count")) {
+      const n = $(span.dataset.for).value.length, max = +span.dataset.max;
+      span.textContent = `${n} / ${max}`; span.classList.toggle("over", n > max);
+    }
+  }
+  $("f").addEventListener("input", () => { renderCard(); saveDraft(); });
+  renderCard();
+
+  // ---------------------------------------------------------------- draft saving
+  const DRAFT = "peek-submit-draft";
+  const fields = ["url", "name", "place", "country", "coords", "tz", "headline", "looking", "history", "creditName", "creditUrl", "sName", "sEmail", "rel"];
+  function saveDraft() {
+    try {
+      const d = Object.fromEntries(fields.map((f) => [f, $(f).value]));
+      d.night = $("night").checked; d.watch = watchEls.map((e) => e.value); d.facts = factEls.map((e) => e.value); d.src = srcEls.map(([l, u]) => [l.value, u.value]);
+      localStorage.setItem(DRAFT, JSON.stringify(d));
+    } catch { /* private mode */ }
+  }
+  try {
+    const d = JSON.parse(localStorage.getItem(DRAFT) || "null");
+    if (d) {
+      for (const f of fields) if (typeof d[f] === "string") $(f).value = d[f];
+      $("night").checked = !!d.night;
+      (d.watch || []).forEach((v, i) => watchEls[i] && (watchEls[i].value = v));
+      (d.facts || []).forEach((v, i) => factEls[i] && (factEls[i].value = v));
+      (d.src || []).forEach(([l, u], i) => srcEls[i] && ((srcEls[i][0].value = l), (srcEls[i][1].value = u)));
+      $("coords").dispatchEvent(new Event("input")); if (d.tz) $("tz").value = d.tz;
+      renderCard();
+    }
+  } catch { /* ignore a corrupt draft */ }
+
+  // ---------------------------------------------------------------- validation and sending
+  const webOk = (u) => { try { return /^https?:$/.test(new URL(u).protocol); } catch { return false; } };
+  const between = (s, a, b) => s.length >= a && s.length <= b;
+  function collect() {
+    const errors = {};
+    const set = (k, m) => { errors[k] = m; };
+    const { videoId, channelId } = PC.parseYouTube($("url").value);
+    if (!videoId) set("url", "Paste the link to the live stream's YouTube page.");
+    else if (streamState.level === "bad") set("url", streamState.msg);
+    if (!between(val("name"), 3, 80)) set("name", "Add a name of 3 to 80 characters.");
+    if (!between(val("place"), 3, 120)) set("place", "Say where exactly, in 3 to 120 characters.");
+    if (!between(val("country"), 2, 60)) set("country", "Add the country.");
+    const c = parseCoords($("coords").value);
+    if (!c) set("coords", "Enter coordinates like 43.1729, 16.4412, or paste a Google Maps link.");
+    if (!$("tz").value) set("tz", "Pick the time zone where the camera is.");
+    if (!between(val("headline"), 10, 160)) set("headline", "The headline needs 10 to 160 characters.");
+    if (!between(val("looking"), 40, 600)) set("looking", "Describe the view in 40 to 600 characters.");
+    const watch = filled(watchEls);
+    if (!watch.length || watch.some((w) => w.length < 3)) set("watch", "Add at least one thing to watch for (3+ characters each).");
+    if (!between(val("history"), 40, 1200)) set("history", "Tell the story in 40 to 1,200 characters.");
+    const facts = filled(factEls);
+    const rows = srcEls.map(([l, u]) => ({ label: l.value.trim(), url: u.value.trim() })).filter((r) => r.label || r.url);
+    if (!rows.length || rows.some((r) => !between(r.label, 2, 100) || !webOk(r.url))) set("src", "Add at least one source with a label and a web link (https://…). Finish or clear any half-filled row.");
+    if (!between(val("creditName"), 2, 120)) set("creditName", "Say who runs the stream.");
+    if (!webOk(val("creditUrl"))) set("creditUrl", "Add their web page, starting with https://");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val("sEmail"))) set("sEmail", "Enter a valid email address.");
+    if (!$("rel").value) set("rel", "Tell us how you're connected to the stream.");
+    if (!$("consent").checked) set("consent", "Please tick the box to confirm.");
+    return { errors, c, videoId, channelId, watch, facts, rows };
+  }
+  const ERR_FIELDS = { url: "url", name: "name", place: "place", country: "country", coords: "coords", tz: "tz", headline: "headline", looking: "looking", watch: null, history: "history", src: null, creditName: "creditName", creditUrl: "creditUrl", sEmail: "sEmail", rel: "rel", consent: "consent" };
+  // Once an error has been shown, keep it honest while the person fixes things: re-check on every
+  // edit and clear the ones that are now fine (never raising new ones on fields they haven't reached).
+  function refreshErrors() {
+    const shown = Object.keys(ERR_FIELDS).filter((k) => $(`e-${k}`) && $(`e-${k}`).textContent);
+    if (!shown.length) return;
+    const { errors } = collect();
+    for (const k of shown) {
+      $(`e-${k}`).textContent = errors[k] || "";
+      const input = ERR_FIELDS[k] && $(ERR_FIELDS[k]); if (input) input.setAttribute("aria-invalid", errors[k] ? "true" : "false");
+    }
+  }
+  $("f").addEventListener("input", refreshErrors);
+  $("f").addEventListener("change", refreshErrors);
+  function showErrors(errors) {
+    for (const k of Object.keys(ERR_FIELDS)) {
+      const el = $(`e-${k}`); if (el) el.textContent = errors[k] || "";
+      const input = ERR_FIELDS[k] && $(ERR_FIELDS[k]); if (input) input.setAttribute("aria-invalid", errors[k] ? "true" : "false");
+    }
+    const first = Object.keys(ERR_FIELDS).find((k) => errors[k]);
+    if (first) { const t = $(`e-${first}`); (ERR_FIELDS[first] ? $(ERR_FIELDS[first]) : t).scrollIntoView({ block: "center", behavior: "smooth" }); if (ERR_FIELDS[first]) $(ERR_FIELDS[first]).focus({ preventScroll: true }); }
+    return !!first;
+  }
+
+  $("f").addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    $("banner").textContent = "";
+    if ($("website").value) { $("f").hidden = true; $("done").hidden = false; return; }   // a bot filled the trap field
+    const { errors, c, videoId, channelId, watch, facts, rows } = collect();
+    if (showErrors(errors)) return;
+    $("send").disabled = true; $("send").textContent = "Sending…";
+    try {
+      await PC.submit({
+        video_id: videoId, channel_id: channelId || undefined, name: val("name"), place: val("place"), country: val("country"), lat: c.lat, lng: c.lng, tz: $("tz").value, night: $("night").checked,
+        headline: val("headline"), looking: val("looking"), watch_for: watch, history: val("history"), facts, sources: rows,
+        credit_name: val("creditName"), credit_url: val("creditUrl"), submitter_name: val("sName"), submitter_email: val("sEmail"), relationship: $("rel").value, consent: true,
+      });
+      try { localStorage.removeItem(DRAFT); } catch {}
+      $("open").hidden = true; $("done").hidden = false; window.scrollTo({ top: 0 });
+    } catch (e) {
+      $("banner").textContent = e.message || "Something went wrong. Please try again.";
+      $("banner").scrollIntoView({ block: "center", behavior: "smooth" });
+      $("send").disabled = false; $("send").textContent = "Send for review";
+    }
+  });
+  checkStream();
+})();
+</script>
+</body>
+</html>
