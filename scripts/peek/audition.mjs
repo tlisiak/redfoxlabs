@@ -22,6 +22,9 @@ const OUT = arg("--out", path.join(root, "audition-out"));
 const CONCURRENCY = Number(arg("--concurrency", 3));
 const SETTLE_MS = Number(arg("--settle", 14)) * 1000;   // time after PLAYING before the screenshot
 const AD_WAIT_MS = 45000;                                 // longest we'll wait out a pre-roll ad
+const HEADED = process.argv.includes("--headed");           // real window (run under xvfb-run); looks less like automation
+const NOCOOKIE = process.argv.includes("--nocookie");        // play through youtube-nocookie.com
+const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const W = 1280, H = 720;
 
@@ -33,6 +36,7 @@ window.S = { ready: false, state: null, err: null, events: [] };
 function onYouTubeIframeAPIReady() {
   const id = new URLSearchParams(location.search).get("v");
   window.pl = new YT.Player("p", { videoId: id, width: ${W}, height: ${H},
+    host: ${JSON.stringify(NOCOOKIE ? "https://www.youtube-nocookie.com" : "https://www.youtube.com")},
     playerVars: { autoplay: 1, mute: 1, controls: 0, disablekb: 1, fs: 0, rel: 0, playsinline: 1, iv_load_policy: 3 },
     events: {
       onReady: (e) => { S.ready = true; e.target.mute(); e.target.playVideo(); },
@@ -80,7 +84,8 @@ async function audition(browser, jpeg, base, item, api) {
     if (api.status?.embeddable === false) return { ...r, verdict: "no-embed" };
   } else if (API_KEY) return { ...r, verdict: "gone" };
 
-  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, userAgent: UA, locale: "en-US" });
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, "webdriver", { get: () => undefined }); });
   const page = await ctx.newPage();
   try {
     await page.goto(`${base}/player.html?v=${encodeURIComponent(id)}`, { waitUntil: "domcontentloaded" });
@@ -89,7 +94,11 @@ async function audition(browser, jpeg, base, item, api) {
     let playing = false;
     while (Date.now() - t0 < 30000) {
       const s = await page.evaluate(() => window.S).catch(() => null);
-      if (s?.err != null) return { ...r, verdict: "player-error", detail: `error ${s.err}` };
+      if (s?.err != null) {
+        await sleep(1500);   // let the player draw its message, then keep a picture of it
+        r.shot = `${id}.jpg`; await writeFile(path.join(OUT, r.shot), await page.screenshot({ type: "jpeg", quality: 70 })).catch(() => { r.shot = ""; });
+        return { ...r, verdict: "player-error", detail: `error ${s.err}` };
+      }
       if (s?.state === 1) { playing = true; break; }
       await sleep(500);
     }
@@ -131,7 +140,8 @@ async function main() {
   const details = await apiDetails(items.map((x) => x.videoId));
   const server = http.createServer((req, res) => { res.setHeader("content-type", "text/html"); res.end(PLAYER_PAGE); }).listen(0);
   const base = `http://localhost:${server.address().port}`;
-  const browser = await chromium.launch({ channel: "chrome", args: ["--autoplay-policy=no-user-gesture-required", "--mute-audio"] });
+  const browser = await chromium.launch({ channel: "chrome", headless: !HEADED, ignoreDefaultArgs: ["--enable-automation"],
+    args: ["--autoplay-policy=no-user-gesture-required", "--mute-audio", "--disable-blink-features=AutomationControlled"] });
   const results = new Array(items.length);
   let next = 0, done = 0;
   const worker = async () => {

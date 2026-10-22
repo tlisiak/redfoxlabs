@@ -34,7 +34,12 @@ jobs:
       - name: Audition streams
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node scripts/peek/audition.mjs --concurrency 3 | tee audition.log
+        run: |
+          sudo apt-get install -y xvfb >/dev/null 2>&1 || true
+          # Probe: which way of opening the player does YouTube accept from this runner?
+          node scripts/peek/audition.mjs --out audition-out/headless 2>&1 | tee -a audition.log
+          xvfb-run -a node scripts/peek/audition.mjs --headed --out audition-out/headed 2>&1 | tee -a audition.log
+          xvfb-run -a node scripts/peek/audition.mjs --headed --nocookie --out audition-out/headed-nocookie 2>&1 | tee -a audition.log
 
       - name: Publish screenshots
         if: always()
