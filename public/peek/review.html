@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex">
+<title>Peek review board</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  :root { --bg: #0b0c10; --card: #15171d; --line: #262a33; --ink: #f1efe9; --dim: #9aa0aa; --ok: #3ecf8e; --bad: #ff5d5d; --warn: #f2b84b; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 14px/1.5 Inter, system-ui, sans-serif; padding: 28px 16px 80px; }
+  main { max-width: 1080px; margin: 0 auto; }
+  h1 { font: 500 26px Georgia, serif; }
+  .sub { color: var(--dim); margin: 4px 0 18px; max-width: 70ch; }
+  .bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+  button, select { font: inherit; color: var(--ink); background: #232733; border: 1px solid var(--line); padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #2c3140; }
+  button.keep.on { background: rgba(62,207,142,.2); border-color: var(--ok); color: var(--ok); }
+  button.skip.on { background: rgba(255,93,93,.18); border-color: var(--bad); color: var(--bad); }
+  .item { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 16px; }
+  @media (max-width: 760px) { .item { grid-template-columns: 1fr; } }
+  .screen { position: relative; aspect-ratio: 16/9; background: #000 center/cover; border-radius: 10px; overflow: hidden; }
+  .screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .screen .load { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,.35); }
+  .screen .load button { font-size: 15px; padding: 10px 18px; }
+  h2 { font-size: 16px; font-weight: 600; }
+  .where { color: var(--dim); font-size: 13px; }
+  .head { margin: 8px 0; font-family: Georgia, serif; font-size: 15px; }
+  .flag { margin-top: 8px; font-size: 12.5px; color: var(--warn); }
+  details { margin-top: 8px; color: var(--dim); font-size: 13px; }
+  details p, details li { margin: 4px 0; }
+  details ul { padding-left: 18px; }
+  .acts { display: flex; gap: 8px; margin-top: 12px; }
+  a { color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Review board</h1>
+  <p class="sub">Candidate views with researched cards. Press Play on each, judge it with your own eyes (live? sharp? actually beautiful right now?), then Keep or Skip. Your marks save in this browser. "Copy keepers" gives me the list to promote into the catalog. Cards were researched from search results; anything shaky is flagged in yellow.</p>
+  <div class="bar">
+    <select id="filter"><option value="all">All</option><option value="todo">Not reviewed</option><option value="keep">Kept</option><option value="skip">Skipped</option></select>
+    <button id="copy">Copy keepers</button>
+    <span id="count" class="where"></span>
+  </div>
+  <div id="list"></div>
+</main>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let marks = {};
+  try { marks = JSON.parse(localStorage.getItem("peek-review") || "{}"); } catch {}
+  const save = () => { try { localStorage.setItem("peek-review", JSON.stringify(marks)); } catch {} };
+  let cards = [];
+
+  function render() {
+    const f = $("filter").value;
+    const rows = cards.filter((c) => f === "all" || (f === "todo" ? !marks[c.id] : marks[c.id] === f));
+    $("list").innerHTML = rows.map((c) => `
+      <article class="item" data-id="${esc(c.id)}">
+        <div>
+          <div class="screen" style="background-image:url(https://i.ytimg.com/vi/${esc(c.videoId)}/hqdefault.jpg)">
+            <div class="load"><button data-act="play">Play</button></div>
+          </div>
+          <div class="acts">
+            <button class="keep ${marks[c.id] === "keep" ? "on" : ""}" data-act="keep">Keep</button>
+            <button class="skip ${marks[c.id] === "skip" ? "on" : ""}" data-act="skip">Skip</button>
+            <a href="https://www.youtube.com/watch?v=${esc(c.videoId)}" target="_blank" rel="noopener" style="align-self:center">Open on YouTube</a>
+          </div>
+        </div>
+        <div>
+          <h2>${esc(c.name)}</h2>
+          <div class="where">${esc(c.place)}, ${esc(c.country)} · ${esc(c.operator?.name || "")}</div>
+          <p class="head">${esc(c.headline)}</p>
+          <p>${esc(c.looking)}</p>
+          ${c.liveRisk ? `<p class="flag">Risk: ${esc(c.liveRisk)}</p>` : ""}
+          ${c.unsure ? `<p class="flag">Unconfirmed: ${esc(c.unsure)}</p>` : ""}
+          <details><summary>Rest of the card</summary>
+            <p><b>Watch for</b></p><ul>${(c.watchFor || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+            <p><b>History.</b> ${esc(c.history)}</p>
+            <p><b>Facts</b></p><ul>${(c.facts || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+            <p><b>Sources</b></p><ul>${(c.sources || []).map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul>
+          </details>
+        </div>
+      </article>`).join("");
+    const kept = Object.values(marks).filter((v) => v === "keep").length;
+    const skipped = Object.values(marks).filter((v) => v === "skip").length;
+    $("count").textContent = `${cards.length} candidates · ${kept} kept · ${skipped} skipped · ${cards.length - kept - skipped} to review`;
+  }
+
+  $("list").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    const id = b.closest(".item").dataset.id, act = b.dataset.act;
+    if (act === "play") {
+      const c = cards.find((x) => x.id === id);
+      for (const old of document.querySelectorAll(".screen iframe")) old.remove();   // one live player at a time
+      for (const l of document.querySelectorAll(".screen .load")) l.hidden = false;
+      const screen = b.closest(".screen");
+      screen.querySelector(".load").hidden = true;
+      const f = document.createElement("iframe");
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      f.src = `https://www.youtube.com/embed/${encodeURIComponent(c.videoId)}?autoplay=1&mute=1&rel=0&playsinline=1`;
+      screen.appendChild(f);
+      return;
+    }
+    marks[id] = marks[id] === act ? undefined : act;
+    if (!marks[id]) delete marks[id];
+    save();
+    for (const k of b.closest(".acts").querySelectorAll("button")) k.classList.toggle("on", marks[id] === k.dataset.act);
+    const kept = Object.values(marks).filter((v) => v === "keep").length;
+    const skipped = Object.values(marks).filter((v) => v === "skip").length;
+    $("count").textContent = `${cards.length} candidates · ${kept} kept · ${skipped} skipped · ${cards.length - kept - skipped} to review`;
+  });
+  $("filter").addEventListener("change", render);
+  $("copy").addEventListener("click", async () => {
+    const ids = Object.keys(marks).filter((k) => marks[k] === "keep");
+    const text = JSON.stringify(ids);
+    try { await navigator.clipboard.writeText(text); $("copy").textContent = `Copied ${ids.length}`; } catch { prompt("Copy this list:", text); }
+    setTimeout(() => ($("copy").textContent = "Copy keepers"), 2000);
+  });
+
+  fetch("candidate-cards.json").then((r) => r.json()).then((d) => { cards = d; render(); })
+    .catch(() => { $("list").textContent = "Couldn't load candidate-cards.json (open this page over http, not as a file)."; });
+})();
+</script>
+</body>
+</html>

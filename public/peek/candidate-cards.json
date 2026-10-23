@@ -1,0 +1,3173 @@
+[
+ {
+  "videoId": "Vm3GvGSZJlg",
+  "id": "aquinnah-cliffs",
+  "name": "Aquinnah Cliffs and Gay Head Lighthouse",
+  "place": "Aquinnah (Gay Head), Martha's Vineyard, Massachusetts",
+  "country": "United States",
+  "lat": 41.3489,
+  "lng": -70.835,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Go Martha's Vineyard (GOMV)",
+   "url": "https://gomarthasvineyard.com/webcams"
+  },
+  "expectTitle": [
+   "Aquinnah",
+   "Gay Head"
+  ],
+  "night": false,
+  "headline": "Multicolored clay cliffs and a brick lighthouse at the far western tip of Martha's Vineyard.",
+  "looking": "A view of the Gay Head Light and the striped clay cliffs of Aquinnah, on the westernmost point of the island. The reviewed frame was a high, aerial-style angle taken near dusk, with the lighthouse near the cliff edge.",
+  "watchFor": [
+   "Warm cliff colors in the last hour before sunset",
+   "Fog rolling over the Vineyard Sound side in summer mornings",
+   "Lighthouse beam coming on at dusk"
+  ],
+  "history": "Congress authorized a lighthouse here in 1798 and the first light went into service in 1799, to warn ships off a dangerous ledge called Devil's Bridge. The current brick tower dates from the 1850s and was moved inland in 2015 because the cliffs were eroding beneath it. The cliffs are a National Natural Landmark and are held in trust for the Wampanoag Tribe of Aquinnah.",
+  "facts": [
+   "Gay Head Light is the only lighthouse noted for a history of Native American keepers",
+   "The cliffs were named Dover Cliff by an explorer in 1602, and later Gay Head for their bright colors",
+   "The tower was moved back 135 feet in 2015 (sources differ slightly on details of the move)"
+  ],
+  "sources": [
+   {
+    "label": "Gay Head Light (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Gay_Head_Light"
+   },
+   {
+    "label": "Gay Head Lighthouse (US Coast Guard history)",
+    "url": "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1927060/gay-head-lighthouse/"
+   },
+   {
+    "label": "GOMV webcams",
+    "url": "https://gomarthasvineyard.com/webcams"
+   }
+  ],
+  "liveRisk": "Title suggests an operator stream; the frame looked aerial, which may be a drone or elevated mount, so the view may change. Not confirmed.",
+  "unsure": "Exact camera position and mount not confirmed; coordinates are for the lighthouse.",
+  "channelId": "UCGfre1YJATN850wNq-jzgEw",
+  "videoTitle": "🟢  GOMV.COM Aquinnah Gay Head Lighthouse Webcam"
+ },
+ {
+  "videoId": "FoAvYeGRjU4",
+  "id": "edgartown-harbor",
+  "name": "Edgartown Harbor and Lighthouse",
+  "place": "Edgartown Harbor and Katama Bay, Martha's Vineyard, Massachusetts",
+  "country": "United States",
+  "lat": 41.3912,
+  "lng": -70.5029,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Go Martha's Vineyard (GOMV)",
+   "url": "https://gomarthasvineyard.com/webcams"
+  },
+  "expectTitle": [
+   "Edgartown",
+   "Harbor"
+  ],
+  "night": false,
+  "headline": "Sailboats and ferries crossing Edgartown Harbor, with the white lighthouse at the entrance.",
+  "looking": "A view over the busy inner harbor of Edgartown with moored boats and blue water, aimed toward the harbor entrance and lighthouse. GOMV's own pages say the Edgartown cams stream from the Old Sculpin Gallery, so the camera likely sits on the waterfront there. The reviewed frame looked aerial.",
+  "watchFor": [
+   "Chappaquiddick on-demand ferry crossing",
+   "Sailboat traffic on summer afternoons",
+   "Calm, glassy water at dawn"
+  ],
+  "history": "Congress funded a first light at the Point of Flats in 1828, a wooden house on pilings. The present cast-iron tower replaced it, reportedly moved from Ipswich in 1939 (sources differ on its origin and date). The light was slated for destruction in the early 1980s but was saved, and the town of Edgartown received ownership in 2014.",
+  "facts": [
+   "Edgartown Harbor Light is one of five lighthouses on Martha's Vineyard",
+   "Sand has built up a beach around the causeway to the tower since 1939",
+   "It remains an active aid to navigation"
+  ],
+  "sources": [
+   {
+    "label": "Edgartown Harbor Light (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Edgartown_Harbor_Light"
+   },
+   {
+    "label": "Edgartown Harbor Lighthouse (US Coast Guard history)",
+    "url": "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1915891/edgartown-harbor-lighthouse/"
+   },
+   {
+    "label": "GOMV Edgartown Harbor Katama Bay webcam",
+    "url": "https://gomarthasvineyard.com/webcams/edgartown-harbor-katama-bay-webcam"
+   }
+  ],
+  "liveRisk": "Some GOMV feeds may be seasonal or swap views; not confirmed.",
+  "unsure": "Exact camera position; the frame looked aerial but GOMV says Old Sculpin Gallery. Coordinates are for the lighthouse.",
+  "channelId": "UCGfre1YJATN850wNq-jzgEw",
+  "videoTitle": "🟢 GOMV.COM Martha's Vineyard Edgartown Harbor & Lighthouse Webcam"
+ },
+ {
+  "videoId": "Fp7l8XASb9Y",
+  "id": "banzai-pipeline",
+  "name": "Banzai Pipeline",
+  "place": "Ehukai Beach Park, Pupukea, North Shore, Oahu, Hawaii",
+  "country": "United States",
+  "lat": 21.665,
+  "lng": -158.0511,
+  "tz": "Pacific/Honolulu",
+  "operator": {
+   "name": "explore.org",
+   "url": "https://explore.org"
+  },
+  "expectTitle": [
+   "Pipeline",
+   "Banzai"
+  ],
+  "night": false,
+  "headline": "One of the most famous waves on Earth, breaking over shallow reef off Oahu's North Shore.",
+  "looking": "A close view of the Pipeline lineup off Ehukai Beach Park, with surfers paddling for barrels. Listings say it covers Pipeline and Backdoor.",
+  "watchFor": [
+   "Big winter swells, roughly November to February",
+   "Early morning, before onshore wind picks up",
+   "Surfers lining up on the three reefs as swell size grows"
+  ],
+  "history": "Pipeline is a reef break off Ehukai Beach Park in Pupukea on Oahu's North Shore. It has three reefs that activate as swells increase, and winter waves average around 10 feet and can top 25 feet. It is a long-standing center of competitive surfing.",
+  "facts": [
+   "Pipeline has three reefs that switch on with swell size",
+   "Winter waves can exceed 25 feet",
+   "Ehukai Beach Park has lifeguards and free parking"
+  ],
+  "sources": [
+   {
+    "label": "Banzai Pipeline (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Banzai_Pipeline"
+   },
+   {
+    "label": "Ehukai Beach Park (GoHawaii)",
+    "url": "https://www.gohawaii.com/es/islands/oahu/things-to-do/beaches/ehukai-beach-park-banzai-pipeline"
+   }
+  ],
+  "liveRisk": "Summer is often flat, so there may be little surf. I could not open explore.org to confirm the page or the operator.",
+  "unsure": "explore.org cam page not seen directly; exact camera spot not found. Coordinates are for the break.",
+  "channelId": "UCJRuk-FJ6dzX0MOpnd0UDCg",
+  "videoTitle": "LIVE Banzai Pipeline Surf Cam: North Shore, Oahu - Hawaii | explore.org"
+ },
+ {
+  "videoId": "v97JpT3ZA0w",
+  "id": "santa-monica-pier",
+  "name": "Santa Monica Beach and Pier",
+  "place": "Santa Monica, California",
+  "country": "United States",
+  "lat": 34.0092,
+  "lng": -118.4973,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "explore.org",
+   "url": "https://explore.org"
+  },
+  "expectTitle": [
+   "Santa Monica"
+  ],
+  "night": false,
+  "headline": "Sunset light over the Santa Monica Pier and its lit Ferris wheel.",
+  "looking": "A view west over the beach to the pier and the Pacific Park Ferris wheel. Explore's blog says the Santa Monica Beach Cam overlooks the pier and pans, and a Santa Monica Daily Press piece places the camera at the Hotel Shangri-La.",
+  "watchFor": [
+   "Sunset, when the wheel lights come on",
+   "Early morning surf and low sun",
+   "Clear winter days with views toward Malibu"
+  ],
+  "history": "Pacific Park opened on the pier in 1996, the first amusement park there since the 1930s. Its Ferris wheel was replaced in 2008 and its lighting upgraded to LEDs, then upgraded again in 2016 to 174,000 LEDs.",
+  "facts": [
+   "Pacific Park opened May 26, 1996",
+   "The original Pacific Wheel was billed as the first solar-powered Ferris wheel (1998)",
+   "The wheel now uses 174,000 LEDs"
+  ],
+  "sources": [
+   {
+    "label": "History of the Santa Monica Pier (Pacific Park)",
+    "url": "https://pacpark.com/history-of-the-santa-monica-pier/"
+   },
+   {
+    "label": "Explore.org live cams showcase Santa Monica (SMDP)",
+    "url": "https://smdp.com/explore-org-live-cams-showcase-santa-monicas-sunsets-other-wonders/"
+   }
+  ],
+  "liveRisk": "Explore also runs a separate sunset cam; the title may match either. Pacific Park runs its own different pier cams.",
+  "unsure": "Camera at Hotel Shangri-La comes from an older news article and may have changed. Pier coordinates used.",
+  "channelId": "UCJRuk-FJ6dzX0MOpnd0UDCg",
+  "videoTitle": "LIVE Santa Monica Beach & Pier Cam: California | explore.org"
+ },
+ {
+  "videoId": "iHJbTrQSZys",
+  "id": "key-west-harbor",
+  "name": "Key West Harbor",
+  "place": "Key West, Florida Keys",
+  "country": "United States",
+  "lat": 24.56,
+  "lng": -81.807,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "PTZtv",
+   "url": "https://ptztv.com"
+  },
+  "expectTitle": [
+   "Key West"
+  ],
+  "night": false,
+  "headline": "Sunset over the harbor at the end of the Florida Keys, with palms against a red sky.",
+  "looking": "A harbor-side view of Key West water with palms, framed for sunsets. The exact vantage point is not confirmed.",
+  "watchFor": [
+   "Sunset, the town's daily ritual",
+   "Boat and cruise ship traffic in the harbor",
+   "Afterglow colors for 20 minutes after the sun drops"
+  ],
+  "history": "Key West is the southernmost city in the continental United States. A Roku listing describes PTZtv's Key West feed as a daily sunset show, but I found no sourced history of the camera itself.",
+  "facts": [
+   "PTZtv streams webcams from beaches, seaports, airports and points of interest",
+   "Its Key West feed is described as a sunset show (Roku listing, January 2020)"
+  ],
+  "sources": [
+   {
+    "label": "PTZtv Roku channel listing",
+    "url": "https://rokuguide.com/node/20580"
+   },
+   {
+    "label": "Key West webcams (Windfinder)",
+    "url": "https://www.windfinder.com/webcams/key_west_naval_base"
+   }
+  ],
+  "liveRisk": "Could not tie the feed to a specific site; PTZ cameras may move or pause.",
+  "unsure": "Exact camera location and coordinates (approximate Key West harbor). ptztv.com URL not seen in search results. Operator website unconfirmed.",
+  "channelId": "UCG8-xn6zUbEqmqlnsvrD33Q",
+  "videoTitle": "LIVE - Key West Harbor Webcam from PTZtv."
+ },
+ {
+  "videoId": "V_I168MM-ik",
+  "id": "white-bay-soggy-dollar",
+  "name": "White Bay Beach, Soggy Dollar Bar",
+  "place": "White Bay, Jost Van Dyke, British Virgin Islands",
+  "country": "British Virgin Islands",
+  "lat": 18.443,
+  "lng": -64.751,
+  "tz": "America/Tortola",
+  "operator": {
+   "name": "Soggy Dollar Bar",
+   "url": "https://www.soggydollar.com"
+  },
+  "expectTitle": [
+   "White Bay",
+   "Soggy Dollar"
+  ],
+  "night": false,
+  "headline": "Turquoise water, anchored yachts and palms at the beach bar that gave the world the Painkiller.",
+  "looking": "A view out over White Bay with yachts at anchor and palm trees framing the water. A 2020 listing describes the camera as set between two palms looking over the bay.",
+  "watchFor": [
+   "Yachts arriving and anchoring through the afternoon",
+   "Swimmers wading ashore, the origin of the bar's name",
+   "Midday light for the brightest turquoise"
+  ],
+  "history": "The bar started around 1970 on a beach with no road or dock, so visitors anchored and swam in, and the wet dollar bills gave it its name. The Painkiller cocktail was created here in the 1970s, though who invented it is disputed. Hurricane Irma destroyed the bar and hotel in 2017. The bar reopened that New Year's Eve, and the Sandcastle Hotel reopened in 2023.",
+  "facts": [
+   "The Painkiller was created here in the 1970s",
+   "Hurricane Irma damaged it in 2017",
+   "The bar has no dock; guests traditionally swim from anchored boats"
+  ],
+  "sources": [
+   {
+    "label": "Soggy Dollar about page",
+    "url": "https://www.soggydollar.com/about"
+   },
+   {
+    "label": "Painkiller (cocktail) (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Painkiller_(cocktail)"
+   },
+   {
+    "label": "Soggy Dollar Bar (Noonsite)",
+    "url": "https://www.noonsite.com/business/soggy-dollar-bar/"
+   }
+  ],
+  "liveRisk": "Hurricane season (August to October) can close the bar or cut the feed.",
+  "unsure": "Exact camera position and coordinates are approximate.",
+  "channelId": "UC-CrxJnHPaM4tm2haTibUZA",
+  "videoTitle": "LIVE 🏝️ White Bay Beach Cam — Soggy Dollar and Sandcastle Hotel, Jost Van Dyke, BVI"
+ },
+ {
+  "videoId": "fHb0eB9RUgA",
+  "id": "farallon-islands",
+  "name": "Farallon Islands",
+  "place": "Southeast Farallon Island, off San Francisco, California",
+  "country": "United States",
+  "lat": 37.6987,
+  "lng": -123.001,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "California Academy of Sciences",
+   "url": "https://www.calacademy.org/farallones"
+  },
+  "expectTitle": [
+   "Farallon"
+  ],
+  "night": false,
+  "headline": "Seabirds, seals and surf on a protected island 30 miles off San Francisco.",
+  "looking": "A camera mounted on the lighthouse on Southeast Farallon Island, showing rocks, surf and wildlife. The Academy page says it is the only camera on the islands, with a choice of views.",
+  "watchFor": [
+   "Seabird colonies in spring and summer",
+   "Elephant seals and sea lions on the rocks",
+   "Calm, clear mornings for the sharpest view"
+  ],
+  "history": "The lighthouse on Southeast Farallon was first lit in 1855 and was automated in 1972. The islands became a National Wildlife Refuge in 1909, after egg collecting for the San Francisco market had hit the seabird colonies hard. The camera was launched around 2009 and runs jointly with Point Blue Conservation Science and the US Fish and Wildlife Service.",
+  "facts": [
+   "The islands are closed to the public",
+   "They hold the largest seabird nesting colony south of Alaska",
+   "Point Blue biologists live in the old keepers' duplexes"
+  ],
+  "sources": [
+   {
+    "label": "Farallones webcam (California Academy of Sciences)",
+    "url": "https://www.calacademy.org/farallones"
+   },
+   {
+    "label": "Farallon Island Light (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Farallon_Island_Light"
+   },
+   {
+    "label": "Farallon webcam launch (US Fish and Wildlife Service)",
+    "url": "https://fws.gov/story/2009-07/web-cam-provides-real-time-access-national-wildlife-refuge-known-californias"
+   }
+  ],
+  "liveRisk": "The Academy page notes some views were out of focus and the camera was recently restored. Wildlife is seasonal.",
+  "unsure": "Whether the YouTube stream is a re-stream of the Academy's feed; exact camera coordinates.",
+  "channelId": "UCZvXaNYIcapCEcaJe_2cP7A",
+  "videoTitle": "Farallon Islands Live Webcam | California Academy of Sciences"
+ },
+ {
+  "videoId": "sF5hFDGN20Y",
+  "id": "sitka-harbor",
+  "name": "Sitka Harbor",
+  "place": "Sitka, Baranof Island, Alaska",
+  "country": "United States",
+  "lat": 57.05,
+  "lng": -135.34,
+  "tz": "America/Sitka",
+  "operator": {
+   "name": "EarthCam",
+   "url": "https://www.earthcam.com/usa/alaska/sitka"
+  },
+  "expectTitle": [
+   "Sitka"
+  ],
+  "night": false,
+  "headline": "Fishing boats and forested mountains on Sitka's harbor in Southeast Alaska.",
+  "looking": "A harbor view with mountains behind and soft light. A cached copy of EarthCam's Sitka page shows a camera over Crescent Bay, but I cannot confirm this stream uses that vantage.",
+  "watchFor": [
+   "Fishing boats coming and going",
+   "Low cloud lifting off the mountains",
+   "Long summer evenings with soft light"
+  ],
+  "history": "Sitka is a fishing town on Baranof Island. EarthCam's page calls it famous for commercial and recreational fishing. Mount Edgecumbe, a young volcano on Kruzof Island about 24 miles west, lies across Sitka Sound.",
+  "facts": [
+   "Mount Edgecumbe stands 3,201 feet on Kruzof Island",
+   "The volcano lies roughly 24 miles west of Sitka"
+  ],
+  "sources": [
+   {
+    "label": "EarthCam Sitka",
+    "url": "https://earthcam.com/usa/alaska/sitka"
+   },
+   {
+    "label": "Edgecumbe volcano (USGS)",
+    "url": "https://www.usgs.gov/media/images/edgecumbe-volcano-seen-sitka-alaska"
+   }
+  ],
+  "liveRisk": "Winter weather and short days limit the view; the feed could not be confirmed live.",
+  "unsure": "Exact camera location, coordinates approximate; history is thin.",
+  "channelId": "UC6qrG3W8SMK0jior2olka3g",
+  "videoTitle": "EarthCam Live:  Sitka, Alaska"
+ },
+ {
+  "videoId": "wZkChlv20hs",
+  "id": "tacoma-rainier-thea-foss",
+  "name": "Mount Rainier over Tacoma and the Thea Foss Waterway",
+  "place": "Downtown Tacoma, Commencement Bay, Washington",
+  "country": "United States",
+  "lat": 47.253,
+  "lng": -122.438,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "PCTV Mountain Cam (channel name; operator not confirmed)",
+   "url": null
+  },
+  "expectTitle": [
+   "Rainier",
+   "Tacoma"
+  ],
+  "night": false,
+  "headline": "Mount Rainier standing over the Tacoma skyline and its working waterfront inlet.",
+  "looking": "A fixed high-definition view across downtown Tacoma toward Mount Rainier, with the Thea Foss Waterway in the foreground. The exact camera position is not confirmed, but it looks over the city from an elevated spot.",
+  "watchFor": [
+   "Rainier emerging from cloud, most often on clear mornings and after rain",
+   "Pink alpenglow on the mountain around sunrise and sunset",
+   "Boats and tugs on the waterway in the foreground"
+  ],
+  "history": "The Thea Foss Waterway is an inlet of Commencement Bay between downtown Tacoma and the Port of Tacoma. It was dredged in 1902 as the City Waterway and renamed in 1989 for Thea Foss, who bought a rowboat for five dollars in 1889 and started what became the Foss tug business. After years of industrial decline it was cleaned up as a Superfund site and rebuilt with parks, apartments and the Museum of Glass.",
+  "facts": [
+   "The waterway was dredged in 1902 under the Northern Pacific Railway's proposal, with the Army Corps of Engineers leading the work",
+   "It was called the City Waterway until 1989",
+   "Foss Maritime grew from Thea Foss's rowboat rental business"
+  ],
+  "sources": [
+   {
+    "label": "Thea Foss Waterway (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Thea_Foss_Waterway"
+   },
+   {
+    "label": "Thea Foss (HistoryLink)",
+    "url": "https://historylink.org/File/20706"
+   },
+   {
+    "label": "EPA case study, Tacoma's Thea Foss Waterway",
+    "url": "https://semspub.epa.gov/work/HQ/196400.pdf"
+   }
+  ],
+  "liveRisk": "Operator is unverified, so this could be a re-stream. Rainier is often hidden by cloud, especially in winter.",
+  "unsure": "Could not find any page for PCTV Mountain Cam or confirm who runs it. Coordinates are approximate (the waterway, not the camera). Exact camera location unknown.",
+  "channelId": "UCXhsbgqO_szcF7-bOhcMHtQ",
+  "videoTitle": "Pierce County Live Cam | Mount Rainier, Tacoma Skyline & Thea Foss Waterway in 1080p HD"
+ },
+ {
+  "videoId": "fYZC4ksndGA",
+  "id": "coldwater-lake-st-helens",
+  "name": "Mount St. Helens from Coldwater Lake",
+  "place": "Coldwater Lake, Mount St. Helens National Volcanic Monument, Washington",
+  "country": "United States",
+  "lat": 46.274,
+  "lng": -122.265,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "Mount St. Helens Institute",
+   "url": "https://www.mshinstitute.org/slc"
+  },
+  "expectTitle": [
+   "St. Helens",
+   "Coldwater"
+  ],
+  "night": false,
+  "headline": "Mount St. Helens and its blast zone seen across Coldwater Lake, about seven miles away.",
+  "looking": "A fixed view of the volcano rising above Coldwater Lake and the recovering blast zone. The camera is thought to sit on the Science and Learning Center at Coldwater, which the Institute operates with the U.S. Forest Service, roughly seven miles from the crater.",
+  "watchFor": [
+   "Clear dawn light on the crater rim, best in summer and early autumn",
+   "Low cloud and fog filling the valley, common in winter and spring",
+   "Fresh snow on the crater and ridges from late autumn"
+  ],
+  "history": "The Science and Learning Center began as a Forest Service visitor center that closed in 2007, then reopened in May 2013 as an educational facility run with the nonprofit Mount St. Helens Institute. The lake itself is a product of the 1980 eruption, whose debris blocked a valley and made new water where there was none.",
+  "facts": [
+   "The Science and Learning Center sits about seven miles from the crater",
+   "The Institute runs it in partnership with the U.S. Forest Service",
+   "A June 2026 Institute post said the cam lets you scroll back the last 12 hours"
+  ],
+  "sources": [
+   {
+    "label": "Mount St. Helens Institute, Science and Learning Center",
+    "url": "https://www.mshinstitute.org/slc"
+   },
+   {
+    "label": "KNKX, Coldwater Ridge Center reopens with new mission",
+    "url": "https://www.knkx.org/other-news/2012-05-08/coldwater-ridge-center-at-mount-st-helens-reopens-with-new-mission"
+   },
+   {
+    "label": "Mount St. Helens National Volcanic Monument (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Mount_St._Helens_National_Volcanic_Monument"
+   }
+  ],
+  "liveRisk": "Mountain weather often hides the volcano. The center is seasonal, and the cam's web address may have changed.",
+  "unsure": "Exact camera coordinates and whether the camera is on the SLC building were not directly confirmed on the Institute's own page. Coordinates approximate. The lake-formation detail is general background, not from a search result.",
+  "channelId": "UC21fnDewX_begL0xw8U3ljg",
+  "videoTitle": "**LIVE** Mount St. Helens | Coldwater Lake Weather Cam"
+ },
+ {
+  "videoId": "jJI5w_RVGtQ",
+  "id": "mendenhall-glacier",
+  "name": "Mendenhall Glacier and Mendenhall Lake",
+  "place": "Mendenhall Glacier, Juneau, Alaska",
+  "country": "United States",
+  "lat": 58.43,
+  "lng": -134.54,
+  "tz": "America/Juneau",
+  "operator": {
+   "name": "explore.org with Tongass National Forest (stream re-posted by an Explore channel)",
+   "url": "https://explore.org/livecams/tongass-national-forest/tongass-mendenhall-glacier"
+  },
+  "expectTitle": [
+   "Mendenhall",
+   "Glacier"
+  ],
+  "night": false,
+  "headline": "A retreating Alaskan glacier and its lake, watched from the Tongass National Forest.",
+  "looking": "A view of Mendenhall Glacier across Mendenhall Lake, with mountains behind. The camera is part of explore.org's Tongass Mendenhall Glacier cam, in the national forest near Juneau. The exact position is not confirmed.",
+  "watchFor": [
+   "Icebergs and ice floating on the lake",
+   "Clear, low light in the long summer evenings",
+   "Mountain goats on the cliffs near the glacier, if the title is right (not confirmed)"
+  ],
+  "history": "Mendenhall Lake formed as the glacier pulled back, and Wikipedia gives a retreat of about 1.75 miles since 1929. Retreat sped up in the 2000s, and a November 2025 KTOO report said the glacier has now left the lake. The Forest Service runs the nearby visitor center and other wildlife cams.",
+  "facts": [
+   "The glacier has retreated about 1.75 miles (2.82 km) since 1929, per Wikipedia",
+   "Between 1998 and 2020, ice on the lake vanished at about 148 feet a year, against about 56 feet a year for ice on bedrock",
+   "A November 2025 report said the glacier had officially receded out of Mendenhall Lake"
+  ],
+  "sources": [
+   {
+    "label": "explore.org, Tongass Mendenhall Glacier",
+    "url": "https://explore.org/livecams/tongass-national-forest/tongass-mendenhall-glacier"
+   },
+   {
+    "label": "Mendenhall Glacier (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Mendenhall_Glacier"
+   },
+   {
+    "label": "KTOO, Mendenhall Glacier has receded from the lake",
+    "url": "https://www.ktoo.org/2025/11/25/mendenhall-glacier-has-officially-receded-from-mendenhall-lake/"
+   }
+  ],
+  "liveRisk": "The channel is a third-party Explore re-stream, not explore.org itself, so it may loop or pause. Winter days are short and dark in Juneau.",
+  "unsure": "Could not confirm a mountain goat camera exists or where it points. Camera coordinates are approximate (glacier face area). Not confirmed that this exact stream is the same feed as the explore.org page.",
+  "channelId": "UCUtGnX65osNPQ98Y3-SSgpg",
+  "videoTitle": "Mendenhall Glacier and Mountain Goat Cam  powered by EXPLORE.org"
+ },
+ {
+  "videoId": "tErYxn2UM5Y",
+  "id": "brooklyn-bridge-earthcam",
+  "name": "Brooklyn Bridge and Manhattan Bridge",
+  "place": "East River, Brooklyn Bridge, New York City",
+  "country": "United States",
+  "lat": 40.7061,
+  "lng": -73.9969,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "EarthCam",
+   "url": "https://www.earthcam.com/usa/newyork/brooklynbridge/"
+  },
+  "expectTitle": [
+   "Brooklyn Bridge"
+  ],
+  "night": false,
+  "headline": "Two East River bridges and the Manhattan skyline from a high vantage point.",
+  "looking": "A high view taking in the Brooklyn Bridge and the Manhattan Bridge beyond, with the city around them. EarthCam runs more than one Brooklyn Bridge camera, so the exact position of this one is not confirmed.",
+  "watchFor": [
+   "Evening light as the bridge lamps come on",
+   "Ferries and boats on the East River",
+   "Clear days after rain, when the skyline is sharpest"
+  ],
+  "history": "The Brooklyn Bridge opened on May 24, 1883, as the first fixed crossing of the East River, and was then the longest suspension bridge in the world with a main span of 1,595.5 feet. The Manhattan Bridge opened in 1909 just upriver. EarthCam, a webcam company, hosts the feed.",
+  "facts": [
+   "Brooklyn Bridge main span is 1,595.5 feet (486.3 m), total length with approaches 6,016 feet",
+   "It was designated a National Historic Landmark in 1964",
+   "The Manhattan Bridge first opened to traffic in 1909"
+  ],
+  "sources": [
+   {
+    "label": "EarthCam Brooklyn Bridge cam",
+    "url": "https://earthcam.com/usa/newyork/brooklynbridge"
+   },
+   {
+    "label": "Brooklyn Bridge (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
+   },
+   {
+    "label": "EarthCam (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/EarthCam"
+   }
+  ],
+  "liveRisk": "None obvious. EarthCam may switch between several cameras under similar titles.",
+  "unsure": "Exact camera position not found (one source describes the main EarthCam view as from Manhattan, another lists a Brooklyn-side feed). Coordinates are the bridge, not the camera.",
+  "channelId": "UC6qrG3W8SMK0jior2olka3g",
+  "videoTitle": "EarthCam Live:  Brooklyn Bridge Cam"
+ },
+ {
+  "videoId": "o5Ie_LpZ9uk",
+  "id": "statue-of-liberty-earthcam",
+  "name": "Statue of Liberty at Sunset",
+  "place": "Liberty Island, New York Harbor",
+  "country": "United States",
+  "lat": 40.6892,
+  "lng": -74.0445,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "EarthCam",
+   "url": "https://www.earthcam.com/press/press-details.php?id=460"
+  },
+  "expectTitle": [
+   "Statue of Liberty"
+  ],
+  "night": false,
+  "headline": "Lady Liberty on her island in New York Harbor, best at sunrise or sunset.",
+  "looking": "A view of the Statue of Liberty, which in the sampled frame stood as a silhouette against an orange sky. EarthCam runs several Statue cams (torch, crown, harbor), and one source says the main Statue cam looks from Brooklyn, but the exact spot is not confirmed.",
+  "watchFor": [
+   "Sunset silhouettes, usually the best light of the day",
+   "Ferries running to Liberty and Ellis Islands",
+   "Floodlights on the statue after dark"
+  ],
+  "history": "The statue was dedicated on October 28, 1886, and stands on Liberty Island. EarthCam donated camera equipment to the National Park Service, which includes torch and crown views. The torch has been closed to visitors since 1916. The cams later moved from HD to 4K.",
+  "facts": [
+   "The copper statue is 151 feet 1 inch tall, and 305 feet 1 inch from ground to torch including the pedestal",
+   "It was dedicated on October 28, 1886",
+   "The torch has been closed to the public since 1916"
+  ],
+  "sources": [
+   {
+    "label": "Statue of Liberty (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+   },
+   {
+    "label": "EarthCam press release",
+    "url": "https://www.earthcam.com/press/press-details.php?id=460"
+   },
+   {
+    "label": "DNAinfo, new Statue of Liberty torch cams",
+    "url": "https://www.dnainfo.com/new-york/20111024/downtown/new-statue-of-liberty-torch-cams-offer-stunning-city-views"
+   }
+  ],
+  "liveRisk": "None obvious. At night the view is mostly floodlights.",
+  "unsure": "Which EarthCam camera and which viewpoint this stream is. Coordinates are the statue, not the camera. The EarthCam URL is a press release, as the Statue cam page itself did not appear in results.",
+  "channelId": "UC6qrG3W8SMK0jior2olka3g",
+  "videoTitle": "EarthCam Live:  Statue of Liberty"
+ },
+ {
+  "videoId": "XGa-KQFALBM",
+  "id": "nags-head-beach",
+  "name": "Nags Head Oceanfront Beach",
+  "place": "Nags Head, Outer Banks, North Carolina",
+  "country": "United States",
+  "lat": 35.9574,
+  "lng": -75.6241,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Sunnyside Up Weather",
+   "url": null
+  },
+  "expectTitle": [
+   "Nags Head"
+  ],
+  "night": false,
+  "headline": "Surf and sand on the Outer Banks, with sunrise coming straight off the Atlantic.",
+  "looking": "An oceanfront view of Nags Head's beach and surf, facing east over the Atlantic. The sampled frame showed an orange sunrise over empty sand. The exact street or access point is not confirmed.",
+  "watchFor": [
+   "Sunrise over the ocean, since the beach faces east",
+   "Surf getting bigger when a storm or nor'easter passes offshore",
+   "Beach walkers and fishing early in the day"
+  ],
+  "history": "Nags Head sits on the Outer Banks barrier islands, close to Jockey's Ridge, the large sand dune system. Geologists think the dunes began when hurricane surges pushed sand from offshore shoals onto the beach. In 1973 Carolista Baum stood in front of a bulldozer to save part of the ridge, and the state park followed in 1975.",
+  "facts": [
+   "Jockey's Ridge State Park was established in 1975 and is a National Natural Landmark (1974 per Wikipedia)",
+   "The Wright brothers flew their gliders at nearby Kitty Hawk from 1900 to 1903",
+   "The Outer Banks have mild winters and warm, humid summers"
+  ],
+  "sources": [
+   {
+    "label": "Jockey's Ridge State Park (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Jockey%27s_Ridge_State_Park"
+   },
+   {
+    "label": "LocalWiki, Jockey's Ridge State Park",
+    "url": "https://localwiki.org/nagshead/Jockey%27s_Ridge_State_Park"
+   },
+   {
+    "label": "Outer Banks Chamber of Commerce, weather",
+    "url": "https://www.outerbankschamber.com/vacationguide-mainmenu/outer-banks-weather/"
+   }
+  ],
+  "liveRisk": "Could not verify the operator, so this may be a hobbyist or re-stream. Night is nearly black, and hurricane season can cause outages.",
+  "unsure": "Found nothing about Sunnyside Up Weather. Exact camera position unknown, coordinates are the town. The beach's east-facing orientation is a general fact about the coast, not from a search.",
+  "channelId": "UCrn0oLlqBp1z5sh_wdqMqIg",
+  "videoTitle": "LIVE 4k Nags Head Beach Cam 🌊 | Oceanfront View from the Outer Banks, NC"
+ },
+ {
+  "videoId": "NLhxcyzXQxM",
+  "id": "siesta-key-beach",
+  "name": "Siesta Key Beach",
+  "place": "Siesta Beach, Siesta Key, Sarasota, Florida",
+  "country": "United States",
+  "lat": 27.2663,
+  "lng": -82.546,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Siesta Beach Live (channel; Sarasota County also lists a Siesta Key beach cam)",
+   "url": "https://www.visitsarasota.com/siesta-key-beach-cam"
+  },
+  "expectTitle": [
+   "Siesta Key",
+   "Siesta"
+  ],
+  "night": false,
+  "headline": "White quartz sand, Gulf surf and lifeguard towers on a famous Florida beach.",
+  "looking": "A beach-level view of the pale sand and blue Gulf water, with lifeguard stations visible. The Siesta Key Chamber notes four lifeguard stations and lifeguards on duty seven days a week.",
+  "watchFor": [
+   "Sunset over the Gulf, the main event each evening",
+   "Bright white sand in midday sun",
+   "Busy weekends and spring break crowds"
+  ],
+  "history": "The island's name began to be used shortly after 1907, from a residential development on its north side, and was made official in 1952. Sarasota County bought the beach property in 1954 for a public beach, and began restoring dunes in 1983. The sand is about 99 percent quartz, carried by rivers from the southern Appalachians over millennia.",
+  "facts": [
+   "Sand is about 99 percent quartz (Wikipedia), traced to the southern Appalachians by a county marker",
+   "The county bought the beach in 1954",
+   "Lifeguards are on duty seven days a week"
+  ],
+  "sources": [
+   {
+    "label": "Siesta Beach (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Siesta_Beach"
+   },
+   {
+    "label": "Visit Sarasota, Siesta Key Beach Cam",
+    "url": "https://www.visitsarasota.com/siesta-key-beach-cam"
+   },
+   {
+    "label": "Historical Marker Database, Siesta Beach",
+    "url": "https://www.hmdb.org/m.asp?m=146239"
+   }
+  ],
+  "liveRisk": "Not confirmed that the channel is the county's official cam. It carries a logo, so it may be a re-stream. Red tide or storms can affect the view.",
+  "unsure": "Whether SIESTA BEACH LIVE is operated by the county or a third party. One directory names the cam location as 'Point o Rocks', unverified. Coordinates approximate for the beach.",
+  "channelId": "UCgPDwePWls1uuZx0109bWzg",
+  "videoTitle": "SIESTA KEY BEACH - LIVE"
+ },
+ {
+  "videoId": "1yGtTaJ33jY",
+  "id": "bokeelia-pier-sunset",
+  "name": "Bokeelia Pier Sunset",
+  "place": "Bokeelia, northern tip of Pine Island, Florida",
+  "country": "United States",
+  "lat": 26.715,
+  "lng": -82.15,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Cape Weather",
+   "url": null
+  },
+  "expectTitle": [
+   "Bokeelia"
+  ],
+  "night": false,
+  "headline": "Sunsets over a Gulf-side fishing pier at the quiet north end of Pine Island.",
+  "looking": "A pan-tilt-zoom camera that swings toward the pier and palms at sunrise and sunset. The sampled frame showed a vivid orange sky with a pier and palm silhouetted against it. The exact camera spot is not confirmed.",
+  "watchFor": [
+   "Sunset color, usually the best minutes of the day",
+   "Pelicans and fishing boats near the pier",
+   "Calm mornings for sunrise views"
+  ],
+  "history": "Bokeelia sits at the northern tip of Pine Island in Lee County, and the Calusa lived on the island for over 2,000 years. Settlers arrived from 1873, and Bokeelia's first post office opened in a store in 1904. The century-old pier has been damaged repeatedly, including by Hurricanes Helene and Milton.",
+  "facts": [
+   "Bokeelia had a 2020 population of 1,855",
+   "In 1906 its tiny post office was known as the smallest in the nation",
+   "The Bokeelia fishing pier was damaged by Hurricanes Helene and Milton"
+  ],
+  "sources": [
+   {
+    "label": "Bokeelia, Florida (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Bokeelia,_Florida"
+   },
+   {
+    "label": "Museum of the Islands, Bokeelia's first post office",
+    "url": "https://www.museumoftheislands.com/bokeelias-first-post-office/"
+   },
+   {
+    "label": "Visit Fort Myers, Bokeelia Fishing Pier",
+    "url": "https://www.visitfortmyers.com/listing/bokeelia-fishing-pier/37760"
+   }
+  ],
+  "liveRisk": "The pier has been storm-damaged, so the view may change. PTZ cams can be pointed elsewhere or paused between sunset sessions.",
+  "unsure": "Found nothing on Cape Weather or confirmation that this stream is of the Bokeelia fishing pier specifically. Coordinates are approximate for the village, not the camera.",
+  "channelId": "UCaC0jy_4ICZAkG-v596FfHg",
+  "videoTitle": "Bokeelia, Florida Live Beach Sunset and Sunrise PTZ Cam"
+ },
+ {
+  "videoId": "4CK0CsimBHs",
+  "id": "waikiki-beach-marriott",
+  "name": "Waikiki Beach from the Marriott",
+  "place": "Waikiki, Honolulu, Oahu",
+  "country": "United States (Hawaii)",
+  "lat": 21.2646,
+  "lng": -157.82,
+  "tz": "Pacific/Honolulu",
+  "operator": {
+   "name": "Ozolio Live (at the Waikiki Beach Marriott Resort & Spa)",
+   "url": "https://www.ozolio.com/explore/NOKC000000AC"
+  },
+  "expectTitle": [
+   "Waikiki",
+   "Marriott"
+  ],
+  "night": false,
+  "headline": "Turquoise Waikiki water seen from up high, with the beach busy below.",
+  "looking": "A raised camera on the Waikiki Beach Marriott looks over the resort's beachfront and the shallow, turquoise water off the east end of Waikiki. Ozolio describes it as showing the beach from early morning calm to busier daytime activity.",
+  "watchFor": [
+   "Early morning, when the beach is quiet and the water is glassy",
+   "Surfers and outrigger canoes on the gentle breaks",
+   "Afternoon cloud shadows moving across the water"
+  ],
+  "history": "Waikiki was a retreat for Hawaiian royalty before it became a resort district. In the 1920s the Ala Wai Canal was dug to drain the wetlands behind the beach, and the dredged material was used as fill. Duke Kahanamoku, who helped spread surfing worldwide, grew up surfing here, and a bronze statue of him stands on the beach (installed 1990).",
+  "facts": [
+   "The Ala Wai Canal was dredged from about 1921 to 1928 under a company run by Walter F. Dillingham.",
+   "A 9-foot bronze statue of Duke Kahanamoku by Gordon Fisher was installed at Waikiki Beach in 1990."
+  ],
+  "sources": [
+   {
+    "label": "Ozolio, Waikiki Beach Marriott cam page",
+    "url": "https://www.ozolio.com/explore/NOKC000000AC"
+   },
+   {
+    "label": "Waikiki (Wikipedia)",
+    "url": "https://wikipedia.com/wiki/Waikiki"
+   }
+  ],
+  "liveRisk": "Resort cam run by Ozolio; the 24/7 YouTube stream could pause for maintenance or be swapped between cameras.",
+  "unsure": "Exact camera position (coordinates are approximate for the Marriott's spot near Kapiolani Park end); resort opening history not confirmed.",
+  "channelId": "UC5lNakfSdpqXCW214H5sBgQ",
+  "videoTitle": "Waikiki Beach LIVE Cam | Waikiki Beach Marriott Resort & Spa, Hawaii"
+ },
+ {
+  "videoId": "GL_2CrLwSDA",
+  "id": "wailea-beach-marriott",
+  "name": "Wailea Beach and Shoreline",
+  "place": "Wailea, Maui",
+  "country": "United States (Hawaii)",
+  "lat": 20.6879,
+  "lng": -156.4417,
+  "tz": "Pacific/Honolulu",
+  "operator": {
+   "name": "Ozolio Live (at Wailea Beach Resort Marriott)",
+   "url": null
+  },
+  "expectTitle": [
+   "Wailea",
+   "Maui"
+  ],
+  "night": false,
+  "headline": "Palms, blue sea and Maui sun from the Wailea shoreline.",
+  "looking": "A resort camera on the Wailea Beach Resort Marriott looks out over palms and the blue Pacific. The resort sits on a rocky stretch of shoreline next to Ulua Beach, so the view is of a tropical coast with sandy coves nearby.",
+  "watchFor": [
+   "Morning light, when the sea is calmest",
+   "Humpback whale spouts offshore in winter (roughly December to April)",
+   "Late afternoon sun on the palms"
+  ],
+  "history": "The resort opened in the 1970s (one guide says 1976 as the Intercontinental) and later ran under Outrigger before becoming a Marriott in 2003, according to travel sources. A reported $100 million renovation reopened it in December 2016.",
+  "facts": [
+   "Sources report a $100 million renovation that debuted December 24, 2016, with 547 redesigned rooms and suites.",
+   "The resort is next to Ulua Beach on a rocky shoreline."
+  ],
+  "sources": [
+   {
+    "label": "Wailea Beach Resort Marriott (Maui Hawaii guide)",
+    "url": "https://www.mauihawaii.org/hotels-condos/wailea-marriott/"
+   },
+   {
+    "label": "TravelAge West, Marriott makeover in Maui",
+    "url": "https://www.travelagewest.com/Travel/Hotels/Marriott-Makeover-in-Maui"
+   }
+  ],
+  "liveRisk": "Resort cam; could pause or change angle. Whale tip is seasonal.",
+  "unsure": "Official Ozolio page URL not found; opening year disputed between sources; coordinates are the resort area, not the exact camera. Whale season is general knowledge, not from a search result.",
+  "channelId": "UC5lNakfSdpqXCW214H5sBgQ",
+  "videoTitle": "Wailea Beach Live Webcam | Maui, Hawaii – Wailea Beach Resort Marriott"
+ },
+ {
+  "videoId": "tuj4OvU6UZI",
+  "id": "sheraton-kauai-poipu",
+  "name": "Poipu Shore at the Sheraton Kauai",
+  "place": "Poipu, south shore of Kauai",
+  "country": "United States (Hawaii)",
+  "lat": 21.8765,
+  "lng": -159.458,
+  "tz": "Pacific/Honolulu",
+  "operator": {
+   "name": "Ozolio Plus (at Sheraton Kauai Resort)",
+   "url": null
+  },
+  "expectTitle": [
+   "Kauai",
+   "Sheraton"
+  ],
+  "night": false,
+  "headline": "A palm-lined Kauai cove and blue water on the sunny south shore.",
+  "looking": "A camera at the Sheraton Kauai Resort looks over the resort's oceanfront on Poipu's shoreline, with palms framing blue water. The south shore is Kauai's driest and sunniest side.",
+  "watchFor": [
+   "Surf breaking on the rocks after south swells in summer",
+   "Morning light on the water",
+   "Monk seals or turtles occasionally resting on nearby beaches (not guaranteed)"
+  ],
+  "history": "The Sheraton Kauai sits on about 18 to 20 acres at Poipu Beach. Starwood Hotels bought the property for about $40 million on March 3, 2004, having managed it for its previous owner, Obayashi Corporation.",
+  "facts": [
+   "Starwood closed on the purchase of the resort on March 3, 2004 for about $40 million.",
+   "Sources give room counts between 391 and 413."
+  ],
+  "sources": [
+   {
+    "label": "Globest, Starwood buys island hotel for $40M",
+    "url": "https://www.globest.com/2004/03/08/starwood-buys-island-hotel-for-40m"
+   },
+   {
+    "label": "Sheraton Kauai Resort (Travelocity)",
+    "url": "https://www.travelocity.com/Kauai-Island-Hotels-Sheraton-Kauai-Resort.h3693.Hotel-Information"
+   }
+  ],
+  "liveRisk": "Resort cam; may pause or be reframed.",
+  "unsure": "Current ownership, exact camera spot and official Ozolio URL not confirmed; wildlife and swell tips are general knowledge.",
+  "channelId": "UCspnu6n44ydqafj6nFIw5hw",
+  "videoTitle": "LIVE Kauai Beach Cam | Sheraton Kauai Resort, Hawaii"
+ },
+ {
+  "videoId": "ynokzE-tJGs",
+  "id": "waikoloa-beach-marriott",
+  "name": "Waikoloa Beach and Anaehoomalu Bay",
+  "place": "Waikoloa Beach Resort, Big Island",
+  "country": "United States (Hawaii)",
+  "lat": 19.917,
+  "lng": -155.886,
+  "tz": "Pacific/Honolulu",
+  "operator": {
+   "name": "Ozolio Plus (at Waikoloa Beach Marriott Resort & Spa)",
+   "url": null
+  },
+  "expectTitle": [
+   "Waikoloa",
+   "Big Island"
+  ],
+  "night": false,
+  "headline": "A Big Island lagoon edged with black lava, under a hazy Kohala sky.",
+  "looking": "A camera on the Waikoloa Beach Marriott looks across the resort's lagoon and lava shoreline at Anaehoomalu Bay on the Kohala coast. Haze over the sky is common here from volcanic emissions.",
+  "watchFor": [
+   "Sunset glow over the bay",
+   "Calm morning water in the lagoon",
+   "Hazy skies on days with light winds"
+  ],
+  "history": "The resort was the first hotel built at Waikoloa Beach Resort, opening in 1981 as the Sheraton Royal Waikoloan. It became the Outrigger Waikoloa Beach after a 1999 renovation and the Waikoloa Beach Marriott after a 2002 franchise deal. Anaehoomalu Bay was historically a center of aquaculture, with fishponds just behind the beach.",
+  "facts": [
+   "The resort opened in 1981 with 555 rooms.",
+   "Nearby Kuualii and Kahapapa fishponds lie just behind Waikoloa Beach."
+  ],
+  "sources": [
+   {
+    "label": "Waikoloa Beach (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Waikoloa_Beach"
+   },
+   {
+    "label": "Waikoloa Beach Marriott (The Points Guy)",
+    "url": "https://thepointsguy.com/hotel/reviews/waikoloa-beach-marriott-resort-and-spa/"
+   }
+  ],
+  "liveRisk": "Resort cam; could pause or change angle.",
+  "unsure": "Exact camera location; official Ozolio URL; the volcanic haze remark is general knowledge.",
+  "channelId": "UCspnu6n44ydqafj6nFIw5hw",
+  "videoTitle": "Waikoloa Beach LIVE 4K | Marriott Resort & Spa Webcam | Big Island, Hawaii"
+ },
+ {
+  "videoId": "t55kv94nEzc",
+  "id": "scrub-island-bvi",
+  "name": "Scrub Island Marina",
+  "place": "Scrub Island, off Tortola, British Virgin Islands",
+  "country": "British Virgin Islands",
+  "lat": 18.4515,
+  "lng": -64.428,
+  "tz": "America/Tortola",
+  "operator": {
+   "name": "EarthCam (with Scrub Island Resort, Spa & Marina)",
+   "url": "https://earthcam.com/world/britishvirginislands/tortola"
+  },
+  "expectTitle": [
+   "Scrub Island",
+   "Virgin"
+  ],
+  "night": false,
+  "headline": "Clear water, a busy marina and green BVI hills on a bright day.",
+  "looking": "An EarthCam camera at Scrub Island Resort, Spa & Marina looks over the 55-slip marina, with turquoise water and hills beyond. The island lies about 1.5 miles off Tortola.",
+  "watchFor": [
+   "Yachts arriving and docking, especially in the winter charter season",
+   "Sailboats crossing the channel toward Tortola",
+   "Squalls passing in the afternoon"
+  ],
+  "history": "Local legend says the island was named for pirates who anchored to scrub barnacles off their hulls. Gene Tonkonogy bought it in 1956, and the current resort opened in July 2010. Hurricane Irma damaged it in 2017, and the resort reopened in October 2018.",
+  "facts": [
+   "The marina has 55 slips, five able to take superyachts up to 48 metres.",
+   "The resort was the Caribbean's first Autograph Collection member before returning to independent status."
+  ],
+  "sources": [
+   {
+    "label": "EarthCam Tortola",
+    "url": "https://earthcam.com/world/britishvirginislands/tortola"
+   },
+   {
+    "label": "Scrub Island Resort Facts",
+    "url": "https://www.scrubisland.com/resort-facts/"
+   },
+   {
+    "label": "Superyachts.com, Scrub Island",
+    "url": "https://www.superyachts.com/lifestyle/story/walk-in-the-footsteps-of-columbus-at-scrub-island-resort,-spa-and-marina-4445/"
+   }
+  ],
+  "liveRisk": "Hurricane season (roughly June to November) can damage equipment or interrupt the feed.",
+  "unsure": "Exact camera spot; most history comes from the resort's own promotional material.",
+  "channelId": "UC6qrG3W8SMK0jior2olka3g",
+  "videoTitle": "EarthCam Live:  Scrub Island (British Virgin Islands)"
+ },
+ {
+  "videoId": "FKu3uOfk3qY",
+  "id": "ushuaia-beagle-channel",
+  "name": "Ushuaia and the Martial Range",
+  "place": "Ushuaia, Tierra del Fuego",
+  "country": "Argentina",
+  "lat": -54.8019,
+  "lng": -68.303,
+  "tz": "America/Argentina/Ushuaia",
+  "operator": {
+   "name": "Tierra del Fuego Live",
+   "url": null
+  },
+  "expectTitle": [
+   "Ushuaia"
+  ],
+  "night": false,
+  "headline": "Alpenglow on the peaks above the southernmost city in the world.",
+  "looking": "A city camera looks across Ushuaia toward the Martial mountains, with the Beagle Channel on the other side of town. The title (Camaras Ushuaia) suggests a set of cameras, so the view may change.",
+  "watchFor": [
+   "Alpenglow on the peaks at sunrise and sunset",
+   "Cruise and expedition ships at the pier, especially in the southern summer",
+   "Fast-moving weather: snow dusting the ridges even in summer"
+  ],
+  "history": "Ushuaia was founded on 12 October 1884 by Augusto Lasserre. It is the capital of Tierra del Fuego and a main gateway for Antarctic voyages. It is commonly called the southernmost city in the world, a title contested by Puerto Williams across the channel in Chile.",
+  "facts": [
+   "Ushuaia sits between the Martial range to the north and the Beagle Channel to the south.",
+   "It is one of five internationally recognized Antarctic gateway cities."
+  ],
+  "sources": [
+   {
+    "label": "ESA, Ushuaia, Argentina",
+    "url": "https://earth.esa.int/web/earth-watching/image-of-the-week/content/-/article/ushuaia-argentina"
+   },
+   {
+    "label": "Silversea, Ushuaia",
+    "url": "https://www.silversea.com/blog/destinations/south-america/cruise-to-the-end-of-the-world-exploring-ushuaias-remarkable-landscape"
+   }
+  ],
+  "liveRisk": "Channel owner is unclear and the title is generic; it may be a re-stream or rotate between cameras.",
+  "unsure": "Who actually owns the camera, and its exact position; coordinates are the city center.",
+  "channelId": "UC6NTD1HmdaZMbe9K5qADOvw",
+  "videoTitle": "Cámaras Ushuaia"
+ },
+ {
+  "videoId": "7hKbyXxWT2k",
+  "id": "boteti-river-zebra",
+  "name": "Boteti River Zebra Migration",
+  "place": "Boteti River, Makgadikgadi region",
+  "country": "Botswana",
+  "lat": -20.4,
+  "lng": 24.4,
+  "tz": "Africa/Gaborone",
+  "operator": {
+   "name": "Africam, with explore.org and Meno a Kwena (Natural Selection)",
+   "url": "https://africam.com/new-camera-alert-meno-a-kwena/"
+  },
+  "expectTitle": [
+   "Boteti",
+   "Zebra"
+  ],
+  "night": true,
+  "headline": "Zebra, elephants and wildebeest come to drink at the Boteti River.",
+  "looking": "A camera on the banks of the Boteti River in the Makgadikgadi region watches animals coming to the water, with zebra herds and elephants in frame. Explorersweb notes its soundscape is a highlight.",
+  "watchFor": [
+   "Zebra herds arriving to drink, strongest when the river holds water",
+   "Elephants at the water in the dry season",
+   "Dawn and dusk, when activity peaks"
+  ],
+  "history": "Zebras move between the Makgadikgadi Pans and the Boteti River in search of water and grazing, a round trip of about 580 km in the Okavango-linked population. Fences from the 1950s disrupted the route. Africam announced this camera on July 18, 2025, in partnership with Meno a Kwena.",
+  "facts": [
+   "Africam says up to 30,000 zebra and wildebeest cross the plains in search of water.",
+   "The Boteti sometimes stops flowing and holds only pools, depending on water leaving the Okavango Delta."
+  ],
+  "sources": [
+   {
+    "label": "Africam, New Camera Alert: Meno a Kwena",
+    "url": "https://africam.com/new-camera-alert-meno-a-kwena/"
+   },
+   {
+    "label": "Explorersweb, best wildlife cams",
+    "url": "https://explorersweb.com/best-wildlife-cams-october/"
+   },
+   {
+    "label": "Audley Travel, zebra migration",
+    "url": "https://www.audleytravel.com/us/botswana/country-guides/zebra-migration"
+   }
+  ],
+  "liveRisk": "Strongly seasonal: zebra numbers depend on the migration and on whether the river holds water. The video is on the Explore Africa channel, so it may be a re-stream of the Africam feed.",
+  "unsure": "Exact coordinates (approximate for the Boteti near Makgadikgadi); whether this stream is the same as Africam's Meno a Kwena feed; sources disagree on migration timing.",
+  "channelId": "UCiGOIXjFqy5_mUNxQNOMfHw",
+  "videoTitle": "Africam Boteti River Zebra Migration powered by EXPLORE.org"
+ },
+ {
+  "videoId": "Cq2qCph6Lx8",
+  "id": "rosies-pan-kruger",
+  "name": "Rosie's Pan Waterhole",
+  "place": "Balule Nature Reserve, Greater Kruger, Limpopo",
+  "country": "South Africa",
+  "lat": -24.17,
+  "lng": 31.05,
+  "tz": "Africa/Johannesburg",
+  "operator": {
+   "name": "Africam",
+   "url": "https://africam.com/wildlife/stream/rosies-pan"
+  },
+  "expectTitle": [
+   "Rosie"
+  ],
+  "night": true,
+  "headline": "Elephants drink and mirror themselves in a quiet bush waterhole.",
+  "looking": "A camera in a hide at a secluded waterhole near Naledi Game Lodge in Balule Nature Reserve, part of the Greater Kruger. Because it is remote, the camera is fully solar powered.",
+  "watchFor": [
+   "Elephant herds drinking, often in the heat of the day",
+   "Dusk and night visits by lion, hyena and other animals under infrared",
+   "Dry season (roughly May to October), when the pan draws the most animals"
+  ],
+  "history": "Balule is one of the private reserves that share unfenced borders with Kruger National Park. Africam runs several live cameras in the area, and Rosie's Pan is hosted by Naledi Game Lodge. The camera runs on solar power because of its remote location.",
+  "facts": [
+   "The camera is completely solar powered.",
+   "Naledi Game Lodge is in a private reserve within the Greater Kruger National Park."
+  ],
+  "sources": [
+   {
+    "label": "Africam, Rosie's Pan",
+    "url": "https://africam.com/wildlife/stream/rosies-pan"
+   },
+   {
+    "label": "Africam, Naledi Bush Lodge",
+    "url": "https://africam.com/lodge/naledi-bush-lodge"
+   },
+   {
+    "label": "Africa Freak, Naledi Rosie's Pan",
+    "url": "https://africafreak.com/naledi-rosies-pan"
+   }
+  ],
+  "liveRisk": "Solar power can mean outages; water levels in wet season draw fewer animals.",
+  "unsure": "Exact camera coordinates (approximate for Balule); season tips are general knowledge; some sources mention Rosie's Pan under the Djuma cluster, not confirmed.",
+  "channelId": "UCuoNAKa3P0QR1Lw9QdpmoVg",
+  "videoTitle": "Rosie's Pan | Wildlife Live Stream – Greater Kruger National Park"
+ },
+ {
+  "videoId": "xXZqU5vnEug",
+  "id": "mara-bushtops-salt-lick",
+  "name": "Mara Bushtops Salt Lick",
+  "place": "Mara Bushtops camp, eastern edge of the Maasai Mara ecosystem",
+  "country": "Kenya",
+  "lat": -1.45,
+  "lng": 35.35,
+  "tz": "Africa/Nairobi",
+  "operator": {
+   "name": "Bushtops Safaris (Mara Bushtops camp)",
+   "url": null
+  },
+  "expectTitle": [
+   "Mara Bushtops",
+   "Maasai Mara"
+  ],
+  "night": true,
+  "headline": "A natural salt lick in front of a safari camp, visited by giraffe, zebra and elephant.",
+  "looking": "The camera looks out over the natural salt lick in front of Mara Bushtops camp, where animals come to take minerals. Infrared lets it keep showing visitors after dark.",
+  "watchFor": [
+   "Giraffes and zebra drifting in during daylight, busiest roughly 10am to 4pm Kenya time",
+   "Elephants and buffalo at the lick, sometimes after dark under infrared",
+   "Predators such as lions or leopards showing up at dusk or night"
+  ],
+  "history": "Mara Bushtops is a 12-tent camp that sits in front of what press coverage calls the largest natural salt lick in the Masai Mara. The camp launched this webcam in late 2023 so people could watch the lick from anywhere. It is described as hosted on the Bushtops YouTube channel and archives the previous 12 hours of footage.",
+  "facts": [
+   "The camp has 12 tents and sits on the eastern edge of the Masai Mara ecosystem.",
+   "Guests reach it by light aircraft to Siana Springs airstrip or by road via Narok and Sekenani."
+  ],
+  "sources": [
+   {
+    "label": "Mara Bushtops launches new webcam (ATTA)",
+    "url": "https://atta.travel/resource/mara-bushtops-launches-new-webcam-to-the-wild.html"
+   },
+   {
+    "label": "View Kenya's wildlife 24/7 (Tourism Update)",
+    "url": "https://www.tourismupdate.com/article/view-kenyas-wildlife-247"
+   },
+   {
+    "label": "Mara Bushtops Camp (safari.com)",
+    "url": "https://www.safari.com/mara-bushtops"
+   }
+  ],
+  "liveRisk": "Coverage dates from 2023 and ongoing operation was not confirmed in search. Operator page URL not found.",
+  "unsure": "Exact camera coordinates (lat/lng are approximate for the eastern Mara, not the camp). Official operator URL not confirmed.",
+  "channelId": "UCpYmJpK_TSk8imQsZ8A9LNA",
+  "videoTitle": "LIVE Safari Webcam | Maasai Mara, Kenya | African Wildlife at Mara Bushtops"
+ },
+ {
+  "videoId": "dIChLG4_WNs",
+  "id": "nkorho-waterhole",
+  "name": "Nkorho Bush Lodge Waterhole",
+  "place": "Nkorho Bush Lodge, northern Sabi Sand Private Game Reserve",
+  "country": "South Africa",
+  "lat": -24.72,
+  "lng": 31.45,
+  "tz": "Africa/Johannesburg",
+  "operator": {
+   "name": "Africam (with Nkorho Bush Lodge)",
+   "url": "https://africam.com/lodge/nkorho-bush-lodge"
+  },
+  "expectTitle": [
+   "Nkorho"
+  ],
+  "night": true,
+  "headline": "A bushveld waterhole where buffalo herds and lion prides turn up.",
+  "looking": "The camera is positioned at a waterhole not far from Nkorho Bush Lodge in the northern Sabi Sand. It often catches large buffalo herds and lion prides, plus elephants, hyenas and the odd leopard.",
+  "watchFor": [
+   "Lions at the water, often around dawn and dusk",
+   "Buffalo herds arriving in the heat of the day",
+   "Hyenas and leopards after dark"
+  ],
+  "history": "Nkorho Bush Lodge sits in the Sabi Sand Private Game Reserve, which shares an unfenced border with Kruger National Park. Africam has streamed from the lodge's waterhole for years and it has become a community favourite. Recent Africam posts show hyenas, a leopard visit and elephants at the water.",
+  "facts": [
+   "Sabi Sand shares an unfenced boundary with Kruger National Park.",
+   "The lodge is a small thatched camp, with sources giving six to eight units."
+  ],
+  "sources": [
+   {
+    "label": "Nkorho Bush Lodge, Africam",
+    "url": "https://africam.com/lodge/nkorho-bush-lodge"
+   },
+   {
+    "label": "Nkorho stream, Africam",
+    "url": "https://www.africam.com/wildlife/stream/nkorho"
+   }
+  ],
+  "liveRisk": "Title credits explore.org as host, but Africam is the camera operator; the stream may be a re-stream and the Explore channel could change.",
+  "unsure": "Exact camera coordinates (approximate northern Sabi Sand). The explore.org link was not confirmed in search.",
+  "channelId": "UCiGOIXjFqy5_mUNxQNOMfHw",
+  "videoTitle": "Africam Nkorho Bush Lodge powered by EXPLORE.org"
+ },
+ {
+  "videoId": "EwTH5yY7Mks",
+  "id": "brooks-falls-low",
+  "name": "Brooks Falls Low Cam",
+  "place": "Brooks Falls, Brooks River, Katmai National Park, Alaska",
+  "country": "United States",
+  "lat": 58.5547,
+  "lng": -155.7819,
+  "tz": "America/Anchorage",
+  "operator": {
+   "name": "explore.org with Katmai National Park (NPS)",
+   "url": "https://www.nps.gov/katm/learn/photosmultimedia/brooks-falls-low-camera.htm"
+  },
+  "expectTitle": [
+   "Brooks Falls"
+  ],
+  "night": false,
+  "headline": "Brown bears fishing for leaping salmon at Brooks Falls, from a bear's-eye angle.",
+  "looking": "This is a low-angle camera at the Brooks Falls platform in Brooks Camp, giving a bear's-eye view of the falls. Large brown bears stand at the lip to catch salmon in mid-air.",
+  "watchFor": [
+   "Bears at the lip of the falls in July, the peak of the salmon run",
+   "A second wave of bears fattening up in September and October",
+   "Evening light, when the Alaska sun stays low and golden"
+  ],
+  "history": "Brooks Falls is a short waterfall on the Brooks River in Katmai National Park. Explore.org and the Park Service started streaming live HD cams at Brooks Camp in 2012, three of them at existing viewing stands. The cams are solar powered and do not run all year.",
+  "facts": [
+   "NPS says bears are in the area from mid June until late October.",
+   "July and September to October are the best times for bears fishing at Brooks Falls."
+  ],
+  "sources": [
+   {
+    "label": "Brooks Falls Low Camera (NPS)",
+    "url": "https://www.nps.gov/katm/learn/photosmultimedia/brooks-falls-low-camera.htm"
+   },
+   {
+    "label": "Brooks Falls (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Brooks_Falls"
+   },
+   {
+    "label": "Webcams make Alaska bears accessible (MPR)",
+    "url": "https://www.mprnews.org/story/2012/07/25/webcams-make-alaska-bears-accessible"
+   }
+  ],
+  "liveRisk": "Seasonal: bears leave by late October and the cam may show highlights or go offline in winter.",
+  "unsure": "Coordinates are the falls from general knowledge, not the platform. Results blurred 'Brooks Falls Low' with the Lower River cam.",
+  "channelId": "UC2Sk0aXLq3ADkH_USGPKT_Q",
+  "videoTitle": "LIVE Brooks Falls Brown Bears Low | explore.org"
+ },
+ {
+  "videoId": "ypMu3yA7h3s",
+  "id": "anan-fishing-hole-4",
+  "name": "Anan Creek Fishing Hole 4",
+  "place": "Anan Wildlife Observatory, near Wrangell, Tongass National Forest, Alaska",
+  "country": "United States",
+  "lat": 56.185,
+  "lng": -131.886,
+  "tz": "America/Juneau",
+  "operator": {
+   "name": "explore.org with Friends of Anan and the US Forest Service",
+   "url": "https://friendsofanan.org"
+  },
+  "expectTitle": [
+   "Anan"
+  ],
+  "night": false,
+  "headline": "Black and brown bears working a cascading salmon creek in Southeast Alaska.",
+  "looking": "One of several camera views of Anan Creek, showing bears fishing by the cascades. Both black and brown bears use this stream, sometimes side by side.",
+  "watchFor": [
+   "Pink salmon run in July and August, when bears are most active",
+   "Black and brown bears sharing the creek",
+   "Cubs on the rocks beside the cascade"
+  ],
+  "history": "Anan Creek has one of the largest pink salmon runs in Southeast Alaska and sits about 30 miles southeast of Wrangell, reachable only by boat or floatplane. Cameras first streamed here in July 2024, designed and installed by Wrangell high school students. In its second year it drew about 890,000 viewers.",
+  "facts": [
+   "Up to about 60 bears have fed there at once.",
+   "A pass is required in person from July 5 to August 25."
+  ],
+  "sources": [
+   {
+    "label": "Bear cams begin streaming (Alaska Public)",
+    "url": "https://alaskapublic.org/2024/07/30/bear-cams-begin-streaming-from-wildlife-area-near-wrangell/"
+   },
+   {
+    "label": "Streaming live from Anan (KSTK)",
+    "url": "https://www.kstk.org/2026/06/16/streaming-live-from-anan/"
+   },
+   {
+    "label": "Anan Wildlife Observatory (alaska.org)",
+    "url": "https://alaska.org/detail/anan-wildlife-observatory"
+   }
+  ],
+  "liveRisk": "Seasonal: cams run roughly mid June to September and are turned off after the run.",
+  "unsure": "Coordinates approximate. Which creek feature 'Fishing Hole 4' covers was not confirmed. friendsofanan.org was mentioned but not seen as a result URL.",
+  "channelId": "UC2Sk0aXLq3ADkH_USGPKT_Q",
+  "videoTitle": "LIVE Anan Bear Cam: Fishing Hole 4 – Alaska | explore.org"
+ },
+ {
+  "videoId": "l8eYe_CP1F4",
+  "id": "stony-point-penguins",
+  "name": "Stony Point Penguin Colony",
+  "place": "Stony Point Nature Reserve, Betty's Bay, Western Cape",
+  "country": "South Africa",
+  "lat": -34.3722,
+  "lng": 18.8967,
+  "tz": "Africa/Johannesburg",
+  "operator": {
+   "name": "explore.org with CapeNature",
+   "url": "https://www.capenature.co.za/reserves/stony-point-nature-reserve"
+  },
+  "expectTitle": [
+   "Stony Point",
+   "Penguin"
+  ],
+  "night": false,
+  "headline": "African penguins nesting among the rocks and surf of a mainland colony.",
+  "looking": "The camera watches penguins on the rocks near the water at Stony Point, among the nests. Cormorants and gulls share the shoreline.",
+  "watchFor": [
+   "Penguins porpoising in and out through the surf",
+   "Nesting and chick feeding",
+   "Cormorants and rock hyraxes on nearby rocks"
+  ],
+  "history": "Stony Point is a CapeNature reserve at Betty's Bay, on the site of the old Waaygat whaling station. It is described as the third largest breeding colony of African penguins in the world, and one of the few easy to reach on the mainland. Visitors walk a boardwalk above the birds.",
+  "facts": [
+   "Four cormorant species nest on the nearby rocks.",
+   "The reserve opens 08:00 to 16:30."
+  ],
+  "sources": [
+   {
+    "label": "Stony Point Nature Reserve (CapeNature)",
+    "url": "https://www.capenature.co.za/reserves/stony-point-nature-reserve"
+   },
+   {
+    "label": "Stony Point penguin colony (Birdingplaces)",
+    "url": "https://www.birdingplaces.eu/birdingplaces/south-africa/stony-point-penguin-colony"
+   }
+  ],
+  "liveRisk": "Explore.org's role was not confirmed in search; may be a loop or paused outside breeding season.",
+  "unsure": "Coordinates are from general knowledge, not the camera spot. Explore.org partnership not confirmed.",
+  "channelId": "UCQpqwndsfuLig9BRo88AD_g",
+  "videoTitle": "LIVE Africam Penguin Nest - Stony Point Nature Reserve, South Africa | explore.org"
+ },
+ {
+  "videoId": "mrJ4JF2MovU",
+  "id": "isla-tova-penguins",
+  "name": "Isla Tova Magellanic Penguin Colony",
+  "place": "Isla Tova, Patagonia Azul Provincial Park, Chubut",
+  "country": "Argentina",
+  "lat": -44.3,
+  "lng": -65.4,
+  "tz": "America/Argentina/Buenos_Aires",
+  "operator": {
+   "name": "CONICET (Flavio Quintana's lab) with Rewilding Argentina and explore.org",
+   "url": null
+  },
+  "expectTitle": [
+   "Isla Tova",
+   "Magellanic"
+  ],
+  "night": false,
+  "headline": "A dense Magellanic penguin colony on a remote Patagonian island.",
+  "looking": "The camera looks across nests and burrows of Magellanic penguins on Isla Tova. The system runs on solar panels, batteries and antennas.",
+  "watchFor": [
+   "Pairs arriving to nest from October",
+   "Chicks in the burrows later in the season",
+   "Imperial cormorants and southern giant petrels nearby"
+  ],
+  "history": "Cameras were installed by CONICET researcher Flavio Quintana on three uninhabited islands, Tova, Tovita and Gran Robredo. They let researchers study breeding without disturbing the birds. Rewilding Argentina collaborated and the Chubut government supported it.",
+  "facts": [
+   "The colony shares the park with cormorants and giant petrels.",
+   "Streams run 24 hours during the breeding season."
+  ],
+  "sources": [
+   {
+    "label": "CONICET streams return (Noticias Ambientales)",
+    "url": "https://noticiasambientales.com/environment-en/conicet-streams-return-now-featuring-the-intimate-life-of-magellanic-penguins-on-chubut-islands/"
+   },
+   {
+    "label": "Streaming cameras to study marine fauna (Noticias Ambientales)",
+    "url": "https://noticiasambientales.com/science/research-in-chubut-streaming-cameras-to-study-marine-fauna-in-remote-areas/"
+   }
+  ],
+  "liveRisk": "Seasonal: breeding season runs October to April, and penguins leave afterward.",
+  "unsure": "Coordinates are approximate and unconfirmed. Explore.org's role was not seen in results. Official operator URL not found.",
+  "channelId": "UCQpqwndsfuLig9BRo88AD_g",
+  "videoTitle": "LIVE Magellanic Penguin Colony - Isla Tova - Patagonia Azul Provincial Park, Chubut, Argentina."
+ },
+ {
+  "videoId": "BlpneEUfK-0",
+  "id": "isla-tovita-whales",
+  "name": "Isla Tovita Whales and Seascape",
+  "place": "Isla Tovita, Patagonia Azul Provincial Park, Chubut",
+  "country": "Argentina",
+  "lat": -44.3,
+  "lng": -65.4,
+  "tz": "America/Argentina/Buenos_Aires",
+  "operator": {
+   "name": "CONICET with Rewilding Argentina and explore.org",
+   "url": null
+  },
+  "expectTitle": [
+   "Tovita",
+   "Whales"
+  ],
+  "night": false,
+  "headline": "Open Patagonian sea where humpbacks and other whales pass.",
+  "looking": "A seascape camera on Isla Tovita looking out over open water, where whales are sometimes seen. It is one of the cameras on the park's islands.",
+  "watchFor": [
+   "Blows and breaches on calm days",
+   "Seabirds crossing the frame",
+   "Morning light on flat water"
+  ],
+  "history": "Tovita is one of three islands, with Tova and Gran Robredo, fitted with CONICET cameras in Patagonia Azul Provincial Park. The park's whale research has photo-identified humpback and sei whales, and recorded a blue whale. Southern right whales breed in nearby Golfo Nuevo from May to December.",
+  "facts": [
+   "Researchers recorded a blue whale in the park, a first there.",
+   "Whales have come within five meters of shore at Bahia Camarones."
+  ],
+  "sources": [
+   {
+    "label": "Streaming cameras to study marine fauna (Noticias Ambientales)",
+    "url": "https://noticiasambientales.com/science/research-in-chubut-streaming-cameras-to-study-marine-fauna-in-remote-areas/"
+   },
+   {
+    "label": "Secret corner of Blue Patagonia (Noticias Ambientales)",
+    "url": "https://noticiasambientales.com/tourism/the-secret-corner-of-blue-patagonia-to-watch-whales-a-silent-refuge-on-the-chubut-coast/"
+   }
+  ],
+  "liveRisk": "Whale sightings are seasonal and not guaranteed; the camera is mainly a seabird research system.",
+  "unsure": "Which whale species appear at Tovita, coordinates and the explore.org link could not be confirmed.",
+  "channelId": "UC5RV1g0fRYXfrt75hqvohKw",
+  "videoTitle": "LIVE Whales & Seascape - Isla Tovita - Patagonia Azul Provincial Park, Chubut, Argentina."
+ },
+ {
+  "videoId": "2sFs4U7F2-E",
+  "id": "big-sur-condor-sanctuary",
+  "name": "Big Sur Condor Sanctuary",
+  "place": "Ventana Wildlife Society Condor Sanctuary, Big Sur, California",
+  "country": "United States",
+  "lat": 36.24,
+  "lng": -121.69,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "Ventana Wildlife Society with explore.org",
+   "url": "https://www.ventanaws.org/condor_cam.html"
+  },
+  "expectTitle": [
+   "Condor",
+   "Big Sur"
+  ],
+  "night": false,
+  "headline": "Wild California condors landing at a release pen above the Big Sur coast.",
+  "looking": "The camera watches the release pen and surrounding perches at the sanctuary. Wild condors that visit regularly can be seen feeding and resting.",
+  "watchFor": [
+   "Condors soaring in on afternoon thermals",
+   "Birds gathering at the pen and perches",
+   "Quiet mornings with birds sunning"
+  ],
+  "history": "Ventana Wildlife Society has released condors at Big Sur since 1997. Its webcam, from 2013 with the Oakland Zoo, was billed as the first to stream wild condors live. A 2020 wildfire destroyed the research building, pens and other facilities.",
+  "facts": [
+   "The central California population is over 100 condors, and about half visit Big Sur.",
+   "The sanctuary covers about 80 acres."
+  ],
+  "sources": [
+   {
+    "label": "Condor Webcam (Ventana Wildlife Society)",
+    "url": "https://www.ventanaws.org/condor_cam.html"
+   },
+   {
+    "label": "Ventana Wildlife Society (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Ventana_Wildlife_Society"
+   },
+   {
+    "label": "Wildfire strikes condor sanctuary (The Wildlife Society)",
+    "url": "https://wildlife.org/watch-wildfire-strikes-california-condor-sanctuary/"
+   }
+  ],
+  "liveRisk": "Wildfire risk to the site; explore.org hosting not confirmed in search.",
+  "unsure": "Coordinates approximate for Big Sur. Explore.org link and current post-fire camera status unconfirmed.",
+  "channelId": "UCj4hEwVyYXppFFh5P_Hp_Jw",
+  "videoTitle": "LIVE California Condor Sanctuary - Big Sur California | explore.org"
+ },
+ {
+  "videoId": "8DRsVKLC2co",
+  "id": "scarlet-macaw-high-feeder",
+  "name": "Scarlet Macaw High Canopy Feeder",
+  "place": "Punta Islita, Nicoya Peninsula, Guanacaste",
+  "country": "Costa Rica",
+  "lat": 9.857,
+  "lng": -85.38,
+  "tz": "America/Costa_Rica",
+  "operator": {
+   "name": "Macaw Recovery Network with explore.org",
+   "url": "https://macawrecoverynetwork.org/"
+  },
+  "expectTitle": [
+   "Scarlet Macaws",
+   "Canopy Feeder"
+  ],
+  "night": false,
+  "headline": "Wild scarlet macaws drop in at a feeder high in the canopy of a Costa Rican forest.",
+  "looking": "A raised feeder platform among the tree branches where released and wild-born scarlet macaws come to eat. The camera is set close, so the birds fill the frame and you can see their feather detail.",
+  "watchFor": [
+   "Pairs of macaws squabbling over the best perch",
+   "Early morning and late afternoon, when the birds are most active",
+   "Dry season (roughly December to April) for the clearest light"
+  ],
+  "history": "The Macaw Recovery Network has reintroduced scarlet macaws around Punta Islita on the Nicoya Peninsula since 2011, and the released population is now breeding in the wild. Supplemental feeding is a soft-release method that helps newly released birds find food while they learn the forest. The feeder is permitted for this purpose, as feeding wild macaws is otherwise illegal in Costa Rica.",
+  "facts": [
+   "Scarlet macaws have been reintroduced at Punta Islita since 2011 and now breed in the wild.",
+   "The Macaw Recovery Network also runs a breeding center holding over 100 macaws, many destined for release."
+  ],
+  "sources": [
+   {
+    "label": "Macaw Recovery Network and Punta Islita (search result)",
+    "url": "https://wildnet.org/?p=3565"
+   },
+   {
+    "label": "Macaw Recovery Network",
+    "url": "https://macawrecoverynetwork.org/?p=7470"
+   },
+   {
+    "label": "explore.org macaw cams announcement",
+    "url": "https://explore.org/events/watch/ytb_utvrdZ6BlM"
+   }
+  ],
+  "liveRisk": "A search result labelled the macaw feeder cams as Rewilding Argentina cams, which conflicts with the Macaw Recovery Network credit. Feeder activity can vary by season and the stream may pause.",
+  "unsure": "Exact camera location and coordinates (Punta Islita centre used, approximate). Whether this is the Costa Rica site or the Argentina one was not settled by the search; the explore.org page path names Macaw Recovery Network. Channel name mentions sloths and macaws.",
+  "channelId": "UCUK_FVvLqWdWFFjaqGkQYuA",
+  "videoTitle": "LIVE Wild Scarlet Macaws: High Canopy Feeder Cam | explore.org"
+ },
+ {
+  "videoId": "Sq-X4Ga1oyc",
+  "id": "utopia-village-reef-wall",
+  "name": "Utopia Village Reef Wall",
+  "place": "Utopia Village, Utila, Bay Islands",
+  "country": "Honduras",
+  "lat": 16.09,
+  "lng": -86.95,
+  "tz": "America/Tegucigalpa",
+  "operator": {
+   "name": "explore.org with Utopia Village Dive Resort",
+   "url": null
+  },
+  "expectTitle": [
+   "Utopia Village",
+   "Reef Cam"
+  ],
+  "night": false,
+  "headline": "An underwater camera on a Caribbean reef wall off Utila, with rays and fish passing through.",
+  "looking": "A fixed camera at the edge of the reef wall off Utopia Village, a dive resort on Utila's southwest side. It looks out over open blue water where fish, turtles and the occasional ray cruise past.",
+  "watchFor": [
+   "Spotted eagle rays gliding along the wall",
+   "Schools of fish in midday light",
+   "Whale sharks are seen around Utila roughly January to May, though not reliably on camera"
+  ],
+  "history": "Utila is the smallest of Honduras's three main Bay Islands, about 30 miles off the northern coast. It is well known for diving, and Utopia Village is a beach resort built beside an abundant reef. The explore.org camera is part of a set of year-round cameras on the island, hosted with the resort and explore.org's resident naturalist Mike Fitz.",
+  "facts": [
+   "Utila lies roughly 30 miles (48 km) north of the Honduran mainland.",
+   "Dive operators list eagle rays and whale sharks among Utila's regular sightings."
+  ],
+  "sources": [
+   {
+    "label": "Utopia Village Underwater Play by Play (explore.org)",
+    "url": "https://explore.org/events/watch/ytb_cJo6VnjdoJ"
+   },
+   {
+    "label": "Utopia Village Live Chat (explore.org)",
+    "url": "https://explore.org/events/watch/ytb_K6SPHJUQXM"
+   },
+   {
+    "label": "Utopia Village on PADI",
+    "url": "https://padi.com/dive-center/honduras/utopia-village-u-dive"
+   }
+  ],
+  "liveRisk": "Underwater cams can go offline for cleaning, storms or hardware faults.",
+  "unsure": "Exact camera coordinates (island-level approximation). Which of the resort's cameras this is was not confirmed; 'edge-of-wall' comes from the stream title. Operator page url not seen.",
+  "channelId": "UCSyg9cb3Iq-NtlbxqNB9wGw",
+  "videoTitle": "Utopia Village Edge-of-Wall Underwater Reef Cam powered by EXPLORE.org"
+ },
+ {
+  "videoId": "7i8ARjIeM2k",
+  "id": "coral-city-camera",
+  "name": "Coral City Camera, PortMiami",
+  "place": "East end of PortMiami, Biscayne Bay, Miami",
+  "country": "United States",
+  "lat": 25.774,
+  "lng": -80.133,
+  "tz": "America/New_York",
+  "operator": {
+   "name": "Coral Morphologic",
+   "url": null
+  },
+  "expectTitle": [
+   "Coral City"
+  ],
+  "night": false,
+  "headline": "A 360-degree camera on a wild urban reef beside Miami's cruise port.",
+  "looking": "An underwater camera about ten feet down on a reef at the easternmost point of PortMiami. It watches corals, sponges and a steady parade of local fish in the shipping channel's shadow.",
+  "watchFor": [
+   "Sharks and large fish passing through, often at dusk",
+   "Clearer water on incoming tides",
+   "The coral colonies themselves, which change slowly over weeks"
+  ],
+  "history": "Coral City Camera was deployed in 2019 by Coral Morphologic, a duo of marine biologist Colin Foord and musician Jared McKay, as an art and science project. It was supported by grants including Knight Foundation and National Endowment for the Arts funding, and recordings have been offered to researchers. Foord has reported more than 185 fish species seen on it.",
+  "facts": [
+   "The camera sits roughly ten feet deep at PortMiami's east end.",
+   "Foord reported 157 fish species in 2021 and over 185 by 2022."
+  ],
+  "sources": [
+   {
+    "label": "Coral's City (Burnaway)",
+    "url": "https://burnaway.org/magazine/corals-city"
+   },
+   {
+    "label": "Local10 on the Coral City webcam",
+    "url": "https://local10.com/news/local/2022/08/24/popular-coral-city-webcam-exciting-scientists-over-health-of-reefs-that-are-dying-globally"
+   },
+   {
+    "label": "Reef Builders",
+    "url": "https://reefbuilders.com/2023/10/09/coral-city-camera-is-an-underwater-live-stream-you-can-watch-all-day"
+   }
+  ],
+  "liveRisk": "PortMiami has sought dredging and development (Berth 10) near the camera and asked Coral Morphologic to relocate it; the outcome was not found. The view or location may change.",
+  "unsure": "Exact camera coordinates (port east end approximated). Current status of the relocation request.",
+  "channelId": "UCtllXAWa3EcfcsL5tvpqGSw",
+  "videoTitle": "Coral City Camera (Miami's Free-Range Aquarium Underwater Livestream)"
+ },
+ {
+  "videoId": "eQ_foBERmzA",
+  "id": "monterey-jelly-cam",
+  "name": "Monterey Bay Aquarium Jelly Cam",
+  "place": "Monterey Bay Aquarium, Monterey, California",
+  "country": "United States",
+  "lat": 36.6183,
+  "lng": -121.9018,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "Monterey Bay Aquarium",
+   "url": null
+  },
+  "expectTitle": [
+   "Jelly Cam"
+  ],
+  "night": false,
+  "headline": "Pacific sea nettles pulse through blue water in a tall tank at Monterey Bay Aquarium.",
+  "looking": "A view of the Pacific sea nettle tank, with orange and gold bells drifting against deep blue. A camera hidden in the roof points down toward the front of the tall tank.",
+  "watchFor": [
+   "Long frilled tentacles trailing behind each bell",
+   "Feeding time, when the jellies gather and move their mouth-arms",
+   "Quiet daytime hours with fewer visitors affecting the water"
+  ],
+  "history": "Monterey Bay Aquarium first displayed moon jellies in 1985 and opened a permanent jellies gallery in 1996 as part of the Open Sea wing. The sea nettle webcam launched around the aquarium's 30th anniversary and became its seventh webcam. The animals are bred in the aquarium since warm water has at times kept wild sea nettles away.",
+  "facts": [
+   "The sea nettle is Chrysaora fuscescens, found along the eastern Pacific.",
+   "The stream includes ambient audio made for the exhibit."
+  ],
+  "sources": [
+   {
+    "label": "Live Science on the Jelly Cam",
+    "url": "https://livescience.com/48753-jellyfish-cam-monterey-bay.html"
+   },
+   {
+    "label": "Monterey County Now on the launch",
+    "url": "https://www.montereycountynow.com/blogs/animal_blog/monterey-bay-aquarium-launches-jellyfish-webcam-or-as-one-local-calls-it-the-best-thing/article_74766000-69d8-11e4-be4c-03b681d44b44.html"
+   }
+  ],
+  "liveRisk": "Older sources say the cam runs only part of the day (about 7am to 6pm Pacific) with replay otherwise.",
+  "unsure": "Exact aquarium web page for the cam not seen in searches, so operator url is null. Cam hours were reported in older (2019) sources as roughly 7am to 6 or 7pm Pacific, with replay of earlier hours; current schedule unconfirmed.",
+  "channelId": "UCnM5iMGiKsZg-iOlIO2ZkdQ",
+  "videoTitle": "Live Jelly Cam | Monterey Bay Aquarium"
+ },
+ {
+  "videoId": "n_GpVsz4nHU",
+  "id": "monterey-open-sea-cam",
+  "name": "Monterey Bay Aquarium Open Sea Cam",
+  "place": "Monterey Bay Aquarium, Monterey, California",
+  "country": "United States",
+  "lat": 36.6183,
+  "lng": -121.9018,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "Monterey Bay Aquarium",
+   "url": null
+  },
+  "expectTitle": [
+   "Open Sea"
+  ],
+  "night": false,
+  "headline": "Tuna, sardines and turtles circle the aquarium's million-gallon open ocean tank.",
+  "looking": "A view into the Open Sea exhibit, a deep tank behind one of the world's largest single-paned windows. Schools of fish sweep across the blue while larger animals pass close to the glass.",
+  "watchFor": [
+   "Bluefin and yellowfin tuna powering past",
+   "Schools of sardines turning together",
+   "Green sea turtles and pelagic rays at the window"
+  ],
+  "history": "The Open Sea galleries reopened in 2011 to highlight migrations across the Pacific. The tank holds about 1.2 million US gallons. An earlier renovation followed damage to structural glass tiles caused by turbulent swimming of large tuna.",
+  "facts": [
+   "The exhibit holds roughly 1,200,000 US gallons.",
+   "The aquarium is one of very few to show both bluefin and yellowfin tuna."
+  ],
+  "sources": [
+   {
+    "label": "Monterey Bay Aquarium (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Monterey_Bay_Aquarium"
+   },
+   {
+    "label": "Wetpixel on the new exhibits",
+    "url": "https://wetpixel.com/articles/monterey-bay-aquarium-launches-new-exhibitions"
+   }
+  ],
+  "liveRisk": "Daytime-hours cam in older sources; may show a placeholder when closed.",
+  "unsure": "Exact aquarium web page for the cam not seen in searches, so operator url is null. Cam hours were reported in older (2019) sources as roughly 7am to 6 or 7pm Pacific, with replay of earlier hours; current schedule unconfirmed. Species lists are from 2011 and may differ today.",
+  "channelId": "UCnM5iMGiKsZg-iOlIO2ZkdQ",
+  "videoTitle": "Live Open Sea Cam | Monterey Bay Aquarium"
+ },
+ {
+  "videoId": "zL68biE6wAs",
+  "id": "monterey-moon-jelly-cam",
+  "name": "Monterey Bay Aquarium Moon Jelly Cam",
+  "place": "Monterey Bay Aquarium, Monterey, California",
+  "country": "United States",
+  "lat": 36.6183,
+  "lng": -121.9018,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "Monterey Bay Aquarium",
+   "url": null
+  },
+  "expectTitle": [
+   "Moon Jelly"
+  ],
+  "night": false,
+  "headline": "Pale moon jellies glow and drift against dark blue at Monterey Bay Aquarium.",
+  "looking": "A close view of a moon jelly display, with translucent bells lit against a dark background. The four horseshoe-shaped organs show clearly through each bell.",
+  "watchFor": [
+   "Pink or lavender tints after a crustacean-rich meal",
+   "The four ring-shaped organs visible in each bell",
+   "Gentle current patterns carrying the group around the tank"
+  ],
+  "history": "Monterey Bay Aquarium first exhibited moon jellies in 1985 and has been a leader in jellyfish display since. The moon jelly is a seasonal visitor to Monterey Bay. This cam is one of the aquarium's two live jelly streams.",
+  "facts": [
+   "Moon jellies range from San Diego to Prince William Sound, Alaska.",
+   "Their color shifts with what they eat."
+  ],
+  "sources": [
+   {
+    "label": "Kid Should See This on the jelly cams",
+    "url": "https://thekidshouldseethis.com/post/live-sea-jelly-cams-jellyfish"
+   },
+   {
+    "label": "Animal Diversity Web, Aurelia labiata",
+    "url": "https://animaldiversity.org/accounts/aurelia_labiata/"
+   }
+  ],
+  "liveRisk": "Older sources give limited daily hours, with replay when dark.",
+  "unsure": "Exact aquarium web page for the cam not seen in searches, so operator url is null. Cam hours were reported in older (2019) sources as roughly 7am to 6 or 7pm Pacific, with replay of earlier hours; current schedule unconfirmed. Species may be Aurelia labiata or Aurelia aurita; sources disagree.",
+  "channelId": "UCnM5iMGiKsZg-iOlIO2ZkdQ",
+  "videoTitle": "Live Moon Jelly Cam | Monterey Bay Aquarium"
+ },
+ {
+  "videoId": "je7nCiZhEJE",
+  "id": "calacademy-coral-reef",
+  "name": "Philippine Coral Reef Tank",
+  "place": "California Academy of Sciences, Golden Gate Park, San Francisco",
+  "country": "United States",
+  "lat": 37.7699,
+  "lng": -122.4661,
+  "tz": "America/Los_Angeles",
+  "operator": {
+   "name": "California Academy of Sciences",
+   "url": "https://calendar.calacademy.org/exhibits/philippine-coral-reef"
+  },
+  "expectTitle": [
+   "Coral Reef"
+  ],
+  "night": false,
+  "headline": "A diver works through one of the deepest living coral reef displays in the world.",
+  "looking": "The Academy's Philippine Coral Reef tank, packed with colorful corals and reef fish. Divers sometimes appear while tending the exhibit.",
+  "watchFor": [
+   "Divers feeding and maintaining the tank",
+   "Sharks and rays moving above the corals",
+   "Bright midday colors when the lights are fully up"
+  ],
+  "history": "The tank opened with the Academy's new building in Golden Gate Park in 2008. It holds about 212,000 gallons and stands roughly 25 feet tall. The Academy's exhibit page offers a livestreaming webcam of the reef.",
+  "facts": [
+   "The tank holds about 212,000 gallons.",
+   "Visitors see it from above and through windows downstairs."
+  ],
+  "sources": [
+   {
+    "label": "Philippine Coral Reef exhibit page",
+    "url": "https://calendar.calacademy.org/exhibits/philippine-coral-reef"
+   },
+   {
+    "label": "Academy press release",
+    "url": "https://calendar.calacademy.org/press/releases/world’s-deepest-living-coral-reef-display-to-debut-in-san-francisco"
+   }
+  ],
+  "liveRisk": "Could be paused outside museum hours or for maintenance.",
+  "unsure": "Coordinates are the museum's approximate location. Whether this stream shows exactly the Philippine Coral Reef tank is inferred from the title and exhibit page.",
+  "channelId": "UCZvXaNYIcapCEcaJe_2cP7A",
+  "videoTitle": "Live Coral Reef Cam | California Academy of Sciences"
+ },
+ {
+  "videoId": "5e4lsEe4Vew",
+  "id": "wolf-center-north",
+  "name": "International Wolf Center North Camera",
+  "place": "International Wolf Center, Ely, Minnesota",
+  "country": "United States",
+  "lat": 47.903,
+  "lng": -91.867,
+  "tz": "America/Chicago",
+  "operator": {
+   "name": "International Wolf Center with explore.org",
+   "url": "https://wolf.org/"
+  },
+  "expectTitle": [
+   "Wolf Center",
+   "North"
+  ],
+  "night": false,
+  "headline": "Ambassador wolves roam a snowy enclosure in northern Minnesota.",
+  "looking": "One of two cameras on the International Wolf Center's wolf pack enclosure near Ely. It watches the ambassador wolves as they rest, play and patrol.",
+  "watchFor": [
+   "Peak activity around 6 to 9 am and 5 to 8 pm Central",
+   "Winter, when snow makes the wolves easy to spot",
+   "Howling and pack greetings"
+  ],
+  "history": "The Center added two live cameras on explore.org in May 2020 through a partnership. The pack then included Axel, Grayson, Denali and Bolz. As of 2025 its exhibit pack was listed as Rieka, Blackstone, Caz, Cedar and Rowan.",
+  "facts": [
+   "The Center's pack members are ambassador wolves in an enclosure.",
+   "Cameras may be switched off for health checks and maintenance."
+  ],
+  "sources": [
+   {
+    "label": "International Wolf Center partnership with explore.org",
+    "url": "https://northernwilds.com/international-wolf-center-announces-new-partnership-with-explore-org/"
+   },
+   {
+    "label": "Wolf Center webcams",
+    "url": "https://wolf.org/wolves/webcams/webcam.asp"
+   }
+  ],
+  "liveRisk": "Cameras are sometimes turned off for care and maintenance.",
+  "unsure": "Coordinates approximate (Ely town used). Which camera is 'North' vs the other was not confirmed.",
+  "channelId": "UC-2KSeUU5SMCX6XLRD-AEvw",
+  "videoTitle": "International Wolf Center North Camera powered by EXPLORE.org"
+ },
+ {
+  "videoId": "3wSd4iXrCw0",
+  "id": "durbe-sea-eagle-nest",
+  "name": "Durbe White-tailed Eagle Nest",
+  "place": "Durbe municipality, Kurzeme, western Latvia",
+  "country": "Latvia",
+  "lat": 56.5922,
+  "lng": 21.3556,
+  "tz": "Europe/Riga",
+  "operator": {
+   "name": "Latvian Fund for Nature (Latvijas Dabas fonds, LDF)",
+   "url": "https://www.ldf.lv/en/webcams"
+  },
+  "expectTitle": [
+   "Durbē",
+   "ērgļi"
+  ],
+  "night": false,
+  "headline": "A white-tailed eagle pair at the most-watched sea eagle nest in Latvia.",
+  "looking": "A close camera on a large stick nest in a spruce, about 25 metres up, in forest country near Durbe. When the pair is nesting you see both adults, eggs and later the chicks, in sharp detail.",
+  "watchFor": [
+   "Egg laying around March and the first chick in April",
+   "Adults swapping brooding duty and bringing fish at dawn and dusk",
+   "Chicks exercising their wings in early summer before fledging"
+  ],
+  "history": "The pair was first found in 2014 in a pine left standing in a clear-felled area, and raised three chicks that year. They later moved to a spruce, which is unusual for the species in Latvia. LDF has streamed the nest since 2015. The nest has fallen in storms several times (most recently October 2023), and the birds have rebuilt it before.",
+  "facts": [
+   "The white-tailed eagle (Haliaeetus albicilla) is one of the largest eagles in Europe.",
+   "LDF has streamed this nest every season since 2015, funded largely by viewer donations.",
+   "In 2025 the pair reportedly raised two chicks, named Leo and Neo by viewers."
+  ],
+  "sources": [
+   {
+    "label": "LDF: White-tailed Eagle webcams",
+    "url": "https://WWW.LDF.LV/en/webcams"
+   },
+   {
+    "label": "LSM: Ten years of white-tailed eagle drama in livestreamed nest",
+    "url": "https://eng.lsm.lv/article/society/environment/27.02.2024-ten-years-of-white-tailed-eagle-drama-in-livestreamed-nest.a544550/"
+   },
+   {
+    "label": "LSM: Popular white-tailed eagle nest has first egg",
+    "url": "https://eng.lsm.lv/article/society/environment/11.03.2025-popular-white-tailed-eagle-nest-has-first-egg.a591062/"
+   }
+  ],
+  "liveRisk": "Seasonal. Nesting activity runs roughly March to July; outside the season the nest may be empty or the stream quiet. The nest has collapsed in storms before, and the stream may be paused or show a different nest.",
+  "unsure": "Exact camera coordinates (used Durbe town as an approximation). Whether the nest in the current stream is the rebuilt Durbe nest or a replacement. Current-season status.",
+  "channelId": "UCIcQwgP2i-fEshMBclDJENw",
+  "videoTitle": "Jūras ērgļi (Haliaeetus albicilla) Durbē"
+ },
+ {
+  "videoId": "QIt1FaDMnQc",
+  "id": "lucerne-chapel-bridge",
+  "name": "Lucerne Chapel Bridge and Old Town",
+  "place": "Lucerne (Luzern), on the River Reuss",
+  "country": "Switzerland",
+  "lat": 47.0517,
+  "lng": 8.3075,
+  "tz": "Europe/Zurich",
+  "operator": {
+   "name": "Tele1 (Zentralschweizer Fernsehen)",
+   "url": null
+  },
+  "expectTitle": [
+   "Luzern",
+   "Lucerne"
+  ],
+  "night": false,
+  "headline": "The covered wooden bridge and stone water tower in the middle of Lucerne.",
+  "looking": "A daytime city view of the Chapel Bridge (Kapellbrücke) and the old town along the Reuss, as framed in the live thumbnail. The exact camera position was not confirmed.",
+  "watchFor": [
+   "Swans and boats on the Reuss near the bridge",
+   "Soft evening light on the old town roofs",
+   "Clear mornings when the mountains show behind the town"
+  ],
+  "history": "The Chapel Bridge is a wooden footbridge with a roof, built in the 14th century (sources give dates from 1333 to 1365). The octagonal stone Water Tower beside it is older than the bridge and has served as a lookout, archive, treasury and prison. A fire on the night of 18 August 1993 destroyed most of the bridge and many of its painted roof panels. It was rebuilt and reopened in April 1994.",
+  "facts": [
+   "The 1993 fire destroyed about two thirds of the bridge; the city council decided to rebuild it the same day.",
+   "Many of the triangular paintings under the roof today are facsimiles of the originals.",
+   "The Water Tower survived the fire, though its stone was damaged by the heat."
+  ],
+  "sources": [
+   {
+    "label": "Luzern Tourismus: Chapel Bridge webcam",
+    "url": "https://www.luzern.com/de/webcam/kapellbruecke"
+   },
+   {
+    "label": "Kapellbruecke.com: A landmark is on fire",
+    "url": "https://www.kapellbruecke.com/en/stories/a-landmark-is-on-fire/"
+   },
+   {
+    "label": "Luzern Tourismus: Chapel Bridge",
+    "url": "https://www.luzern.com/en/poi/chapel-bridge?type=1773135491"
+   }
+  ],
+  "liveRisk": "Could be a re-stream or a time-lapse style feed from the TV station's own camera; could not confirm. Coverage may vary if the TV station switches views.",
+  "unsure": "The operator's own web page was not found in search. The exact camera position and whether the framing stays on the bridge. Coordinates are the bridge, not the camera.",
+  "channelId": "UCPXrtNyzerjndFhzPyJD7vA",
+  "videoTitle": "Luzern live - Lucerne live"
+ },
+ {
+  "videoId": "dsoM6TYIkOI",
+  "id": "milan-skyline-porta-nuova",
+  "name": "Milan Skyline",
+  "place": "Milan, Lombardy",
+  "country": "Italy",
+  "lat": 45.4839,
+  "lng": 9.1904,
+  "tz": "Europe/Rome",
+  "operator": {
+   "name": "Espansione Tv",
+   "url": null
+  },
+  "expectTitle": [
+   "Milan",
+   "Skyline"
+  ],
+  "night": false,
+  "headline": "Milan's glass towers rising over the city in clear light.",
+  "looking": "A skyline view of Milan's modern towers, probably the Porta Nuova district around Piazza Gae Aulenti, according to the thumbnail. The camera's exact spot and direction were not confirmed.",
+  "watchFor": [
+   "Clear, cold winter days when the Alps can show on the horizon",
+   "Towers lit up after sunset",
+   "Morning haze burning off over the business district"
+  ],
+  "history": "Porta Nuova is a large redevelopment on former railway land north of the city centre. Its UniCredit Tower, designed by Cesar Pelli, stands beside Porta Garibaldi station on Piazza Gae Aulenti. Wikipedia gives its spire height as 238 m, and it was long described as the tallest building in Italy.",
+  "facts": [
+   "The UniCredit Tower is the headquarters of UniCredit and was designed by Cesar Pelli.",
+   "Height figures differ by source (231 m or 238 m with spire).",
+   "The district also holds the Bosco Verticale towers."
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: UniCredit Tower",
+    "url": "https://en.wikipedia.org/wiki/UniCredit_Tower"
+   },
+   {
+    "label": "Wikipedia: Porta Nuova (Milan)",
+    "url": "https://en.wikipedia.org/wiki/Porta_Nuova_(Milan)"
+   }
+  ],
+  "liveRisk": "Could not find anything about the operator or whether this is a fixed live camera; searches for it failed. Could be a loop or a fixed view that changes.",
+  "unsure": "Operator details, camera location and which towers are in frame. Coordinates are Piazza Gae Aulenti, a guess based on the title and thumbnail.",
+  "channelId": "UCkIrfcrdlS7lwUcWClUbhow",
+  "videoTitle": "Milan Skyline Live"
+ },
+ {
+  "videoId": "4TfEB3edwCw",
+  "id": "etna-santa-venerina",
+  "name": "Mount Etna from Santa Venerina",
+  "place": "Santa Venerina, eastern slope of Mount Etna, Sicily",
+  "country": "Italy",
+  "lat": 37.6042,
+  "lng": 15.1031,
+  "tz": "Europe/Rome",
+  "operator": {
+   "name": "WebEtneo",
+   "url": null
+  },
+  "expectTitle": [
+   "Etna",
+   "Santa Venerina"
+  ],
+  "night": true,
+  "headline": "Europe's most active volcano, watched from the vineyards of Santa Venerina.",
+  "looking": "A fixed view of Etna's summit craters from the town of Santa Venerina on the volcano's east side, according to the title. The thumbnail showed a clear summit with two ash plumes.",
+  "watchFor": [
+   "Ash plumes and strombolian activity at the summit craters",
+   "Red glow and lava fountains after dark",
+   "Clear early mornings, before cloud builds on the summit"
+  ],
+  "history": "Etna is about 3,300 m high, and its summit height changes as the craters grow and collapse. It erupts often. In 2025 there were lava flows in February, activity in April, and a larger eruption on 2 June with a plume several kilometres high. Santa Venerina is a comune of about 8,500 people roughly 20 km north-east of Catania.",
+  "facts": [
+   "Etna's summit is around 3,300 to 3,370 m, depending on source and recent activity.",
+   "Authorities restricted access above 2,500 m in August 2025 when activity rose.",
+   "Santa Venerina sits at about 337 m on Etna's eastern flank."
+  ],
+  "sources": [
+   {
+    "label": "VolcanoDiscovery: Etna",
+    "url": "https://www.volcanodiscovery.com/etna.html"
+   },
+   {
+    "label": "Wikipedia: Santa Venerina",
+    "url": "https://en.wikipedia.org/wiki/Santa_Venerina"
+   },
+   {
+    "label": "VolcanoDiscovery: Etna webcams",
+    "url": "https://www.volcanodiscovery.com/etna-webcams.html"
+   }
+  ],
+  "liveRisk": "Cloud often hides the summit, and the view is empty between eruptive phases. Searches did not confirm WebEtneo as an operator, so it could be a re-stream.",
+  "unsure": "Operator identity and website. The exact camera spot (coordinates are the town centre). Current activity level.",
+  "channelId": "UCK8_xlEuZUP_tSKmSSN0vlQ",
+  "videoTitle": "🔴 Eruzione Etna Live Stream Santa Venerina🌋Mount Etna Volcano Eruption (Sicily, Catania, Italy)"
+ },
+ {
+  "videoId": "zgM8CqzqpKQ",
+  "id": "vernazza-harbour",
+  "name": "Vernazza Harbour",
+  "place": "Vernazza, Cinque Terre, Liguria",
+  "country": "Italy",
+  "lat": 44.1351,
+  "lng": 9.6836,
+  "tz": "Europe/Rome",
+  "operator": {
+   "name": "Comune di Vernazza",
+   "url": null
+  },
+  "expectTitle": [
+   "Vernazza"
+  ],
+  "night": false,
+  "headline": "The little harbour and church of Vernazza, in the Cinque Terre.",
+  "looking": "A view over Vernazza's small port, with its church (Santa Margherita di Antiochia) beside the water, as shown in the thumbnail. The exact camera position was not confirmed.",
+  "watchFor": [
+   "Fishing boats and swimmers in the harbour in summer",
+   "Golden light on the pastel houses near sunset",
+   "Rough seas hitting the harbour wall in autumn and winter storms"
+  ],
+  "history": "Vernazza is one of the five Cinque Terre villages on the Ligurian coast, part of a UNESCO World Heritage landscape. Its harbour and church sit at the foot of the village. The channel's own search results did not give a detailed history, so this card stays short.",
+  "facts": [
+   "Vernazza is one of the five villages of the Cinque Terre.",
+   "Its church is dedicated to Saint Margaret of Antioch.",
+   "The commune's own site is listed as comune.vernazza.sp.it."
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Vernazza",
+    "url": "https://en.wikipedia.org/wiki/Vernazza"
+   },
+   {
+    "label": "Windy: Vernazza webcam",
+    "url": "https://windy.com/webcams/1793912586"
+   }
+  ],
+  "liveRisk": "The commune's own page for the camera was not found, so it may be a re-stream. Night views are dark.",
+  "unsure": "Official operator page and camera spot. Founding history and the UNESCO year, which were not confirmed in these searches.",
+  "channelId": "UCsRATfTd6c2eYhuhfnxnNLg",
+  "videoTitle": "Webcam Live Porto di Vernazza - Cinque Terre"
+ },
+ {
+  "videoId": "t_bAWRtkvlQ",
+  "id": "capri-sea-view",
+  "name": "Capri Sea and Island View",
+  "place": "Capri, Bay of Naples, Campania",
+  "country": "Italy",
+  "lat": 40.5532,
+  "lng": 14.2222,
+  "tz": "Europe/Rome",
+  "operator": {
+   "name": "Surveillance Map Foundation",
+   "url": null
+  },
+  "expectTitle": [
+   "Capri"
+  ],
+  "night": false,
+  "headline": "Sunlight over the sea and the island of Capri.",
+  "looking": "A view over the water towards the island, with the sun low in the frame in the thumbnail. Which part of Capri the camera sits on was not confirmed.",
+  "watchFor": [
+   "Sunrise and sunset over the water",
+   "Ferries and boats running to Marina Grande",
+   "Clear days with views toward the mainland coast"
+  ],
+  "history": "Capri is an island off the Sorrento peninsula in the Bay of Naples. Its main port, Marina Grande, was used by the Romans in the time of Augustus, who also built the Palazzo a Mare nearby. The Faraglioni, three sea stacks off the south coast, are the island's best-known landmark.",
+  "facts": [
+   "The tallest Faraglioni stack, Scopolo (Fuori), is 106 m high.",
+   "The Faraglioni are home to a blue subspecies of the Italian wall lizard.",
+   "Marina Grande is the island's main port."
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Marina Grande, Capri",
+    "url": "https://en.wikipedia.org/wiki/Marina_Grande,_Capri"
+   },
+   {
+    "label": "Wikipedia: Faraglioni di Capri",
+    "url": "https://en.wikipedia.org/wiki/Faraglioni_di_Capri"
+   }
+  ],
+  "liveRisk": "The channel name and title (a 'surveillance map' stream) suggest a re-stream or a feed picked from a network of public cameras, so the view may change. Could not verify the operator.",
+  "unsure": "Operator and its site, the camera's real location on Capri, and whether the view is fixed. Coordinates are the island's centre area, not the camera.",
+  "channelId": "UCCm-nbbUP0Tx3JzEzeEVFTA",
+  "videoTitle": "Mappa di Sorveglianza LIVE · Capri, Italia · Permesso? Avanti!"
+ },
+ {
+  "videoId": "Tbx35fWLy3k",
+  "id": "val-gardena-panocam",
+  "name": "Val Gardena Dolomites Panorama",
+  "place": "Val Gardena (Gröden), South Tyrol",
+  "country": "Italy",
+  "lat": 46.574,
+  "lng": 11.6711,
+  "tz": "Europe/Rome",
+  "operator": {
+   "name": "Dolomites Val Gardena - Gröden (official fanpage)",
+   "url": null
+  },
+  "expectTitle": [
+   "Val Gardena",
+   "Gröden"
+  ],
+  "night": false,
+  "headline": "The Dolomite peaks above the meadows of Val Gardena.",
+  "looking": "A mountain panorama of the Val Gardena area in the Dolomites. The reviewer thought the thumbnail looked like a static promotional image, so what this stream actually shows needs checking.",
+  "watchFor": [
+   "Alpenglow on the peaks at sunrise and sunset",
+   "Flower meadows in early summer",
+   "Fresh snow on the peaks in winter"
+  ],
+  "history": "Val Gardena (German Gröden, Ladin Gherdëina) is a valley in the Dolomites with three municipalities: Ortisei, Santa Cristina and Selva. It is a stronghold of the Ladin language and is known for skiing, climbing and woodcarving. The Val Gardena Railway ran there from 1916 until 1960, and the Dolomites became a UNESCO site in 2009.",
+  "facts": [
+   "The valley is part of the Dolomiti Superski network.",
+   "Santa Cristina's church is the valley's oldest place of worship, dating to the 12th century.",
+   "The valley has a Ladin-speaking majority."
+  ],
+  "sources": [
+   {
+    "label": "Val Gardena official tourism site",
+    "url": "https://www.valgardena.it/en/val-gardena/"
+   },
+   {
+    "label": "Wikipedia: Val Gardena",
+    "url": "https://Www.wikipedia.org/wiki/Val_Gardena"
+   },
+   {
+    "label": "Ladinia: Val Gardena",
+    "url": "https://www.ladinia.it/en/informations/449/ladinia/val-gardena"
+   }
+  ],
+  "liveRisk": "May be a slideshow or looped promo of several panocams rather than one live view. The 'official fanpage' may not be run by the tourist board.",
+  "unsure": "Which camera(s) feed this stream and where they sit, and whether the thumbnail was a static image. Coordinates are Ortisei, not a camera.",
+  "channelId": "UC-tpsKQ7tQWOVfZLXrmjfjg",
+  "videoTitle": "Livestream: Panocams/webcams Dolomites Val Gardena - Gröden"
+ },
+ {
+  "videoId": "succ1fhHm7I",
+  "id": "dawlish-sea-wall",
+  "name": "Dawlish Sea Wall and Railway",
+  "place": "Dawlish, Devon",
+  "country": "United Kingdom",
+  "lat": 50.5806,
+  "lng": -3.464,
+  "tz": "Europe/London",
+  "operator": {
+   "name": "Coast Cams (sponsored by Cofton Holidays)",
+   "url": null
+  },
+  "expectTitle": [
+   "Dawlish"
+  ],
+  "night": false,
+  "headline": "Red cliffs, a sea wall and trains passing within reach of the waves.",
+  "looking": "A fixed view of the Dawlish sea wall and the railway line along the coast, with the red Devon cliffs behind. The thumbnail showed a train and the sea wall at sunrise.",
+  "watchFor": [
+   "Trains passing along the sea wall",
+   "Storm waves breaking over the wall in winter",
+   "Sunrise over the sea, since the coast faces east"
+  ],
+  "history": "The South Devon Railway was built by Brunel and opened along this coast in the 1840s, with a sea wall to carry the line. It was planned with atmospheric propulsion, which was abandoned within about a year, and the line went over to steam. The wall has been battered by storms since the winter of 1872 to 1873, when it suffered major breaches.",
+  "facts": [
+   "The atmospheric system failed partly because sea spray made the pipes hard to seal.",
+   "A surviving pumping house still stands near Dawlish station.",
+   "Cofton Holidays, the sponsor, is a holiday park near Dawlish Warren."
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Dawlish",
+    "url": "https://en.wikipedia.org/wiki/Dawlish"
+   },
+   {
+    "label": "Dawlish Trains: Sea Wall History",
+    "url": "https://www.dawlishtrains.com/history.html"
+   },
+   {
+    "label": "Cofton Holidays",
+    "url": "https://coftonholidays.co.uk/accommodation/campsites-devon/campsite-on-devon-coast/"
+   }
+  ],
+  "liveRisk": "Coast Cams offers a members version and has a sponsored public stream, so the public one could be paused or vary. Some views near Dawlish are separate cameras, so the framing may differ from the title.",
+  "unsure": "Exact camera position (coordinates are Dawlish town). The Coast Cams website link was only seen as text in a mirror page, so no operator URL is given.",
+  "channelId": "UCs1hoU1QdHuxrmNltGAYjkg",
+  "videoTitle": "Sea Breeze Cam, sponsored by Cofton Holidays - Dawlish Webcam - 4k Webcam"
+ },
+ {
+  "videoId": "rulGLEdCHZU",
+  "id": "lyme-regis-harbour",
+  "name": "Lyme Regis Harbour and The Cobb",
+  "place": "Lyme Regis, Dorset",
+  "country": "United Kingdom",
+  "lat": 50.7222,
+  "lng": -2.9338,
+  "tz": "Europe/London",
+  "operator": {
+   "name": "Dorset Council",
+   "url": null
+  },
+  "expectTitle": [
+   "Lyme Regis"
+  ],
+  "night": false,
+  "headline": "The curved stone arm of The Cobb wrapping a small Dorset harbour on the Jurassic Coast.",
+  "looking": "A high view over Lyme Regis harbour, taking in the boats inside the Cobb and the seafront beyond. The title and thumbnail suggest an elevated, aerial-style position looking across the harbour. The exact mounting point was not confirmed.",
+  "watchFor": [
+   "Fishing boats and small craft moving in and out on the tide",
+   "Soft light over Lyme Bay near sunset",
+   "Waves breaking on the Cobb wall in a southwesterly blow"
+  ],
+  "history": "The Cobb is Lyme Regis's harbour wall, and the earliest known mention of it is from 1294, though it probably predates the town's 1284 royal charter. Storms damaged it repeatedly over the centuries. Much of what stands today dates from the late 18th and 19th centuries, using Portland stone, with the High Wall built in 1819-1820. It is Grade I listed.",
+  "facts": [
+   "The steps known as Granny's Teeth appear in Jane Austen's Persuasion",
+   "The Cobb features in the 1981 film The French Lieutenant's Woman",
+   "The Cobb is Grade I listed"
+  ],
+  "sources": [
+   {
+    "label": "Visit Dorset: The Cobb at Lyme Regis",
+    "url": "https://www.visit-dorset.com/lyme-regis/explore-discover/the-cobb/"
+   },
+   {
+    "label": "Visit Dorset: Lyme Regis webcams",
+    "url": "https://www.visit-dorset.com/lyme-regis/webcams/"
+   },
+   {
+    "label": "Dorset HER: The Cobb watching brief",
+    "url": "https://heritage.dorsetcouncil.gov.uk/Source/SDO21125"
+   }
+  ],
+  "liveRisk": "Dorset Council notes that some webcams are third-party services and weather can interrupt the signal.",
+  "unsure": "Could not confirm from search that Dorset Council runs this exact camera (the channel name says so). Camera position and coordinates are approximate (the Cobb).",
+  "channelId": "UCsvVB0izExckoxLqPIYla6Q",
+  "videoTitle": "Lyme Regis Harbour"
+ },
+ {
+  "videoId": "KoB32C-liwI",
+  "id": "west-bay-harbour",
+  "name": "Bridport Harbour at West Bay",
+  "place": "West Bay, Bridport, Dorset",
+  "country": "United Kingdom",
+  "lat": 50.7107,
+  "lng": -2.7598,
+  "tz": "Europe/London",
+  "operator": {
+   "name": "Dorset Council",
+   "url": null
+  },
+  "expectTitle": [
+   "Bridport",
+   "West Bay"
+  ],
+  "night": false,
+  "headline": "A Georgian harbour tucked below golden Jurassic Coast cliffs.",
+  "looking": "An elevated view over Bridport Harbour at West Bay, taking in the harbour, piers and the beach beside it. Dorset Council describes a 360-degree West Bay camera covering the promenade, piers, harbour, beach and clifftop. The exact mounting point was not confirmed.",
+  "watchFor": [
+   "Fishing boats and pleasure craft working the harbour mouth",
+   "Warm evening light on the East Cliff",
+   "Surf pushing shingle against the beach in winter storms"
+  ],
+  "history": "Bridport's harbour has moved twice, from about a mile inland to the coast, then roughly 270 metres west to its current site. It has been repeatedly silted, blocked by shingle and storm damaged. The present layout dates largely to work by Francis Giles in 1823-5, after earlier construction in 1740-4. It first served Bridport's rope and net trade, and the arrival of the railway in 1884 brought the resort.",
+  "facts": [
+   "The West Wall was built in 2005 to shelter the harbour and reduce flood risk to the town",
+   "The harbour's original trade was exporting Bridport rope and nets",
+   "Railway arrival in 1884 helped turn West Bay into a resort"
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: West Bay, Dorset",
+    "url": "https://en.wikipedia.org/wiki/West_Bay,_Dorset"
+   },
+   {
+    "label": "Dorset HER: Bridport Harbour",
+    "url": "https://heritage.dorsetcouncil.gov.uk/Monument/MWX1552"
+   },
+   {
+    "label": "West Dorset Leisure Holidays: West Bay",
+    "url": "https://wdlh.co.uk/dorset-webcams/west-bay/"
+   }
+  ],
+  "liveRisk": "Bad weather can interrupt the signal, and some council webcams are third-party services with no uptime guarantee.",
+  "unsure": "Could not find an official Dorset Council page for this camera. Coordinates are approximate (the harbour).",
+  "channelId": "UCsvVB0izExckoxLqPIYla6Q",
+  "videoTitle": "Bridport Harbour (West Bay)"
+ },
+ {
+  "videoId": "6jYtsS43mRM",
+  "id": "eype-beach-highlands-end",
+  "name": "Eype Beach from Highlands End",
+  "place": "Eype, near Bridport, Dorset",
+  "country": "United Kingdom",
+  "lat": 50.721,
+  "lng": -2.779,
+  "tz": "Europe/London",
+  "operator": {
+   "name": "West Dorset Leisure Holidays (Highlands End Holiday Park)",
+   "url": "https://wdlh.co.uk/dorset-webcams/highlands-end-eype/"
+  },
+  "expectTitle": [
+   "Eype",
+   "Highlands End"
+  ],
+  "night": false,
+  "headline": "A clifftop holiday park view over Eype Beach and the Dorset headlands.",
+  "looking": "A clifftop camera at Highlands End Holiday Park looking over Eype House Holiday Park, Eype Beach and Thorncombe Beacon. The park describes it as facing west toward Lyme Regis, which makes it a good evening camera.",
+  "watchFor": [
+   "Sunsets over Lyme Bay, as the park suggests",
+   "Walkers on the South West Coast Path",
+   "Occasional paragliders and paddleboarders"
+  ],
+  "history": "Highlands End Holiday Park sits on the Jurassic Coast near Eype and West Bay, on a clifftop overlooking Lyme Bay. The park runs two webcams, this one facing west and a second facing east toward West Bay and Bridport. The coast here is part of the Jurassic Coast and the South West Coast Path.",
+  "facts": [
+   "The park runs a second camera facing east to West Bay and Bridport",
+   "The view includes Thorncombe Beacon",
+   "The park is on the Jurassic Coast"
+  ],
+  "sources": [
+   {
+    "label": "Eype Webcam (WDLH)",
+    "url": "https://wdlh.co.uk/dorset-webcams/highlands-end-eype/"
+   },
+   {
+    "label": "West Dorset Leisure Holidays: West Bay cam",
+    "url": "https://wdlh.co.uk/dorset-webcams/highlands-end-west-bay-2/"
+   }
+  ],
+  "liveRisk": "The operator warns that bad weather can interrupt the signal. It is a holiday park camera, so it could pause out of season.",
+  "unsure": "Exact camera coordinates not found (approximate, clifftop at Eype). The frame note says sunrise, which suggests the view may face east, so check against the two cameras.",
+  "channelId": "UCcKQu2jS2Tb8aExyvxcTZfQ",
+  "videoTitle": "Live webcam from the clifftop at Highlands End Holday Park, overlooking Eype Beach in Dorset"
+ },
+ {
+  "videoId": "2occtpoOu_w",
+  "id": "fort-william-loch-linnhe",
+  "name": "Fort William and Loch Linnhe",
+  "place": "Fort William, Highland",
+  "country": "United Kingdom",
+  "lat": 56.819,
+  "lng": -5.113,
+  "tz": "Europe/London",
+  "operator": {
+   "name": "Alex Scotventure",
+   "url": null
+  },
+  "expectTitle": [
+   "Fort William"
+  ],
+  "night": false,
+  "headline": "Sunrise colours over Loch Linnhe from the edge of Fort William.",
+  "looking": "A camera at or near the West End Car Park looking across Loch Linnhe to the hills beyond. The thumbnail showed warm sunrise light over the loch and hills. The exact mounting point was not confirmed.",
+  "watchFor": [
+   "Sunrise and sunset colour on the loch",
+   "Boats near the pontoons beside the car park",
+   "Weather rolling down the Great Glen"
+  ],
+  "history": "Fort William lies near the head of Loch Linnhe at the southern end of the Great Glen, where the rivers Nevis and Lochy meet. It takes its name from a fort built by Cromwellian forces in 1654 and rebuilt in 1690 and named for William III. The fort was dismantled in the 19th century to make way for the railway. The town is a major base for hillwalking and climbing on Ben Nevis.",
+  "facts": [
+   "Fort William was the first town in Britain to light its streets entirely by hydroelectricity",
+   "The town sits at the southern end of the Great Glen",
+   "Ben Nevis, the highest mountain in the British Isles, is close by"
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Fort William, Scotland",
+    "url": "https://en.wikipedia.org/wiki/Fort_William,_Scotland"
+   },
+   {
+    "label": "About Fort William: webcams",
+    "url": "https://aboutfortwilliam.com/webcams"
+   }
+  ],
+  "liveRisk": "Run by an individual channel, so it could go offline or change views without notice.",
+  "unsure": "No search result confirmed this camera, its operator or its exact position. Coordinates are approximate (West End Car Park area).",
+  "channelId": "UCAY-GlV3P5twjg7B9tjx_lg",
+  "videoTitle": "🔴LIVE - Fort William Live Webcam - Scotland - Loch Linnhe & West End Car Park"
+ },
+ {
+  "videoId": "o9MIV7sep5k",
+  "id": "zaanse-schans-windmills",
+  "name": "Zaanse Schans Windmills",
+  "place": "Zaanse Schans, Zaandam, North Holland",
+  "country": "Netherlands",
+  "lat": 52.4757,
+  "lng": 4.8171,
+  "tz": "Europe/Amsterdam",
+  "operator": {
+   "name": "WebCam NL",
+   "url": null
+  },
+  "expectTitle": [
+   "Zaanse Schans"
+  ],
+  "night": false,
+  "headline": "Working windmills and green wooden houses on the River Zaan.",
+  "looking": "A pan-tilt-zoom camera, per the stream title, looking over the windmills and wooden houses of Zaanse Schans. The operator may move the view between mills, so the framing can change.",
+  "watchFor": [
+   "Mill sails turning on windy days",
+   "Soft golden light on the wooden houses at dusk",
+   "Boats and reflections on the Zaan in calm weather"
+  ],
+  "history": "Zaanse Schans began as a fortification (a schans, or sconce) during the Eighty Years' War against Spain. From 1961 to 1974, old buildings from across the Zaanstreek were moved to the site, and two of the windmills stand on their original spots. The region once had around 600 active windmills in the 17th and 18th centuries.",
+  "facts": [
+   "Ten large windmills stand at Zaanse Schans, mostly from the 17th and 18th centuries",
+   "Today they grind oil, spices and colourings",
+   "Most buildings were relocated here between 1961 and 1974"
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Zaanse Schans",
+    "url": "https://en.wikipedia.org/wiki/Zaanse_Schans"
+   },
+   {
+    "label": "Zaanse Schans windmills panorama webcam listing",
+    "url": "https://openwebcamdb-vwlaqcar.on-forge.com/webcams/zaanse-schans-windmills-panorama"
+   }
+  ],
+  "liveRisk": "Pan-tilt-zoom control means the view may be pointed elsewhere. Night view is dark.",
+  "unsure": "Could not confirm WebCam NL's site or its exact camera position. Coordinates are for the Zaanse Schans site, not the camera.",
+  "channelId": "UC3Bo0LNAeN_g5U4NJQDnL-w",
+  "videoTitle": "WebCam.NL | dezaanseschans.nl | live ultraHD Pan Tilt Zoom camera Zaanse Schans."
+ },
+ {
+  "videoId": "qf0447nmvi0",
+  "id": "pico-mountain-azores",
+  "name": "Pico Volcano from the Azores",
+  "place": "Pico Island, Azores",
+  "country": "Portugal",
+  "lat": 38.533,
+  "lng": -28.528,
+  "tz": "Atlantic/Azores",
+  "operator": {
+   "name": "Lost in Pico",
+   "url": null
+  },
+  "expectTitle": [
+   "Pico"
+  ],
+  "night": false,
+  "headline": "Portugal's highest peak rising straight out of the Atlantic.",
+  "looking": "A camera on Pico Island showing the volcano rising from the sea, per the thumbnail at dusk. The exact viewpoint on the island was not confirmed.",
+  "watchFor": [
+   "Clear mornings when the summit cone stands out",
+   "Cloud capping the peak, which often hides it",
+   "Dusk light on the sea and the slopes"
+  ],
+  "history": "Mount Pico is a dormant stratovolcano on Pico Island. Its past eruptions include flank eruptions in 1562-1564 and 1718, and a last eruption that ended in December 1720. It has been a designated nature reserve since 1972. The small summit cone, Piquinho, rises inside a larger crater called Pico Alto.",
+  "facts": [
+   "At 2,351 m it is the highest point in Portugal",
+   "It is more than twice the elevation of any other peak in the Azores",
+   "The last eruption ended in December 1720"
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Mount Pico",
+    "url": "https://en.wikipedia.org/wiki/Mount_Pico"
+   },
+   {
+    "label": "Atlas Obscura: Mount Pico",
+    "url": "https://atlasobscura.com/places/mount-pico"
+   },
+   {
+    "label": "Spot Azores: Porto da Madalena",
+    "url": "https://spotazores.com/en/webcam/pico/porto-da-madalena/"
+   }
+  ],
+  "liveRisk": "Frequently cloud covered, so the peak may be hidden for long stretches.",
+  "unsure": "Searches found nothing on the Lost in Pico channel or its camera position, so the viewpoint and coordinates (Madalena area) are a guess. The volcano being visible across water suggests a coastal spot.",
+  "channelId": "UC4pIUBRifi564igqau59l3A",
+  "videoTitle": "Pico Live Cam"
+ },
+ {
+  "videoId": "GsD9QQEKSzQ",
+  "id": "satta-pass-fuji",
+  "name": "Mt. Fuji from Satta Pass",
+  "place": "Satta Pass, Shizuoka City",
+  "country": "Japan",
+  "lat": 35.09,
+  "lng": 138.519,
+  "tz": "Asia/Tokyo",
+  "operator": {
+   "name": "Shizuoka City Satta Pass Live Camera",
+   "url": null
+  },
+  "expectTitle": [
+   "Fuji",
+   "Satta"
+  ],
+  "night": false,
+  "headline": "Hiroshige's famous Fuji view, over blue Suruga Bay.",
+  "looking": "A fixed camera on Satta Pass looking across Suruga Bay toward Mt. Fuji. The thumbnail showed Fuji over the blue bay. The pass also overlooks the Tomei Expressway, National Route 1 and JR lines below.",
+  "watchFor": [
+   "Clear, cold mornings when Fuji is sharpest",
+   "Snow on the cone in winter and spring",
+   "Haze in summer that can hide the mountain"
+  ],
+  "history": "Satta Pass sits on the old Tokaido road between Okitsu and Yui. It is the spot tied to Hiroshige's Fifty-three Stations of the Tokaido print of Yui. The pass was treacherous, and a safer coastal route became possible after the 1854 earthquake raised the coastline.",
+  "facts": [
+   "The view takes in Fuji, Suruga Bay and the Tomei Expressway",
+   "The British Museum holds Hiroshige prints of the Satta view",
+   "Fuji is a World Heritage Site"
+  ],
+  "sources": [
+   {
+    "label": "Visit Shizuoka: Satta Pass",
+    "url": "https://www.visit-shizuoka.com/en/spot/detail_233.html"
+   },
+   {
+    "label": "British Museum: Hiroshige print",
+    "url": "https://www.britishmuseum.org/collection/object/A_1906-1220-0-786"
+   },
+   {
+    "label": "Japan Travel: Satta Pass",
+    "url": "https://en.japantravel.com/shizuoka/splendid-views-from-satta-toge-pass/26420"
+   }
+  ],
+  "liveRisk": "Fuji is often hidden by cloud and haze, especially in summer.",
+  "unsure": "The operator's own page was not found. Coordinates are approximate (the pass observation area), not the camera itself.",
+  "channelId": "UCkUdb6wh-TE9MK7Q2VTE5-A",
+  "videoTitle": "【LIVE】静岡市さった峠　広重の富士山 / Mt. Fuji (World Heritage Site): Live Streaming in Shizuoka City"
+ },
+ {
+  "videoId": "jBPc3TGZin8",
+  "id": "jukkoku-pass-suruga-bay",
+  "name": "Jukkoku Pass and Suruga Bay",
+  "place": "Jukkoku Pass (Jukkoku-toge), between Hakone and Atami, Shizuoka/Kanagawa border area",
+  "country": "Japan",
+  "lat": 35.095,
+  "lng": 139.02,
+  "tz": "Asia/Tokyo",
+  "operator": {
+   "name": "Fujiyama NAVI (フジヤマNAVI)",
+   "url": null
+  },
+  "expectTitle": [
+   "十国峠",
+   "Jukkoku"
+  ],
+  "night": false,
+  "headline": "A mountain pass above Atami where the first light spreads across Suruga Bay.",
+  "looking": "The camera looks out from the high ridge at Jukkoku Pass over the sea of Suruga Bay. It is best at dawn, when the sun rises along the horizon and the bay turns orange.",
+  "watchFor": [
+   "Sunrise colour over the bay, usually the best half hour of the day",
+   "Clear, dry winter mornings, when distant coast and sometimes Mount Fuji show up",
+   "Low cloud or sea mist rolling up the slopes in humid weather"
+  ],
+  "history": "The name is usually read as 'ten provinces', from the belief that ten old provinces could be seen from the pass on a clear day. Travel sources list Izu, Suruga, Totomi, Kai, Shinano, Musashi, Sagami, Awa, Kazusa and Shimosa, though that list reads more like folklore than a survey. A funicular has served the summit since 1956. The pass sits inside Fuji-Hakone-Izu National Park, which was established in 1936.",
+  "facts": [
+   "The funicular climbs about 101 m over roughly 300 m of track in about three minutes",
+   "On clear days the summit view takes in Mount Fuji, the Southern Alps, Suruga Bay and the Miura Peninsula",
+   "The pass is in Fuji-Hakone-Izu National Park, established in 1936"
+  ],
+  "sources": [
+   {
+    "label": "Prince Hotels, Jukkoku Pass",
+    "url": "https://www.princehotels.com/the-prince-hakone/hotels/jukkokutoge/"
+   },
+   {
+    "label": "Voyapon, stunning views of Mount Fuji from Jukkoku Pass",
+    "url": "https://voyapon.com/stunning-views-mount-fuji-jukkoku-pass/"
+   }
+  ],
+  "liveRisk": "Operator is a local tourism info channel, not confirmed as the camera owner. Could be paused for maintenance.",
+  "unsure": "Exact camera spot and coordinates (given are approximate for the pass). Operator's official page not found. Whether Fuji is in frame was not confirmed.",
+  "channelId": "UCwzJctz6m-0wG_evkheecZA",
+  "videoTitle": "十国峠ライブカメラ（駿河湾ビュー）Live from Hakone-Jukkoku Pass"
+ },
+ {
+  "videoId": "Iv2VUE_UhRQ",
+  "id": "kamikochi-kappa-bashi",
+  "name": "Kappa-bashi Bridge, Kamikochi",
+  "place": "Kappa-bashi, Kamikochi valley, Matsumoto, Nagano Prefecture",
+  "country": "Japan",
+  "lat": 36.2489,
+  "lng": 137.637,
+  "tz": "Asia/Tokyo",
+  "operator": {
+   "name": "Gosenjaku Hotel Kamikochi",
+   "url": "https://www.gosenjaku.co.jp/english/"
+  },
+  "expectTitle": [
+   "上高地",
+   "KAMIKOCHI"
+  ],
+  "night": false,
+  "headline": "The suspension bridge at the heart of Kamikochi, with the Hotaka peaks above the Azusa River.",
+  "looking": "The camera is run by the hotel that stands right beside Kappa-bashi. It looks across the Azusa River and the bridge toward the Hotaka mountain range, the classic Kamikochi view.",
+  "watchFor": [
+   "Autumn colour on the slopes, usually peaking in October",
+   "Morning mist on the river on cool, still days",
+   "Fresh snow on the high peaks in late autumn, before the valley closes for winter"
+  ],
+  "history": "Kappa-bashi is the best-known landmark of Kamikochi and the usual starting point for walks in the valley. The Gosenjaku Hotel beside it is described in a Japanese listing as founded in 1918. Its river-facing rooms are described as having the best views in Kamikochi. The valley is a mountain resort with a short season, and its hotels and transport close for winter.",
+  "facts": [
+   "Gosenjaku Hotel is described as founded in 1918",
+   "From the bridge area you can see the Hotaka mountain range",
+   "Kamikochi's public transport and hotels reopen each spring after a winter closure"
+  ],
+  "sources": [
+   {
+    "label": "Gosenjaku Hotel (English site)",
+    "url": "https://www.gosenjaku.co.jp/english/?p=13577"
+   },
+   {
+    "label": "Accommodations in Kamikochi",
+    "url": "https://www.kamikochi.org/?p=3916"
+   }
+  ],
+  "liveRisk": "Kamikochi closes to most visitors in winter (roughly mid-November to April). The camera may stay on but the hotel may be shut, so the stream could pause or the frame could go snowbound.",
+  "unsure": "No search result confirmed the live camera itself; operator inferred from channel name (五千尺ホテル上高地 = Gosenjaku Hotel). Coordinates are approximate for the bridge.",
+  "channelId": "UCVUyX8T-vYwJYraM6957r9Q",
+  "videoTitle": "[4K] 上高地河童橋ライブカメラ KAMIKOCHI KAPPA-BASHI LIVE CAMERA"
+ },
+ {
+  "videoId": "LHHXZdYmN_Y",
+  "id": "tokyo-skytree",
+  "name": "Tokyo Skytree",
+  "place": "Tokyo Skytree, Sumida, Tokyo",
+  "country": "Japan",
+  "lat": 35.7101,
+  "lng": 139.8107,
+  "tz": "Asia/Tokyo",
+  "operator": {
+   "name": "H.S. Strong Co., Ltd. (株式会社エッチ・エス・ストロング)",
+   "url": null
+  },
+  "expectTitle": [
+   "スカイツリー",
+   "SKY TREE"
+  ],
+  "night": true,
+  "headline": "Japan's tallest tower, seen from a distance, lit up or silhouetted against the dawn.",
+  "looking": "The camera sits some distance from the tower and frames the full Skytree against the sky. The exact vantage point was not confirmed. At sunrise the tower shows as a dark silhouette.",
+  "watchFor": [
+   "Sunrise behind the tower on clear mornings",
+   "The tower's evening lighting after dark",
+   "Low cloud hiding the upper section in wet weather"
+  ],
+  "history": "Tokyo Skytree is a broadcasting and observation tower in Sumida, Tokyo. The public chose its name in a nationwide vote announced on 10 June 2008. It reached its full height of 634 m in early 2011, construction finished on 29 February 2012, and it opened to the public on 22 May 2012. It is the main television and radio broadcast site for the Kanto region.",
+  "facts": [
+   "634 m tall, the tallest tower in Japan",
+   "Opened to the public on 22 May 2012",
+   "Its name was chosen by public vote, announced 10 June 2008"
+  ],
+  "sources": [
+   {
+    "label": "Tokyo Skytree, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Tokyo_Skytree"
+   },
+   {
+    "label": "Tokyo Skytree, Simple English Wikipedia",
+    "url": "https://simple.wikipedia.com/wiki/Tokyo_Skytree"
+   }
+  ],
+  "liveRisk": "Operator is a private company, not the tower owner; stream could be paused or changed to a different angle.",
+  "unsure": "Camera location is not confirmed (coordinates given are the tower's). Operator page not found. Night-worthy flag is based on the tower's lighting, not confirmed from search.",
+  "channelId": "UCSqjZfzC1g6fhMNx8F8rfng",
+  "videoTitle": "東京スカイツリーライブカメラ　TOKYO SKY TREE Live Camera"
+ },
+ {
+  "videoId": "6Y97q9KrhwA",
+  "id": "alishan-ogasawara-sunrise",
+  "name": "Alishan Ogasawara Sunrise Platform",
+  "place": "Ogasawara Mountain viewing platform, Alishan National Forest Recreation Area, Chiayi County",
+  "country": "Taiwan",
+  "lat": 23.511,
+  "lng": 120.804,
+  "tz": "Asia/Taipei",
+  "operator": {
+   "name": "National Forest Recreation Areas live images (國家森林遊樂區即時影像)",
+   "url": null
+  },
+  "expectTitle": [
+   "小笠原",
+   "阿里山"
+  ],
+  "night": false,
+  "headline": "A sunrise lookout high in Alishan, with autumn maples above a sea of clouds.",
+  "looking": "The camera watches from the Ogasawara Mountain platform in Alishan. It looks out over the ridges and the cloud layer that fills the valleys at dawn.",
+  "watchFor": [
+   "Sunrise just before and after dawn, when the cloud sea turns gold",
+   "Red maple foliage in autumn",
+   "Cold, clear mornings, which give the best chance of a visible cloud sea"
+  ],
+  "history": "Ogasawara Mountain is one of the best-known sunrise spots in Alishan, along with Zhushan, which faces Yushan. Travel sources put the platform at about 2,488 m. It is reached by a steep climb of around 500 m from the forest railway station. The platform is also known as a good place to see autumn colour.",
+  "facts": [
+   "The platform is at about 2,488 m, per travel sources",
+   "Ogasawara and Zhushan are the two best-known sunrise spots in Alishan",
+   "Zhushan's sunrise rises over Yushan, Taiwan's highest mountain"
+  ],
+  "sources": [
+   {
+    "label": "Chasing Sunrises in Alishan, Agoda",
+    "url": "https://www.agoda.com/travel-guides/taiwan/chasing-sunrises-in-alishan-national-scenic-area-top-spots-festivals-2"
+   },
+   {
+    "label": "Five wonders of Alishan, Traveller",
+    "url": "https://www.traveller.com.au/taiwan-ticking-off-the-five-wonders-of-alishan-h1f8h5"
+   }
+  ],
+  "liveRisk": "Fog or rain can fill the frame. Stream may be paused for maintenance.",
+  "unsure": "Exact coordinates (given are approximate for Alishan). Whether the channel is run by the Forestry and Nature Conservation Agency was not confirmed. Operator's official page not found.",
+  "channelId": "UCOvjqsgwf8RFMmyj7QIQhSg",
+  "videoTitle": "阿里山國家森林遊樂區小笠原平台觀日出直播"
+ },
+ {
+  "videoId": "8cq-t5yKjvs",
+  "id": "alishan-forest-railway",
+  "name": "Alishan Forest Railway",
+  "place": "Alishan Forest Railway, Alishan National Forest Recreation Area, Chiayi County",
+  "country": "Taiwan",
+  "lat": 23.5083,
+  "lng": 120.8049,
+  "tz": "Asia/Taipei",
+  "operator": {
+   "name": "National Forest Recreation Areas live images (國家森林遊樂區即時影像)",
+   "url": null
+  },
+  "expectTitle": [
+   "林業鐵路",
+   "阿里山"
+  ],
+  "night": false,
+  "headline": "A small red mountain train rolling through cherry trees on a narrow-gauge forest line.",
+  "looking": "The camera watches a stretch of the Alishan Forest Railway where trains pass between trees. In spring the cherry blossom frames the red train. The exact stretch of track was not confirmed.",
+  "watchFor": [
+   "Trains passing, when one is scheduled",
+   "Cherry blossom in spring (March to April)",
+   "Mist drifting through the trees in the morning"
+  ],
+  "history": "The Alishan Forest Railway is an 86 km network of 762 mm (2 ft 6 in) narrow-gauge lines serving Alishan in Chiayi County. The Japanese colonial government built it to haul cypress and Taiwania timber, and sources give the opening as 1912. It is known for its Z-shaped switchbacks and more than 50 tunnels and 77 wooden bridges. It is listed as a potential World Heritage Site.",
+  "facts": [
+   "86 km of 762 mm narrow-gauge track",
+   "Over 50 tunnels and 77 wooden bridges",
+   "Opened in 1912, built to carry timber"
+  ],
+  "sources": [
+   {
+    "label": "Alishan Forest Railway, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Alishan_Forest_Railway"
+   },
+   {
+    "label": "Forestry agency, Alishan Forest Railway",
+    "url": "https://www.forest.gov.tw/en/0004703"
+   }
+  ],
+  "liveRisk": "Trains do not run constantly and sections of the line have been closed for repair at times, so the frame may be empty for long stretches. Cherry blossom is seasonal.",
+  "unsure": "Which part of the line the camera shows, and its coordinates (given are approximate for Alishan station). Operator not confirmed. Summit elevation sources differ (2,216 m vs 2,274 m), so it is not quoted as fact.",
+  "channelId": "UCOvjqsgwf8RFMmyj7QIQhSg",
+  "videoTitle": "阿里山國家森林遊樂區林業鐵路即時影像"
+ },
+ {
+  "videoId": "ZayKvJKDPWc",
+  "id": "techi-dam-lishan",
+  "name": "Techi Reservoir and Lishan",
+  "place": "Techi Reservoir, Lishan, Heping District, Taichung",
+  "country": "Taiwan",
+  "lat": 24.26,
+  "lng": 121.247,
+  "tz": "Asia/Taipei",
+  "operator": {
+   "name": "Tourism Administration, Central Taiwan Mountain Scenic Area (交通部觀光署參山國家風景區管理處)",
+   "url": null
+  },
+  "expectTitle": [
+   "德基水庫",
+   "Techi"
+  ],
+  "night": false,
+  "headline": "A blue mountain reservoir behind Taiwan's tallest dam, high in the central ranges.",
+  "looking": "The camera looks over Techi Reservoir and the forested valley around Lishan, with the Jiayang alluvial fan in view. The reservoir sits on the Dajia River.",
+  "watchFor": [
+   "Morning mist lifting off the water",
+   "Changing water level through the dry and rainy seasons",
+   "Autumn and winter light on the surrounding ridges"
+  ],
+  "history": "Techi Dam is a concrete thin-arch dam on the Dajia River, completed in 1974 and run by Taiwan Power Company. Proposals to dam the river go back to the Japanese colonial era, and surveys started in 1936. The downstream dams came first, and their small storage meant uneven power output, which is why a high dam upstream was needed. It sits at the top of a cascade of six dams on the river.",
+  "facts": [
+   "At 180 m, Techi is the highest dam in Taiwan",
+   "Completed in 1974",
+   "It and five other dams on the Dajia produce up to 1,100 MW"
+  ],
+  "sources": [
+   {
+    "label": "Techi Dam, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Techi_Dam"
+   },
+   {
+    "label": "Dajia River, Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Dajia_River"
+   }
+  ],
+  "liveRisk": null,
+  "unsure": "Exact camera position and coordinates (given are approximate for the Lishan area). Operator name taken from the channel title (Tourism Administration, Central Taiwan Mountain Scenic Area Administration); official page not found.",
+  "channelId": "UCRJaOd58HaYbcYxZ6hwx20Q",
+  "videoTitle": "【梨山美景4K Live cam】德基水庫即時影像｜梨山佳陽沖積扇｜Techi Dam Live Cam"
+ },
+ {
+  "videoId": "35I9OCQ4rTg",
+  "id": "crystal-bay-lamai",
+  "name": "Crystal Bay, Lamai",
+  "place": "Crystal Bay Beach Resort area, Lamai, Koh Samui, Surat Thani",
+  "country": "Thailand",
+  "lat": 9.469,
+  "lng": 100.05,
+  "tz": "Asia/Bangkok",
+  "operator": {
+   "name": "The Real Samui Webcam",
+   "url": null
+  },
+  "expectTitle": [
+   "Crystal Bay",
+   "Lamai"
+  ],
+  "night": false,
+  "headline": "Sunrise over a rocky Samui bay, filmed in 4K from a Lamai beach resort.",
+  "looking": "The camera looks out over a bay with a rocky headland and open sea. The frame is at its best at sunrise, when the sky colours the water.",
+  "watchFor": [
+   "Sunrise over the sea, the best moment for colour",
+   "Longtail boats and swimmers on calm mornings",
+   "Rain squalls in the wetter months, with clearer weather in the dry season"
+  ],
+  "history": "Crystal Bay is on the Lamai side of Koh Samui, an island in the Gulf of Thailand in Surat Thani province. The Real Samui Webcam runs several 4K beach cameras on the island. Directories list a Crystal Bay Beach Resort camera, but they disagree about exactly which beach it shows.",
+  "facts": [
+   "The Real Samui Webcam is credited as the source of a 4K Crystal Bay feed in Lamai",
+   "Koh Samui is in Surat Thani province, Thailand",
+   "A directory lists this resort camera as showing Thong Takian beach, so listings conflict"
+  ],
+  "sources": [
+   {
+    "label": "Crystal Bay live webcam, HDOnTap",
+    "url": "https://hdontap.com/stream/989297/crystal-bay-koh-samui-thailand-live-webcam/about"
+   },
+   {
+    "label": "Crystal Bay webcam listing",
+    "url": "https://webcams.org.ru/eng-live-crystal_bay.html"
+   }
+  ],
+  "liveRisk": "Weather and resort maintenance can interrupt the feed. Same camera may be re-streamed by directories.",
+  "unsure": "Search results conflict on whether the Crystal Bay camera shows Lamai, Maret or Thong Takian beach, and coordinates are approximate for Lamai. Operator's own page not found.",
+  "channelId": "UCmYyJaUxYiF5IbLx-0jFXHQ",
+  "videoTitle": "🔴 Crystal Bay Beach Resort Xtra | Lamai | Koh Samui | Thailand | Live Beach Webcam | 2160p 4K"
+ },
+ {
+  "videoId": "NUN4Pgi0j9E",
+  "id": "annapurna-base-camp-machapuchare",
+  "name": "Machapuchare from Annapurna Base Camp",
+  "place": "Annapurna Base Camp, Annapurna Sanctuary, Kaski District",
+  "country": "Nepal",
+  "lat": 28.53,
+  "lng": 83.878,
+  "tz": "Asia/Kathmandu",
+  "operator": {
+   "name": "Webcam Nepal Annapurna",
+   "url": null
+  },
+  "expectTitle": [
+   "ANNAPURNA",
+   "MACHAPUCHARE"
+  ],
+  "night": false,
+  "headline": "Fishtail peak and the Annapurna wall above a trekkers' lodge at 4,130 m.",
+  "looking": "The camera sits at Annapurna Base Camp and looks toward Machapuchare and the surrounding Annapurna peaks, with the lodge buildings at the edge of the frame.",
+  "watchFor": [
+   "First light turning the peaks pink, early in the morning",
+   "Clear, crisp spells after storms, especially in October and November",
+   "Afternoon cloud usually builds and hides the summits"
+  ],
+  "history": "Annapurna Base Camp sits in the Annapurna Sanctuary at about 4,130 m, though trekkers' sources vary between 4,130 and 4,140 m. It is a popular trekking destination. Machapuchare, at about 6,993 m, is regarded as sacred and is closed to climbers. The trek is run through lodges, which is how a camera can be powered and connected at that height.",
+  "facts": [
+   "Annapurna Base Camp is at about 4,130 m",
+   "Machapuchare is about 6,993 m high",
+   "Machapuchare is declared sacred and closed to climbers"
+  ],
+  "sources": [
+   {
+    "label": "Machhapuchchhre, Wikipedia mirror",
+    "url": "https://c.enwp.org/wiki/Machhapuchchhre"
+   },
+   {
+    "label": "Himalayan Wonders, Machhapuchchhre",
+    "url": "https://www.himalayanwonders.com/content/peaks/machhapuchchhre.html"
+   }
+  ],
+  "liveRisk": "Remote high-altitude camera on lodge power and a weak link, so it may freeze, drop out, or be offline in winter when lodges close. Cloud often covers the peaks by midday.",
+  "unsure": "No search result confirmed the live camera or its operator. Camera coordinates are approximate for Annapurna Base Camp. Whether the channel is the camera owner or a re-streamer is unknown.",
+  "channelId": "UCbv8BrmNooNIUu9QDmOp7Qw",
+  "videoTitle": "WEBCAM NEPAL LIVE: ANNAPURNA BASE CAMP – MACHAPUCHARE VIEW FROM ABC"
+ },
+ {
+  "videoId": "RP-wuud0NMU",
+  "id": "shirahama-ohama-beach",
+  "name": "Shirahama Ohama Beach",
+  "place": "Shirahama, Shimoda, Izu Peninsula, Shizuoka",
+  "country": "Japan",
+  "lat": 34.669,
+  "lng": 138.95,
+  "tz": "Asia/Tokyo",
+  "operator": {
+   "name": "mariner1173 (YouTube channel, surfcam)",
+   "url": null
+  },
+  "expectTitle": [
+   "Shirahama",
+   "白浜"
+  ],
+  "night": false,
+  "headline": "A pale crescent of Izu sand, clear turquoise water and a green headland, watched by a surf cam.",
+  "looking": "A fixed surf camera looking across Shirahama Ohama, the long southern beach of the Shirahama coast near Shimoda. The frame shows a turquoise cove with a green headland at its edge. It is a surf-check view, so waves and the surf line are the main subject.",
+  "watchFor": [
+   "Swell lines breaking along the beach, best checked in the morning",
+   "Surfers and beachgoers in summer, a much emptier beach in winter",
+   "Water colour shifting from turquoise to deep blue as the light and tide change"
+  ],
+  "history": "Shirahama's coastline is split in two by Shirahama Shrine, and the southern part is Ohama Beach, about 700 meters long and described as the largest of Shimoda's beaches. The shrine is called the oldest in Izu, with a traditional age of over 2,400 years (a tradition, not a documented date). Its torii gate stands on a rock just off the beach. Shimoda is also a well known surfing area on the Izu Peninsula.",
+  "facts": [
+   "Ohama Beach is about 700 meters long and is described as the largest of Shimoda's nine beaches.",
+   "Shirahama Shrine, at the dividing point of the coast, is called the oldest shrine in Izu.",
+   "On clear days the view from the beach includes distant Izu Oshima island."
+  ],
+  "sources": [
+   {
+    "label": "Shirahama Ohama Beach (GLTJP directory)",
+    "url": "https://cdn.gltjp.com/en/directory/item/17580"
+   },
+   {
+    "label": "Shirahama Ohama Beach (Live the World)",
+    "url": "https://www.livetheworld.com/activities/japan/shirahama-ohama-beach"
+   },
+   {
+    "label": "Shirahama Shrine, Shimoda (Live the World)",
+    "url": "https://www.livetheworld.com/activities/japan/shirahama-shrine-shimoda"
+   }
+  ],
+  "liveRisk": "Run by an individual channel, not an institution, so it could go offline or change without notice. Surf cams are dark at night.",
+  "unsure": "Could not find anything about the channel mariner1173 or confirm which side of the shrine the camera sits on. Coordinates are approximate for Ohama Beach, not the camera's exact spot. Operator URL unknown.",
+  "channelId": "UCnJUV9-pfhyWQdQbvTJ84QA",
+  "videoTitle": "白浜カメラ 伊豆白浜海岸 shirahama surfcam"
+ },
+ {
+  "videoId": "t0nYqriNf-w",
+  "id": "castlepoint-lighthouse",
+  "name": "Castlepoint Lighthouse",
+  "place": "Castlepoint, Wairarapa coast, North Island",
+  "country": "New Zealand",
+  "lat": -40.913,
+  "lng": 176.227,
+  "tz": "Pacific/Auckland",
+  "operator": {
+   "name": "Castlepoint Lighthouse (castlepointlighthouse.com)",
+   "url": "https://castlepointlighthouse.com/history"
+  },
+  "expectTitle": [
+   "Castlepoint",
+   "Lighthouse"
+  ],
+  "night": true,
+  "headline": "A white lighthouse on a cliff of limestone reef, with the Pacific breaking below it.",
+  "looking": "A camera set on a higher outcrop looks down on the lighthouse at the northern end of Castlepoint reef. The tower sits on the cliff edge with open sea beyond. After dark the lighthouse beam is the main thing to watch.",
+  "watchFor": [
+   "The light sweeping at dusk and through the night",
+   "Big swells hitting the reef during southerly weather",
+   "Clear mornings when the cliff and tower are brightly lit"
+  ],
+  "history": "The lighthouse was first lit on 12 January 1913 and was the last of the staffed lights built in New Zealand. Its cast iron tower was made in Wellington, shipped to the beach, and hauled up to the reef by two horses, while the lens came from France and the lighting gear from Scotland. It was automated in 1988 and is now controlled from Wellington. In 1922 the principal keeper died after a fall from the tower.",
+  "facts": [
+   "First lit 12 January 1913, one of the last staffed lighthouses built in New Zealand.",
+   "Automated in 1988 and monitored remotely from Wellington.",
+   "The tower was cast in Wellington and the lens was made in France."
+  ],
+  "sources": [
+   {
+    "label": "Castle Point Lighthouse (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Castle_Point_Lighthouse"
+   },
+   {
+    "label": "Castle Point (Maritime New Zealand)",
+    "url": "https://www.maritimenz.govt.nz/public/lighthouses-of-new-zealand/castle-point/"
+   },
+   {
+    "label": "Castlepoint Lighthouse history",
+    "url": "https://castlepointlighthouse.com/history"
+   }
+  ],
+  "liveRisk": "Weather can leave the lens fogged or the picture grey. A camera on a remote coast may go offline for maintenance.",
+  "unsure": "Could not confirm who personally runs the camera (the site castlepointlighthouse.com hosts a feed, and the lighthouse itself is owned by Maritime NZ). The flash pattern differs between sources (1913 triple flash every 45 seconds, Maritime NZ now lists three flashes every 30 seconds). Coordinates are for the lighthouse, not the camera.",
+  "channelId": "UCGjGRtsWqkviebAvQlcC5Cg",
+  "videoTitle": "Castlepoint Lighthouse Live Stream"
+ },
+ {
+  "videoId": "AajdfhglWd8",
+  "id": "lyall-bay-wellington",
+  "name": "Lyall Bay",
+  "place": "Lyall Bay, Wellington",
+  "country": "New Zealand",
+  "lat": -41.3295,
+  "lng": 174.7995,
+  "tz": "Pacific/Auckland",
+  "operator": {
+   "name": "John Young (YouTube channel)",
+   "url": null
+  },
+  "expectTitle": [
+   "Lyall Bay",
+   "Wellington"
+  ],
+  "night": false,
+  "headline": "Wellington's surf beach in one sweeping curve, with planes often passing overhead.",
+  "looking": "A view from a hillside over the curved sandy beach of Lyall Bay on Wellington's south coast. The bay opens toward Cook Strait, so you see swell, wind and weather arrive. Airport traffic is often visible on this side of the city.",
+  "watchFor": [
+   "Southerly swells lining up on the beach, best with a northerly offshore wind",
+   "Surfers and windsurfers on breezy days",
+   "Aircraft taking off or landing nearby"
+  ],
+  "history": "Lyall Bay Surf Life Saving Club formed in 1910 and is described as the first surf lifesaving club in Aotearoa. Surfing was popularised here when Duke Kahanamoku of Hawaii visited in March 1915 and demonstrated to a large crowd. The beach is now about two thirds of its original size, because construction of Wellington Airport took the eastern third. The breakwater built with the airport in the 1950s also shapes the surf.",
+  "facts": [
+   "Duke Kahanamoku demonstrated surfing at Lyall Bay in March 1915.",
+   "Lyall Bay Surf Life Saving Club, formed 1910, is described as the first in Aotearoa.",
+   "Airport construction removed roughly a third of the beach."
+  ],
+  "sources": [
+   {
+    "label": "Lyall Bay (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Lyall_Bay"
+   },
+   {
+    "label": "Lyall Bay Days (Museums Wellington)",
+    "url": "https://www.museumswellington.org.nz/lyall-bay-days/"
+   },
+   {
+    "label": "Lyall Bay break guide (Surf-Forecast)",
+    "url": "https://it.surf-forecast.com/breaks/Lyall-Bay"
+   }
+  ],
+  "liveRisk": "Run by an individual channel, not the surf club, so it could pause or move. Dark at night.",
+  "unsure": "Could not confirm anything about the channel John Young or the exact hill the camera sits on. Coordinates are for the middle of the bay.",
+  "channelId": "UCCEo1hxcfQe7p-odS5pEZxg",
+  "videoTitle": "Lyall Bay, Wellington, New Zealand - Live Stream"
+ },
+ {
+  "videoId": "L3iKvwoXZ38",
+  "id": "midway-atoll-refuge",
+  "name": "Midway Atoll Wildlife Camera",
+  "place": "Midway Atoll (Kuaihelani), Papahanaumokuakea, northwestern Hawaiian Islands",
+  "country": "United States (Midway Atoll National Wildlife Refuge)",
+  "lat": 28.2017,
+  "lng": -177.36,
+  "tz": "Pacific/Midway",
+  "operator": {
+   "name": "Friends of Midway Atoll National Wildlife Refuge",
+   "url": "https://friendsofmidway.org/experience-kuaihelani-midway-atoll-live/"
+  },
+  "expectTitle": [
+   "Midway",
+   "Atoll"
+  ],
+  "night": true,
+  "headline": "A remote Pacific atoll where albatrosses nest by the thousands, live from Sand Island.",
+  "looking": "The stream is run by the Friends of Midway Atoll from Sand Island, the main inhabited island of the atoll. The usual feed is a PTZ camera on nesting Laysan albatrosses, with Bonin petrels active after dark. The thumbnail seen was an aerial view of the lagoon with a ring of surf, which suggests the stream sometimes shows a different or recorded view.",
+  "watchFor": [
+   "Laysan albatross chicks and adults on the ground, strongest in the nesting season (roughly November to July)",
+   "Bonin petrels flying in after dark",
+   "Courtship dances and chick feeding by returning parents"
+  ],
+  "history": "The US claimed the atoll in the 19th century and began clearing a channel into the lagoon in 1870. Naval Air Facility Midway ran from 1941 to 1993, and the Battle of Midway in June 1942 was a turning point in the Pacific war. In 1996 control passed to the US Fish and Wildlife Service and it became a wildlife refuge. It now lies within Papahanaumokuakea Marine National Monument, and its Hawaiian name is Kuaihelani.",
+  "facts": [
+   "Albatross nesting is the main draw; the cam is an Axis PTZ dome with night vision.",
+   "The live stream became possible after Starlink reached the atoll.",
+   "The atoll's three main islets are Sand, Eastern and Spit Island."
+  ],
+  "sources": [
+   {
+    "label": "Experience Kuaihelani Midway Atoll live (Friends of Midway)",
+    "url": "https://friendsofmidway.org/experience-kuaihelani-midway-atoll-live/"
+   },
+   {
+    "label": "Live cam FAQ (Friends of Midway)",
+    "url": "https://friendsofmidway.org/faq-questions-answered-about-the-live-cam-on-kuaihelani-midway-atoll/"
+   },
+   {
+    "label": "Midway Atoll NWR about us (US Fish and Wildlife Service)",
+    "url": "https://fws.gov/refuge/midway-atoll/about-us"
+   }
+  ],
+  "liveRisk": "Albatrosses leave the island in summer, so the nest view is quiet from about July to October. The satellite link can drop. The thumbnail showed an aerial lagoon view, so the stream may be a loop or drone footage at times.",
+  "unsure": "Could not confirm what the aerial lagoon view in the thumbnail is, or whether it is part of the same live stream. Coordinates are approximate for Sand Island, not the camera. Sources disagreed on the year of the cam's launch.",
+  "channelId": "UCgDSg8kDhdOO3xwAJ_svtaA",
+  "videoTitle": "Midway Atoll NWR Wildlife Live Camera"
+ }
+]
