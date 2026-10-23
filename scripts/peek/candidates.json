@@ -125,6 +125,919 @@
       "scout": [
         "@SkylineWebcams"
       ]
+    },
+    {
+      "id": "aquinnah-cliffs",
+      "place": "Aquinnah (Gay Head), Martha's Vineyard, Massachusetts, United States",
+      "operator": "Go Martha's Vineyard (GOMV)",
+      "expect": {
+        "title": [
+          "Aquinnah",
+          "Gay Head"
+        ]
+      },
+      "videoIds": [
+        "Vm3GvGSZJlg"
+      ]
+    },
+    {
+      "id": "edgartown-harbor",
+      "place": "Edgartown Harbor and Katama Bay, Martha's Vineyard, Massachusetts, United States",
+      "operator": "Go Martha's Vineyard (GOMV)",
+      "expect": {
+        "title": [
+          "Edgartown",
+          "Harbor"
+        ]
+      },
+      "videoIds": [
+        "FoAvYeGRjU4"
+      ]
+    },
+    {
+      "id": "banzai-pipeline",
+      "place": "Ehukai Beach Park, Pupukea, North Shore, Oahu, Hawaii, United States",
+      "operator": "explore.org",
+      "expect": {
+        "title": [
+          "Pipeline",
+          "Banzai"
+        ]
+      },
+      "videoIds": [
+        "Fp7l8XASb9Y"
+      ]
+    },
+    {
+      "id": "santa-monica-pier",
+      "place": "Santa Monica, California, United States",
+      "operator": "explore.org",
+      "expect": {
+        "title": [
+          "Santa Monica"
+        ]
+      },
+      "videoIds": [
+        "v97JpT3ZA0w"
+      ]
+    },
+    {
+      "id": "key-west-harbor",
+      "place": "Key West, Florida Keys, United States",
+      "operator": "PTZtv",
+      "expect": {
+        "title": [
+          "Key West"
+        ]
+      },
+      "videoIds": [
+        "iHJbTrQSZys"
+      ]
+    },
+    {
+      "id": "white-bay-soggy-dollar",
+      "place": "White Bay, Jost Van Dyke, British Virgin Islands, British Virgin Islands",
+      "operator": "Soggy Dollar Bar",
+      "expect": {
+        "title": [
+          "White Bay",
+          "Soggy Dollar"
+        ]
+      },
+      "videoIds": [
+        "V_I168MM-ik"
+      ]
+    },
+    {
+      "id": "farallon-islands",
+      "place": "Southeast Farallon Island, off San Francisco, California, United States",
+      "operator": "California Academy of Sciences",
+      "expect": {
+        "title": [
+          "Farallon"
+        ]
+      },
+      "videoIds": [
+        "fHb0eB9RUgA"
+      ]
+    },
+    {
+      "id": "sitka-harbor",
+      "place": "Sitka, Baranof Island, Alaska, United States",
+      "operator": "EarthCam",
+      "expect": {
+        "title": [
+          "Sitka"
+        ]
+      },
+      "videoIds": [
+        "sF5hFDGN20Y"
+      ]
+    },
+    {
+      "id": "tacoma-rainier-thea-foss",
+      "place": "Downtown Tacoma, Commencement Bay, Washington, United States",
+      "operator": "PCTV Mountain Cam (channel name; operator not confirmed)",
+      "expect": {
+        "title": [
+          "Rainier",
+          "Tacoma"
+        ]
+      },
+      "videoIds": [
+        "wZkChlv20hs"
+      ]
+    },
+    {
+      "id": "coldwater-lake-st-helens",
+      "place": "Coldwater Lake, Mount St. Helens National Volcanic Monument, Washington, United States",
+      "operator": "Mount St. Helens Institute",
+      "expect": {
+        "title": [
+          "St. Helens",
+          "Coldwater"
+        ]
+      },
+      "videoIds": [
+        "fYZC4ksndGA"
+      ]
+    },
+    {
+      "id": "mendenhall-glacier",
+      "place": "Mendenhall Glacier, Juneau, Alaska, United States",
+      "operator": "explore.org with Tongass National Forest (stream re-posted by an Explore channel)",
+      "expect": {
+        "title": [
+          "Mendenhall",
+          "Glacier"
+        ]
+      },
+      "videoIds": [
+        "jJI5w_RVGtQ"
+      ]
+    },
+    {
+      "id": "brooklyn-bridge-earthcam",
+      "place": "East River, Brooklyn Bridge, New York City, United States",
+      "operator": "EarthCam",
+      "expect": {
+        "title": [
+          "Brooklyn Bridge"
+        ]
+      },
+      "videoIds": [
+        "tErYxn2UM5Y"
+      ]
+    },
+    {
+      "id": "statue-of-liberty-earthcam",
+      "place": "Liberty Island, New York Harbor, United States",
+      "operator": "EarthCam",
+      "expect": {
+        "title": [
+          "Statue of Liberty"
+        ]
+      },
+      "videoIds": [
+        "o5Ie_LpZ9uk"
+      ]
+    },
+    {
+      "id": "nags-head-beach",
+      "place": "Nags Head, Outer Banks, North Carolina, United States",
+      "operator": "Sunnyside Up Weather",
+      "expect": {
+        "title": [
+          "Nags Head"
+        ]
+      },
+      "videoIds": [
+        "XGa-KQFALBM"
+      ]
+    },
+    {
+      "id": "siesta-key-beach",
+      "place": "Siesta Beach, Siesta Key, Sarasota, Florida, United States",
+      "operator": "Siesta Beach Live (channel; Sarasota County also lists a Siesta Key beach cam)",
+      "expect": {
+        "title": [
+          "Siesta Key",
+          "Siesta"
+        ]
+      },
+      "videoIds": [
+        "NLhxcyzXQxM"
+      ]
+    },
+    {
+      "id": "bokeelia-pier-sunset",
+      "place": "Bokeelia, northern tip of Pine Island, Florida, United States",
+      "operator": "Cape Weather",
+      "expect": {
+        "title": [
+          "Bokeelia"
+        ]
+      },
+      "videoIds": [
+        "1yGtTaJ33jY"
+      ]
+    },
+    {
+      "id": "waikiki-beach-marriott",
+      "place": "Waikiki, Honolulu, Oahu, United States (Hawaii)",
+      "operator": "Ozolio Live (at the Waikiki Beach Marriott Resort & Spa)",
+      "expect": {
+        "title": [
+          "Waikiki",
+          "Marriott"
+        ]
+      },
+      "videoIds": [
+        "4CK0CsimBHs"
+      ]
+    },
+    {
+      "id": "wailea-beach-marriott",
+      "place": "Wailea, Maui, United States (Hawaii)",
+      "operator": "Ozolio Live (at Wailea Beach Resort Marriott)",
+      "expect": {
+        "title": [
+          "Wailea",
+          "Maui"
+        ]
+      },
+      "videoIds": [
+        "GL_2CrLwSDA"
+      ]
+    },
+    {
+      "id": "sheraton-kauai-poipu",
+      "place": "Poipu, south shore of Kauai, United States (Hawaii)",
+      "operator": "Ozolio Plus (at Sheraton Kauai Resort)",
+      "expect": {
+        "title": [
+          "Kauai",
+          "Sheraton"
+        ]
+      },
+      "videoIds": [
+        "tuj4OvU6UZI"
+      ]
+    },
+    {
+      "id": "waikoloa-beach-marriott",
+      "place": "Waikoloa Beach Resort, Big Island, United States (Hawaii)",
+      "operator": "Ozolio Plus (at Waikoloa Beach Marriott Resort & Spa)",
+      "expect": {
+        "title": [
+          "Waikoloa",
+          "Big Island"
+        ]
+      },
+      "videoIds": [
+        "ynokzE-tJGs"
+      ]
+    },
+    {
+      "id": "scrub-island-bvi",
+      "place": "Scrub Island, off Tortola, British Virgin Islands, British Virgin Islands",
+      "operator": "EarthCam (with Scrub Island Resort, Spa & Marina)",
+      "expect": {
+        "title": [
+          "Scrub Island",
+          "Virgin"
+        ]
+      },
+      "videoIds": [
+        "t55kv94nEzc"
+      ]
+    },
+    {
+      "id": "ushuaia-beagle-channel",
+      "place": "Ushuaia, Tierra del Fuego, Argentina",
+      "operator": "Tierra del Fuego Live",
+      "expect": {
+        "title": [
+          "Ushuaia"
+        ]
+      },
+      "videoIds": [
+        "FKu3uOfk3qY"
+      ]
+    },
+    {
+      "id": "boteti-river-zebra",
+      "place": "Boteti River, Makgadikgadi region, Botswana",
+      "operator": "Africam, with explore.org and Meno a Kwena (Natural Selection)",
+      "expect": {
+        "title": [
+          "Boteti",
+          "Zebra"
+        ]
+      },
+      "videoIds": [
+        "7hKbyXxWT2k"
+      ]
+    },
+    {
+      "id": "rosies-pan-kruger",
+      "place": "Balule Nature Reserve, Greater Kruger, Limpopo, South Africa",
+      "operator": "Africam",
+      "expect": {
+        "title": [
+          "Rosie"
+        ]
+      },
+      "videoIds": [
+        "Cq2qCph6Lx8"
+      ]
+    },
+    {
+      "id": "mara-bushtops-salt-lick",
+      "place": "Mara Bushtops camp, eastern edge of the Maasai Mara ecosystem, Kenya",
+      "operator": "Bushtops Safaris (Mara Bushtops camp)",
+      "expect": {
+        "title": [
+          "Mara Bushtops",
+          "Maasai Mara"
+        ]
+      },
+      "videoIds": [
+        "xXZqU5vnEug"
+      ]
+    },
+    {
+      "id": "nkorho-waterhole",
+      "place": "Nkorho Bush Lodge, northern Sabi Sand Private Game Reserve, South Africa",
+      "operator": "Africam (with Nkorho Bush Lodge)",
+      "expect": {
+        "title": [
+          "Nkorho"
+        ]
+      },
+      "videoIds": [
+        "dIChLG4_WNs"
+      ]
+    },
+    {
+      "id": "brooks-falls-low",
+      "place": "Brooks Falls, Brooks River, Katmai National Park, Alaska, United States",
+      "operator": "explore.org with Katmai National Park (NPS)",
+      "expect": {
+        "title": [
+          "Brooks Falls"
+        ]
+      },
+      "videoIds": [
+        "EwTH5yY7Mks"
+      ]
+    },
+    {
+      "id": "anan-fishing-hole-4",
+      "place": "Anan Wildlife Observatory, near Wrangell, Tongass National Forest, Alaska, United States",
+      "operator": "explore.org with Friends of Anan and the US Forest Service",
+      "expect": {
+        "title": [
+          "Anan"
+        ]
+      },
+      "videoIds": [
+        "ypMu3yA7h3s"
+      ]
+    },
+    {
+      "id": "stony-point-penguins",
+      "place": "Stony Point Nature Reserve, Betty's Bay, Western Cape, South Africa",
+      "operator": "explore.org with CapeNature",
+      "expect": {
+        "title": [
+          "Stony Point",
+          "Penguin"
+        ]
+      },
+      "videoIds": [
+        "l8eYe_CP1F4"
+      ]
+    },
+    {
+      "id": "isla-tova-penguins",
+      "place": "Isla Tova, Patagonia Azul Provincial Park, Chubut, Argentina",
+      "operator": "CONICET (Flavio Quintana's lab) with Rewilding Argentina and explore.org",
+      "expect": {
+        "title": [
+          "Isla Tova",
+          "Magellanic"
+        ]
+      },
+      "videoIds": [
+        "mrJ4JF2MovU"
+      ]
+    },
+    {
+      "id": "isla-tovita-whales",
+      "place": "Isla Tovita, Patagonia Azul Provincial Park, Chubut, Argentina",
+      "operator": "CONICET with Rewilding Argentina and explore.org",
+      "expect": {
+        "title": [
+          "Tovita",
+          "Whales"
+        ]
+      },
+      "videoIds": [
+        "BlpneEUfK-0"
+      ]
+    },
+    {
+      "id": "big-sur-condor-sanctuary",
+      "place": "Ventana Wildlife Society Condor Sanctuary, Big Sur, California, United States",
+      "operator": "Ventana Wildlife Society with explore.org",
+      "expect": {
+        "title": [
+          "Condor",
+          "Big Sur"
+        ]
+      },
+      "videoIds": [
+        "2sFs4U7F2-E"
+      ]
+    },
+    {
+      "id": "scarlet-macaw-high-feeder",
+      "place": "Punta Islita, Nicoya Peninsula, Guanacaste, Costa Rica",
+      "operator": "Macaw Recovery Network with explore.org",
+      "expect": {
+        "title": [
+          "Scarlet Macaws",
+          "Canopy Feeder"
+        ]
+      },
+      "videoIds": [
+        "8DRsVKLC2co"
+      ]
+    },
+    {
+      "id": "utopia-village-reef-wall",
+      "place": "Utopia Village, Utila, Bay Islands, Honduras",
+      "operator": "explore.org with Utopia Village Dive Resort",
+      "expect": {
+        "title": [
+          "Utopia Village",
+          "Reef Cam"
+        ]
+      },
+      "videoIds": [
+        "Sq-X4Ga1oyc"
+      ]
+    },
+    {
+      "id": "coral-city-camera",
+      "place": "East end of PortMiami, Biscayne Bay, Miami, United States",
+      "operator": "Coral Morphologic",
+      "expect": {
+        "title": [
+          "Coral City"
+        ]
+      },
+      "videoIds": [
+        "7i8ARjIeM2k"
+      ]
+    },
+    {
+      "id": "monterey-jelly-cam",
+      "place": "Monterey Bay Aquarium, Monterey, California, United States",
+      "operator": "Monterey Bay Aquarium",
+      "expect": {
+        "title": [
+          "Jelly Cam"
+        ]
+      },
+      "videoIds": [
+        "eQ_foBERmzA"
+      ]
+    },
+    {
+      "id": "monterey-open-sea-cam",
+      "place": "Monterey Bay Aquarium, Monterey, California, United States",
+      "operator": "Monterey Bay Aquarium",
+      "expect": {
+        "title": [
+          "Open Sea"
+        ]
+      },
+      "videoIds": [
+        "n_GpVsz4nHU"
+      ]
+    },
+    {
+      "id": "monterey-moon-jelly-cam",
+      "place": "Monterey Bay Aquarium, Monterey, California, United States",
+      "operator": "Monterey Bay Aquarium",
+      "expect": {
+        "title": [
+          "Moon Jelly"
+        ]
+      },
+      "videoIds": [
+        "zL68biE6wAs"
+      ]
+    },
+    {
+      "id": "calacademy-coral-reef",
+      "place": "California Academy of Sciences, Golden Gate Park, San Francisco, United States",
+      "operator": "California Academy of Sciences",
+      "expect": {
+        "title": [
+          "Coral Reef"
+        ]
+      },
+      "videoIds": [
+        "je7nCiZhEJE"
+      ]
+    },
+    {
+      "id": "wolf-center-north",
+      "place": "International Wolf Center, Ely, Minnesota, United States",
+      "operator": "International Wolf Center with explore.org",
+      "expect": {
+        "title": [
+          "Wolf Center",
+          "North"
+        ]
+      },
+      "videoIds": [
+        "5e4lsEe4Vew"
+      ]
+    },
+    {
+      "id": "durbe-sea-eagle-nest",
+      "place": "Durbe municipality, Kurzeme, western Latvia, Latvia",
+      "operator": "Latvian Fund for Nature (Latvijas Dabas fonds, LDF)",
+      "expect": {
+        "title": [
+          "Durbē",
+          "ērgļi"
+        ]
+      },
+      "videoIds": [
+        "3wSd4iXrCw0"
+      ]
+    },
+    {
+      "id": "lucerne-chapel-bridge",
+      "place": "Lucerne (Luzern), on the River Reuss, Switzerland",
+      "operator": "Tele1 (Zentralschweizer Fernsehen)",
+      "expect": {
+        "title": [
+          "Luzern",
+          "Lucerne"
+        ]
+      },
+      "videoIds": [
+        "QIt1FaDMnQc"
+      ]
+    },
+    {
+      "id": "milan-skyline-porta-nuova",
+      "place": "Milan, Lombardy, Italy",
+      "operator": "Espansione Tv",
+      "expect": {
+        "title": [
+          "Milan",
+          "Skyline"
+        ]
+      },
+      "videoIds": [
+        "dsoM6TYIkOI"
+      ]
+    },
+    {
+      "id": "etna-santa-venerina",
+      "place": "Santa Venerina, eastern slope of Mount Etna, Sicily, Italy",
+      "operator": "WebEtneo",
+      "expect": {
+        "title": [
+          "Etna",
+          "Santa Venerina"
+        ]
+      },
+      "videoIds": [
+        "4TfEB3edwCw"
+      ]
+    },
+    {
+      "id": "vernazza-harbour",
+      "place": "Vernazza, Cinque Terre, Liguria, Italy",
+      "operator": "Comune di Vernazza",
+      "expect": {
+        "title": [
+          "Vernazza"
+        ]
+      },
+      "videoIds": [
+        "zgM8CqzqpKQ"
+      ]
+    },
+    {
+      "id": "capri-sea-view",
+      "place": "Capri, Bay of Naples, Campania, Italy",
+      "operator": "Surveillance Map Foundation",
+      "expect": {
+        "title": [
+          "Capri"
+        ]
+      },
+      "videoIds": [
+        "t_bAWRtkvlQ"
+      ]
+    },
+    {
+      "id": "val-gardena-panocam",
+      "place": "Val Gardena (Gröden), South Tyrol, Italy",
+      "operator": "Dolomites Val Gardena - Gröden (official fanpage)",
+      "expect": {
+        "title": [
+          "Val Gardena",
+          "Gröden"
+        ]
+      },
+      "videoIds": [
+        "Tbx35fWLy3k"
+      ]
+    },
+    {
+      "id": "dawlish-sea-wall",
+      "place": "Dawlish, Devon, United Kingdom",
+      "operator": "Coast Cams (sponsored by Cofton Holidays)",
+      "expect": {
+        "title": [
+          "Dawlish"
+        ]
+      },
+      "videoIds": [
+        "succ1fhHm7I"
+      ]
+    },
+    {
+      "id": "lyme-regis-harbour",
+      "place": "Lyme Regis, Dorset, United Kingdom",
+      "operator": "Dorset Council",
+      "expect": {
+        "title": [
+          "Lyme Regis"
+        ]
+      },
+      "videoIds": [
+        "rulGLEdCHZU"
+      ]
+    },
+    {
+      "id": "west-bay-harbour",
+      "place": "West Bay, Bridport, Dorset, United Kingdom",
+      "operator": "Dorset Council",
+      "expect": {
+        "title": [
+          "Bridport",
+          "West Bay"
+        ]
+      },
+      "videoIds": [
+        "KoB32C-liwI"
+      ]
+    },
+    {
+      "id": "eype-beach-highlands-end",
+      "place": "Eype, near Bridport, Dorset, United Kingdom",
+      "operator": "West Dorset Leisure Holidays (Highlands End Holiday Park)",
+      "expect": {
+        "title": [
+          "Eype",
+          "Highlands End"
+        ]
+      },
+      "videoIds": [
+        "6jYtsS43mRM"
+      ]
+    },
+    {
+      "id": "fort-william-loch-linnhe",
+      "place": "Fort William, Highland, United Kingdom",
+      "operator": "Alex Scotventure",
+      "expect": {
+        "title": [
+          "Fort William"
+        ]
+      },
+      "videoIds": [
+        "2occtpoOu_w"
+      ]
+    },
+    {
+      "id": "zaanse-schans-windmills",
+      "place": "Zaanse Schans, Zaandam, North Holland, Netherlands",
+      "operator": "WebCam NL",
+      "expect": {
+        "title": [
+          "Zaanse Schans"
+        ]
+      },
+      "videoIds": [
+        "o9MIV7sep5k"
+      ]
+    },
+    {
+      "id": "pico-mountain-azores",
+      "place": "Pico Island, Azores, Portugal",
+      "operator": "Lost in Pico",
+      "expect": {
+        "title": [
+          "Pico"
+        ]
+      },
+      "videoIds": [
+        "qf0447nmvi0"
+      ]
+    },
+    {
+      "id": "satta-pass-fuji",
+      "place": "Satta Pass, Shizuoka City, Japan",
+      "operator": "Shizuoka City Satta Pass Live Camera",
+      "expect": {
+        "title": [
+          "Fuji",
+          "Satta"
+        ]
+      },
+      "videoIds": [
+        "GsD9QQEKSzQ"
+      ]
+    },
+    {
+      "id": "jukkoku-pass-suruga-bay",
+      "place": "Jukkoku Pass (Jukkoku-toge), between Hakone and Atami, Shizuoka/Kanagawa border area, Japan",
+      "operator": "Fujiyama NAVI (フジヤマNAVI)",
+      "expect": {
+        "title": [
+          "十国峠",
+          "Jukkoku"
+        ]
+      },
+      "videoIds": [
+        "jBPc3TGZin8"
+      ]
+    },
+    {
+      "id": "kamikochi-kappa-bashi",
+      "place": "Kappa-bashi, Kamikochi valley, Matsumoto, Nagano Prefecture, Japan",
+      "operator": "Gosenjaku Hotel Kamikochi",
+      "expect": {
+        "title": [
+          "上高地",
+          "KAMIKOCHI"
+        ]
+      },
+      "videoIds": [
+        "Iv2VUE_UhRQ"
+      ]
+    },
+    {
+      "id": "tokyo-skytree",
+      "place": "Tokyo Skytree, Sumida, Tokyo, Japan",
+      "operator": "H.S. Strong Co., Ltd. (株式会社エッチ・エス・ストロング)",
+      "expect": {
+        "title": [
+          "スカイツリー",
+          "SKY TREE"
+        ]
+      },
+      "videoIds": [
+        "LHHXZdYmN_Y"
+      ]
+    },
+    {
+      "id": "alishan-ogasawara-sunrise",
+      "place": "Ogasawara Mountain viewing platform, Alishan National Forest Recreation Area, Chiayi County, Taiwan",
+      "operator": "National Forest Recreation Areas live images (國家森林遊樂區即時影像)",
+      "expect": {
+        "title": [
+          "小笠原",
+          "阿里山"
+        ]
+      },
+      "videoIds": [
+        "6Y97q9KrhwA"
+      ]
+    },
+    {
+      "id": "alishan-forest-railway",
+      "place": "Alishan Forest Railway, Alishan National Forest Recreation Area, Chiayi County, Taiwan",
+      "operator": "National Forest Recreation Areas live images (國家森林遊樂區即時影像)",
+      "expect": {
+        "title": [
+          "林業鐵路",
+          "阿里山"
+        ]
+      },
+      "videoIds": [
+        "8cq-t5yKjvs"
+      ]
+    },
+    {
+      "id": "techi-dam-lishan",
+      "place": "Techi Reservoir, Lishan, Heping District, Taichung, Taiwan",
+      "operator": "Tourism Administration, Central Taiwan Mountain Scenic Area (交通部觀光署參山國家風景區管理處)",
+      "expect": {
+        "title": [
+          "德基水庫",
+          "Techi"
+        ]
+      },
+      "videoIds": [
+        "ZayKvJKDPWc"
+      ]
+    },
+    {
+      "id": "crystal-bay-lamai",
+      "place": "Crystal Bay Beach Resort area, Lamai, Koh Samui, Surat Thani, Thailand",
+      "operator": "The Real Samui Webcam",
+      "expect": {
+        "title": [
+          "Crystal Bay",
+          "Lamai"
+        ]
+      },
+      "videoIds": [
+        "35I9OCQ4rTg"
+      ]
+    },
+    {
+      "id": "annapurna-base-camp-machapuchare",
+      "place": "Annapurna Base Camp, Annapurna Sanctuary, Kaski District, Nepal",
+      "operator": "Webcam Nepal Annapurna",
+      "expect": {
+        "title": [
+          "ANNAPURNA",
+          "MACHAPUCHARE"
+        ]
+      },
+      "videoIds": [
+        "NUN4Pgi0j9E"
+      ]
+    },
+    {
+      "id": "shirahama-ohama-beach",
+      "place": "Shirahama, Shimoda, Izu Peninsula, Shizuoka, Japan",
+      "operator": "mariner1173 (YouTube channel, surfcam)",
+      "expect": {
+        "title": [
+          "Shirahama",
+          "白浜"
+        ]
+      },
+      "videoIds": [
+        "RP-wuud0NMU"
+      ]
+    },
+    {
+      "id": "castlepoint-lighthouse",
+      "place": "Castlepoint, Wairarapa coast, North Island, New Zealand",
+      "operator": "Castlepoint Lighthouse (castlepointlighthouse.com)",
+      "expect": {
+        "title": [
+          "Castlepoint",
+          "Lighthouse"
+        ]
+      },
+      "videoIds": [
+        "t0nYqriNf-w"
+      ]
+    },
+    {
+      "id": "lyall-bay-wellington",
+      "place": "Lyall Bay, Wellington, New Zealand",
+      "operator": "John Young (YouTube channel)",
+      "expect": {
+        "title": [
+          "Lyall Bay",
+          "Wellington"
+        ]
+      },
+      "videoIds": [
+        "AajdfhglWd8"
+      ]
+    },
+    {
+      "id": "midway-atoll-refuge",
+      "place": "Midway Atoll (Kuaihelani), Papahanaumokuakea, northwestern Hawaiian Islands, United States (Midway Atoll National Wildlife Refuge)",
+      "operator": "Friends of Midway Atoll National Wildlife Refuge",
+      "expect": {
+        "title": [
+          "Midway",
+          "Atoll"
+        ]
+      },
+      "videoIds": [
+        "L3iKvwoXZ38"
+      ]
     }
   ]
 }
