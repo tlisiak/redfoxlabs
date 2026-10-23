@@ -112,6 +112,8 @@
   .fine:empty { display: none; }
   .maker { font: 700 11px/1.4 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--sun); padding-bottom: 1px; }
   .maker:hover { color: var(--sun); }
+  .maker.submit { border-bottom-color: var(--teal); }
+  .maker[hidden] { display: none; }
 
   /* ---------- departures board ---------- */
   /* A split-flap board that fills the frame between views. It only ever covers the painted scene
@@ -280,6 +282,7 @@
       <button class="cta" id="peekBtn"><span class="main">Take a peek</span><span class="stub">Admit<br>one</span></button>
       <p class="fine" id="countLine"></p>
       <a class="maker" href="/">A Red Fox Labs project</a>
+      <a class="maker submit" id="submitLink" href="submit.html" hidden>Know a beautiful live cam? Submit it</a>
     </div>
   </div>
 </section>
@@ -313,10 +316,18 @@
 <div class="toast" id="toast"></div>
 
 <script src="streams.js"></script>
+<script src="config.js"></script>
+<script src="community.js"></script>
 <script src="player.js"></script>
 <script>
 (() => {
   const STREAMS = window.PEEK_STREAMS;
+  // Views people submitted and an admin approved join the catalog once they load. They're
+  // rebuilt field by field in community.js, so nothing a stranger typed reaches the page as markup.
+  const communityReady = window.PeekCommunity && PeekCommunity.enabled()
+    ? PeekCommunity.loadApproved().then((list) => { for (const s of list) if (!STREAMS.some((x) => x.id === s.id)) STREAMS.push(s); }).catch(() => {})
+    : Promise.resolve();
+  if (window.PeekCommunity && PeekCommunity.enabled()) document.getElementById("submitLink").hidden = false;
   const MIN_SPIN_MS = 1300;   // flaps spin at least this long, so even a fast load feels like a departure
   const HOLD_MS = 900;        // how long the destination stays up before the board drops away
   const LOAD_TIMEOUT_MS = 7000;   // per source; give up on one that won't start and try the next
@@ -543,8 +554,8 @@
       <div class="sec"><h3>The story</h3><p>${esc(s.history)}</p></div>
       ${s.facts?.length ? `<div class="sec"><h3>Worth knowing</h3>${list(s.facts)}</div>` : ""}
       <div class="credit">
-        <div>Live stream by <a href="${s.credit.url}" target="_blank" rel="noopener">${esc(s.credit.name)}</a></div>
-        <div>Sources: ${s.sources.map((x) => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
+        <div>Live stream by <a href="${esc(s.credit.url)}" target="_blank" rel="noopener">${esc(s.credit.name)}</a></div>
+        <div>Sources: ${s.sources.map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
         <div>Peek is a <a href="/">Red Fox Labs</a> project</div>
       </div>`;
     $("panelBody").scrollTop = 0;
@@ -719,7 +730,7 @@
     $("countLine").innerHTML = `<b>Now showing</b> ${esc(s.name)}, ${esc(s.country)}`;
   }
   async function startBackground() {
-    await PeekPlayer.statusReady;
+    await Promise.all([PeekPlayer.statusReady, Promise.race([communityReady, new Promise((ok) => setTimeout(ok, 2500))])]);
     const s = pick();
     if (!s || !onLanding) return;
     try {

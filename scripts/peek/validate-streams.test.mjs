@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD, recordRun, uptime, readyToPromote, isFlaky, loadQueue, queueVerdict } from "./validate-streams.mjs";
+import { extractPlayerResponse, classify, loadStreams, candidates, findLiveVideos, classifyApiItem, matchesExpect, judge, autoFind, confirmFromScouts, DEAD, recordRun, uptime, readyToPromote, isFlaky, loadQueue, queueVerdict, loadCommunity } from "./validate-streams.mjs";
 
 const page = (pr) => `<html><script>var ytInitialPlayerResponse = ${JSON.stringify(pr)};var meta = {"a":1};</script></html>`;
 const pr = ({ status = "OK", reason, embed = true, isLive, isLiveContent = true, isLiveNow } = {}) => ({
@@ -174,4 +174,46 @@ test("the Tetons view won't auto-find SeeJH's other Teton-named cams", async () 
   const tetons = (await loadStreams()).find((s) => s.id === "tetons");
   for (const t of ["EGVB - Grand Teton Webcam", "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com", "Dornan's in Grand Teton National Park - SeeJH.com"]) assert.ok(matchesExpect(tetons.expect, t), t);
   assert.ok(!matchesExpect(tetons.expect, "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"));
+});
+
+// ---- community views --------------------------------------------------------------------------
+import vm from "node:vm";
+import { readFile } from "node:fs/promises";
+const community = async () => {
+  const sandbox = { window: { PEEK_CONFIG: {} }, URL, Intl, fetch: () => { throw new Error("offline"); } };
+  vm.runInNewContext(await readFile(new URL("../../public/peek/community.js", import.meta.url), "utf8"), sandbox);
+  return sandbox.window.PeekCommunity;
+};
+const row = (over = {}) => ({ video_id: "J7ZrIDvqlic", name: "Hvar Harbour", place: "Old port", country: "Croatia", lat: 43.17, lng: 16.44, tz: "Europe/Zagreb", headline: "A fishing port with a long memory.", looking: "x".repeat(50), watch_for: ["Boats at dawn"], history: "y".repeat(50), facts: [], sources: [{ label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Hvar" }], credit_name: "Hvar Tourist Board", credit_url: "https://www.tzhvar.com/", ...over });
+
+test("a community row becomes a view shaped like the built-in ones", async () => {
+  const s = JSON.parse(JSON.stringify((await community()).toStream(row({ expect_title: ["Hvar"], night: true }))));   // plain objects: the sandbox's prototypes differ
+  assert.equal(s.id, "c-J7ZrIDvqlic");
+  assert.deepEqual(s.source, { videoIds: ["J7ZrIDvqlic"] });
+  assert.deepEqual(s.expect, { title: ["Hvar"] });
+  assert.equal(s.night, true);
+  assert.equal(s.community, true);
+});
+
+test("a community row can't carry script links, bad ids or bad zones onto the page", async () => {
+  const c = await community();
+  assert.equal(c.toStream(row({ credit_url: "javascript:alert(1)" })), null);
+  assert.equal(c.toStream(row({ video_id: 'x"><img src=x>' })), null);
+  assert.equal(c.toStream(row({ tz: "../../etc" })), null);
+  assert.equal(c.toStream(row({ lat: 91 })), null);
+  assert.equal(c.toStream(row({ sources: [{ label: "x", url: "javascript:1" }] })), null, "no usable source, no view");
+  assert.deepEqual([...c.toStream(row({ sources: [{ label: "bad", url: "data:text/html,1" }, { label: "ok", url: "https://ok.example" }] })).sources.map((x) => x.label)], ["ok"]);
+  assert.equal(c.toStream(row({ name: "<b>Bold</b>" })).name, "<b>Bold</b>", "markup stays text; the page escapes it");
+});
+
+test("YouTube links in the usual shapes give the video id", async () => {
+  const { parseYouTube } = await community();
+  for (const u of ["https://www.youtube.com/watch?v=J7ZrIDvqlic&t=3", "https://youtu.be/J7ZrIDvqlic", "https://www.youtube.com/live/J7ZrIDvqlic?feature=share", "https://www.youtube.com/embed/J7ZrIDvqlic", "J7ZrIDvqlic"])
+    assert.equal(parseYouTube(u).videoId, "J7ZrIDvqlic", u);
+  assert.equal(parseYouTube("https://example.com/watch").videoId, "");
+  assert.equal(parseYouTube("https://youtube.com/watch?v=J7ZrIDvqlicXX").videoId, "", "too long to be an id");
+});
+
+test("the stream check ignores community views when none are configured or the database is down", async () => {
+  assert.equal((await loadCommunity({ fetchImpl: () => { throw new Error("should not be called"); } })).length, 0, "no config, no request");
 });

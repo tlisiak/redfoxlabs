@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Peek review</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<!-- YouTube embeds fail with Error 153 without a referrer -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>
+  :root { --bg: #f4f1ea; --card: #fff; --ink: #1e2b45; --soft: #5b6478; --line: #d8d2c4; --sun: #d9481f; --good: #1f7a4d; --warn: #9a6b00; --bad: #b3261e; color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: inherit; }
+  header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 20px; background: var(--ink); color: #fff; }
+  header b { font-size: 17px; letter-spacing: .02em; }
+  header span { font-size: 13px; opacity: .8; }
+  button, .btn { font: inherit; cursor: pointer; border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 6px; padding: 7px 13px; }
+  button:hover { background: #f0ede4; }
+  button.primary { background: var(--good); border-color: var(--good); color: #fff; font-weight: 600; }
+  button.primary:hover { background: #196640; }
+  button.danger { color: var(--bad); border-color: #e3b9b4; }
+  button.warn { color: var(--warn); border-color: #e0cf9c; }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  header button { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+  .login { max-width: 380px; margin: 70px auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; gap: 12px; }
+  .login h1 { font-size: 22px; }
+  input, textarea, select { width: 100%; font: inherit; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+  textarea { min-height: 76px; resize: vertical; }
+  label { display: grid; gap: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--soft); }
+  .wrap { display: grid; grid-template-columns: 330px minmax(0, 1fr); min-height: calc(100vh - 49px); }
+  .side { border-right: 1px solid var(--line); background: #faf8f2; overflow: auto; max-height: calc(100vh - 49px); position: sticky; top: 0; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px; border-bottom: 1px solid var(--line); }
+  .tab { padding: 5px 10px; border-radius: 99px; font-size: 13px; }
+  .tab[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .item { display: block; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 12px 14px; background: transparent; }
+  .item[aria-current="true"] { background: #fff; box-shadow: inset 3px 0 0 var(--sun); }
+  .item b { display: block; }
+  .item small { color: var(--soft); }
+  .main { padding: 20px; max-width: 980px; }
+  .empty { padding: 40px 20px; color: var(--soft); }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+  .pv { aspect-ratio: 16 / 9; background: #0e1424; position: relative; border-radius: 8px; overflow: hidden; }
+  .pv > div, .pv iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .meta { display: grid; gap: 4px; font-size: 14px; margin: 12px 0; padding: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+  .meta .k { color: var(--soft); }
+  .status { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 99px; background: #eee; text-transform: uppercase; letter-spacing: .04em; }
+  .status.pending { background: #fbf0cf; color: var(--warn); } .status.approved { background: #d9f0e3; color: var(--good); }
+  .status.rejected { background: #f9dedb; color: var(--bad); } .status.changes_requested { background: #e3e8fb; color: #2f3f9a; } .status.paused { background: #e6e6e6; }
+  form { display: grid; gap: 12px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  fieldset { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--card); display: grid; gap: 10px; min-width: 0; }
+  legend { font-size: 12px; font-weight: 700; padding: 0 6px; text-transform: uppercase; color: var(--soft); letter-spacing: .06em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; bottom: 0; background: var(--bg); padding: 12px 0; border-top: 1px solid var(--line); }
+  .live { font-size: 14px; }
+  .live b { color: var(--good); }
+  .hint { font-size: 12.5px; color: var(--soft); font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .msg { padding: 10px 12px; border-radius: 6px; font-size: 14px; }
+  .msg.err { background: #f9dedb; color: var(--bad); } .msg.ok { background: #d9f0e3; color: var(--good); }
+  .msg:empty { display: none; }
+  .card { background: #1e2b45; color: #f1e4c6; border-radius: 8px; padding: 16px; display: grid; gap: 10px; font-size: 14px; }
+  .card h2 { font-size: 24px; text-transform: uppercase; letter-spacing: .02em; }
+  .card h3 { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #f0a830; margin-bottom: 4px; }
+  .card ul { padding-left: 18px; }
+  .card .where { color: #f0a830; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+  [hidden] { display: none !important; }
+  @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; } .side { max-height: 260px; position: static; border-right: 0; border-bottom: 1px solid var(--line); } .grid, .two { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><b>Peek review</b><span id="who"></span><button id="out" hidden>Sign out</button></header>
+
+<div class="login" id="login" hidden>
+  <h1>Sign in</h1>
+  <div class="msg" id="loginMsg"></div>
+  <form id="loginForm">
+    <label>Email <input id="email" type="email" autocomplete="username" required></label>
+    <label>Password <input id="pass" type="password" autocomplete="current-password" minlength="8" required></label>
+    <div style="display:flex; gap:8px; flex-wrap:wrap">
+      <button class="primary" id="signin" type="submit">Sign in</button>
+      <button type="button" id="signup">Create account</button>
+    </div>
+    <div class="hint">First time? Create an account with the admin email, then sign in. Only emails on the admin list can review.</div>
+  </form>
+</div>
+<div class="login" id="closed" hidden><h1>Not set up yet</h1><p>Community views aren't switched on: <code>config.js</code> has no Supabase URL.</p></div>
+
+<div class="wrap" id="app" hidden>
+  <nav class="side">
+    <div class="tabs" id="tabs"></div>
+    <div id="list"></div>
+  </nav>
+  <section class="main" id="detail"><div class="empty">Choose a submission.</div></section>
+</div>
+
+<script src="../config.js"></script>
+<script src="../community.js"></script>
+<script src="https://www.youtube.com/iframe_api" async></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const PC = window.PeekCommunity, A = PC.admin;
+  const mk = (tag, attrs = {}, ...kids) => { const e = Object.assign(document.createElement(tag), attrs); e.append(...kids); return e; };
+  if (!PC.enabled()) { $("closed").hidden = false; return; }
+
+  const STATUSES = [["pending", "Pending"], ["changes_requested", "Needs changes"], ["approved", "Approved"], ["paused", "Paused"], ["rejected", "Rejected"]];
+  let all = [], tab = "pending", current = null, player = null, ytReady = false;
+  window.onYouTubeIframeAPIReady = () => { ytReady = true; if (current) mountPlayer(current.video_id); };
+
+  // ---------------------------------------------------------------- sign in
+  const say = (el, text, kind) => { el.textContent = text || ""; el.className = `msg ${kind || ""}`; };
+  const friendly = (e) => {
+    const m = String(e.message || e);
+    const c = /peek_views_(\w+?)_check/.exec(m);
+    if (c) return `The "${c[1]}" field doesn't pass validation. Check its length or format.`;
+    if (/not allowed|42501/.test(m + (e.code || ""))) return "This account isn't on the admin list.";
+    return m;
+  };
+  async function start() {
+    $("login").hidden = !!A.session(); $("app").hidden = !A.session(); $("out").hidden = !A.session();
+    $("who").textContent = (A.session() || {}).email || "";
+    if (!A.session()) return;
+    try { await reload(); }
+    catch (e) { if (e.code === "signed-out") return start(); $("detail").replaceChildren(mk("div", { className: "msg err", textContent: friendly(e) })); }
+  }
+  $("loginForm").addEventListener("submit", async (ev) => {
+    ev.preventDefault(); say($("loginMsg"), "");
+    try { await A.signIn($("email").value.trim(), $("pass").value); await start(); }
+    catch (e) { say($("loginMsg"), /invalid/i.test(e.message) ? "Wrong email or password." : friendly(e), "err"); }
+  });
+  $("signup").addEventListener("click", async () => {
+    say($("loginMsg"), "");
+    if (!$("loginForm").reportValidity()) return;
+    try {
+      const r = await A.signUp($("email").value.trim(), $("pass").value);
+      if (r.pendingConfirmation) say($("loginMsg"), "Account created. Click the link in the email Supabase just sent, then come back and sign in.", "ok"); else await start();
+    } catch (e) { say($("loginMsg"), friendly(e), "err"); }
+  });
+  $("out").addEventListener("click", () => { A.signOut(); location.reload(); });
+
+  // ---------------------------------------------------------------- list
+  async function reload() {
+    all = await A.list(null);
+    renderTabs(); renderList();
+    if (current) { const again = all.find((r) => r.id === current.id); if (again) openRow(again, true); }
+  }
+  function renderTabs() {
+    $("tabs").replaceChildren(...STATUSES.map(([k, label]) => {
+      const n = all.filter((r) => r.status === k).length;
+      const b = mk("button", { className: "tab", textContent: `${label} ${n}`, ariaSelected: String(k === tab) });
+      b.addEventListener("click", () => { tab = k; renderTabs(); renderList(); });
+      return b;
+    }));
+  }
+  const ago = (iso) => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60000)); return m < 90 ? `${m} min ago` : m < 2880 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} days ago`; };
+  function renderList() {
+    const rows = all.filter((r) => r.status === tab);
+    $("list").replaceChildren(...(rows.length ? rows.map((r) => {
+      const b = mk("button", { className: "item", ariaCurrent: String(!!current && current.id === r.id) }, mk("b", { textContent: r.name }), mk("small", { textContent: `${r.country} · ${r.relationship === "found" ? "fan find" : r.relationship === "owner" ? "owner" : "authorized"} · ${ago(r.created_at)}` }));
+      b.addEventListener("click", () => openRow(r));
+      return b;
+    }) : [mk("div", { className: "empty", textContent: "Nothing here." })]));
+  }
+
+  // ---------------------------------------------------------------- detail
+  function mountPlayer(id) {
+    if (!ytReady) return;
+    if (player) { try { player.destroy(); } catch {} player = null; }
+    const host = $("pvhost"); if (!host) return;
+    host.replaceChildren(mk("div", { id: "pvmount" }));
+    $("liveTitle").textContent = "Loading…";
+    player = new YT.Player("pvmount", { videoId: id, playerVars: { autoplay: 1, mute: 1, controls: 1, playsinline: 1, rel: 0 }, events: {
+      onReady: (e) => { e.target.mute(); e.target.playVideo(); },
+      onStateChange: (e) => { if (e.data === 1) { let d = {}; try { d = e.target.getVideoData(); } catch {} $("liveTitle").replaceChildren(document.createTextNode(`${d.isLive === false ? "NOT LIVE: " : ""}`), mk("b", { textContent: d.title || "(no title)" }), document.createTextNode(d.author ? `, ${d.author}` : "")); window.__liveTitle = d.title || ""; } },
+      onError: (e) => { $("liveTitle").textContent = ({ 2: "Invalid video id", 100: "Video removed or private", 101: "Embedding disabled by the owner", 150: "Embedding disabled by the owner", 5: "Player error (may only fail in this browser)" })[e.data] || `Player error ${e.data}`; },
+    } });
+  }
+  const lines = (t) => String(t || "").split("\n").map((x) => x.trim()).filter(Boolean);
+  const num = (id) => Number($(id).value);
+
+  function openRow(r, keepEdits) {
+    current = r; renderList();
+    const d = $("detail");
+    const field = (id, label, value, opts = {}) => {
+      const el = mk(opts.area ? "textarea" : "input", { id, value: value ?? "" });
+      if (opts.rows) el.rows = opts.rows;
+      return mk("label", {}, label, el, ...(opts.hint ? [mk("span", { className: "hint", textContent: opts.hint })] : []));
+    };
+    const src = (r.sources || []).map((s) => `${s.label} | ${s.url}`).join("\n");
+    const tzList = mk("datalist", { id: "tzs" });
+    try { for (const z of Intl.supportedValuesOf("timeZone")) tzList.append(mk("option", { value: z })); } catch {}
+    const meta = mk("div", { className: "meta" },
+      mk("div", {}, mk("span", { className: `status ${r.status}`, textContent: r.status.replace("_", " ") }), document.createTextNode(`  submitted ${ago(r.created_at)}`)),
+      mk("div", {}, mk("span", { className: "k", textContent: "From: " }), document.createTextNode(`${r.submitter_name || "(no name)"} `), mk("a", { href: `mailto:${r.submitter_email}`, textContent: r.submitter_email })),
+      mk("div", {}, mk("span", { className: "k", textContent: "Connection: " }), document.createTextNode({ owner: "runs the stream", authorized: "has the operator's permission", found: "found it (no connection)" }[r.relationship] || r.relationship)),
+      mk("div", {}, mk("a", { href: `https://www.youtube.com/watch?v=${encodeURIComponent(r.video_id)}`, target: "_blank", rel: "noopener", textContent: "Open on YouTube ↗" }), document.createTextNode("  ·  "), mk("a", { href: `https://www.google.com/maps/@${r.lat},${r.lng},13z`, target: "_blank", rel: "noopener", textContent: "Map ↗" })),
+    );
+    const form = mk("form", { id: "rv" },
+      mk("fieldset", {}, mk("legend", { textContent: "Place" }),
+        field("f-name", "Name", r.name), field("f-place", "Where exactly", r.place),
+        mk("div", { className: "two" }, field("f-country", "Country", r.country), field("f-tz", "Time zone", r.tz)),
+        mk("div", { className: "two" }, field("f-lat", "Latitude", r.lat), field("f-lng", "Longitude", r.lng)),
+        mk("label", {}, mk("span", {}, mk("input", { id: "f-night", type: "checkbox", checked: !!r.night, style: "width:auto; margin-right:8px" }), "Show after dark too"))),
+      mk("fieldset", {}, mk("legend", { textContent: "Card" }),
+        field("f-headline", "Headline", r.headline),
+        field("f-looking", "What you're looking at", r.looking, { area: true, rows: 3 }),
+        field("f-watch", "Watch for (one per line)", (r.watch_for || []).join("\n"), { area: true, rows: 3 }),
+        field("f-history", "The story", r.history, { area: true, rows: 5 }),
+        field("f-facts", "Worth knowing (one per line)", (r.facts || []).join("\n"), { area: true, rows: 2 }),
+        field("f-src", "Sources (Label | https://…, one per line)", src, { area: true, rows: 3 }),
+        mk("div", { className: "two" }, field("f-cname", "Credit name", r.credit_name), field("f-curl", "Credit link", r.credit_url))),
+      mk("fieldset", {}, mk("legend", { textContent: "Accuracy gate" }),
+        field("f-expect", "Title must contain one of (comma-separated)", (r.expect_title || []).join(", "), { hint: "Peek refuses a stream whose live title lacks all of these, so a channel switching cameras can't show the wrong place. Use distinctive words from the live title shown above the form." }),
+        mk("div", {}, mk("button", { type: "button", id: "suggest", textContent: "Suggest from live title" }))),
+      mk("fieldset", {}, mk("legend", { textContent: "Note to yourself / the submitter" }), field("f-notes", "Notes", r.admin_notes, { area: true, rows: 2 })),
+      mk("div", { className: "msg", id: "rvMsg" }),
+      mk("div", { className: "actions" },
+        mk("button", { type: "button", className: "primary", id: "a-approve", textContent: "Approve & publish" }),
+        mk("button", { type: "button", id: "a-save", textContent: "Save edits" }),
+        mk("button", { type: "button", className: "warn", id: "a-changes", textContent: "Request changes" }),
+        mk("button", { type: "button", className: "danger", id: "a-reject", textContent: "Reject" }),
+        ...(r.status === "approved" ? [mk("button", { type: "button", id: "a-pause", textContent: "Pause" })] : []),
+        mk("button", { type: "button", className: "danger", id: "a-delete", textContent: "Delete" })));
+
+    const left = mk("div", {}, mk("div", { className: "pv", id: "pvhost" }), mk("div", { className: "live", id: "liveTitle", style: "margin-top:8px", textContent: "Loading…" }), meta, mk("div", { className: "card", id: "cardPv" }));
+    d.replaceChildren(mk("h2", { textContent: r.name, style: "margin-bottom:12px" }), tzList, mk("div", { className: "grid" }, left, form));
+    $("f-tz").setAttribute("list", "tzs");
+    mountPlayer(r.video_id);
+    renderCard();
+    form.addEventListener("input", renderCard);
+    $("suggest").addEventListener("click", () => {
+      const t = (window.__liveTitle || "").replace(/[^\p{L}\p{N}\s]/g, " ");
+      const STOP = new Set(["live", "cam", "camera", "webcam", "stream", "streaming", "view", "from", "with", "the", "and", "powered", "explore", "org", "hd", "4k", "uhd", "24", "7", "lagoon"]);
+      const words = [...new Set(t.split(/\s+/).filter((w) => w.length >= 4 && !STOP.has(w.toLowerCase())))].slice(0, 3);
+      $("f-expect").value = words.join(", ");
+    });
+    const act = (status) => async () => {
+      say($("rvMsg"), "");
+      const patch = {
+        name: $("f-name").value.trim(), place: $("f-place").value.trim(), country: $("f-country").value.trim(), tz: $("f-tz").value.trim(), lat: num("f-lat"), lng: num("f-lng"), night: $("f-night").checked,
+        headline: $("f-headline").value.trim(), looking: $("f-looking").value.trim(), watch_for: lines($("f-watch").value), history: $("f-history").value.trim(), facts: lines($("f-facts").value),
+        sources: lines($("f-src").value).map((l) => { const i = l.indexOf("|"); return { label: l.slice(0, i).trim(), url: l.slice(i + 1).trim() }; }),
+        credit_name: $("f-cname").value.trim(), credit_url: $("f-curl").value.trim(),
+        expect_title: $("f-expect").value.split(",").map((w) => w.trim()).filter(Boolean),
+      };
+      if (status === "approved" && !patch.expect_title.length && !confirm("No accuracy words set, so Peek won't check what the stream shows. Publish anyway?")) return;
+      if (status === "approved" && window.__liveTitle === undefined && !confirm("The stream hasn't played in this browser. Publish anyway?")) return;
+      if (status === "rejected" && !$("f-notes").value.trim() && !confirm("Reject without a note?")) return;
+      for (const b of d.querySelectorAll("button")) b.disabled = true;
+      try { await A.review(r.id, status, $("f-notes").value.trim(), patch); await reload(); say($("rvMsg"), status === "approved" ? "Published. It will show on Peek within a minute." : "Saved.", "ok"); }
+      catch (e) { say($("rvMsg"), friendly(e), "err"); for (const b of d.querySelectorAll("button")) b.disabled = false; }
+    };
+    $("a-approve").addEventListener("click", act("approved"));
+    $("a-save").addEventListener("click", act(r.status));
+    $("a-changes").addEventListener("click", act("changes_requested"));
+    $("a-reject").addEventListener("click", act("rejected"));
+    if ($("a-pause")) $("a-pause").addEventListener("click", act("paused"));
+    $("a-delete").addEventListener("click", async () => { if (!confirm("Delete this submission for good?")) return; try { await A.remove(r.id); current = null; $("detail").replaceChildren(mk("div", { className: "empty", textContent: "Deleted." })); await reload(); } catch (e) { say($("rvMsg"), friendly(e), "err"); } });
+  }
+
+  function renderCard() {
+    const c = $("cardPv"); if (!c || !$("f-name")) return;
+    const ul = (items) => mk("ul", {}, ...items.map((i) => mk("li", { textContent: i })));
+    const sec = (t, n) => mk("div", {}, mk("h3", { textContent: t }), n);
+    const srcs = lines($("f-src").value).map((l) => l.split("|")[0].trim());
+    c.replaceChildren(
+      mk("h2", { textContent: $("f-name").value }),
+      mk("div", { className: "where", textContent: `${$("f-place").value} · ${$("f-country").value}` }),
+      mk("div", { textContent: $("f-headline").value, style: "font-style:italic" }),
+      sec("What you're looking at", mk("p", { textContent: $("f-looking").value })),
+      sec("Watch for", ul(lines($("f-watch").value))),
+      sec("The story", mk("p", { textContent: $("f-history").value })),
+      ...(lines($("f-facts").value).length ? [sec("Worth knowing", ul(lines($("f-facts").value)))] : []),
+      mk("div", { className: "hint", style: "color:#f1e4c6; opacity:.8", textContent: `Live stream by ${$("f-cname").value} · Sources: ${srcs.join(" · ")}` }));
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>
