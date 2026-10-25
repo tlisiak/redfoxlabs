@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-25T04:42:48.385Z",
+  "checkedAt": "2026-10-25T11:32:02.579Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,7 +14,7 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 340 watching",
+          "detail": "live now, 519 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
@@ -25,23 +25,23 @@
             "title": "Namibia: Kwando river live stream"
           },
           {
-            "videoId": "ME0dPuBtzug",
-            "title": "Namibia: Live stream in the Kalahari Desert"
-          },
-          {
             "videoId": "ydYDqZQpim8",
             "title": "Namibia: Live stream in the Namib Desert"
           },
           {
             "videoId": "AeMUdOPFcXI",
             "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
+          },
+          {
+            "videoId": "ME0dPuBtzug",
+            "title": "Namibia: Live stream in the Kalahari Desert"
           }
         ]
       },
       "uptime": {
         "ydYDqZQpim8": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -59,27 +59,27 @@
           "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
           "author": "フジヤマNAVI",
           "status": "live",
-          "detail": "live now, 13 watching",
+          "detail": "live now, 7 watching",
           "videoId": "Sv9hcJ3k5h4"
         },
         {
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 46 watching",
+          "detail": "live now, 28 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
       "scouted": {},
       "uptime": {
         "Sv9hcJ3k5h4": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "bdUbACCWmoY": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -96,7 +96,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 8 watching",
+          "detail": "live now, 16 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -210,13 +210,13 @@
       },
       "uptime": {
         "nviU2HYj-Jc": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "I6o7UWEaSbw": {
-          "samples": 15,
-          "days": 3.7,
+          "samples": 16,
+          "days": 4,
           "uptime": 0
         }
       }
@@ -258,7 +258,7 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 97 watching",
+          "detail": "live now, 67 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
@@ -304,8 +304,8 @@
       },
       "uptime": {
         "w3LjpFhySTg": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -353,8 +353,8 @@
       "scouted": {},
       "uptime": {
         "Lk0Z5ExUWL0": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -371,15 +371,15 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 43 watching",
+          "detail": "live now, 34 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
       "scouted": {},
       "uptime": {
         "BSWhGNXxT9A": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -405,20 +405,12 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 20 watching",
+          "detail": "live now, 43 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -432,23 +424,31 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
       "uptime": {
         "0P_LBKqVbfs": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -466,7 +466,7 @@
           "title": "LIVE Table Mountain & Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "vOLCjL4kv-w"
         },
         {
@@ -495,13 +495,13 @@
       },
       "uptime": {
         "vOLCjL4kv-w": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "jOqASqt3vVI": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -518,7 +518,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 225 watching",
+          "detail": "live now, 156 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -537,8 +537,8 @@
       },
       "uptime": {
         "5uZa3-RMFos": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -632,12 +632,12 @@
             "title": "EarthCam Live:  Anglins Pier (Lauderdale-By-The-Sea, FL)"
           },
           {
-            "videoId": "OBgCrw-IyhE",
-            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
             "videoId": "qsrevo5Vdkw",
             "title": "EarthCam Live:  Council Bluffs, Iowa"
+          },
+          {
+            "videoId": "OBgCrw-IyhE",
+            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
           },
           {
             "videoId": "IU_-Pl9O5jQ",
@@ -664,14 +664,6 @@
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
@@ -684,16 +676,24 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
@@ -711,20 +711,12 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 107 watching",
+          "detail": "live now, 98 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -738,23 +730,31 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
       "uptime": {
         "DHUnz4dyb54": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -782,21 +782,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 359 watching",
+          "detail": "live now, 340 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 45 watching",
+          "detail": "live now, 43 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 336 watching",
+          "detail": "live now, 258 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -818,18 +818,18 @@
       },
       "uptime": {
         "HggWKlZv9yk": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "f9-oSpYpubg": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -861,14 +861,14 @@
           "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 1 watching",
           "videoId": "Jqo7Z9QiOEQ"
         },
         {
           "title": "Dornan's in Grand Teton National Park - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 3 watching",
           "videoId": "o4fKtgPVpoU"
         }
       ],
@@ -978,18 +978,18 @@
       },
       "uptime": {
         "j-0fhrHzEiM": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "Jqo7Z9QiOEQ": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         },
         "o4fKtgPVpoU": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -1006,7 +1006,7 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 5 watching",
           "videoId": "qx7gry390YA"
         }
       ],
@@ -1093,12 +1093,12 @@
             "title": "EarthCam Live:  Anglins Pier (Lauderdale-By-The-Sea, FL)"
           },
           {
-            "videoId": "OBgCrw-IyhE",
-            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
             "videoId": "qsrevo5Vdkw",
             "title": "EarthCam Live:  Council Bluffs, Iowa"
+          },
+          {
+            "videoId": "OBgCrw-IyhE",
+            "title": "EarthCam Live:  Seaside Heights, NJ - North View"
           },
           {
             "videoId": "IU_-Pl9O5jQ",
@@ -1116,8 +1116,8 @@
       },
       "uptime": {
         "qx7gry390YA": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -1134,20 +1134,12 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 467 watching",
+          "detail": "live now, 381 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1161,23 +1153,31 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
       "uptime": {
         "J7ZrIDvqlic": {
-          "samples": 67,
-          "days": 19.1,
+          "samples": 68,
+          "days": 19.4,
           "uptime": 1
         }
       }
@@ -1195,14 +1195,14 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 77 watching",
+          "detail": "live now, 85 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 72 watching",
+          "detail": "live now, 44 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
@@ -1213,16 +1213,16 @@
             "title": "Namibia: Kwando river live stream"
           },
           {
-            "videoId": "ME0dPuBtzug",
-            "title": "Namibia: Live stream in the Kalahari Desert"
-          },
-          {
             "videoId": "ydYDqZQpim8",
             "title": "Namibia: Live stream in the Namib Desert"
           },
           {
             "videoId": "AeMUdOPFcXI",
             "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
+          },
+          {
+            "videoId": "ME0dPuBtzug",
+            "title": "Namibia: Live stream in the Kalahari Desert"
           }
         ],
         "UCfn4vrrgKXCCg3rxxLRGOvg": [
@@ -1234,13 +1234,13 @@
       },
       "uptime": {
         "AeMUdOPFcXI": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1259,34 +1259,26 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 7 watching",
+          "detail": "live now, 15 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
           "title": "LIVE: Mara River Main Crossing | Masai Mara Wildlife Cam 24/7",
           "author": "Africam",
           "status": "live",
-          "detail": "live now, 6 watching",
+          "detail": "live now, 21 watching",
           "videoId": "BaEFc79IMCA"
         },
         {
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 9 watching",
+          "detail": "live now, 8 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1300,33 +1292,41 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
       "uptime": {
         "-7GOA9KIWcs": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         },
         "BaEFc79IMCA": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1344,27 +1344,19 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 4 watching",
+          "detail": "live now, 3 watching",
           "videoId": "oORXfTviuCs"
         },
         {
           "title": "LIVE African River Wildlife - Kenya Hippo & Crocodile Cam - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 1 watching",
           "videoId": "7x5kRo1B84Y"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1378,28 +1370,36 @@
             "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org"
           },
           {
-            "videoId": "RhP-_jX8-Zs",
-            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
-          },
-          {
             "videoId": "Fz6sl9YJZE0",
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
             "videoId": "0P_LBKqVbfs",
             "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "RhP-_jX8-Zs",
+            "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
           }
         ]
       },
       "uptime": {
         "oORXfTviuCs": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1422,7 +1422,7 @@
           "title": "Djuma Cam Live Stream",
           "author": "Djuma Cam",
           "status": "live",
-          "detail": "live now, 62 watching",
+          "detail": "live now, 119 watching",
           "videoId": "iUdDKf9aDUU"
         }
       ],
@@ -1440,8 +1440,8 @@
       },
       "uptime": {
         "iUdDKf9aDUU": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1480,8 +1480,8 @@
       },
       "uptime": {
         "mxEholKv57A": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1498,15 +1498,15 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 60 watching",
+          "detail": "live now, 35 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
       "scouted": {},
       "uptime": {
         "Mm_zVDDUeNA": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1641,13 +1641,13 @@
       },
       "uptime": {
         "_2rvoH5oDcg": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         },
         "kIZp6fUSpS0": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1664,7 +1664,7 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 33 watching",
+          "detail": "live now, 32 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
@@ -1710,8 +1710,8 @@
       },
       "uptime": {
         "fVa6-zCBR7A": {
-          "samples": 66,
-          "days": 18.9,
+          "samples": 67,
+          "days": 19.2,
           "uptime": 1
         }
       }
@@ -1879,8 +1879,13 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "GGIE1E-kaMQ",
-      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
+      "videoId": "-m_nQT62B4Y",
+      "title": "Kitten Rescue Cat Cam powered by EXPLORE.org",
+      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
+    },
+    {
+      "videoId": "Fz6sl9YJZE0",
+      "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
@@ -1889,18 +1894,13 @@
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
-      "videoId": "-m_nQT62B4Y",
-      "title": "Kitten Rescue Cat Cam powered by EXPLORE.org",
+      "videoId": "GGIE1E-kaMQ",
+      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
       "videoId": "RhP-_jX8-Zs",
       "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org",
-      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
-    },
-    {
-      "videoId": "Fz6sl9YJZE0",
-      "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
@@ -2009,13 +2009,13 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "OBgCrw-IyhE",
-      "title": "EarthCam Live:  Seaside Heights, NJ - North View",
+      "videoId": "qsrevo5Vdkw",
+      "title": "EarthCam Live:  Council Bluffs, Iowa",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "qsrevo5Vdkw",
-      "title": "EarthCam Live:  Council Bluffs, Iowa",
+      "videoId": "OBgCrw-IyhE",
+      "title": "EarthCam Live:  Seaside Heights, NJ - North View",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
