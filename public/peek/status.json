@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-31T12:32:09.228Z",
+  "checkedAt": "2026-10-31T21:36:20.346Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,19 +14,19 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 531 watching",
+          "detail": "live now, 313 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
       "scouted": {
         "UC9X6gGKDv2yhMoofoeS7-Gg": [
           {
-            "videoId": "QL0FuXqD1Fk",
-            "title": "Namibia: Kwando river live stream"
-          },
-          {
             "videoId": "ydYDqZQpim8",
             "title": "Namibia: Live stream in the Namib Desert"
+          },
+          {
+            "videoId": "QL0FuXqD1Fk",
+            "title": "Namibia: Kwando river live stream"
           },
           {
             "videoId": "AeMUdOPFcXI",
@@ -40,8 +40,8 @@
       },
       "uptime": {
         "ydYDqZQpim8": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -59,27 +59,27 @@
           "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
           "author": "フジヤマNAVI",
           "status": "live",
-          "detail": "live now, 5 watching",
+          "detail": "live now, 18 watching",
           "videoId": "Sv9hcJ3k5h4"
         },
         {
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 25 watching",
+          "detail": "live now, 47 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
       "scouted": {},
       "uptime": {
         "Sv9hcJ3k5h4": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "bdUbACCWmoY": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -96,7 +96,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 12 watching",
+          "detail": "live now, 15 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -210,13 +210,13 @@
       },
       "uptime": {
         "nviU2HYj-Jc": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "I6o7UWEaSbw": {
-          "samples": 36,
-          "days": 10,
+          "samples": 37,
+          "days": 10.4,
           "uptime": 0
         }
       }
@@ -258,54 +258,54 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 54 watching",
+          "detail": "live now, 191 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
       "scouted": {
         "UCnM5iMGiKsZg-iOlIO2ZkdQ": [
           {
-            "videoId": "eQ_foBERmzA",
-            "title": "Live Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "tEtg5Kg3voQ",
-            "title": "Live Shark Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "abbR-Ttd-cA",
-            "title": "Live Sea Otter Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "w3LjpFhySTg",
-            "title": "Live Kelp Forest Cam | Monterey Bay Aquarium"
-          },
-          {
             "videoId": "zL68biE6wAs",
             "title": "Live Moon Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "n_GpVsz4nHU",
-            "title": "Live Open Sea Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "fVa6-zCBR7A",
             "title": "Live Monterey Bay Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "tEtg5Kg3voQ",
+            "title": "Live Shark Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "eQ_foBERmzA",
+            "title": "Live Jelly Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "AWJi0LgyA28",
             "title": "Live Aviary Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "abbR-Ttd-cA",
+            "title": "Live Sea Otter Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "n_GpVsz4nHU",
+            "title": "Live Open Sea Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "dzmJXWmA2EM",
             "title": "Live Spider Crab Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "w3LjpFhySTg",
+            "title": "Live Kelp Forest Cam | Monterey Bay Aquarium"
           }
         ]
       },
       "uptime": {
         "w3LjpFhySTg": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -353,8 +353,8 @@
       "scouted": {},
       "uptime": {
         "Lk0Z5ExUWL0": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -371,15 +371,15 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 42 watching",
+          "detail": "live now, 71 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
       "scouted": {},
       "uptime": {
         "BSWhGNXxT9A": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -405,12 +405,20 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 55 watching",
+          "detail": "live now, 24 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -428,27 +436,19 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
       "uptime": {
         "0P_LBKqVbfs": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -466,14 +466,14 @@
           "title": "LIVE Table Mountain & Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "vOLCjL4kv-w"
         },
         {
           "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now, 3 watching",
           "videoId": "jOqASqt3vVI"
         }
       ],
@@ -484,10 +484,6 @@
             "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
           },
           {
-            "videoId": "vOLCjL4kv-w",
-            "title": "LIVE Table Mountain &amp; Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream"
-          },
-          {
             "videoId": "jOqASqt3vVI",
             "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa"
           }
@@ -495,13 +491,13 @@
       },
       "uptime": {
         "vOLCjL4kv-w": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "jOqASqt3vVI": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -518,7 +514,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 176 watching",
+          "detail": "live now, 168 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -537,8 +533,8 @@
       },
       "uptime": {
         "5uZa3-RMFos": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -612,8 +608,8 @@
             "title": "EarthCam Live:  Coney Island (New York City)"
           },
           {
-            "videoId": "qsrevo5Vdkw",
-            "title": "EarthCam Live:  Council Bluffs, Iowa"
+            "videoId": "EiUyBIcG4fQ",
+            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
           },
           {
             "videoId": "OBgCrw-IyhE",
@@ -624,12 +620,12 @@
             "title": "EarthCam Live: New Orleans Balcony View"
           },
           {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
+            "videoId": "qsrevo5Vdkw",
+            "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "EiUyBIcG4fQ",
-            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
+            "videoId": "3nyPER2kzqk",
+            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "77akujLn4k8",
@@ -664,6 +660,14 @@
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
+          {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
@@ -680,20 +684,12 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
@@ -711,12 +707,20 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 51 watching",
+          "detail": "live now, 115 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -734,27 +738,19 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
       "uptime": {
         "DHUnz4dyb54": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -782,21 +778,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 333 watching",
+          "detail": "live now, 367 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 44 watching",
+          "detail": "live now, 58 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 364 watching",
+          "detail": "live now, 406 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -818,18 +814,18 @@
       },
       "uptime": {
         "HggWKlZv9yk": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "f9-oSpYpubg": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -869,7 +865,7 @@
           "title": "Dornan's in Grand Teton National Park - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 4 watching",
+          "detail": "live now, 10 watching",
           "videoId": "o4fKtgPVpoU"
         }
       ],
@@ -979,19 +975,19 @@
       },
       "uptime": {
         "j-0fhrHzEiM": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         },
         "Jqo7Z9QiOEQ": {
-          "samples": 88,
-          "days": 25.5,
-          "uptime": 0.9431818181818182
+          "samples": 89,
+          "days": 25.8,
+          "uptime": 0.9325842696629213
         },
         "o4fKtgPVpoU": {
-          "samples": 88,
-          "days": 25.5,
-          "uptime": 0.9886363636363636
+          "samples": 89,
+          "days": 25.8,
+          "uptime": 0.9887640449438202
         }
       }
     },
@@ -1007,7 +1003,7 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 7 watching",
+          "detail": "live now, 6 watching",
           "videoId": "qx7gry390YA"
         }
       ],
@@ -1074,8 +1070,8 @@
             "title": "EarthCam Live:  Coney Island (New York City)"
           },
           {
-            "videoId": "qsrevo5Vdkw",
-            "title": "EarthCam Live:  Council Bluffs, Iowa"
+            "videoId": "EiUyBIcG4fQ",
+            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
           },
           {
             "videoId": "OBgCrw-IyhE",
@@ -1086,12 +1082,12 @@
             "title": "EarthCam Live: New Orleans Balcony View"
           },
           {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
+            "videoId": "qsrevo5Vdkw",
+            "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "EiUyBIcG4fQ",
-            "title": "EarthCam Live:  Midway Airport (Chicago, IL)"
+            "videoId": "3nyPER2kzqk",
+            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "77akujLn4k8",
@@ -1117,8 +1113,8 @@
       },
       "uptime": {
         "qx7gry390YA": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -1135,12 +1131,20 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 414 watching",
+          "detail": "live now, 669 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1158,27 +1162,19 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
       "uptime": {
         "J7ZrIDvqlic": {
-          "samples": 88,
-          "days": 25.5,
+          "samples": 89,
+          "days": 25.8,
           "uptime": 1
         }
       }
@@ -1196,26 +1192,26 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 69 watching",
+          "detail": "live now, 74 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 60 watching",
+          "detail": "live now, 59 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
       "scouted": {
         "UC9X6gGKDv2yhMoofoeS7-Gg": [
           {
-            "videoId": "QL0FuXqD1Fk",
-            "title": "Namibia: Kwando river live stream"
-          },
-          {
             "videoId": "ydYDqZQpim8",
             "title": "Namibia: Live stream in the Namib Desert"
+          },
+          {
+            "videoId": "QL0FuXqD1Fk",
+            "title": "Namibia: Kwando river live stream"
           },
           {
             "videoId": "AeMUdOPFcXI",
@@ -1235,13 +1231,13 @@
       },
       "uptime": {
         "AeMUdOPFcXI": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1260,26 +1256,34 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 7 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
           "title": "LIVE: Mara River Main Crossing | Masai Mara Wildlife Cam 24/7",
           "author": "Africam",
           "status": "live",
-          "detail": "live now, 17 watching",
+          "detail": "live now, 7 watching",
           "videoId": "BaEFc79IMCA"
         },
         {
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 19 watching",
+          "detail": "live now, 14 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1297,37 +1301,29 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
       "uptime": {
         "-7GOA9KIWcs": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         },
         "BaEFc79IMCA": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1345,19 +1341,27 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 5 watching",
+          "detail": "live now",
           "videoId": "oORXfTviuCs"
         },
         {
           "title": "LIVE African River Wildlife - Kenya Hippo & Crocodile Cam - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "7x5kRo1B84Y"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
+          {
+            "videoId": "GGIE1E-kaMQ",
+            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
+          },
+          {
+            "videoId": "5e4lsEe4Vew",
+            "title": "International Wolf Center North Camera powered by EXPLORE.org"
+          },
           {
             "videoId": "DHUnz4dyb54",
             "title": "Tropical Reef Camera powered by EXPLORE.org"
@@ -1375,32 +1379,24 @@
             "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org"
           },
           {
-            "videoId": "0P_LBKqVbfs",
-            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
-          },
-          {
-            "videoId": "5e4lsEe4Vew",
-            "title": "International Wolf Center North Camera powered by EXPLORE.org"
-          },
-          {
-            "videoId": "GGIE1E-kaMQ",
-            "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org"
-          },
-          {
             "videoId": "RhP-_jX8-Zs",
             "title": "LIVE Anan Bear Cam: Lower Falls &amp; Caves – Alaska | explore.org"
+          },
+          {
+            "videoId": "0P_LBKqVbfs",
+            "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org"
           }
         ]
       },
       "uptime": {
         "oORXfTviuCs": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1423,7 +1419,7 @@
           "title": "Djuma Cam Live Stream",
           "author": "Djuma Cam",
           "status": "live",
-          "detail": "live now, 95 watching",
+          "detail": "live now, 70 watching",
           "videoId": "iUdDKf9aDUU"
         }
       ],
@@ -1441,8 +1437,8 @@
       },
       "uptime": {
         "iUdDKf9aDUU": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1459,7 +1455,7 @@
           "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 4 watching",
+          "detail": "live now",
           "videoId": "mxEholKv57A"
         }
       ],
@@ -1470,10 +1466,6 @@
             "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
           },
           {
-            "videoId": "vOLCjL4kv-w",
-            "title": "LIVE Table Mountain &amp; Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream"
-          },
-          {
             "videoId": "jOqASqt3vVI",
             "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa"
           }
@@ -1481,8 +1473,8 @@
       },
       "uptime": {
         "mxEholKv57A": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1499,15 +1491,15 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 23 watching",
+          "detail": "live now, 70 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
       "scouted": {},
       "uptime": {
         "Mm_zVDDUeNA": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1643,13 +1635,13 @@
       },
       "uptime": {
         "_2rvoH5oDcg": {
-          "samples": 87,
-          "days": 25.3,
-          "uptime": 0.9425287356321839
+          "samples": 88,
+          "days": 25.6,
+          "uptime": 0.9318181818181818
         },
         "kIZp6fUSpS0": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1666,54 +1658,54 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 30 watching",
+          "detail": "live now, 69 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
       "scouted": {
         "UCnM5iMGiKsZg-iOlIO2ZkdQ": [
           {
-            "videoId": "eQ_foBERmzA",
-            "title": "Live Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "tEtg5Kg3voQ",
-            "title": "Live Shark Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "abbR-Ttd-cA",
-            "title": "Live Sea Otter Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "w3LjpFhySTg",
-            "title": "Live Kelp Forest Cam | Monterey Bay Aquarium"
-          },
-          {
             "videoId": "zL68biE6wAs",
             "title": "Live Moon Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "n_GpVsz4nHU",
-            "title": "Live Open Sea Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "fVa6-zCBR7A",
             "title": "Live Monterey Bay Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "tEtg5Kg3voQ",
+            "title": "Live Shark Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "eQ_foBERmzA",
+            "title": "Live Jelly Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "AWJi0LgyA28",
             "title": "Live Aviary Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "abbR-Ttd-cA",
+            "title": "Live Sea Otter Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "n_GpVsz4nHU",
+            "title": "Live Open Sea Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "dzmJXWmA2EM",
             "title": "Live Spider Crab Cam | Monterey Bay Aquarium"
+          },
+          {
+            "videoId": "w3LjpFhySTg",
+            "title": "Live Kelp Forest Cam | Monterey Bay Aquarium"
           }
         ]
       },
       "uptime": {
         "fVa6-zCBR7A": {
-          "samples": 87,
-          "days": 25.3,
+          "samples": 88,
+          "days": 25.6,
           "uptime": 1
         }
       }
@@ -1846,8 +1838,8 @@
       "channel": "UCIQVWkOilfxoQSFcban_d-A"
     },
     {
-      "videoId": "eQ_foBERmzA",
-      "title": "Live Jelly Cam | Monterey Bay Aquarium",
+      "videoId": "zL68biE6wAs",
+      "title": "Live Moon Jelly Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
@@ -1856,18 +1848,8 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "abbR-Ttd-cA",
-      "title": "Live Sea Otter Cam | Monterey Bay Aquarium",
-      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
-    },
-    {
-      "videoId": "zL68biE6wAs",
-      "title": "Live Moon Jelly Cam | Monterey Bay Aquarium",
-      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
-    },
-    {
-      "videoId": "n_GpVsz4nHU",
-      "title": "Live Open Sea Cam | Monterey Bay Aquarium",
+      "videoId": "eQ_foBERmzA",
+      "title": "Live Jelly Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
@@ -1876,9 +1858,29 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
+      "videoId": "abbR-Ttd-cA",
+      "title": "Live Sea Otter Cam | Monterey Bay Aquarium",
+      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
+    },
+    {
+      "videoId": "n_GpVsz4nHU",
+      "title": "Live Open Sea Cam | Monterey Bay Aquarium",
+      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
+    },
+    {
       "videoId": "dzmJXWmA2EM",
       "title": "Live Spider Crab Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
+    },
+    {
+      "videoId": "GGIE1E-kaMQ",
+      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
+      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
+    },
+    {
+      "videoId": "5e4lsEe4Vew",
+      "title": "International Wolf Center North Camera powered by EXPLORE.org",
+      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
       "videoId": "-m_nQT62B4Y",
@@ -1888,16 +1890,6 @@
     {
       "videoId": "Fz6sl9YJZE0",
       "title": "Underwater Manatee Cam At Homosassa Springs | Fall in love with the beloved sea cows! | explore.org",
-      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
-    },
-    {
-      "videoId": "5e4lsEe4Vew",
-      "title": "International Wolf Center North Camera powered by EXPLORE.org",
-      "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
-    },
-    {
-      "videoId": "GGIE1E-kaMQ",
-      "title": "Decorah Eagles - North Nest - 4k powered by EXPLORE.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
     {
@@ -1986,8 +1978,8 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "qsrevo5Vdkw",
-      "title": "EarthCam Live:  Council Bluffs, Iowa",
+      "videoId": "EiUyBIcG4fQ",
+      "title": "EarthCam Live:  Midway Airport (Chicago, IL)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2001,13 +1993,13 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "3nyPER2kzqk",
-      "title": "EarthCam Live: Dublin, Ireland",
+      "videoId": "qsrevo5Vdkw",
+      "title": "EarthCam Live:  Council Bluffs, Iowa",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "EiUyBIcG4fQ",
-      "title": "EarthCam Live:  Midway Airport (Chicago, IL)",
+      "videoId": "3nyPER2kzqk",
+      "title": "EarthCam Live: Dublin, Ireland",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
