@@ -55,6 +55,22 @@ export async function loadCommunity({ fetchImpl = globalThis.fetch } = {}) {
   }
 }
 
+// Admin overrides (switched-off views, swapped video IDs), applied the same way the page applies
+// them so the check tests what visitors get. Never throws.
+export async function applyAdminOverrides(streams, { fetchImpl = globalThis.fetch } = {}) {
+  try {
+    const sandbox = { window: {}, URL, Intl, fetch: fetchImpl };
+    vm.runInNewContext(await readFile(path.join(root, "public/peek/config.js"), "utf8"), sandbox);
+    if (!sandbox.window.PEEK_CONFIG?.supabaseUrl) return streams;
+    vm.runInNewContext(await readFile(path.join(root, "public/peek/community.js"), "utf8"), sandbox);
+    const pc = sandbox.window.PeekCommunity;
+    return pc.applyOverrides(streams, await pc.loadOverrides());
+  } catch (err) {
+    console.error(`admin overrides unavailable: ${err.message}`);
+    return streams;
+  }
+}
+
 // Vetting queue: places that might become views. Checked every run, never played.
 export async function loadQueue() {
   try { return JSON.parse(await readFile(path.join(root, "scripts/peek/candidates.json"), "utf8")).candidates || []; }
@@ -374,7 +390,7 @@ export const isFlaky = (u) => u.samples >= FLAKY.minSamples && u.uptime < FLAKY.
 
 async function main() {
   const community = await loadCommunity();
-  const streams = [...(await loadStreams()), ...community];
+  const streams = await applyAdminOverrides([...(await loadStreams()), ...community]);
   const status = { checkedAt: new Date().toISOString(), mode: API_KEY ? "api" : "scrape", streams: {} };
   let history = null;
   try { history = JSON.parse(await readFile(HISTORY, "utf8")); } catch { /* first run */ }

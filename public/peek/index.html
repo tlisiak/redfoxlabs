@@ -325,7 +325,11 @@
   // Views people submitted and an admin approved join the catalog once they load. They're
   // rebuilt field by field in community.js, so nothing a stranger typed reaches the page as markup.
   const communityReady = window.PeekCommunity && PeekCommunity.enabled()
-    ? PeekCommunity.loadApproved().then((list) => { for (const s of list) if (!STREAMS.some((x) => x.id === s.id)) STREAMS.push(s); }).catch(() => {})
+    ? Promise.all([
+        PeekCommunity.loadApproved().then((list) => { for (const s of list) if (!STREAMS.some((x) => x.id === s.id)) STREAMS.push(s); }).catch(() => {}),
+        // Admin switches: a view turned off (or given new video IDs) in the admin console.
+        PeekCommunity.loadOverrides().then((rows) => { const kept = PeekCommunity.applyOverrides(STREAMS, rows); if (kept.length) STREAMS.splice(0, STREAMS.length, ...kept); }).catch(() => {}),
+      ])
     : Promise.resolve();
   if (window.PeekCommunity && PeekCommunity.enabled()) document.getElementById("submitLink").hidden = false;
   const MIN_SPIN_MS = 1300;   // flaps spin at least this long, so even a fast load feels like a departure
