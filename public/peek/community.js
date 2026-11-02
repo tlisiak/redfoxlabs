@@ -69,6 +69,26 @@
     return (rows || []).map(toStream).filter(Boolean);
   }
 
+  // Admin overrides on the built-in views: switch one off, or swap the video IDs it plays.
+  async function loadOverrides() {
+    const rows = await rest("/rest/v1/peek_overrides?select=stream_id,disabled,video_ids&limit=500");
+    return Array.isArray(rows) ? rows : [];
+  }
+
+  // Applies override rows to a list of views and returns the list without the switched-off ones.
+  // A swapped video list replaces the view's sources (never a channel, which would bypass the swap).
+  function applyOverrides(streams, rows) {
+    const byId = new Map((rows || []).map((r) => [r && r.stream_id, r]));
+    return streams.filter((s) => {
+      const o = byId.get(s.id);
+      if (!o) return true;
+      if (o.disabled === true) return false;
+      const ids = Array.isArray(o.video_ids) ? o.video_ids.filter((v) => ID_RE.test(v || "")) : [];
+      if (ids.length) s.source = { videoIds: ids };
+      return true;
+    });
+  }
+
   const FRIENDLY = {
     video_id: "That doesn't look like a YouTube video ID.", lat: "Latitude must be between -90 and 90.", lng: "Longitude must be between -180 and 180.",
     tz: "Pick a time zone from the list.", name: "The name needs 3 to 80 characters.", place: "The place needs 3 to 120 characters.",
@@ -129,10 +149,12 @@
     signOut() { store.set(null); },
     async list(status) { return rest("/rest/v1/rpc/peek_admin_list", { method: "POST", token: await token(), body: { p_status: status || null } }); },
     async review(id, status, notes, patch) { return rest("/rest/v1/rpc/peek_admin_review", { method: "POST", token: await token(), body: { p_id: id, p_status: status, p_notes: notes || null, p_patch: patch || {} } }); },
+    async overrides() { return rest("/rest/v1/rpc/peek_admin_overrides", { method: "POST", token: await token(), body: {} }); },
+    async setOverride(streamId, disabled, videoIds, note) { return rest("/rest/v1/rpc/peek_admin_set_override", { method: "POST", token: await token(), body: { p_stream: streamId, p_disabled: !!disabled, p_video_ids: videoIds && videoIds.length ? videoIds : null, p_note: note || null } }); },
     async remove(id) { return rest("/rest/v1/rpc/peek_admin_delete", { method: "POST", token: await token(), body: { p_id: id } }); },
   };
 
-  const api = { enabled, toStream, parseYouTube, loadApproved, submit, admin, ApiError };
+  const api = { enabled, toStream, parseYouTube, loadApproved, loadOverrides, applyOverrides, submit, admin, ApiError };
   if (typeof window !== "undefined") window.PeekCommunity = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();

@@ -96,6 +96,7 @@
 
 <script src="../config.js"></script>
 <script src="../community.js"></script>
+<script src="../streams.js"></script>
 <script src="https://www.youtube.com/iframe_api" async></script>
 <script>
 (() => {
@@ -106,7 +107,8 @@
 
   const STATUSES = [["pending", "Pending"], ["changes_requested", "Needs changes"], ["approved", "Approved"], ["paused", "Paused"], ["rejected", "Rejected"]];
   let all = [], tab = "pending", current = null, player = null, ytReady = false;
-  window.onYouTubeIframeAPIReady = () => { ytReady = true; if (current) mountPlayer(current.video_id); };
+  let overrides = new Map(), status = {}, currentStream = null;
+  window.onYouTubeIframeAPIReady = () => { ytReady = true; if (tab === "catalog" && currentStream) mountPlayer(effectiveIds(currentStream)[0]); else if (current) mountPlayer(current.video_id); };
 
   // ---------------------------------------------------------------- sign in
   const say = (el, text, kind) => { el.textContent = text || ""; el.className = `msg ${kind || ""}`; };
@@ -142,19 +144,41 @@
   // ---------------------------------------------------------------- list
   async function reload() {
     all = await A.list(null);
+    overrides = new Map((await A.overrides()).map((o) => [o.stream_id, o]));
+    try { status = (await (await fetch("../status.json", { cache: "no-store" })).json()).streams || {}; } catch { status = {}; }
     renderTabs(); renderList();
-    if (current) { const again = all.find((r) => r.id === current.id); if (again) openRow(again, true); }
+    if (tab === "catalog") { if (currentStream) openStream(currentStream); }
+    else if (current) { const again = all.find((r) => r.id === current.id); if (again) openRow(again, true); }
   }
+  const builtIn = () => window.PEEK_STREAMS.filter((s) => !s.community);
+  const builtInIds = (s) => (s.source && (s.source.videoIds || (s.source.videoId ? [s.source.videoId] : []))) || [];
+  const effectiveIds = (s) => { const o = overrides.get(s.id); return o && o.video_ids && o.video_ids.length ? o.video_ids : builtInIds(s); };
   function renderTabs() {
     $("tabs").replaceChildren(...STATUSES.map(([k, label]) => {
       const n = all.filter((r) => r.status === k).length;
       const b = mk("button", { className: "tab", textContent: `${label} ${n}`, ariaSelected: String(k === tab) });
       b.addEventListener("click", () => { tab = k; renderTabs(); renderList(); });
       return b;
-    }));
+    }).concat((() => {
+      const off = builtIn().filter((s) => (overrides.get(s.id) || {}).disabled).length;
+      const b = mk("button", { className: "tab", textContent: `Catalog ${builtIn().length}${off ? ` (${off} off)` : ""}`, ariaSelected: String(tab === "catalog") });
+      b.addEventListener("click", () => { tab = "catalog"; renderTabs(); renderList(); });
+      return b;
+    })()));
   }
   const ago = (iso) => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60000)); return m < 90 ? `${m} min ago` : m < 2880 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} days ago`; };
   function renderList() {
+    if (tab === "catalog") {
+      $("list").replaceChildren(...builtIn().map((s) => {
+        const o = overrides.get(s.id) || {}, st = status[s.id];
+        const flag = o.disabled ? "OFF" : o.video_ids ? "swapped" : st && st.ok === false ? "failing" : "";
+        const b = mk("button", { className: "item", ariaCurrent: String(!!currentStream && currentStream.id === s.id) },
+          mk("b", { textContent: s.name }), mk("small", { textContent: `${s.country}${flag ? " · " + flag : ""}` }));
+        b.addEventListener("click", () => openStream(s));
+        return b;
+      }));
+      return;
+    }
     const rows = all.filter((r) => r.status === tab);
     $("list").replaceChildren(...(rows.length ? rows.map((r) => {
       const b = mk("button", { className: "item", ariaCurrent: String(!!current && current.id === r.id) }, mk("b", { textContent: r.name }), mk("small", { textContent: `${r.country} · ${r.relationship === "found" ? "fan find" : r.relationship === "owner" ? "owner" : "authorized"} · ${ago(r.created_at)}` }));
@@ -257,6 +281,50 @@
     $("a-reject").addEventListener("click", act("rejected"));
     if ($("a-pause")) $("a-pause").addEventListener("click", act("paused"));
     $("a-delete").addEventListener("click", async () => { if (!confirm("Delete this submission for good?")) return; try { await A.remove(r.id); current = null; $("detail").replaceChildren(mk("div", { className: "empty", textContent: "Deleted." })); await reload(); } catch (e) { say($("rvMsg"), friendly(e), "err"); } });
+  }
+
+  // ---------------------------------------------------------------- built-in views
+  function openStream(s) {
+    currentStream = s; current = null; renderList();
+    const o = overrides.get(s.id) || {}, st = status[s.id];
+    const ids = builtInIds(s);
+    const up = st && st.uptime ? Object.entries(st.uptime).map(([id, u]) => `${id}: ${Math.round(u.uptime * 100)}% over ${Math.round(u.days)} days`).join(" · ") : "no history yet";
+    const srcLines = st && st.sources ? st.sources.map((x) => `${x.videoId}: ${x.status}${x.detail ? " (" + x.detail + ")" : ""}`).join(" · ") : "no check yet";
+    const meta = mk("div", { className: "meta" },
+      mk("div", {}, mk("span", { className: `status ${o.disabled ? "paused" : st && st.ok === false ? "rejected" : "approved"}`, textContent: o.disabled ? "off" : st && st.ok === false ? "failing check" : "on" })),
+      mk("div", {}, mk("span", { className: "k", textContent: "Stream check: " }), document.createTextNode(srcLines)),
+      mk("div", {}, mk("span", { className: "k", textContent: "Uptime: " }), document.createTextNode(up)),
+      mk("div", {}, mk("span", { className: "k", textContent: "Built-in video IDs: " }), document.createTextNode(ids.join(", ") || "(channel only)")),
+      ...(st && st.checkedAt ? [] : []));
+    const form = mk("form", { id: "ov" },
+      mk("fieldset", {}, mk("legend", { textContent: "Control" }),
+        mk("label", {}, mk("span", {}, mk("input", { id: "o-on", type: "checkbox", checked: !o.disabled, style: "width:auto; margin-right:8px" }), "Show on Peek"),
+          mk("span", { className: "hint", textContent: "Untick to take this view out of rotation. It comes back the moment you tick it again." })),
+        mk("label", {}, "Use these videos instead (YouTube links or IDs, one per line)", mk("textarea", { id: "o-ids", rows: 3, value: (o.video_ids || []).join("\n") }),
+          mk("span", { className: "hint", textContent: "Leave blank to use the built-in ones. Use this when the operator starts a new stream. Peek still checks the live title against the view's accuracy words." })),
+        mk("label", {}, "Note to yourself", mk("textarea", { id: "o-note", rows: 2, value: o.note || "" }))),
+      mk("div", { className: "msg", id: "ovMsg" }),
+      mk("div", { className: "actions" },
+        mk("button", { type: "button", className: "primary", id: "o-save", textContent: "Save" }),
+        mk("button", { type: "button", id: "o-reset", textContent: "Reset to built-in" })));
+    $("detail").replaceChildren(mk("h2", { textContent: s.name, style: "margin-bottom:4px" }), mk("div", { className: "hint", textContent: `${s.place}, ${s.country} · id: ${s.id}`, style: "margin-bottom:12px" }),
+      mk("div", { className: "grid" }, mk("div", {}, mk("div", { className: "pv", id: "pvhost" }), mk("div", { className: "live", id: "liveTitle", style: "margin-top:8px", textContent: "Loading…" }), meta), form));
+    mountPlayer(effectiveIds(s)[0]);
+    const save = async (reset) => {
+      say($("ovMsg"), "");
+      const raw = reset ? [] : lines($("o-ids").value);
+      const vids = raw.map((l) => PC.parseYouTube(l).videoId);
+      if (vids.some((v) => !v)) return say($("ovMsg"), "One of those isn't a YouTube link or ID.", "err");
+      const on = $("o-on").checked, note = $("o-note").value.trim();
+      for (const b of $("ov").querySelectorAll("button")) b.disabled = true;
+      try {
+        await A.setOverride(s.id, reset ? false : !on, vids, reset ? null : note);
+        await reload();
+        say($("ovMsg"), reset ? "Back to the built-in setup." : on ? "Saved. Peek picks it up within a minute." : "Switched off. Peek stops showing it within a minute.", "ok");
+      } catch (e) { say($("ovMsg"), friendly(e), "err"); for (const b of $("ov").querySelectorAll("button")) b.disabled = false; }
+    };
+    $("o-save").addEventListener("click", () => save(false));
+    $("o-reset").addEventListener("click", () => save(true));
   }
 
   function renderCard() {

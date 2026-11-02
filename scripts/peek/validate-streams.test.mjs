@@ -217,3 +217,17 @@ test("YouTube links in the usual shapes give the video id", async () => {
 test("the stream check ignores community views when none are configured or the database is down", async () => {
   assert.equal((await loadCommunity({ fetchImpl: () => { throw new Error("should not be called"); } })).length, 0, "no config, no request");
 });
+
+test("admin overrides switch a view off or swap its video IDs", async () => {
+  const c = await community();
+  const views = [{ id: "tahoe", source: { videoId: "Lk0Z5ExUWL0" } }, { id: "namib", source: { videoIds: ["ydYDqZQpim8"] } }, { id: "fuji", source: { videoIds: ["Sv9hcJ3k5h4"] } }];
+  const kept = JSON.parse(JSON.stringify(c.applyOverrides(views, [
+    { stream_id: "tahoe", disabled: true, video_ids: null },
+    { stream_id: "namib", disabled: false, video_ids: ["AAAAAAAAAAA", "not-an-id", "BBBBBBBBBBB"] },
+    { stream_id: "nobody", disabled: true },
+  ])));
+  assert.deepEqual(kept.map((s) => s.id), ["namib", "fuji"]);
+  assert.deepEqual(kept[0].source, { videoIds: ["AAAAAAAAAAA", "BBBBBBBBBBB"] });
+  assert.deepEqual(kept[1].source, { videoIds: ["Sv9hcJ3k5h4"] });
+  assert.deepEqual(c.applyOverrides(views, null).length, 3);
+});
