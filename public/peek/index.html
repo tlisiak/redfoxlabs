@@ -370,6 +370,10 @@
   // or with the sun no more than 6° below the horizon (civil twilight counts, it's gorgeous).
   // Golden hour gets triple weight.
   const recent = [];
+  // Everything the visitor has laid eyes on this visit, so Peek shows each open window once before
+  // any repeats. When none is left, the round is over: say so and start a fresh one.
+  const seen = new Set();
+  let roundOver = false;
   function eligible(s) {
     if (s.hours) { const h = localHour(s.tz); return h >= s.hours[0] && h < s.hours[1]; }
     return s.night || sunAltitude(new Date(), s.lat, s.lng) > -6;
@@ -378,11 +382,18 @@
     const alt = sunAltitude(new Date(), s.lat, s.lng);
     return alt > -6 && alt < 10 ? 3 : 1;
   }
-  function pick(exclude = []) {
+  function pick(exclude = [], { quiet = false } = {}) {
     let pool = STREAMS.filter((s) => eligible(s) && !exclude.includes(s.id));
     pool = pool.filter((s) => !s.paused || PeekPlayer.looksAlive(s));
     const alive = pool.filter(PeekPlayer.looksAlive);
     if (alive.length) pool = alive;
+    const unseen = pool.filter((s) => !seen.has(s.id));
+    if (unseen.length) pool = unseen;
+    else if (pool.length && seen.size) {   // they've been through every open window: new round
+      seen.clear();
+      for (const id of exclude) seen.add(id);
+      if (!quiet) roundOver = true;
+    }
     const fresh = pool.filter((s) => !recent.includes(s.id));
     if (fresh.length) pool = fresh;
     if (!pool.length) pool = STREAMS.filter((s) => !s.paused && !exclude.includes(s.id));
@@ -392,7 +403,7 @@
     for (const s of pool) { r -= weight(s); if (r <= 0) return s; }
     return pool[pool.length - 1];
   }
-  function remember(id) { recent.push(id); while (recent.length > Math.min(4, STREAMS.length - 1)) recent.shift(); }
+  function remember(id) { seen.add(id); recent.push(id); while (recent.length > Math.min(4, STREAMS.length - 1)) recent.shift(); }
 
   // ---------------------------------------------------------------- YouTube players
   // Mounts the stream into the (visible) frame and resolves with { layer, player } once one of
@@ -646,6 +657,12 @@
     remember(stream.id);
     renderPanel(stream);
     applySound();
+    if (roundOver) {
+      roundOver = false;
+      $("toast").textContent = "That's every window that's open right now. Starting a new round.";
+      $("toast").classList.add("on");
+      setTimeout(() => { if (!busy) $("toast").classList.remove("on"); }, 5000);
+    }
   }
   async function peek() {
     if (busy) return;
@@ -735,12 +752,13 @@
   }
   async function startBackground() {
     await Promise.all([PeekPlayer.statusReady, Promise.race([communityReady, new Promise((ok) => setTimeout(ok, 2500))])]);
-    const s = pick();
+    const s = pick([], { quiet: true });
     if (!s || !onLanding) return;
     try {
       const loaded = await loadStream(s);
       if (!onLanding || bg || active) { retire(loaded); return; }   // the visitor already left
       bg = { stream: s, ...loaded };
+      seen.add(s.id);
       showCaption(s);
     } catch { /* the painted scene stays in the frame */ }
   }
