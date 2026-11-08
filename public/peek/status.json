@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-07T21:51:48.595Z",
+  "checkedAt": "2026-11-08T06:02:32.588Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,20 +14,12 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 309 watching",
+          "detail": "live now, 320 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
       "scouted": {
         "UC9X6gGKDv2yhMoofoeS7-Gg": [
-          {
-            "videoId": "ydYDqZQpim8",
-            "title": "Namibia: Live stream in the Namib Desert"
-          },
-          {
-            "videoId": "AeMUdOPFcXI",
-            "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
-          },
           {
             "videoId": "QL0FuXqD1Fk",
             "title": "Namibia: Kwando river live stream"
@@ -35,13 +27,21 @@
           {
             "videoId": "ME0dPuBtzug",
             "title": "Namibia: Live stream in the Kalahari Desert"
+          },
+          {
+            "videoId": "ydYDqZQpim8",
+            "title": "Namibia: Live stream in the Namib Desert"
+          },
+          {
+            "videoId": "AeMUdOPFcXI",
+            "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
           }
         ]
       },
       "uptime": {
         "ydYDqZQpim8": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -59,14 +59,14 @@
           "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
           "author": "フジヤマNAVI",
           "status": "live",
-          "detail": "live now, 12 watching",
+          "detail": "live now, 10 watching",
           "videoId": "Sv9hcJ3k5h4"
         },
         {
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 39 watching",
+          "detail": "live now, 40 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
@@ -74,12 +74,12 @@
       "uptime": {
         "Sv9hcJ3k5h4": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "bdUbACCWmoY": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -96,7 +96,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 13 watching",
+          "detail": "live now, 16 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -211,12 +211,12 @@
       "uptime": {
         "nviU2HYj-Jc": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "I6o7UWEaSbw": {
-          "samples": 53,
-          "days": 17.4,
+          "samples": 54,
+          "days": 17.8,
           "uptime": 0
         }
       }
@@ -258,7 +258,7 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 207 watching",
+          "detail": "live now, 95 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
@@ -269,12 +269,16 @@
             "title": "Live Jelly Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "1VBPxAkaNDU",
+            "title": "Live Coral Reef Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "QWGYS9IOqYc",
             "title": "Live African Penguin Cam | Monterey Bay Aquarium"
           },
           {
-            "videoId": "1VBPxAkaNDU",
-            "title": "Live Coral Reef Cam | Monterey Bay Aquarium"
+            "videoId": "tEtg5Kg3voQ",
+            "title": "Live Shark Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "w3LjpFhySTg",
@@ -283,10 +287,6 @@
           {
             "videoId": "zL68biE6wAs",
             "title": "Live Moon Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "tEtg5Kg3voQ",
-            "title": "Live Shark Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "abbR-Ttd-cA",
@@ -313,7 +313,7 @@
       "uptime": {
         "w3LjpFhySTg": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -362,7 +362,7 @@
       "uptime": {
         "Lk0Z5ExUWL0": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -379,7 +379,7 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 69 watching",
+          "detail": "live now, 51 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
@@ -387,7 +387,7 @@
       "uptime": {
         "BSWhGNXxT9A": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -413,19 +413,19 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 25 watching",
+          "detail": "live now, 28 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -456,7 +456,7 @@
       "uptime": {
         "0P_LBKqVbfs": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -474,14 +474,14 @@
           "title": "LIVE Table Mountain & Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "vOLCjL4kv-w"
         },
         {
           "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now, 2 watching",
           "videoId": "jOqASqt3vVI"
         }
       ],
@@ -504,12 +504,12 @@
       "uptime": {
         "vOLCjL4kv-w": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "jOqASqt3vVI": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -526,7 +526,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 159 watching",
+          "detail": "live now, 185 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -546,7 +546,7 @@
       "uptime": {
         "5uZa3-RMFos": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -600,10 +600,6 @@
             "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
           },
           {
-            "videoId": "o5Ie_LpZ9uk",
-            "title": "EarthCam Live:  Statue of Liberty"
-          },
-          {
             "videoId": "zMCea32gpmg",
             "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
           },
@@ -620,12 +616,20 @@
             "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
           },
           {
+            "videoId": "o5Ie_LpZ9uk",
+            "title": "EarthCam Live:  Statue of Liberty"
+          },
+          {
             "videoId": "KHy_n-EMWY8",
             "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
           },
           {
             "videoId": "tErYxn2UM5Y",
             "title": "EarthCam Live:  Brooklyn Bridge Cam"
+          },
+          {
+            "videoId": "XoANQufSSXY",
+            "title": "EarthCam Live:  Ruidoso, New Mexico"
           },
           {
             "videoId": "EiUyBIcG4fQ",
@@ -636,28 +640,24 @@
             "title": "EarthCam Live:  Madison, Indiana"
           },
           {
-            "videoId": "H67j7H-7QD0",
-            "title": "EarthCam Live:  Coney Island (New York City)"
-          },
-          {
             "videoId": "OBgCrw-IyhE",
             "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "qsrevo5Vdkw",
             "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
+            "videoId": "3nyPER2kzqk",
+            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "77akujLn4k8",
             "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
+          },
+          {
+            "videoId": "ZYQlLQHz2Mg",
+            "title": "9/11 Memorial &amp; Museum"
           }
         ]
       },
@@ -672,12 +672,12 @@
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -719,19 +719,19 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 134 watching",
+          "detail": "live now, 102 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -762,7 +762,7 @@
       "uptime": {
         "DHUnz4dyb54": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -790,21 +790,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 535 watching",
+          "detail": "live now, 443 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 51 watching",
+          "detail": "live now, 42 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 281 watching",
+          "detail": "live now, 243 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -827,17 +827,17 @@
       "uptime": {
         "HggWKlZv9yk": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "f9-oSpYpubg": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -863,7 +863,7 @@
           "title": "EGVB - Grand Teton Webcam",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "j-0fhrHzEiM"
         },
         {
@@ -877,7 +877,7 @@
           "title": "Dornan's in Grand Teton National Park - SeeJH.com",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 16 watching",
+          "detail": "live now, 5 watching",
           "videoId": "o4fKtgPVpoU"
         }
       ],
@@ -904,6 +904,10 @@
             "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
+            "videoId": "QDyspy8DUpU",
+            "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai"
+          },
+          {
             "videoId": "DoUOrTJbIu4",
             "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
           },
@@ -912,8 +916,8 @@
             "title": "Snake River Cabins - SeeJH.ai"
           },
           {
-            "videoId": "QDyspy8DUpU",
-            "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai"
+            "videoId": "B_waF26In9o",
+            "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
           },
           {
             "videoId": "qi6QKB-sJRI",
@@ -926,10 +930,6 @@
           {
             "videoId": "Zj0pXlq2-jI",
             "title": "Town Square Webcam - Northeast - SeeJH.com"
-          },
-          {
-            "videoId": "B_waF26In9o",
-            "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
           },
           {
             "videoId": "1EiC9bvVGnk",
@@ -972,12 +972,12 @@
             "title": "Flat Creek Inn Office - SeeJH.ai"
           },
           {
-            "videoId": "a5jEZeNTAsE",
-            "title": "Grand Targhee Resort Summit - SeeJH.ai"
-          },
-          {
             "videoId": "fQiA_DZT0cE",
             "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com"
+          },
+          {
+            "videoId": "a5jEZeNTAsE",
+            "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
             "videoId": "IvZ22jZgvOI",
@@ -988,17 +988,17 @@
       "uptime": {
         "j-0fhrHzEiM": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "Jqo7Z9QiOEQ": {
           "samples": 98,
-          "days": 29.9,
-          "uptime": 0.7653061224489796
+          "days": 30,
+          "uptime": 0.7551020408163265
         },
         "o4fKtgPVpoU": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 0.9897959183673469
         }
       }
@@ -1015,7 +1015,7 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 10 watching",
+          "detail": "live now, 12 watching",
           "videoId": "qx7gry390YA"
         }
       ],
@@ -1062,10 +1062,6 @@
             "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
           },
           {
-            "videoId": "o5Ie_LpZ9uk",
-            "title": "EarthCam Live:  Statue of Liberty"
-          },
-          {
             "videoId": "zMCea32gpmg",
             "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
           },
@@ -1082,12 +1078,20 @@
             "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
           },
           {
+            "videoId": "o5Ie_LpZ9uk",
+            "title": "EarthCam Live:  Statue of Liberty"
+          },
+          {
             "videoId": "KHy_n-EMWY8",
             "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
           },
           {
             "videoId": "tErYxn2UM5Y",
             "title": "EarthCam Live:  Brooklyn Bridge Cam"
+          },
+          {
+            "videoId": "XoANQufSSXY",
+            "title": "EarthCam Live:  Ruidoso, New Mexico"
           },
           {
             "videoId": "EiUyBIcG4fQ",
@@ -1098,35 +1102,31 @@
             "title": "EarthCam Live:  Madison, Indiana"
           },
           {
-            "videoId": "H67j7H-7QD0",
-            "title": "EarthCam Live:  Coney Island (New York City)"
-          },
-          {
             "videoId": "OBgCrw-IyhE",
             "title": "EarthCam Live:  Seaside Heights, NJ - North View"
-          },
-          {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "qsrevo5Vdkw",
             "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
+            "videoId": "3nyPER2kzqk",
+            "title": "EarthCam Live: Dublin, Ireland"
           },
           {
             "videoId": "77akujLn4k8",
             "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)"
+          },
+          {
+            "videoId": "ZYQlLQHz2Mg",
+            "title": "9/11 Memorial &amp; Museum"
           }
         ]
       },
       "uptime": {
         "qx7gry390YA": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1143,19 +1143,19 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 509 watching",
+          "detail": "live now, 338 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -1186,7 +1186,7 @@
       "uptime": {
         "J7ZrIDvqlic": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1204,27 +1204,19 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 113 watching",
+          "detail": "live now, 74 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 109 watching",
+          "detail": "live now, 65 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
       "scouted": {
         "UC9X6gGKDv2yhMoofoeS7-Gg": [
-          {
-            "videoId": "ydYDqZQpim8",
-            "title": "Namibia: Live stream in the Namib Desert"
-          },
-          {
-            "videoId": "AeMUdOPFcXI",
-            "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
-          },
           {
             "videoId": "QL0FuXqD1Fk",
             "title": "Namibia: Kwando river live stream"
@@ -1232,6 +1224,14 @@
           {
             "videoId": "ME0dPuBtzug",
             "title": "Namibia: Live stream in the Kalahari Desert"
+          },
+          {
+            "videoId": "ydYDqZQpim8",
+            "title": "Namibia: Live stream in the Namib Desert"
+          },
+          {
+            "videoId": "AeMUdOPFcXI",
+            "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia"
           }
         ],
         "UCfn4vrrgKXCCg3rxxLRGOvg": [
@@ -1244,12 +1244,12 @@
       "uptime": {
         "AeMUdOPFcXI": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1268,33 +1268,33 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now, 6 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
           "title": "LIVE: Mara River Main Crossing | Masai Mara Wildlife Cam 24/7",
           "author": "Africam",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 10 watching",
           "videoId": "BaEFc79IMCA"
         },
         {
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 10 watching",
+          "detail": "live now, 6 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -1325,17 +1325,17 @@
       "uptime": {
         "-7GOA9KIWcs": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "BaEFc79IMCA": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1353,26 +1353,26 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 3 watching",
           "videoId": "oORXfTviuCs"
         },
         {
           "title": "LIVE African River Wildlife - Kenya Hippo & Crocodile Cam - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 1 watching",
           "videoId": "7x5kRo1B84Y"
         }
       ],
       "scouted": {
         "UC-2KSeUU5SMCX6XLRD-AEvw": [
           {
-            "videoId": "DHUnz4dyb54",
-            "title": "Tropical Reef Camera powered by EXPLORE.org"
+            "videoId": "OOT6YlOYgaU",
+            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
           },
           {
-            "videoId": "-m_nQT62B4Y",
-            "title": "Kitten Rescue Cat Cam powered by EXPLORE.org"
+            "videoId": "DHUnz4dyb54",
+            "title": "Tropical Reef Camera powered by EXPLORE.org"
           },
           {
             "videoId": "J7ZrIDvqlic",
@@ -1403,12 +1403,12 @@
       "uptime": {
         "oORXfTviuCs": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1431,7 +1431,7 @@
           "title": "Djuma Cam Live Stream",
           "author": "Djuma Cam",
           "status": "live",
-          "detail": "live now, 77 watching",
+          "detail": "live now, 66 watching",
           "videoId": "iUdDKf9aDUU"
         }
       ],
@@ -1450,7 +1450,7 @@
       "uptime": {
         "iUdDKf9aDUU": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1467,7 +1467,7 @@
           "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 2 watching",
           "videoId": "mxEholKv57A"
         }
       ],
@@ -1490,7 +1490,7 @@
       "uptime": {
         "mxEholKv57A": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1507,7 +1507,7 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 69 watching",
+          "detail": "live now, 65 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
@@ -1515,7 +1515,7 @@
       "uptime": {
         "Mm_zVDDUeNA": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1567,6 +1567,10 @@
             "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
+            "videoId": "QDyspy8DUpU",
+            "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai"
+          },
+          {
             "videoId": "DoUOrTJbIu4",
             "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
           },
@@ -1575,8 +1579,8 @@
             "title": "Snake River Cabins - SeeJH.ai"
           },
           {
-            "videoId": "QDyspy8DUpU",
-            "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai"
+            "videoId": "B_waF26In9o",
+            "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
           },
           {
             "videoId": "qi6QKB-sJRI",
@@ -1589,10 +1593,6 @@
           {
             "videoId": "Zj0pXlq2-jI",
             "title": "Town Square Webcam - Northeast - SeeJH.com"
-          },
-          {
-            "videoId": "B_waF26In9o",
-            "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai"
           },
           {
             "videoId": "1EiC9bvVGnk",
@@ -1635,12 +1635,12 @@
             "title": "Flat Creek Inn Office - SeeJH.ai"
           },
           {
-            "videoId": "a5jEZeNTAsE",
-            "title": "Grand Targhee Resort Summit - SeeJH.ai"
-          },
-          {
             "videoId": "fQiA_DZT0cE",
             "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com"
+          },
+          {
+            "videoId": "a5jEZeNTAsE",
+            "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
             "videoId": "IvZ22jZgvOI",
@@ -1651,12 +1651,12 @@
       "uptime": {
         "_2rvoH5oDcg": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 0.8877551020408163
         },
         "kIZp6fUSpS0": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1673,7 +1673,7 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 83 watching",
+          "detail": "live now, 29 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
@@ -1684,12 +1684,16 @@
             "title": "Live Jelly Cam | Monterey Bay Aquarium"
           },
           {
+            "videoId": "1VBPxAkaNDU",
+            "title": "Live Coral Reef Cam | Monterey Bay Aquarium"
+          },
+          {
             "videoId": "QWGYS9IOqYc",
             "title": "Live African Penguin Cam | Monterey Bay Aquarium"
           },
           {
-            "videoId": "1VBPxAkaNDU",
-            "title": "Live Coral Reef Cam | Monterey Bay Aquarium"
+            "videoId": "tEtg5Kg3voQ",
+            "title": "Live Shark Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "w3LjpFhySTg",
@@ -1698,10 +1702,6 @@
           {
             "videoId": "zL68biE6wAs",
             "title": "Live Moon Jelly Cam | Monterey Bay Aquarium"
-          },
-          {
-            "videoId": "tEtg5Kg3voQ",
-            "title": "Live Shark Cam | Monterey Bay Aquarium"
           },
           {
             "videoId": "abbR-Ttd-cA",
@@ -1728,7 +1728,7 @@
       "uptime": {
         "fVa6-zCBR7A": {
           "samples": 98,
-          "days": 29.9,
+          "days": 30,
           "uptime": 1
         }
       }
@@ -1866,23 +1866,23 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "QWGYS9IOqYc",
-      "title": "Live African Penguin Cam | Monterey Bay Aquarium",
-      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
-    },
-    {
       "videoId": "1VBPxAkaNDU",
       "title": "Live Coral Reef Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "zL68biE6wAs",
-      "title": "Live Moon Jelly Cam | Monterey Bay Aquarium",
+      "videoId": "QWGYS9IOqYc",
+      "title": "Live African Penguin Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
       "videoId": "tEtg5Kg3voQ",
       "title": "Live Shark Cam | Monterey Bay Aquarium",
+      "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
+    },
+    {
+      "videoId": "zL68biE6wAs",
+      "title": "Live Moon Jelly Cam | Monterey Bay Aquarium",
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
@@ -1906,7 +1906,7 @@
       "channel": "UCnM5iMGiKsZg-iOlIO2ZkdQ"
     },
     {
-      "videoId": "-m_nQT62B4Y",
+      "videoId": "OOT6YlOYgaU",
       "title": "Kitten Rescue Cat Cam powered by EXPLORE.org",
       "channel": "UC-2KSeUU5SMCX6XLRD-AEvw"
     },
@@ -1986,11 +1986,6 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "o5Ie_LpZ9uk",
-      "title": "EarthCam Live:  Statue of Liberty",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
       "videoId": "zMCea32gpmg",
       "title": "EarthCam Live:  Abbey Road Crossing (London, England)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
@@ -2011,6 +2006,11 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
+      "videoId": "o5Ie_LpZ9uk",
+      "title": "EarthCam Live:  Statue of Liberty",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
       "videoId": "KHy_n-EMWY8",
       "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
@@ -2018,6 +2018,11 @@
     {
       "videoId": "tErYxn2UM5Y",
       "title": "EarthCam Live:  Brooklyn Bridge Cam",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "XoANQufSSXY",
+      "title": "EarthCam Live:  Ruidoso, New Mexico",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2031,18 +2036,8 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "H67j7H-7QD0",
-      "title": "EarthCam Live:  Coney Island (New York City)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
       "videoId": "OBgCrw-IyhE",
       "title": "EarthCam Live:  Seaside Heights, NJ - North View",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "3nyPER2kzqk",
-      "title": "EarthCam Live: Dublin, Ireland",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2051,13 +2046,18 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "ZYQlLQHz2Mg",
-      "title": "9/11 Memorial &amp; Museum",
+      "videoId": "3nyPER2kzqk",
+      "title": "EarthCam Live: Dublin, Ireland",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
       "videoId": "77akujLn4k8",
       "title": "EarthCam Live - Western Wall  (Jerusalem, Israel)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "ZYQlLQHz2Mg",
+      "title": "9/11 Memorial &amp; Museum",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2086,6 +2086,11 @@
       "channel": "@Seejh"
     },
     {
+      "videoId": "QDyspy8DUpU",
+      "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
       "videoId": "DoUOrTJbIu4",
       "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai",
       "channel": "@Seejh"
@@ -2096,8 +2101,8 @@
       "channel": "@Seejh"
     },
     {
-      "videoId": "QDyspy8DUpU",
-      "title": "Alpine Valley RV Park - Alpine, WY - SeeJH.ai",
+      "videoId": "B_waF26In9o",
+      "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
@@ -2108,11 +2113,6 @@
     {
       "videoId": "Zj0pXlq2-jI",
       "title": "Town Square Webcam - Northeast - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "B_waF26In9o",
-      "title": "Jackson Town Square Live PTZ webcam - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
@@ -2156,13 +2156,13 @@
       "channel": "@Seejh"
     },
     {
-      "videoId": "a5jEZeNTAsE",
-      "title": "Grand Targhee Resort Summit - SeeJH.ai",
+      "videoId": "fQiA_DZT0cE",
+      "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com",
       "channel": "@Seejh"
     },
     {
-      "videoId": "fQiA_DZT0cE",
-      "title": "Grand Targhee Resort Dreamcatcher - SeeJH.com",
+      "videoId": "a5jEZeNTAsE",
+      "title": "Grand Targhee Resort Summit - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
