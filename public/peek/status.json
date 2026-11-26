@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T21:42:38.509Z",
+  "checkedAt": "2026-11-26T08:19:41.650Z",
   "mode": "api",
   "streams": {
     "namib": {
@@ -14,7 +14,7 @@
           "title": "Namibia: Live stream in the Namib Desert",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 343 watching",
+          "detail": "live now, 574 watching",
           "videoId": "ydYDqZQpim8"
         }
       ],
@@ -40,8 +40,8 @@
       },
       "uptime": {
         "ydYDqZQpim8": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -59,27 +59,27 @@
           "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
           "author": "フジヤマNAVI",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 7 watching",
           "videoId": "Sv9hcJ3k5h4"
         },
         {
           "title": "【LIVE】河口湖大石公園からの「富士山ライブカメラ」 \"mount fuji live camera\" from Lake Kawaguchiko Oishi Park  (Japan)",
           "author": "【KTV】ケーブルテレビ河口湖",
           "status": "live",
-          "detail": "live now, 31 watching",
+          "detail": "live now, 48 watching",
           "videoId": "bdUbACCWmoY"
         }
       ],
       "scouted": {},
       "uptime": {
         "Sv9hcJ3k5h4": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "bdUbACCWmoY": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -96,7 +96,7 @@
           "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ",
           "author": "I Love You Venice",
           "status": "live",
-          "detail": "live now, 11 watching",
+          "detail": "live now, 9 watching",
           "videoId": "nviU2HYj-Jc"
         },
         {
@@ -111,6 +111,74 @@
       "scouted": {
         "UCMpn1qLudF-zb4M4bqxLIbw": [
           {
+            "videoId": "GQbUdGhHw_o",
+            "title": "🔴 4K View of the Ponte delle Guglie and Strada Nova - Live Stream from Hotel Marte Venice"
+          },
+          {
+            "videoId": "r8N6IsoIkTk",
+            "title": "🔴 4K Live Webcam on Grand Canal, Venice - Live Stream from Ristorante Trattoria Povoledo"
+          },
+          {
+            "videoId": "V7YQ_vYyz38",
+            "title": "🔴 Bacino di San Marco from Via Garibaldi - Live View from Hotel Ca&#39; Formenta Venezia"
+          },
+          {
+            "videoId": "JFpV_LBgK3M",
+            "title": "🔴 Termini Beach Hotel &amp; Suites **** - Jesolo Lido (VE) - Live Cam Jesolo - 4k Live Cam"
+          },
+          {
+            "videoId": "CJLrYIS7NFg",
+            "title": "🔴 Venezia Italia Live Webcam - Campo Santa Maria Formosa Venice - Stream from Ruzzini Palace Hotel"
+          },
+          {
+            "videoId": "i10aOLMK76k",
+            "title": "🔴 Live Cam around the World - Rolling Cam with Chill &amp; Lounge Music"
+          },
+          {
+            "videoId": "9r4CJfpflmA",
+            "title": "🔴 4K Live Webcam on Scalzi bridge, Venice - Live Stream from the new 4**** Hotel U-Visionary Venice"
+          },
+          {
+            "videoId": "Ts4cAVmJrWE",
+            "title": "🔴 4k Venice Live Cam - Laguna of Venice with 4K Cam PTZ 30x - Stream from Cantieri Biasin"
+          },
+          {
+            "videoId": "IByOruhl2ik",
+            "title": "🔴 4K Live Cam - Chioggia Sottomarina - Live Streaming from Hotel Park Chioggia (Venice) - 4K"
+          },
+          {
+            "videoId": "nviU2HYj-Jc",
+            "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ"
+          },
+          {
+            "videoId": "3LGl860wEaY",
+            "title": "🔴 Bagni Miki - Chioggia Sottomarina (Venezia) - Live Full HD"
+          },
+          {
+            "videoId": "aaJT8y3zfWs",
+            "title": "🔴 Venice Italy Live Camera - Grand Canal in Live Streaming from Ca&#39; Angeli"
+          },
+          {
+            "videoId": "k66z_r1C1vM",
+            "title": "🔴 Webcam - Live Streaming from Chioggia Sottomarina (Venezia) - Live HD"
+          },
+          {
+            "videoId": "C9EKnYzYt9o",
+            "title": "Venice Italy Live - Live Streaming of Teatro La Fenice area"
+          },
+          {
+            "videoId": "tdE-Uu87XmE",
+            "title": "🔴 Spectacular View of Grand Canal - Live view from Hotel San Cassiano"
+          },
+          {
+            "videoId": "-wMWwWQiFgI",
+            "title": "🔴 Venice Italy Live Cam - Laguna Nord Venice - Stream from Cantieri Biasin - Instant Weather"
+          },
+          {
+            "videoId": "zKGzYuT5tg0",
+            "title": "🔴 4K Venice Italy Live - Live Streaming of Grand Canal from Ca&#39; Angeli"
+          },
+          {
             "videoId": "a1mcaV3Sf9U",
             "title": "🔴 LIVE 24/7  Rolling Cam Venice - Live Cam in Venice Italy - Livecam en direct #venice"
           },
@@ -119,104 +187,36 @@
             "title": "🔴 Venice Italy Live WebCam - The View on Canal from Hotel Pausania"
           },
           {
-            "videoId": "IByOruhl2ik",
-            "title": "🔴 4K Live Cam - Chioggia Sottomarina - Live Streaming from Hotel Park Chioggia (Venice) - 4K"
-          },
-          {
-            "videoId": "Ts4cAVmJrWE",
-            "title": "🔴 4k Venice Live Cam - Laguna of Venice with 4K Cam PTZ 30x - Stream from Cantieri Biasin"
-          },
-          {
-            "videoId": "GQbUdGhHw_o",
-            "title": "🔴 4K View of the Ponte delle Guglie and Strada Nova - Live Stream from Hotel Marte Venice"
-          },
-          {
-            "videoId": "V7YQ_vYyz38",
-            "title": "🔴 Bacino di San Marco from Via Garibaldi - Live View from Hotel Ca&#39; Formenta Venezia"
-          },
-          {
-            "videoId": "gzgrofStPJ0",
-            "title": "🔴 Venice Italy Live Webcam - Dorsoduro in Live Streaming from Hotel American Dinesen - Full HD"
-          },
-          {
-            "videoId": "JFpV_LBgK3M",
-            "title": "🔴 Termini Beach Hotel &amp; Suites **** - Jesolo Lido (VE) - Live Cam Jesolo - 4k Live Cam"
-          },
-          {
-            "videoId": "7-XBRpKSv4Q",
-            "title": "🔴 4K Live Webcam Venice - St. Mark&#39;s Basin in Live Streaming from Tribute to Music Venice"
-          },
-          {
-            "videoId": "C9EKnYzYt9o",
-            "title": "Venice Italy Live - Live Streaming of Teatro La Fenice area"
-          },
-          {
-            "videoId": "r8N6IsoIkTk",
-            "title": "🔴 4K Live Webcam on Grand Canal, Venice - Live Stream from Ristorante Trattoria Povoledo"
-          },
-          {
-            "videoId": "zKGzYuT5tg0",
-            "title": "🔴 4K Venice Italy Live - Live Streaming of Grand Canal from Ca&#39; Angeli"
-          },
-          {
-            "videoId": "nviU2HYj-Jc",
-            "title": "🔴 4k Venice Italy Live Cam - Rialto Bridge Live Streaming from Palazzo Bembo - Live Webcam - ライブカメラ"
-          },
-          {
-            "videoId": "i10aOLMK76k",
-            "title": "🔴 Live Cam around the World - Rolling Cam with Chill &amp; Lounge Music"
-          },
-          {
             "videoId": "mt7uE-n0YPI",
             "title": "🔴 4K Live Cam of Ponte delle Guglie Venice - View from Hotel Leone Venezia  - Live stream ライブカメラ"
-          },
-          {
-            "videoId": "CJLrYIS7NFg",
-            "title": "🔴 Venezia Italia Live Webcam - Campo Santa Maria Formosa Venice - Stream from Ruzzini Palace Hotel"
           },
           {
             "videoId": "ASqGNET31VY",
             "title": "🔴 Venice Live Cam - San Marco Basin in Live Streaming - Webcam en direct ベネチア ライブ"
           },
           {
-            "videoId": "9r4CJfpflmA",
-            "title": "🔴 4K Live Webcam on Scalzi bridge, Venice - Live Stream from the new 4**** Hotel U-Visionary Venice"
-          },
-          {
-            "videoId": "aaJT8y3zfWs",
-            "title": "🔴 Venice Italy Live Camera - Grand Canal in Live Streaming from Ca&#39; Angeli"
-          },
-          {
-            "videoId": "tdE-Uu87XmE",
-            "title": "🔴 Spectacular View of Grand Canal - Live view from Hotel San Cassiano"
-          },
-          {
-            "videoId": "3LGl860wEaY",
-            "title": "🔴 Bagni Miki - Chioggia Sottomarina (Venezia) - Live Full HD"
-          },
-          {
-            "videoId": "k66z_r1C1vM",
-            "title": "🔴 Webcam - Live Streaming from Chioggia Sottomarina (Venezia) - Live HD"
-          },
-          {
-            "videoId": "-wMWwWQiFgI",
-            "title": "🔴 Venice Italy Live Cam - Laguna Nord Venice - Stream from Cantieri Biasin - Instant Weather"
-          },
-          {
             "videoId": "I6o7UWEaSbw",
             "title": "🔴 ♫ Live Piano Music - Live 24/7: focus music, study music, relaxing music ♫"
+          },
+          {
+            "videoId": "7-XBRpKSv4Q",
+            "title": "🔴 4K Live Webcam Venice - St. Mark&#39;s Basin in Live Streaming from Tribute to Music Venice"
+          },
+          {
+            "videoId": "gzgrofStPJ0",
+            "title": "🔴 Venice Italy Live Webcam - Dorsoduro in Live Streaming from Hotel American Dinesen - Full HD"
           }
         ]
       },
       "uptime": {
         "nviU2HYj-Jc": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "a1mcaV3Sf9U": {
-          "samples": 8,
-          "days": 3.6,
+          "samples": 9,
+          "days": 4.1,
           "uptime": 0
         }
       }
@@ -258,7 +258,7 @@
           "title": "Live Kelp Forest Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 227 watching",
+          "detail": "live now, 61 watching",
           "videoId": "w3LjpFhySTg"
         }
       ],
@@ -312,8 +312,8 @@
       },
       "uptime": {
         "w3LjpFhySTg": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -361,8 +361,8 @@
       "scouted": {},
       "uptime": {
         "Lk0Z5ExUWL0": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -379,15 +379,15 @@
           "title": "🔴 Mersea Restaurant LIVE Bay View · San Francisco Skyline, Golden Gate & Luxury Waterfront 🌉",
           "author": "Teleport.camera",
           "status": "live",
-          "detail": "live now, 88 watching",
+          "detail": "live now, 40 watching",
           "videoId": "BSWhGNXxT9A"
         }
       ],
       "scouted": {},
       "uptime": {
         "BSWhGNXxT9A": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -413,7 +413,7 @@
           "title": "LIVE Elephant Cam: Tembe Elephant Park - South Africa - Africam | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 20 watching",
+          "detail": "live now, 50 watching",
           "videoId": "0P_LBKqVbfs"
         }
       ],
@@ -455,8 +455,8 @@
       },
       "uptime": {
         "0P_LBKqVbfs": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -481,16 +481,12 @@
           "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now, 2 watching",
+          "detail": "live now",
           "videoId": "jOqASqt3vVI"
         }
       ],
       "scouted": {
         "@TableMountainLiveStream": [
-          {
-            "videoId": "mxEholKv57A",
-            "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
-          },
           {
             "videoId": "vOLCjL4kv-w",
             "title": "LIVE Table Mountain &amp; Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream"
@@ -498,18 +494,22 @@
           {
             "videoId": "jOqASqt3vVI",
             "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa"
+          },
+          {
+            "videoId": "mxEholKv57A",
+            "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
           }
         ]
       },
       "uptime": {
         "vOLCjL4kv-w": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "jOqASqt3vVI": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -526,7 +526,7 @@
           "title": "WebcamSydney 1 Live Stream of Harbour 24/7 (~4K)",
           "author": "WebcamSydney",
           "status": "live",
-          "detail": "live now, 219 watching",
+          "detail": "live now, 225 watching",
           "videoId": "5uZa3-RMFos"
         }
       ],
@@ -545,8 +545,8 @@
       },
       "uptime": {
         "5uZa3-RMFos": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -560,48 +560,60 @@
       "scouted": {
         "UC6qrG3W8SMK0jior2olka3g": [
           {
-            "videoId": "Syl86r2ChtM",
-            "title": "EarthCamTV 3 Live:  Trending Cams"
-          },
-          {
             "videoId": "mG2gAWY_Guw",
             "title": "EarthCam Live:  Washington Monument (Washington, D.C.)"
-          },
-          {
-            "videoId": "ZxCeWQ3Lcig",
-            "title": "EarthCam Live:  Times Square North 4K"
-          },
-          {
-            "videoId": "8ShrAk0RPrQ",
-            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           },
           {
             "videoId": "mNtcktpcbtU",
             "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
           },
           {
-            "videoId": "WHve7zk9jds",
-            "title": "EarthCam Live:  Spirit Lake, Iowa"
+            "videoId": "8ShrAk0RPrQ",
+            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
+          },
+          {
+            "videoId": "Syl86r2ChtM",
+            "title": "EarthCamTV 3 Live:  Trending Cams"
           },
           {
             "videoId": "b0_xx0YRq3E",
             "title": "EarthCam Live:  Lincoln Harbor (New York City)"
           },
           {
-            "videoId": "W9ghgZD6Ugw",
-            "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
+            "videoId": "WHve7zk9jds",
+            "title": "EarthCam Live:  Spirit Lake, Iowa"
           },
           {
-            "videoId": "ieIn2xxR6Ho",
-            "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)"
+            "videoId": "W9ghgZD6Ugw",
+            "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
           },
           {
             "videoId": "dNVxDS5VUmY",
             "title": "EarthCam Live:  Wildwoods Cam (Wildwood, NJ)"
           },
           {
-            "videoId": "kLoFxVhRWtQ",
-            "title": "EarthCam Live:  Roswell, New Mexico"
+            "videoId": "ieIn2xxR6Ho",
+            "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)"
+          },
+          {
+            "videoId": "OSI8qWMoK5E",
+            "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)"
+          },
+          {
+            "videoId": "F1EQEDL4ddU",
+            "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)"
+          },
+          {
+            "videoId": "KHy_n-EMWY8",
+            "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
+          },
+          {
+            "videoId": "KJuGU7v5oYw",
+            "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
+          },
+          {
+            "videoId": "77akujLn4k8",
+            "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)"
           },
           {
             "videoId": "XoANQufSSXY",
@@ -612,52 +624,40 @@
             "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "OSI8qWMoK5E",
-            "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)"
-          },
-          {
-            "videoId": "KHy_n-EMWY8",
-            "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
-          },
-          {
-            "videoId": "77akujLn4k8",
-            "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)"
+            "videoId": "zMCea32gpmg",
+            "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
           },
           {
             "videoId": "YeEMPcYCbgQ",
             "title": "EarthCam Live:  Cayman Islands"
           },
           {
+            "videoId": "kLoFxVhRWtQ",
+            "title": "EarthCam Live:  Roswell, New Mexico"
+          },
+          {
             "videoId": "xqdukYhcGEU",
             "title": "EarthCam Live: New Orleans Street View"
           },
           {
-            "videoId": "F1EQEDL4ddU",
-            "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)"
+            "videoId": "TPGY7UYzbKw",
+            "title": "EarthCam Live: Snowman Cam - Animals and Wildlife (Gaylord, Michigan)"
           },
           {
-            "videoId": "P3sGke9M59o",
-            "title": "EarthCam Live: Philadelphia, PA"
+            "videoId": "o5Ie_LpZ9uk",
+            "title": "EarthCam Live:  Statue of Liberty"
           },
           {
-            "videoId": "zMCea32gpmg",
-            "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
+            "videoId": "QxFFjXu_zqs",
+            "title": "EarthCam Live: New Orleans Balcony View"
+          },
+          {
+            "videoId": "2_PDaUJbfuI",
+            "title": "EarthCam Live:  SUMMIT One Vanderbilt (New York City, NY)"
           },
           {
             "videoId": "Ez6xC43MMTQ",
             "title": "EarthCam Live:  Madison, Indiana"
-          },
-          {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
-          },
-          {
-            "videoId": "KJuGU7v5oYw",
-            "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
-          },
-          {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
           }
         ]
       },
@@ -719,7 +719,7 @@
           "title": "Tropical Reef Camera powered by EXPLORE.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 190 watching",
+          "detail": "live now, 71 watching",
           "videoId": "DHUnz4dyb54"
         }
       ],
@@ -761,8 +761,8 @@
       },
       "uptime": {
         "DHUnz4dyb54": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -790,21 +790,21 @@
           "title": "[V1cam] Kīlauea volcano, Hawaii (west Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 485 watching",
+          "detail": "live now, 296 watching",
           "videoId": "HggWKlZv9yk"
         },
         {
           "title": "[V2cam] Kīlauea volcano, Hawaii (east Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 87 watching",
+          "detail": "live now, 43 watching",
           "videoId": "f9-oSpYpubg"
         },
         {
           "title": "[V3cam] Kīlauea volcano, Hawaii (south Halemaʻumaʻu crater)",
           "author": "USGS",
           "status": "live",
-          "detail": "live now, 396 watching",
+          "detail": "live now, 239 watching",
           "videoId": "gXKuUyKt8mc"
         }
       ],
@@ -826,39 +826,31 @@
       },
       "uptime": {
         "HggWKlZv9yk": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "f9-oSpYpubg": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "gXKuUyKt8mc": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
     },
     "tetons": {
-      "ok": true,
-      "playable": [
-        "WeeDyqRKqVI"
-      ],
+      "ok": false,
+      "playable": [],
       "dead": [
         "j-0fhrHzEiM",
         "Jqo7Z9QiOEQ",
         "o4fKtgPVpoU"
       ],
-      "autoFound": [
-        {
-          "videoId": "WeeDyqRKqVI",
-          "title": "Turpin Meadow Ranch - Near Grand Teton Park",
-          "status": "live"
-        }
-      ],
+      "autoFound": [],
       "sources": [
         {
           "title": "EGVB - Grand Teton Webcam",
@@ -889,80 +881,64 @@
             "title": "Spring Creek Ranch - SeeJH.ai"
           },
           {
-            "videoId": "_2rvoH5oDcg",
-            "title": "National Museum of Wildlife Art - Live Elk Refuge"
-          },
-          {
-            "videoId": "DyvzXyJ_fVg",
-            "title": "Togwotee Mountain Lodge - SeeJH.com"
-          },
-          {
-            "videoId": "9ID7fhbc_s0",
-            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
-          },
-          {
             "videoId": "YALaT1P39xs",
             "title": "Jackson WY Town Square North Cache - SeeJH.ai"
+          },
+          {
+            "videoId": "V7OOTqQtS3w",
+            "title": "Teton Village, WY - SeeJH.ai"
           },
           {
             "videoId": "Y8N3e2jFq_Y",
             "title": "SeeJH.ai HQ - Jackson Hole, Wyoming"
           },
           {
-            "videoId": "JVknJ-Ui8xQ",
-            "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com"
+            "videoId": "KG7e4Qaap1g",
+            "title": "Snow King Mountain Base - SeeJH.ai"
           },
           {
-            "videoId": "DoUOrTJbIu4",
-            "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
-          },
-          {
-            "videoId": "j-0fhrHzEiM",
-            "title": "EGVB - Grand Teton Webcam"
-          },
-          {
-            "videoId": "qi6QKB-sJRI",
-            "title": "Grand Targhee Driggs Habitat - SeeJH.com"
-          },
-          {
-            "videoId": "eHL_FJOoVTE",
-            "title": "Grand Targhee Resort Plaza - SeeJH.com"
-          },
-          {
-            "videoId": "3mE_mpsx_nU",
-            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
+            "videoId": "9ID7fhbc_s0",
+            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "0lPQ2vjNN7E",
             "title": "Snake River Cabins - SeeJH.ai"
           },
           {
-            "videoId": "fQiA_DZT0cE",
-            "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai"
+            "videoId": "qi6QKB-sJRI",
+            "title": "Grand Targhee Driggs Habitat - SeeJH.com"
           },
           {
-            "videoId": "Jqo7Z9QiOEQ",
-            "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com"
+            "videoId": "DoUOrTJbIu4",
+            "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
           },
           {
-            "videoId": "KG7e4Qaap1g",
-            "title": "Snow King Mountain Base - SeeJH.ai"
+            "videoId": "Zj0pXlq2-jI",
+            "title": "Town Square Webcam - Northeast - SeeJH.com"
+          },
+          {
+            "videoId": "JVknJ-Ui8xQ",
+            "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com"
+          },
+          {
+            "videoId": "1EiC9bvVGnk",
+            "title": "Jackson Hole Town Square Live Webcam | Jackson, Wyoming | SeeJH.ai"
           },
           {
             "videoId": "L6vwrxDc3TA",
             "title": "Rustic Inn @ Jackson Hole - SeeJH.ai"
           },
           {
-            "videoId": "vj9YZyLRzZU",
-            "title": "South Fork River - The Lodge at Palisades Creek - SeeJH.com"
+            "videoId": "DyvzXyJ_fVg",
+            "title": "Togwotee Mountain Lodge - SeeJH.com"
           },
           {
-            "videoId": "3UzgSRYzDEQ",
-            "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com"
+            "videoId": "Jqo7Z9QiOEQ",
+            "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com"
           },
           {
-            "videoId": "IvZ22jZgvOI",
-            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+            "videoId": "fQiA_DZT0cE",
+            "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai"
           },
           {
             "videoId": "U2Zgr0nJxxg",
@@ -973,34 +949,50 @@
             "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
-            "videoId": "B4KTi91qL-4",
-            "title": "Grand Targhee Resort Stick of Truth"
-          },
-          {
-            "videoId": "WeeDyqRKqVI",
-            "title": "Turpin Meadow Ranch - Near Grand Teton Park"
+            "videoId": "3mE_mpsx_nU",
+            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
           },
           {
             "videoId": "r-7zA9fAg1c",
             "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
+          },
+          {
+            "videoId": "IvZ22jZgvOI",
+            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+          },
+          {
+            "videoId": "j-0fhrHzEiM",
+            "title": "EGVB - Grand Teton Webcam"
+          },
+          {
+            "videoId": "eHL_FJOoVTE",
+            "title": "Grand Targhee Resort Plaza - SeeJH.com"
+          },
+          {
+            "videoId": "Ob642-kNnQU",
+            "title": "Hoback River Jackson Hole Wyoming - SeeJH.com"
+          },
+          {
+            "videoId": "IfENy4khApE",
+            "title": "Jackson Hole Rodeo - SeeJH.ai"
           }
         ]
       },
       "uptime": {
         "j-0fhrHzEiM": {
-          "samples": 72,
-          "days": 30,
-          "uptime": 0.9722222222222222
+          "samples": 71,
+          "days": 29.8,
+          "uptime": 0.9577464788732394
         },
         "Jqo7Z9QiOEQ": {
-          "samples": 72,
-          "days": 30,
-          "uptime": 0.1527777777777778
+          "samples": 71,
+          "days": 29.8,
+          "uptime": 0.1267605633802817
         },
         "o4fKtgPVpoU": {
-          "samples": 72,
-          "days": 30,
-          "uptime": 0.9583333333333334
+          "samples": 71,
+          "days": 29.8,
+          "uptime": 0.9436619718309859
         }
       }
     },
@@ -1016,55 +1008,67 @@
           "title": "EarthCam Live:  Niagara Falls",
           "author": "EarthCam",
           "status": "live",
-          "detail": "live now, 8 watching",
+          "detail": "live now, 10 watching",
           "videoId": "qx7gry390YA"
         }
       ],
       "scouted": {
         "UC6qrG3W8SMK0jior2olka3g": [
           {
-            "videoId": "Syl86r2ChtM",
-            "title": "EarthCamTV 3 Live:  Trending Cams"
-          },
-          {
             "videoId": "mG2gAWY_Guw",
             "title": "EarthCam Live:  Washington Monument (Washington, D.C.)"
-          },
-          {
-            "videoId": "ZxCeWQ3Lcig",
-            "title": "EarthCam Live:  Times Square North 4K"
-          },
-          {
-            "videoId": "8ShrAk0RPrQ",
-            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
           },
           {
             "videoId": "mNtcktpcbtU",
             "title": "EarthCam Live:  Giraffe Paddock  Cam - Greenville, SC"
           },
           {
-            "videoId": "WHve7zk9jds",
-            "title": "EarthCam Live:  Spirit Lake, Iowa"
+            "videoId": "8ShrAk0RPrQ",
+            "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC"
+          },
+          {
+            "videoId": "Syl86r2ChtM",
+            "title": "EarthCamTV 3 Live:  Trending Cams"
           },
           {
             "videoId": "b0_xx0YRq3E",
             "title": "EarthCam Live:  Lincoln Harbor (New York City)"
           },
           {
-            "videoId": "W9ghgZD6Ugw",
-            "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
+            "videoId": "WHve7zk9jds",
+            "title": "EarthCam Live:  Spirit Lake, Iowa"
           },
           {
-            "videoId": "ieIn2xxR6Ho",
-            "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)"
+            "videoId": "W9ghgZD6Ugw",
+            "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)"
           },
           {
             "videoId": "dNVxDS5VUmY",
             "title": "EarthCam Live:  Wildwoods Cam (Wildwood, NJ)"
           },
           {
-            "videoId": "kLoFxVhRWtQ",
-            "title": "EarthCam Live:  Roswell, New Mexico"
+            "videoId": "ieIn2xxR6Ho",
+            "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)"
+          },
+          {
+            "videoId": "OSI8qWMoK5E",
+            "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)"
+          },
+          {
+            "videoId": "F1EQEDL4ddU",
+            "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)"
+          },
+          {
+            "videoId": "KHy_n-EMWY8",
+            "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
+          },
+          {
+            "videoId": "KJuGU7v5oYw",
+            "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
+          },
+          {
+            "videoId": "77akujLn4k8",
+            "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)"
           },
           {
             "videoId": "XoANQufSSXY",
@@ -1075,59 +1079,47 @@
             "title": "EarthCam Live:  Council Bluffs, Iowa"
           },
           {
-            "videoId": "OSI8qWMoK5E",
-            "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)"
-          },
-          {
-            "videoId": "KHy_n-EMWY8",
-            "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)"
-          },
-          {
-            "videoId": "77akujLn4k8",
-            "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)"
+            "videoId": "zMCea32gpmg",
+            "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
           },
           {
             "videoId": "YeEMPcYCbgQ",
             "title": "EarthCam Live:  Cayman Islands"
           },
           {
+            "videoId": "kLoFxVhRWtQ",
+            "title": "EarthCam Live:  Roswell, New Mexico"
+          },
+          {
             "videoId": "xqdukYhcGEU",
             "title": "EarthCam Live: New Orleans Street View"
           },
           {
-            "videoId": "F1EQEDL4ddU",
-            "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)"
+            "videoId": "TPGY7UYzbKw",
+            "title": "EarthCam Live: Snowman Cam - Animals and Wildlife (Gaylord, Michigan)"
           },
           {
-            "videoId": "P3sGke9M59o",
-            "title": "EarthCam Live: Philadelphia, PA"
+            "videoId": "o5Ie_LpZ9uk",
+            "title": "EarthCam Live:  Statue of Liberty"
           },
           {
-            "videoId": "zMCea32gpmg",
-            "title": "EarthCam Live:  Abbey Road Crossing (London, England)"
+            "videoId": "QxFFjXu_zqs",
+            "title": "EarthCam Live: New Orleans Balcony View"
+          },
+          {
+            "videoId": "2_PDaUJbfuI",
+            "title": "EarthCam Live:  SUMMIT One Vanderbilt (New York City, NY)"
           },
           {
             "videoId": "Ez6xC43MMTQ",
             "title": "EarthCam Live:  Madison, Indiana"
-          },
-          {
-            "videoId": "3nyPER2kzqk",
-            "title": "EarthCam Live: Dublin, Ireland"
-          },
-          {
-            "videoId": "KJuGU7v5oYw",
-            "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)"
-          },
-          {
-            "videoId": "ZYQlLQHz2Mg",
-            "title": "9/11 Memorial &amp; Museum"
           }
         ]
       },
       "uptime": {
         "qx7gry390YA": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1144,7 +1136,7 @@
           "title": "LIVE Brooks Falls - Katmai National Park, Alaska 2026 | explore.org",
           "author": "Explore Live Nature Cams",
           "status": "live",
-          "detail": "live now, 374 watching",
+          "detail": "live now, 215 watching",
           "videoId": "J7ZrIDvqlic"
         }
       ],
@@ -1186,8 +1178,8 @@
       },
       "uptime": {
         "J7ZrIDvqlic": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1205,14 +1197,14 @@
           "title": "Namibia: Live stream at the Okaukuejo waterhole in Etosha National Park, Namibia",
           "author": "NamibiaCam",
           "status": "live",
-          "detail": "live now, 152 watching",
+          "detail": "live now, 110 watching",
           "videoId": "AeMUdOPFcXI"
         },
         {
           "title": "Okaukuejo Resort, Wildlife Waterhole: Live camera stream in the Etosha National Park in Namibia",
           "author": "Namibia Wildlife Resorts",
           "status": "live",
-          "detail": "live now, 181 watching",
+          "detail": "live now, 73 watching",
           "videoId": "JMMoRwYo5kE"
         }
       ],
@@ -1244,13 +1236,13 @@
       },
       "uptime": {
         "AeMUdOPFcXI": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "JMMoRwYo5kE": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1269,7 +1261,7 @@
           "title": "LIVE Main Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 7 watching",
+          "detail": "live now, 6 watching",
           "videoId": "-7GOA9KIWcs"
         },
         {
@@ -1283,7 +1275,7 @@
           "title": "LIVE Fig Tree Crossing: Masai Mara Great Migration River Crossing - Africam | explore.org",
           "author": "Explore Africa",
           "status": "live",
-          "detail": "live now, 3 watching",
+          "detail": "live now, 2 watching",
           "videoId": "Io1Kle7QR-E"
         }
       ],
@@ -1325,18 +1317,18 @@
       },
       "uptime": {
         "-7GOA9KIWcs": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "BaEFc79IMCA": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "Io1Kle7QR-E": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1354,7 +1346,7 @@
           "title": "LIVE Watering Hole in Kenya - MPALA | explore.org",
           "author": "Explore African Wildlife",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now, 3 watching",
           "videoId": "oORXfTviuCs"
         },
         {
@@ -1403,13 +1395,13 @@
       },
       "uptime": {
         "oORXfTviuCs": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         },
         "7x5kRo1B84Y": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1458,9 +1450,9 @@
       },
       "uptime": {
         "iUdDKf9aDUU": {
-          "samples": 72,
-          "days": 30,
-          "uptime": 0.6805555555555556
+          "samples": 71,
+          "days": 29.8,
+          "uptime": 0.6619718309859155
         }
       }
     },
@@ -1476,16 +1468,12 @@
           "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream",
           "author": "Table Mountain Live Stream",
           "status": "live",
-          "detail": "live now",
+          "detail": "live now, 2 watching",
           "videoId": "mxEholKv57A"
         }
       ],
       "scouted": {
         "@TableMountainLiveStream": [
-          {
-            "videoId": "mxEholKv57A",
-            "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
-          },
           {
             "videoId": "vOLCjL4kv-w",
             "title": "LIVE Table Mountain &amp; Bloubergstrand Beach Camera | 24/7 Cape Town South Africa Live Stream"
@@ -1493,13 +1481,17 @@
           {
             "videoId": "jOqASqt3vVI",
             "title": "Table Mountain Live Stream | Cape Town Webcam | South Africa"
+          },
+          {
+            "videoId": "mxEholKv57A",
+            "title": "LIVE Langebaan Lagoon Camera | Pearly’s Restaurant | 24/7 South Africa Live Stream"
           }
         ]
       },
       "uptime": {
         "mxEholKv57A": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1516,15 +1508,15 @@
           "title": "Northern Royal Albatross Cam - NZ Dept. of Conservation #RoyalCam | Cornell Lab",
           "author": "Cornell Lab Bird Cams",
           "status": "live",
-          "detail": "live now, 98 watching",
+          "detail": "live now, 56 watching",
           "videoId": "Mm_zVDDUeNA"
         }
       ],
       "scouted": {},
       "uptime": {
         "Mm_zVDDUeNA": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1542,14 +1534,14 @@
           "title": "National Museum of Wildlife Art - Live Elk Refuge",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 3 watching",
+          "detail": "live now, 2 watching",
           "videoId": "_2rvoH5oDcg"
         },
         {
           "title": "Elk Refuge Live Webcam @ Flat Creek Inn",
           "author": "See Jackson Hole",
           "status": "live",
-          "detail": "live now, 1 watching",
+          "detail": "live now",
           "videoId": "kIZp6fUSpS0"
         }
       ],
@@ -1560,80 +1552,64 @@
             "title": "Spring Creek Ranch - SeeJH.ai"
           },
           {
-            "videoId": "_2rvoH5oDcg",
-            "title": "National Museum of Wildlife Art - Live Elk Refuge"
-          },
-          {
-            "videoId": "DyvzXyJ_fVg",
-            "title": "Togwotee Mountain Lodge - SeeJH.com"
-          },
-          {
-            "videoId": "9ID7fhbc_s0",
-            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
-          },
-          {
             "videoId": "YALaT1P39xs",
             "title": "Jackson WY Town Square North Cache - SeeJH.ai"
+          },
+          {
+            "videoId": "V7OOTqQtS3w",
+            "title": "Teton Village, WY - SeeJH.ai"
           },
           {
             "videoId": "Y8N3e2jFq_Y",
             "title": "SeeJH.ai HQ - Jackson Hole, Wyoming"
           },
           {
-            "videoId": "JVknJ-Ui8xQ",
-            "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com"
+            "videoId": "KG7e4Qaap1g",
+            "title": "Snow King Mountain Base - SeeJH.ai"
           },
           {
-            "videoId": "DoUOrTJbIu4",
-            "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
-          },
-          {
-            "videoId": "j-0fhrHzEiM",
-            "title": "EGVB - Grand Teton Webcam"
-          },
-          {
-            "videoId": "qi6QKB-sJRI",
-            "title": "Grand Targhee Driggs Habitat - SeeJH.com"
-          },
-          {
-            "videoId": "eHL_FJOoVTE",
-            "title": "Grand Targhee Resort Plaza - SeeJH.com"
-          },
-          {
-            "videoId": "3mE_mpsx_nU",
-            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
+            "videoId": "9ID7fhbc_s0",
+            "title": "Snow King Mountain - Summit Gondola - SeeJH.com"
           },
           {
             "videoId": "0lPQ2vjNN7E",
             "title": "Snake River Cabins - SeeJH.ai"
           },
           {
-            "videoId": "fQiA_DZT0cE",
-            "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai"
+            "videoId": "qi6QKB-sJRI",
+            "title": "Grand Targhee Driggs Habitat - SeeJH.com"
           },
           {
-            "videoId": "Jqo7Z9QiOEQ",
-            "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com"
+            "videoId": "DoUOrTJbIu4",
+            "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai"
           },
           {
-            "videoId": "KG7e4Qaap1g",
-            "title": "Snow King Mountain Base - SeeJH.ai"
+            "videoId": "Zj0pXlq2-jI",
+            "title": "Town Square Webcam - Northeast - SeeJH.com"
+          },
+          {
+            "videoId": "JVknJ-Ui8xQ",
+            "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com"
+          },
+          {
+            "videoId": "1EiC9bvVGnk",
+            "title": "Jackson Hole Town Square Live Webcam | Jackson, Wyoming | SeeJH.ai"
           },
           {
             "videoId": "L6vwrxDc3TA",
             "title": "Rustic Inn @ Jackson Hole - SeeJH.ai"
           },
           {
-            "videoId": "vj9YZyLRzZU",
-            "title": "South Fork River - The Lodge at Palisades Creek - SeeJH.com"
+            "videoId": "DyvzXyJ_fVg",
+            "title": "Togwotee Mountain Lodge - SeeJH.com"
           },
           {
-            "videoId": "3UzgSRYzDEQ",
-            "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com"
+            "videoId": "Jqo7Z9QiOEQ",
+            "title": "Teton View - Buffalo Valley in Moran Wyoming - SeeJH.com"
           },
           {
-            "videoId": "IvZ22jZgvOI",
-            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+            "videoId": "fQiA_DZT0cE",
+            "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai"
           },
           {
             "videoId": "U2Zgr0nJxxg",
@@ -1644,28 +1620,44 @@
             "title": "Grand Targhee Resort Summit - SeeJH.ai"
           },
           {
-            "videoId": "B4KTi91qL-4",
-            "title": "Grand Targhee Resort Stick of Truth"
-          },
-          {
-            "videoId": "WeeDyqRKqVI",
-            "title": "Turpin Meadow Ranch - Near Grand Teton Park"
+            "videoId": "3mE_mpsx_nU",
+            "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com"
           },
           {
             "videoId": "r-7zA9fAg1c",
             "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai"
+          },
+          {
+            "videoId": "IvZ22jZgvOI",
+            "title": "Montana Whitewater - Yellowstone River in Gardiner"
+          },
+          {
+            "videoId": "j-0fhrHzEiM",
+            "title": "EGVB - Grand Teton Webcam"
+          },
+          {
+            "videoId": "eHL_FJOoVTE",
+            "title": "Grand Targhee Resort Plaza - SeeJH.com"
+          },
+          {
+            "videoId": "Ob642-kNnQU",
+            "title": "Hoback River Jackson Hole Wyoming - SeeJH.com"
+          },
+          {
+            "videoId": "IfENy4khApE",
+            "title": "Jackson Hole Rodeo - SeeJH.ai"
           }
         ]
       },
       "uptime": {
         "_2rvoH5oDcg": {
-          "samples": 72,
-          "days": 30,
-          "uptime": 0.8472222222222222
+          "samples": 71,
+          "days": 29.8,
+          "uptime": 0.8450704225352113
         },
         "kIZp6fUSpS0": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1682,7 +1674,7 @@
           "title": "Live Monterey Bay Cam | Monterey Bay Aquarium",
           "author": "Monterey Bay Aquarium",
           "status": "live",
-          "detail": "live now, 167 watching",
+          "detail": "live now, 44 watching",
           "videoId": "fVa6-zCBR7A"
         }
       ],
@@ -1736,8 +1728,8 @@
       },
       "uptime": {
         "fVa6-zCBR7A": {
-          "samples": 72,
-          "days": 30,
+          "samples": 71,
+          "days": 29.8,
           "uptime": 1
         }
       }
@@ -1755,48 +1747,8 @@
       "channel": "UC9X6gGKDv2yhMoofoeS7-Gg"
     },
     {
-      "videoId": "ofyDg3_72-s",
-      "title": "🔴 Venice Italy Live WebCam - The View on Canal from Hotel Pausania",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "IByOruhl2ik",
-      "title": "🔴 4K Live Cam - Chioggia Sottomarina - Live Streaming from Hotel Park Chioggia (Venice) - 4K",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "Ts4cAVmJrWE",
-      "title": "🔴 4k Venice Live Cam - Laguna of Venice with 4K Cam PTZ 30x - Stream from Cantieri Biasin",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
       "videoId": "GQbUdGhHw_o",
       "title": "🔴 4K View of the Ponte delle Guglie and Strada Nova - Live Stream from Hotel Marte Venice",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "V7YQ_vYyz38",
-      "title": "🔴 Bacino di San Marco from Via Garibaldi - Live View from Hotel Ca&#39; Formenta Venezia",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "gzgrofStPJ0",
-      "title": "🔴 Venice Italy Live Webcam - Dorsoduro in Live Streaming from Hotel American Dinesen - Full HD",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "JFpV_LBgK3M",
-      "title": "🔴 Termini Beach Hotel &amp; Suites **** - Jesolo Lido (VE) - Live Cam Jesolo - 4k Live Cam",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "7-XBRpKSv4Q",
-      "title": "🔴 4K Live Webcam Venice - St. Mark&#39;s Basin in Live Streaming from Tribute to Music Venice",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "C9EKnYzYt9o",
-      "title": "Venice Italy Live - Live Streaming of Teatro La Fenice area",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1805,18 +1757,13 @@
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
-      "videoId": "zKGzYuT5tg0",
-      "title": "🔴 4K Venice Italy Live - Live Streaming of Grand Canal from Ca&#39; Angeli",
+      "videoId": "V7YQ_vYyz38",
+      "title": "🔴 Bacino di San Marco from Via Garibaldi - Live View from Hotel Ca&#39; Formenta Venezia",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
-      "videoId": "i10aOLMK76k",
-      "title": "🔴 Live Cam around the World - Rolling Cam with Chill &amp; Lounge Music",
-      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
-    },
-    {
-      "videoId": "mt7uE-n0YPI",
-      "title": "🔴 4K Live Cam of Ponte delle Guglie Venice - View from Hotel Leone Venezia  - Live stream ライブカメラ",
+      "videoId": "JFpV_LBgK3M",
+      "title": "🔴 Termini Beach Hotel &amp; Suites **** - Jesolo Lido (VE) - Live Cam Jesolo - 4k Live Cam",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1825,8 +1772,8 @@
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
-      "videoId": "ASqGNET31VY",
-      "title": "🔴 Venice Live Cam - San Marco Basin in Live Streaming - Webcam en direct ベネチア ライブ",
+      "videoId": "i10aOLMK76k",
+      "title": "🔴 Live Cam around the World - Rolling Cam with Chill &amp; Lounge Music",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1835,13 +1782,13 @@
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
-      "videoId": "aaJT8y3zfWs",
-      "title": "🔴 Venice Italy Live Camera - Grand Canal in Live Streaming from Ca&#39; Angeli",
+      "videoId": "Ts4cAVmJrWE",
+      "title": "🔴 4k Venice Live Cam - Laguna of Venice with 4K Cam PTZ 30x - Stream from Cantieri Biasin",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
-      "videoId": "tdE-Uu87XmE",
-      "title": "🔴 Spectacular View of Grand Canal - Live view from Hotel San Cassiano",
+      "videoId": "IByOruhl2ik",
+      "title": "🔴 4K Live Cam - Chioggia Sottomarina - Live Streaming from Hotel Park Chioggia (Venice) - 4K",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1850,8 +1797,23 @@
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
+      "videoId": "aaJT8y3zfWs",
+      "title": "🔴 Venice Italy Live Camera - Grand Canal in Live Streaming from Ca&#39; Angeli",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
       "videoId": "k66z_r1C1vM",
       "title": "🔴 Webcam - Live Streaming from Chioggia Sottomarina (Venezia) - Live HD",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "C9EKnYzYt9o",
+      "title": "Venice Italy Live - Live Streaming of Teatro La Fenice area",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "tdE-Uu87XmE",
+      "title": "🔴 Spectacular View of Grand Canal - Live view from Hotel San Cassiano",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1860,8 +1822,38 @@
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
+      "videoId": "zKGzYuT5tg0",
+      "title": "🔴 4K Venice Italy Live - Live Streaming of Grand Canal from Ca&#39; Angeli",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "ofyDg3_72-s",
+      "title": "🔴 Venice Italy Live WebCam - The View on Canal from Hotel Pausania",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "mt7uE-n0YPI",
+      "title": "🔴 4K Live Cam of Ponte delle Guglie Venice - View from Hotel Leone Venezia  - Live stream ライブカメラ",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "ASqGNET31VY",
+      "title": "🔴 Venice Live Cam - San Marco Basin in Live Streaming - Webcam en direct ベネチア ライブ",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
       "videoId": "I6o7UWEaSbw",
       "title": "🔴 ♫ Live Piano Music - Live 24/7: focus music, study music, relaxing music ♫",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "7-XBRpKSv4Q",
+      "title": "🔴 4K Live Webcam Venice - St. Mark&#39;s Basin in Live Streaming from Tribute to Music Venice",
+      "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
+    },
+    {
+      "videoId": "gzgrofStPJ0",
+      "title": "🔴 Venice Italy Live Webcam - Dorsoduro in Live Streaming from Hotel American Dinesen - Full HD",
       "channel": "UCMpn1qLudF-zb4M4bqxLIbw"
     },
     {
@@ -1945,23 +1937,8 @@
       "channel": "@webcamsydney"
     },
     {
-      "videoId": "Syl86r2ChtM",
-      "title": "EarthCamTV 3 Live:  Trending Cams",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
       "videoId": "mG2gAWY_Guw",
       "title": "EarthCam Live:  Washington Monument (Washington, D.C.)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "ZxCeWQ3Lcig",
-      "title": "EarthCam Live:  Times Square North 4K",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "8ShrAk0RPrQ",
-      "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -1970,8 +1947,13 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "WHve7zk9jds",
-      "title": "EarthCam Live:  Spirit Lake, Iowa",
+      "videoId": "8ShrAk0RPrQ",
+      "title": "EarthCam Live: Giraffe Cam Barn - Greenville, SC",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "Syl86r2ChtM",
+      "title": "EarthCamTV 3 Live:  Trending Cams",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -1980,13 +1962,13 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "W9ghgZD6Ugw",
-      "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)",
+      "videoId": "WHve7zk9jds",
+      "title": "EarthCam Live:  Spirit Lake, Iowa",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "ieIn2xxR6Ho",
-      "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)",
+      "videoId": "W9ghgZD6Ugw",
+      "title": "EarthCam Live:  Chicago Skydeck Cam (Chicago, IL)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -1995,8 +1977,33 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "kLoFxVhRWtQ",
-      "title": "EarthCam Live:  Roswell, New Mexico",
+      "videoId": "ieIn2xxR6Ho",
+      "title": "EarthCam Live:  World&#39;s Largest Buffalo Monument (Jamestown, North Dakota)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "OSI8qWMoK5E",
+      "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "F1EQEDL4ddU",
+      "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "KHy_n-EMWY8",
+      "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "KJuGU7v5oYw",
+      "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "77akujLn4k8",
+      "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2010,18 +2017,8 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "OSI8qWMoK5E",
-      "title": "EarthCam Live:  Flight 93 Memorial - Tower of Voices (Shanksville, PA)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "KHy_n-EMWY8",
-      "title": "EarthCam Live:  Times Square Crossroads (New York City, NY)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "77akujLn4k8",
-      "title": "EarthCam Live: Western Wall  (Jerusalem, Israel)",
+      "videoId": "zMCea32gpmg",
+      "title": "EarthCam Live:  Abbey Road Crossing (London, England)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2030,23 +2027,33 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
+      "videoId": "kLoFxVhRWtQ",
+      "title": "EarthCam Live:  Roswell, New Mexico",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
       "videoId": "xqdukYhcGEU",
       "title": "EarthCam Live: New Orleans Street View",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "F1EQEDL4ddU",
-      "title": "EarthCam Live:  Liberty Bell - Independence Hall (Philadelphia, PA)",
+      "videoId": "TPGY7UYzbKw",
+      "title": "EarthCam Live: Snowman Cam - Animals and Wildlife (Gaylord, Michigan)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "P3sGke9M59o",
-      "title": "EarthCam Live: Philadelphia, PA",
+      "videoId": "o5Ie_LpZ9uk",
+      "title": "EarthCam Live:  Statue of Liberty",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "zMCea32gpmg",
-      "title": "EarthCam Live:  Abbey Road Crossing (London, England)",
+      "videoId": "QxFFjXu_zqs",
+      "title": "EarthCam Live: New Orleans Balcony View",
+      "channel": "UC6qrG3W8SMK0jior2olka3g"
+    },
+    {
+      "videoId": "2_PDaUJbfuI",
+      "title": "EarthCam Live:  SUMMIT One Vanderbilt (New York City, NY)",
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
@@ -2055,33 +2062,8 @@
       "channel": "UC6qrG3W8SMK0jior2olka3g"
     },
     {
-      "videoId": "3nyPER2kzqk",
-      "title": "EarthCam Live: Dublin, Ireland",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "KJuGU7v5oYw",
-      "title": "EarthCam Live: Bellagio Conservatory &amp; Botanical Gardens (Las Vegas, NV)",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
-      "videoId": "ZYQlLQHz2Mg",
-      "title": "9/11 Memorial &amp; Museum",
-      "channel": "UC6qrG3W8SMK0jior2olka3g"
-    },
-    {
       "videoId": "VrV76oqxvS8",
       "title": "Spring Creek Ranch - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "DyvzXyJ_fVg",
-      "title": "Togwotee Mountain Lodge - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "9ID7fhbc_s0",
-      "title": "Snow King Mountain - Summit Gondola - SeeJH.com",
       "channel": "@Seejh"
     },
     {
@@ -2090,43 +2072,13 @@
       "channel": "@Seejh"
     },
     {
+      "videoId": "V7OOTqQtS3w",
+      "title": "Teton Village, WY - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
       "videoId": "Y8N3e2jFq_Y",
       "title": "SeeJH.ai HQ - Jackson Hole, Wyoming",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "JVknJ-Ui8xQ",
-      "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "DoUOrTJbIu4",
-      "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "qi6QKB-sJRI",
-      "title": "Grand Targhee Driggs Habitat - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "eHL_FJOoVTE",
-      "title": "Grand Targhee Resort Plaza - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "3mE_mpsx_nU",
-      "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "0lPQ2vjNN7E",
-      "title": "Snake River Cabins - SeeJH.ai",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "fQiA_DZT0cE",
-      "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
@@ -2135,23 +2087,53 @@
       "channel": "@Seejh"
     },
     {
+      "videoId": "9ID7fhbc_s0",
+      "title": "Snow King Mountain - Summit Gondola - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "0lPQ2vjNN7E",
+      "title": "Snake River Cabins - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "qi6QKB-sJRI",
+      "title": "Grand Targhee Driggs Habitat - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "DoUOrTJbIu4",
+      "title": "Live from Jackson’s Famous Town Square – Don’t Miss This View - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "Zj0pXlq2-jI",
+      "title": "Town Square Webcam - Northeast - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "JVknJ-Ui8xQ",
+      "title": "Gather | Jackson Hole Restaurant + Bar Near Town Square - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "1EiC9bvVGnk",
+      "title": "Jackson Hole Town Square Live Webcam | Jackson, Wyoming | SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
       "videoId": "L6vwrxDc3TA",
       "title": "Rustic Inn @ Jackson Hole - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
-      "videoId": "vj9YZyLRzZU",
-      "title": "South Fork River - The Lodge at Palisades Creek - SeeJH.com",
+      "videoId": "DyvzXyJ_fVg",
+      "title": "Togwotee Mountain Lodge - SeeJH.com",
       "channel": "@Seejh"
     },
     {
-      "videoId": "3UzgSRYzDEQ",
-      "title": "Hoback River @ Spotted Horse Ranch - SeeJH.com",
-      "channel": "@Seejh"
-    },
-    {
-      "videoId": "IvZ22jZgvOI",
-      "title": "Montana Whitewater - Yellowstone River in Gardiner",
+      "videoId": "fQiA_DZT0cE",
+      "title": "Grand Targhee Resort Dreamcatcher - SeeJH.ai",
       "channel": "@Seejh"
     },
     {
@@ -2165,13 +2147,33 @@
       "channel": "@Seejh"
     },
     {
-      "videoId": "B4KTi91qL-4",
-      "title": "Grand Targhee Resort Stick of Truth",
+      "videoId": "3mE_mpsx_nU",
+      "title": "Jackson Hole Golf &amp; Tennis Live Cam -  SeeJH.com",
       "channel": "@Seejh"
     },
     {
       "videoId": "r-7zA9fAg1c",
       "title": "Thistle Dew Cabin Teton Valley, Idaho - SeeJH.ai",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "IvZ22jZgvOI",
+      "title": "Montana Whitewater - Yellowstone River in Gardiner",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "eHL_FJOoVTE",
+      "title": "Grand Targhee Resort Plaza - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "Ob642-kNnQU",
+      "title": "Hoback River Jackson Hole Wyoming - SeeJH.com",
+      "channel": "@Seejh"
+    },
+    {
+      "videoId": "IfENy4khApE",
+      "title": "Jackson Hole Rodeo - SeeJH.ai",
       "channel": "@Seejh"
     }
   ]
